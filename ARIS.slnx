@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/backend/" />
+  <Folder Name="/backend/src/">
+    <Project Path="backend/src/ARIS.API/ARIS.API.csproj" />
+    <Project Path="backend/src/ARIS.Ingestor/ARIS.Ingestor.csproj" />
+    <Project Path="backend/src/ARIS.Shared/ARIS.Shared.csproj" />
+  </Folder>
+</Solution>
