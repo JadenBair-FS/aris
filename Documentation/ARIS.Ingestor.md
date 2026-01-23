@@ -44,7 +44,8 @@ The specialized HTTP client for O*NET.
 *   **Secrets:** API Keys are stored in .NET User Secrets to prevent accidental commits.
 
 ## 4. Current Status (Jan 2026)
-*   [x] O*NET API Integration (v2)
+*   [x] O*NET API Integration (v2) - **997 Roles Ingested**
 *   [x] Database Schema with Lowercase convention (`ref_roles`, `ref_skills`)
-*   [x] Vector Embedding via Ollama (`nomic-embed-text`)
-*   [x] Relationship Linking (Roles <-> Skills)
+*   [x] Vector Embedding via Ollama (`nomic-embed-text`) - **100% Coverage**
+*   [x] Roadmap.sh Integration - **22 Roadmaps Ingested (~2600 skills)**
+*   [x] Relationship Linking (Roles <-> Skills) - **~29,000 Links**

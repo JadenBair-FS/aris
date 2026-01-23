@@ -60,7 +60,7 @@ public class OnetService
                     var nextUri = new Uri(response.Next);
                     nextUrl = nextUri.PathAndQuery;
                     
-                    // Safety break for testing (remove in prod to get all ~1000)
+                    // Safety break restored for testing/maintenance
                     if (occupations.Count >= 50) break; 
                 }
                 else

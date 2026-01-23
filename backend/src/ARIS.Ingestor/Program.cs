@@ -5,14 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 
 
 var builder = Host.CreateApplicationBuilder(args);
 
-// Ensure User Secrets are loaded (even if env is Production, though strictly they are Dev tool)
-// But for a local console app run, we want them.
+// Ensure User Secrets are loaded
 if (builder.Environment.IsDevelopment())
 {
     builder.Configuration.AddUserSecrets<Program>();
@@ -32,6 +30,7 @@ builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(connectionString, o => o.UseVector()));
 
 builder.Services.AddHttpClient<OnetService>();
+builder.Services.AddHttpClient<RoadmapService>();
 
 // Semantic Kernel with Ollama
 builder.Services.AddOllamaEmbeddingGenerator(
