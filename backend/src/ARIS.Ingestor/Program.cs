@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.AI;
+using OllamaSharp;
 
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -34,7 +35,7 @@ builder.Services.AddHttpClient<RoadmapService>();
 
 // AI - MEAI with Ollama
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
-    new OllamaEmbeddingGenerator(new Uri("http://localhost:11434"), "all-minilm"));
+    new OllamaApiClient(new Uri("http://localhost:11434"), "all-minilm"));
 
 builder.Services.AddHostedService<IngestionWorker>();
 

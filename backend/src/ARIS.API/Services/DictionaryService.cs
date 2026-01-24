@@ -77,8 +77,9 @@ public class DictionaryService
         sb.AppendLine("Response:");
 
         // Generate
-        var response = await _chatClient.CompleteAsync(sb.ToString());
-        return response.Message.Text ?? "No response generated.";
+        
+        var response = await _chatClient.GetResponseAsync(sb.ToString());
+        return response.Text ?? "No response generated.";
     }
 
     public async Task<string> GetSkillRecommendationsAsync(string userPrompt)
@@ -119,7 +120,9 @@ public class DictionaryService
         var fullString = sb.ToString();
 
         // Generate
-        var response = await _chatClient.CompleteAsync(fullString);
-        return response.Message.Text ?? "No response generated.";
+        
+        var response = await _chatClient.GetResponseAsync(fullString);
+        return response.Text ?? "No response generated.";
     }
 }
+

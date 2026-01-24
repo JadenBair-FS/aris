@@ -12,6 +12,7 @@ public class ArisDbContext : DbContext
     public DbSet<RefSkill> Skills { get; set; }
     public DbSet<RefRole> Roles { get; set; }
     public DbSet<RefRoleSkill> RoleSkills { get; set; }
+    public DbSet<UserProfile> UserProfiles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -24,6 +25,7 @@ public class ArisDbContext : DbContext
         modelBuilder.Entity<RefSkill>().ToTable("ref_skills");
         modelBuilder.Entity<RefRole>().ToTable("ref_roles");
         modelBuilder.Entity<RefRoleSkill>().ToTable("ref_role_skills");
+        modelBuilder.Entity<UserProfile>().ToTable("user_profiles");
 
         modelBuilder.Entity<RefRoleSkill>()
             .HasKey(rs => new { rs.RoleId, rs.SkillId });

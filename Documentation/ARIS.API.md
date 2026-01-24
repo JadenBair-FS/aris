@@ -1,15 +1,17 @@
 # ARIS.API Documentation
 
 ## Overview
-`ARIS.API` is the core backend service for the ARIS platform. It provides RESTful endpoints for searching the Dictionary (Roles and Skills) and performing RAG-based recommendations.
+`ARIS.API` is the core backend service for the ARIS platform. It provides RESTful endpoints for searching the Dictionary (Roles and Skills), ingesting resumes into the symmetric vector space, and performing RAG-based recommendations.
 
 ## Tech Stack
 *   **Framework:** ASP.NET Core (.NET 10)
 *   **Database:** PostgreSQL 17 (via `ARIS.Shared`) with `pgvector`
 *   **AI/ML:** 
     *   `Microsoft.Extensions.AI` for abstraction
-    *   `Ollama` (local) running `all-minilm` for embeddings
+    *   `OllamaSharp` for Ollama API communication
+    *   `Ollama` (local) running `all-minilm` for embeddings (384d)
     *   `Ollama` (local) running `llama3.1` for chat completions
+*   **PDF Processing:** `PdfPig`
 
 ## Endpoints
 
@@ -67,15 +69,32 @@
     ```
 *   **Response:** String (Markdown formatted analysis).
 
+### Resume
+
+#### 1. Upload Resume
+*   **URL:** `POST /api/Resume/upload`
+*   **Description:** Ingests a PDF resume, extracts structured data, and generates a professional identity vector.
+*   **Parameters (Multipart/Form-Data):**
+    *   `file`: The PDF resume file (Required).
+    *   `userId`: The unique identifier for the user (Required).
+*   **Internal Pipeline:**
+    1.  **PDF Parsing:** Uses `PdfPig` to extract raw text.
+    2.  **Clean Signal Extraction:** Uses `llama3.1` to map messy text to a standardized JSON schema (Roles, Skills, Education, Experience).
+    3.  **Symmetric Vectorization:** Concatenates extracted roles and skills to generate a 384d embedding using `all-minilm`.
+    4.  **Persistence:** Saves the `UserProfile` to PostgreSQL, including the raw text (as JSON), the Clean Signal, and the vector.
+*   **Response:** 
+    ```json
+    {
+      "message": "Resume processed and ingested successfully."
+    }
+    ```
+
 ## Configuration
 Ensure `appsettings.json` or `appsettings.Development.json` points to the correct Database and Ollama instance.
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Database=aris_db;Username=postgres;Password=password"
-  },
-  "Logging": {
-      ...
+    "DefaultConnection": "Host=localhost;Database=aris_db;Username=aris_admin;Password=aris_password_local"
   }
 }
 ```

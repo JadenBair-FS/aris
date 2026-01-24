@@ -1,7 +1,10 @@
 using ARIS.Shared.Data;
 using Microsoft.EntityFrameworkCore;
+using OllamaSharp.Models;
 using Microsoft.Extensions.AI;
+using Npgsql;
 using Scalar.AspNetCore;
+using OllamaSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,22 +14,29 @@ builder.Services.AddOpenApi();
 
 // Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ArisDbContext>(options =>
-    options.UseNpgsql(connectionString, o => o.UseVector()));
 
-// Semantic Kernel (Replaced with direct MEAI)
+var dataSourceBuilder = new Npgsql.NpgsqlDataSourceBuilder(connectionString);
+dataSourceBuilder.EnableDynamicJson();
+dataSourceBuilder.UseVector();
+var dataSource = dataSourceBuilder.Build();
+
+builder.Services.AddDbContext<ArisDbContext>(options =>
+    options.UseNpgsql(dataSource, o => o.UseVector()));
+
+// Semantic Kernel
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
-    new OllamaEmbeddingGenerator(new Uri("http://localhost:11434"), "all-minilm"));
+    new OllamaApiClient(new Uri("http://localhost:11434"), "all-minilm"));
 
 builder.Services.AddSingleton<IChatClient>(sp =>
-    new OllamaChatClient(new Uri("http://localhost:11434"), "llama3.1"));
+    new OllamaApiClient(new Uri("http://localhost:11434"), "llama3.1"));
 
 // Domain Services
 builder.Services.AddScoped<ARIS.API.Services.DictionaryService>();
+builder.Services.AddScoped<ARIS.API.Services.ResumeService>();
 
 // CORS
 builder.Services.AddCors(options =>
-{
+{ 
     options.AddPolicy("AllowAll",
         policy =>
         {

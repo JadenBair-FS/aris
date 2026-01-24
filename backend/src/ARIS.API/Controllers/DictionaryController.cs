@@ -1,5 +1,6 @@
 using ARIS.API.Services;
 using ARIS.Shared.Entities;
+using ARIS.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ARIS.API.Controllers;
@@ -56,7 +57,4 @@ public class DictionaryController : ControllerBase
     }
 }
 
-public class SearchRequest
-{
-    public string Query { get; set; } = string.Empty;
-}
+
