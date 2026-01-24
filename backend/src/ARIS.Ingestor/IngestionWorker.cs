@@ -1,4 +1,3 @@
-using ARIS.Ingestor.Data;
 using ARIS.Ingestor.Services;
 using ARIS.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -7,29 +6,24 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.AI;
 using Pgvector;
+using ARIS.Shared.Data;
 
 namespace ARIS.Ingestor;
 
 public class IngestionWorker : BackgroundService
 {
     private readonly IServiceProvider _serviceProvider;
-    private readonly OnetService _onetService;
-    private readonly RoadmapService _roadmapService;
     private readonly ILogger<IngestionWorker> _logger;
     private readonly IHostApplicationLifetime _hostApplicationLifetime;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingService;
 
     public IngestionWorker(
         IServiceProvider serviceProvider,
-        OnetService onetService,
-        RoadmapService roadmapService,
         ILogger<IngestionWorker> logger,
         IHostApplicationLifetime hostApplicationLifetime,
         IEmbeddingGenerator<string, Embedding<float>> embeddingService)
     {
         _serviceProvider = serviceProvider;
-        _onetService = onetService;
-        _roadmapService = roadmapService;
         _logger = logger;
         _hostApplicationLifetime = hostApplicationLifetime;
         _embeddingService = embeddingService;
@@ -41,74 +35,44 @@ public class IngestionWorker : BackgroundService
 
         using var scope = _serviceProvider.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ArisDbContext>();
+        var onetService = scope.ServiceProvider.GetRequiredService<OnetService>();
+        var roadmapService = scope.ServiceProvider.GetRequiredService<RoadmapService>();
 
         // Ensure Database Created & Migrated
         _logger.LogInformation("Ensuring database is created...");
         await dbContext.Database.EnsureCreatedAsync(stoppingToken);
 
         // Fetch & Process Roadmaps
-
-        // List of Role-based roadmaps
-
         var roadmapSlugs = new[]
-
         {
-
-                    "frontend", "backend", "devops", "full-stack", "android", "postgresql-dba",
-
-                    "ai-engineer", "data-analyst", "ai-data-scientist", "blockchain", "qa",
-
-                    "cyber-security", "ux-design", "game-developer", "technical-writer",
-
-                    "mlops", "computer-science", "react-native", "flutter",
-
-                    "software-architect", "system-design", "software-design-architecture"
-
-                };
-
-
+            "frontend", "backend", "devops", "full-stack", "android", "postgresql-dba",
+            "ai-engineer", "data-analyst", "ai-data-scientist", "blockchain", "qa",
+            "cyber-security", "ux-design", "game-developer", "technical-writer",
+            "mlops", "computer-science", "react-native", "flutter",
+            "software-architect", "system-design", "software-design-architecture"
+        };
 
         foreach (var slug in roadmapSlugs)
-
         {
-
             if (stoppingToken.IsCancellationRequested) break;
 
-
-
             _logger.LogInformation("Fetching Roadmap: {Slug}", slug);
-
-            var roadmap = await _roadmapService.GetRoadmapAsync(slug, stoppingToken);
-
-
+            var roadmap = await roadmapService.GetRoadmapAsync(slug, stoppingToken);
 
             if (roadmap?.Nodes != null)
-
             {
-
                 foreach (var node in roadmap.Nodes)
-
                 {
-
                     await ProcessRoadmapNodeAsync(dbContext, node, stoppingToken);
-
                 }
-
             }
-
             // delay
-
             await Task.Delay(1000, stoppingToken);
-
         }
 
-
-
         // Fetch Occupations from O*NET
-
-
         _logger.LogInformation("Fetching Occupations from O*NET...");
-        var occupations = await _onetService.GetAllOccupationsAsync(stoppingToken);
+        var occupations = await onetService.GetAllOccupationsAsync(stoppingToken);
         _logger.LogInformation("Found {Count} occupations.", occupations.Count);
 
         //Iterate all occupations
@@ -129,7 +93,7 @@ public class IngestionWorker : BackgroundService
             }
 
             // Get Details
-            var details = await _onetService.GetOccupationDetailsAsync(occDto.Code, stoppingToken);
+            var details = await onetService.GetOccupationDetailsAsync(occDto.Code, stoppingToken);
             if (details == null) continue;
 
             // Generate Embedding for Role (Title + Description)
@@ -147,7 +111,7 @@ public class IngestionWorker : BackgroundService
 
             dbContext.Roles.Add(role);
             // Save to get RoleId
-            await dbContext.SaveChangesAsync(stoppingToken); 
+            await dbContext.SaveChangesAsync(stoppingToken);
 
             // Process Tasks
             if (details.Tasks != null)
@@ -244,15 +208,14 @@ public class IngestionWorker : BackgroundService
     {
         try
         {
-            var embedding = await _embeddingService.GenerateVectorAsync(text);
-            if (embedding.IsEmpty) return null;
-            return new Vector(embedding);
+            var embeddings = await _embeddingService.GenerateAsync([text]);
+            var vectorData = embeddings[0].Vector;
+            return new Vector(vectorData);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to generate embedding for text: {Text}", text.Length > 50 ? text.Substring(0, 50) + "..." : text);
+            _logger.LogError(ex, "Failed to generate embedding for textd: {Text}", text.Length > 50 ? text.Substring(0, 50) + "..." : text);
             return null;
         }
     }
 }
-

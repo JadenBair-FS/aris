@@ -9,7 +9,7 @@ The Ingestor follows a strict ETL (Extract, Transform, Load) pipeline:
 1.  **Extract (Crawl):** Connects to the O*NET Web Services API (v2) to fetch master lists of occupations, followed by detailed skills, tasks, and descriptions for each.
 2.  **Transform (Embed):**
     *   Standardizes data into `RefRole` (Occupation) and `RefSkill` (Task/Skill) entities.
-    *   Uses **Microsoft Semantic Kernel** connected to a local **Ollama** instance (`nomic-embed-text` model) to generate 768-dimensional vector embeddings for all text descriptions.
+    *   Uses **Microsoft Semantic Kernel** connected to a local **Ollama** instance (`all-minilm` model) to generate 384-dimensional vector embeddings for all text descriptions.
 3.  **Load (Store):** Persists the structured, vectorized data into PostgreSQL with `pgvector` support, ensuring strict relational integrity between Roles and Skills.
 
 ## 2. Key Components
@@ -46,6 +46,6 @@ The specialized HTTP client for O*NET.
 ## 4. Current Status (Jan 2026)
 *   [x] O*NET API Integration (v2) - **997 Roles Ingested**
 *   [x] Database Schema with Lowercase convention (`ref_roles`, `ref_skills`)
-*   [x] Vector Embedding via Ollama (`nomic-embed-text`) - **100% Coverage**
+*   [x] Vector Embedding via Ollama (`all-minilm`) - **100% Coverage**
 *   [x] Roadmap.sh Integration - **22 Roadmaps Ingested (~2600 skills)**
 *   [x] Relationship Linking (Roles <-> Skills) - **~29,000 Links**

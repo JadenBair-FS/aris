@@ -15,7 +15,7 @@ Represents a standardized Job Role or Occupation (e.g., "Software Developer").
 *   **`Title`**: The display name.
 *   **`OnetCode`**: The unique O*NET SOC code (e.g., `15-1252.00`).
 *   **`Description`**: The "Gold Standard" description used for embedding.
-*   **`Embedding`**: A 768-dimensional vector representing the semantic meaning of the role.
+*   **`Embedding`**: A 384-dimensional vector representing the semantic meaning of the role.
 
 ### `RefSkill.cs` (Table: `ref_skills`)
 Represents an atomic competency, task, or tool (e.g., "Python", "Debugging", "Critical Thinking").

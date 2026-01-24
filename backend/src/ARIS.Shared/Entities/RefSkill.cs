@@ -20,6 +20,6 @@ public class RefSkill
     [Column("source")]
     public string? Source { get; set; } // "ONET", "Roadmap", etc.
 
-    [Column("embedding", TypeName = "vector(768)")]
+    [Column("embedding", TypeName = "vector(384)")]
     public Vector? Embedding { get; set; }
 }

@@ -1,7 +1,7 @@
 using ARIS.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ARIS.Ingestor.Data;
+namespace ARIS.Shared.Data;
 
 public class ArisDbContext : DbContext
 {

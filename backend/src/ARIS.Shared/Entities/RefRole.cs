@@ -20,7 +20,7 @@ public class RefRole
     [Column("description")]
     public string? Description { get; set; }
 
-    [Column("embedding", TypeName = "vector(768)")]
+    [Column("embedding", TypeName = "vector(384)")]
     public Vector? Embedding { get; set; }
 
     public List<RefRoleSkill> RoleSkills { get; set; } = new();

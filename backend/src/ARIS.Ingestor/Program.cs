@@ -1,11 +1,11 @@
 using ARIS.Ingestor;
-using ARIS.Ingestor.Data;
+using ARIS.Shared.Data;
 using ARIS.Ingestor.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.SemanticKernel;
+using Microsoft.Extensions.AI;
 
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -32,10 +32,9 @@ builder.Services.AddDbContext<ArisDbContext>(options =>
 builder.Services.AddHttpClient<OnetService>();
 builder.Services.AddHttpClient<RoadmapService>();
 
-// Semantic Kernel with Ollama
-builder.Services.AddOllamaEmbeddingGenerator(
-    modelId: "nomic-embed-text",
-    endpoint: new Uri("http://localhost:11434"));
+// AI - MEAI with Ollama
+builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
+    new OllamaEmbeddingGenerator(new Uri("http://localhost:11434"), "all-minilm"));
 
 builder.Services.AddHostedService<IngestionWorker>();
 
