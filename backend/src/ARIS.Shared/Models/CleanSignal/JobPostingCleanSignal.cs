@@ -41,5 +41,5 @@ public class JobEducation
     public string Degree { get; set; } = string.Empty;
 
     [JsonPropertyName("required")]
-    public bool Required { get; set; }
+    public string Required { get; set; } = string.Empty;
 }

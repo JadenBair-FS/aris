@@ -25,7 +25,7 @@ namespace ARIS.API.Services
             _logger = logger;
         }
 
-        public async Task<bool> ProcessResumeAsync(Stream fileStream, string userId)
+        public async Task<Guid?> ProcessResumeAsync(Stream fileStream, string userId)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace ARIS.API.Services
                 if (string.IsNullOrWhiteSpace(rawText))
                 {
                     _logger.LogWarning("PDF parsing resulted in empty text for user {UserId}", userId);
-                    return false;
+                    return null;
                 }
 
                 var options = new JsonSerializerOptions
@@ -48,7 +48,7 @@ namespace ARIS.API.Services
                 if (cleanSignal == null)
                 {
                     _logger.LogError("Failed to extract Clean Signal for user {UserId}", userId);
-                    return false;
+                    return null;
                 }
 
                 // Generate Embedding
@@ -69,12 +69,12 @@ namespace ARIS.API.Services
                 _context.UserProfiles.Add(userProfile);
                 await _context.SaveChangesAsync();
 
-                return true;
+                return userProfile.Id;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error processing resume for user {UserId}", userId);
-                return false;
+                return null;
             }
         }
 

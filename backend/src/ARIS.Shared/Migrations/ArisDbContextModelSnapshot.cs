@@ -25,6 +25,43 @@ namespace ARIS.Shared.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "vector");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<JobPostingCleanSignal>("CleanSignal")
+                        .HasColumnType("jsonb")
+                        .HasColumnName("clean_signal_json");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<Vector>("Embedding")
+                        .HasColumnType("vector(384)")
+                        .HasColumnName("embedding");
+
+                    b.Property<string>("RawDescription")
+                        .HasColumnType("text")
+                        .HasColumnName("raw_description");
+
+                    b.Property<string>("RecruiterId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("recruiter_id");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("job_postings", (string)null);
+                });
+
             modelBuilder.Entity("ARIS.Shared.Entities.RefRole", b =>
                 {
                     b.Property<int>("Id")

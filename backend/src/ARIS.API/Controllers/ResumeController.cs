@@ -16,26 +16,33 @@ namespace ARIS.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> UploadResume([FromForm] IFormFile file, [FromForm] string userId)
+        public class ResumeUploadRequest
         {
-            if (file == null || file.Length == 0)
+            public required IFormFile File { get; set; }
+            public required string UserId { get; set; }
+        }
+
+        [HttpPost("upload")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadResume([FromForm] ResumeUploadRequest request)
+        {
+            if (request.File == null || request.File.Length == 0)
                 return BadRequest("No file uploaded.");
 
-            if (string.IsNullOrWhiteSpace(userId))
+            if (string.IsNullOrWhiteSpace(request.UserId))
                 return BadRequest("User ID is required.");
 
-            if (file.ContentType != "application/pdf")
+            if (request.File.ContentType != "application/pdf")
                 return BadRequest("Only PDF files are supported.");
 
-            _logger.LogInformation("Received resume upload for User: {UserId}, Size: {Size}", userId, file.Length);
+            _logger.LogInformation("Received resume upload for User: {UserId}, Size: {Size}", request.UserId, request.File.Length);
 
-            using var stream = file.OpenReadStream();
-            var result = await _service.ProcessResumeAsync(stream, userId);
+            using var stream = request.File.OpenReadStream();
+            var profileId = await _service.ProcessResumeAsync(stream, request.UserId);
 
-            if (result)
+            if (profileId.HasValue)
             {
-                return Ok(new { message = "Resume processed and ingested successfully." });
+                return Ok(new { message = "Resume processed and ingested successfully.", id = profileId.Value });
             }
             else
             {

@@ -33,6 +33,7 @@ builder.Services.AddSingleton<IChatClient>(sp =>
 // Domain Services
 builder.Services.AddScoped<ARIS.API.Services.DictionaryService>();
 builder.Services.AddScoped<ARIS.API.Services.ResumeService>();
+builder.Services.AddScoped<ARIS.API.Services.JobService>();
 
 // CORS
 builder.Services.AddCors(options =>
