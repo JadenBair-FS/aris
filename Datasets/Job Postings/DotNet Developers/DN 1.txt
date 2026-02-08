@@ -1,0 +1,48 @@
+Full job description
+At NTT DATA, we know that with the right people on board, anything is possible. The quality, integrity, and commitment of our employees have been key factors in our company's growth and market presence. By hiring the best people and helping them grow both professionally and personally, we ensure a bright future for NTT DATA and for the people who work here.
+
+For more than 25 years, NTT DATA Services have focused on impacting the core of your business operations with industry-leading outsourcing services and automation. With our industry-specific platforms, we deliver continuous value addition, and innovation that will improve your business outcomes. Outsourcing is not just a method of gaining a one-time cost advantage, but an effective strategy for gaining and maintaining competitive advantages when executed as part of an overall sourcing strategy.
+
+The role will primarily focus on development, maintenance, and support of Platform applications built on modern .NET Technical Full Stack. This role will be responsible for delivery of critical product requirements and will be interact with a culturally and technically diverse team, which includes .Net developers, SQL developers, QA and product management teams.
+Essential Functions/Responsibilities:
+
+Contributes in defining, documenting and developing software, software applications, as well as contributes to architecture and technical design discussions, code reviews and technical design/specifications in collaboration with the project team
+Responsible for development, enhancement, testing, support, maintain and troubleshoot/ debug software applications that support business units or support functions. These application program solutions may involve diverse development platforms, software, hardware, technologies and tools.
+Creates thorough, professional quality project documentation and technical specifications
+Evaluates software change requests, determines business need or conducts root cause analysis, and implements technically efficient solutions
+Assesses the impact of software changes and new development on other systems; conducts integration tests to mitigate risks
+Proactively recommends, schedules, and performs software improvements and upgrades
+Recommends best practices and policies for installing, configuring, maintaining, and troubleshooting end user access and usage of database applications
+
+
+Specific Job Skills and Experience:
+
+7 or more years of related experience
+Experience with the full software development life cycle, including design, testing, deployment, and documentation activities (including agile and scrum patterns)
+Following technical skills with minimum 7yrs experience is required:
+.NET Core Architecture understanding.
+Application development C#, ASP .Net Core 8, SQL Server
+.NET Framework, MVC & Web API 2.0
+Expertise in Web-Development technologies: Angular 16 and above, HTML, Bootstrap, JQuery, CSS3.
+REST Services Architecture knowledge
+Good experience with Cloud Platform specifically in Microsoft Azure
+Unit Testing Frameworks
+Web Development Concepts (State Management, Stateless Development)
+SQL Server 2016 / 2017/ 2019/ 2022 and SSIS packages
+Asynchronous Programming Paradigm
+LINQ & Lambda Expressions
+Solid background in Designing & Implementing Applications using technologies defined by the IMS Enterprise Architecture
+Strong experience in analyzing and optimizing already deployed applications
+Extensive knowledge and hands on experience designing and developing objects and components of relational database
+Strong experience with Agile methodologies
+Knowledge and understanding of SDLC, with a strong preference for Agile experience
+Skill for writing reusable libraries
+Must have experience on full stack development on Microsoft platform
+Excellent written/verbal communication, presentation, and listening skills
+Excellent collaboration/teamwork skills
+Understanding of fundamental design principles for building a scalable application
+Experience creating database schemas that represent and support business processes
+Familiar with various design and architectural patterns
+Knowledge of concurrency patterns
+Known experience in Caching techniques
+

@@ -1,0 +1,184 @@
+using Neo4j.Driver;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using ARIS.Shared.Models;
+
+namespace ARIS.Ingestor.Services;
+
+public class Neo4jIngestionService : IDisposable, IAsyncDisposable
+{
+    private readonly IDriver _driver;
+    private readonly ILogger<Neo4jIngestionService> _logger;
+
+    public Neo4jIngestionService(IConfiguration configuration, ILogger<Neo4jIngestionService> logger)
+    {
+        _logger = logger;
+        var uri = "bolt://localhost:7687";
+        var user = "neo4j";
+        var password = "aris_password_local";
+        
+        _logger.LogInformation("Connecting to Neo4j at {Uri} as user {User}", uri, user);
+        _driver = GraphDatabase.Driver(uri, AuthTokens.Basic(user, password));
+    }
+
+    public async Task ClearDatabaseAsync()
+    {
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(async tx =>
+        {
+            await tx.RunAsync("MATCH (n) DETACH DELETE n");
+        });
+        _logger.LogInformation("Neo4j Database Cleared.");
+    }
+
+    public async Task EnsureIndicesAsync()
+    {
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(async tx =>
+        {
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (r:Role) REQUIRE r.onet_code IS UNIQUE");
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (s:Skill) REQUIRE s.name IS UNIQUE");
+            await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (s:Skill) ON (s.name)");
+        });
+    }
+
+    public async Task MergeRoleAsync(string title, string code, string description)
+    {
+        const string query = @"
+            MERGE (r:Role {onet_code: $code})
+            ON CREATE SET r.title = $title, r.description = $description, r.created_at = datetime()
+            ON MATCH SET r.title = $title, r.updated_at = datetime()
+        ";
+
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code, title, description }));
+    }
+
+    public async Task MergeSkillAsync(string name, string source)
+    {
+        const string query = @"
+            MERGE (s:Skill {name: $name})
+            ON CREATE SET s.source = $source, s.created_at = datetime()
+        ";
+
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { name, source }));
+    }
+
+    public async Task MergeRoleSkillRelationshipAsync(string roleCode, string skillName, string relationshipType = "REQUIRES")
+    {        
+        const string query = @"
+            MATCH (r:Role {onet_code: $roleCode})
+            MATCH (s:Skill {name: $skillName})
+            MERGE (r)-[rel:REQUIRES]->(s)
+            ON CREATE SET rel.created_at = datetime()
+        ";
+
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { roleCode, skillName }));
+    }
+
+    public async Task MergeSubsetRelationshipAsync(string childName, string parentName)
+    {
+        const string query = @"
+            MERGE (c:Skill {name: $childName})
+            MERGE (p:Skill {name: $parentName})
+            MERGE (c)-[rel:SUBSET_OF]->(p)
+            ON CREATE SET rel.confidence = 0.9, rel.created_at = datetime()
+        ";
+
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { childName, parentName }));
+    }
+
+    public async Task MergeBridgeRelationshipAsync(string skillA, string skillB)
+    {
+        const string query = @"
+            MERGE (a:Skill {name: $skillA})
+            MERGE (b:Skill {name: $skillB})
+            MERGE (a)-[rel:BRIDGE_TO]-(b)
+            ON CREATE SET rel.confidence = 0.9, rel.created_at = datetime()
+        ";
+
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { skillA, skillB }));
+    }
+
+    public async Task DeleteBridgesAsync()
+    {
+        const string query = "MATCH ()-[r:BRIDGE_TO]-() DELETE r";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query));
+        _logger.LogInformation("Deleted all existing BRIDGE_TO relationships.");
+    }
+
+    public async Task DeleteSubsetRelationshipsAsync()
+    {
+        const string query = "MATCH ()-[r:SUBSET_OF]-() DELETE r";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query));
+        _logger.LogInformation("Deleted all existing SUBSET_OF relationships.");
+    }
+
+    public async Task<List<SiblingCluster>> GetSiblingClustersAsync()
+    {
+        const string query = @"
+            MATCH (c)-[:SUBSET_OF]->(p)
+            RETURN p.name as Parent, collect(c.name) as Siblings
+        ";
+
+        await using var session = _driver.AsyncSession();
+        var result = await session.ExecuteReadAsync(async tx =>
+        {
+            var cursor = await tx.RunAsync(query);
+            var records = await cursor.ToListAsync();
+            return records.Select(r => new SiblingCluster 
+            {
+                Parent = r["Parent"].As<string>(),
+                Siblings = r["Siblings"].As<List<string>>()
+            }).ToList();
+        });
+
+        return result;
+    }
+
+    public async Task<List<RoleSkillCluster>> GetRolesWithSkillsAsync()
+    {
+        const string query = @"
+            MATCH (r:Role)-[:REQUIRES]->(direct:Skill)
+            OPTIONAL MATCH (child:Skill)-[:SUBSET_OF*1..]->(direct)
+            WITH r, collect(DISTINCT direct.name) + collect(DISTINCT child.name) AS skills
+            RETURN r.title AS RoleTitle, skills AS Skills
+            ORDER BY r.title
+        ";
+
+        await using var session = _driver.AsyncSession();
+        var result = await session.ExecuteReadAsync(async tx =>
+        {
+            var cursor = await tx.RunAsync(query);
+            var records = await cursor.ToListAsync();
+            return records.Select(r => new RoleSkillCluster
+            {
+                RoleTitle = r["RoleTitle"].As<string>(),
+                Skills = r["Skills"].As<List<string>>()
+            }).ToList();
+        });
+
+        return result;
+    }
+
+    public IDriver GetDriver() => _driver;
+
+    public void Dispose()
+    {
+        _driver?.Dispose();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_driver != null)
+        {
+            await _driver.DisposeAsync();
+        }
+    }
+}

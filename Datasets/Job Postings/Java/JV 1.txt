@@ -1,0 +1,39 @@
+Full job description
+Job Title: Software Engineer 4 – Full Stack Java
+Location: Charlotte, NC (Hybrid)
+W2 only
+
+Local Only
+
+Only W2
+
+No C2C/C2H/1099
+Candidate with employer please don't apply
+
+Responsibilities
+
+Contribute to full stack Java development with strong backend focus
+Design, develop, and maintain Spring Boot–based microservices
+Build and integrate RESTful APIs (API-driven architecture)
+Support legacy modernization and enhancement of existing services
+Convert JSP-based UI to ReactJS, ensuring ADA compliance
+Work closely with product owners, QA, and DevOps in an Agile environment
+Write and optimize complex SQL queries, stored procedures, and triggers
+Participate in code reviews, GitHub workflows, and CI/CD pipelines
+Perform end-to-end testing, including integration and performance testing
+Support cloud migration from PCF to OpenShift
+Ensure high performance, scalability, and reliability of payment systems
+Required Skills & Experience
+
+6+ years of Core Java experience
+2+ years of ReactJS (Angular acceptable)
+Strong hands-on experience with Spring Boot
+Experience building microservices architectures
+Strong REST API development experience
+NoSQL experience with MongoDB
+Strong RDBMS experience (Oracle or SQL Server)
+Complex queries, stored procedures, triggers
+Experience with Git, GitHub, and CI/CD processes
+Knowledge of SDLC and Agile methodologies
+Strong communication and collaboration skills
+Self-driven and proactive team player

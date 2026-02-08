@@ -6,6 +6,8 @@ using System.Text;
 using System.Text.Json;
 using UglyToad.PdfPig;
 using Pgvector;
+using Microsoft.EntityFrameworkCore;
+using Pgvector.EntityFrameworkCore;
 
 namespace ARIS.API.Services
 {
@@ -29,7 +31,6 @@ namespace ARIS.API.Services
         {
             try
             {
-                // Parse PDF
                 var rawText = ExtractTextFromPdf(fileStream);
                 if (string.IsNullOrWhiteSpace(rawText))
                 {
@@ -43,7 +44,6 @@ namespace ARIS.API.Services
                     NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
                 };
 
-                // Extract Clean Signal with LLM
                 var cleanSignal = await ExtractCleanSignalAsync(rawText, options);
                 if (cleanSignal == null)
                 {
@@ -51,16 +51,16 @@ namespace ARIS.API.Services
                     return null;
                 }
 
-                // Generate Embedding
+                await GroundCleanSignalAsync(cleanSignal);
+
                 var symmetricString = BuildSymmetricString(cleanSignal);
                 var embeddings = await _embeddingGenerator.GenerateAsync([symmetricString]);
                 var vectorData = embeddings[0].Vector;
 
-                // Save to Database
                 var userProfile = new UserProfile
                 {
                     UserId = userId,
-                    RawResume = JsonSerializer.Serialize(new { content = rawText }), 
+                    RawResume = JsonSerializer.Serialize(new { content = rawText }),
                     CleanSignal = cleanSignal,
                     Embedding = new Vector(vectorData),
                     UpdatedAt = DateTime.UtcNow
@@ -98,42 +98,76 @@ namespace ARIS.API.Services
             return sb.ToString().Trim();
         }
 
+        private async Task<(string roles, string skills)> RetrieveReferenceVocabularyAsync(string rawText)
+        {
+            try
+            {
+                var embeddings = await _embeddingGenerator.GenerateAsync([rawText]);
+                var vector = new Vector(embeddings[0].Vector);
+
+                var topRoles = await _context.Roles
+                    .Where(r => r.Embedding != null)
+                    .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .Take(15)
+                    .ToListAsync();
+
+                var topSkills = await _context.Skills
+                    .Where(s => s.Embedding != null)
+                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .Take(50)
+                    .ToListAsync();
+
+                return (
+                    string.Join(", ", topRoles.Select(r => r.Title)),
+                    string.Join(", ", topSkills.Select(s => s.Name))
+                );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary. Proceeding without it.");
+                return ("", "");
+            }
+        }
+
         private async Task<ResumeCleanSignal?> ExtractCleanSignalAsync(string rawText, JsonSerializerOptions options)
         {
-            var prompt = $@"
-You are a strict Data Extraction Engine. Your task is to parse the following Resume Text into a standardized JSON format.
-Ignore all subjective prose, formatting, and non-technical fluff.
+            string prompt;
+            try
+            {
+                var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeExtraction.md");
+                var template = await File.ReadAllTextAsync(promptPath);
 
-Required JSON Schema:
-{{
-  ""roles"": [ {{ ""title"": ""string"", ""duration"": ""string (e.g. '2 years', '6 months')"", ""is_current"": ""string (true/false)"" }} ],
-  ""skills"": [ {{ ""name"": ""string"", ""category"": ""string"", ""proficiency"": ""string"" }} ],
-  ""experience_summary"": [ {{ ""role"": ""string"", ""company"": ""string"", ""bullets"": [""string""] }} ],
-  ""education"": [ {{ ""degree"": ""string"", ""institution"": ""string"", ""year"": ""string"" }} ]
-}}
+                var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
 
-RESUME TEXT:
-{rawText}
-
-Output ONLY valid JSON. No markdown formatting. No preamble.";
+                prompt = template
+                    .Replace("{reference_roles}", refRoles)
+                    .Replace("{reference_skills}", refSkills)
+                    .Replace("{raw_text}", rawText);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to load prompt template.");
+                return null;
+            }
 
             try
             {
-              
+
                 var response = await _chatClient.GetResponseAsync(prompt);
                 var jsonString = response?.Text;
 
                 if (string.IsNullOrWhiteSpace(jsonString))
                     return null;
 
-                // Clean potential markdown code blocks if the LLM adds them
                 if (jsonString.Contains("```json"))
                 {
                     jsonString = jsonString.Split("```json")[1].Split("```")[0].Trim();
                 }
                 else if (jsonString.Contains("```"))
                 {
-                     jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
+                    jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
                 }
 
                 return JsonSerializer.Deserialize<ResumeCleanSignal>(jsonString, options);
@@ -145,10 +179,59 @@ Output ONLY valid JSON. No markdown formatting. No preamble.";
             }
         }
 
+        private async Task GroundCleanSignalAsync(ResumeCleanSignal signal)
+        {
+            var roleTitles = signal.Roles.Select(r => r.Title).ToList();
+            var skillNames = signal.Skills.Select(s => s.Name).ToList();
+
+            if (roleTitles.Count == 0 && skillNames.Count == 0) return;
+
+            var allTexts = roleTitles.Concat(skillNames).ToList();
+
+            try
+            {
+                var embeddings = await _embeddingGenerator.GenerateAsync(allTexts);
+                var vectors = embeddings.Select(e => new Vector(e.Vector)).ToList();
+
+                for (int i = 0; i < roleTitles.Count; i++)
+                {
+                    var vector = vectors[i];
+                    var match = await _context.Roles
+                        .Where(r => r.Embedding != null)
+                        .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
+
+                    if (match != null && match.Distance < 0.6)
+                    {
+                        signal.Roles[i].Title = match.Title;
+                    }
+                }
+
+                int skillOffset = roleTitles.Count;
+                for (int i = 0; i < skillNames.Count; i++)
+                {
+                    var vector = vectors[skillOffset + i];
+                    var match = await _context.Skills
+                        .Where(s => s.Embedding != null)
+                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
+
+                    if (match != null && match.Distance < 0.6)
+                    {
+                        signal.Skills[i].Name = match.Name;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to ground resume signal. Proceeding with ungrounded data.");
+            }
+        }
+
         private static string BuildSymmetricString(ResumeCleanSignal signal)
         {
-            // Concatenate Roles and Skills for the vector embedding
-            // This ensures the vector represents the "Professional Identity"
             var sb = new StringBuilder();
 
             foreach (var role in signal.Roles)

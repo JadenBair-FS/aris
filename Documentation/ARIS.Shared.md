@@ -32,7 +32,27 @@ The Join Table representing the "Knowledge Graph" edges. It connects Roles to Sk
     *   **`Importance`**: How critical is this skill to this role?
     *   **`Level`**: What proficiency is required?
 
+### `UserProfile.cs` (Table: `user_profiles`)
+Stores the "Symmetric Professional Identity" of a candidate.
+*   **`CleanSignal`**: JSON representation of the candidate's skills and roles.
+*   **`Embedding`**: 384d vector generated from the Clean Signal.
+*   **`RawResume`**: JSON-wrapped raw text for auditability.
+
+### `JobPosting.cs` (Table: `job_postings`)
+Stores the "Symmetric Requirement Identity" of a job.
+*   **`CleanSignal`**: JSON representation of the job's mandatory and preferred skills.
+*   **`Embedding`**: 384d vector generated from the Clean Signal.
+
+### `MatchAnalysisResult.cs`
+The output DTO for the four-tier skill gap classification.
+*   **`MatchingSkills`**: Skills present in both the user profile and the job requirements.
+*   **`ImplicitlyDiscoveredSkills`**: Foundations granted because the user possesses child specializations (e.g., React implies JavaScript).
+*   **`PrerequisiteMetSkills`**: Missing skills where the user possesses a direct parent technology.
+*   **`BridgeableSkills`**: Missing skills reachable within the user's 2-hop graph neighborhood via lateral edges.
+*   **`HardGaps`**: Missing skills with no reachable path in the Knowledge Graph.
+
 ## 3. Tech Stack
 *   **.NET 10 Class Library**
 *   **Pgvector.EntityFrameworkCore:** Provides the `Vector` type mapping.
+*   **Microsoft.Extensions.AI.Abstractions:** Common AI models and contracts.
 *   **System.ComponentModel.DataAnnotations:** Provides schema constraints (`[Key]`, `[Required]`, `[Column]`).

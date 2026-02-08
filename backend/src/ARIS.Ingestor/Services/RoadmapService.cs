@@ -1,6 +1,6 @@
 using System.Net.Http.Json;
-using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
+using ARIS.Shared.Models.Ingestion.Roadmap;
 
 namespace ARIS.Ingestor.Services;
 
@@ -30,42 +30,4 @@ public class RoadmapService
             return null;
         }
     }
-}
-
-// --- DTOs for Roadmap.sh JSON Structure ---
-
-public class RoadmapDto
-{
-    [JsonPropertyName("title")]
-    public RoadmapTitleDto? Title { get; set; }
-
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-
-    [JsonPropertyName("nodes")]
-    public List<RoadmapNodeDto>? Nodes { get; set; }
-}
-
-public class RoadmapTitleDto
-{
-    [JsonPropertyName("card")]
-    public string? Card { get; set; }
-
-    [JsonPropertyName("page")]
-    public string? Page { get; set; }
-}
-
-public class RoadmapNodeDto
-{
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    [JsonPropertyName("data")]
-    public RoadmapNodeDataDto? Data { get; set; }
-}
-
-public class RoadmapNodeDataDto
-{
-    [JsonPropertyName("label")]
-    public string? Label { get; set; }
 }

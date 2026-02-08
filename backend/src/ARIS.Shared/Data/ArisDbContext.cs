@@ -19,10 +19,8 @@ public class ArisDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Enable pgvector extension
         modelBuilder.HasPostgresExtension("vector");
 
-        // Force lowercase table names for Postgres compatibility
         modelBuilder.Entity<RefSkill>().ToTable("ref_skills");
         modelBuilder.Entity<RefRole>().ToTable("ref_roles");
         modelBuilder.Entity<RefRoleSkill>().ToTable("ref_role_skills");
@@ -42,7 +40,6 @@ public class ArisDbContext : DbContext
             .WithMany()
             .HasForeignKey(rs => rs.SkillId);
             
-        // Unique constraints for names to prevent duplicates
         modelBuilder.Entity<RefSkill>()
             .HasIndex(s => s.Name)
             .IsUnique();

@@ -26,16 +26,20 @@ The main orchestrator (Hosted Service).
     6.  Delegates embedding generation to Semantic Kernel.
     7.  Saves `RefRole`, `RefSkill`, and `RefRoleSkill` links to DB.
 
-### `Services/OnetService.cs`
-The specialized HTTP client for O*NET.
-*   **Base URL:** `https://api-v2.onetcenter.org/`
-*   **Auth:** Uses `X-API-Key` header (Managed via User Secrets).
-*   **Endpoints:**
-    *   `/online/career_clusters/all`: Master list.
-    *   `/online/occupations/{code}/`: Basic details (Title, Description).
-    *   `/online/occupations/{code}/summary/tasks`: Granular task list.
-    *   `/online/occupations/{code}/summary/skills`: granular skill list.
-*   **Pagination:** Automatically handles `next` page links for large datasets.
+### `Services/OntologyEnrichmentService.cs`
+The "Intelligence" layer of the ingestion pipeline.
+*   **Role:** Solves the "Static Graph" problem by discovering horizontal transferability relationships.
+*   **Mechanism (Retrieval-Augmented Classification):**
+    1.  Retrieves all skills required for a specific Role from Neo4j.
+    2.  Prompts `llama3.1` to identify which pairs within that set are highly transferable (e.g., MySQL <-> PostgreSQL).
+    3.  Constrains the LLM to only select from existing graph nodes, preventing hallucination.
+    4.  Persists discovered pairs as bidirectional `BRIDGE_TO` edges.
+
+### `Services/Neo4jIngestionService.cs`
+The driver for graph persistence.
+*   **Constraints:** Enforces uniqueness for `onet_code` (Roles) and `name` (Skills).
+*   **Relationships:** Manages `REQUIRES`, `SUBSET_OF`, and `BRIDGE_TO` edge creation.
+*   **Analytics:** Provides clustering logic for role-skill neighborhoods.
 
 ## 3. Configuration & Setup
 
@@ -43,9 +47,23 @@ The specialized HTTP client for O*NET.
 *   **AI:** Connects to `Ollama` at `http://localhost:11434`.
 *   **Secrets:** API Keys are stored in .NET User Secrets to prevent accidental commits.
 
-## 4. Current Status (Jan 2026)
+## 4. Ingestion Strategy (Feb 2026 Update)
+
+To ensure a high-integrity graph suitable for Gap Analysis, the ingestion pipeline implements **Ontological Reconciliation**.
+
+1.  **Roadmap First (Vocabulary & technical hierarchy):** Technical roadmaps are ingested first to establish the industry-standard technical hierarchy. Specialized child nodes point to foundations: $(Child)\text{-[:SUBSET\_OF]->}(Parent)$.
+2.  **Semantic Deduplication:** During every ingestion step, the system performs a **Vector-Similarity check** (Threshold < 0.15). Incoming skills are mapped to existing canonical anchors if they are semantically identical (e.g., "Using Docker" maps to "Docker").
+3.  **O*NET Second (Professional Context):** O*NET Occupations are ingested and snapped to the clean technical vocabulary established in Step 1.
+4.  **Relationship Hierarchy:** The system establishes three relationship types:
+    *   `REQUIRES`: Role -> Skill.
+    *   `SUBSET_OF`: Child -> Parent (Vertical foundation).
+    *   `BRIDGE_TO`: Peer <-> Peer (Horizontal transferability).
+
+## 5. Current Status
 *   [x] O*NET API Integration (v2) - **997 Roles Ingested**
 *   [x] Database Schema with Lowercase convention (`ref_roles`, `ref_skills`)
 *   [x] Vector Embedding via Ollama (`all-minilm`) - **100% Coverage**
 *   [x] Roadmap.sh Integration - **22 Roadmaps Ingested (~2600 skills)**
+*   [x] **Symmetric Grounding** - implemented to normalize synonyms.
+*   [x] **Role Anchoring** - implemented to connect O*NET Roles to Roadmap Roots.
 *   [x] Relationship Linking (Roles <-> Skills) - **~29,000 Links**

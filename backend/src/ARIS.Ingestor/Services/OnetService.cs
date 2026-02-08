@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
+using ARIS.Shared.Models.Ingestion.Onet;
 
 namespace ARIS.Ingestor.Services;
 
@@ -37,7 +38,7 @@ public class OnetService
         _logger.LogInformation("Fetching all occupations from O*NET...");
         var occupations = new List<OccupationListDto>();
         int start = 1;
-        int end = 50; // Fetch in batches
+        int end = 50; 
         string? nextUrl = $"online/career_clusters/all?start={start}&end={end}";
 
         try 
@@ -54,14 +55,12 @@ public class OnetService
 
                 if (!string.IsNullOrEmpty(response?.Next))
                 {
-                    // If full URL, extracting path or using it directly if HttpClient wasn't bound to base.
-                    // Since BaseAddress is set, we need the relative path.
-                    // API returns: "https://services.onetcenter.org/ws/online/career_clusters/all?start=21&end=40"
+                   
                     var nextUri = new Uri(response.Next);
                     nextUrl = nextUri.PathAndQuery;
                     
-                    // Safety break restored for testing/maintenance
-                    if (occupations.Count >= 50) break; 
+                    // Safety break removed for full ingestion
+                    // if (occupations.Count >= 50) break; 
                 }
                 else
                 {
@@ -133,87 +132,4 @@ public class OnetService
             return null;
         }
     }
-}
-
-// --- DTOs Matching OpenAPI Schema ---
-
-public class OccupationListResponse
-{
-    [JsonPropertyName("start")]
-    public int Start { get; set; }
-
-    [JsonPropertyName("end")]
-    public int End { get; set; }
-
-    [JsonPropertyName("total")]
-    public int Total { get; set; }
-
-    [JsonPropertyName("next")]
-    public string? Next { get; set; }
-
-    [JsonPropertyName("occupation")]
-    public List<OccupationListDto>? Occupation { get; set; }
-}
-
-public class OccupationListDto
-{
-    [JsonPropertyName("code")]
-    public required string Code { get; set; }
-
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
-}
-
-public class OccupationSummaryDto
-{
-    [JsonPropertyName("code")]
-    public required string Code { get; set; }
-
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
-
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-}
-
-public class TasksResponse
-{
-    [JsonPropertyName("task")]
-    public List<TaskDto>? Task { get; set; }
-}
-
-public class TaskDto
-{
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
-}
-
-public class SkillsResponse
-{
-    [JsonPropertyName("element")]
-    public List<SkillElementDto>? Element { get; set; }
-}
-
-public class SkillElementDto
-{
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    [JsonPropertyName("name")]
-    public required string Name { get; set; }
-
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-}
-
-public class OccupationDetailsDto
-{
-    public required string Code { get; set; }
-    public required string Title { get; set; }
-    public string? Description { get; set; }
-    public List<string> Tasks { get; set; } = new();
-    public List<string> Skills { get; set; } = new();
 }

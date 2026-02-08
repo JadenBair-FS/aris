@@ -1,0 +1,10 @@
+One thing we have at Valve is data. Lots and lots of data. We also have statisticians, and we’re always looking to add to our team. Statisticians at Valve use their outstanding empirical research skills to turn that data into insights that guide product decisions and improve our customers' experiences. Some projects that Valve statisticians have worked on in the past include:
+
+Designing, developing, and validating statistical models to explain past behavior and to predict future behavior in Valve's products
+Improving Valve's existing metrics collection and analysis techniques to expand the range of questions we're able to explore
+Uncovering latent trends in customer behavior to improve existing products and inspire new features
+Providing quantitative rationale to inform group decision-making processes
+The statisticians that we currently have at Valve have a graduate degree in Statistics, Applied Mathematics, or a related field; substantial experience with statistics and data modeling in an applied context; knowledge of statistical techniques to build predictive models; proficiency writing and shipping SQL code in a large-scale relational database environment; and proficiency in programming languages such as C++, SQL, and PHP.
+
+Intrigued? Send us your resume.
+What We Offer

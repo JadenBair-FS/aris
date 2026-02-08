@@ -1,0 +1,88 @@
+Full job description
+Job Title: .NET Developer
+Location
+New York, NY (Hybrid/Onsite as required)
+
+Duration
+9 Months (Contract)
+
+Role Overview
+We are seeking an experienced .NET Developer to support the design, development, and enhancement of enterprise web applications. The role involves building new workflows, modernizing legacy services, and developing scalable, high-performance solutions using Microsoft .NET technologies. The developer will work closely with business and technical teams throughout the full software development lifecycle.
+
+Key Responsibilities
+Design & Architecture
+Design and develop new application workflows and front-end interfaces using ASP.NET and MVC architecture
+
+Analyze existing application code to support new adjudication and operational workflows
+
+Design and develop user management screens and case intake modules
+
+Build modern scanning and audio recording services, replacing legacy browser-dependent solutions
+
+Develop web services for automated nightly data exchanges and document generation
+
+Create logic to capture and display system errors and warnings across workflows
+
+Design batching and grouping functionality to process related records efficiently
+
+Implement multithreading techniques to improve application performance and scalability
+
+Develop high-level technical designs aligned with enterprise standards
+
+Development & Coding
+Develop applications using C#, VB.NET, ASP.NET, XML, JavaScript, HTML, Bootstrap, and AngularJS
+
+Apply design patterns such as SOA, MVC, Facade, Factory, Singleton
+
+Implement database access using Database Access Application Block (DAAB) and exception handling using EHAP
+
+Build new workflows for case intake, adjudication processes, and remote hearing support
+
+Develop and maintain REST/SOAP web services for automated file and document transfers
+
+Create custom reports based on business and operational requirements
+
+Modernize and refactor legacy services to meet current technology standards
+
+Testing & Deployment
+Design and execute unit test cases to identify and resolve defects early in the development cycle
+
+Perform unit, sanity, regression, and functional testing prior to QA handoff
+
+Support deployment activities across development and test environments
+
+Collaborate with QA teams to ensure application stability and quality
+
+Mandatory Qualifications
+Minimum 4+ years of professional experience in application development using .NET technologies
+
+Strong experience with:
+
+ASP.NET, C#, VB.NET
+
+MVC architecture and SOA-based applications
+
+JavaScript, HTML, DHTML, XML
+
+Database development and data manipulation
+
+Hands-on experience with:
+
+Software design, development, testing, and implementation
+
+Writing technical and user documentation
+
+Supporting software conversions and system enhancements
+
+Ability to assist or lead the design of program specifications and technical solutions
+
+Desired Skills & Qualifications
+Excellent verbal and written communication skills
+
+Ability to collaborate with executives, managers, and technical stakeholders
+
+Strong analytical and problem-solving skills
+
+Team-oriented mindset with the ability to work independently when needed
+
+Experience working in large-scale or enterprise application environments

@@ -29,7 +29,6 @@ public class DictionaryService
         var embeddings = await _embeddingGenerator.GenerateAsync([query]);
         var vectorData = embeddings[0].Vector;
         
-        // Log first few dimensions to see if it changes
         _logger.LogInformation("Vector Preview: [{V1}, {V2}, {V3}...]", vectorData.Span[0], vectorData.Span[1], vectorData.Span[2]);
 
         var vector = new Vector(vectorData);
@@ -46,8 +45,7 @@ public class DictionaryService
         _logger.LogInformation("Generating embedding for query: {Query}", query);
         var embeddings = await _embeddingGenerator.GenerateAsync([query]);
         var vectorData = embeddings[0].Vector;
-        
-        // Log first few dimensions
+
         _logger.LogInformation("Vector Preview: [{V1}, {V2}, {V3}...]", vectorData.Span[0], vectorData.Span[1], vectorData.Span[2]);
 
         var vector = new Vector(vectorData);

@@ -1,0 +1,39 @@
+Full job description
+About Blackhawk Network:
+At Blackhawk Network, we shape the future of global branded payments through the prepaid products, technologies and network that connect brands and people. Our collaborative innovation and scalable, security-minded solutions help our partners to increase reach, loyalty and revenue. We believe our future holds great things for Blackhawk Network and its partners. We believe that together, we can shape the future. Our beliefs? Win as one team, be innovative, global excellence and be inspiring!
+
+This position may be performed remotely anywhere within the United States except for the State of Alaska, North Dakota, or South Dakota.
+Overview:
+Blackhawk Network (BHN) is building a digital platform and products that bring people and brands together. We facilitate cross channel payments via cash-in, cash-out and mobile payments. By leveraging blockchain, smart contracts, serverless technology, real time payment systems, we are unlocking the next million users through innovation.
+
+
+Our employees are our biggest assets! Come find out how we engage, with the biggest brands in the world. We look for people who collaborate, who are inspirational, who have passion that can make a difference by working as a team while striving for global excellence. You can expect a strong investment in your professional growth, and a dedication to crafting a successful, sustainable career for you. Our teams are composed of highly talented and passionate 'A' players, who are also invested in mentoring and enabling the best qualities. Our vibrant culture and high expectations will kindle your passion and bring out the best in you!
+
+Responsibilities:
+Responsibilities
+Building stream-processing systems, using solutions such as Spark-Streaming.
+Building DevOps pipelines and CI/CD systems for the agile enterprise
+Build Large scale transaction processing systems with technologies such as REST, micro-services, Spark, Lambda processing, Kinesis, Elastic, AWS, and more.
+Data and Analytics platforms that applies ML/AI and Big Data techniques
+Real time risk/Fraud systems that detect and prevent financial fraud
+Building Secure and Scalable cloud infrastructure
+Areas of Disciplines:
+
+Cyber Security
+Big Data and ML
+Core Software Engineering
+Infrastructure and DevOps
+Product Management
+Enterprise Program Management
+UX
+Qualifications:
+Ideal Skill set:
+
+Demonstrate solid engineering fundamentals. Strong algorithms, data structures and coding background
+Education:
+
+Currently enrolled in a Bachelor’s/Master's degree program in STEM majors
+Must be enrolled in an accredited college or university
+Solid verbal and written communication skills
+Willingness to learn, be inquisitive and passionate
+Strong interpersonal and collaboration skills

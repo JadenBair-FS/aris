@@ -1,0 +1,37 @@
+Full job description
+Company: CPMC, LLC
+Contract: Government contract proposal with the Department of Navy
+
+Duration: Potential 5-year contract
+
+Position Levels: Junior-Level, Mid-Level, and Senior-Level
+
+Security Clearance: Active Security Clearance (Secret level or higher) preferred
+
+Overview:
+CPMC, LLC seeks motivated Database Management Analysts to join our team for an active government contract proposal with the Department of Navy. We are hiring for Junior-Level, Mid-Level, and Senior-Level positions to administer, test, and implement computer databases, utilizing expertise in database management systems.
+
+Responsibilities:
+Administer, test, and implement computer databases, ensuring optimal performance and reliability.
+Coordinate changes to computer databases and adapt to evolving requirements.
+Plan, coordinate, and enforce security measures to protect computer databases from unauthorized access and threats.
+Maintain databases within a specific application area, either independently or by coordinating as part of a team.
+Requirements:
+Junior-Level Position:
+Associate's degree in math, science, engineering, or a related field.
+Minimum of 1 year of professional experience in a related field.
+Developing and emerging skills in performing basic tasks independently and moderately complex tasks with oversight.
+Mid-Level Position:
+Bachelor's degree in math, science, engineering, or a related field.
+Minimum of 5 years of professional experience in a related field.
+Competent skills in performing moderately complex tasks independently, with guidance on more complex tasks.
+Senior-Level Position:
+Bachelor's degree in math, science, engineering, or a related field.
+Minimum of 10 years of professional experience in a related field.
+Proficient skills in performing complex tasks independently.
+Ability to guide and oversee junior and midlevel team members.
+Desired Skills:
+Strong analytical and problemsolving capabilities.
+Experience with database management systems like SQL Server, Oracle, or others.
+Excellent communication and teamwork skills.
+Knowledge of database security and data protection protocols.

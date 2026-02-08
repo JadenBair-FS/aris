@@ -36,7 +36,6 @@ namespace ARIS.API.Services
                     NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
                 };
 
-                // Extract Clean Signal
                 var cleanSignal = await ExtractJobCleanSignalAsync(rawDescription, options);
                 if (cleanSignal == null)
                 {
@@ -44,12 +43,12 @@ namespace ARIS.API.Services
                     return null;
                 }
 
-                // Vectorize
+                await GroundCleanSignalAsync(cleanSignal);
+
                 var symmetricString = BuildSymmetricString(cleanSignal);
                 var embeddings = await _embeddingGenerator.GenerateAsync([symmetricString]);
                 var vectorData = embeddings[0].Vector;
 
-                // Save
                 var jobPosting = new JobPosting
                 {
                     RecruiterId = recruiterId,
@@ -77,23 +76,21 @@ namespace ARIS.API.Services
             var userProfile = await _context.UserProfiles.FindAsync(userProfileId);
             if (userProfile?.Embedding == null || userProfile.CleanSignal == null)
             {
-                return new JobRecommendationResponse 
-                { 
-                    Matches = [], 
-                    Analysis = "User profile not found or incomplete." 
+                return new JobRecommendationResponse
+                {
+                    Matches = [],
+                    Analysis = "User profile not found or incomplete."
                 };
             }
 
-            // Semantic Search using Cosine Distance
-            // We select both the entity and the distance
             var matches = await _context.JobPostings
                 .Where(j => j.Embedding != null)
-                .Select(j => new 
-                { 
-                    Job = j, 
-                    Distance = j.Embedding!.CosineDistance(userProfile.Embedding) 
+                .Select(j => new
+                {
+                    Job = j,
+                    Distance = j.Embedding!.CosineDistance(userProfile.Embedding)
                 })
-                .Where(x => x.Distance < 0.65) //filter out distant matches 
+                .Where(x => x.Distance < 0.65)
                 .OrderBy(x => x.Distance)
                 .Take(limit)
                 .ToListAsync();
@@ -103,7 +100,7 @@ namespace ARIS.API.Services
                 JobId = x.Job.Id,
                 Job = x.Job,
                 Distance = x.Distance,
-                Score = 1 - x.Distance //convert distance to similarity score
+                Score = 1 - x.Distance
             }).ToList();
 
             if (mappedMatches.Count == 0)
@@ -115,7 +112,6 @@ namespace ARIS.API.Services
                 };
             }
 
-            // Generate LLM Analysis
             var analysis = await GenerateMatchAnalysisAsync(userProfile.CleanSignal, [.. mappedMatches.Take(3)]);
 
             return new JobRecommendationResponse
@@ -129,31 +125,26 @@ namespace ARIS.API.Services
         {
             try
             {
-                var sb = new StringBuilder();
-                sb.AppendLine("You are an expert Career Counselor. Analyze the fit between the Candidate and these Job Matches.");
-                sb.AppendLine("Provide a brief summary of why these are good matches and highlight 1-2 key skill gaps if any.");
-                sb.AppendLine();
-                
-                sb.AppendLine("CANDIDATE PROFILE:");
-                sb.AppendLine($"- Roles: {string.Join(", ", userProfile.Roles.Select(r => r.Title))}");
-                sb.AppendLine($"- Skills: {string.Join(", ", userProfile.Skills.Select(s => s.Name))}");
-                sb.AppendLine();
+                var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "MatchAnalysis.md");
+                var template = await File.ReadAllTextAsync(promptPath);
 
-                sb.AppendLine("TOP JOB MATCHES:");
+                var sbMatches = new StringBuilder();
                 foreach (var match in topMatches)
                 {
                     if (match.Job?.CleanSignal == null) continue;
-                    
                     var signal = match.Job.CleanSignal;
-                    sb.AppendLine($"Job: {string.Join("/", signal.TargetRoles.Select(t => t.Title))}");
-                    sb.AppendLine($"   Required: {string.Join(", ", signal.RequiredSkills.Select(s => s.Name))}");
-                    sb.AppendLine($"   Match Score: {match.Score:P0}");
-                    sb.AppendLine();
+                    sbMatches.AppendLine($"Job: {string.Join("/", signal.TargetRoles.Select(t => t.Title))}");
+                    sbMatches.AppendLine($"   Required: {string.Join(", ", signal.RequiredSkills.Select(s => s.Name))}");
+                    sbMatches.AppendLine($"   Match Score: {match.Score:P0}");
+                    sbMatches.AppendLine();
                 }
 
-                sb.AppendLine("ANALYSIS (Keep it concise, under 150 words):");
+                var prompt = template
+                    .Replace("{candidate_roles}", string.Join(", ", userProfile.Roles.Select(r => r.Title)))
+                    .Replace("{candidate_skills}", string.Join(", ", userProfile.Skills.Select(s => s.Name)))
+                    .Replace("{job_matches}", sbMatches.ToString());
 
-                var response = await _chatClient.GetResponseAsync(sb.ToString());
+                var response = await _chatClient.GetResponseAsync(prompt);
                 return response.Text ?? "Analysis could not be generated.";
             }
             catch (Exception ex)
@@ -163,24 +154,110 @@ namespace ARIS.API.Services
             }
         }
 
+        private async Task GroundCleanSignalAsync(JobPostingCleanSignal signal)
+        {
+            var roleTitles = signal.TargetRoles.Select(r => r.Title).ToList();
+            var skillNames = signal.RequiredSkills.Select(s => s.Name).ToList();
+
+            if (roleTitles.Count == 0 && skillNames.Count == 0) return;
+
+            var allTexts = roleTitles.Concat(skillNames).ToList();
+
+            try
+            {
+                var embeddings = await _embeddingGenerator.GenerateAsync(allTexts);
+                var vectors = embeddings.Select(e => new Vector(e.Vector)).ToList();
+
+                for (int i = 0; i < roleTitles.Count; i++)
+                {
+                    var vector = vectors[i];
+                    var match = await _context.Roles
+                        .Where(r => r.Embedding != null)
+                        .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
+
+                    if (match != null && match.Distance < 0.6)
+                    {
+                        signal.TargetRoles[i].Title = match.Title;
+                    }
+                }
+
+                int skillOffset = roleTitles.Count;
+                for (int i = 0; i < skillNames.Count; i++)
+                {
+                    var vector = vectors[skillOffset + i];
+                    var match = await _context.Skills
+                        .Where(s => s.Embedding != null)
+                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
+
+                    if (match != null && match.Distance < 0.6)
+                    {
+                        signal.RequiredSkills[i].Name = match.Name;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to ground job signal. Proceeding with ungrounded data.");
+            }
+        }
+
+        private async Task<(string roles, string skills)> RetrieveReferenceVocabularyAsync(string rawText)
+        {
+            try
+            {
+                var embeddings = await _embeddingGenerator.GenerateAsync([rawText]);
+                var vector = new Vector(embeddings[0].Vector);
+
+                var topRoles = await _context.Roles
+                    .Where(r => r.Embedding != null)
+                    .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .Take(15)
+                    .ToListAsync();
+
+                var topSkills = await _context.Skills
+                    .Where(s => s.Embedding != null)
+                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .Take(50)
+                    .ToListAsync();
+
+                return (
+                    string.Join(", ", topRoles.Select(r => r.Title)),
+                    string.Join(", ", topSkills.Select(s => s.Name))
+                );
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary. Proceeding without it.");
+                return ("", "");
+            }
+        }
+
         private async Task<JobPostingCleanSignal?> ExtractJobCleanSignalAsync(string rawText, JsonSerializerOptions options)
         {
-             var prompt = $@"
-You are a Recruitment Intelligence Engine. Your task is to parse the following Job Description into a standardized JSON format.
-Identify the Core Target Roles and Essential Skills required.
+            string prompt;
+            try
+            {
+                var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "JobExtraction.md");
+                var template = await File.ReadAllTextAsync(promptPath);
 
-Required JSON Schema:
-{{
-  ""target_roles"": [ {{ ""title"": ""string"", ""priority"": ""string (Primary/Secondary)"" }} ],
-  ""required_skills"": [ {{ ""name"": ""string"", ""importance"": ""string (Essential/Preferred)"" }} ],
-  ""responsibilities"": [ ""string"" ],
-  ""minimum_education"": [ {{ ""degree"": ""string"", ""required"": ""string (true/false)"" }} ]
-}}
+                var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
 
-JOB DESCRIPTION:
-{rawText}
-
-Output ONLY valid JSON. No markdown formatting. No preamble.";
+                prompt = template
+                    .Replace("{reference_roles}", refRoles)
+                    .Replace("{reference_skills}", refSkills)
+                    .Replace("{raw_text}", rawText);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to load Job Extraction prompt.");
+                return null;
+            }
 
             try
             {
@@ -196,7 +273,7 @@ Output ONLY valid JSON. No markdown formatting. No preamble.";
                 }
                 else if (jsonString.Contains("```"))
                 {
-                     jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
+                    jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
                 }
 
                 return JsonSerializer.Deserialize<JobPostingCleanSignal>(jsonString, options);
@@ -210,7 +287,6 @@ Output ONLY valid JSON. No markdown formatting. No preamble.";
 
         private static string BuildSymmetricString(JobPostingCleanSignal signal)
         {
-            // Concatenate Target Roles and Required Skills
             var sb = new StringBuilder();
 
             foreach (var role in signal.TargetRoles)

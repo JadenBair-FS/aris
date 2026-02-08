@@ -1,0 +1,31 @@
+Full job description
+GumGum is the contextual-first technology leader transforming digital advertising with AI-powered, non-invasive data and media solutions. We champion effective advertising that uplifts and respects consumers. Our proprietary Contextual, Attention, and Creative solutions create the perfect match between a brand and a consumer in the right moment and mindset. Founded in 2008, GumGum is headquartered in Santa Monica, California, and operates in 19+ markets.
+
+To be a part of this next phase of digital advertising that prioritizes data privacy, please visit www.gumgum.com/careers
+
+The Data Scientist I supports the development and deployment of Machine Learning (ML), statistical analysis, and Artificial Intelligence (AI) solutions that improve the relevance and value of ads across our Ad Exchange, Contextual Platform, and Attention Measurement Platform. This role focuses on applying strong analytical foundations, building and evaluating ML models, and partnering closely with the Engineering, Product, and Data Science team to improve ad-serving performance and operational decision-making.
+
+The ideal candidate is curious, data-driven, and eager to develop a strong understanding of the advertising domain and the systems that power large-scale decision-making. You will work with large datasets, contribute to production ML systems, and gain hands-on experience across the ML lifecycle — from exploration to monitoring.
+
+Note: GumGum fosters a flexible work environment, offering GumGummers the ability to work either in-office or remotely/from home. For this position, in-person/office collaboration is required 2 days per week, supporting a balanced approach to flexibility and team engagement.
+
+What You'll Achieve
+
+Support the translation of business and product requirements into data-driven analyses and ML solutions
+Partner with Engineering team members and senior Data Scientists to develop, test, and deploy ML models
+Conduct exploratory data analysis to inform feature development and modeling approaches
+Query, clean, and structure large datasets using SQL, Spark, and cloud data platforms
+Train, evaluate, and iterate on ML models under guidance from senior team members
+Contribute to existing MLOps workflows for model training, deployment, and monitoring
+Help define and track Key Performance Indicators in our Business Intelligence tools to measure model performance and downstream impact
+Document analyses, models, and learnings to support knowledge sharing across the team
+Continuously learn new ML techniques, tools, and advertising-domain concepts
+Skills You'll Bring
+
+Bachelor's degree in Statistics, Mathematics, Physics, Economics, Computer Science or a related quantitative or technical field
+1–2+ years in a data-driven role (Analytics, Data Science, or similar)
+- WE ARE OPEN TO RECENT GRADS WITH INTERNSHIP EXPERIENCE
+Experience applying ML and statistical methods to real-world datasets
+Experience collaborating with Engineering and/or Product teams
+Nice to have: exposure to production ML systems or MLOps tools (MLFlow, Weights & Biases, etc,)
+Nice to have: familiarity with advertising, marketplaces, or large-scale decision systems

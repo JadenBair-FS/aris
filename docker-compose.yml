@@ -22,7 +22,8 @@ services:
       - "7474:7474" # HTTP Console
       - "7687:7687" # Bolt Protocol
     environment:
-      NEO4J_AUTH: ${NEO4J_AUTH}
+      NEO4J_AUTH: neo4j/aris_password_local
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs

@@ -1,0 +1,52 @@
+Full job description
+The IT Business Systems Analyst (BSA) serves as the primary liaison between business stakeholders and product and web technology teams in a SaaS environment. This role is responsible for analyzing complex business problems, designing scalable system solutions, and ensuring the successful delivery of technology initiatives aligned with Stanbridge University’s strategic goals.
+
+The BSA plays a critical role in high-volume user story creation, acceptance criteria development, backlog management, and sprint readiness, translating business objectives into clear, actionable, and testable requirements that enable efficient development and quality delivery across multiple concurrent initiatives.
+
+Essential Functions:
+Lead end-to-end analysis of business processes, system capabilities, and user needs to define functional and technical requirements.
+Own and maintain large, continuously evolving product backlogs, producing a high volume of well-structured user stories with clear, complete, and testable acceptance criteria.
+Translate business objectives into sprint-ready user stories that include detailed functional, non-functional, and edge-case acceptance criteria.
+Define acceptance criteria using industry best practices (e.g., Given/When/Then, behavior-driven development concepts) to ensure stories are unambiguous and verifiable.
+Decompose complex requirements into appropriately sized stories using effective story slicing, dependency management, and prioritization techniques.
+Facilitate backlog refinement, grooming, and sprint planning sessions to ensure stories meet Definition of Ready (DoR) standards, including well-defined acceptance criteria.
+Act as the primary liaison between business units, Product Management, Developers, and QA teams to align on scope, priorities, and acceptance expectations.
+Partner closely with QA teams to ensure acceptance criteria support efficient test case creation, validation, and regression testing.
+Identify system gaps and recommend enhancements through feasibility studies, cost-benefit analyses, and risk assessments.
+Ensure solutions adhere to standards for security, compliance, accessibility, and data governance.
+Maintain traceability between business objectives, user stories, acceptance criteria, and delivered functionality while supporting continuous improvement.
+Minimum Qualifications:
+Bachelor’s degree in Information Systems, Computer Science, Business Administration, or a related field.
+7–10 years of experience in business systems analysis, with at least 2 years in a lead or senior role.
+Demonstrated experience producing high volumes of user stories with detailed acceptance criteria in Agile development environments.
+Strong expertise in acceptance criteria definition, user story frameworks, and backlog management.
+Hands-on experience working in Agile/Scrum environments with fast-paced sprint cadences.
+Proven experience leading cross-functional collaboration across business, product, development, and QA teams.
+Experience using project management and visualization tools such as ClickUp and Visio.
+Strong background in systems integration, data analysis, and process mapping.
+Working knowledge of API integrations, cloud platforms, and workflow automation.
+Familiarity with both Agile/Scrum and Waterfall methodologies.
+Preferred Qualifications:
+
+Proficiency in SQL, data modeling, and reporting tools (e.g., Power BI, Tableau).
+Experience working with LMS platforms.
+Experience using project management and visualization tools such as ClickUp and Visio.
+Conditions of Employment:
+A job-related assessment may be required during the interview process.
+Must be able to perform each essential duty satisfactorily and be physically present in the office (unless otherwise noted).
+Employment verification will be conducted to validate work experience per accreditation standards.
+Offers of employment are contingent upon the successful completion of a background check.
+Reasonable accommodations may be made to enable individuals with disabilities to perform essential functions.
+$90,000-$110,000/yr. Compensation is based on education and experience.
+Work Environment:
+Standard office/classroom/lab or clinical setting.
+Duties are typically performed while sitting at a desk or computer workstation.
+May include time spent in skills labs or bedside environments as required by the program.
+Subject to frequent interruptions, noise from talking or office equipment, and demanding timelines.
+Physical Demands:
+Regularly sits for extended periods.
+Physical ability to perform program- or department-related duties.
+Proficient in using electronic keyboards and office equipment.
+Effective verbal communication via phone and in person.
+Ability to read fine print, operate computers, and understand voices clearly.
+Able to lift, carry, and/or move objects weighing 10–25 pounds as needed.

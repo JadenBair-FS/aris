@@ -1,0 +1,109 @@
+Full job description
+Posting Number
+req24393
+
+Department
+Civil Arch Engr and Mechanics
+
+Department Website Link
+https://caem.engineering.arizona.edu/
+
+Location
+Main Campus
+
+Address
+1209 East 2nd Street, , Tucson, AZ 85721-0104 USA
+
+Position Highlights
+The Center for Applied Transportation Sciences (CATS) in the College of Engineering at the University of Arizona works with partnering agencies and institutions on research and education in transportation systems management and operations, and performance management, as well as mobility on demand.
+
+The University of Arizona seeks a qualified applicant for the position of Database Administrator for our Tucson area location.
+
+The Database Administrator will provide systematical solutions to support the service in transportation research and help the center to manage inventory, database design and management, programming projects, and IT device maintenance using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+
+Responsibilities include: provide systematical solutions to support the service in transportation research and help the center to manage inventory, database design and management, programming projects, and IT device maintenance using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+
+The position requires a Bachelor’s degree in Management Information Systems or Computer Science, or foreign equivalent.
+
+This position is non-security sensitive and requires a name-based criminal background check.
+
+Outstanding U of A benefits include health, dental, and vision insurance plans; life insurance and disability programs; paid vacation, sick leave, and holidays; U of A/ASU/NAU tuition reduction for the employee and qualified family members; retirement plans; access to U of A recreation and cultural activities; and more!
+
+The University of Arizona has been recognized for our innovative work-life programs.
+
+
+
+Duties & Responsibilities
+The Database Administrator will provide systematical solutions to support the service in transportation research and help the center to manage inventory, database design and management, programming projects, and IT device maintenance using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+Design databases for storing transportation-related data and support transportation analysis, project needs, and application features using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+Optimize databases for fast data retrieval and handle data sharing and integration with various applications using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+Design and maintain data management lifecycle; document system operation; and spec and set up new servers using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+Mentor students in data visualization and analysis, and developing new modules in SMART Tools using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+Repair and set up computers for the center and provide software and hardware support for center staff using the knowledge of Information Systems Analysis and Design; Data Management & Big Data Technology; Consulting & Solution Architecture.
+
+This job posting reflects the general nature and level of work expected of the selected candidate(s). It is not intended to be an exhaustive list of all duties and responsibilities. The institution reserves the right to amend or update this description as organizational priorities and institutional needs evolve.
+
+
+
+Minimum Qualifications
+Bachelor’s degree in Management Information Systems or Computer Science, or foreign equivalent.
+
+Preferred Qualifications
+
+FLSA
+Exempt
+
+Full Time/Part Time
+Full Time
+
+Number of Hours Worked per Week
+40
+
+Job FTE
+1.0
+
+Work Calendar
+Fiscal
+
+Job Category
+Information Technology
+
+Benefits Eligible
+Yes - Full Benefits
+
+Rate of Pay
+$84,160
+
+Compensation Type
+salary at 1.0 full-time equivalency (FTE)
+
+Grade
+9
+
+Compensation Guidance
+The Rate of Pay Field represents the University of Arizona’s good faith and reasonable estimate of the range of possible compensation at the time of posting. The University considers several factors when extending an offer, including but not limited to, the role and associated responsibilities, a candidate’s work experience, education/training, key skills, and internal equity.
+
+The Grade Range represent a full range of career compensation growth over time. The university offers compensation growth opportunities within its career architecture. To learn more about compensation, please review our Applicant Compensation Guide and our Total Rewards Calculator.
+
+Career Stream and Level
+PC1
+
+Job Family
+Database Development & Admin
+
+Job Function
+Information Technology
+
+Type of criminal background check required:
+Name-based criminal background check (non-security sensitive)
+
+Number of Vacancies
+1
+
+Target Hire Date
+
+Expected End Date
+
+Contact Information for Candidates
+Dr. Yao-Jan Wu, Professor
+yaojan@arizona.edu

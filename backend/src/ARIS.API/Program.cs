@@ -1,6 +1,5 @@
 using ARIS.Shared.Data;
 using Microsoft.EntityFrameworkCore;
-using OllamaSharp.Models;
 using Microsoft.Extensions.AI;
 using Npgsql;
 using Scalar.AspNetCore;
@@ -34,6 +33,9 @@ builder.Services.AddSingleton<IChatClient>(sp =>
 builder.Services.AddScoped<ARIS.API.Services.DictionaryService>();
 builder.Services.AddScoped<ARIS.API.Services.ResumeService>();
 builder.Services.AddScoped<ARIS.API.Services.JobService>();
+builder.Services.AddScoped<ARIS.API.Services.MatchService>();
+builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
+builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 
 // CORS
 builder.Services.AddCors(options =>
