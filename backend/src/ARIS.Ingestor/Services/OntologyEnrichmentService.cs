@@ -9,42 +9,32 @@ namespace ARIS.Ingestor.Services;
 public class OntologyEnrichmentService
 {
     private readonly IChatClient _chatClient;
+    private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
     private readonly ILogger<OntologyEnrichmentService> _logger;
     private readonly string _promptPath;
     private readonly string _dependencyPromptPath;
 
-    public OntologyEnrichmentService(IChatClient chatClient, ILogger<OntologyEnrichmentService> logger)
+    public OntologyEnrichmentService(
+        IChatClient chatClient, 
+        IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator,
+        ILogger<OntologyEnrichmentService> logger)
     {
         _chatClient = chatClient;
+        _embeddingGenerator = embeddingGenerator;
         _logger = logger;
         _promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "OntologyEnrichment.md");
         _dependencyPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "DependencyDetection.md");
     }
 
-    public async Task<List<BridgePair>> FindBridgesAsync(string roleName, List<string> skills, CancellationToken ct = default)
+    public async Task<List<BridgePair>> FindBridgesAsync(string roleName, List<string> skills, List<(string Child, string Parent)> hierarchies, CancellationToken ct = default)
     {
         if (skills.Count < 2) return new List<BridgePair>();
 
         string promptTemplate;
         try
         {
-             if (!File.Exists(_promptPath))
-             {
-                 var debugPath = Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/OntologyEnrichment.md");
-                 if (File.Exists(debugPath))
-                 {
-                    promptTemplate = await File.ReadAllTextAsync(debugPath, ct);
-                 }
-                 else
-                 {
-                     _logger.LogError("Prompt file not found at {Path}", _promptPath);
-                     return new List<BridgePair>();
-                 }
-             }
-             else
-             {
-                 promptTemplate = await File.ReadAllTextAsync(_promptPath, ct);
-             }
+             var path = File.Exists(_promptPath) ? _promptPath : Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/OntologyEnrichment.md");
+             promptTemplate = await File.ReadAllTextAsync(path, ct);
         }
         catch (Exception ex)
         {
@@ -52,52 +42,146 @@ public class OntologyEnrichmentService
              return new List<BridgePair>();
         }
 
+        var skillList = string.Join("\n", skills.Select(s => $"- {s}"));
         var prompt = promptTemplate
             .Replace("{role_name}", roleName)
-            .Replace("{skills_json}", JsonSerializer.Serialize(skills));
+            .Replace("{skills_json}", skillList);
         
+        var text = string.Empty;
         try
         {
-            var response = await _chatClient.GetResponseAsync(prompt, cancellationToken: ct);
-            var text = response.Text?.Trim();
+            _logger.LogInformation("Analyzing {Count} skills for bridges in role '{Role}' (Single Pass)", skills.Count, roleName);
+
+            var messages = new List<ChatMessage>
+            {
+                new ChatMessage(ChatRole.System, "You are an exhaustive Data Extraction tool. Your goal is to identify ALL possible highly transferable skill pairs from the provided list. Return a JSON object with a 'bridges' key. Be comprehensive and thorough."),
+                new ChatMessage(ChatRole.User, prompt)
+            };
+
+            var chatOptions = new ChatOptions 
+            { 
+                ResponseFormat = ChatResponseFormat.Json,
+                Temperature = 0.1f,
+                AdditionalProperties = new AdditionalPropertiesDictionary
+                {
+                    ["num_ctx"] = 8192,
+                    ["num_gpu"] = 35,
+                    ["num_thread"] = 8
+                }
+            };
+
+            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: ct);
+            text = response.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(text)) return new List<BridgePair>();
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
-            // Strip markdown code fences if present (```json ... ``` or ``` ... ```)
-            text = Regex.Replace(text, @"```(?:json)?\s*", "").Trim();
-            text = Regex.Replace(text, @"//.*", "");
-
-            try
+            // Clean up markdown code blocks if present
+            if (text.Contains("```json"))
             {
-                var direct = JsonSerializer.Deserialize<List<BridgePair>>(text, options);
-                if (direct != null) return direct.Where(x => !string.IsNullOrEmpty(x.Source) && !string.IsNullOrEmpty(x.Target)).ToList();
+                text = text.Split("```json")[1].Split("```")[0].Trim();
             }
-            catch { }
-
-            var match = Regex.Match(text, @"\[\s*\{.*\}\s*\]", RegexOptions.Singleline);
-            if (match.Success)
+            else if (text.Contains("```"))
             {
-                try
+                text = text.Split("```")[1].Split("```")[0].Trim();
+            }
+
+            using var doc = JsonDocument.Parse(text);
+            var result = new List<BridgePair>();
+
+            // 1. Try specifically for the "bridges" key first
+            if (doc.RootElement.ValueKind == JsonValueKind.Object && doc.RootElement.TryGetProperty("bridges", out var bridgesProp))
+            {
+                if (bridgesProp.ValueKind == JsonValueKind.Array)
                 {
-                    var result = JsonSerializer.Deserialize<List<BridgePair>>(match.Value, options);
-                    return result?.Where(x => !string.IsNullOrEmpty(x.Source) && !string.IsNullOrEmpty(x.Target)).ToList() ?? new List<BridgePair>();
+                    foreach (var item in bridgesProp.EnumerateArray())
+                    {
+                        var pair = ParseBridgePair(item);
+                        if (pair != null) result.Add(pair);
+                    }
+                    _logger.LogInformation("  + Found {Count} bridges (from 'bridges' key).", result.Count);
+                    return result;
                 }
-                catch { }
+            }
+            
+            // 2. Fallback to direct array
+            if (doc.RootElement.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var item in doc.RootElement.EnumerateArray())
+                {
+                    var pair = ParseBridgePair(item);
+                    if (pair != null) result.Add(pair);
+                }
+                _logger.LogInformation("  + Found {Count} bridges.", result.Count);
+                return result;
+            }
+            
+            if (doc.RootElement.ValueKind == JsonValueKind.Object)
+            {
+                // Check if it's a single bridge pair
+                var singlePair = ParseBridgePair(doc.RootElement);
+                if (singlePair != null)
+                {
+                    _logger.LogInformation("  + Found 1 bridge (single object).");
+                    return new List<BridgePair> { singlePair };
+                }
+
+                foreach (var prop in doc.RootElement.EnumerateObject())
+                {
+                    if (prop.Value.ValueKind == JsonValueKind.Array)
+                    {
+                        foreach (var item in prop.Value.EnumerateArray())
+                        {
+                            var pair = ParseBridgePair(item);
+                            if (pair != null) result.Add(pair);
+                        }
+                        _logger.LogInformation("  + Found {Count} bridges (nested).", result.Count);
+                        return result;
+                    }
+                }
             }
 
-            if (Regex.IsMatch(text, @"\[\s*\]"))
-                return new List<BridgePair>();
-
-            _logger.LogWarning("Could not extract JSON array from LLM response. Response: {Response}", text);
-            return new List<BridgePair>();
+            return result;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to analyze siblings for bridges.");
+            _logger.LogWarning("Failed to parse JSON from: {Text}. Error: {Msg}", text, ex.Message);
             return new List<BridgePair>();
         }
+    }
+
+    private BridgePair? ParseBridgePair(JsonElement element)
+    {
+        if (element.ValueKind != JsonValueKind.Object) return null;
+
+        string? source = null;
+        string? target = null;
+
+        if (element.TryGetProperty("source", out var sProp))
+        {
+            source = sProp.ValueKind switch
+            {
+                JsonValueKind.String => sProp.GetString(),
+                JsonValueKind.Array when sProp.GetArrayLength() > 0 => sProp[0].GetString(),
+                _ => null
+            };
+        }
+
+        if (element.TryGetProperty("target", out var tProp))
+        {
+            target = tProp.ValueKind switch
+            {
+                JsonValueKind.String => tProp.GetString(),
+                JsonValueKind.Array when tProp.GetArrayLength() > 0 => tProp[0].GetString(),
+                _ => null
+            };
+        }
+
+        if (!string.IsNullOrWhiteSpace(source) && !string.IsNullOrWhiteSpace(target))
+        {
+            return new BridgePair { Source = source, Target = target };
+        }
+
+        return null;
     }
 
     public async Task<List<DependencyPair>> FindDependenciesAsync(string roleName, List<string> skills, CancellationToken ct = default)
@@ -107,23 +191,8 @@ public class OntologyEnrichmentService
         string promptTemplate;
         try
         {
-            if (!File.Exists(_dependencyPromptPath))
-            {
-                var debugPath = Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/DependencyDetection.md");
-                if (File.Exists(debugPath))
-                {
-                    promptTemplate = await File.ReadAllTextAsync(debugPath, ct);
-                }
-                else
-                {
-                    _logger.LogError("Prompt file not found at {Path}", _dependencyPromptPath);
-                    return new List<DependencyPair>();
-                }
-            }
-            else
-            {
-                promptTemplate = await File.ReadAllTextAsync(_dependencyPromptPath, ct);
-            }
+            var path = File.Exists(_dependencyPromptPath) ? _dependencyPromptPath : Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/DependencyDetection.md");
+            promptTemplate = await File.ReadAllTextAsync(path, ct);
         }
         catch (Exception ex)
         {
@@ -131,50 +200,144 @@ public class OntologyEnrichmentService
             return new List<DependencyPair>();
         }
 
+        var skillList = string.Join("\n", skills.Select(s => $"- {s}"));
         var prompt = promptTemplate
             .Replace("{role_name}", roleName)
-            .Replace("{skills_json}", JsonSerializer.Serialize(skills));
+            .Replace("{skills_json}", skillList);
 
+        var text = string.Empty;
         try
         {
-            var response = await _chatClient.GetResponseAsync(prompt, cancellationToken: ct);
-            var text = response.Text?.Trim();
+            _logger.LogInformation("Analyzing {Count} skills for dependencies in role '{Role}' (Single Pass)", skills.Count, roleName);
+
+            var messages = new List<ChatMessage>
+            {
+                new ChatMessage(ChatRole.System, "You are an exhaustive Data Extraction tool. Your goal is to identify ALL technical dependencies (prerequisites) from the provided list. Return a JSON object with a 'dependencies' key. Be comprehensive and thorough."),
+                new ChatMessage(ChatRole.User, prompt)
+            };
+
+            var chatOptions = new ChatOptions 
+            { 
+                ResponseFormat = ChatResponseFormat.Json,
+                Temperature = 0.1f,
+                AdditionalProperties = new AdditionalPropertiesDictionary
+                {
+                    ["num_ctx"] = 8192,
+                    ["num_gpu"] = 35,
+                    ["num_thread"] = 8
+                }
+            };
+
+            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: ct);
+            text = response.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(text)) return new List<DependencyPair>();
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
-            text = Regex.Replace(text, @"```(?:json)?\s*", "").Trim();
-            text = Regex.Replace(text, @"//.*", "");
-
-            try
+            // Clean up markdown code blocks if present
+            if (text.Contains("```json"))
             {
-                var direct = JsonSerializer.Deserialize<List<DependencyPair>>(text, options);
-                if (direct != null) return direct.Where(x => !string.IsNullOrEmpty(x.Child) && !string.IsNullOrEmpty(x.Parent)).ToList();
+                text = text.Split("```json")[1].Split("```")[0].Trim();
             }
-            catch { }
-
-            var match = Regex.Match(text, @"\[\s*\{.*\}\s*\]", RegexOptions.Singleline);
-            if (match.Success)
+            else if (text.Contains("```"))
             {
-                try
+                text = text.Split("```")[1].Split("```")[0].Trim();
+            }
+
+            using var doc = JsonDocument.Parse(text);
+            var result = new List<DependencyPair>();
+
+            // 1. Try specifically for the "dependencies" key first
+            if (doc.RootElement.ValueKind == JsonValueKind.Object && doc.RootElement.TryGetProperty("dependencies", out var depsProp))
+            {
+                if (depsProp.ValueKind == JsonValueKind.Array)
                 {
-                    var result = JsonSerializer.Deserialize<List<DependencyPair>>(match.Value, options);
-                    return result?.Where(x => !string.IsNullOrEmpty(x.Child) && !string.IsNullOrEmpty(x.Parent)).ToList() ?? new List<DependencyPair>();
+                    foreach (var item in depsProp.EnumerateArray())
+                    {
+                        var pair = ParseDependencyPair(item);
+                        if (pair != null) result.Add(pair);
+                    }
+                    _logger.LogInformation("  + Found {Count} dependencies (from 'dependencies' key).", result.Count);
+                    return result;
                 }
-                catch { }
+            }
+            
+            if (doc.RootElement.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var item in doc.RootElement.EnumerateArray())
+                {
+                    var pair = ParseDependencyPair(item);
+                    if (pair != null) result.Add(pair);
+                }
+                _logger.LogInformation("  + Found {Count} dependencies.", result.Count);
+                return result;
             }
 
-            if (Regex.IsMatch(text, @"\[\s*\]"))
-                return new List<DependencyPair>();
+            if (doc.RootElement.ValueKind == JsonValueKind.Object)
+            {
+                // Check if it's a single dependency pair
+                var singlePair = ParseDependencyPair(doc.RootElement);
+                if (singlePair != null)
+                {
+                    _logger.LogInformation("  + Found 1 dependency (single object).");
+                    return new List<DependencyPair> { singlePair };
+                }
 
-            _logger.LogWarning("Could not extract JSON array from dependency LLM response. Response: {Response}", text);
-            return new List<DependencyPair>();
+                foreach (var prop in doc.RootElement.EnumerateObject())
+                {
+                    if (prop.Value.ValueKind == JsonValueKind.Array)
+                    {
+                        foreach (var item in prop.Value.EnumerateArray())
+                        {
+                            var pair = ParseDependencyPair(item);
+                            if (pair != null) result.Add(pair);
+                        }
+                        _logger.LogInformation("  + Found {Count} dependencies (nested).", result.Count);
+                        return result;
+                    }
+                }
+            }
+
+            return result;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to analyze role for dependencies.");
+            _logger.LogWarning("Failed to parse dependency JSON from: {Text}. Error: {Msg}", text, ex.Message);
             return new List<DependencyPair>();
         }
+    }
+
+    private DependencyPair? ParseDependencyPair(JsonElement element)
+    {
+        if (element.ValueKind != JsonValueKind.Object) return null;
+
+        string? child = null;
+        string? parent = null;
+
+        if (element.TryGetProperty("child", out var cProp))
+        {
+            child = cProp.ValueKind switch
+            {
+                JsonValueKind.String => cProp.GetString(),
+                JsonValueKind.Array when cProp.GetArrayLength() > 0 => cProp[0].GetString(),
+                _ => null
+            };
+        }
+
+        if (element.TryGetProperty("parent", out var pProp))
+        {
+            parent = pProp.ValueKind switch
+            {
+                JsonValueKind.String => pProp.GetString(),
+                JsonValueKind.Array when pProp.GetArrayLength() > 0 => pProp[0].GetString(),
+                _ => null
+            };
+        }
+
+        if (!string.IsNullOrWhiteSpace(child) && !string.IsNullOrWhiteSpace(parent))
+        {
+            return new DependencyPair { Child = child, Parent = parent };
+        }
+
+        return null;
     }
 }

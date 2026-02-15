@@ -33,6 +33,9 @@ public class JobSkill
 
     [JsonPropertyName("importance")]
     public string Importance { get; set; } = "Essential"; // Essential or Preferred
+
+    [JsonPropertyName("years_of_experience")]
+    public double YearsOfExperience { get; set; }
 }
 
 public class JobEducation

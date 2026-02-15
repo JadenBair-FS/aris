@@ -5,6 +5,7 @@ using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Pgvector;
 using Microsoft.EntityFrameworkCore;
 using Pgvector.EntityFrameworkCore;
@@ -18,6 +19,15 @@ namespace ARIS.API.Services
         private readonly IChatClient _chatClient;
         private readonly ILogger<JobService> _logger;
 
+        private static readonly JsonSerializerOptions _jsonOptions = new()
+        {
+            PropertyNameCaseInsensitive = true,
+            NumberHandling = JsonNumberHandling.AllowReadingFromString,
+            Converters = { new LenientStringConverter() }
+        };
+
+        private const int MaxExtractionAttempts = 3;
+
         public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<JobService> logger)
         {
             _context = context;
@@ -30,13 +40,7 @@ namespace ARIS.API.Services
         {
             try
             {
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
-                };
-
-                var cleanSignal = await ExtractJobCleanSignalAsync(rawDescription, options);
+                var cleanSignal = await ExtractJobCleanSignalAsync(rawDescription);
                 if (cleanSignal == null)
                 {
                     _logger.LogWarning("Failed to extract Clean Signal for job posting by {RecruiterId}", recruiterId);
@@ -46,7 +50,8 @@ namespace ARIS.API.Services
                 await GroundCleanSignalAsync(cleanSignal);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
-                var embeddings = await _embeddingGenerator.GenerateAsync([symmetricString]);
+                var truncatedSymmetric = symmetricString.Length > 1000 ? symmetricString[..1000] : symmetricString;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
                 var jobPosting = new JobPosting
@@ -161,7 +166,9 @@ namespace ARIS.API.Services
 
             if (roleTitles.Count == 0 && skillNames.Count == 0) return;
 
-            var allTexts = roleTitles.Concat(skillNames).ToList();
+            var allTexts = roleTitles.Concat(skillNames)
+                .Select(t => t.Length > 1000 ? t[..1000] : t)
+                .ToList();
 
             try
             {
@@ -209,21 +216,22 @@ namespace ARIS.API.Services
         {
             try
             {
-                var embeddings = await _embeddingGenerator.GenerateAsync([rawText]);
+                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
                     .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(15)
+                    .Take(5)
                     .ToListAsync();
 
                 var topSkills = await _context.Skills
                     .Where(s => s.Embedding != null)
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(50)
+                    .Take(20)
                     .ToListAsync();
 
                 return (
@@ -233,14 +241,14 @@ namespace ARIS.API.Services
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary. Proceeding without it.");
+                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary for job posting. Proceeding without it.");
                 return ("", "");
             }
         }
 
-        private async Task<JobPostingCleanSignal?> ExtractJobCleanSignalAsync(string rawText, JsonSerializerOptions options)
+        private async Task<JobPostingCleanSignal?> ExtractJobCleanSignalAsync(string rawText)
         {
-            string prompt;
+            string userPrompt;
             try
             {
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "JobExtraction.md");
@@ -248,10 +256,13 @@ namespace ARIS.API.Services
 
                 var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
 
-                prompt = template
+                userPrompt = template
                     .Replace("{reference_roles}", refRoles)
                     .Replace("{reference_skills}", refSkills)
                     .Replace("{raw_text}", rawText);
+
+                _logger.LogInformation("Reference Roles Sent (Job): {Roles}", refRoles);
+                _logger.LogInformation("Reference Skills Sent (Job): {Skills}", refSkills);
             }
             catch (Exception ex)
             {
@@ -259,30 +270,252 @@ namespace ARIS.API.Services
                 return null;
             }
 
+            string? previousOutput = null;
+            string? validationFailure = null;
+
+            for (int attempt = 1; attempt <= MaxExtractionAttempts; attempt++)
+            {
+                try
+                {
+                    var messages = BuildJobExtractionMessages(userPrompt, attempt, validationFailure, previousOutput);
+                    
+                    var chatOptions = new ChatOptions 
+                    { 
+                        ResponseFormat = ChatResponseFormat.Json,
+                        Temperature = 0.1f,
+                        AdditionalProperties = new AdditionalPropertiesDictionary
+                        {
+                            ["num_ctx"] = 8192,
+                            ["num_gpu"] = 35,
+                            ["num_thread"] = 8,
+                            ["stop"] = new[] { "\n}\n", "\n}\r\n" }
+                        }
+                    };
+
+                    var response = await _chatClient.GetResponseAsync(messages, chatOptions);
+                    var jsonString = response?.Text?.Trim();
+
+                    if (string.IsNullOrWhiteSpace(jsonString))
+                    {
+                        _logger.LogWarning("LLM returned empty response for job (attempt {Attempt})", attempt);
+                        continue;
+                    }
+
+                    _logger.LogInformation("LLM Response (Job attempt {Attempt}): {Json}", attempt, jsonString);
+
+                    jsonString = UnwrapIfNeeded(jsonString);
+                    jsonString = NormalizeJobFieldNames(jsonString);
+
+                    var signal = JsonSerializer.Deserialize<JobPostingCleanSignal>(jsonString, _jsonOptions);
+                    if (signal == null)
+                    {
+                        _logger.LogWarning("Deserialization returned null for job (attempt {Attempt})", attempt);
+                        previousOutput = jsonString;
+                        validationFailure = "Deserialization produced a null object.";
+                        continue;
+                    }
+
+                    PostProcessJobCleanSignal(signal);
+
+                    var validation = ValidateJobCleanSignal(signal);
+                    if (validation == null)
+                    {
+                        _logger.LogInformation("Job Clean Signal extraction succeeded on attempt {Attempt}", attempt);
+                        return signal;
+                    }
+
+                    _logger.LogWarning("Job Validation failed (attempt {Attempt}): {Reason}", attempt, validation);
+                    previousOutput = jsonString;
+                    validationFailure = validation;
+                }
+                catch (JsonException ex)
+                {
+                    _logger.LogWarning(ex, "Job JSON parsing failed (attempt {Attempt})", attempt);
+                    validationFailure = $"JSON parse error: {ex.Message}";
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "LLM Job extraction failed (attempt {Attempt})", attempt);
+                    return null;
+                }
+            }
+
+            _logger.LogError("Job Clean Signal extraction failed after {MaxAttempts} attempts", MaxExtractionAttempts);
+            return null;
+        }
+
+        private static List<ChatMessage> BuildJobExtractionMessages(string userPrompt, int attempt, string? validationFailure, string? previousOutput)
+        {
+            var messages = new List<ChatMessage>
+            {
+                new(ChatRole.System, "You are a job-description-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"target_roles\", \"required_skills\", \"responsibilities\", \"minimum_education\". No other keys are allowed."),
+                new(ChatRole.User, userPrompt)
+            };
+
+            if (attempt > 1 && validationFailure != null && previousOutput != null)
+            {
+                messages.Add(new ChatMessage(ChatRole.User, BuildJobCorrectionPrompt(validationFailure, previousOutput)));
+            }
+
+            return messages;
+        }
+
+        private static string BuildJobCorrectionPrompt(string validationFailure, string previousOutput)
+        {
+            return $$"""
+                Your previous output failed validation: {{validationFailure}}
+
+                Previous output:
+                {{previousOutput}}
+
+                Please fix the issue and output the corrected JSON using EXACTLY this schema:
+
+                {
+                  "target_roles": [{ "title": "string", "priority": "Primary/Secondary" }],
+                  "required_skills": [{ "name": "string", "importance": "Essential/Preferred", "years_of_experience": 0.0 }],
+                  "responsibilities": ["string"],
+                  "minimum_education": [{ "degree": "string", "required": true/false }]
+                }
+
+                Critical field name requirements:
+                - required_skills[] entries MUST use "years_of_experience" (number) for required duration
+                """;
+        }
+
+        private static string? ValidateJobCleanSignal(JobPostingCleanSignal signal)
+        {
+            if (signal.RequiredSkills.Count == 0)
+                return "No required skills were extracted. Every job posting should have at least one technical skill requirement.";
+
+            if (signal.TargetRoles.Count == 0)
+                return "No target roles were identified.";
+
+            return null;
+        }
+
+        private static void PostProcessJobCleanSignal(JobPostingCleanSignal signal)
+        {
+            signal.TargetRoles.RemoveAll(r => string.IsNullOrWhiteSpace(r.Title));
+            foreach (var role in signal.TargetRoles) role.Title = (role.Title ?? "").Trim();
+
+            signal.RequiredSkills.RemoveAll(s => string.IsNullOrWhiteSpace(s.Name));
+            foreach (var skill in signal.RequiredSkills) skill.Name = (skill.Name ?? "").Trim();
+
+            signal.Responsibilities.RemoveAll(string.IsNullOrWhiteSpace);
+            
+            signal.MinimumEducation.RemoveAll(e => string.IsNullOrWhiteSpace(e.Degree));
+            foreach (var edu in signal.MinimumEducation) edu.Degree = (edu.Degree ?? "").Trim();
+        }
+
+        private static string NormalizeJobFieldNames(string jsonString)
+        {
             try
             {
-                var response = await _chatClient.GetResponseAsync(prompt);
-                var jsonString = response?.Text;
+                using var doc = JsonDocument.Parse(jsonString);
+                var root = doc.RootElement;
+                if (root.ValueKind != JsonValueKind.Object) return jsonString;
 
-                if (string.IsNullOrWhiteSpace(jsonString))
-                    return null;
-
-                if (jsonString.Contains("```json"))
+                using var ms = new MemoryStream();
+                using (var writer = new Utf8JsonWriter(ms))
                 {
-                    jsonString = jsonString.Split("```json")[1].Split("```")[0].Trim();
-                }
-                else if (jsonString.Contains("```"))
-                {
-                    jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
+                    writer.WriteStartObject();
+
+                    foreach (var prop in root.EnumerateObject())
+                    {
+                        var name = prop.Name.ToLower();
+                        var targetName = prop.Name;
+
+                        if (name == "roles" || name == "targetroles") targetName = "target_roles";
+                        else if (name == "skills" || name == "requiredskills" || name == "qualifications") targetName = "required_skills";
+                        else if (name == "education") targetName = "minimum_education";
+
+                        writer.WritePropertyName(targetName);
+
+                        if (prop.Value.ValueKind == JsonValueKind.Array)
+                        {
+                            writer.WriteStartArray();
+                            foreach (var item in prop.Value.EnumerateArray())
+                            {
+                                if (item.ValueKind == JsonValueKind.Object)
+                                {
+                                    WriteNormalizedJobObject(writer, item, targetName);
+                                }
+                                else
+                                {
+                                    item.WriteTo(writer);
+                                }
+                            }
+                            writer.WriteEndArray();
+                        }
+                        else
+                        {
+                            prop.Value.WriteTo(writer);
+                        }
+                    }
+
+                    writer.WriteEndObject();
                 }
 
-                return JsonSerializer.Deserialize<JobPostingCleanSignal>(jsonString, options);
+                return Encoding.UTF8.GetString(ms.ToArray());
             }
-            catch (Exception ex)
+            catch
             {
-                _logger.LogError(ex, "LLM Extraction or Deserialization failed for Job Posting.");
-                return null;
+                return jsonString;
             }
+        }
+
+        private static void WriteNormalizedJobObject(Utf8JsonWriter writer, JsonElement element, string arrayKey)
+        {
+            var renames = arrayKey switch
+            {
+                "target_roles" => new Dictionary<string, string> { ["name"] = "title" },
+                "required_skills" => new Dictionary<string, string> 
+                { 
+                    ["yoe"] = "years_of_experience",
+                    ["experience"] = "years_of_experience",
+                    ["years"] = "years_of_experience",
+                    ["duration"] = "years_of_experience"
+                },
+                _ => new Dictionary<string, string>()
+            };
+
+            writer.WriteStartObject();
+            var written = new HashSet<string>();
+
+            foreach (var prop in element.EnumerateObject())
+            {
+                var key = renames.TryGetValue(prop.Name.ToLower(), out var renamed) ? renamed : prop.Name;
+                if (!written.Add(key)) continue;
+
+                writer.WritePropertyName(key);
+                prop.Value.WriteTo(writer);
+            }
+            writer.WriteEndObject();
+        }
+
+        private static string UnwrapIfNeeded(string jsonString)
+        {
+            try
+            {
+                using var doc = JsonDocument.Parse(jsonString);
+                var root = doc.RootElement;
+
+                if (root.ValueKind != JsonValueKind.Object)
+                    return jsonString;
+
+                var properties = root.EnumerateObject().ToList();
+                if (properties.Count == 1 && properties[0].Value.ValueKind == JsonValueKind.Object)
+                {
+                    var inner = properties[0].Value;
+                    if (inner.TryGetProperty("target_roles", out _) || inner.TryGetProperty("required_skills", out _))
+                    {
+                        return inner.GetRawText();
+                    }
+                }
+            }
+            catch { }
+
+            return jsonString;
         }
 
         private static string BuildSymmetricString(JobPostingCleanSignal signal)

@@ -60,7 +60,7 @@ def main():
         else:
             fail_count += 1
             with open("upload_errors.log", "a") as log:
-                log.write(f"{filename}: {msg}\n")
+                log.write(f"{os.path.basename(file_path)}: {msg}\n")
         
         pbar.set_description(f"Success: {success_count} | Fail: {fail_count}")
 

@@ -1,23 +1,34 @@
-You are a strict Data Extraction Engine. Your task is to parse the following Resume Text into a standardized JSON format.
-Ignore all subjective prose, formatting, and non-technical fluff.
+You are a high-fidelity data extraction engine. Your goal is to parse the provided RESUME TEXT into a structured JSON signal.
 
-IMPORTANT: When extracting skills and roles, prefer using the canonical names from the Reference Vocabulary below when applicable. If a skill or role in the resume closely matches a term in the reference list, use the reference term exactly.
+### EXTRACTION GUIDELINES:
+1. **Fidelity:** Extract only information explicitly stated in the text. DO NOT assume tools or languages.
+2. **Skill Density (High Recall):** A comprehensive resume or CV typically contains 15-30+ unique skills. Perform a multi-pass analysis of every sentence to identify discrete skills, including:
+   - **Technical:** Languages, Frameworks, APIs, Software, Operating Systems.
+   - **Methodologies:** Machine Learning, Agile, Statistical Analysis, HRI, Finite State Machines.
+   - **Soft Skills:** Mentoring, Leadership, Strategy, Communication.
+3. **Discrete Items:** Ensure each entry in the "skills" array is a single specific name (e.g., "C++") rather than a descriptive sentence.
+4. **Years of Experience:** For EACH skill, calculate the total years of experience. Cross-reference the skills mentioned with the durations of the roles where they were used. 
+   - Format as a number (e.g., "3 years" = 3.0, "6 months" = 0.5, "18 months" = 1.5).
+   - If a duration is not clear, provide your best estimate based on the role timeline.
+5. **Structural Integrity:** You MUST output exactly 4 top-level keys: "roles", "skills", "experience_summary", "education".
+6. **Data Formatting:** 
+   - "is_current" must be a JSON boolean (`true` or `false`).
+   - Use the provided Reference Vocabulary for values if a term in the text is a 90%+ match.
 
-Reference Roles:
-{reference_roles}
+### REFERENCE VOCABULARY:
+Roles: {reference_roles}
+Skills: {reference_skills}
 
-Reference Skills:
-{reference_skills}
-
-Required JSON Schema:
+### TARGET SCHEMA:
 {
-  "roles": [ { "title": "string", "duration": "string (e.g. '2 years', '6 months')", "is_current": "string (true/false)" } ],
-  "skills": [ { "name": "string", "category": "string", "proficiency": "string" } ],
-  "experience_summary": [ { "role": "string", "company": "string", "bullets": ["string"] } ],
-  "education": [ { "degree": "string", "institution": "string", "year": "string" } ]
+  "roles": [ { "title": "Job Title", "duration": "Duration string", "is_current": boolean } ],
+  "skills": [ { "name": "Skill Name", "category": "Technical/Soft", "proficiency": "Expert/Advanced/Intermediate/Beginner", "years_of_experience": number } ],
+  "experience_summary": [ { "role": "Role Title", "company": "Company Name", "bullets": ["Achievement 1", "Achievement 2"] } ],
+  "education": [ { "degree": "Degree Name", "institution": "University Name", "year": "YYYY" } ]
 }
 
-RESUME TEXT:
+### RESUME TEXT:
 {raw_text}
 
-Output ONLY valid JSON. No markdown formatting. No preamble.
+### OUTPUT:
+Return ONLY the JSON object. No preamble, no markdown formatting.

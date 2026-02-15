@@ -21,7 +21,7 @@ public class JobPosting
     [Column("clean_signal_json", TypeName = "jsonb")]
     public JobPostingCleanSignal? CleanSignal { get; set; }
 
-    [Column("embedding", TypeName = "vector(384)")]
+    [Column("embedding", TypeName = "vector(1024)")]
     public Vector? Embedding { get; set; }
 
     [Column("created_at")]

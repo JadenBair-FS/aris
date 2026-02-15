@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.AI;
 using OllamaSharp;
+using ElBruno.OllamaSharp.Extensions;
 using Npgsql;
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -39,11 +40,21 @@ builder.Services.AddHttpClient<RoadmapService>();
 builder.Services.AddSingleton<Neo4jIngestionService>();
 
 // AI - MEAI with Ollama
+var ollamaUri = new Uri("http://192.168.4.172:11434");
+
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
-    new OllamaApiClient(new Uri("http://localhost:11434"), "all-minilm"));
+{
+    var client = new OllamaApiClient(ollamaUri, "qwen3-embedding:0.6b");
+    client.SetTimeout(TimeSpan.FromHours(1));
+    return client;
+});
 
 builder.Services.AddSingleton<IChatClient>(sp =>
-    new OllamaApiClient(new Uri("http://localhost:11434"), "llama3.1"));
+{
+    var client = new OllamaApiClient(ollamaUri, "mistral");
+    client.SetTimeout(TimeSpan.FromHours(1));
+    return client;
+});
 
 builder.Services.AddTransient<OntologyEnrichmentService>();
 

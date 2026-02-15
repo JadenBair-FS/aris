@@ -44,6 +44,12 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
 
     public async Task MergeRoleAsync(string title, string code, string description)
     {
+        if (string.IsNullOrWhiteSpace(code))
+        {
+            _logger.LogWarning("Skipping MergeRole: O*NET Code is null or empty. Title={Title}", title);
+            return;
+        }
+
         const string query = @"
             MERGE (r:Role {onet_code: $code})
             ON CREATE SET r.title = $title, r.description = $description, r.created_at = datetime()
@@ -56,6 +62,12 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
 
     public async Task MergeSkillAsync(string name, string source)
     {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            _logger.LogWarning("Skipping MergeSkill: Name is null or empty. Source={Source}", source);
+            return;
+        }
+
         const string query = @"
             MERGE (s:Skill {name: $name})
             ON CREATE SET s.source = $source, s.created_at = datetime()
@@ -67,6 +79,12 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
 
     public async Task MergeRoleSkillRelationshipAsync(string roleCode, string skillName, string relationshipType = "REQUIRES")
     {        
+        if (string.IsNullOrWhiteSpace(roleCode) || string.IsNullOrWhiteSpace(skillName))
+        {
+            _logger.LogWarning("Skipping Role-Skill relationship: role='{Role}', skill='{Skill}' (Null or empty)", roleCode, skillName);
+            return;
+        }
+
         const string query = @"
             MATCH (r:Role {onet_code: $roleCode})
             MATCH (s:Skill {name: $skillName})
@@ -80,11 +98,22 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
 
     public async Task MergeSubsetRelationshipAsync(string childName, string parentName)
     {
+        if (string.IsNullOrWhiteSpace(childName) || string.IsNullOrWhiteSpace(parentName))
+        {
+            _logger.LogWarning("Skipping SUBSET_OF relationship: child='{Child}', parent='{Parent}' (Null or empty)", childName, parentName);
+            return;
+        }
+
+        // This query creates the SUBSET_OF relationship and removes any existing 
+        // BRIDGE_TO relationship between the same two nodes, as the hierarchy supersedes the bridge.
         const string query = @"
             MERGE (c:Skill {name: $childName})
             MERGE (p:Skill {name: $parentName})
             MERGE (c)-[rel:SUBSET_OF]->(p)
             ON CREATE SET rel.confidence = 0.9, rel.created_at = datetime()
+            WITH c, p
+            OPTIONAL MATCH (c)-[b:BRIDGE_TO]-(p)
+            DELETE b
         ";
 
         await using var session = _driver.AsyncSession();
@@ -93,6 +122,12 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
 
     public async Task MergeBridgeRelationshipAsync(string skillA, string skillB)
     {
+        if (string.IsNullOrWhiteSpace(skillA) || string.IsNullOrWhiteSpace(skillB))
+        {
+            _logger.LogWarning("Skipping BRIDGE_TO relationship: skillA='{SkillA}', skillB='{SkillB}' (Null or empty)", skillA, skillB);
+            return;
+        }
+
         const string query = @"
             MERGE (a:Skill {name: $skillA})
             MERGE (b:Skill {name: $skillB})
@@ -162,6 +197,25 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
                 RoleTitle = r["RoleTitle"].As<string>(),
                 Skills = r["Skills"].As<List<string>>()
             }).ToList();
+        });
+
+        return result;
+    }
+
+    public async Task<List<(string Child, string Parent)>> GetInternalHierarchiesAsync(List<string> skills)
+    {
+        const string query = @"
+            MATCH (c:Skill)-[:SUBSET_OF*1..]->(p:Skill)
+            WHERE c.name IN $skills AND p.name IN $skills
+            RETURN c.name as Child, p.name as Parent
+        ";
+
+        await using var session = _driver.AsyncSession();
+        var result = await session.ExecuteReadAsync(async tx =>
+        {
+            var cursor = await tx.RunAsync(query, new { skills });
+            var records = await cursor.ToListAsync();
+            return records.Select(r => (r["Child"].As<string>(), r["Parent"].As<string>())).ToList();
         });
 
         return result;

@@ -1,5 +1,4 @@
 using System.Net.Http.Json;
-using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
@@ -96,18 +95,18 @@ public class OnetService
 
             // Get Tasks
             // Endpoint: /online/occupations/{code}/summary/tasks
-            try 
-            {
-                var tasksResponse = await _httpClient.GetFromJsonAsync<TasksResponse>($"online/occupations/{onetCode}/summary/tasks?start=1&end=20", cancellationToken);
-                if (tasksResponse?.Task != null)
-                {
-                    details.Tasks = tasksResponse.Task.Select(t => t.Title).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
-            }
+            //try 
+            //{
+            //    var tasksResponse = await _httpClient.GetFromJsonAsync<TasksResponse>($"online/occupations/{onetCode}/summary/tasks?start=1&end=20", cancellationToken);
+            //    if (tasksResponse?.Task != null)
+            //    {
+            //        details.Tasks = tasksResponse.Task.Select(t => t.Title).ToList();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
+            //}
 
             // Get Skills
             // Endpoint: /online/occupations/{code}/summary/skills

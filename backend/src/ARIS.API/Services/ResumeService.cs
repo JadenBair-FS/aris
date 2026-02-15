@@ -4,6 +4,7 @@ using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using UglyToad.PdfPig;
 using Pgvector;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,28 @@ using Pgvector.EntityFrameworkCore;
 
 namespace ARIS.API.Services
 {
+    internal sealed class LenientStringConverter : JsonConverter<string>
+    {
+        public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.TokenType switch
+            {
+                JsonTokenType.String => reader.GetString(),
+                JsonTokenType.Number when reader.TryGetInt64(out var l) => l.ToString(),
+                JsonTokenType.Number => reader.GetDouble().ToString(),
+                JsonTokenType.True => "true",
+                JsonTokenType.False => "false",
+                JsonTokenType.Null => null,
+                _ => reader.GetString()
+            };
+        }
+
+        public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value);
+        }
+    }
+
     public class ResumeService
     {
         private readonly ArisDbContext _context;
@@ -18,6 +41,14 @@ namespace ARIS.API.Services
         private readonly IChatClient _chatClient;
         private readonly ILogger<ResumeService> _logger;
 
+        private static readonly JsonSerializerOptions _jsonOptions = new()
+        {
+            PropertyNameCaseInsensitive = true,
+            NumberHandling = JsonNumberHandling.AllowReadingFromString,
+            Converters = { new LenientStringConverter() }
+        };
+
+        private const int MaxExtractionAttempts = 3;
 
         public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger)
         {
@@ -38,13 +69,9 @@ namespace ARIS.API.Services
                     return null;
                 }
 
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
-                };
+                rawText = StripReferences(rawText);
 
-                var cleanSignal = await ExtractCleanSignalAsync(rawText, options);
+                var cleanSignal = await ExtractCleanSignalAsync(rawText);
                 if (cleanSignal == null)
                 {
                     _logger.LogError("Failed to extract Clean Signal for user {UserId}", userId);
@@ -54,7 +81,8 @@ namespace ARIS.API.Services
                 await GroundCleanSignalAsync(cleanSignal);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
-                var embeddings = await _embeddingGenerator.GenerateAsync([symmetricString]);
+                var truncatedSymmetric = symmetricString.Length > 1000 ? symmetricString[..1000] : symmetricString;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
                 var userProfile = new UserProfile
@@ -102,21 +130,22 @@ namespace ARIS.API.Services
         {
             try
             {
-                var embeddings = await _embeddingGenerator.GenerateAsync([rawText]);
+                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
                     .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(15)
+                    .Take(5)
                     .ToListAsync();
 
                 var topSkills = await _context.Skills
                     .Where(s => s.Embedding != null)
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(50)
+                    .Take(20)
                     .ToListAsync();
 
                 return (
@@ -131,9 +160,9 @@ namespace ARIS.API.Services
             }
         }
 
-        private async Task<ResumeCleanSignal?> ExtractCleanSignalAsync(string rawText, JsonSerializerOptions options)
+        private async Task<ResumeCleanSignal?> ExtractCleanSignalAsync(string rawText)
         {
-            string prompt;
+            string userPrompt;
             try
             {
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeExtraction.md");
@@ -141,10 +170,13 @@ namespace ARIS.API.Services
 
                 var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
 
-                prompt = template
+                userPrompt = template
                     .Replace("{reference_roles}", refRoles)
                     .Replace("{reference_skills}", refSkills)
                     .Replace("{raw_text}", rawText);
+
+                _logger.LogInformation("Reference Roles Sent: {Roles}", refRoles);
+                _logger.LogInformation("Reference Skills Sent: {Skills}", refSkills);
             }
             catch (Exception ex)
             {
@@ -152,31 +184,315 @@ namespace ARIS.API.Services
                 return null;
             }
 
+            string? previousOutput = null;
+            string? validationFailure = null;
+
+            for (int attempt = 1; attempt <= MaxExtractionAttempts; attempt++)
+            {
+                try
+                {
+                    var messages = BuildExtractionMessages(userPrompt, attempt, validationFailure, previousOutput);
+                    
+                    var chatOptions = new ChatOptions 
+                    { 
+                        ResponseFormat = ChatResponseFormat.Json,
+                        Temperature = 0.1f,
+                        AdditionalProperties = new AdditionalPropertiesDictionary
+                        {
+                            ["num_ctx"] = 8192,
+                            ["num_gpu"] = 35,
+                            ["num_thread"] = 8,
+                            ["stop"] = new[] { "\n}\n", "\n}\r\n" }
+                        }
+                    };
+
+                    var response = await _chatClient.GetResponseAsync(messages, chatOptions);
+                    var jsonString = response?.Text?.Trim();
+
+                    if (string.IsNullOrWhiteSpace(jsonString))
+                    {
+                        _logger.LogWarning("LLM returned empty response (attempt {Attempt})", attempt);
+                        continue;
+                    }
+
+                    _logger.LogInformation("LLM Response (attempt {Attempt}): {Json}", attempt, jsonString);
+
+                    jsonString = UnwrapIfNeeded(jsonString);
+
+                    jsonString = NormalizeFieldNames(jsonString);
+
+                    var signal = JsonSerializer.Deserialize<ResumeCleanSignal>(jsonString, _jsonOptions);
+                    if (signal == null)
+                    {
+                        _logger.LogWarning("Deserialization returned null (attempt {Attempt})", attempt);
+                        previousOutput = jsonString;
+                        validationFailure = "Deserialization produced a null object.";
+                        continue;
+                    }
+
+                    PostProcessCleanSignal(signal);
+
+                    var validation = ValidateCleanSignal(signal);
+                    if (validation == null)
+                    {
+                        _logger.LogInformation("Clean Signal extraction succeeded on attempt {Attempt}", attempt);
+                        return signal;
+                    }
+
+                    _logger.LogWarning("Validation failed (attempt {Attempt}): {Reason}", attempt, validation);
+                    previousOutput = jsonString;
+                    validationFailure = validation;
+                }
+                catch (JsonException ex)
+                {
+                    _logger.LogWarning(ex, "JSON parsing failed (attempt {Attempt})", attempt);
+                    validationFailure = $"JSON parse error: {ex.Message}";
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "LLM extraction failed (attempt {Attempt})", attempt);
+                    return null;
+                }
+            }
+
+            _logger.LogError("Clean Signal extraction failed after {MaxAttempts} attempts", MaxExtractionAttempts);
+            return null;
+        }
+
+        private static List<ChatMessage> BuildExtractionMessages(string userPrompt, int attempt, string? validationFailure, string? previousOutput)
+        {
+            var messages = new List<ChatMessage>
+            {
+                new(ChatRole.System, "You are a resume-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"roles\", \"skills\", \"experience_summary\", \"education\". No other keys are allowed. Do not nest the result inside a wrapper object."),
+                new(ChatRole.User, userPrompt)
+            };
+
+            if (attempt > 1 && validationFailure != null && previousOutput != null)
+            {
+                messages.Add(new ChatMessage(ChatRole.User, BuildCorrectionPrompt(validationFailure, previousOutput)));
+            }
+
+            return messages;
+        }
+
+        private static string BuildCorrectionPrompt(string validationFailure, string previousOutput)
+        {
+            return $$"""
+                Your previous output failed validation: {{validationFailure}}
+
+                Previous output:
+                {{previousOutput}}
+
+                Please fix the issue and output the corrected JSON using EXACTLY this schema (pay attention to the property names inside each object):
+
+                {
+                  "roles": [{ "title": "string", "duration": "string", "is_current": true/false }],
+                  "skills": [{ "name": "string", "category": "string", "proficiency": "string", "years_of_experience": 0.0 }],
+                  "experience_summary": [{ "role": "string", "company": "string", "bullets": ["string"] }],
+                  "education": [{ "degree": "string", "institution": "string", "year": "string" }]
+                }
+
+                Critical field name requirements:
+                - roles[] entries MUST use "title" (not "name"), "duration", "is_current"
+                - skills[] entries MUST use "years_of_experience" (number) for duration of use
+                - experience_summary[] entries MUST use "role" (not "title"), "company", "bullets" (array)
+                - All "year" values MUST be strings, e.g. "2019" not 2019
+                """;
+        }
+
+        private static string? ValidateCleanSignal(ResumeCleanSignal signal)
+        {
+            if (signal.Skills.Count == 0)
+                return "No skills were extracted. Every resume should have at least one technical skill.";
+
+            if (signal.Roles.Count == 0 && signal.ExperienceSummary.Count == 0)
+                return "Neither roles nor experience entries were extracted. At least one is required.";
+
+            return null;
+        }
+
+        private static void PostProcessCleanSignal(ResumeCleanSignal signal)
+        {
+            signal.Roles.RemoveAll(r => string.IsNullOrWhiteSpace(r.Title));
+            foreach (var role in signal.Roles)
+            {
+                role.Title = (role.Title ?? "").Trim();
+                role.Duration = (role.Duration ?? "").Trim();
+            }
+
+            signal.Skills.RemoveAll(s => string.IsNullOrWhiteSpace(s.Name));
+            foreach (var skill in signal.Skills)
+            {
+                skill.Name = (skill.Name ?? "").Trim();
+                skill.Category = (skill.Category ?? "").Trim();
+                skill.Proficiency = (skill.Proficiency ?? "").Trim();
+            }
+
+            signal.ExperienceSummary.RemoveAll(e => string.IsNullOrWhiteSpace(e.Role) && string.IsNullOrWhiteSpace(e.Company));
+            foreach (var exp in signal.ExperienceSummary)
+            {
+                exp.Role = (exp.Role ?? "").Trim();
+                exp.Company = (exp.Company ?? "").Trim();
+                exp.Bullets.RemoveAll(string.IsNullOrWhiteSpace);
+            }
+
+            signal.Education.RemoveAll(e => string.IsNullOrWhiteSpace(e.Degree) && string.IsNullOrWhiteSpace(e.Institution));
+            foreach (var edu in signal.Education)
+            {
+                edu.Degree = (edu.Degree ?? "").Trim();
+                edu.Institution = (edu.Institution ?? "").Trim();
+                edu.Year = (edu.Year ?? "").Trim();
+            }
+        }
+
+        private static string NormalizeFieldNames(string jsonString)
+        {
             try
             {
+                using var doc = JsonDocument.Parse(jsonString);
+                var root = doc.RootElement;
+                if (root.ValueKind != JsonValueKind.Object) return jsonString;
 
-                var response = await _chatClient.GetResponseAsync(prompt);
-                var jsonString = response?.Text;
-
-                if (string.IsNullOrWhiteSpace(jsonString))
-                    return null;
-
-                if (jsonString.Contains("```json"))
+                using var ms = new MemoryStream();
+                using (var writer = new Utf8JsonWriter(ms))
                 {
-                    jsonString = jsonString.Split("```json")[1].Split("```")[0].Trim();
-                }
-                else if (jsonString.Contains("```"))
-                {
-                    jsonString = jsonString.Split("```")[1].Split("```")[0].Trim();
+                    writer.WriteStartObject();
+
+                    foreach (var prop in root.EnumerateObject())
+                    {
+                        writer.WritePropertyName(prop.Name);
+
+                        if (prop.Value.ValueKind == JsonValueKind.Array)
+                        {
+                            writer.WriteStartArray();
+                            foreach (var item in prop.Value.EnumerateArray())
+                            {
+                                if (item.ValueKind == JsonValueKind.Object)
+                                {
+                                    var renames = GetFieldRenames(prop.Name);
+                                    WriteNormalizedObject(writer, item, renames);
+                                }
+                                else
+                                {
+                                    item.WriteTo(writer);
+                                }
+                            }
+                            writer.WriteEndArray();
+                        }
+                        else
+                        {
+                            prop.Value.WriteTo(writer);
+                        }
+                    }
+
+                    writer.WriteEndObject();
                 }
 
-                return JsonSerializer.Deserialize<ResumeCleanSignal>(jsonString, options);
+                return Encoding.UTF8.GetString(ms.ToArray());
             }
-            catch (Exception ex)
+            catch
             {
-                _logger.LogError(ex, "LLM Extraction or Deserialization failed.");
-                return null;
+                return jsonString;
             }
+        }
+
+        private static Dictionary<string, string> GetFieldRenames(string arrayKey)
+        {
+            return arrayKey switch
+            {
+                "roles" => new Dictionary<string, string>
+                {
+                    ["name"] = "title",
+                    ["position"] = "title",
+                    ["job_title"] = "title",
+                },
+                "skills" => new Dictionary<string, string>
+                {
+                    ["yoe"] = "years_of_experience",
+                    ["experience"] = "years_of_experience",
+                    ["years"] = "years_of_experience",
+                    ["duration"] = "years_of_experience",
+                },
+                "experience_summary" => new Dictionary<string, string>
+                {
+                    ["title"] = "role",
+                    ["position"] = "role",
+                    ["job_title"] = "role",
+                    ["organization"] = "company",
+                    ["institution"] = "company",
+                    ["employer"] = "company",
+                    ["description"] = "bullets",
+                    ["summary"] = "bullets",
+                    ["details"] = "bullets",
+                    ["dates"] = "company",
+                },
+                "education" => new Dictionary<string, string>
+                {
+                    ["university"] = "institution",
+                    ["school"] = "institution",
+                    ["college"] = "institution",
+                    ["qualification"] = "degree",
+                    ["field"] = "degree",
+                    ["graduation_date"] = "year",
+                    ["date"] = "year",
+                },
+                _ => new Dictionary<string, string>()
+            };
+        }
+
+        private static void WriteNormalizedObject(Utf8JsonWriter writer, JsonElement element, Dictionary<string, string> renames)
+        {
+            writer.WriteStartObject();
+
+            var written = new HashSet<string>();
+
+            foreach (var prop in element.EnumerateObject())
+            {
+                var key = renames.TryGetValue(prop.Name.ToLower(), out var renamed) ? renamed : prop.Name;
+
+                if (!written.Add(key)) continue;
+
+                if (key == "bullets" && prop.Value.ValueKind == JsonValueKind.String)
+                {
+                    writer.WritePropertyName(key);
+                    writer.WriteStartArray();
+                    writer.WriteStringValue(prop.Value.GetString());
+                    writer.WriteEndArray();
+                    continue;
+                }
+
+                writer.WritePropertyName(key);
+                prop.Value.WriteTo(writer);
+            }
+
+            writer.WriteEndObject();
+        }
+
+        private static string UnwrapIfNeeded(string jsonString)
+        {
+            try
+            {
+                using var doc = JsonDocument.Parse(jsonString);
+                var root = doc.RootElement;
+
+                if (root.ValueKind != JsonValueKind.Object)
+                    return jsonString;
+
+                var properties = root.EnumerateObject().ToList();
+                if (properties.Count == 1 && properties[0].Value.ValueKind == JsonValueKind.Object)
+                {
+                    var inner = properties[0].Value;
+                    if (inner.TryGetProperty("roles", out _) || inner.TryGetProperty("skills", out _))
+                    {
+                        return inner.GetRawText();
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return jsonString;
         }
 
         private async Task GroundCleanSignalAsync(ResumeCleanSignal signal)
@@ -186,7 +502,9 @@ namespace ARIS.API.Services
 
             if (roleTitles.Count == 0 && skillNames.Count == 0) return;
 
-            var allTexts = roleTitles.Concat(skillNames).ToList();
+            var allTexts = roleTitles.Concat(skillNames)
+                .Select(t => t.Length > 1000 ? t[..1000] : t)
+                .ToList();
 
             try
             {
@@ -245,6 +563,26 @@ namespace ARIS.API.Services
             }
 
             return sb.ToString().Trim();
+        }
+
+        private string StripReferences(string text)
+        {
+            try
+            {
+                var pattern = @"(?i)\bREFERENCES\b.*$";
+                var regex = new System.Text.RegularExpressions.Regex(pattern, System.Text.RegularExpressions.RegexOptions.Singleline);
+                
+                if (regex.IsMatch(text))
+                {
+                    _logger.LogInformation("Noise Reduction: Stripped 'REFERENCES' section from text.");
+                    return regex.Replace(text, "");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to strip references section. Using full text.");
+            }
+            return text;
         }
     }
 }

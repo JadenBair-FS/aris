@@ -16,6 +16,10 @@ namespace ARIS.Shared.Models.CleanSignal
 
         [JsonPropertyName("education")]
         public List<Education> Education { get; set; } = [];
+
+        [JsonIgnore]
+        public bool HasMeaningfulContent =>
+            Skills.Count > 0 && (Roles.Count > 0 || ExperienceSummary.Count > 0);
     }
 
     public class ResumeRole
@@ -27,7 +31,7 @@ namespace ARIS.Shared.Models.CleanSignal
         public string Duration { get; set; } = string.Empty;
     
         [JsonPropertyName("is_current")]
-        public string IsCurrent { get; set; } = string.Empty;
+        public bool IsCurrent { get; set; }
     }
     public class ResumeSkill
     {
@@ -39,6 +43,9 @@ namespace ARIS.Shared.Models.CleanSignal
 
         [JsonPropertyName("proficiency")]
         public string Proficiency { get; set; } = string.Empty;
+
+        [JsonPropertyName("years_of_experience")]
+        public double YearsOfExperience { get; set; }
     }
 
     public class ExperienceSummary
