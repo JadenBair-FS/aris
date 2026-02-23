@@ -1,5 +1,6 @@
 using ARIS.Shared.Data;
 using ARIS.Shared.Entities;
+using ARIS.Shared.Helpers;
 using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
@@ -23,7 +24,7 @@ namespace ARIS.API.Services
         {
             PropertyNameCaseInsensitive = true,
             NumberHandling = JsonNumberHandling.AllowReadingFromString,
-            Converters = { new LenientStringConverter() }
+            Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
         private const int MaxExtractionAttempts = 3;
@@ -50,7 +51,7 @@ namespace ARIS.API.Services
                 await GroundCleanSignalAsync(cleanSignal);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
-                var truncatedSymmetric = symmetricString.Length > 1000 ? symmetricString[..1000] : symmetricString;
+                var truncatedSymmetric = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
@@ -180,29 +181,62 @@ namespace ARIS.API.Services
                     var vector = vectors[i];
                     var match = await _context.Roles
                         .Where(r => r.Embedding != null)
-                        .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                        .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (match != null && match.Distance < 0.6)
+                    if (match != null && match.Distance < 0.35)
                     {
                         signal.TargetRoles[i].Title = match.Title;
+                        signal.TargetRoles[i].OnetCode = match.OnetCode;
                     }
                 }
+
+                // Identify primary domain (O*NET Family)
+                var primaryRole = signal.TargetRoles.FirstOrDefault(r => r.Priority == "Primary") ?? signal.TargetRoles.FirstOrDefault();
+                string? domainPrefix = null;
+                if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
+                {
+                    domainPrefix = primaryRole.OnetCode.Split('-')[0];
+                }
+
+                bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
 
                 int skillOffset = roleTitles.Count;
                 for (int i = 0; i < skillNames.Count; i++)
                 {
                     var vector = vectors[skillOffset + i];
-                    var match = await _context.Skills
-                        .Where(s => s.Embedding != null)
-                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+
+                    // Domain-biased skill grounding for Job Posting
+                    // For non-tech domains, exclude Roadmap.sh skills from the general fallback.
+                    var domainMatch = await _context.RoleSkills
+                        .Include(rs => rs.Skill)
+                        .Include(rs => rs.Role)
+                        .Where(rs => rs.Role.OnetCode != null && rs.Role.OnetCode.StartsWith(domainPrefix ?? "NONE"))
+                        .Where(rs => rs.Skill.Embedding != null)
+                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (match != null && match.Distance < 0.6)
+                    if (domainMatch != null && domainMatch.Distance < 0.35) // Domain-biased threshold (matches Stage 2 budget)
                     {
-                        signal.RequiredSkills[i].Name = match.Name;
+                        signal.RequiredSkills[i].Name = domainMatch.Name;
+                    }
+                    else
+                    {
+                        var query = _context.Skills.Where(s => s.Embedding != null);
+                        if (!isTech)
+                            query = query.Where(s => s.Source != "Roadmap.sh");
+
+                        var generalMatch = await query
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (generalMatch != null && generalMatch.Distance < 0.35)
+                        {
+                            signal.RequiredSkills[i].Name = generalMatch.Name;
+                        }
                     }
                 }
             }
@@ -220,23 +254,60 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
+                // Retrieve top roles (unfiltered — roles are all O*NET)
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
-                    .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                    .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(5)
+                    .Take(8)
                     .ToListAsync();
 
-                var topSkills = await _context.Skills
-                    .Where(s => s.Embedding != null)
+                // Determine domain from the best-matching role
+                var bestRole = topRoles.FirstOrDefault();
+                bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
+                string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
+                    ? bestRole.OnetCode.Split('-')[0]
+                    : null;
+
+                // 15 domain-specific skills: top skills linked to this SOC prefix, ordered by similarity
+                List<string> domainSkillNames = [];
+                if (domainPrefix != null)
+                {
+                    var domainSkills = await _context.RoleSkills
+                        .Include(rs => rs.Skill)
+                        .Include(rs => rs.Role)
+                        .Where(rs => rs.Role.OnetCode != null
+                                  && rs.Role.OnetCode.StartsWith(domainPrefix)
+                                  && rs.Skill.Embedding != null)
+                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .Take(15)
+                        .ToListAsync();
+                    domainSkillNames = domainSkills.Select(s => s.Name).ToList();
+                }
+
+                // 15 global skills (minus Roadmap.sh for non-tech), de-duplicated against domain list
+                var skillQuery = _context.Skills.Where(s => s.Embedding != null);
+                if (!isTech)
+                    skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
+
+                var domainSet = new HashSet<string>(domainSkillNames, StringComparer.OrdinalIgnoreCase);
+
+                var globalSkillNames = (await skillQuery
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(20)
-                    .ToListAsync();
+                    .Take(30)
+                    .ToListAsync())
+                    .Where(s => !domainSet.Contains(s.Name))
+                    .Select(s => s.Name)
+                    .Take(15)
+                    .ToList();
+
+                var combinedSkills = domainSkillNames.Concat(globalSkillNames).ToList();
 
                 return (
                     string.Join(", ", topRoles.Select(r => r.Title)),
-                    string.Join(", ", topSkills.Select(s => s.Name))
+                    string.Join(", ", combinedSkills)
                 );
             }
             catch (Exception ex)
@@ -285,10 +356,10 @@ namespace ARIS.API.Services
                         Temperature = 0.1f,
                         AdditionalProperties = new AdditionalPropertiesDictionary
                         {
+                            ["stream"] = false,
                             ["num_ctx"] = 8192,
                             ["num_gpu"] = 35,
-                            ["num_thread"] = 8,
-                            ["stop"] = new[] { "\n}\n", "\n}\r\n" }
+                            ["num_thread"] = 8
                         }
                     };
 
@@ -348,7 +419,7 @@ namespace ARIS.API.Services
         {
             var messages = new List<ChatMessage>
             {
-                new(ChatRole.System, "You are a job-description-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"target_roles\", \"required_skills\", \"responsibilities\", \"minimum_education\". No other keys are allowed."),
+                new(ChatRole.System, "You are a job-description-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"target_roles\", \"required_skills\", \"responsibilities\", \"minimum_education\". No other keys are allowed. For every skill: \"importance\" must be either \"Essential\" or \"Preferred\" — never null or any other value. \"years_of_experience\" must always be a number — NEVER null, use 0.0 if unknown."),
                 new(ChatRole.User, userPrompt)
             };
 
@@ -377,8 +448,10 @@ namespace ARIS.API.Services
                   "minimum_education": [{ "degree": "string", "required": true/false }]
                 }
 
-                Critical field name requirements:
-                - required_skills[] entries MUST use "years_of_experience" (number) for required duration
+                Critical field requirements:
+                - required_skills[].importance MUST be "Essential" or "Preferred" — never null, never any other value
+                - required_skills[].years_of_experience MUST be a number — NEVER null, use 0.0 if unknown
+                - required_skills[].name MUST be a concise skill name of 1-5 words — never a full sentence
                 """;
         }
 

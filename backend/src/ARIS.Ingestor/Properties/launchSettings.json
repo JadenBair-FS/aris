@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "ARIS.Ingestor": {
+      "commandName": "Project"
+    },
+    "ARIS.Ingestor Fresh": {
+      "commandName": "Project",
+      "commandLineArgs": "-- --fresh"
+    },
+    "ARIS.Ingestor Optimzie Graph": {
+      "commandName": "Project",
+      "commandLineArgs": "-- --optimize-graph --skip-deps --skip-pass1 --resume 166"
+    }
+  }
+}

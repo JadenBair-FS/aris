@@ -108,11 +108,11 @@ public class OnetService
             //    _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
             //}
 
-            // Get Skills
+            // Get Skills (cognitive/psychomotor/sensory — end=50 for fuller coverage)
             // Endpoint: /online/occupations/{code}/summary/skills
             try
             {
-                var skillsResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/skills?start=1&end=20", cancellationToken);
+                var skillsResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/skills?start=1&end=50", cancellationToken);
                 if (skillsResponse?.Element != null)
                 {
                     details.Skills = skillsResponse.Element.Select(s => s.Name).ToList();
@@ -122,7 +122,59 @@ public class OnetService
             {
                 _logger.LogWarning(ex, "Could not fetch skills for {Code}", onetCode);
             }
-            
+
+            // Get Knowledge areas (domain-specific, e.g. "Plumbing" for plumbers, "Computer Science" for devs)
+            // Endpoint: /online/occupations/{code}/summary/knowledge
+            try
+            {
+                var knowledgeResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/knowledge?start=1&end=50", cancellationToken);
+                if (knowledgeResponse?.Element != null)
+                {
+                    details.Knowledge = knowledgeResponse.Element.Select(s => s.Name).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Could not fetch knowledge for {Code}", onetCode);
+            }
+
+            // Get Work Activities (on-the-job tasks, distinguishes roles clearly)
+            // Endpoint: /online/occupations/{code}/summary/work_activities
+            try
+            {
+                var activitiesResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/work_activities?start=1&end=50", cancellationToken);
+                if (activitiesResponse?.Element != null)
+                {
+                    details.WorkActivities = activitiesResponse.Element.Select(s => s.Name).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Could not fetch work activities for {Code}", onetCode);
+            }
+
+            // Get Technology Skills (specific software/tools used on the job)
+            // Endpoint: /online/occupations/{code}/summary/technology_skills
+            // Note: API returns "title" field on examples, not "name". Also includes "example_more".
+            try
+            {
+                var techResponse = await _httpClient.GetFromJsonAsync<TechnologySkillsResponse>($"online/occupations/{onetCode}/summary/technology_skills", cancellationToken);
+                if (techResponse?.Category != null)
+                {
+                    var techNames = techResponse.Category
+                        .SelectMany(c => (c.Example ?? []).Concat(c.ExampleMore ?? []))
+                        .Where(e => !string.IsNullOrWhiteSpace(e.Title))
+                        .Select(e => e.Title!)
+                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                        .ToList();
+                    details.TechnologySkills = techNames;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Could not fetch technology skills for {Code}", onetCode);
+            }
+
             return details;
         }
         catch (Exception ex)

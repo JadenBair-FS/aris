@@ -4,6 +4,8 @@ using ARIS.Shared.Entities;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Pgvector.EntityFrameworkCore;
 using Pgvector;
 using System.Text;
 
@@ -42,6 +44,9 @@ public class GoldStandardSeeder
                 {
                     _logger.LogInformation("Processing Job: {Id}", jobDto.Id);
 
+                    // RE-GROUND with new thresholds and domain awareness
+                    await GroundJobSignalAsync(jobDto.CleanSignal);
+
                     // Generate Embedding
                     var symmetricString = BuildJobSymmetricString(jobDto.CleanSignal);
                     var embeddings = await _embeddingGenerator.GenerateAsync([symmetricString]);
@@ -75,6 +80,9 @@ public class GoldStandardSeeder
                 foreach (var userDto in usersData)
                 {
                     _logger.LogInformation("Processing User: {Id}", userDto.Id);
+
+                    // RE-GROUND with new thresholds and domain awareness
+                    await GroundResumeSignalAsync(userDto.CleanSignal);
 
                     // Generate Embedding
                     var symmetricString = BuildResumeSymmetricString(userDto.CleanSignal);
@@ -118,6 +126,140 @@ public class GoldStandardSeeder
         foreach (var role in signal.Roles) sb.Append(role.Title).Append(' ');
         foreach (var skill in signal.Skills) sb.Append(skill.Name).Append(' ');
         return sb.ToString().Trim();
+    }
+
+    private async Task GroundJobSignalAsync(JobPostingCleanSignal signal)
+    {
+        var roleTitles = signal.TargetRoles.Select(r => r.Title).ToList();
+        var skillNames = signal.RequiredSkills.Select(s => s.Name).ToList();
+
+        if (roleTitles.Count == 0 && skillNames.Count == 0) return;
+
+        var allTexts = roleTitles.Concat(skillNames).ToList();
+        var embeddings = await _embeddingGenerator.GenerateAsync(allTexts);
+        var vectors = embeddings.Select(e => new Vector(e.Vector)).ToList();
+
+        for (int i = 0; i < roleTitles.Count; i++)
+        {
+            var vector = vectors[i];
+            var match = await _context.Roles
+                .Where(r => r.Embedding != null)
+                .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
+                .OrderBy(x => x.Distance)
+                .FirstOrDefaultAsync();
+
+            if (match != null && match.Distance < 0.35)
+            {
+                signal.TargetRoles[i].Title = match.Title;
+                signal.TargetRoles[i].OnetCode = match.OnetCode;
+            }
+        }
+
+        var primaryRole = signal.TargetRoles.FirstOrDefault(r => r.Priority == "Primary") ?? signal.TargetRoles.FirstOrDefault();
+        string? domainPrefix = null;
+        if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
+        {
+            domainPrefix = primaryRole.OnetCode.Split('-')[0];
+        }
+
+        int skillOffset = roleTitles.Count;
+        for (int i = 0; i < skillNames.Count; i++)
+        {
+            var vector = vectors[skillOffset + i];
+            var domainMatch = await _context.RoleSkills
+                .Include(rs => rs.Skill)
+                .Include(rs => rs.Role)
+                .Where(rs => rs.Role.OnetCode != null && rs.Role.OnetCode.StartsWith(domainPrefix ?? "NONE"))
+                .Where(rs => rs.Skill.Embedding != null)
+                .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
+                .OrderBy(x => x.Distance)
+                .FirstOrDefaultAsync();
+
+            if (domainMatch != null && domainMatch.Distance < 0.25)
+            {
+                signal.RequiredSkills[i].Name = domainMatch.Name;
+            }
+            else
+            {
+                var generalMatch = await _context.Skills
+                    .Where(s => s.Embedding != null)
+                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .FirstOrDefaultAsync();
+
+                if (generalMatch != null && generalMatch.Distance < 0.35)
+                {
+                    signal.RequiredSkills[i].Name = generalMatch.Name;
+                }
+            }
+        }
+    }
+
+    private async Task GroundResumeSignalAsync(ResumeCleanSignal signal)
+    {
+        var roleTitles = signal.Roles.Select(r => r.Title).ToList();
+        var skillNames = signal.Skills.Select(s => s.Name).ToList();
+
+        if (roleTitles.Count == 0 && skillNames.Count == 0) return;
+
+        var allTexts = roleTitles.Concat(skillNames).ToList();
+        var embeddings = await _embeddingGenerator.GenerateAsync(allTexts);
+        var vectors = embeddings.Select(e => new Vector(e.Vector)).ToList();
+
+        for (int i = 0; i < roleTitles.Count; i++)
+        {
+            var vector = vectors[i];
+            var match = await _context.Roles
+                .Where(r => r.Embedding != null)
+                .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
+                .OrderBy(x => x.Distance)
+                .FirstOrDefaultAsync();
+
+            if (match != null && match.Distance < 0.35)
+            {
+                signal.Roles[i].Title = match.Title;
+                signal.Roles[i].OnetCode = match.OnetCode;
+            }
+        }
+
+        var primaryRole = signal.Roles.FirstOrDefault(r => r.IsCurrent) ?? signal.Roles.FirstOrDefault();
+        string? domainPrefix = null;
+        if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
+        {
+            domainPrefix = primaryRole.OnetCode.Split('-')[0];
+        }
+
+        int skillOffset = roleTitles.Count;
+        for (int i = 0; i < skillNames.Count; i++)
+        {
+            var vector = vectors[skillOffset + i];
+            var domainMatch = await _context.RoleSkills
+                .Include(rs => rs.Skill)
+                .Include(rs => rs.Role)
+                .Where(rs => rs.Role.OnetCode != null && rs.Role.OnetCode.StartsWith(domainPrefix ?? "NONE"))
+                .Where(rs => rs.Skill.Embedding != null)
+                .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
+                .OrderBy(x => x.Distance)
+                .FirstOrDefaultAsync();
+
+            if (domainMatch != null && domainMatch.Distance < 0.25)
+            {
+                signal.Skills[i].Name = domainMatch.Name;
+            }
+            else
+            {
+                var generalMatch = await _context.Skills
+                    .Where(s => s.Embedding != null)
+                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                    .OrderBy(x => x.Distance)
+                    .FirstOrDefaultAsync();
+
+                if (generalMatch != null && generalMatch.Distance < 0.35)
+                {
+                    signal.Skills[i].Name = generalMatch.Name;
+                }
+            }
+        }
     }
 
     // DTOs for the JSON file structure

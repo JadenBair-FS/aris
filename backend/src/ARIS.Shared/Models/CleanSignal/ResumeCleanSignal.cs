@@ -32,6 +32,9 @@ namespace ARIS.Shared.Models.CleanSignal
     
         [JsonPropertyName("is_current")]
         public bool IsCurrent { get; set; }
+
+        [JsonIgnore]
+        public string? OnetCode { get; set; }
     }
     public class ResumeSkill
     {

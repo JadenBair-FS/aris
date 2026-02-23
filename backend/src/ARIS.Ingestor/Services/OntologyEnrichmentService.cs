@@ -26,15 +26,17 @@ public class OntologyEnrichmentService
         _dependencyPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "DependencyDetection.md");
     }
 
-    public async Task<List<BridgePair>> FindBridgesAsync(string roleName, List<string> skills, List<(string Child, string Parent)> hierarchies, CancellationToken ct = default)
+    public async Task<List<BridgePair>> FindBridgesAsync(string roleName, List<string> skills, List<(string Child, string Parent)> hierarchies, CancellationToken ct = default, string? promptOverridePath = null, int timeoutSeconds = 120)
     {
         if (skills.Count < 2) return new List<BridgePair>();
 
         string promptTemplate;
         try
         {
-             var path = File.Exists(_promptPath) ? _promptPath : Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/OntologyEnrichment.md");
-             promptTemplate = await File.ReadAllTextAsync(path, ct);
+            var effectivePath = promptOverridePath ?? _promptPath;
+            var fallbackPath = Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts", Path.GetFileName(effectivePath));
+            var path = File.Exists(effectivePath) ? effectivePath : fallbackPath;
+            promptTemplate = await File.ReadAllTextAsync(path, ct);
         }
         catch (Exception ex)
         {
@@ -46,7 +48,7 @@ public class OntologyEnrichmentService
         var prompt = promptTemplate
             .Replace("{role_name}", roleName)
             .Replace("{skills_json}", skillList);
-        
+
         var text = string.Empty;
         try
         {
@@ -58,8 +60,8 @@ public class OntologyEnrichmentService
                 new ChatMessage(ChatRole.User, prompt)
             };
 
-            var chatOptions = new ChatOptions 
-            { 
+            var chatOptions = new ChatOptions
+            {
                 ResponseFormat = ChatResponseFormat.Json,
                 Temperature = 0.1f,
                 AdditionalProperties = new AdditionalPropertiesDictionary
@@ -70,7 +72,10 @@ public class OntologyEnrichmentService
                 }
             };
 
-            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: ct);
+            using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+            timeoutCts.CancelAfter(TimeSpan.FromSeconds(timeoutSeconds));
+
+            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: timeoutCts.Token);
             text = response.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(text)) return new List<BridgePair>();
@@ -142,6 +147,11 @@ public class OntologyEnrichmentService
 
             return result;
         }
+        catch (OperationCanceledException) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning("LLM timeout after {Seconds}s for bridge detection in role '{Role}' — skipping.", timeoutSeconds, roleName);
+            return new List<BridgePair>();
+        }
         catch (Exception ex)
         {
             _logger.LogWarning("Failed to parse JSON from: {Text}. Error: {Msg}", text, ex.Message);
@@ -184,7 +194,7 @@ public class OntologyEnrichmentService
         return null;
     }
 
-    public async Task<List<DependencyPair>> FindDependenciesAsync(string roleName, List<string> skills, CancellationToken ct = default)
+    public async Task<List<DependencyPair>> FindDependenciesAsync(string roleName, List<string> skills, CancellationToken ct = default, int timeoutSeconds = 120)
     {
         if (skills.Count < 2) return new List<DependencyPair>();
 
@@ -216,8 +226,8 @@ public class OntologyEnrichmentService
                 new ChatMessage(ChatRole.User, prompt)
             };
 
-            var chatOptions = new ChatOptions 
-            { 
+            var chatOptions = new ChatOptions
+            {
                 ResponseFormat = ChatResponseFormat.Json,
                 Temperature = 0.1f,
                 AdditionalProperties = new AdditionalPropertiesDictionary
@@ -228,7 +238,10 @@ public class OntologyEnrichmentService
                 }
             };
 
-            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: ct);
+            using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+            timeoutCts.CancelAfter(TimeSpan.FromSeconds(timeoutSeconds));
+
+            var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: timeoutCts.Token);
             text = response.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(text)) return new List<DependencyPair>();
@@ -298,6 +311,11 @@ public class OntologyEnrichmentService
             }
 
             return result;
+        }
+        catch (OperationCanceledException) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning("LLM timeout after {Seconds}s for dependency detection in role '{Role}' — skipping.", timeoutSeconds, roleName);
+            return new List<DependencyPair>();
         }
         catch (Exception ex)
         {

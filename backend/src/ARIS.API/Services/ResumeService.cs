@@ -1,5 +1,7 @@
 using ARIS.Shared.Data;
 using ARIS.Shared.Entities;
+using ARIS.Shared.Helpers;
+using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
 using System.Text;
@@ -34,6 +36,28 @@ namespace ARIS.API.Services
         }
     }
 
+    // Handles LLM outputs of null for numeric fields (e.g. "years_of_experience": null).
+    // Returns 0.0 instead of throwing, so a single null token never causes a retry.
+    internal sealed class LenientDoubleConverter : JsonConverter<double>
+    {
+        public override double Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.TokenType switch
+            {
+                JsonTokenType.Null => 0.0,
+                JsonTokenType.String when double.TryParse(reader.GetString(), out var d) => d,
+                JsonTokenType.String => 0.0,
+                JsonTokenType.Number => reader.GetDouble(),
+                _ => 0.0
+            };
+        }
+
+        public override void Write(Utf8JsonWriter writer, double value, JsonSerializerOptions options)
+        {
+            writer.WriteNumberValue(value);
+        }
+    }
+
     public class ResumeService
     {
         private readonly ArisDbContext _context;
@@ -45,7 +69,7 @@ namespace ARIS.API.Services
         {
             PropertyNameCaseInsensitive = true,
             NumberHandling = JsonNumberHandling.AllowReadingFromString,
-            Converters = { new LenientStringConverter() }
+            Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
         private const int MaxExtractionAttempts = 3;
@@ -63,13 +87,27 @@ namespace ARIS.API.Services
             try
             {
                 var rawText = ExtractTextFromPdf(fileStream);
+                return await ProcessResumeTextAsync(rawText, userId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error processing resume for user {UserId}", userId);
+                return null;
+            }
+        }
+
+        public async Task<Guid?> ProcessResumeTextAsync(string rawText, string userId)
+        {
+            try
+            {
                 if (string.IsNullOrWhiteSpace(rawText))
                 {
-                    _logger.LogWarning("PDF parsing resulted in empty text for user {UserId}", userId);
+                    _logger.LogWarning("Resume text is empty for user {UserId}", userId);
                     return null;
                 }
 
                 rawText = StripReferences(rawText);
+                rawText = SanitizePdfText(rawText);
 
                 var cleanSignal = await ExtractCleanSignalAsync(rawText);
                 if (cleanSignal == null)
@@ -81,7 +119,7 @@ namespace ARIS.API.Services
                 await GroundCleanSignalAsync(cleanSignal);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
-                var truncatedSymmetric = symmetricString.Length > 1000 ? symmetricString[..1000] : symmetricString;
+                var truncatedSymmetric = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
@@ -101,7 +139,7 @@ namespace ARIS.API.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error processing resume for user {UserId}", userId);
+                _logger.LogError(ex, "Error processing resume text for user {UserId}", userId);
                 return null;
             }
         }
@@ -134,23 +172,60 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
+                // Retrieve top roles (unfiltered — roles are all O*NET)
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
-                    .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                    .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(5)
+                    .Take(8)
                     .ToListAsync();
 
-                var topSkills = await _context.Skills
-                    .Where(s => s.Embedding != null)
+                // Determine domain from the best-matching role
+                var bestRole = topRoles.FirstOrDefault();
+                bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
+                string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
+                    ? bestRole.OnetCode.Split('-')[0]
+                    : null;
+
+                // 15 domain-specific skills: top skills linked to this SOC prefix, ordered by similarity
+                List<string> domainSkillNames = [];
+                if (domainPrefix != null)
+                {
+                    var domainSkills = await _context.RoleSkills
+                        .Include(rs => rs.Skill)
+                        .Include(rs => rs.Role)
+                        .Where(rs => rs.Role.OnetCode != null
+                                  && rs.Role.OnetCode.StartsWith(domainPrefix)
+                                  && rs.Skill.Embedding != null)
+                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .Take(15)
+                        .ToListAsync();
+                    domainSkillNames = domainSkills.Select(s => s.Name).ToList();
+                }
+
+                // 15 global skills (minus Roadmap.sh for non-tech), de-duplicated against domain list
+                var skillQuery = _context.Skills.Where(s => s.Embedding != null);
+                if (!isTech)
+                    skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
+
+                var domainSet = new HashSet<string>(domainSkillNames, StringComparer.OrdinalIgnoreCase);
+
+                var globalSkillNames = (await skillQuery
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(20)
-                    .ToListAsync();
+                    .Take(30)
+                    .ToListAsync())
+                    .Where(s => !domainSet.Contains(s.Name))
+                    .Select(s => s.Name)
+                    .Take(15)
+                    .ToList();
+
+                var combinedSkills = domainSkillNames.Concat(globalSkillNames).ToList();
 
                 return (
                     string.Join(", ", topRoles.Select(r => r.Title)),
-                    string.Join(", ", topSkills.Select(s => s.Name))
+                    string.Join(", ", combinedSkills)
                 );
             }
             catch (Exception ex)
@@ -195,14 +270,14 @@ namespace ARIS.API.Services
                     
                     var chatOptions = new ChatOptions 
                     { 
-                        ResponseFormat = ChatResponseFormat.Json,
+                        ResponseFormat = ChatResponseFormat.Json, 
                         Temperature = 0.1f,
                         AdditionalProperties = new AdditionalPropertiesDictionary
                         {
+                            ["stream"] = false,
                             ["num_ctx"] = 8192,
                             ["num_gpu"] = 35,
-                            ["num_thread"] = 8,
-                            ["stop"] = new[] { "\n}\n", "\n}\r\n" }
+                            ["num_thread"] = 8
                         }
                     };
 
@@ -263,7 +338,7 @@ namespace ARIS.API.Services
         {
             var messages = new List<ChatMessage>
             {
-                new(ChatRole.System, "You are a resume-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"roles\", \"skills\", \"experience_summary\", \"education\". No other keys are allowed. Do not nest the result inside a wrapper object."),
+                new(ChatRole.System, "You are a resume-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"roles\", \"skills\", \"experience_summary\", \"education\". No other keys are allowed. Do not nest the result inside a wrapper object. For every skill: \"years_of_experience\" must always be a number — NEVER null, use 0.0 if unknown. All \"year\" values must be strings (e.g. \"2019\", not 2019)."),
                 new(ChatRole.User, userPrompt)
             };
 
@@ -292,11 +367,11 @@ namespace ARIS.API.Services
                   "education": [{ "degree": "string", "institution": "string", "year": "string" }]
                 }
 
-                Critical field name requirements:
-                - roles[] entries MUST use "title" (not "name"), "duration", "is_current"
-                - skills[] entries MUST use "years_of_experience" (number) for duration of use
-                - experience_summary[] entries MUST use "role" (not "title"), "company", "bullets" (array)
-                - All "year" values MUST be strings, e.g. "2019" not 2019
+                Critical field requirements:
+                - roles[].title MUST be a string (not "name")
+                - skills[].years_of_experience MUST be a number — NEVER null, use 0.0 if unknown
+                - experience_summary[] entries MUST use "role" (not "title"), "company", "bullets" (array of strings)
+                - education[].year MUST be a string, e.g. "2019" not 2019
                 """;
         }
 
@@ -516,29 +591,65 @@ namespace ARIS.API.Services
                     var vector = vectors[i];
                     var match = await _context.Roles
                         .Where(r => r.Embedding != null)
-                        .Select(r => new { r.Title, Distance = r.Embedding!.CosineDistance(vector) })
+                        .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (match != null && match.Distance < 0.6)
+                    if (match != null && match.Distance < 0.35)
                     {
                         signal.Roles[i].Title = match.Title;
+                        signal.Roles[i].OnetCode = match.OnetCode;
                     }
                 }
+
+                // Identify primary domain (O*NET Family, e.g., "15" for IT, "47" for Construction)
+                var primaryRole = signal.Roles.FirstOrDefault(r => r.IsCurrent) ?? signal.Roles.FirstOrDefault();
+                string? domainPrefix = null;
+                if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
+                {
+                    domainPrefix = primaryRole.OnetCode.Split('-')[0];
+                }
+
+                bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
 
                 int skillOffset = roleTitles.Count;
                 for (int i = 0; i < skillNames.Count; i++)
                 {
                     var vector = vectors[skillOffset + i];
-                    var match = await _context.Skills
-                        .Where(s => s.Embedding != null)
-                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+
+                    // Domain-biased skill grounding:
+                    // 1. First, try to find a match among skills already linked to roles in the user's primary domain (O*NET Prefix).
+                    // 2. Fall back to a general search if no strong domain match is found.
+                    // 3. For non-tech domains, exclude Roadmap.sh skills from the general fallback.
+
+                    var domainMatch = await _context.RoleSkills
+                        .Include(rs => rs.Skill)
+                        .Include(rs => rs.Role)
+                        .Where(rs => rs.Role.OnetCode != null && rs.Role.OnetCode.StartsWith(domainPrefix ?? "NONE"))
+                        .Where(rs => rs.Skill.Embedding != null)
+                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (match != null && match.Distance < 0.6)
+                    if (domainMatch != null && domainMatch.Distance < 0.35) // Domain-biased threshold (matches Stage 2 budget)
                     {
-                        signal.Skills[i].Name = match.Name;
+                        signal.Skills[i].Name = domainMatch.Name;
+                    }
+                    else
+                    {
+                        var query = _context.Skills.Where(s => s.Embedding != null);
+                        if (!isTech)
+                            query = query.Where(s => s.Source != "Roadmap.sh");
+
+                        var generalMatch = await query
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (generalMatch != null && generalMatch.Distance < 0.35)
+                        {
+                            signal.Skills[i].Name = generalMatch.Name;
+                        }
                     }
                 }
             }
@@ -565,13 +676,28 @@ namespace ARIS.API.Services
             return sb.ToString().Trim();
         }
 
+        private static string SanitizePdfText(string text)
+        {
+            var sb = new StringBuilder(text.Length);
+            foreach (var c in text)
+            {
+                if (c == '\uF0B7' || c == '\uF0A7' || c == '\uF076')
+                    sb.Append('-'); 
+                else if (c >= '\uE000' && c <= '\uF8FF')
+                    sb.Append(' '); 
+                else
+                    sb.Append(c);
+            }
+            return sb.ToString();
+        }
+
         private string StripReferences(string text)
         {
             try
             {
                 var pattern = @"(?i)\bREFERENCES\b.*$";
                 var regex = new System.Text.RegularExpressions.Regex(pattern, System.Text.RegularExpressions.RegexOptions.Singleline);
-                
+
                 if (regex.IsMatch(text))
                 {
                     _logger.LogInformation("Noise Reduction: Stripped 'REFERENCES' section from text.");
@@ -583,6 +709,102 @@ namespace ARIS.API.Services
                 _logger.LogWarning(ex, "Failed to strip references section. Using full text.");
             }
             return text;
+        }
+
+        /// <summary>
+        /// C2: Tailors resume bullets to highlight transferability toward bridgeable and
+        /// prerequisite-met skill gaps. For each actionable gap, finds the most relevant
+        /// experience bullet via keyword overlap and asks Mistral to rewrite it.
+        /// </summary>
+        public async Task<List<TailoredBullet>?> TailorResumeAsync(Guid userProfileId, Guid jobId)
+        {
+            var user = await _context.UserProfiles.FindAsync(userProfileId);
+            var job = await _context.JobPostings.FindAsync(jobId);
+
+            if (user?.CleanSignal == null || job?.CleanSignal == null)
+                return null;
+
+            // Collect all experience bullets from the user's CleanSignal.
+            var allBullets = user.CleanSignal.ExperienceSummary
+                .SelectMany(e => e.Bullets)
+                .Where(b => !string.IsNullOrWhiteSpace(b))
+                .Distinct()
+                .ToList();
+
+            if (allBullets.Count == 0)
+            {
+                _logger.LogWarning("TailorResume: User {UserId} has no experience bullets to tailor.", userProfileId);
+                return [];
+            }
+
+            // Identify actionable gaps: BridgeableSkills + PrerequisiteMetSkills.
+            // We need to run MatchService logic, but to avoid circular DI we duplicate
+            // a lightweight gap extraction here using the CleanSignal directly.
+            var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var jobSkillNames = job.CleanSignal.RequiredSkills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+            var actionableGaps = job.CleanSignal.RequiredSkills
+                .Where(js => !userSkillNames.Contains(js.Name))
+                .Take(8)  // Limit to avoid excessive LLM calls
+                .ToList();
+
+            if (actionableGaps.Count == 0)
+                return [];
+
+            var results = new List<TailoredBullet>();
+
+            foreach (var gap in actionableGaps)
+            {
+                // Find the most relevant bullet by keyword overlap with the skill name.
+                var gapWords = gap.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                    .Select(w => w.ToLowerInvariant())
+                    .ToHashSet();
+
+                var bestBullet = allBullets
+                    .OrderByDescending(b =>
+                        b.ToLowerInvariant().Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                         .Count(w => gapWords.Contains(w)))
+                    .ThenByDescending(b => b.Length)
+                    .FirstOrDefault();
+
+                if (bestBullet == null) continue;
+
+                try
+                {
+                    var prompt = $"""
+                        Rewrite the following resume bullet point to more explicitly highlight transferable skills
+                        relevant to "{gap.Name}". Keep it concise (1-2 sentences), action-verb-led, and quantified
+                        where possible. Do not invent new facts — only reframe what is already stated.
+
+                        Original bullet: {bestBullet}
+
+                        Rewritten bullet:
+                        """;
+
+                    var response = await _chatClient.GetResponseAsync(prompt);
+                    var tailored = response?.Text?.Trim() ?? bestBullet;
+
+                    results.Add(new TailoredBullet
+                    {
+                        OriginalBullet = bestBullet,
+                        RewrittenBullet = tailored,
+                        TargetSkill = gap.Name,
+                        BridgePath = null   // Bridge path populated by MatchService if needed
+                    });
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Failed to tailor bullet for skill {Skill}", gap.Name);
+                    results.Add(new TailoredBullet
+                    {
+                        OriginalBullet = bestBullet,
+                        RewrittenBullet = bestBullet,
+                        TargetSkill = gap.Name
+                    });
+                }
+            }
+
+            return results;
         }
     }
 }

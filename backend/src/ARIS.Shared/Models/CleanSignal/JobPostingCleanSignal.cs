@@ -24,6 +24,9 @@ public class JobRole
 
     [JsonPropertyName("priority")]
     public string Priority { get; set; } = "Primary"; // Primary or Secondary
+
+    [JsonIgnore]
+    public string? OnetCode { get; set; }
 }
 
 public class JobSkill

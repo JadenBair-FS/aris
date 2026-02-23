@@ -4,6 +4,7 @@ using ARIS.Shared.Data;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pgvector;
@@ -13,9 +14,11 @@ using Pgvector;
 namespace ARIS.Shared.Migrations
 {
     [DbContext(typeof(ArisDbContext))]
-    partial class ArisDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260221025222_AddIsTechToRefSkill")]
+    partial class AddIsTechToRefSkill
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

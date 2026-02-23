@@ -9,15 +9,16 @@ namespace ARIS.API.Controllers
     public class JobController : ControllerBase
     {
         private readonly JobService _service;
+        private readonly MatchService _matchService;
         private readonly ILogger<JobController> _logger;
 
-        public JobController(JobService service, ILogger<JobController> logger)
+        public JobController(JobService service, MatchService matchService, ILogger<JobController> logger)
         {
             _service = service;
+            _matchService = matchService;
             _logger = logger;
         }
 
-     
         [HttpPost]
         public async Task<IActionResult> CreateJob([FromBody] CreateJobRequest request)
         {
@@ -44,8 +45,20 @@ namespace ARIS.API.Controllers
             _logger.LogInformation("Fetching job matches for UserProfile: {UserProfileId}", userProfileId);
 
             var response = await _service.GetRecommendedJobsAsync(userProfileId);
-            
+
             return Ok(response);
+        }
+
+        /// <summary>
+        /// C4: Returns a job posting's full CleanSignal and metadata. Used by the frontend.
+        /// </summary>
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetJob(Guid id)
+        {
+            var detail = await _matchService.DebugGetJobDetailAsync(id);
+            if (detail == null)
+                return NotFound($"Job {id} not found.");
+            return Ok(detail);
         }
     }
 }

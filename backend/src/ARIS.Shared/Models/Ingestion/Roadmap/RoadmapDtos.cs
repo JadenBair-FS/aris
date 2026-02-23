@@ -27,6 +27,15 @@ public class RoadmapEdgeDto
 
     [JsonPropertyName("target")]
     public string? Target { get; set; }
+
+    [JsonPropertyName("data")]
+    public RoadmapEdgeDataDto? Data { get; set; }
+}
+
+public class RoadmapEdgeDataDto
+{
+    [JsonPropertyName("edgeStyle")]
+    public string? EdgeStyle { get; set; }
 }
 
 public class RoadmapTitleDto

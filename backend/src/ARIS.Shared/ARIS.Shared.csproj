@@ -26,6 +26,9 @@
     <None Update="Prompts\OntologyEnrichment.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Prompts\OntologyEnrichmentDomainTools.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Prompts\ResumeExtraction.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

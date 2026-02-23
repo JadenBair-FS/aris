@@ -9,6 +9,14 @@ using Microsoft.Extensions.AI;
 using OllamaSharp;
 using ElBruno.OllamaSharp.Extensions;
 using Npgsql;
+using Serilog;
+using Serilog.Events;
+
+// Bootstrap logger for startup errors (replaced after host builds)
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -60,6 +68,27 @@ builder.Services.AddTransient<OntologyEnrichmentService>();
 
 builder.Services.AddScoped<GoldStandardSeeder>();
 builder.Services.AddHostedService<IngestionWorker>();
+
+// Serilog: replace default Microsoft logging
+var logDir = Path.Combine(AppContext.BaseDirectory, "logs");
+Directory.CreateDirectory(logDir);
+
+builder.Services.AddSerilog((services, config) => config
+    .MinimumLevel.Debug()
+    // Suppress noisy framework namespaces
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+    .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
+    .MinimumLevel.Override("System.Net.Http", LogEventLevel.Warning)
+    // Console: colorized, human-readable
+    .WriteTo.Console(
+        outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+    // File: full detail, daily rolling, kept for 14 days
+    .WriteTo.File(
+        path: Path.Combine(logDir, "ingestor-.log"),
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 14,
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+    .Enrich.FromLogContext());
 
 var host = builder.Build();
 
