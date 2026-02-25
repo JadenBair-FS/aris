@@ -1,0 +1,871 @@
+{
+  "type": "resume",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        47923,
+        48964,
+        48395
+      ],
+      "avgLatencyMs": 48427.333333333336,
+      "output": {
+        "roles": [
+          {
+            "title": "Data Integration Specialist / Software Engineer",
+            "duration": "January 2025 – Present",
+            "is_current": true
+          },
+          {
+            "title": "Physician Consultant",
+            "duration": "May 2022 – January 2025",
+            "is_current": false
+          },
+          {
+            "title": "Technical Sales Consultant",
+            "duration": "January 2021 – May 2022",
+            "is_current": false
+          },
+          {
+            "title": "Store Manager / Assistance Manager / Sales Associate",
+            "duration": "May 2016 – May 2022",
+            "is_current": false
+          },
+          {
+            "title": "Web Developer",
+            "duration": "December 2016 – November 2019",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "JavaScript",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 7.5
+          },
+          {
+            "name": "TypeScript",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "C#",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Python",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 4.5
+          },
+          {
+            "name": ".NET Core",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "ASP.NET",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "FastAPI",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "React.js",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 6.5
+          },
+          {
+            "name": "Vue.js",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": ".NET MAUI",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "HTML5",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 6.5
+          },
+          {
+            "name": "CSS3",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 6.5
+          },
+          {
+            "name": "SQL Server",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 4
+          },
+          {
+            "name": "MySQL",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 4
+          },
+          {
+            "name": "MongoDB",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Neo4j",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Vector Databases",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "AWS",
+            "category": "DevOps & Cloud",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Azure",
+            "category": "DevOps & Cloud",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Git",
+            "category": "DevOps & Cloud",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "CI/CD",
+            "category": "DevOps & Cloud",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Docker",
+            "category": "DevOps & Cloud",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Agile/Scrum",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Microservices",
+            "category": "Architecture",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "RESTful APIs",
+            "category": "Architecture",
+            "proficiency": "Expert",
+            "years_of_experience": 4
+          },
+          {
+            "name": "Event-Driven Architecture",
+            "category": "Architecture",
+            "proficiency": "Expert",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Graph+RAG",
+            "category": "Architecture",
+            "proficiency": "Expert",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Jest",
+            "category": "Testing",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Unit Testing",
+            "category": "Testing",
+            "proficiency": "Expert",
+            "years_of_experience": 4
+          },
+          {
+            "name": "Contract Testing",
+            "category": "Testing",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Integration Testing",
+            "category": "Testing",
+            "proficiency": "Expert",
+            "years_of_experience": 4
+          },
+          {
+            "name": "Strategic Planning",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Team Management",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Performance Improvement",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Training and Development",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Professional Writing",
+            "category": "Soft Skills",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Relationship Building",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Presentation",
+            "category": "Soft Skills",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Client Communication",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Trust Building",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Data-Driven Decision Making",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Customer Needs Assessment",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Market Analysis",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Problem-Solving",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Sales and Negotiation",
+            "category": "Business Development",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Recruitment",
+            "category": "Business Development",
+            "proficiency": "Beginner",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "Lead Generation",
+            "category": "Business Development",
+            "proficiency": "Beginner",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "Onboarding",
+            "category": "Business Development",
+            "proficiency": "Beginner",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "Profit Generation",
+            "category": "Business Development",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Data Integration Specialist / Software Engineer",
+            "company": "",
+            "bullets": [
+              "Architect and develop data integration software using ASP.NET Core, React, and SQL Server, ensuring high-speed data availability and 99.9% uptime for enterprise-scale systems.",
+              "Deliver proven and validated code by implementing automated unit and integration tests, reducing production bugs and ensuring system stability across microservices.",
+              "Design and maintain RESTful and event-driven APIs to facilitate seamless data flow between proprietary hardware and global ERP/WMS solutions.",
+              "Collaborate in an Agile Scrum environment, owning the full development lifecycle from initial design to CI/CD pipeline management and production monitoring."
+            ]
+          },
+          {
+            "role": "Physician Consultant",
+            "company": "",
+            "bullets": [
+              "Managed a high-revenue portfolio, contributing to a current YTD gross profit of $1.5M+ through strategic data analysis and stakeholder management.",
+              "Analyzed complex business workflows to identify operational bottlenecks, gaining firsthand insight into the data-sharing challenges that technical organizations aim to solve.",
+              "Acted as a technical stakeholder for internal systems, leveraging Salesforce for advanced lead tracking and data auditing to ensure high data integrity across the organization.",
+              "Selected as a 2025 Presidents Club Qualifier, demonstrating a consistent record of high performance and professional accountability in a fast-paced environment."
+            ]
+          },
+          {
+            "role": "Technical Sales Consultant",
+            "company": "",
+            "bullets": [
+              "Provided technical consultation and hardware demonstrations for advanced assistive technologies (DaVinci Pro, Ruby) to individuals with visual impairments.",
+              "Partnered with the Department of Veterans Affairs (VA) to deliver and configure customized low-vision hardware solutions for veterans in need across Utah, Idaho, and Wyoming.",
+              "Analyzed accessibility requirements to troubleshoot and configure complex optical equipment, ensuring optimal performance and user success for clients with specific impairment needs.",
+              "Achieved a 30% lead conversion rate by translating complex technical product specifications into actionable solutions for a non-technical audience."
+            ]
+          },
+          {
+            "role": "Store Manager / Assistance Manager / Sales Associate",
+            "company": "",
+            "bullets": [
+              "Advanced through three progressive roles from Sales Associate to Store Manager, ultimately overseeing operations and a staff of 15 for the company’s flagship retail location.",
+              "Utilized Microsoft Dynamics for inventory auditing, tracking, and order management, maintaining data integrity for a high-volume retail environment.",
+              "Implemented the 'Gold Star Selling' technique, focusing on a consultative approach to identify and solve specific customer needs.",
+              "Generated significant revenue growth, including induction into the 'Million Dollar Club' for individual sales excellence."
+            ]
+          },
+          {
+            "role": "Web Developer",
+            "company": "",
+            "bullets": [
+              "Facilitated the production of high-fidelity visual design components and user interfaces utilizing HTML/CSS and JavaScript tools.",
+              "Developed and managed relational and non-relational databases using SQL and MongoDB, ensuring data integrity and efficient retrieval for web applications.",
+              "Collaborated on full-stack solutions, applying front-end and back-end development principles to deliver functional, user-centric web products."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "M.S., Computer Science",
+            "institution": "Full Sail University",
+            "year": "Expected April,  2026"
+          },
+          {
+            "degree": "B.S., Web Design and Development",
+            "institution": "Full Sail University",
+            "year": "November,  2024"
+          }
+        ]
+      },
+      "skillCount": 50,
+      "roleCount": 5,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        21360,
+        31001,
+        52694
+      ],
+      "avgLatencyMs": 35018.333333333336,
+      "output": {
+        "roles": [
+          {
+            "title": "Data Integration Specialist / Software Engineer",
+            "duration": "January 2025 – Present",
+            "is_current": true
+          },
+          {
+            "title": "Physician Consultant",
+            "duration": "May 2022 – January 2025",
+            "is_current": false
+          },
+          {
+            "title": "Technical Sales Consultant",
+            "duration": "January 2021 – May 2022",
+            "is_current": false
+          },
+          {
+            "title": "Store Manager / Assistance Manager / Sales Associate",
+            "duration": "May 2016 – May 2022",
+            "is_current": false
+          },
+          {
+            "title": "Web Developer",
+            "duration": "December 2016 – November 2019",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "ASP.NET Core",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "React.js",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Neo4j",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Node.js",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Python",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 0
+          },
+          {
+            "name": "K-Nearest-Neighbor (KNN) model",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Explainable AI (XAI)",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Supabase",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": ".NET MAUI",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "C#",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "JavaScript",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "TypeScript",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "C#",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "SQL Server",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "MySQL",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "MongoDB",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Neo4j",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Vector Databases",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Docker",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Git",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "CI/CD",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Agile/Scrum",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Microservices",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "RESTful APIs",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Event-Driven Architecture",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Graph+RAG",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Jest",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Unit Testing",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Contract Testing",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Integration Testing",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Leadership & Strategy",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Team Management",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Performance Improvement",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Training and Development",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Communication & Collaboration",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Professional Writing",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Relationship Building",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Presentation",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Client Communication",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Trust Building",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Data-Driven Decision Making",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Customer Needs Assessment",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Market Analysis",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Problem-Solving",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Sales and Negotiation",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Recruitment",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Lead Generation",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Onboarding",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Profit Generation",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Data Integration Specialist / Software Engineer",
+            "company": "",
+            "bullets": [
+              "Architect and develop data integration software using ASP.NET Core, React, and SQL Server",
+              "Deliver proven and validated code by implementing automated unit and integration tests"
+            ]
+          },
+          {
+            "role": "Physician Consultant",
+            "company": "",
+            "bullets": [
+              "Managed a high-revenue portfolio contributing to a current YTD gross profit of $1.5M+",
+              "Analyzed complex business workflows to identify operational bottlenecks"
+            ]
+          },
+          {
+            "role": "Technical Sales Consultant",
+            "company": "",
+            "bullets": [
+              "Provided technical consultation and hardware demonstrations for advanced assistive technologies",
+              "Partnered with the Department of Veterans Affairs to deliver and configure customized low-vision hardware solutions"
+            ]
+          },
+          {
+            "role": "Store Manager / Assistance Manager / Sales Associate",
+            "company": "",
+            "bullets": [
+              "Advanced through three progressive roles from Sales Associate to Store Manager, ultimately overseeing operations and a staff of 15",
+              "Generated significant revenue growth"
+            ]
+          },
+          {
+            "role": "Web Developer",
+            "company": "",
+            "bullets": [
+              "Facilitated the production of high-fidelity visual design components and user interfaces using HTML/CSS and JavaScript tools",
+              "Developed and managed relational and non-relational databases using SQL and MongoDB"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "M.S., Computer Science",
+            "institution": "Full Sail University",
+            "year": "Expected April, 2026"
+          },
+          {
+            "degree": "B.S., Web Design and Development",
+            "institution": "Full Sail University",
+            "year": "November, 2024"
+          }
+        ]
+      },
+      "skillCount": 50,
+      "roleCount": 5,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "llama3.2:3b",
+    "speedupFactor": 1.38,
+    "skillCounts": {
+      "mistral": 50,
+      "llama3.2:3b": 50
+    },
+    "sharedSkills": [
+      "JavaScript",
+      "TypeScript",
+      "C#",
+      "Python",
+      "React.js",
+      ".NET MAUI",
+      "SQL Server",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Neo4j",
+      "Vector Databases",
+      "Git",
+      "CI/CD",
+      "Docker",
+      "Agile/Scrum",
+      "Microservices",
+      "RESTful APIs",
+      "Event-Driven Architecture",
+      "Graph+RAG",
+      "Jest",
+      "Unit Testing",
+      "Contract Testing",
+      "Integration Testing",
+      "Team Management",
+      "Performance Improvement",
+      "Training and Development",
+      "Professional Writing",
+      "Relationship Building",
+      "Presentation",
+      "Client Communication",
+      "Trust Building",
+      "Data-Driven Decision Making",
+      "Customer Needs Assessment",
+      "Market Analysis",
+      "Problem-Solving",
+      "Sales and Negotiation",
+      "Recruitment",
+      "Lead Generation",
+      "Onboarding",
+      "Profit Generation"
+    ],
+    "uniqueToLargerModel": [
+      ".NET Core",
+      "ASP.NET",
+      "FastAPI",
+      "Vue.js",
+      "HTML5",
+      "CSS3",
+      "AWS",
+      "Azure",
+      "Strategic Planning"
+    ]
+  }
+}

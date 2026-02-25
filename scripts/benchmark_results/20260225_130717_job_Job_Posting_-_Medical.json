@@ -1,0 +1,136 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        7507,
+        4527,
+        4525
+      ],
+      "avgLatencyMs": 5519.666666666667,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Certified Surgical Technologist",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "CST certification through NBSTSA",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "BLS certification",
+            "importance": "Essential",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Prepare operating rooms for surgical procedures",
+          "Perform surgical scrub, gown, and glove procedures",
+          "Set up and organize the sterile field",
+          "Anticipate surgeon needs during procedures",
+          "Perform and document surgical counts",
+          "Assist with patient positioning, prepping, and draping",
+          "Prepare and handle surgical specimens",
+          "Operate and troubleshoot robotic surgical systems",
+          "Maintain instrument tracking and documentation",
+          "Manage surgical supply inventory",
+          "Assist with turnover between cases",
+          "Participate in facility quality improvement initiatives"
+        ],
+        "minimum_education": [
+          {
+            "degree": "CAAHEP-accredited Surgical Technology program",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 2,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        9977,
+        7273,
+        7765
+      ],
+      "avgLatencyMs": 8338.333333333334,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Certified Surgical Technologist",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "Sterile Technique",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Surgical Instrumentation",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Patient Safety Protocols",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Robotic-Assisted Surgery",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Orthopedic Procedures",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Cardiac Procedures",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Prepare operating rooms for surgical procedures",
+          "Perform surgical scrub, gown, and glove procedures",
+          "Set up and organize the sterile field",
+          "Anticipate surgeon needs during procedures",
+          "Assist with patient positioning, prepping, and draping"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Associate's degree in Surgical Technology",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 6,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.51,
+    "skillCounts": {
+      "mistral": 2,
+      "llama3.2:3b": 6
+    },
+    "sharedSkills": [],
+    "uniqueToLargerModel": [
+      "CST certification through NBSTSA",
+      "BLS certification"
+    ]
+  }
+}

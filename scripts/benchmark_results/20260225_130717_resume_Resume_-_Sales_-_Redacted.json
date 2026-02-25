@@ -1,0 +1,317 @@
+{
+  "type": "resume",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        29605,
+        32165,
+        21600
+      ],
+      "avgLatencyMs": 27790,
+      "output": {
+        "roles": [
+          {
+            "title": "Senior Account Executive – Mid-Market",
+            "duration": "April 2022 – Present",
+            "is_current": true
+          },
+          {
+            "title": "Account Executive – SMB",
+            "duration": "January 2019 – March 2022",
+            "is_current": false
+          },
+          {
+            "title": "Sales Development Representative",
+            "duration": "June 2017 – December 2018",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Salesforce",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "HubSpot",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Outreach.io",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "LinkedIn Sales Navigator",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Gong",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Clari",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 1
+          },
+          {
+            "name": "ZoomInfo",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Microsoft Office Suite",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 6
+          },
+          {
+            "name": "Pipeline Management",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 6
+          },
+          {
+            "name": "Enterprise Sales (B2B)",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 6
+          },
+          {
+            "name": "Contract Negotiation",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 6
+          },
+          {
+            "name": "CRM Administration",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Territory Development",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 4.5
+          },
+          {
+            "name": "Solution Selling",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 6
+          },
+          {
+            "name": "Client Retention & Upselling",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 4.5
+          },
+          {
+            "name": "Cross-Functional Collaboration",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 6
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Senior Account Executive – Mid-Market",
+            "company": "Salesloft",
+            "bullets": [
+              "Consistently exceeded annual quota of $2.1M ARR, achieving 127% attainment in FY2023 and 142% in FY2024, ranking #2 out of 38 reps in the mid-market segment",
+              "Manage a portfolio of 85+ accounts across manufacturing, logistics, and financial services verticals, maintaining a 94% client retention rate year over year",
+              "Expanded average deal size from $28K to $47K by implementing a multi-threaded selling approach targeting VP and C-level decision makers",
+              "Led product demonstrations and technical deep-dives for enterprise prospects, collaborating with Solutions Engineering to customize proposals for complex sales cycles averaging 90+ days",
+              "Generated $380K in pipeline through outbound prospecting and strategic networking at industry conferences (Dreamforce, SaaStr Annual)"
+            ]
+          },
+          {
+            "role": "Account Executive – SMB",
+            "company": "Mailchimp (Intuit)",
+            "bullets": [
+              "Exceeded quarterly sales targets in 11 of 13 quarters, with a cumulative attainment of 118% against a $1.2M annual quota",
+              "Grew assigned territory from 120 to 195 active accounts by identifying and converting high-potential prospects through cold outreach and inbound lead qualification",
+              "Closed the company's largest SMB deal at the time ( $156K ACV) by building a business case demonstrating 340% projected ROI for the client's email automation needs",
+              "Mentored three newly hired SDRs on Salesforce best practices, objection handling frameworks, and pipeline hygiene, contributing to a 25% increase in team conversion rates",
+              "Awarded 'Closer of the Quarter' for Q3 2021 after closing $485K in new business within a single quarter"
+            ]
+          },
+          {
+            "role": "Sales Development Representative",
+            "company": "ADP",
+            "bullets": [
+              "Generated 40+ qualified opportunities per quarter through cold calling, email sequences, and LinkedIn outreach targeting HR directors and CFOs at mid-market companies",
+              "Maintained a 22% cold-call-to-meeting conversion rate, consistently exceeding the team benchmark of 15%",
+              "Collaborated with marketing to refine lead scoring criteria, improving MQL-to-SQL conversion by 30%",
+              "Promoted to Account Executive consideration after 18 months based on consistent top-quartile performance"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Bachelor of Business Administration – Marketing",
+            "institution": "Georgia State University",
+            "year": "2017"
+          }
+        ]
+      },
+      "skillCount": 16,
+      "roleCount": 3,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        27405,
+        13858,
+        13809
+      ],
+      "avgLatencyMs": 18357.333333333332,
+      "output": {
+        "roles": [
+          {
+            "title": "Senior Account Executive",
+            "duration": "April 2022 – Present",
+            "is_current": true
+          },
+          {
+            "title": "Account Executive – SMB",
+            "duration": "January 2019 – March 2022",
+            "is_current": false
+          },
+          {
+            "title": "Sales Development Representative",
+            "duration": "June 2017 – December 2018",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Salesforce",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "HubSpot",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Outreach.io",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "LinkedIn Sales Navigator",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Gong",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Clari",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "ZoomInfo",
+            "category": "Technical",
+            "proficiency": "Beginner",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Microsoft Office Suite",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Senior Account Executive",
+            "company": "Salesloft",
+            "bullets": [
+              "Consistently exceeded annual quota of $2.1M ARR",
+              "Manage a portfolio of 85+ accounts across manufacturing, logistics, and financial services verticals"
+            ]
+          },
+          {
+            "role": "Account Executive – SMB",
+            "company": "Mailchimp (Intuit)",
+            "bullets": [
+              "Exceeded quarterly sales targets in 11 of 13 quarters",
+              "Grew assigned territory from 120 to 195 active accounts"
+            ]
+          },
+          {
+            "role": "Sales Development Representative",
+            "company": "ADP",
+            "bullets": [
+              "Generated 40+ qualified opportunities per quarter through cold calling, email sequences, and LinkedIn outreach targeting HR directors and CFOs at mid-market companies"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Bachelor of Business Administration – Marketing",
+            "institution": "Georgia State University",
+            "year": "2017"
+          }
+        ]
+      },
+      "skillCount": 8,
+      "roleCount": 3,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "llama3.2:3b",
+    "speedupFactor": 1.51,
+    "skillCounts": {
+      "mistral": 16,
+      "llama3.2:3b": 8
+    },
+    "sharedSkills": [
+      "Salesforce",
+      "HubSpot",
+      "Outreach.io",
+      "LinkedIn Sales Navigator",
+      "Gong",
+      "Clari",
+      "ZoomInfo",
+      "Microsoft Office Suite"
+    ],
+    "uniqueToLargerModel": [
+      "Pipeline Management",
+      "Enterprise Sales (B2B)",
+      "Contract Negotiation",
+      "CRM Administration",
+      "Territory Development",
+      "Solution Selling",
+      "Client Retention & Upselling",
+      "Cross-Functional Collaboration"
+    ]
+  }
+}

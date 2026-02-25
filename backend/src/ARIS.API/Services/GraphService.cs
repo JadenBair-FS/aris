@@ -43,10 +43,10 @@ public class GraphService : IDisposable, IAsyncDisposable
     };
 
     /// <summary>
-    /// Retrieves the Valid Neighborhood for a user based on known skills.
-    /// V = S_user U N_k(S_user) where k=2.
+    /// Returns the valid skill neighborhood: the user's known skills plus all reachable neighbors
+    /// within 2 hops via SUBSET_OF (up and down) and BRIDGE_TO edges.
     /// When includeTechSkills is false, only Roadmap.sh-sourced tech skills are excluded —
-    /// domain tool bridges (CRM, EHR, etc.) that carry is_tech=true but source='ONET_Skill' are allowed.
+    /// domain tool bridges (CRM, EHR, etc.) that carry is_tech=true but source='ONET_Skill' are still allowed.
     /// </summary>
     public async Task<HashSet<string>> GetValidNeighborhoodAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
@@ -58,11 +58,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             validSkills.Add(skill);
         }
 
-        // A2: Filter changed from `NOT coalesce(x.is_tech, false)` to
-        //     `NOT (coalesce(x.is_tech, false) AND x.source = 'Roadmap.sh')`
-        // so that domain tool bridges (Salesforce, EHR, CRM) are allowed for non-tech candidates
-        // while programming/engineering skills from Roadmap.sh are still blocked.
-        // A1: Removed non-existent RELATED_TO relationship type from lateral traversal.
         const string query = @"
             MATCH (s:Skill)
             WHERE toLower(s.name) IN [term IN $expansionSeed | toLower(term)]
@@ -119,7 +114,6 @@ public class GraphService : IDisposable, IAsyncDisposable
         var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var expansionSeed = userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
 
-        // A2: Updated filter to only block Roadmap.sh-sourced tech skills.
         const string query = @"
             // Direction 1: child -[:SUBSET_OF*1..3]-> parent (original — parent in user skills)
             MATCH (parent:Skill)
@@ -169,13 +163,10 @@ public class GraphService : IDisposable, IAsyncDisposable
     }
 
     /// <summary>
-    /// Returns skills that are implicitly granted because the user knows a child specialization
+    /// Returns skills implicitly granted because the user knows a child specialization
     /// (UP traversal: child → parent via SUBSET_OF), plus 1-hop BRIDGE_TO lateral coverage.
-    ///
-    /// A3: Removed the DOWN block (parent → children) — that direction belongs in
-    /// GetPrerequisiteMetSkillsAsync ("Prerequisite Met") not here ("Implicitly Matched").
-    /// A1: Removed non-existent IS_PARENT_OF and RELATED_TO relationship types.
-    /// A2: Updated filter to only block Roadmap.sh-sourced tech skills.
+    /// DOWN traversal (parent → children) is intentionally excluded here — it belongs in
+    /// GetPrerequisiteMetSkillsAsync.
     /// </summary>
     public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
@@ -229,8 +220,8 @@ public class GraphService : IDisposable, IAsyncDisposable
     }
 
     /// <summary>
-    /// B2: Returns bridge path data for a set of missing skills reachable from user skills.
-    /// Used by MatchService to enrich SkillGapItem objects with BridgePath/BridgeSource context.
+    /// Returns bridge path data for missing skills reachable from user skills via BRIDGE_TO or SUBSET_OF edges.
+    /// Used by MatchService to enrich SkillGapItem objects with BridgePath and BridgeSource context.
     /// </summary>
     public async Task<List<(string SkillName, string ViaSkill, string BridgeType, string? BridgeSource)>> GetBridgeablePathsAsync(
         IEnumerable<string> userSkills, IEnumerable<string> missingSkills)
@@ -303,8 +294,8 @@ public class GraphService : IDisposable, IAsyncDisposable
     }
 
     /// <summary>
-    /// B3: Serializes the most relevant graph paths between user skills and job skills
-    /// into a structured string for use as LLM grounding context.
+    /// Serializes the most relevant graph paths between user skills and job skills
+    /// into a structured string for injection as LLM grounding context.
     /// </summary>
     public async Task<string> GetGraphContextForMatchAsync(IEnumerable<string> userSkills, IEnumerable<string> jobSkills)
     {

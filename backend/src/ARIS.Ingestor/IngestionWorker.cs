@@ -162,10 +162,8 @@ public class IngestionWorker : BackgroundService
             var details = await onetService.GetOccupationDetailsAsync(occ.Code, ct);
             if (details == null) continue;
 
-            // Upsert Role in Neo4j
             await neo4j.MergeRoleAsync(details.Title, details.Code, details.Description ?? "");
 
-            // Upsert Role in PostgreSQL
             var existingRole = await dbContext.Roles
                 .FirstOrDefaultAsync(r => r.OnetCode == occ.Code, ct);
 

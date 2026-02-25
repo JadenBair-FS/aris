@@ -18,6 +18,7 @@ public class EvalController : ControllerBase
 {
     private readonly MatchService _matchService;
     private readonly GroundingService _groundingService;
+    private readonly ExtractionBenchmarkService _benchmarkService;
     private readonly ArisDbContext _context;
     private readonly IChatClient _chatClient;
     private readonly ILogger<EvalController> _logger;
@@ -25,12 +26,14 @@ public class EvalController : ControllerBase
     public EvalController(
         MatchService matchService,
         GroundingService groundingService,
+        ExtractionBenchmarkService benchmarkService,
         ArisDbContext context,
         IChatClient chatClient,
         ILogger<EvalController> logger)
     {
         _matchService = matchService;
         _groundingService = groundingService;
+        _benchmarkService = benchmarkService;
         _context = context;
         _chatClient = chatClient;
         _logger = logger;
@@ -43,8 +46,8 @@ public class EvalController : ControllerBase
     }
 
     /// <summary>
-    /// D2: Computes the Graph Grounding Score for arbitrary text against a user's valid skill neighborhood.
-    /// This is the thesis RQ2 novel metric — measures how grounded LLM output is in the knowledge graph.
+    /// Computes the Graph Grounding Score for arbitrary text against a user's valid skill neighborhood.
+    /// Thesis RQ2 novel metric — measures how grounded LLM output is in the knowledge graph.
     /// </summary>
     [HttpPost("grounding")]
     public async Task<IActionResult> ComputeGroundingScore([FromBody] GroundingRequest request)
@@ -68,7 +71,7 @@ public class EvalController : ControllerBase
     }
 
     /// <summary>
-    /// D3: Returns per-tier skill counts for a user-job pair (thesis RQ1 metric).
+    /// Returns per-tier skill counts for a user-job pair (thesis RQ1 metric).
     /// ImplicitDiscoveryRate = (implicit + prereqMet + bridgeable) / total job skills.
     /// </summary>
     [HttpPost("implicit-skills")]
@@ -113,10 +116,8 @@ public class EvalController : ControllerBase
     }
 
     /// <summary>
-    /// D4: Runs all three evaluation pipelines sequentially for thesis RQ1/RQ2/RQ3 comparison.
-    /// Pipeline A: LLM Direct (no retrieval)
-    /// Pipeline B: Vector-RAG (top-k similarity + LLM synthesis)
-    /// Pipeline C: Graph-RAG / ARIS (full AnalyzeMatchAsync)
+    /// Runs all three evaluation pipelines sequentially for thesis RQ1/RQ2/RQ3 comparison.
+    /// Pipeline A: LLM Direct (no retrieval), B: Vector-RAG (top-k + LLM), C: Graph-RAG / ARIS (full AnalyzeMatchAsync).
     /// </summary>
     [HttpPost("pipeline-compare")]
     public async Task<IActionResult> ComparePipelines([FromBody] PipelineCompareRequest request)
@@ -136,13 +137,8 @@ public class EvalController : ControllerBase
         var userJson = JsonSerializer.Serialize(user.CleanSignal);
         var jobJson = JsonSerializer.Serialize(job.CleanSignal);
 
-        // Pipeline A — LLM Direct: feed CleanSignals directly, no retrieval.
         var pipelineA = await RunPipelineAAsync(userJson, jobJson, userSkills);
-
-        // Pipeline B — Vector-RAG: top-k skill similarity + LLM synthesis.
         var pipelineB = await RunPipelineBAsync(user, job, userSkills);
-
-        // Pipeline C — Graph-RAG / ARIS: full AnalyzeMatchAsync.
         var pipelineC = await RunPipelineCAsync(request.UserProfileId, request.JobId, userSkills);
 
         return Ok(new { pipelineA, pipelineB, pipelineC });
@@ -198,7 +194,6 @@ public class EvalController : ControllerBase
         string rawOutput;
         try
         {
-            // Top-k vector search: find skills most similar to the user's embedding.
             var topSkillNames = await _context.Skills
                     .Where(s => s.Embedding != null)
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(user.Embedding!) })
@@ -291,6 +286,24 @@ public class EvalController : ControllerBase
             groundingScore,
             vectorSimilarity = analysis?.VectorSimilarity ?? 0.0
         };
+    }
+
+    /// <summary>
+    /// Benchmarks LLM vs SLM extraction quality and latency (thesis latency metric).
+    /// Times only the inference call per model run, excluding reference vocabulary retrieval.
+    /// </summary>
+    [HttpPost("extraction-benchmark")]
+    public async Task<IActionResult> ExtractionBenchmark([FromBody] ExtractionBenchmarkRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.Text))
+            return BadRequest("Text is required.");
+        if (request.Runs < 1 || request.Runs > 10)
+            return BadRequest("Runs must be between 1 and 10.");
+        if (request.Models == null || request.Models.Count == 0)
+            return BadRequest("At least one model must be specified.");
+
+        var result = await _benchmarkService.RunBenchmarkAsync(request);
+        return Ok(result);
     }
 
     /// <summary>

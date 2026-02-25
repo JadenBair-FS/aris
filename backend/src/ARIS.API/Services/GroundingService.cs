@@ -25,8 +25,6 @@ public class GroundingService
     public async Task<GroundingResult> CalculateGroundingScoreAsync(string generatedText, IEnumerable<string> userExplicitSkills)
     {
         var validNeighborhood = await _graphService.GetValidNeighborhoodAsync(userExplicitSkills);
-
-        // D1: Load canonical skill names from the reference dictionary for substring matching.
         var allSkillNames = await _context.Skills.Select(s => s.Name).ToListAsync();
 
         var extractedSkills = ExtractSkillsFromText(generatedText, allSkillNames);
@@ -63,7 +61,7 @@ public class GroundingService
     }
 
     /// <summary>
-    /// D1: Extracts canonical skill names from text using case-insensitive substring matching
+    /// Extracts canonical skill names from text using case-insensitive substring matching
     /// against the reference dictionary. Returns matched canonical skill names (not raw text spans).
     /// </summary>
     private static List<string> ExtractSkillsFromText(string text, List<string> allSkillNames)

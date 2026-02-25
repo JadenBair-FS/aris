@@ -50,7 +50,7 @@ namespace ARIS.API.Controllers
         }
 
         /// <summary>
-        /// C4: Returns a job posting's full CleanSignal and metadata. Used by the frontend.
+        /// Returns a job posting's full CleanSignal and metadata. Used by the frontend.
         /// </summary>
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetJob(Guid id)

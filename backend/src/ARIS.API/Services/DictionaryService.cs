@@ -59,10 +59,8 @@ public class DictionaryService
 
     public async Task<string> GetJobRecommendationsAsync(string userPrompt)
     {
-        //Find relevant roles based on the user's prompt
         var relevantRoles = await SearchRolesAsync(userPrompt, limit: 5);
 
-        //Construct Prompt
         var sb = new StringBuilder();
         sb.AppendLine("You are a helpful career counselor. Using the following database of job roles, recommend the best fits for the user.");
         sb.AppendLine("Database Matches:");
@@ -74,15 +72,12 @@ public class DictionaryService
         sb.AppendLine($"User Query: {userPrompt}");
         sb.AppendLine("Response:");
 
-        // Generate
-        
         var response = await _chatClient.GetResponseAsync(sb.ToString());
         return response.Text ?? "No response generated.";
     }
 
     public async Task<string> GetSkillRecommendationsAsync(string userPrompt)
     {
-        // Find the target role
         _logger.LogInformation("Generating embedding for skill gap analysis: {Query}", userPrompt);
         var embeddings = await _embeddingGenerator.GenerateAsync([userPrompt]);
         var vectorData = embeddings[0].Vector;
@@ -98,14 +93,12 @@ public class DictionaryService
         if (targetRole == null)
             return "Could not identify a relevant job role from your query.";
 
-        // Construct Prompt
         var sb = new StringBuilder();
         sb.AppendLine($"You are a mentor. The user wants to be a '{targetRole.Title}'.");
         sb.AppendLine("Here are the standard skills required for this role from our database:");
 
         var roleSkills = targetRole.RoleSkills.OrderByDescending(x => x.Importance).Take(15);
 
-        // Take top 15 skills
         foreach (var rs in roleSkills)
         {
             sb.AppendLine($"- {rs.Skill.Name}");
@@ -117,8 +110,6 @@ public class DictionaryService
 
         var fullString = sb.ToString();
 
-        // Generate
-        
         var response = await _chatClient.GetResponseAsync(fullString);
         return response.Text ?? "No response generated.";
     }

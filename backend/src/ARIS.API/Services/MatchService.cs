@@ -87,6 +87,19 @@ public class MatchService
 
         var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
 
+        var matchingSkillItems = matchingSkills.Select(skill =>
+        {
+            var (importance, requiredYears) = GetJobSkillData(job.CleanSignal!, skill);
+            var candidateYears = GetCandidateSkillYears(skill, user.CleanSignal!);
+            return new SkillGapItem
+            {
+                SkillName = skill,
+                Importance = importance,
+                YearsRequired = requiredYears,
+                CandidateYears = candidateYears
+            };
+        }).ToList();
+
         var implicitlyMatched = jobSkills
             .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
             .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
@@ -200,13 +213,17 @@ public class MatchService
         }
 
         // Compute ArisScore: blended graph+vector ranking signal (thesis RQ1/RQ2 contribution).
-        // Graph coverage weights: direct match=1.0, implicit=0.8, prereqMet=0.6, bridgeable=0.4.
+        // Graph coverage weights: direct match=1.0×ExperienceMultiplier, implicit=0.8, prereqMet=0.6, bridgeable=0.4.
+        // ExperienceMultiplier = max(0.5, candidateYears/requiredYears) when requiredYears > 0, else 1.0.
+        //   - Applied only to Tier 1 (direct matches): skills the candidate actually has.
+        //   - Tiers 2-4 represent skills the candidate lacks, so experience penalty is not applicable.
+        //   - Floor of 0.5 prevents LLM underestimation from zeroing out a legitimately present skill.
         // Importance weights: Essential=1.0, Preferred=0.6 (applied to both numerator and denominator).
         // When a job has no Essential/Preferred distinction, all skills default to Essential (weight=1.0)
         // and the formula is equivalent to the flat count version.
         // Capped at 1.0 to prevent over-inflation when coverage exceeds total job skills.
         // Blend: 55% vector similarity + 45% graph coverage.
-        // The 45% graph weight is calibrated to correct embedding-space ranking failures
+        // The 45% graph weight is calibrated to correct embedding-space ranking failures.
         // Group by name (case-insensitive) and take the most conservative weight when the LLM
         // emits duplicate skill entries. Essential (1.0) wins over Preferred (0.6) on conflict.
         var importanceWeights = job.CleanSignal!.RequiredSkills
@@ -221,7 +238,7 @@ public class MatchService
 
         var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
         var graphCoverageScore = Math.Min(
-            (matchingSkills.Sum(s => GetImportanceWeight(s) * 1.0) +
+            (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
              implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
              prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
              bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
@@ -233,12 +250,28 @@ public class MatchService
             JobId = job.Id,
             VectorSimilarity = similarity,
             ArisScore = arisScore,
-            MatchingSkills = matchingSkills,
+            MatchingSkills = matchingSkillItems,
             ImplicitlyDiscoveredSkills = implicitlyMatched,
             BridgeableSkills = bridgeable,
             PrerequisiteMetSkills = prerequisiteMet,
             HardGaps = hardGaps
         };
+    }
+
+    private static double GetCandidateSkillYears(
+        string skillName,
+        ARIS.Shared.Models.CleanSignal.ResumeCleanSignal signal)
+    {
+        var skill = signal.Skills
+            .FirstOrDefault(s => s.Name.Equals(skillName, StringComparison.OrdinalIgnoreCase));
+        return skill?.YearsOfExperience ?? 0;
+    }
+
+    private static double ExperienceMultiplier(double candidateYears, double requiredYears)
+    {
+        if (requiredYears <= 0) return 1.0;
+        if (candidateYears >= requiredYears) return 1.0;
+        return Math.Max(0.5, candidateYears / requiredYears);
     }
 
     private static (string importance, double years) GetJobSkillData(ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal signal, string skillName)
@@ -274,7 +307,7 @@ public class MatchService
     }
 
     /// <summary>
-    /// B3: Generates a grounded match summary using graph-path context injected into the LLM prompt.
+    /// Generates a grounded match summary using graph-path context injected into the LLM prompt.
     /// Returns the narrative summary and its graph grounding score.
     /// </summary>
     public async Task<(string Summary, double GroundingScore)> GenerateGroundedSummaryAsync(Guid userProfileId, Guid jobId)
@@ -298,7 +331,7 @@ public class MatchService
         var sb = new StringBuilder();
         sb.AppendLine($"You are a career advisor. Provide a concise 2-3 paragraph assessment of how well {candidateTitle} matches {jobTitle}.");
         sb.AppendLine();
-        sb.AppendLine($"MATCHING SKILLS: {string.Join(", ", analysis.MatchingSkills)}");
+        sb.AppendLine($"MATCHING SKILLS: {string.Join(", ", analysis.MatchingSkills.Select(s => s.SkillName))}");
         sb.AppendLine($"IMPLICIT SKILLS (auto-granted via expertise): {string.Join(", ", analysis.ImplicitlyDiscoveredSkills)}");
         sb.AppendLine($"BRIDGEABLE SKILLS (transferable): {string.Join(", ", analysis.BridgeableSkills.Select(s => s.SkillName))}");
         sb.AppendLine($"HARD GAPS (missing): {string.Join(", ", analysis.HardGaps.Select(s => s.SkillName))}");

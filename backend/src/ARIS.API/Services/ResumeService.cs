@@ -172,7 +172,6 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
-                // Retrieve top roles (unfiltered — roles are all O*NET)
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
                     .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
@@ -180,7 +179,6 @@ namespace ARIS.API.Services
                     .Take(8)
                     .ToListAsync();
 
-                // Determine domain from the best-matching role
                 var bestRole = topRoles.FirstOrDefault();
                 bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
                 string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
@@ -617,11 +615,8 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
 
-                    // Domain-biased skill grounding:
-                    // 1. First, try to find a match among skills already linked to roles in the user's primary domain (O*NET Prefix).
-                    // 2. Fall back to a general search if no strong domain match is found.
-                    // 3. For non-tech domains, exclude Roadmap.sh skills from the general fallback.
-
+                    // Domain-biased: prefer skills already linked to the user's primary domain (O*NET prefix).
+                    // Falls back to a global search; non-tech domains exclude Roadmap.sh skills.
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -631,7 +626,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < 0.35) // Domain-biased threshold (matches Stage 2 budget)
+                    if (domainMatch != null && domainMatch.Distance < 0.35)
                     {
                         signal.Skills[i].Name = domainMatch.Name;
                     }
@@ -712,9 +707,9 @@ namespace ARIS.API.Services
         }
 
         /// <summary>
-        /// C2: Tailors resume bullets to highlight transferability toward bridgeable and
-        /// prerequisite-met skill gaps. For each actionable gap, finds the most relevant
-        /// experience bullet via keyword overlap and asks Mistral to rewrite it.
+        /// Tailors resume bullets to highlight transferability toward bridgeable and prerequisite-met
+        /// skill gaps. For each actionable gap, finds the most relevant experience bullet via keyword
+        /// overlap and asks the LLM to rewrite it.
         /// </summary>
         public async Task<List<TailoredBullet>?> TailorResumeAsync(Guid userProfileId, Guid jobId)
         {
@@ -724,7 +719,6 @@ namespace ARIS.API.Services
             if (user?.CleanSignal == null || job?.CleanSignal == null)
                 return null;
 
-            // Collect all experience bullets from the user's CleanSignal.
             var allBullets = user.CleanSignal.ExperienceSummary
                 .SelectMany(e => e.Bullets)
                 .Where(b => !string.IsNullOrWhiteSpace(b))
@@ -737,9 +731,8 @@ namespace ARIS.API.Services
                 return [];
             }
 
-            // Identify actionable gaps: BridgeableSkills + PrerequisiteMetSkills.
-            // We need to run MatchService logic, but to avoid circular DI we duplicate
-            // a lightweight gap extraction here using the CleanSignal directly.
+            // To avoid circular DI with MatchService, gap detection is done directly
+            // from the CleanSignal rather than delegating to AnalyzeMatchAsync.
             var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
             var jobSkillNames = job.CleanSignal.RequiredSkills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
 
@@ -755,7 +748,6 @@ namespace ARIS.API.Services
 
             foreach (var gap in actionableGaps)
             {
-                // Find the most relevant bullet by keyword overlap with the skill name.
                 var gapWords = gap.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries)
                     .Select(w => w.ToLowerInvariant())
                     .ToHashSet();

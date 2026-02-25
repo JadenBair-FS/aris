@@ -57,6 +57,7 @@ builder.Services.AddScoped<ARIS.API.Services.JobService>();
 builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
+builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
 
 // CORS
 builder.Services.AddCors(options =>

@@ -9,6 +9,7 @@ public class SkillGapItem
     public string SkillName { get; set; } = "";
     public string Importance { get; set; } = "";      // "Essential" | "Preferred"
     public double YearsRequired { get; set; }
+    public double CandidateYears { get; set; }        // candidate's stated experience for this skill (Tier 1 only)
     public string? BridgePath { get; set; }           // e.g. "via MySQL (BRIDGE_TO)"
     public string? BridgeSource { get; set; }         // "Roadmap.sh" | "OntologyEnrichment" | null
 }

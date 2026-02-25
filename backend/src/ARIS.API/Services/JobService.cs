@@ -48,6 +48,21 @@ namespace ARIS.API.Services
                     return null;
                 }
 
+                // If the primary extraction produced fewer than 3 skills (common for academic/admin
+                // postings where qualifications are stated as prose rather than enumerable items),
+                // run a focused second pass over the responsibilities to extract implied competencies.
+                if (cleanSignal.RequiredSkills.Count < 3 && cleanSignal.Responsibilities.Count > 0)
+                {
+                    _logger.LogInformation("Sparse skill extraction ({Count} skills). Running responsibilities-based fallback pass.", cleanSignal.RequiredSkills.Count);
+                    var fallbackSkills = await ExtractSkillsFromResponsibilitiesAsync(cleanSignal.Responsibilities, cleanSignal.TargetRoles.FirstOrDefault()?.Title);
+                    var existingNames = cleanSignal.RequiredSkills.Select(s => s.Name.ToLowerInvariant()).ToHashSet();
+                    foreach (var skill in fallbackSkills)
+                    {
+                        if (!existingNames.Contains(skill.Name.ToLowerInvariant()))
+                            cleanSignal.RequiredSkills.Add(skill);
+                    }
+                }
+
                 await GroundCleanSignalAsync(cleanSignal);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
@@ -160,6 +175,116 @@ namespace ARIS.API.Services
             }
         }
 
+        /// <summary>
+        /// Fallback pass: given a list of job responsibilities, asks the LLM to extract the
+        /// implied professional competencies as concise 1-5 word skill names.
+        /// Fires only when the primary extraction produced fewer than 3 skills.
+        /// </summary>
+        private async Task<List<JobSkill>> ExtractSkillsFromResponsibilitiesAsync(List<string> responsibilities, string? roleTitle)
+        {
+            try
+            {
+                var duties = string.Join("\n", responsibilities.Select((r, i) => $"{i + 1}. {r}"));
+
+                // Ask for a wrapped object {"skills": [...]}. Mistral in JSON mode
+                // reliably produces a top-level object; we extract the array after.
+                var prompt = $$"""
+                    The job posting for "{{roleTitle ?? "a professional role"}}" has these responsibilities:
+
+                    {{duties}}
+
+                    Extract one professional competency per responsibility line.
+                    Return a JSON object with a single key "skills" whose value is an array.
+                    Each array element must have exactly these three fields:
+                      "name": a concise competency label of 1-5 words
+                      "importance": "Essential"
+                      "years_of_experience": 0.0
+                    """;
+
+                var chatOptions = new ChatOptions
+                {
+                    ResponseFormat = ChatResponseFormat.Json,
+                    Temperature = 0.1f,
+                    AdditionalProperties = new AdditionalPropertiesDictionary
+                    {
+                        ["stream"] = false,
+                        ["num_ctx"] = 4096,
+                        ["num_gpu"] = 35,
+                        ["num_thread"] = 8
+                    }
+                };
+
+                var response = await _chatClient.GetResponseAsync(
+                    [new ChatMessage(ChatRole.System, "You are a skill extraction engine. Output only valid JSON. No preamble, no markdown."),
+                     new ChatMessage(ChatRole.User, prompt)],
+                    chatOptions);
+
+                var json = response?.Text?.Trim() ?? "";
+                _logger.LogInformation("Responsibilities fallback raw LLM response: {Json}", json);
+
+                // Unwrap {"skills": [...]} or any other single array-valued property
+                if (json.TrimStart().StartsWith("{"))
+                {
+                    try
+                    {
+                        using var doc = JsonDocument.Parse(json);
+                        var root = doc.RootElement;
+                        string? extracted = null;
+
+                        foreach (var key in new[] { "skills", "required_skills", "competencies", "extracted_skills" })
+                        {
+                            if (root.TryGetProperty(key, out var prop) && prop.ValueKind == JsonValueKind.Array)
+                            {
+                                extracted = prop.GetRawText();
+                                break;
+                            }
+                        }
+
+                        if (extracted == null)
+                        {
+                            foreach (var prop in root.EnumerateObject())
+                            {
+                                if (prop.Value.ValueKind == JsonValueKind.Array)
+                                {
+                                    extracted = prop.Value.GetRawText();
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (extracted != null)
+                            json = extracted;
+                    }
+                    catch (JsonException ex)
+                    {
+                        _logger.LogWarning(ex, "Fallback: could not parse wrapper object.");
+                    }
+                }
+
+                if (!json.TrimStart().StartsWith("["))
+                {
+                    _logger.LogWarning("Responsibilities fallback: response is not a JSON array after unwrapping. Skipping.");
+                    return [];
+                }
+
+                var skills = JsonSerializer.Deserialize<List<JobSkill>>(json, _jsonOptions) ?? [];
+
+                skills.RemoveAll(s => string.IsNullOrWhiteSpace(s.Name));
+                foreach (var s in skills) s.Name = s.Name.Trim();
+                skills.RemoveAll(s => s.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 7);
+
+                _logger.LogInformation("Responsibilities fallback extracted {Count} skills: {Names}",
+                    skills.Count, string.Join(", ", skills.Select(s => s.Name)));
+
+                return skills;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Responsibilities fallback extraction failed. Skipping.");
+                return [];
+            }
+        }
+
         private async Task GroundCleanSignalAsync(JobPostingCleanSignal signal)
         {
             var roleTitles = signal.TargetRoles.Select(r => r.Title).ToList();
@@ -192,7 +317,6 @@ namespace ARIS.API.Services
                     }
                 }
 
-                // Identify primary domain (O*NET Family)
                 var primaryRole = signal.TargetRoles.FirstOrDefault(r => r.Priority == "Primary") ?? signal.TargetRoles.FirstOrDefault();
                 string? domainPrefix = null;
                 if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
@@ -207,8 +331,8 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
 
-                    // Domain-biased skill grounding for Job Posting
-                    // For non-tech domains, exclude Roadmap.sh skills from the general fallback.
+                    // Domain-biased: prefer skills already linked to the posting's primary domain (O*NET prefix).
+                    // Falls back to a global search; non-tech domains exclude Roadmap.sh skills.
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -218,7 +342,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < 0.35) // Domain-biased threshold (matches Stage 2 budget)
+                    if (domainMatch != null && domainMatch.Distance < 0.35)
                     {
                         signal.RequiredSkills[i].Name = domainMatch.Name;
                     }
@@ -254,7 +378,6 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
                 var vector = new Vector(embeddings[0].Vector);
 
-                // Retrieve top roles (unfiltered — roles are all O*NET)
                 var topRoles = await _context.Roles
                     .Where(r => r.Embedding != null)
                     .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
@@ -262,7 +385,6 @@ namespace ARIS.API.Services
                     .Take(8)
                     .ToListAsync();
 
-                // Determine domain from the best-matching role
                 var bestRole = topRoles.FirstOrDefault();
                 bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
                 string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
@@ -474,8 +596,20 @@ namespace ARIS.API.Services
             signal.RequiredSkills.RemoveAll(s => string.IsNullOrWhiteSpace(s.Name));
             foreach (var skill in signal.RequiredSkills) skill.Name = (skill.Name ?? "").Trim();
 
+            // Remove prose sentences that slipped through as skill names.
+            // A skill name must be a concise competency (1-7 words). Any entry longer than
+            // 7 words is almost certainly a qualification statement or duty description, not a skill.
+            signal.RequiredSkills.RemoveAll(s => s.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 7);
+
+            // Remove education requirements that the LLM duplicated from minimum_education into required_skills.
+            // If a skill name matches (case-insensitive) any minimum_education degree, drop it.
+            var eduDegrees = signal.MinimumEducation
+                .Select(e => (e.Degree ?? "").Trim().ToLowerInvariant())
+                .ToHashSet();
+            signal.RequiredSkills.RemoveAll(s => eduDegrees.Contains(s.Name.ToLowerInvariant()));
+
             signal.Responsibilities.RemoveAll(string.IsNullOrWhiteSpace);
-            
+
             signal.MinimumEducation.RemoveAll(e => string.IsNullOrWhiteSpace(e.Degree));
             foreach (var edu in signal.MinimumEducation) edu.Degree = (edu.Degree ?? "").Trim();
         }

@@ -1,0 +1,165 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        11299,
+        10210,
+        9729
+      ],
+      "avgLatencyMs": 10412.666666666666,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Senior Data Analyst – Marketing Analytics",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "SQL (Snowflake)",
+            "importance": "Essential",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Python for data analysis",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "dbt",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Apache Airflow",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Tableau or Looker",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Strong foundation in statistics",
+            "importance": "Essential",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Design and maintain ETL/ELT pipelines using dbt and Apache Airflow to ingest, transform, and model marketing data from 20+ source platforms (Google Ads, Meta, TikTok, Shopify, HubSpot, etc.)",
+          "Build and maintain interactive dashboards and self-service reporting tools in Tableau and Looker for both internal teams and client-facing analytics portals",
+          "Develop multi-touch attribution models to quantify marketing channel effectiveness",
+          "Conduct A/B test design, execution, and statistical analysis for campaign experiments, landing page optimization, and pricing studies",
+          "Write complex SQL queries against our Snowflake data warehouse to answer ad-hoc business questions and support quarterly business reviews",
+          "Perform advanced statistical modeling including regression analysis, cohort analysis, customer lifetime value modeling, and churn prediction",
+          "Implement and manage product analytics instrumentation using Mixpanel and Amplitude to track user behavior across web and mobile platforms",
+          "Partner with data engineering to optimize Spark/PySpark jobs for processing large-scale clickstream and event data (billions of rows/month)",
+          "Communicate findings to non-technical stakeholders through clear visualizations, written reports, and live presentations to C-suite executives",
+          "Mentor junior analysts on SQL best practices, statistical methodology, and data storytelling"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 6,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        13553,
+        9125,
+        9725
+      ],
+      "avgLatencyMs": 10801,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Senior Data Analyst – Marketing Analytics",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "SQL (Snowflake)",
+            "importance": "Essential",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Python for data analysis",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "dbt",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Apache Airflow",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Tableau or Looker",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Strong foundation in statistics",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Experience with marketing attribution modeling",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Proficiency with product analytics platforms",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Design and maintain ETL/ELT pipelines using dbt and Apache Airflow to ingest, transform, and model marketing data from 20+ source platforms (Google Ads, Meta, TikTok, Shopify, HubSpot, etc.)",
+          "Build and maintain interactive dashboards and self-service reporting tools in Tableau and Looker for both internal teams and client-facing analytics portals"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree in Statistics, Mathematics, Economics, Computer Science, or a related quantitative field; Master's degree preferred",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 8,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.04,
+    "skillCounts": {
+      "mistral": 6,
+      "llama3.2:3b": 8
+    },
+    "sharedSkills": [
+      "SQL (Snowflake)",
+      "Python for data analysis",
+      "dbt",
+      "Apache Airflow",
+      "Tableau or Looker",
+      "Strong foundation in statistics"
+    ],
+    "uniqueToLargerModel": []
+  }
+}

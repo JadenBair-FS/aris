@@ -22,9 +22,9 @@ public class RecruiterController : ControllerBase
     }
 
     /// <summary>
-    /// C1: Bidirectional candidate search — finds the best-matching candidate profiles for a given job posting.
+    /// Bidirectional candidate search — finds the best-matching candidate profiles for a given job posting.
     /// Ranks candidates by pgvector cosine similarity against the job embedding, then runs
-    /// AnalyzeMatchAsync on the top N to provide gap analysis for each candidate.
+    /// AnalyzeMatchAsync on each of the top N to provide gap analysis per candidate.
     /// </summary>
     [HttpGet("job/{jobId:guid}/candidates")]
     public async Task<IActionResult> FindCandidatesForJob(Guid jobId, [FromQuery] int limit = 10)
@@ -38,7 +38,6 @@ public class RecruiterController : ControllerBase
 
         _logger.LogInformation("Finding candidates for Job: {JobId}, Limit: {Limit}", jobId, limit);
 
-        // Vector search: rank all user profiles by cosine similarity to the job embedding.
         var topCandidates = await _context.UserProfiles
             .Where(u => u.Embedding != null)
             .Select(u => new
@@ -59,7 +58,6 @@ public class RecruiterController : ControllerBase
         if (topCandidates.Count == 0)
             return Ok(new { jobId, candidates = Array.Empty<object>() });
 
-        // Run full gap analysis on each top candidate.
         var candidateResults = new List<object>();
         foreach (var candidate in topCandidates)
         {

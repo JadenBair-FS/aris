@@ -82,7 +82,7 @@ namespace ARIS.API.Controllers
         }
 
         /// <summary>
-        /// C3: Returns a user's full CleanSignal and metadata. Used by the frontend job seeker dashboard.
+        /// Returns a user's full CleanSignal and metadata. Used by the frontend job seeker dashboard.
         /// </summary>
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetUserProfile(Guid id)
@@ -100,7 +100,7 @@ namespace ARIS.API.Controllers
         }
 
         /// <summary>
-        /// C2: Tailors resume bullets to highlight transferability toward bridgeable and prerequisite-met skills.
+        /// Tailors resume bullets to highlight transferability toward bridgeable and prerequisite-met skills.
         /// Returns tailored bullets per gap with the original text and target skill context.
         /// </summary>
         [HttpPost("tailor")]

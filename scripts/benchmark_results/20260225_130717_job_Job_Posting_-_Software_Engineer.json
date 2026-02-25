@@ -1,0 +1,192 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        16612,
+        13504,
+        10765
+      ],
+      "avgLatencyMs": 13627,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Full-Stack Software Engineer (Mid-Senior)",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "React",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "TypeScript",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Tailwind CSS",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Vite",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "C#",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": ".NET",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "ASP.NET Core Web API",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Entity Framework Core",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "REST APIs",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "SQL Server",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "RabbitMQ",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Docker",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Kubernetes",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Terraform",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "GitHub Actions",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "xUnit",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Design, build, and maintain full-stack features across our React front-end and .NET microservices back-end",
+          "Build and consume RESTful and GraphQL APIs, ensuring consistent contracts, proper error handling, and thorough documentation"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree in Computer Science, Software Engineering, or equivalent practical experience",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 16,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        12136,
+        10503,
+        9125
+      ],
+      "avgLatencyMs": 10588,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Full-Stack Software Engineer",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "C# / .NET (Core/.NET 6+)",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "React development (16+) with TypeScript",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Docker containerization experience",
+            "importance": "Essential",
+            "years_of_experience": 2
+          }
+        ],
+        "responsibilities": [
+          "Design, build, and maintain full-stack features across our React front-end and .NET microservices back-end",
+          "Build and consume RESTful and GraphQL APIs, ensuring consistent contracts, proper error handling, and thorough documentation"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree in Computer Science, Software Engineering, or equivalent practical experience",
+            "required": ""
+          }
+        ]
+      },
+      "skillCount": 3,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "llama3.2:3b",
+    "speedupFactor": 1.29,
+    "skillCounts": {
+      "mistral": 16,
+      "llama3.2:3b": 3
+    },
+    "sharedSkills": [],
+    "uniqueToLargerModel": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "C#",
+      ".NET",
+      "ASP.NET Core Web API",
+      "Entity Framework Core",
+      "REST APIs",
+      "SQL Server",
+      "RabbitMQ",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "xUnit"
+    ]
+  }
+}

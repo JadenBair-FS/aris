@@ -32,7 +32,7 @@ public class MatchController : ControllerBase
     }
 
     /// <summary>
-    /// B3: Generates a grounded match summary using graph-path context injected into the LLM prompt.
+    /// Generates a grounded match summary using graph-path context injected into the LLM prompt.
     /// Returns the narrative summary and the graph grounding score (thesis RQ2 metric).
     /// </summary>
     [HttpPost("summary")]

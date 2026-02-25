@@ -1,0 +1,163 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        10708,
+        7795,
+        8078
+      ],
+      "avgLatencyMs": 8860.333333333334,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Professor and Chair, Computer Science Department",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "Terminal degree in a related field",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Genuine understanding of the teaching mission",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Strong oral and written communication skills",
+            "importance": "Essential",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Serves as the chief academic and administrative leader for the department, provides vision and leadership to advance the department, and serves as a key member of the College's leadership team;",
+          "Interacts with college and university leadership, collaborating on college and university strategic goals;",
+          "Positions the department as a leader in innovation, research, and education in computer science;",
+          "Elevates the status of the department, college and university among peer institutions and external partners;",
+          "Responsible for personnel hiring, oversight, and development within the Department, including renewal, promotion, and tenure;",
+          "Oversight of all educational and research programs within the Department;",
+          "Teaches courses each academic year per college workload policy;",
+          "Provides budgetary oversight for the department;",
+          "Provides oversight of departmental facilities usage;"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Terminal degree in a related field",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 3,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        13048,
+        9950,
+        10359
+      ],
+      "avgLatencyMs": 11119,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Professor and Chair, Computer Science Department",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "Academic Research",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Research Funding",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Higher Education Teaching",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Faculty Mentoring",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Academic Leadership",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Computer Science Research",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Software Engineering",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Data Analytics Engineering",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Artificial Intelligence",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Information Technology",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Working with Computers",
+            "importance": "Essential",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "University-Level Teaching",
+          "Academic Program Management",
+          "Faculty Personnel Management",
+          "Budget Administration"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Terminal degree in a related field",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 11,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.25,
+    "skillCounts": {
+      "mistral": 3,
+      "llama3.2:3b": 11
+    },
+    "sharedSkills": [],
+    "uniqueToLargerModel": [
+      "Terminal degree in a related field",
+      "Genuine understanding of the teaching mission",
+      "Strong oral and written communication skills"
+    ]
+  }
+}
