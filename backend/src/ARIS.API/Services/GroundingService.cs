@@ -61,6 +61,45 @@ public class GroundingService
     }
 
     /// <summary>
+    /// Calculates grounding score from a pre-extracted list of canonical skill names.
+    /// Use for Pipeline C, where all identified skill names are already canonical —
+    /// bypasses ExtractSkillsFromText to avoid spurious sub-skill substring matches.
+    /// Score = |identified ∩ validNeighborhood| / |identified|.
+    /// </summary>
+    public async Task<GroundingResult> CalculateGroundingScoreFromSkillsAsync(
+        IEnumerable<string> identifiedSkills,
+        IEnumerable<string> userExplicitSkills)
+    {
+        var skillList = identifiedSkills
+            .Where(s => !string.IsNullOrWhiteSpace(s))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        if (skillList.Count == 0)
+            return new GroundingResult { Score = 1.0, Hallucinations = [] };
+
+        var validNeighborhood = await _graphService.GetValidNeighborhoodAsync(userExplicitSkills);
+        var hallucinations = new List<string>();
+        int verifiedCount = 0;
+
+        foreach (var skill in skillList)
+        {
+            if (validNeighborhood.Contains(skill))
+                verifiedCount++;
+            else
+                hallucinations.Add(skill);
+        }
+
+        return new GroundingResult
+        {
+            Score = (double)verifiedCount / skillList.Count,
+            Hallucinations = hallucinations,
+            TotalEntitiesFound = skillList.Count,
+            ValidNeighborhoodSize = validNeighborhood.Count
+        };
+    }
+
+    /// <summary>
     /// Extracts canonical skill names from text using case-insensitive substring matching
     /// against the reference dictionary. Returns matched canonical skill names (not raw text spans).
     /// </summary>

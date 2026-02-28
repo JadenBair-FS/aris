@@ -26,7 +26,7 @@ ENDPOINT = "/api/eval/extraction-benchmark"
 JOB_POSTINGS_DIR = r"C:\dev\Masters Capstone\Test Job Postings"
 RESUMES_DIR = r"C:\dev\Masters Capstone\Test Resumes\Redacted"
 RESULTS_DIR = Path(__file__).parent / "benchmark_results"
-DEFAULT_MODELS = ["mistral", "llama3.2:3b"]
+DEFAULT_MODELS = ["mistral", "smollm2:1.7b"]
 DEFAULT_RUNS = 3
 
 
@@ -84,7 +84,7 @@ def main():
     ctx.verify_mode = ssl.CERT_NONE
 
     print()
-    print("=== EXTRACTION BENCHMARK: Mistral 7B vs Qwen3:4b ===")
+    print(f"=== EXTRACTION BENCHMARK: {' vs '.join(args.models)} ===")
     print(f"Endpoint     : {endpoint}")
     print(f"Models       : {', '.join(args.models)}")
     print(f"Runs/fixture : {args.runs}")

@@ -18,6 +18,25 @@ namespace ARIS.API.Services
     {
         public override string? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
+            if (reader.TokenType == JsonTokenType.StartArray)
+            {
+                var parts = new List<string>();
+                while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                {
+                    var item = reader.TokenType switch
+                    {
+                        JsonTokenType.String => reader.GetString() ?? "",
+                        JsonTokenType.Number when reader.TryGetInt64(out var l) => l.ToString(),
+                        JsonTokenType.Number => reader.GetDouble().ToString(),
+                        JsonTokenType.True => "true",
+                        JsonTokenType.False => "false",
+                        _ => ""
+                    };
+                    if (item.Length > 0) parts.Add(item);
+                }
+                return string.Join(" ", parts);
+            }
+
             return reader.TokenType switch
             {
                 JsonTokenType.String => reader.GetString(),
@@ -26,7 +45,7 @@ namespace ARIS.API.Services
                 JsonTokenType.True => "true",
                 JsonTokenType.False => "false",
                 JsonTokenType.Null => null,
-                _ => reader.GetString()
+                _ => null
             };
         }
 
@@ -378,9 +397,6 @@ namespace ARIS.API.Services
             if (signal.Skills.Count == 0)
                 return "No skills were extracted. Every resume should have at least one technical skill.";
 
-            if (signal.Roles.Count == 0 && signal.ExperienceSummary.Count == 0)
-                return "Neither roles nor experience entries were extracted. At least one is required.";
-
             return null;
         }
 
@@ -641,7 +657,10 @@ namespace ARIS.API.Services
                             .OrderBy(x => x.Distance)
                             .FirstOrDefaultAsync();
 
-                        if (generalMatch != null && generalMatch.Distance < 0.35)
+                        // Always ground to the closest canonical name. A raw LLM-extracted name
+                        // cannot be found in Neo4j, matched to job skills, or included in a valid
+                        // grounding neighborhood — it silently corrupts all downstream processing.
+                        if (generalMatch != null)
                         {
                             signal.Skills[i].Name = generalMatch.Name;
                         }

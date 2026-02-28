@@ -75,7 +75,7 @@ public class IngestionWorker : BackgroundService
 
         var args = Environment.GetCommandLineArgs();
 
-        // ── Special Modes ──────────────────────────────────────────────────────
+        // Special Modes
 
         if (args.Contains("--optimize-graph"))
         {
@@ -96,7 +96,7 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        // ── Main Ingestion ─────────────────────────────────────────────────────
+        //Main Ingestion
 
         await dbContext.Database.EnsureCreatedAsync(stoppingToken);
         await neo4jService.EnsureIndicesAsync();
@@ -224,7 +224,7 @@ public class IngestionWorker : BackgroundService
         _logger.LogInformation("O*NET Ingestion Complete: {Count} occupations processed.", i);
     }
 
-    // ── Phase 2: Build Slug → Role Map ─────────────────────────────────────────
+    // Phase 2: Build Slug → Role Map
 
     private async Task<Dictionary<string, List<string>>> BuildSlugRoleMapAsync(
         ArisDbContext dbContext,
@@ -267,7 +267,7 @@ public class IngestionWorker : BackgroundService
         return map;
     }
 
-    // ── Phases 3 + 4: Roadmap Ingestion ────────────────────────────────────────
+    //Phases 3 + 4: Roadmap Ingestion
 
     private async Task IngestRoadmapAsync(
         ArisDbContext dbContext,
@@ -285,7 +285,7 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        // Step 1: Process all valid nodes → build nodeId → canonical skill name map
+        //Process all valid nodes → build nodeId → canonical skill name map
         var nodeIdToCanonical = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var node in roadmap.Nodes)
@@ -302,7 +302,7 @@ public class IngestionWorker : BackgroundService
 
         _logger.LogInformation("Roadmap '{Slug}': {Count} valid skills processed.", slug, nodeIdToCanonical.Count);
 
-        // Step 2: Process edges for hierarchy (solid → SUBSET_OF) and bridges (dashed → BRIDGE_TO)
+        //Process edges for hierarchy (solid → SUBSET_OF) and bridges (dashed → BRIDGE_TO)
         var validNodeIds = nodeIdToCanonical.Keys.ToHashSet(StringComparer.OrdinalIgnoreCase);
         var solidEdgeTargetIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -367,7 +367,7 @@ public class IngestionWorker : BackgroundService
         await Task.Delay(500, ct);
     }
 
-    // ── Shared Helpers ─────────────────────────────────────────────────────────
+    //Shared Helpers
 
     /// <summary>
     /// Central deduplication + upsert helper. Cosine distance threshold = 0.10.
@@ -491,8 +491,7 @@ public class IngestionWorker : BackgroundService
         }
     }
 
-    // ── --optimize-graph Mode ──────────────────────────────────────────────────
-
+    // --optimize-graph Mode
     private async Task RunOptimizeGraphAsync(
         string[] args,
         Neo4jIngestionService neo4jService,
@@ -545,9 +544,9 @@ public class IngestionWorker : BackgroundService
             processedBridges.Add(key);
         _logger.LogInformation("Loaded {Count} existing bridge keys. Only new bridges will be logged.", existingBridgeKeys.Count);
 
-        // ── Step 1: Dependency Detection (runs first so SUBSET_OF is established before
-        //           bridge passes — gives Pass 2 accurate pruning and avoids the
-        //           create-bridge-then-delete-it roundtrip in MergeSubsetRelationshipAsync) ──
+        // Dependency Detection (runs first so SUBSET_OF is established before
+        // bridge passes — gives Pass 2 accurate pruning and avoids the
+        // create-bridge-then-delete-it roundtrip in MergeSubsetRelationshipAsync)
         if (!skipDeps)
         {
             _logger.LogInformation("=== Step 1: Dependency Detection ===");
@@ -596,7 +595,7 @@ public class IngestionWorker : BackgroundService
             }
         }
 
-        // ── Steps 2–4: Bridge Detection (runs after deps so sibling pruning is accurate) ──
+        // Steps 2–4: Bridge Detection (runs after deps so sibling pruning is accurate)
         if (!skipBridges)
         {
             if (!skipPass1)

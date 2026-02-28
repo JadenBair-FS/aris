@@ -357,7 +357,10 @@ namespace ARIS.API.Services
                             .OrderBy(x => x.Distance)
                             .FirstOrDefaultAsync();
 
-                        if (generalMatch != null && generalMatch.Distance < 0.35)
+                        // Always ground to the closest canonical name. A raw LLM-extracted name
+                        // cannot be found in Neo4j, matched to candidate skills, or included in a
+                        // valid grounding neighborhood — it silently corrupts all downstream processing.
+                        if (generalMatch != null)
                         {
                             signal.RequiredSkills[i].Name = generalMatch.Name;
                         }

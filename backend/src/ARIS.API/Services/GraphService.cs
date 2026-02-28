@@ -115,10 +115,11 @@ public class GraphService : IDisposable, IAsyncDisposable
         var expansionSeed = userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
 
         const string query = @"
-            // Direction 1: child -[:SUBSET_OF*1..3]-> parent (original — parent in user skills)
+            // Direction 1: job skill -[:SUBSET_OF*1..2]-> user skill (user has the parent foundation)
+            // e.g., user has 'JavaScript', job needs 'React' (React SUBSET_OF JavaScript).
             MATCH (parent:Skill)
             WHERE toLower(parent.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (child:Skill)-[:SUBSET_OF*1..3]->(parent)
+            MATCH (child:Skill)-[:SUBSET_OF*1..2]->(parent)
             WHERE toLower(child.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
               AND NOT toLower(child.name) IN [u IN $universal | toLower(u)]
@@ -126,10 +127,11 @@ public class GraphService : IDisposable, IAsyncDisposable
 
             UNION
 
-            // Direction 2: user skill -[:SUBSET_OF*1..3]-> missing skill (roadmap direction — user has foundation)
+            // Direction 2: user skill -[:SUBSET_OF*1..2]-> job skill (user's skill is a specialization of the requirement)
+            // e.g., user has 'React', job needs 'JavaScript'.
             MATCH (foundation:Skill)
             WHERE toLower(foundation.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (foundation)-[:SUBSET_OF*1..3]->(target:Skill)
+            MATCH (foundation)-[:SUBSET_OF*1..2]->(target:Skill)
             WHERE toLower(target.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(target.is_tech, false) AND target.source = 'Roadmap.sh'))
               AND NOT toLower(target.name) IN [u IN $universal | toLower(u)]
@@ -164,9 +166,10 @@ public class GraphService : IDisposable, IAsyncDisposable
 
     /// <summary>
     /// Returns skills implicitly granted because the user knows a child specialization
-    /// (UP traversal: child → parent via SUBSET_OF), plus 1-hop BRIDGE_TO lateral coverage.
-    /// DOWN traversal (parent → children) is intentionally excluded here — it belongs in
-    /// GetPrerequisiteMetSkillsAsync.
+    /// (UP traversal only: child → parent via SUBSET_OF, max 2 hops).
+    /// Thesis Tier 2: "the candidate knows a specialization, so the foundation is implicitly known."
+    /// BRIDGE_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
+    /// DOWN traversal (parent → children) belongs in GetPrerequisiteMetSkillsAsync.
     /// </summary>
     public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
@@ -175,22 +178,13 @@ public class GraphService : IDisposable, IAsyncDisposable
 
         const string query = @"
             // UP: child -> parent (user knows specialization → implicitly knows foundation)
+            // 2-hop limit: consistent with the thesis claim and GetValidNeighborhoodAsync.
             MATCH (child:Skill)
             WHERE toLower(child.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (child)-[:SUBSET_OF*1..3]->(parent:Skill)
+            MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
             WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
               AND NOT toLower(parent.name) IN [u IN $universal | toLower(u)]
             RETURN DISTINCT parent.name AS Name
-
-            UNION
-
-            // LATERAL: Bridge (1 hop) — strong adjacent coverage grants implicit recognition
-            MATCH (s:Skill)
-            WHERE toLower(s.name) IN [term IN $expansionSeed | toLower(term)]
-            MATCH (s)-[:BRIDGE_TO]-(neighbor:Skill)
-            WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
-              AND NOT toLower(neighbor.name) IN [u IN $universal | toLower(u)]
-            RETURN DISTINCT neighbor.name AS Name
         ";
 
         try

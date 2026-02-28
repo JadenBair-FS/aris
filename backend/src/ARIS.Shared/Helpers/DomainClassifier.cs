@@ -20,10 +20,13 @@ public static class DomainClassifier
 
         if (!string.IsNullOrEmpty(roleTitle))
         {
+            // Title-based fallback for roles without a classified O*NET code.
+            // Only unambiguous tech terms — "engineer", "data", "analyst" are omitted because they
+            // match Civil Engineers, Data Entry Clerks, and Sales Analysts. Real IT roles carry
+            // "15-XXXX" O*NET codes and are caught by the prefix check above.
             var t = roleTitle.ToLowerInvariant();
-            if (t.Contains("software") || t.Contains("developer") || t.Contains("engineer") || 
-                t.Contains("data") || t.Contains("web") || t.Contains("cloud") || t.Contains("devops") ||
-                t.Contains("programmer") || t.Contains("coder") || t.Contains("analyst"))
+            if (t.Contains("software") || t.Contains("developer") || t.Contains("web") ||
+                t.Contains("cloud") || t.Contains("devops") || t.Contains("programmer") || t.Contains("coder"))
             {
                 return true;
             }
