@@ -30,4 +30,9 @@ public class UserProfile
     
     [Column("updated_at")]
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+    [Column("seeker_user_id")]
+    public Guid? SeekerUserId { get; set; }
+
+    public SeekerUser? SeekerUser { get; set; }
 }

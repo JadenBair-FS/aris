@@ -101,12 +101,12 @@ namespace ARIS.API.Services
             _logger = logger;
         }
 
-        public async Task<Guid?> ProcessResumeAsync(Stream fileStream, string userId)
+        public async Task<Guid?> ProcessResumeAsync(Stream fileStream, string userId, Guid? seekerUserId = null)
         {
             try
             {
                 var rawText = ExtractTextFromPdf(fileStream);
-                return await ProcessResumeTextAsync(rawText, userId);
+                return await ProcessResumeTextAsync(rawText, userId, seekerUserId);
             }
             catch (Exception ex)
             {
@@ -115,7 +115,7 @@ namespace ARIS.API.Services
             }
         }
 
-        public async Task<Guid?> ProcessResumeTextAsync(string rawText, string userId)
+        public async Task<Guid?> ProcessResumeTextAsync(string rawText, string userId, Guid? seekerUserId = null)
         {
             try
             {
@@ -142,13 +142,29 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
+                // Upsert: update existing profile for this user rather than creating a duplicate.
+                var existing = await _context.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
+                if (existing != null)
+                {
+                    existing.RawResume = JsonSerializer.Serialize(new { content = rawText });
+                    existing.CleanSignal = cleanSignal;
+                    existing.Embedding = new Vector(vectorData);
+                    existing.UpdatedAt = DateTime.UtcNow;
+                    if (seekerUserId.HasValue)
+                        existing.SeekerUserId = seekerUserId;
+                    await _context.SaveChangesAsync();
+                    _logger.LogInformation("Updated existing profile {ProfileId} for user {UserId}", existing.Id, userId);
+                    return existing.Id;
+                }
+
                 var userProfile = new UserProfile
                 {
                     UserId = userId,
                     RawResume = JsonSerializer.Serialize(new { content = rawText }),
                     CleanSignal = cleanSignal,
                     Embedding = new Vector(vectorData),
-                    UpdatedAt = DateTime.UtcNow
+                    UpdatedAt = DateTime.UtcNow,
+                    SeekerUserId = seekerUserId
                 };
 
                 _context.UserProfiles.Add(userProfile);

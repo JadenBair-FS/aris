@@ -1,0 +1,131 @@
+export interface SkillGapItem {
+    skillName: string;
+    importance: 'Essential' | 'Preferred' | string;
+    yearsRequired: number;
+    candidateYears: number;
+    bridgePath: string | null;
+    bridgeSource: string | null;
+}
+
+export interface MatchAnalysisResult {
+    jobId: string;
+    vectorSimilarity: number;
+    arisScore: number;
+    matchingSkills: SkillGapItem[];
+    implicitlyDiscoveredSkills: string[];
+    prerequisiteMetSkills: SkillGapItem[];
+    bridgeableSkills: SkillGapItem[];
+    hardGaps: SkillGapItem[];
+}
+
+export interface MatchSummaryResult {
+    summary: string;
+    groundingScore: number;
+}
+
+export interface TailoredBullet {
+    originalBullet: string;
+    rewrittenBullet: string;
+    targetSkill: string;
+    bridgePath: string | null;
+}
+
+// Resume CleanSignal — matches ResumeCleanSignal.cs (snake_case from JSON)
+export interface CleanSignalSkill {
+    name: string;
+    category: string;
+    proficiency: string;
+    years_of_experience: number;
+}
+
+export interface CleanSignalRole {
+    title: string;
+    duration: string;
+    is_current: boolean;
+}
+
+export interface ExperienceSummaryEntry {
+    role: string;
+    company: string;
+    bullets: string[];
+}
+
+export interface EducationEntry {
+    degree: string;
+    institution: string;
+    year: string;
+}
+
+export interface ResumeCleanSignal {
+    roles: CleanSignalRole[];
+    skills: CleanSignalSkill[];
+    experience_summary: ExperienceSummaryEntry[];
+    education: EducationEntry[];
+}
+
+export interface UserProfileDetail {
+    id: string;
+    userId: string;
+    cleanSignal: ResumeCleanSignal | null;
+    rawResume: string;
+    createdAt: string;
+    hasResume?: boolean;
+}
+
+// Job CleanSignal — matches JobPostingCleanSignal.cs (snake_case from JSON)
+export interface JobRole {
+    title: string;
+    priority: string;
+}
+
+export interface JobRequiredSkill {
+    name: string;
+    importance: 'Essential' | 'Preferred' | string;
+    years_of_experience: number;
+}
+
+export interface JobEducation {
+    degree: string;
+    required: string;
+}
+
+export interface JobCleanSignal {
+    target_roles: JobRole[];
+    required_skills: JobRequiredSkill[];
+    responsibilities: string[];
+    minimum_education: JobEducation[];
+}
+
+export interface JobPostingDetail {
+    id: string;
+    recruiterId: string;
+    rawDescription: string;
+    cleanSignal: JobCleanSignal | null;
+    createdAt?: string;
+    updatedAt?: string;
+}
+
+export interface JobMatchResult {
+    jobId: string;
+    score: number;
+    distance: number;
+    job: JobPostingDetail | null;
+}
+
+export interface JobRecommendationResponse {
+    matches: JobMatchResult[];
+    analysis: string;
+}
+
+export interface CandidateResult {
+    userProfileId: string;
+    userId: string;
+    primaryRole: string;
+    vectorSimilarity: number;
+    matchAnalysis: MatchAnalysisResult;
+}
+
+export interface CandidateSearchResponse {
+    jobId: string;
+    candidates: CandidateResult[];
+}

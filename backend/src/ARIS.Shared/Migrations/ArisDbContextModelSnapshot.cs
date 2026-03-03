@@ -53,13 +53,71 @@ namespace ARIS.Shared.Migrations
                         .HasColumnType("text")
                         .HasColumnName("recruiter_id");
 
+                    b.Property<Guid?>("RecruiterProfileId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("recruiter_profile_id");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RecruiterProfileId");
+
                     b.ToTable("job_postings", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RecruiterProfile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("ClerkId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("clerk_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClerkId")
+                        .IsUnique();
+
+                    b.ToTable("recruiter_profiles", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RecruiterUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("ClerkId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("clerk_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClerkId")
+                        .IsUnique();
+
+                    b.ToTable("recruiter_users", (string)null);
                 });
 
             modelBuilder.Entity("ARIS.Shared.Entities.RefRole", b =>
@@ -159,6 +217,30 @@ namespace ARIS.Shared.Migrations
                     b.ToTable("ref_skills", (string)null);
                 });
 
+            modelBuilder.Entity("ARIS.Shared.Entities.SeekerUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("ClerkId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("clerk_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClerkId")
+                        .IsUnique();
+
+                    b.ToTable("seeker_users", (string)null);
+                });
+
             modelBuilder.Entity("ARIS.Shared.Entities.UserProfile", b =>
                 {
                     b.Property<Guid>("Id")
@@ -182,6 +264,10 @@ namespace ARIS.Shared.Migrations
                         .HasColumnType("jsonb")
                         .HasColumnName("raw_resume");
 
+                    b.Property<Guid?>("SeekerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("seeker_user_id");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
@@ -193,7 +279,19 @@ namespace ARIS.Shared.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("SeekerUserId");
+
                     b.ToTable("user_profiles", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
+                {
+                    b.HasOne("ARIS.Shared.Entities.RecruiterProfile", "RecruiterProfile")
+                        .WithMany()
+                        .HasForeignKey("RecruiterProfileId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("RecruiterProfile");
                 });
 
             modelBuilder.Entity("ARIS.Shared.Entities.RefRoleSkill", b =>
@@ -213,6 +311,16 @@ namespace ARIS.Shared.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("Skill");
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.UserProfile", b =>
+                {
+                    b.HasOne("ARIS.Shared.Entities.SeekerUser", "SeekerUser")
+                        .WithMany()
+                        .HasForeignKey("SeekerUserId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("SeekerUser");
                 });
 
             modelBuilder.Entity("ARIS.Shared.Entities.RefRole", b =>

@@ -1,11 +1,13 @@
 using ARIS.API.Services;
 using ARIS.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ARIS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class MatchController : ControllerBase
 {
     private readonly MatchService _matchService;
@@ -16,6 +18,7 @@ public class MatchController : ControllerBase
     }
 
     [HttpPost("analyze")]
+    [AllowAnonymous]
     public async Task<IActionResult> AnalyzeMatch([FromBody] MatchRequest request)
     {
         if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
@@ -45,24 +48,28 @@ public class MatchController : ControllerBase
         return Ok(new { summary, groundingScore });
     }
 
+    [AllowAnonymous]
     [HttpGet("debug/jobs")]
     public async Task<IActionResult> DebugListJobs()
     {
         return Ok(await _matchService.DebugGetJobsAsync());
     }
 
+    [AllowAnonymous]
     [HttpGet("debug/users")]
     public async Task<IActionResult> DebugListUsers()
     {
         return Ok(await _matchService.DebugGetUsersAsync());
     }
 
+    [AllowAnonymous]
     [HttpGet("debug/user/{id}")]
     public async Task<IActionResult> DebugGetUser(Guid id)
     {
         return Ok(await _matchService.DebugGetUserDetailAsync(id));
     }
 
+    [AllowAnonymous]
     [HttpGet("debug/job/{id}")]
     public async Task<IActionResult> DebugGetJob(Guid id)
     {

@@ -1,6 +1,8 @@
 using ARIS.Shared.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
+using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using Scalar.AspNetCore;
 using OllamaSharp;
@@ -50,6 +52,13 @@ builder.Services.AddSingleton<IChatClient>(sp =>
     return client;
 });
 
+// HttpClient for Clerk Backend API
+builder.Services.AddHttpClient("Clerk", client =>
+{
+    client.BaseAddress = new Uri("https://api.clerk.com/v1/");
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
 // Domain Services
 builder.Services.AddScoped<ARIS.API.Services.DictionaryService>();
 builder.Services.AddScoped<ARIS.API.Services.ResumeService>();
@@ -59,9 +68,25 @@ builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
 
+// Auth — Clerk JWT Bearer
+var clerkAuthority = builder.Configuration["Clerk:Authority"]
+    ?? throw new InvalidOperationException("Clerk:Authority is not configured in appsettings.");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = clerkAuthority;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 // CORS
 builder.Services.AddCors(options =>
-{ 
+{
     options.AddPolicy("AllowAll",
         policy =>
         {
@@ -82,6 +107,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

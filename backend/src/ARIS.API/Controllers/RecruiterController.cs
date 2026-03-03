@@ -1,5 +1,6 @@
 using ARIS.API.Services;
 using ARIS.Shared.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pgvector.EntityFrameworkCore;
@@ -8,6 +9,7 @@ namespace ARIS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class RecruiterController : ControllerBase
 {
     private readonly ArisDbContext _context;
@@ -38,17 +40,15 @@ public class RecruiterController : ControllerBase
 
         _logger.LogInformation("Finding candidates for Job: {JobId}, Limit: {Limit}", jobId, limit);
 
+        // CleanSignal is JSONB — EF cannot translate its sub-properties into SQL.
+        // Fetch the columns pgvector CAN compute server-side, then extract SampleRole in C#.
         var topCandidates = await _context.UserProfiles
             .Where(u => u.Embedding != null)
             .Select(u => new
             {
                 u.Id,
                 u.UserId,
-                SampleRole = u.CleanSignal != null
-                    ? u.CleanSignal.Roles.FirstOrDefault() != null
-                        ? u.CleanSignal.Roles.First().Title
-                        : "Unknown"
-                    : "Unknown",
+                u.CleanSignal,
                 Distance = u.Embedding!.CosineDistance(job.Embedding)
             })
             .OrderBy(u => u.Distance)
@@ -61,12 +61,13 @@ public class RecruiterController : ControllerBase
         var candidateResults = new List<object>();
         foreach (var candidate in topCandidates)
         {
+            var sampleRole = candidate.CleanSignal?.Roles?.FirstOrDefault()?.Title ?? "Unknown";
             var analysis = await _matchService.AnalyzeMatchAsync(candidate.Id, jobId);
             candidateResults.Add(new
             {
                 userProfileId = candidate.Id,
                 userId = candidate.UserId,
-                primaryRole = candidate.SampleRole,
+                primaryRole = sampleRole,
                 vectorSimilarity = 1.0 - candidate.Distance,
                 matchAnalysis = analysis
             });
