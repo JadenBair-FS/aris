@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { useSignUp, useAuth } from '@clerk/clerk-react';
+import { useSignUp, useAuth, useClerk } from '@clerk/clerk-react';
 import type { UserRole } from '@/context/AuthContext';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,7 @@ export default function Signup() {
     const navigate = useNavigate();
     const { signUp, setActive, isLoaded } = useSignUp();
     const { getToken } = useAuth();
+    const { user: clerkUser } = useClerk();
 
     const handleSignup = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -55,6 +56,10 @@ export default function Signup() {
                 setErrorText((err as any).message ?? 'Failed to configure account. Please try again.');
                 return;
             }
+
+            // Force Clerk to re-fetch the user so publicMetadata.role is up to date
+            // before AuthContext reads it for routing decisions.
+            await clerkUser?.reload();
 
             navigate(role === 'seeker' ? '/profile/upload' : '/profile/jobs/upload');
         } catch (err: any) {
