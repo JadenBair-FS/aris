@@ -6,8 +6,10 @@ using Microsoft.Extensions.AI;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using Scalar.AspNetCore;
-using OllamaSharp;
-using ElBruno.OllamaSharp.Extensions;
+using OpenAI;
+using OpenAI.Chat;
+using OpenAI.Embeddings;
+using System.ClientModel;
 using Serilog;
 
 QuestPDF.Settings.License = LicenseType.Community;
@@ -38,26 +40,20 @@ var dataSource = dataSourceBuilder.Build();
 builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(dataSource, o => o.UseVector()));
 
-// Semantic Kernel
-var mistralUriString = builder.Configuration["Ollama:MistralUri"] ?? "http://localhost:11434";
-var qwenUriString = builder.Configuration["Ollama:QwenUri"] ?? "http://localhost:11435";
+// Semantic Kernel (Llama.cpp OpenAI Compatible)
+var mistralUriString = builder.Configuration["LlamaCpp:MistralUri"] ?? "http://localhost:11434/v1";
+var qwenUriString = builder.Configuration["LlamaCpp:QwenUri"] ?? "http://localhost:11435/v1";
 
 var mistralUri = new Uri(mistralUriString);
 var qwenUri = new Uri(qwenUriString);
 
-builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
-{
-    var client = new OllamaApiClient(qwenUri, "qwen3-embedding:0.6b");
-    client.SetTimeout(TimeSpan.FromHours(1));
-    return client;
-});
+// Chat Client for Mistral
+var chatClient = new ChatClient("mistral-7b-v0.3", new ApiKeyCredential("no-key"), new OpenAIClientOptions { Endpoint = mistralUri });
+builder.Services.AddChatClient(chatClient.AsIChatClient());
 
-builder.Services.AddSingleton<IChatClient>(sp =>
-{
-    var client = new OllamaApiClient(mistralUri, "mistral");
-    client.SetTimeout(TimeSpan.FromHours(1));
-    return client;
-});
+// Embedding Client for Qwen
+var embeddingClient = new EmbeddingClient("qwen3-0.6b-embedding", new ApiKeyCredential("no-key"), new OpenAIClientOptions { Endpoint = qwenUri });
+builder.Services.AddEmbeddingGenerator(embeddingClient.AsIEmbeddingGenerator());
 
 // HttpClient for Clerk Backend API
 builder.Services.AddHttpClient("Clerk", client =>
