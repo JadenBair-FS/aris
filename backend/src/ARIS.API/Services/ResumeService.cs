@@ -55,8 +55,6 @@ namespace ARIS.API.Services
         }
     }
 
-    // Handles LLM outputs of null for numeric fields (e.g. "years_of_experience": null).
-    // Returns 0.0 instead of throwing, so a single null token never causes a retry.
     internal sealed class LenientDoubleConverter : JsonConverter<double>
     {
         public override double Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -142,7 +140,6 @@ namespace ARIS.API.Services
                 var embeddings = await _embeddingGenerator.GenerateAsync([truncatedSymmetric]);
                 var vectorData = embeddings[0].Vector;
 
-                // Upsert: update existing profile for this user rather than creating a duplicate.
                 var existing = await _context.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
                 if (existing != null)
                 {
@@ -220,7 +217,6 @@ namespace ARIS.API.Services
                     ? bestRole.OnetCode.Split('-')[0]
                     : null;
 
-                // 15 domain-specific skills: top skills linked to this SOC prefix, ordered by similarity
                 List<string> domainSkillNames = [];
                 if (domainPrefix != null)
                 {
@@ -237,7 +233,6 @@ namespace ARIS.API.Services
                     domainSkillNames = domainSkills.Select(s => s.Name).ToList();
                 }
 
-                // 15 global skills (minus Roadmap.sh for non-tech), de-duplicated against domain list
                 var skillQuery = _context.Skills.Where(s => s.Embedding != null);
                 if (!isTech)
                     skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
@@ -632,7 +627,6 @@ namespace ARIS.API.Services
                     }
                 }
 
-                // Identify primary domain (O*NET Family, e.g., "15" for IT, "47" for Construction)
                 var primaryRole = signal.Roles.FirstOrDefault(r => r.IsCurrent) ?? signal.Roles.FirstOrDefault();
                 string? domainPrefix = null;
                 if (primaryRole?.OnetCode != null && primaryRole.OnetCode.Contains('-'))
@@ -647,8 +641,6 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
 
-                    // Domain-biased: prefer skills already linked to the user's primary domain (O*NET prefix).
-                    // Falls back to a global search; non-tech domains exclude Roadmap.sh skills.
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -673,9 +665,6 @@ namespace ARIS.API.Services
                             .OrderBy(x => x.Distance)
                             .FirstOrDefaultAsync();
 
-                        // Always ground to the closest canonical name. A raw LLM-extracted name
-                        // cannot be found in Neo4j, matched to job skills, or included in a valid
-                        // grounding neighborhood — it silently corrupts all downstream processing.
                         if (generalMatch != null)
                         {
                             signal.Skills[i].Name = generalMatch.Name;
@@ -741,12 +730,14 @@ namespace ARIS.API.Services
             return text;
         }
 
-        /// <summary>
-        /// Tailors resume bullets to highlight transferability toward bridgeable and prerequisite-met
-        /// skill gaps. For each actionable gap, finds the most relevant experience bullet via keyword
-        /// overlap and asks the LLM to rewrite it.
-        /// </summary>
-        public async Task<List<TailoredBullet>?> TailorResumeAsync(Guid userProfileId, Guid jobId)
+        public async Task<List<TailoredBullet>?> TailorResumeAsync(
+            Guid userProfileId,
+            Guid jobId,
+            List<string>? matchingSkills = null,
+            List<string>? implicitSkills = null,
+            List<string>? prereqMetSkills = null,
+            List<string>? bridgeableSkills = null,
+            List<string>? hardGaps = null)
         {
             var user = await _context.UserProfiles.FindAsync(userProfileId);
             var job = await _context.JobPostings.FindAsync(jobId);
@@ -754,84 +745,132 @@ namespace ARIS.API.Services
             if (user?.CleanSignal == null || job?.CleanSignal == null)
                 return null;
 
-            var allBullets = user.CleanSignal.ExperienceSummary
-                .SelectMany(e => e.Bullets)
-                .Where(b => !string.IsNullOrWhiteSpace(b))
-                .Distinct()
+            var experienceEntries = user.CleanSignal.ExperienceSummary
+                .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
                 .ToList();
 
-            if (allBullets.Count == 0)
+            if (experienceEntries.Count == 0)
             {
                 _logger.LogWarning("TailorResume: User {UserId} has no experience bullets to tailor.", userProfileId);
                 return [];
             }
 
-            // To avoid circular DI with MatchService, gap detection is done directly
-            // from the CleanSignal rather than delegating to AnalyzeMatchAsync.
-            var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
-            var jobSkillNames = job.CleanSignal.RequiredSkills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            List<string> effectiveMatching, effectiveImplicit, effectivePrereqMet, effectiveBridgeable, effectiveHardGaps;
+            if (matchingSkills != null)
+            {
+                effectiveMatching = matchingSkills;
+                effectiveImplicit = implicitSkills ?? [];
+                effectivePrereqMet = prereqMetSkills ?? [];
+                effectiveBridgeable = bridgeableSkills ?? [];
+                effectiveHardGaps = hardGaps ?? [];
+            }
+            else
+            {
+                var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                effectiveMatching = [.. user.CleanSignal.Skills.Select(s => s.Name)];
+                effectiveImplicit = [];
+                effectivePrereqMet = [];
+                effectiveBridgeable = [];
+                effectiveHardGaps = [.. job.CleanSignal.RequiredSkills
+                    .Where(js => !userSkillNames.Contains(js.Name))
+                    .Select(js => js.Name)];
+            }
 
-            var actionableGaps = job.CleanSignal.RequiredSkills
-                .Where(js => !userSkillNames.Contains(js.Name))
-                .Take(8)  // Limit to avoid excessive LLM calls
-                .ToList();
-
-            if (actionableGaps.Count == 0)
-                return [];
-
+            var jobTitle = job.CleanSignal.TargetRoles.FirstOrDefault()?.Title ?? "the role";
             var results = new List<TailoredBullet>();
 
-            foreach (var gap in actionableGaps)
+            foreach (var exp in experienceEntries)
             {
-                var gapWords = gap.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                    .Select(w => w.ToLowerInvariant())
-                    .ToHashSet();
+                var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
-                var bestBullet = allBullets
-                    .OrderByDescending(b =>
-                        b.ToLowerInvariant().Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                         .Count(w => gapWords.Contains(w)))
-                    .ThenByDescending(b => b.Length)
-                    .FirstOrDefault();
+                var prompt = $$"""
+                    You are an expert resume writer. Below is a candidate's experience entry and the full skill analysis for the job they are targeting.
 
-                if (bestBullet == null) continue;
+                    ORIGINAL EXPERIENCE:
+                    Role: {{exp.Role}}  |  Company: {{exp.Company}}
+                    {{bulletsText}}
+
+                    JOB TARGET: {{jobTitle}}
+
+                    JOB REQUIRES — MATCHING SKILLS (candidate already has):
+                    {{(effectiveMatching.Count > 0 ? string.Join(", ", effectiveMatching) : "(none)")}}
+
+                    JOB REQUIRES — CAN BE INFERRED FROM BACKGROUND (implicit):
+                    {{(effectiveImplicit.Count > 0 ? string.Join(", ", effectiveImplicit) : "(none)")}}
+
+                    JOB REQUIRES — CANDIDATE HAS FOUNDATIONS FOR (prerequisite-met):
+                    {{(effectivePrereqMet.Count > 0 ? string.Join(", ", effectivePrereqMet) : "(none)")}}
+
+                    JOB REQUIRES — REACHABLE WITH EXISTING EXPERIENCE (bridgeable):
+                    {{(effectiveBridgeable.Count > 0 ? string.Join(", ", effectiveBridgeable) : "(none)")}}
+
+                    JOB REQUIRES — GENUINE GAPS (do NOT force these in):
+                    {{(effectiveHardGaps.Count > 0 ? string.Join(", ", effectiveHardGaps) : "(none)")}}
+
+                    TASK:
+                    Rewrite each numbered bullet so it naturally incorporates relevant keywords from the matching, implicit, and bridgeable skill lists where they genuinely apply to what was done in this role.
+                    Keep the original facts, company context, and achievements — do not invent new responsibilities.
+                    Do not force bridgeable or gap skills into bullets where they do not fit.
+                    Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
+
+                    Return JSON array only, no other text:
+                    [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
+                    """;
 
                 try
                 {
-                    var prompt = $"""
-                        Rewrite the following resume bullet point to more explicitly highlight transferable skills
-                        relevant to "{gap.Name}". Keep it concise (1-2 sentences), action-verb-led, and quantified
-                        where possible. Do not invent new facts — only reframe what is already stated.
-
-                        Original bullet: {bestBullet}
-
-                        Rewritten bullet:
-                        """;
-
                     var response = await _chatClient.GetResponseAsync(prompt);
-                    var tailored = response?.Text?.Trim() ?? bestBullet;
+                    var text = response?.Text?.Trim() ?? "";
 
-                    results.Add(new TailoredBullet
+                    var json = System.Text.RegularExpressions.Regex.Replace(text, @"```(?:json)?", "").Trim();
+                    var startIdx = json.IndexOf('[');
+                    var endIdx   = json.LastIndexOf(']');
+                    if (startIdx >= 0 && endIdx > startIdx)
+                        json = json[startIdx..(endIdx + 1)];
+
+                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, new JsonSerializerOptions
                     {
-                        OriginalBullet = bestBullet,
-                        RewrittenBullet = tailored,
-                        TargetSkill = gap.Name,
-                        BridgePath = null   // Bridge path populated by MatchService if needed
+                        PropertyNameCaseInsensitive = true
                     });
+
+                    if (parsed != null)
+                    {
+                        foreach (var item in parsed)
+                        {
+                            if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
+                            {
+                                results.Add(new TailoredBullet
+                                {
+                                    OriginalBullet = item.Original,
+                                    RewrittenBullet = item.Rewritten,
+                                    TargetSkill = exp.Role,
+                                    Role = exp.Role,
+                                    Company = exp.Company,
+                                });
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogWarning(ex, "Failed to tailor bullet for skill {Skill}", gap.Name);
-                    results.Add(new TailoredBullet
+                    _logger.LogWarning(ex, "Failed to tailor bullets for role {Role}", exp.Role);
+                    foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
                     {
-                        OriginalBullet = bestBullet,
-                        RewrittenBullet = bestBullet,
-                        TargetSkill = gap.Name
-                    });
+                        results.Add(new TailoredBullet
+                        {
+                            OriginalBullet = bullet,
+                            RewrittenBullet = bullet,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+                    }
                 }
             }
 
             return results;
         }
+
+        private record BulletRewriteItem(string Original, string Rewritten);
     }
 }

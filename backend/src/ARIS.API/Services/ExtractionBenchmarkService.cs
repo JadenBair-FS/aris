@@ -21,7 +21,7 @@ public class ExtractionBenchmarkService
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
     private readonly ILogger<ExtractionBenchmarkService> _logger;
 
-    private static readonly Uri OllamaUri = new("http://192.168.4.172:11434");
+    private static readonly Uri OllamaUri = new("http://192.168.4.45:11434");
 
     private static readonly JsonSerializerOptions _jsonOptions = new()
     {

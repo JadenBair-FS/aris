@@ -9,6 +9,8 @@ using System.Text;
 
 namespace ARIS.API.Services;
 
+public record RecruiterSummaryResult(string Summary, double GroundingScore, string Verdict);
+
 public class MatchService
 {
     private readonly ArisDbContext _context;
@@ -26,7 +28,7 @@ public class MatchService
         _logger = logger;
     }
 
-    public async Task<MatchAnalysisResult?> AnalyzeMatchAsync(Guid userProfileId, Guid jobId)
+    public async Task<MatchAnalysisResult?> AnalyzeMatchAsync(Guid userProfileId, Guid jobId, bool skipUniversalFilter = false)
     {
         var user = await _context.UserProfiles.FindAsync(userProfileId);
         var job = await _context.JobPostings.FindAsync(jobId);
@@ -74,13 +76,12 @@ public class MatchService
         var primaryRole = job.CleanSignal?.TargetRoles?.FirstOrDefault();
         bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
 
-        // Gate the tech-skill post-filter on the candidate's domain, not the job's domain.
         var candidatePrimaryRole = user.CleanSignal?.Roles?.FirstOrDefault(r => r.IsCurrent)
                                    ?? user.CleanSignal?.Roles?.FirstOrDefault();
         bool isCandidateTech = DomainClassifier.IsTechDomain(
             candidatePrimaryRole?.OnetCode, candidatePrimaryRole?.Title);
 
-        var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
+        var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech, skipUniversalFilter);
 
         var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
         foreach (var s in implicitSkills) totalUserSkills.Add(s);
@@ -115,10 +116,12 @@ public class MatchService
             .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        // Universal O*NET competencies are generic human capabilities — never a gap.
-        missingSkills = missingSkills
-            .Where(s => !GraphService.UniversalSkills.Contains(s))
-            .ToList();
+        if (!skipUniversalFilter)
+        {
+            missingSkills = missingSkills
+                .Where(s => !GraphService.UniversalSkills.Contains(s))
+                .ToList();
+        }
 
         var bridgeable = new List<SkillGapItem>();
         var prerequisiteMet = new List<SkillGapItem>();
@@ -126,13 +129,9 @@ public class MatchService
 
         if (missingSkills.Count > 0)
         {
-            var neighborhood = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech);
-            var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech);
+            var neighborhood = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech, skipUniversalFilter);
+            var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech, skipUniversalFilter);
 
-            // Only block Roadmap.sh-sourced tech skills for non-tech candidates.
-            // This allows domain tool bridges (CRM, EHR, Salesforce, etc.) to show as
-            // bridgeable for non-tech candidates while still preventing pure engineering
-            // skills (TypeScript, Kubernetes, etc.) from appearing as valid bridges.
             var roadmapTechSkillNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
             if (!isCandidateTech)
@@ -155,8 +154,7 @@ public class MatchService
             _logger.LogInformation("Graph Neighborhood for User: {Neighborhood}", string.Join(", ", neighborhood));
             _logger.LogInformation("Prerequisite-Met Skills: {PrereqMet}", string.Join(", ", prerequisiteMetSet));
 
-            // Fetch bridge path data for all missing skills to enrich SkillGapItem objects.
-            var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
+            var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills, skipUniversalFilter);
             var bridgePathBySkill = bridgePaths.ToDictionary(
                 p => p.SkillName,
                 p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
@@ -164,7 +162,6 @@ public class MatchService
 
             foreach (var skill in missingSkills)
             {
-                // For non-tech candidates, Roadmap.sh tech skills are always hard gaps.
                 if (!isCandidateTech && roadmapTechSkillNames.Contains(skill))
                 {
                     var jobSkillData = GetJobSkillData(job.CleanSignal!, skill);
@@ -179,14 +176,12 @@ public class MatchService
 
                 var (importance, years) = GetJobSkillData(job.CleanSignal!, skill);
 
-                // Preferred skills are aspirational — never a hard gap.
                 if (importance.Equals("Preferred", StringComparison.OrdinalIgnoreCase))
                 {
                     bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill));
                     continue;
                 }
 
-                // Rules-based Hard Gap detection for Certifications.
                 bool isCertification = skill.Contains("Certified", StringComparison.OrdinalIgnoreCase) ||
                                      skill.Contains("CST", StringComparison.OrdinalIgnoreCase) ||
                                      skill.Contains("License", StringComparison.OrdinalIgnoreCase) ||
@@ -212,20 +207,6 @@ public class MatchService
             }
         }
 
-        // Compute ArisScore: blended graph+vector ranking signal (thesis RQ1/RQ2 contribution).
-        // Graph coverage weights: direct match=1.0×ExperienceMultiplier, implicit=0.8, prereqMet=0.6, bridgeable=0.4.
-        // ExperienceMultiplier = max(0.5, candidateYears/requiredYears) when requiredYears > 0, else 1.0.
-        //   - Applied only to Tier 1 (direct matches): skills the candidate actually has.
-        //   - Tiers 2-4 represent skills the candidate lacks, so experience penalty is not applicable.
-        //   - Floor of 0.5 prevents LLM underestimation from zeroing out a legitimately present skill.
-        // Importance weights: Essential=1.0, Preferred=0.6 (applied to both numerator and denominator).
-        // When a job has no Essential/Preferred distinction, all skills default to Essential (weight=1.0)
-        // and the formula is equivalent to the flat count version.
-        // Capped at 1.0 to prevent over-inflation when coverage exceeds total job skills.
-        // Blend: 55% vector similarity + 45% graph coverage.
-        // The 45% graph weight is calibrated to correct embedding-space ranking failures.
-        // Group by name (case-insensitive) and take the most conservative weight when the LLM
-        // emits duplicate skill entries. Essential (1.0) wins over Preferred (0.6) on conflict.
         var importanceWeights = job.CleanSignal!.RequiredSkills
             .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
@@ -243,7 +224,7 @@ public class MatchService
              prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
              bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
             1.0);
-        var arisScore = 0.55 * similarity + 0.45 * graphCoverageScore;
+        var arisScore = 0.40 * similarity + 0.60 * graphCoverageScore;
 
         return new MatchAnalysisResult
         {
@@ -306,10 +287,6 @@ public class MatchService
         };
     }
 
-    /// <summary>
-    /// Generates a grounded match summary using graph-path context injected into the LLM prompt.
-    /// Returns the narrative summary and its graph grounding score.
-    /// </summary>
     public async Task<(string Summary, double GroundingScore)> GenerateGroundedSummaryAsync(Guid userProfileId, Guid jobId)
     {
         var analysis = await AnalyzeMatchAsync(userProfileId, jobId);
@@ -357,9 +334,6 @@ public class MatchService
         return (summary, groundingResult.Score);
     }
 
-    /// <summary>
-    /// Ranks a list of jobs for a given user by vector similarity, with a CreatedAt tiebreak.
-    /// </summary>
     public async Task<List<(Guid JobId, double Score)>> RankJobsForUserAsync(Guid userProfileId, IEnumerable<Guid> jobIds)
     {
         var user = await _context.UserProfiles.FindAsync(userProfileId);
@@ -384,6 +358,161 @@ public class MatchService
             .ToList();
 
         return ranked;
+    }
+
+    public async Task<RecruiterSummaryResult> GenerateRecruiterSummaryAsync(Guid userProfileId, Guid jobId)
+    {
+        var analysis = await AnalyzeMatchAsync(userProfileId, jobId);
+        if (analysis == null)
+            return new RecruiterSummaryResult("Match analysis could not be performed.", 0.0, "Not Recommended");
+
+        var user = await _context.UserProfiles.FindAsync(userProfileId);
+        var job = await _context.JobPostings.FindAsync(jobId);
+        if (user?.CleanSignal == null || job?.CleanSignal == null)
+            return new RecruiterSummaryResult("Profile data unavailable.", 0.0, "Not Recommended");
+
+        var userSkills = user.CleanSignal.Skills.Select(s => s.Name).ToList();
+        var jobSkills = job.CleanSignal.RequiredSkills.Select(s => s.Name).ToList();
+        var graphContext = await _graphService.GetGraphContextForMatchAsync(userSkills, jobSkills);
+
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "RecruiterSummary.md");
+        var template = await File.ReadAllTextAsync(promptPath);
+
+        var arisScorePct = (int)Math.Round(analysis.ArisScore * 100);
+        var matchingList   = analysis.MatchingSkills.Select(s => s.SkillName).ToList();
+        var implicitList   = analysis.ImplicitlyDiscoveredSkills;
+        var prereqList     = analysis.PrerequisiteMetSkills.Select(s => s.SkillName).ToList();
+        var bridgeList     = analysis.BridgeableSkills.Select(s => s.SkillName).ToList();
+        var hardGapList    = analysis.HardGaps.Select(s => s.SkillName).ToList();
+
+        var prompt = template
+            .Replace("{arisScore}",       arisScorePct.ToString())
+            .Replace("{t1Count}",         matchingList.Count.ToString())
+            .Replace("{t2Count}",         implicitList.Count.ToString())
+            .Replace("{t3Count}",         prereqList.Count.ToString())
+            .Replace("{t4Count}",         bridgeList.Count.ToString())
+            .Replace("{t5Count}",         hardGapList.Count.ToString())
+            .Replace("{candidateSkills}", string.Join(", ", userSkills))
+            .Replace("{jobSkills}",       string.Join(", ", jobSkills))
+            .Replace("{matchingSkills}",  matchingList.Count > 0 ? string.Join(", ", matchingList) : "none")
+            .Replace("{implicitSkills}",  implicitList.Count > 0 ? string.Join(", ", implicitList) : "none")
+            .Replace("{prereqMetSkills}", prereqList.Count  > 0 ? string.Join(", ", prereqList)    : "none")
+            .Replace("{bridgeableSkills}",bridgeList.Count  > 0 ? string.Join(", ", bridgeList)    : "none")
+            .Replace("{hardGaps}",        hardGapList.Count > 0 ? string.Join(", ", hardGapList)   : "none")
+            .Replace("{graphContext}",    graphContext);
+
+        string fullResponse;
+        try
+        {
+            var response = await _chatClient.GetResponseAsync(prompt);
+            fullResponse = response?.Text?.Trim() ?? "Summary unavailable.";
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to generate recruiter summary.");
+            fullResponse = "Summary generation failed.";
+        }
+
+        string verdict;
+        if (analysis.ArisScore >= 0.75 && hardGapList.Count <= 1)
+            verdict = "Strong Fit";
+        else if (analysis.ArisScore >= 0.55 && hardGapList.Count <= 3)
+            verdict = "Potential Fit";
+        else
+            verdict = "Not Recommended";
+
+        var lines = fullResponse.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+        var summaryText = string.Join('\n',
+            lines.Where(l => !l.Trim().StartsWith("Verdict:", StringComparison.OrdinalIgnoreCase))).Trim();
+
+        var groundingResult = await _groundingService.CalculateGroundingScoreAsync(summaryText, userSkills);
+        return new RecruiterSummaryResult(summaryText, groundingResult.Score, verdict);
+    }
+
+    public record CandidateScoreEntry(Guid UserProfileId, string UserId, string PrimaryRole, double FastArisScore);
+    public record JobScoreEntry(Guid JobId, string Title, double FastArisScore);
+
+    public async Task<List<CandidateScoreEntry>> GetFastScoresCandidatesAsync(Guid jobId, int limit)
+    {
+        var job = await _context.JobPostings.FindAsync(jobId);
+        if (job?.Embedding == null || job.CleanSignal == null) return [];
+
+        var profiles = await _context.UserProfiles
+            .Where(u => u.Embedding != null && u.CleanSignal != null)
+            .OrderBy(u => u.Embedding!.CosineDistance(job.Embedding))
+            .Take(limit)
+            .ToListAsync();
+
+        var jobVec = job.Embedding.ToArray();
+        var jobSkills = job.CleanSignal.RequiredSkills;
+
+        var results = new List<CandidateScoreEntry>(profiles.Count);
+        foreach (var profile in profiles)
+        {
+            var score = ComputeFastArisScore(profile.Embedding!.ToArray(), jobVec,
+                profile.CleanSignal!.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase),
+                jobSkills);
+            var primaryRole = profile.CleanSignal.Roles?.FirstOrDefault(r => r.IsCurrent)?.Title
+                           ?? profile.CleanSignal.Roles?.FirstOrDefault()?.Title
+                           ?? "Candidate";
+            results.Add(new CandidateScoreEntry(profile.Id, profile.UserId, primaryRole, Math.Round(score, 4)));
+        }
+
+        return [.. results.OrderByDescending(r => r.FastArisScore)];
+    }
+
+    public async Task<List<JobScoreEntry>> GetFastScoresJobsAsync(Guid profileId, int limit)
+    {
+        var profile = await _context.UserProfiles.FindAsync(profileId);
+        if (profile?.Embedding == null || profile.CleanSignal == null) return [];
+
+        var jobs = await _context.JobPostings
+            .Where(j => j.Embedding != null && j.CleanSignal != null)
+            .OrderBy(j => j.Embedding!.CosineDistance(profile.Embedding))
+            .Take(limit)
+            .ToListAsync();
+
+        var profileVec = profile.Embedding.ToArray();
+        var candidateSkills = profile.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        var results = new List<JobScoreEntry>(jobs.Count);
+        foreach (var job in jobs)
+        {
+            var score = ComputeFastArisScore(profileVec, job.Embedding!.ToArray(),
+                candidateSkills, job.CleanSignal!.RequiredSkills);
+            var title = job.CleanSignal.TargetRoles?.FirstOrDefault()?.Title ?? "Job Posting";
+            results.Add(new JobScoreEntry(job.Id, title, Math.Round(score, 4)));
+        }
+
+        return [.. results.OrderByDescending(r => r.FastArisScore)];
+    }
+
+    private static double ComputeFastArisScore(
+        float[] userVec, float[] jobVec,
+        HashSet<string> candidateSkills,
+        IEnumerable<ARIS.Shared.Models.CleanSignal.JobSkill> jobSkills)
+    {
+        double dot = 0, normU = 0, normJ = 0;
+        for (int i = 0; i < userVec.Length; i++)
+        {
+            dot   += userVec[i] * jobVec[i];
+            normU += userVec[i] * userVec[i];
+            normJ += jobVec[i] * jobVec[i];
+        }
+        double vectorSimilarity = (normU > 0 && normJ > 0) ? dot / (Math.Sqrt(normU) * Math.Sqrt(normJ)) : 0;
+
+        double weightedMatches = 0, weightedTotal = 0;
+        foreach (var rs in jobSkills)
+        {
+            double w = rs.Importance?.ToLowerInvariant() == "essential" ? 1.0 : 0.6;
+            weightedTotal += w;
+            if (candidateSkills.Contains(rs.Name))
+                weightedMatches += w;
+        }
+
+        double graphCoverage = weightedTotal > 0 ? weightedMatches / weightedTotal : 0;
+        return 0.40 * vectorSimilarity + 0.60 * graphCoverage;
     }
 
     public async Task<object> DebugGetJobsAsync()

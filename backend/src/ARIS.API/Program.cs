@@ -1,5 +1,6 @@
 using ARIS.Shared.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using QuestPDF.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using Microsoft.IdentityModel.Tokens;
@@ -8,6 +9,8 @@ using Scalar.AspNetCore;
 using OllamaSharp;
 using ElBruno.OllamaSharp.Extensions;
 using Serilog;
+
+QuestPDF.Settings.License = LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +39,7 @@ builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(dataSource, o => o.UseVector()));
 
 // Semantic Kernel
-var ollamaUri = new Uri("http://192.168.4.172:11434");
+var ollamaUri = new Uri("http://192.168.4.45:11434");
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
@@ -67,6 +70,8 @@ builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
+builder.Services.AddScoped<ARIS.API.Services.PersonalInfoExtractor>();
+builder.Services.AddScoped<ARIS.API.Services.ResumePdfService>();
 
 // Auth — Clerk JWT Bearer
 var clerkAuthority = builder.Configuration["Clerk:Authority"]

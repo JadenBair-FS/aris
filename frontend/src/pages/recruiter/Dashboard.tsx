@@ -1,59 +1,28 @@
 import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link, useNavigate } from 'react-router';
-import { Briefcase, Users, Plus, Search } from 'lucide-react';
+import { Briefcase, Users, Plus, Search, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { jobApi } from '@/api/job';
 
 export default function Dashboard() {
     const { user } = useAuth();
     const navigate = useNavigate();
     const [searchJobId, setSearchJobId] = useState('');
 
-    // Mock Data for "Your Job Postings"
-    const activeJobs = [
-        {
-            id: 'job-101',
-            title: 'Senior Frontend Engineer',
-            candidates: 12,
-            topArisScore: 92.4,
-            posted: '2 days ago'
-        },
-        {
-            id: 'job-102',
-            title: 'UI/UX React Developer',
-            candidates: 5,
-            topArisScore: 84.1,
-            posted: '5 hours ago'
-        }
-    ];
-
-    // Mock Data for "Latest Matched Candidates"
-    const recentCandidates = [
-        {
-            profileId: 'prof-999',
-            jobId: 'job-101',
-            name: 'Alice Johnson',
-            role: 'Frontend Dev',
-            matchScore: 92.4,
-            time: '1 hour ago'
-        },
-        {
-            profileId: 'prof-888',
-            jobId: 'job-101',
-            name: 'Bob Smith',
-            role: 'React Engineer',
-            matchScore: 88.0,
-            time: '3 hours ago'
-        }
-    ];
+    const { data: jobPostings, isLoading: isJobsLoading } = useQuery({
+        queryKey: ['recruiterJobs'],
+        queryFn: () => jobApi.getJobsByRecruiter(),
+        enabled: !!user,
+    });
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         if (searchJobId.trim()) navigate(`/recruiter/job/${searchJobId.trim()}`);
-    }
+    };
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
@@ -76,48 +45,62 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between">
                         <h2 className="text-xl font-semibold tracking-tight">Your Job Postings</h2>
                         <Link to="/recruiter/post" className="text-sm font-medium text-primary hover:underline">
-                            View all
+                            Post new
                         </Link>
                     </div>
 
-                    <div className="grid gap-4">
-                        {activeJobs.map(job => (
-                            <Card key={job.id} className="transition-all hover:shadow-md hover:border-primary/30 border-border shadow-sm">
-                                <CardContent className="p-5">
-                                    <div className="flex justify-between items-start gap-4">
-                                        <div className="space-y-1">
-                                            <Link to={`/recruiter/job/${job.id}`} className="font-semibold text-lg hover:underline decoration-primary">
-                                                {job.title}
-                                            </Link>
-                                            <div className="text-xs text-muted-foreground font-mono">
-                                                ID: {job.id}
+                    {isJobsLoading ? (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground py-8">
+                            <Loader2 className="h-4 w-4 animate-spin" /> Loading your job postings...
+                        </div>
+                    ) : !jobPostings || jobPostings.length === 0 ? (
+                        <Card>
+                            <CardContent className="p-6 text-center text-sm text-muted-foreground">
+                                No job postings yet. <Link to="/recruiter/post" className="text-primary hover:underline">Post your first job</Link> to start finding candidates.
+                            </CardContent>
+                        </Card>
+                    ) : (
+                        <div className="grid gap-4">
+                            {jobPostings.map(job => {
+                                const primaryRole = job.cleanSignal?.target_roles?.[0]?.title ?? 'Job Posting';
+                                return (
+                                    <Card key={job.id} className="transition-all hover:shadow-md hover:border-primary/30 border-border shadow-sm">
+                                        <CardContent className="p-5">
+                                            <div className="flex justify-between items-start gap-4">
+                                                <div className="space-y-1">
+                                                    <Link to={`/recruiter/job/${job.id}`} className="font-semibold text-lg hover:underline decoration-primary">
+                                                        {primaryRole}
+                                                    </Link>
+                                                    <div className="text-xs text-muted-foreground font-mono">
+                                                        ID: {job.id.slice(0, 8)}
+                                                    </div>
+                                                </div>
+                                                <Button variant="outline" size="sm" asChild>
+                                                    <Link to={`/recruiter/job/${job.id}`}>View Candidates</Link>
+                                                </Button>
                                             </div>
-                                        </div>
-                                        <Button variant="outline" size="sm" asChild>
-                                            <Link to={`/recruiter/job/${job.id}`}>View Details</Link>
-                                        </Button>
-                                    </div>
 
-                                    <div className="flex flex-wrap items-center mt-5 gap-4 text-sm">
-                                        <div className="flex items-center gap-1.5 text-muted-foreground">
-                                            <Users className="h-4 w-4" />
-                                            <span className="font-medium text-foreground">{job.candidates}</span> Candidates
-                                        </div>
-                                        <div className="flex items-center gap-1.5 text-muted-foreground">
-                                            <Briefcase className="h-4 w-4" />
-                                            Top Score: <Badge variant="outline" className="font-mono text-primary border-primary/20 bg-primary/5">{job.topArisScore}</Badge>
-                                        </div>
-                                        <div className="text-xs text-muted-foreground ml-auto">
-                                            Posted {job.posted}
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
+                                            <div className="flex flex-wrap items-center mt-5 gap-4 text-sm">
+                                                <div className="flex items-center gap-1.5 text-muted-foreground">
+                                                    <Briefcase className="h-4 w-4" />
+                                                    <span className="text-xs font-mono">{job.id.slice(0, 8)}</span>
+                                                </div>
+                                                {job.cleanSignal?.required_skills && (
+                                                    <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
+                                                        <Users className="h-3.5 w-3.5" />
+                                                        {job.cleanSignal.required_skills.length} required skills
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                );
+                            })}
+                        </div>
+                    )}
                 </div>
 
-                {/* Right Sidebar: Candidates & Search */}
+                {/* Right Sidebar: Search */}
                 <div className="space-y-6">
 
                     <Card>
@@ -142,27 +125,14 @@ export default function Dashboard() {
                     <Card className="shadow-sm border-border">
                         <CardHeader className="pb-3">
                             <CardTitle className="text-lg flex items-center gap-2">
-                                <Users className="h-4 w-4 text-primary" /> Latest Matches
+                                <Users className="h-4 w-4 text-primary" /> Find Candidates
                             </CardTitle>
+                            <CardDescription>Select a job posting to view matched candidates with ARIS scores</CardDescription>
                         </CardHeader>
-                        <CardContent className="space-y-4">
-                            {recentCandidates.map((c, i) => (
-                                <div key={i} className="flex justify-between items-center group">
-                                    <div>
-                                        <Link to={`/recruiter/job/${c.jobId}/candidate/${c.profileId}`} className="text-sm font-semibold group-hover:underline">
-                                            {c.name}
-                                        </Link>
-                                        <p className="text-xs text-muted-foreground">{c.role}</p>
-                                    </div>
-                                    <div className="text-right">
-                                        <Badge variant="outline" className="text-xs text-primary border-primary/20 bg-primary/5">{c.matchScore}</Badge>
-                                        <p className="text-[10px] text-muted-foreground mt-1">{c.time}</p>
-                                    </div>
-                                </div>
-                            ))}
-                            <Button variant="link" className="w-full h-auto p-0 text-sm font-normal text-muted-foreground">
-                                View all candidates
-                            </Button>
+                        <CardContent>
+                            <p className="text-sm text-muted-foreground">
+                                Click "View Candidates" on any job posting above to see ranked candidates with their ARIS match scores.
+                            </p>
                         </CardContent>
                     </Card>
 

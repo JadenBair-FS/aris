@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigate, Link } from 'react-router';
 import { jobApi } from '@/api/job';
-import { recruiterApi } from '@/api/recruiter';
+import { matchApi } from '@/api/match';
 import { MatchCard } from '@/components/MatchCard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -10,6 +10,7 @@ import { Briefcase } from 'lucide-react';
 
 export default function RecruiterHome() {
     const navigate = useNavigate();
+    const [selectedJobId, setSelectedJobId] = useState<string | undefined>(undefined);
 
     const { data: jobs, isLoading: isJobsLoading } = useQuery({
         queryKey: ['recruiterJobs'],
@@ -17,12 +18,11 @@ export default function RecruiterHome() {
     });
 
     const mostRecentJobId = jobs?.[0]?.id;
-    const [selectedJobId, setSelectedJobId] = useState<string | undefined>(undefined);
     const activeJobId = selectedJobId ?? mostRecentJobId;
 
-    const { data: candidateData, isLoading: isCandLoading } = useQuery({
-        queryKey: ['candidates', activeJobId],
-        queryFn: () => recruiterApi.getTopCandidates(activeJobId!, 10),
+    const { data: arisScores, isLoading: isCandLoading } = useQuery({
+        queryKey: ['fastScoresCandidates', activeJobId],
+        queryFn: () => matchApi.getFastScoresCandidates(activeJobId!),
         enabled: !!activeJobId,
     });
 
@@ -51,7 +51,7 @@ export default function RecruiterHome() {
         );
     }
 
-    const candidates = candidateData?.candidates ?? [];
+    const candidates = arisScores?.scores ?? [];
 
     return (
         <div className="space-y-6">
@@ -60,7 +60,6 @@ export default function RecruiterHome() {
                 <p className="text-slate-500 text-sm mt-1">Showing matches for the selected job posting</p>
             </div>
 
-            {/* Job selector */}
             <div>
                 <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 block">Job Posting</label>
                 <select
@@ -93,12 +92,9 @@ export default function RecruiterHome() {
                     <MatchCard
                         key={c.userProfileId}
                         index={index}
-                        title={c.primaryRole || 'Candidate'}
+                        title={c.primaryRole}
                         subtitle={c.userId.slice(0, 12) + (c.userId.length > 12 ? '...' : '')}
-                        arisScore={c.matchAnalysis?.arisScore ?? c.vectorSimilarity}
-                        vectorSim={c.vectorSimilarity}
-                        tier1Count={c.matchAnalysis?.matchingSkills?.length}
-                        hardGapCount={c.matchAnalysis?.hardGaps?.length}
+                        cta="View Candidate"
                         onClick={() => navigate(`/candidate/${c.userProfileId}/${activeJobId}`)}
                     />
                 ))}

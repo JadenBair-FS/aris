@@ -48,9 +48,6 @@ namespace ARIS.API.Services
                     return null;
                 }
 
-                // If the primary extraction produced fewer than 3 skills (common for academic/admin
-                // postings where qualifications are stated as prose rather than enumerable items),
-                // run a focused second pass over the responsibilities to extract implied competencies.
                 if (cleanSignal.RequiredSkills.Count < 3 && cleanSignal.Responsibilities.Count > 0)
                 {
                     _logger.LogInformation("Sparse skill extraction ({Count} skills). Running responsibilities-based fallback pass.", cleanSignal.RequiredSkills.Count);
@@ -104,7 +101,7 @@ namespace ARIS.API.Services
                 };
             }
 
-            var matches = await _context.JobPostings
+            var candidates = await _context.JobPostings
                 .Where(j => j.Embedding != null)
                 .Select(j => new
                 {
@@ -113,18 +110,10 @@ namespace ARIS.API.Services
                 })
                 .Where(x => x.Distance < 0.65)
                 .OrderBy(x => x.Distance)
-                .Take(limit)
+                .Take(20)
                 .ToListAsync();
 
-            var mappedMatches = matches.Select(x => new JobMatchResult
-            {
-                JobId = x.Job.Id,
-                Job = x.Job,
-                Distance = x.Distance,
-                Score = 1 - x.Distance
-            }).ToList();
-
-            if (mappedMatches.Count == 0)
+            if (candidates.Count == 0)
             {
                 return new JobRecommendationResponse
                 {
@@ -133,12 +122,21 @@ namespace ARIS.API.Services
                 };
             }
 
-            var analysis = await GenerateMatchAnalysisAsync(userProfile.CleanSignal, [.. mappedMatches.Take(3)]);
+            var mappedMatches = candidates.Take(limit).Select(x => new JobMatchResult
+            {
+                JobId = x.Job.Id,
+                Job = x.Job,
+                Distance = x.Distance,
+                Score = 1.0 - x.Distance,
+                ArisScore = 0,
+            }).ToList();
+
+            var analysisText = await GenerateMatchAnalysisAsync(userProfile.CleanSignal, [.. mappedMatches.Take(3)]);
 
             return new JobRecommendationResponse
             {
                 Matches = mappedMatches,
-                Analysis = analysis
+                Analysis = analysisText
             };
         }
 
@@ -175,19 +173,12 @@ namespace ARIS.API.Services
             }
         }
 
-        /// <summary>
-        /// Fallback pass: given a list of job responsibilities, asks the LLM to extract the
-        /// implied professional competencies as concise 1-5 word skill names.
-        /// Fires only when the primary extraction produced fewer than 3 skills.
-        /// </summary>
         private async Task<List<JobSkill>> ExtractSkillsFromResponsibilitiesAsync(List<string> responsibilities, string? roleTitle)
         {
             try
             {
                 var duties = string.Join("\n", responsibilities.Select((r, i) => $"{i + 1}. {r}"));
 
-                // Ask for a wrapped object {"skills": [...]}. Mistral in JSON mode
-                // reliably produces a top-level object; we extract the array after.
                 var prompt = $$"""
                     The job posting for "{{roleTitle ?? "a professional role"}}" has these responsibilities:
 
@@ -222,7 +213,6 @@ namespace ARIS.API.Services
                 var json = response?.Text?.Trim() ?? "";
                 _logger.LogInformation("Responsibilities fallback raw LLM response: {Json}", json);
 
-                // Unwrap {"skills": [...]} or any other single array-valued property
                 if (json.TrimStart().StartsWith("{"))
                 {
                     try
@@ -331,8 +321,6 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
 
-                    // Domain-biased: prefer skills already linked to the posting's primary domain (O*NET prefix).
-                    // Falls back to a global search; non-tech domains exclude Roadmap.sh skills.
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -357,9 +345,6 @@ namespace ARIS.API.Services
                             .OrderBy(x => x.Distance)
                             .FirstOrDefaultAsync();
 
-                        // Always ground to the closest canonical name. A raw LLM-extracted name
-                        // cannot be found in Neo4j, matched to candidate skills, or included in a
-                        // valid grounding neighborhood — it silently corrupts all downstream processing.
                         if (generalMatch != null)
                         {
                             signal.RequiredSkills[i].Name = generalMatch.Name;
@@ -394,7 +379,6 @@ namespace ARIS.API.Services
                     ? bestRole.OnetCode.Split('-')[0]
                     : null;
 
-                // 15 domain-specific skills: top skills linked to this SOC prefix, ordered by similarity
                 List<string> domainSkillNames = [];
                 if (domainPrefix != null)
                 {
@@ -411,7 +395,6 @@ namespace ARIS.API.Services
                     domainSkillNames = domainSkills.Select(s => s.Name).ToList();
                 }
 
-                // 15 global skills (minus Roadmap.sh for non-tech), de-duplicated against domain list
                 var skillQuery = _context.Skills.Where(s => s.Embedding != null);
                 if (!isTech)
                     skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
@@ -599,13 +582,8 @@ namespace ARIS.API.Services
             signal.RequiredSkills.RemoveAll(s => string.IsNullOrWhiteSpace(s.Name));
             foreach (var skill in signal.RequiredSkills) skill.Name = (skill.Name ?? "").Trim();
 
-            // Remove prose sentences that slipped through as skill names.
-            // A skill name must be a concise competency (1-7 words). Any entry longer than
-            // 7 words is almost certainly a qualification statement or duty description, not a skill.
             signal.RequiredSkills.RemoveAll(s => s.Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 7);
 
-            // Remove education requirements that the LLM duplicated from minimum_education into required_skills.
-            // If a skill name matches (case-insensitive) any minimum_education degree, drop it.
             var eduDegrees = signal.MinimumEducation
                 .Select(e => (e.Degree ?? "").Trim().ToLowerInvariant())
                 .ToHashSet();

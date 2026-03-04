@@ -8,5 +8,6 @@ namespace ARIS.Shared.Models
         public JobPosting? Job { get; set; }
         public double Score { get; set; }
         public double Distance { get; set; }
+        public double ArisScore { get; set; }
     }
 }

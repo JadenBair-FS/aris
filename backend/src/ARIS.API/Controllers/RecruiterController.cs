@@ -1,4 +1,3 @@
-using ARIS.API.Services;
 using ARIS.Shared.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,21 +12,14 @@ namespace ARIS.API.Controllers;
 public class RecruiterController : ControllerBase
 {
     private readonly ArisDbContext _context;
-    private readonly MatchService _matchService;
     private readonly ILogger<RecruiterController> _logger;
 
-    public RecruiterController(ArisDbContext context, MatchService matchService, ILogger<RecruiterController> logger)
+    public RecruiterController(ArisDbContext context, ILogger<RecruiterController> logger)
     {
         _context = context;
-        _matchService = matchService;
         _logger = logger;
     }
 
-    /// <summary>
-    /// Bidirectional candidate search — finds the best-matching candidate profiles for a given job posting.
-    /// Ranks candidates by pgvector cosine similarity against the job embedding, then runs
-    /// AnalyzeMatchAsync on each of the top N to provide gap analysis per candidate.
-    /// </summary>
     [HttpGet("job/{jobId:guid}/candidates")]
     public async Task<IActionResult> FindCandidatesForJob(Guid jobId, [FromQuery] int limit = 10)
     {
@@ -40,8 +32,6 @@ public class RecruiterController : ControllerBase
 
         _logger.LogInformation("Finding candidates for Job: {JobId}, Limit: {Limit}", jobId, limit);
 
-        // CleanSignal is JSONB — EF cannot translate its sub-properties into SQL.
-        // Fetch the columns pgvector CAN compute server-side, then extract SampleRole in C#.
         var topCandidates = await _context.UserProfiles
             .Where(u => u.Embedding != null)
             .Select(u => new
@@ -58,20 +48,13 @@ public class RecruiterController : ControllerBase
         if (topCandidates.Count == 0)
             return Ok(new { jobId, candidates = Array.Empty<object>() });
 
-        var candidateResults = new List<object>();
-        foreach (var candidate in topCandidates)
+        var candidateResults = topCandidates.Select(c => new
         {
-            var sampleRole = candidate.CleanSignal?.Roles?.FirstOrDefault()?.Title ?? "Unknown";
-            var analysis = await _matchService.AnalyzeMatchAsync(candidate.Id, jobId);
-            candidateResults.Add(new
-            {
-                userProfileId = candidate.Id,
-                userId = candidate.UserId,
-                primaryRole = sampleRole,
-                vectorSimilarity = 1.0 - candidate.Distance,
-                matchAnalysis = analysis
-            });
-        }
+            userProfileId = c.Id,
+            userId = c.UserId,
+            primaryRole = c.CleanSignal?.Roles?.FirstOrDefault()?.Title ?? "Unknown",
+            vectorSimilarity = 1.0 - c.Distance,
+        });
 
         return Ok(new { jobId, candidates = candidateResults });
     }

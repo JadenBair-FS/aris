@@ -14,13 +14,17 @@ namespace ARIS.API.Controllers
     {
         private readonly ResumeService _service;
         private readonly MatchService _matchService;
+        private readonly PersonalInfoExtractor _personalInfoExtractor;
+        private readonly ResumePdfService _resumePdfService;
         private readonly ArisDbContext _context;
         private readonly ILogger<ResumeController> _logger;
 
-        public ResumeController(ResumeService service, MatchService matchService, ArisDbContext context, ILogger<ResumeController> logger)
+        public ResumeController(ResumeService service, MatchService matchService, PersonalInfoExtractor personalInfoExtractor, ResumePdfService resumePdfService, ArisDbContext context, ILogger<ResumeController> logger)
         {
             _service = service;
             _matchService = matchService;
+            _personalInfoExtractor = personalInfoExtractor;
+            _resumePdfService = resumePdfService;
             _context = context;
             _logger = logger;
         }
@@ -96,9 +100,6 @@ namespace ARIS.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Returns a user's full CleanSignal and metadata. Used by the frontend job seeker dashboard.
-        /// </summary>
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetUserProfile(Guid id)
         {
@@ -112,12 +113,14 @@ namespace ARIS.API.Controllers
         {
             public Guid UserProfileId { get; set; }
             public Guid JobId { get; set; }
+
+            public List<string>? MatchingSkills { get; set; }
+            public List<string>? ImplicitSkills { get; set; }
+            public List<string>? PrereqMetSkills { get; set; }
+            public List<string>? BridgeableSkills { get; set; }
+            public List<string>? HardGaps { get; set; }
         }
 
-        /// <summary>
-        /// Looks up a user profile by the external auth provider user ID (e.g. Clerk user_xxx string).
-        /// Used by the frontend on initial seeker load when only the auth ID is known, not the profile UUID.
-        /// </summary>
         [HttpGet("by-user/{userId}")]
         public async Task<IActionResult> GetProfileByUserId(string userId)
         {
@@ -127,8 +130,6 @@ namespace ARIS.API.Controllers
             if (profile == null)
                 return NotFound($"No profile found for userId '{userId}'.");
 
-            // CleanSignal is null when the seeker has not yet uploaded a resume.
-            // Return the profile shell so the frontend can show the upload prompt.
             return Ok(new
             {
                 profile.Id,
@@ -138,21 +139,47 @@ namespace ARIS.API.Controllers
             });
         }
 
-        /// <summary>
-        /// Tailors resume bullets to highlight transferability toward bridgeable and prerequisite-met skills.
-        /// Returns tailored bullets per gap with the original text and target skill context.
-        /// </summary>
         [HttpPost("tailor")]
         public async Task<IActionResult> TailorResume([FromBody] TailorRequest request)
         {
             if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
                 return BadRequest("UserProfileId and JobId are required.");
 
-            var result = await _service.TailorResumeAsync(request.UserProfileId, request.JobId);
+            var result = await _service.TailorResumeAsync(
+                request.UserProfileId, request.JobId,
+                request.MatchingSkills, request.ImplicitSkills,
+                request.PrereqMetSkills, request.BridgeableSkills,
+                request.HardGaps);
+
             if (result == null)
                 return NotFound("Could not tailor resume. Ensure the profile and job exist and have been processed.");
 
             return Ok(result);
+        }
+
+        [HttpPost("tailor-pdf")]
+        public async Task<IActionResult> TailorResumePdf([FromBody] TailorRequest request)
+        {
+            if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
+                return BadRequest("UserProfileId and JobId are required.");
+
+            var user = await _context.UserProfiles.FindAsync(request.UserProfileId);
+            if (user?.CleanSignal == null)
+                return NotFound("User profile not found or has no clean signal.");
+
+            var tailoredBullets = await _service.TailorResumeAsync(
+                request.UserProfileId, request.JobId,
+                request.MatchingSkills, request.ImplicitSkills,
+                request.PrereqMetSkills, request.BridgeableSkills,
+                request.HardGaps);
+
+            if (tailoredBullets == null)
+                return NotFound("Could not tailor resume. Ensure the profile and job exist and have been processed.");
+
+            var personalInfo = await _personalInfoExtractor.ExtractAsync(user.RawResume);
+            var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, tailoredBullets);
+
+            return File(pdfBytes, "application/pdf", "ARIS_Tailored_Resume.pdf");
         }
     }
 }

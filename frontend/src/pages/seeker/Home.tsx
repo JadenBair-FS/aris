@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useNavigate, Link } from 'react-router';
 import { useAuth } from '@/context/AuthContext';
 import { resumeApi } from '@/api/resume';
-import { jobApi } from '@/api/job';
+import { matchApi } from '@/api/match';
 import { MatchCard } from '@/components/MatchCard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -22,9 +22,9 @@ export default function SeekerHome() {
     const profileId = profileData?.id;
     const hasResume = profileData?.hasResume ?? false;
 
-    const { data: recommendations, isLoading: isMatchLoading } = useQuery({
-        queryKey: ['recommendations', profileId],
-        queryFn: () => jobApi.getMatchesForProfile(profileId!),
+    const { data: arisScores, isLoading: isMatchLoading } = useQuery({
+        queryKey: ['fastScoresJobs', profileId],
+        queryFn: () => matchApi.getFastScoresJobs(profileId!),
         enabled: !!profileId && hasResume,
     });
 
@@ -53,9 +53,7 @@ export default function SeekerHome() {
         );
     }
 
-    const matches = (recommendations?.matches ?? [])
-        .filter(m => m.score >= 0.60)
-        .sort((a, b) => b.score - a.score);
+    const matches = arisScores?.scores ?? [];
 
     return (
         <div className="space-y-6">
@@ -76,7 +74,7 @@ export default function SeekerHome() {
 
             {!isMatchLoading && matches.length === 0 && (
                 <div className="text-center py-16 text-slate-400">
-                    <p className="text-sm">No matches with score ≥ 0.60 found yet.</p>
+                    <p className="text-sm">No matches found yet.</p>
                     <p className="text-xs mt-1">Try updating your resume or check back later.</p>
                 </div>
             )}
@@ -86,10 +84,9 @@ export default function SeekerHome() {
                     <MatchCard
                         key={match.jobId}
                         index={index}
-                        title={match.job?.cleanSignal?.target_roles?.[0]?.title ?? 'Job Posting'}
+                        title={match.title}
                         subtitle={match.jobId.slice(0, 8)}
-                        arisScore={match.score}
-                        vectorSim={1 - match.distance}
+                        cta="Analyze Match"
                         onClick={() => navigate(`/match/${profileId}/${match.jobId}`)}
                     />
                 ))}

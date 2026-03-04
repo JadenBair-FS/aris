@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { useQuery, useMutation } from '@tanstack/react-query';
+import { useAuth } from '@/context/AuthContext';
 import { matchApi } from '@/api/match';
 import { jobApi } from '@/api/job';
 import { resumeApi } from '@/api/resume';
 import { TierBreakdown } from '@/components/TierBreakdown';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Loader2, ScanSearch, Info } from 'lucide-react';
+import { ArrowLeft, Loader2, ScanSearch, Info, Wand2 } from 'lucide-react';
+import { formatArisScore } from '@/utils/score';
 import type { MatchAnalysisResult, TailoredBullet } from '@/types/api';
-
-// ── Left panel: job details ───────────────────────────────────────────────────
 
 function JobPanel({ jobId }: { jobId: string }) {
     const { data: job, isLoading, isError } = useQuery({
@@ -41,7 +41,6 @@ function JobPanel({ jobId }: { jobId: string }) {
 
     return (
         <div className="space-y-3">
-            {/* Title */}
             <Card>
                 <CardContent className="px-4 py-3">
                     <h2 className="text-base font-semibold text-slate-900">{primaryRole}</h2>
@@ -56,7 +55,6 @@ function JobPanel({ jobId }: { jobId: string }) {
                 </CardContent>
             </Card>
 
-            {/* Responsibilities */}
             {signal?.responsibilities && signal.responsibilities.length > 0 && (
                 <Card>
                     <CardContent className="px-4 py-3">
@@ -73,7 +71,6 @@ function JobPanel({ jobId }: { jobId: string }) {
                 </Card>
             )}
 
-            {/* Required skills */}
             {signal && (essential.length > 0 || preferred.length > 0) && (
                 <Card>
                     <CardContent className="px-4 py-3 space-y-3">
@@ -111,8 +108,6 @@ function JobPanel({ jobId }: { jobId: string }) {
     );
 }
 
-// ── Right panel: analysis ─────────────────────────────────────────────────────
-
 function AnalysisPanel({
     profileId,
     jobId,
@@ -120,26 +115,42 @@ function AnalysisPanel({
     profileId: string;
     jobId: string;
 }) {
+    const { user } = useAuth();
+    const { data: job } = useQuery({
+        queryKey: ['job', jobId],
+        queryFn: () => jobApi.getJob(jobId),
+    });
+
     const [analysis, setAnalysis] = useState<MatchAnalysisResult | null>(null);
-    const [summary, setSummary] = useState<{ text: string; score: number } | null>(null);
     const [tailoredBullets, setTailoredBullets] = useState<TailoredBullet[] | null>(null);
+    const [showBullets, setShowBullets] = useState(false);
 
     const analyzeMutation = useMutation({
         mutationFn: () => matchApi.analyze(profileId, jobId),
         onSuccess: (data) => setAnalysis(data),
     });
 
-    const summaryMutation = useMutation({
-        mutationFn: () => matchApi.getSummary(profileId, jobId),
-        onSuccess: (data) => setSummary({ text: data.summary, score: data.groundingScore }),
-    });
-
     const tailorMutation = useMutation({
-        mutationFn: () => resumeApi.tailor(profileId, jobId),
-        onSuccess: (data) => setTailoredBullets(data),
+        mutationFn: async () => {
+            const bullets = await resumeApi.tailor(profileId, jobId, analysis ?? undefined);
+            const blob = await resumeApi.tailorPdf(profileId, jobId, analysis ?? undefined);
+            return { bullets, blob };
+        },
+        onSuccess: ({ bullets, blob }) => {
+            setTailoredBullets(bullets);
+            setShowBullets(true);
+            const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            const userName = slugify(user?.name ?? 'resume');
+            const jobTitle = slugify(job?.cleanSignal?.target_roles?.[0]?.title ?? jobId.slice(0, 8));
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${userName}-${jobTitle}.pdf`;
+            a.click();
+            URL.revokeObjectURL(url);
+        },
     });
 
-    // Pre-analysis: prompt card
     if (!analysis) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[360px] rounded-xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
@@ -165,7 +176,6 @@ function AnalysisPanel({
         );
     }
 
-    // Scores summary row
     const arisScore = analysis.arisScore;
     const scoreBadgeClass =
         arisScore >= 0.75 ? 'bg-green-50 text-green-700 border-green-200' :
@@ -174,32 +184,45 @@ function AnalysisPanel({
 
     return (
         <div className="space-y-5">
-            {/* Score row */}
             <Card>
-                <CardContent className="px-4 py-3 flex items-center justify-between gap-4">
-                    <div>
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">ARIS Score</p>
-                        <div className="flex items-center gap-2">
-                            <span className="text-4xl font-bold text-slate-900">{arisScore.toFixed(2)}</span>
-                            <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${scoreBadgeClass}`}>
-                                {arisScore >= 0.75 ? 'Strong fit' : arisScore >= 0.60 ? 'Moderate fit' : 'Partial fit'}
-                            </span>
+                <CardContent className="px-4 py-3">
+                    <div className="flex items-start justify-between gap-4">
+                        <div>
+                            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">ARIS Score</p>
+                            <div className="flex items-center gap-2">
+                                <span className="text-4xl font-bold text-slate-900">{formatArisScore(arisScore)}</span>
+                                <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${scoreBadgeClass}`}>
+                                    {arisScore >= 0.75 ? 'Strong fit' : arisScore >= 0.60 ? 'Moderate fit' : 'Partial fit'}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-1 mt-1">
+                                <p className="text-xs text-slate-400">Embedding: {analysis.vectorSimilarity.toFixed(2)}</p>
+                                <div className="group relative">
+                                    <Info className="h-3 w-3 text-slate-300 cursor-help" />
+                                    <div className="absolute left-0 top-4 hidden group-hover:block w-56 bg-white text-slate-600 text-xs rounded-lg p-2.5 shadow-lg z-10 border border-slate-100">
+                                        ArisScore = 0.40 × VectorSimilarity + 0.60 × GraphCoverageScore
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="text-right">
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Embedding Match</p>
-                        <span className="text-2xl font-semibold text-slate-500">{analysis.vectorSimilarity.toFixed(2)}</span>
-                    </div>
-                    <div className="group relative self-start mt-1">
-                        <Info className="h-4 w-4 text-slate-300 cursor-help" />
-                        <div className="absolute right-0 top-5 hidden group-hover:block w-56 bg-white text-slate-600 text-xs rounded-lg p-2.5 shadow-lg z-10 border border-slate-100">
-                            ArisScore = 0.55 × VectorSimilarity + 0.45 × GraphCoverageScore
+
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => tailorMutation.mutate()}
+                                disabled={tailorMutation.isPending}
+                            >
+                                {tailorMutation.isPending
+                                    ? <><Loader2 className="mr-1.5 h-3.5 w-3.5 animate-spin" /> Tailoring...</>
+                                    : <><Wand2 className="mr-1.5 h-3.5 w-3.5" /> Tailor Resume</>
+                                }
+                            </Button>
                         </div>
                     </div>
                 </CardContent>
             </Card>
 
-            {/* Five-tier breakdown — always shows all tiers */}
             <div>
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Five-Tier Breakdown</p>
                 <TierBreakdown
@@ -211,75 +234,41 @@ function AnalysisPanel({
                 />
             </div>
 
-            {/* AI Summary */}
-            <div className="pt-2 border-t border-slate-100">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">AI Summary</p>
-                {!summary ? (
-                    <Button
-                        onClick={() => summaryMutation.mutate()}
-                        disabled={summaryMutation.isPending}
-                        variant="outline"
-                        size="sm"
-                    >
-                        {summaryMutation.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                        Generate Explanation
-                    </Button>
-                ) : (
-                    <Card>
-                        <CardContent className="px-4 py-3 space-y-3">
-                            <p className="text-sm leading-relaxed text-slate-700">{summary.text}</p>
-                            <div className="flex items-center gap-2 text-xs text-slate-400">
-                                <span>Graph Grounding: {summary.score.toFixed(2)}</span>
-                                <Badge variant="outline" className={summary.score >= 0.95
-                                    ? 'border-green-400 text-green-700 bg-green-50'
-                                    : 'border-yellow-400 text-yellow-700 bg-yellow-50'
-                                }>
-                                    {summary.score >= 0.95 ? 'High Confidence' : 'LLM Extrapolation Detected'}
-                                </Badge>
-                            </div>
-                        </CardContent>
-                    </Card>
-                )}
-            </div>
-
-            {/* Resume tailoring */}
-            <div className="pt-2 border-t border-slate-100">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Resume Tailoring</p>
-                {!tailoredBullets ? (
-                    <Button
-                        onClick={() => tailorMutation.mutate()}
-                        disabled={tailorMutation.isPending}
-                        variant="outline"
-                        size="sm"
-                    >
-                        {tailorMutation.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                        Tailor My Resume for This Role
-                    </Button>
-                ) : (
-                    <div className="space-y-3">
-                        <div className="grid grid-cols-3 gap-4 text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">
-                            <span>Original</span><span>Rewritten</span><span>Target Skill</span>
-                        </div>
-                        {tailoredBullets.map((b, i) => (
-                            <Card key={i}>
-                                <CardContent className="px-4 py-3 grid grid-cols-3 gap-4">
-                                    <p className="text-sm text-slate-400 line-through">{b.originalBullet}</p>
-                                    <p className="text-sm font-medium text-slate-800">{b.rewrittenBullet}</p>
-                                    <div className="flex flex-col gap-1">
-                                        <Badge className="w-fit text-xs">{b.targetSkill}</Badge>
-                                        {b.bridgePath && <span className="text-xs text-slate-400">{b.bridgePath}</span>}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
+            {tailoredBullets && tailoredBullets.length > 0 && (
+                <div className="pt-2 border-t border-slate-100">
+                    <div className="flex items-center justify-between mb-3">
+                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tailored Bullets</p>
+                        <button
+                            className="text-xs text-slate-400 hover:text-slate-600"
+                            onClick={() => setShowBullets(v => !v)}
+                        >
+                            {showBullets ? 'Collapse' : 'Expand'}
+                        </button>
                     </div>
-                )}
-            </div>
+                    {showBullets && (
+                        <div className="space-y-3">
+                            <div className="grid grid-cols-[1fr_1fr_auto] gap-4 text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">
+                                <span>Original</span><span>Rewritten</span><span>Role</span>
+                            </div>
+                            {tailoredBullets.map((b, i) => (
+                                <Card key={i}>
+                                    <CardContent className="px-4 py-3 grid grid-cols-[1fr_1fr_auto] gap-4">
+                                        <p className="text-sm text-slate-400 line-through">{b.originalBullet}</p>
+                                        <p className="text-sm font-medium text-slate-800">{b.rewrittenBullet}</p>
+                                        <div className="flex flex-col gap-1">
+                                            <Badge className="w-fit text-xs">{b.role || b.targetSkill}</Badge>
+                                            {b.company && <span className="text-xs text-slate-400">{b.company}</span>}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
 }
-
-// ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function MatchDetail() {
     const { profileId, jobId } = useParams();
@@ -300,12 +289,9 @@ export default function MatchDetail() {
             <h1 className="text-2xl font-semibold text-slate-900">Match Detail</h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-6 items-start">
-                {/* Left: job info (sticky on desktop) */}
                 <div className="lg:sticky lg:top-8">
                     <JobPanel jobId={jobId} />
                 </div>
-
-                {/* Right: analysis */}
                 <div>
                     <AnalysisPanel profileId={profileId} jobId={jobId} />
                 </div>

@@ -1,14 +1,14 @@
-import { useParams, useNavigate } from 'react-router';
+import { useParams, useNavigate, Link } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { jobApi } from '@/api/job';
-import { recruiterApi } from '@/api/recruiter';
-import { Card, CardContent } from '@/components/ui/card';
+import { matchApi } from '@/api/match';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { MatchCard } from '@/components/MatchCard';
 import { ArrowLeft } from 'lucide-react';
-import { useMemo } from 'react';
 
 export default function JobDetail() {
     const { jobId } = useParams();
@@ -20,23 +20,39 @@ export default function JobDetail() {
         enabled: !!jobId,
     });
 
-    const { data: searchResponse, isLoading: isCandLoading } = useQuery({
-        queryKey: ['candidates', jobId],
-        queryFn: () => recruiterApi.getTopCandidates(jobId!, 10),
+    const { data: arisScores, isLoading: isCandLoading } = useQuery({
+        queryKey: ['fastScoresCandidates', jobId],
+        queryFn: () => matchApi.getFastScoresCandidates(jobId!),
         enabled: !!jobId,
     });
 
-    const candidates = useMemo(() => {
-        if (!searchResponse?.candidates) return [];
-        return [...searchResponse.candidates].sort(
-            (a, b) => (b.matchAnalysis?.arisScore ?? 0) - (a.matchAnalysis?.arisScore ?? 0)
-        );
-    }, [searchResponse]);
+    const candidates = arisScores?.scores ?? [];
 
-    const primaryRole = job?.cleanSignal?.target_roles?.[0]?.title ?? 'Job Posting';
+    const signal = job?.cleanSignal;
+    const primaryRole = signal?.target_roles?.[0]?.title ?? 'Job Posting';
+
+    const essential = signal?.required_skills?.filter(s => s.importance.toLowerCase() === 'essential') ?? [];
+    const preferred = signal?.required_skills?.filter(s => s.importance.toLowerCase() !== 'essential') ?? [];
+
+    if (isJobLoading) {
+        return (
+            <div className="space-y-4">
+                <Skeleton className="h-24 w-full" />
+                <Skeleton className="h-20 w-full" />
+                <div className="grid grid-cols-2 gap-4">
+                    <Skeleton className="h-60" />
+                    <Skeleton className="h-60" />
+                </div>
+            </div>
+        );
+    }
+
+    if (isJobError || !job) {
+        return <p className="text-sm text-red-500">Failed to load job.</p>;
+    }
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4">
             <button
                 onClick={() => navigate(-1)}
                 className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 transition-colors"
@@ -45,58 +61,45 @@ export default function JobDetail() {
                 Back to Jobs
             </button>
 
-            {isJobLoading && <Skeleton className="h-10 w-64" />}
-            {isJobError && <p className="text-red-500 text-sm">Failed to load job.</p>}
-
-            {job && (
-                <div className="flex items-start justify-between gap-4">
+            <Card>
+                <CardContent className="px-6 py-5 flex items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-2xl font-semibold text-slate-900">{primaryRole}</h1>
-                        <p className="text-xs text-slate-400 font-mono mt-1">{job.id.slice(0, 8)}</p>
+                        <h1 className="text-xl font-semibold text-slate-900">{primaryRole}</h1>
+                        {signal?.target_roles && signal.target_roles.length > 1 && (
+                            <div className="flex flex-wrap gap-1.5 mt-1.5">
+                                {signal.target_roles.slice(1).map((r, i) => (
+                                    <Badge key={i} variant="secondary" className="text-xs">{r.title}</Badge>
+                                ))}
+                            </div>
+                        )}
+                        <p className="text-slate-400 text-xs font-mono mt-1">{job.id.slice(0, 8)}</p>
                     </div>
-                </div>
-            )}
+                    <Button asChild variant="outline" size="sm" className="shrink-0">
+                        <Link to="/recruiter/post">Post New Job</Link>
+                    </Button>
+                </CardContent>
+            </Card>
 
             <Tabs defaultValue="overview">
                 <TabsList className="bg-slate-100">
                     <TabsTrigger value="overview">Overview</TabsTrigger>
-                    <TabsTrigger value="raw">Source Text</TabsTrigger>
-                    <TabsTrigger value="candidates">Top Candidates</TabsTrigger>
+                    <TabsTrigger value="candidates">Candidates</TabsTrigger>
                 </TabsList>
 
-                {/* Overview tab */}
-                <TabsContent value="overview" className="mt-4 space-y-6">
-                    {isJobLoading && <Skeleton className="h-40 w-full" />}
-                    {job?.cleanSignal && (
-                        <>
-                            {job.cleanSignal.required_skills.length > 0 && (
-                                <Card>
-                                    <CardContent className="p-5">
-                                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Required Skills</p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {job.cleanSignal.required_skills.map(s => (
-                                                <Badge
-                                                    key={s.name}
-                                                    variant={s.importance.toLowerCase() === 'essential' ? 'default' : 'secondary'}
-                                                    className="text-xs"
-                                                >
-                                                    {s.name}
-                                                    {s.years_of_experience > 0 && ` · ${s.years_of_experience}yr`}
-                                                </Badge>
-                                            ))}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            )}
+                <TabsContent value="overview" className="mt-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
 
-                            {job.cleanSignal.responsibilities.length > 0 && (
+                        <div className="space-y-4">
+                            {signal?.responsibilities && signal.responsibilities.length > 0 && (
                                 <Card>
-                                    <CardContent className="p-5">
-                                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Responsibilities</p>
+                                    <CardHeader className="pb-2 pt-4 px-5">
+                                        <CardTitle className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Description</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="px-5 pb-4">
                                         <ul className="space-y-1.5">
-                                            {job.cleanSignal.responsibilities.map((r, i) => (
-                                                <li key={i} className="text-sm text-slate-700 flex gap-2">
-                                                    <span className="text-slate-300 shrink-0">·</span>
+                                            {signal.responsibilities.map((r, i) => (
+                                                <li key={i} className="flex gap-2 text-sm text-slate-700">
+                                                    <span className="text-slate-300 shrink-0 mt-0.5">·</span>
                                                     {r}
                                                 </li>
                                             ))}
@@ -104,40 +107,72 @@ export default function JobDetail() {
                                     </CardContent>
                                 </Card>
                             )}
+                        </div>
 
-                            {job.cleanSignal.minimum_education.length > 0 && (
+                        <div className="space-y-4">
+                            {(essential.length > 0 || preferred.length > 0) && (
                                 <Card>
-                                    <CardContent className="p-5">
-                                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Education Requirements</p>
-                                        <div className="space-y-1">
-                                            {job.cleanSignal.minimum_education.map((e, i) => (
-                                                <p key={i} className="text-sm text-slate-700">
-                                                    {e.degree} {e.required && `— ${e.required}`}
-                                                </p>
-                                            ))}
-                                        </div>
+                                    <CardHeader className="pb-2 pt-4 px-5">
+                                        <CardTitle className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Required Skills</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="px-5 pb-4 space-y-4">
+                                        {essential.length > 0 && (
+                                            <div>
+                                                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Essential</p>
+                                                <div className="flex flex-wrap gap-1.5">
+                                                    {essential.map(s => (
+                                                        <span key={s.name} className="bg-slate-900 text-white rounded-full px-3 py-1 text-sm">
+                                                            {s.name}
+                                                            {s.years_of_experience > 0 && (
+                                                                <span className="opacity-60 ml-1">· {s.years_of_experience}yr</span>
+                                                            )}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                        {preferred.length > 0 && (
+                                            <div>
+                                                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Preferred</p>
+                                                <div className="flex flex-wrap gap-1.5">
+                                                    {preferred.map(s => (
+                                                        <span key={s.name} className="bg-slate-100 text-slate-700 rounded-full px-3 py-1 text-sm">
+                                                            {s.name}
+                                                            {s.years_of_experience > 0 && (
+                                                                <span className="text-slate-400 ml-1">· {s.years_of_experience}yr</span>
+                                                            )}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </CardContent>
                                 </Card>
                             )}
-                        </>
-                    )}
+
+                            {signal?.minimum_education && signal.minimum_education.length > 0 && (
+                                <Card>
+                                    <CardHeader className="pb-2 pt-4 px-5">
+                                        <CardTitle className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Education Requirements</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="px-5 pb-4 space-y-2">
+                                        {signal.minimum_education.map((e, i) => (
+                                            <div key={i} className="flex justify-between items-start">
+                                                <p className="text-sm font-medium text-slate-900">{e.degree}</p>
+                                                {e.required && <p className="text-sm text-slate-500">{e.required}</p>}
+                                            </div>
+                                        ))}
+                                    </CardContent>
+                                </Card>
+                            )}
+                        </div>
+                    </div>
                 </TabsContent>
 
-                {/* Source text tab */}
-                <TabsContent value="raw" className="mt-4">
-                    {isJobLoading && <Skeleton className="h-64 w-full" />}
-                    {job && (
-                        <pre className="bg-slate-50 rounded-lg p-4 text-sm text-slate-700 overflow-auto max-h-96 whitespace-pre-wrap border border-slate-200">
-                            {job.rawDescription || 'No source text available.'}
-                        </pre>
-                    )}
-                </TabsContent>
-
-                {/* Candidates tab */}
                 <TabsContent value="candidates" className="mt-4 space-y-3">
                     {isCandLoading && (
                         <div className="space-y-3">
-                            {[0, 1, 2].map(i => <Skeleton key={i} className="h-24 w-full rounded-xl" />)}
+                            {[0, 1, 2].map(i => <Skeleton key={i} className="h-16 w-full rounded-xl" />)}
                         </div>
                     )}
                     {!isCandLoading && candidates.length === 0 && (
@@ -149,10 +184,7 @@ export default function JobDetail() {
                             index={index}
                             title={c.primaryRole || 'Candidate'}
                             subtitle={c.userId.slice(0, 12) + (c.userId.length > 12 ? '...' : '')}
-                            arisScore={c.matchAnalysis?.arisScore ?? c.vectorSimilarity}
-                            vectorSim={c.vectorSimilarity}
-                            tier1Count={c.matchAnalysis?.matchingSkills?.length}
-                            hardGapCount={c.matchAnalysis?.hardGaps?.length}
+                            cta="View Candidate"
                             onClick={() => navigate(`/candidate/${c.userProfileId}/${jobId}`)}
                         />
                     ))}

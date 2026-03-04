@@ -11,6 +11,23 @@ export function setSignOut(fn: () => Promise<void>) {
     _signOut = fn;
 }
 
+/** Fetches a binary response (Blob) with the same auth token injection as apiClient. */
+export async function fetchBlobWithAuth(endpoint: string, options: RequestInit = {}): Promise<Response> {
+    const url = endpoint.startsWith('http') ? endpoint : `/api${endpoint}`;
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+
+    if (_getToken) {
+        try {
+            const token = await _getToken();
+            if (token) headers['Authorization'] = `Bearer ${token}`;
+        } catch (e) {
+            console.error('Failed to retrieve Clerk token:', e);
+        }
+    }
+
+    return fetch(url, { ...options, headers });
+}
+
 export async function apiClient<T>(
     endpoint: string,
     options: RequestInit = {}

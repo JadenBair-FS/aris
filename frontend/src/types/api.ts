@@ -27,7 +27,15 @@ export interface TailoredBullet {
     originalBullet: string;
     rewrittenBullet: string;
     targetSkill: string;
+    role: string;
+    company: string;
     bridgePath: string | null;
+}
+
+export interface RecruiterSummaryResult {
+    summary: string;
+    groundingScore: number;
+    verdict: 'Strong Fit' | 'Potential Fit' | 'Not Recommended' | string;
 }
 
 // Resume CleanSignal — matches ResumeCleanSignal.cs (snake_case from JSON)
@@ -109,6 +117,7 @@ export interface JobMatchResult {
     jobId: string;
     score: number;
     distance: number;
+    arisScore: number;
     job: JobPostingDetail | null;
 }
 
@@ -122,7 +131,6 @@ export interface CandidateResult {
     userId: string;
     primaryRole: string;
     vectorSimilarity: number;
-    matchAnalysis: MatchAnalysisResult;
 }
 
 export interface CandidateSearchResponse {

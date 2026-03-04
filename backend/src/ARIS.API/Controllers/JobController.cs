@@ -33,7 +33,6 @@ namespace ARIS.API.Controllers
             if (string.IsNullOrWhiteSpace(request.Description))
                 return BadRequest("Description is required.");
 
-            // Prefer JWT identity; fall back to body for bulk scripts without a JWT.
             var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
             var recruiterId = clerkId ?? request.RecruiterId;
 
@@ -47,7 +46,6 @@ namespace ARIS.API.Controllers
             if (!jobId.HasValue)
                 return StatusCode(500, "Failed to process job posting.");
 
-            // Link to recruiter_profiles FK if the caller is authenticated via JWT.
             if (!string.IsNullOrEmpty(clerkId))
             {
                 var recruiterProfile = await _context.RecruiterProfiles.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
@@ -77,9 +75,6 @@ namespace ARIS.API.Controllers
             return Ok(response);
         }
 
-        /// <summary>
-        /// Returns a job posting's full CleanSignal and metadata. Used by the frontend.
-        /// </summary>
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetJob(Guid id)
         {
@@ -89,10 +84,6 @@ namespace ARIS.API.Controllers
             return Ok(detail);
         }
 
-        /// <summary>
-        /// Returns all job postings owned by the authenticated recruiter.
-        /// Identity is sourced entirely from the JWT sub claim.
-        /// </summary>
         [HttpGet("by-recruiter")]
         public async Task<IActionResult> GetJobsByRecruiter()
         {

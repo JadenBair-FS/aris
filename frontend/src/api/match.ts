@@ -1,5 +1,5 @@
 import { apiClient } from './client';
-import type { MatchAnalysisResult, MatchSummaryResult } from '../types/api';
+import type { MatchAnalysisResult, MatchSummaryResult, RecruiterSummaryResult } from '../types/api';
 
 export const matchApi = {
     analyze: (userProfileId: string, jobId: string) => {
@@ -13,5 +13,19 @@ export const matchApi = {
             method: 'POST',
             body: JSON.stringify({ userProfileId, jobId }),
         });
-    }
+    },
+    getRecruiterSummary: (userProfileId: string, jobId: string) => {
+        return apiClient<RecruiterSummaryResult>('/match/recruiter-summary', {
+            method: 'POST',
+            body: JSON.stringify({ userProfileId, jobId }),
+        });
+    },
+    getFastScoresCandidates: (jobId: string, limit = 20) =>
+        apiClient<{ jobId: string; scores: { userProfileId: string; userId: string; primaryRole: string; fastArisScore: number }[] }>(
+            `/match/scores/candidates/${jobId}?limit=${limit}`
+        ),
+    getFastScoresJobs: (profileId: string, limit = 20) =>
+        apiClient<{ profileId: string; scores: { jobId: string; title: string; fastArisScore: number }[] }>(
+            `/match/scores/jobs/${profileId}?limit=${limit}`
+        ),
 };

@@ -34,10 +34,6 @@ public class MatchController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Generates a grounded match summary using graph-path context injected into the LLM prompt.
-    /// Returns the narrative summary and the graph grounding score (thesis RQ2 metric).
-    /// </summary>
     [HttpPost("summary")]
     public async Task<IActionResult> GetGroundedSummary([FromBody] MatchRequest request)
     {
@@ -46,6 +42,32 @@ public class MatchController : ControllerBase
 
         var (summary, groundingScore) = await _matchService.GenerateGroundedSummaryAsync(request.UserProfileId, request.JobId);
         return Ok(new { summary, groundingScore });
+    }
+
+    [AllowAnonymous]
+    [HttpPost("recruiter-summary")]
+    public async Task<IActionResult> GetRecruiterSummary([FromBody] MatchRequest request)
+    {
+        if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
+            return BadRequest("UserProfileId and JobId are required.");
+
+        var result = await _matchService.GenerateRecruiterSummaryAsync(request.UserProfileId, request.JobId);
+        return Ok(new { summary = result.Summary, groundingScore = result.GroundingScore, verdict = result.Verdict });
+    }
+
+    [HttpGet("scores/candidates/{jobId:guid}")]
+    public async Task<IActionResult> GetArisScoresCandidates(Guid jobId, [FromQuery] int limit = 20)
+    {
+        var scores = await _matchService.GetFastScoresCandidatesAsync(jobId, limit);
+        if (scores.Count == 0) return NotFound();
+        return Ok(new { jobId, scores });
+    }
+
+    [HttpGet("scores/jobs/{profileId:guid}")]
+    public async Task<IActionResult> GetArisScoresJobPostings(Guid profileId, [FromQuery] int limit = 20)
+    {
+        var scores = await _matchService.GetFastScoresJobsAsync(profileId, limit);
+        return Ok(new { profileId, scores });
     }
 
     [AllowAnonymous]
