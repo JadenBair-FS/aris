@@ -76,7 +76,7 @@ services:
       - Neo4j__Uri=bolt://db-neo4j:7687
       - Neo4j__User=neo4j
       - Neo4j__Password=aris_password_local
-      - Ollama__Uri=http://host.docker.internal:11434
+      - Ollama__Uri=${OLLAMA_HOST_URL:-http://host.docker.internal:11434}
       - DOTNET_GCHeapHardLimit=0x100000000
       - DOTNET_ReadyToRun=1
       - COMPlus_TieredCompilation=1

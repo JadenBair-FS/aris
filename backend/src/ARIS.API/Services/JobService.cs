@@ -199,7 +199,7 @@ namespace ARIS.API.Services
                     AdditionalProperties = new AdditionalPropertiesDictionary
                     {
                         ["stream"] = false,
-                        ["num_ctx"] = 4096,
+                        ["num_ctx"] = 2048,
                         ["num_gpu"] = 35,
                         ["num_thread"] = 8
                     }
@@ -465,7 +465,7 @@ namespace ARIS.API.Services
                         AdditionalProperties = new AdditionalPropertiesDictionary
                         {
                             ["stream"] = false,
-                            ["num_ctx"] = 8192,
+                            ["num_ctx"] = 4096,
                             ["num_gpu"] = 35,
                             ["num_thread"] = 8
                         }
