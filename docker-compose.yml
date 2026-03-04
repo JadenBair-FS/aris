@@ -32,30 +32,6 @@ services:
     networks:
       - aris-network
 
-  # Unified Ollama Service (Hosts both Mistral and Qwen)
-  aris-ollama:
-    image: ollama/ollama:latest
-    container_name: aris-ollama
-    restart: always
-    ports:
-      - "11434:11434"
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
-      - OLLAMA_KEEP_ALIVE=-1
-      - OLLAMA_NUM_PARALLEL=4
-    volumes:
-      - ollama_data:/root/.ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    networks:
-      - aris-network
-
   # ARIS Backend API
   aris-api:
     build:
@@ -71,12 +47,13 @@ services:
       - Neo4j__Uri=bolt://db-neo4j:7687
       - Neo4j__User=neo4j
       - Neo4j__Password=aris_password_local
-      # Map to internal docker DNS
-      - Ollama__Uri=http://aris-ollama:11434
+      # Point to the native Windows Ollama instance
+      - Ollama__Uri=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - db-postgres
       - db-neo4j
-      - aris-ollama
     networks:
       - aris-network
 
@@ -104,4 +81,3 @@ volumes:
   postgres_data:
   neo4j_data:
   neo4j_logs:
-  ollama_data:
