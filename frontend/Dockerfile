@@ -1,9 +1,15 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
-# Copy package.json and lockfile
+# Accept build arguments
+ARG VITE_CLERK_PUBLISHABLE_KEY
+ENV VITE_CLERK_PUBLISHABLE_KEY=$VITE_CLERK_PUBLISHABLE_KEY
+
+# Copy package files first
 COPY package.json package-lock.json ./
-RUN npm ci
+
+# Use install instead of ci for better resilience during migration
+RUN npm install
 
 # Copy the rest of the application
 COPY . .

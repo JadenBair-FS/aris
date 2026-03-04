@@ -105,6 +105,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY:-pk_test_dHJ1c3R5LWNhbGYtNTcuY2xlcmsuYWNjb3VudHMuZGV2JA}
     container_name: aris-web
     restart: always
     ports:
