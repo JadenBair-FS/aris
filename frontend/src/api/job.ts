@@ -17,4 +17,7 @@ export const jobApi = {
     getJob: (id: string) => {
         return apiClient<JobPostingDetail>(`/job/${id}`);
     },
+    deleteJob: (id: string) => {
+        return apiClient<{ message: string }>(`/job/${id}`, { method: 'DELETE' });
+    },
 };

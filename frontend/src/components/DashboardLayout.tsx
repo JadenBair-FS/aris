@@ -1,16 +1,29 @@
-import { Outlet, Link, useLocation } from 'react-router';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 import { DebugPanel } from './DebugPanel';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { House, User, Upload, Briefcase, Plus, LogOut, Menu } from 'lucide-react';
+import { House, User, Upload, Briefcase, Plus, LogOut, Trash2, Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
+import { authApi } from '../api/auth';
 
 export function DashboardLayout() {
     const { user, logout } = useAuth();
     const location = useLocation();
+    const navigate = useNavigate();
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+    const handleDeleteAccount = async () => {
+        if (!window.confirm('Permanently delete your account and all data? This cannot be undone.')) return;
+        try {
+            await authApi.deleteAccount();
+        } catch {
+            // Account data deleted; Clerk call may have failed but we still sign out
+        }
+        await logout();
+        navigate('/login');
+    };
 
     if (!user) return null;
 
@@ -59,25 +72,34 @@ export function DashboardLayout() {
     );
 
     const UserFooter = () => (
-        <div className="p-4 border-t border-slate-100 flex items-center justify-between">
-            <div className="flex items-center gap-3 min-w-0">
-                <Avatar className="h-8 w-8 shrink-0">
-                    <AvatarImage src={user.avatarUrl} />
-                    <AvatarFallback className="bg-slate-200 text-slate-700 text-xs font-medium">
-                        {user.name.charAt(0).toUpperCase()}
-                    </AvatarFallback>
-                </Avatar>
-                <div className="min-w-0">
-                    <p className="text-sm font-medium text-slate-900 truncate">{user.name}</p>
-                    <p className="text-xs text-slate-500 truncate">{user.email}</p>
+        <div className="p-4 border-t border-slate-100">
+            <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3 min-w-0">
+                    <Avatar className="h-8 w-8 shrink-0">
+                        <AvatarImage src={user.avatarUrl} />
+                        <AvatarFallback className="bg-slate-200 text-slate-700 text-xs font-medium">
+                            {user.name.charAt(0).toUpperCase()}
+                        </AvatarFallback>
+                    </Avatar>
+                    <div className="min-w-0">
+                        <p className="text-sm font-medium text-slate-900 truncate">{user.name}</p>
+                        <p className="text-xs text-slate-500 truncate">{user.email}</p>
+                    </div>
                 </div>
+                <button
+                    onClick={() => logout()}
+                    title="Logout"
+                    className="shrink-0 ml-2 text-slate-400 hover:text-slate-600 transition-colors"
+                >
+                    <LogOut className="h-4 w-4" />
+                </button>
             </div>
             <button
-                onClick={() => logout()}
-                title="Logout"
-                className="shrink-0 ml-2 text-slate-400 hover:text-slate-600 transition-colors"
+                onClick={handleDeleteAccount}
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-red-500 transition-colors w-full"
             >
-                <LogOut className="h-4 w-4" />
+                <Trash2 className="h-3 w-3" />
+                Delete Account
             </button>
         </div>
     );

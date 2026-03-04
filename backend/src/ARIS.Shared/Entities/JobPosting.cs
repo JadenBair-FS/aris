@@ -30,8 +30,8 @@ public class JobPosting
     [Column("updated_at")]
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    [Column("recruiter_profile_id")]
-    public Guid? RecruiterProfileId { get; set; }
+    [Column("recruiter_user_id")]
+    public Guid? RecruiterUserId { get; set; }
 
-    public RecruiterProfile? RecruiterProfile { get; set; }
+    public RecruiterUser? RecruiterUser { get; set; }
 }

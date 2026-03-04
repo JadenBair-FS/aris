@@ -41,7 +41,7 @@ export default function Signup() {
             await setActive({ session: result.createdSessionId });
 
             const token = await getToken();
-            await fetch('/api/auth/set-role', {
+            const res = await fetch('/api/auth/set-role', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,6 +49,12 @@ export default function Signup() {
                 },
                 body: JSON.stringify({ role }),
             });
+
+            if (!res.ok) {
+                const err = await res.json().catch(() => ({}));
+                setErrorText((err as any).message ?? 'Failed to configure account. Please try again.');
+                return;
+            }
 
             navigate(role === 'seeker' ? '/profile/upload' : '/profile/jobs/upload');
         } catch (err: any) {

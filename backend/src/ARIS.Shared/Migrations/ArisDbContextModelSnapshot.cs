@@ -53,9 +53,9 @@ namespace ARIS.Shared.Migrations
                         .HasColumnType("text")
                         .HasColumnName("recruiter_id");
 
-                    b.Property<Guid?>("RecruiterProfileId")
+                    b.Property<Guid?>("RecruiterUserId")
                         .HasColumnType("uuid")
-                        .HasColumnName("recruiter_profile_id");
+                        .HasColumnName("recruiter_user_id");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -63,37 +63,9 @@ namespace ARIS.Shared.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RecruiterProfileId");
+                    b.HasIndex("RecruiterUserId");
 
                     b.ToTable("job_postings", (string)null);
-                });
-
-            modelBuilder.Entity("ARIS.Shared.Entities.RecruiterProfile", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<string>("ClerkId")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("clerk_id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClerkId")
-                        .IsUnique();
-
-                    b.ToTable("recruiter_profiles", (string)null);
                 });
 
             modelBuilder.Entity("ARIS.Shared.Entities.RecruiterUser", b =>
@@ -286,12 +258,12 @@ namespace ARIS.Shared.Migrations
 
             modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
                 {
-                    b.HasOne("ARIS.Shared.Entities.RecruiterProfile", "RecruiterProfile")
+                    b.HasOne("ARIS.Shared.Entities.RecruiterUser", "RecruiterUser")
                         .WithMany()
-                        .HasForeignKey("RecruiterProfileId")
+                        .HasForeignKey("RecruiterUserId")
                         .OnDelete(DeleteBehavior.NoAction);
 
-                    b.Navigation("RecruiterProfile");
+                    b.Navigation("RecruiterUser");
                 });
 
             modelBuilder.Entity("ARIS.Shared.Entities.RefRoleSkill", b =>

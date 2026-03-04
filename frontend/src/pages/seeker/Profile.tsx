@@ -1,5 +1,5 @@
-import { Navigate, Link } from 'react-router';
-import { useQuery } from '@tanstack/react-query';
+import { Navigate, Link, useNavigate } from 'react-router';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { resumeApi } from '@/api/resume';
 import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +8,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function Profile() {
     const { user } = useAuth();
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
 
     const { data: profile, isLoading, isError } = useQuery({
         queryKey: ['profileByUser', user?.id],
@@ -28,6 +30,14 @@ export default function Profile() {
             </div>
         );
     }
+
+    const deleteResumeMutation = useMutation({
+        mutationFn: resumeApi.deleteResume,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['profileByUser'] });
+            navigate('/profile/upload');
+        },
+    });
 
     if (isError || !profile || !profile.hasResume) {
         return <Navigate to="/profile/upload" replace />;
@@ -52,9 +62,24 @@ export default function Profile() {
                         <h1 className="text-xl font-semibold text-slate-900">{currentRole?.title ?? 'No Role'}</h1>
                         <p className="text-slate-500 text-sm mt-0.5">{user?.name}</p>
                     </div>
-                    <Button asChild variant="outline" size="sm" className="shrink-0">
-                        <Link to="/profile/upload">Update Resume</Link>
-                    </Button>
+                    <div className="flex gap-2 shrink-0">
+                        <Button asChild variant="outline" size="sm">
+                            <Link to="/profile/upload">Update Resume</Link>
+                        </Button>
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-red-600 hover:text-red-700 border-red-200 hover:border-red-300"
+                            disabled={deleteResumeMutation.isPending}
+                            onClick={() => {
+                                if (window.confirm('Remove your resume? This cannot be undone.')) {
+                                    deleteResumeMutation.mutate();
+                                }
+                            }}
+                        >
+                            Remove Resume
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
 

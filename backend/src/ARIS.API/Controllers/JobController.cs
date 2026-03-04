@@ -48,15 +48,15 @@ namespace ARIS.API.Controllers
 
             if (!string.IsNullOrEmpty(clerkId))
             {
-                var recruiterProfile = await _context.RecruiterProfiles.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
-                if (recruiterProfile == null)
-                    _logger.LogWarning("No recruiter_profiles record for {ClerkId}. Job created without FK link. Call /api/auth/set-role.", clerkId);
+                var recruiterUser = await _context.RecruiterUsers.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
+                if (recruiterUser == null)
+                    _logger.LogWarning("No recruiter_users record for {ClerkId}. Job created without FK link. Call /api/auth/set-role.", clerkId);
                 else
                 {
                     var job = await _context.JobPostings.FindAsync(jobId.Value);
                     if (job != null)
                     {
-                        job.RecruiterProfileId = recruiterProfile.Id;
+                        job.RecruiterUserId = recruiterUser.Id;
                         await _context.SaveChangesAsync();
                     }
                 }
@@ -84,6 +84,27 @@ namespace ARIS.API.Controllers
             return Ok(detail);
         }
 
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteJob(Guid id)
+        {
+            var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
+            if (string.IsNullOrEmpty(clerkId))
+                return Unauthorized("Could not determine user identity from token.");
+
+            var recruiterUser = await _context.RecruiterUsers.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
+            if (recruiterUser == null)
+                return Unauthorized("Recruiter account not found.");
+
+            var job = await _context.JobPostings.FirstOrDefaultAsync(j => j.Id == id && j.RecruiterUserId == recruiterUser.Id);
+            if (job == null)
+                return NotFound("Job posting not found.");
+
+            _context.JobPostings.Remove(job);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Job posting deleted." });
+        }
+
         [HttpGet("by-recruiter")]
         public async Task<IActionResult> GetJobsByRecruiter()
         {
@@ -91,12 +112,12 @@ namespace ARIS.API.Controllers
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
 
-            var recruiterProfile = await _context.RecruiterProfiles.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
-            if (recruiterProfile == null)
-                return Unauthorized("Recruiter profile not found. Call /api/auth/set-role first.");
+            var recruiterUser = await _context.RecruiterUsers.FirstOrDefaultAsync(r => r.ClerkId == clerkId);
+            if (recruiterUser == null)
+                return Unauthorized("Recruiter account not found. Call /api/auth/set-role first.");
 
             var jobs = await _context.JobPostings
-                .Where(j => j.RecruiterProfileId == recruiterProfile.Id)
+                .Where(j => j.RecruiterUserId == recruiterUser.Id)
                 .OrderByDescending(j => j.CreatedAt)
                 .Select(j => new
                 {

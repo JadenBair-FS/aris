@@ -39,6 +39,9 @@ export const resumeApi = {
             body: JSON.stringify({ userProfileId, jobId, ...tierPayload }),
         });
     },
+    deleteResume: () => {
+        return apiClient<{ message: string }>('/resume', { method: 'DELETE' });
+    },
     tailorPdf: async (userProfileId: string, jobId: string, analysis?: MatchAnalysisResult): Promise<Blob> => {
         const tierPayload = analysis ? buildTierPayload(analysis) : {};
 

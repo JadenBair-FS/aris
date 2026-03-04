@@ -139,6 +139,26 @@ namespace ARIS.API.Controllers
             });
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteResume()
+        {
+            var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
+            if (string.IsNullOrEmpty(clerkId))
+                return Unauthorized("Could not determine user identity from token.");
+
+            var profile = await _context.UserProfiles.FirstOrDefaultAsync(p => p.UserId == clerkId);
+            if (profile == null)
+                return NotFound("Profile not found.");
+
+            profile.RawResume = null;
+            profile.CleanSignal = null;
+            profile.Embedding = null;
+            profile.UpdatedAt = DateTime.UtcNow;
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Resume cleared." });
+        }
+
         [HttpPost("tailor")]
         public async Task<IActionResult> TailorResume([FromBody] TailorRequest request)
         {

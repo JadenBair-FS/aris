@@ -1,16 +1,22 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router';
 import { jobApi } from '@/api/job';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Plus, Briefcase } from 'lucide-react';
+import { Plus, Briefcase, Trash2 } from 'lucide-react';
 
 export default function JobList() {
+    const queryClient = useQueryClient();
     const { data: jobs, isLoading, isError } = useQuery({
         queryKey: ['recruiterJobs'],
         queryFn: () => jobApi.getJobsByRecruiter(),
+    });
+
+    const deleteJobMutation = useMutation({
+        mutationFn: (id: string) => jobApi.deleteJob(id),
+        onSuccess: () => queryClient.invalidateQueries({ queryKey: ['recruiterJobs'] }),
     });
 
     if (isLoading) {
@@ -73,12 +79,26 @@ export default function JobList() {
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <span className="text-xs text-slate-400">Posted {postedDate}</span>
-                                        <Link
-                                            to={`/profile/jobs/${job.id}`}
-                                            className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors"
-                                        >
-                                            View Details →
-                                        </Link>
+                                        <div className="flex items-center gap-3">
+                                            <Link
+                                                to={`/profile/jobs/${job.id}`}
+                                                className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors"
+                                            >
+                                                View Details →
+                                            </Link>
+                                            <button
+                                                title="Delete job"
+                                                disabled={deleteJobMutation.isPending}
+                                                onClick={() => {
+                                                    if (window.confirm('Delete this job posting?')) {
+                                                        deleteJobMutation.mutate(job.id);
+                                                    }
+                                                }}
+                                                className="text-slate-300 hover:text-red-500 transition-colors disabled:opacity-40"
+                                            >
+                                                <Trash2 className="h-4 w-4" />
+                                            </button>
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>

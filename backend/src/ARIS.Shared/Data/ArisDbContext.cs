@@ -16,8 +16,6 @@ public class ArisDbContext : DbContext
     public DbSet<JobPosting> JobPostings { get; set; }
     public DbSet<SeekerUser> SeekerUsers { get; set; }
     public DbSet<RecruiterUser> RecruiterUsers { get; set; }
-    public DbSet<RecruiterProfile> RecruiterProfiles { get; set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -31,7 +29,6 @@ public class ArisDbContext : DbContext
         modelBuilder.Entity<JobPosting>().ToTable("job_postings");
         modelBuilder.Entity<SeekerUser>().ToTable("seeker_users");
         modelBuilder.Entity<RecruiterUser>().ToTable("recruiter_users");
-        modelBuilder.Entity<RecruiterProfile>().ToTable("recruiter_profiles");
 
         modelBuilder.Entity<RefRoleSkill>()
             .HasKey(rs => new { rs.RoleId, rs.SkillId });
@@ -62,10 +59,6 @@ public class ArisDbContext : DbContext
             .HasIndex(r => r.ClerkId)
             .IsUnique();
 
-        modelBuilder.Entity<RecruiterProfile>()
-            .HasIndex(r => r.ClerkId)
-            .IsUnique();
-
         modelBuilder.Entity<UserProfile>()
             .HasOne(u => u.SeekerUser)
             .WithMany()
@@ -74,9 +67,9 @@ public class ArisDbContext : DbContext
             .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<JobPosting>()
-            .HasOne(j => j.RecruiterProfile)
+            .HasOne(j => j.RecruiterUser)
             .WithMany()
-            .HasForeignKey(j => j.RecruiterProfileId)
+            .HasForeignKey(j => j.RecruiterUserId)
             .IsRequired(false)
             .OnDelete(DeleteBehavior.NoAction);
     }

@@ -116,16 +116,59 @@ public class AuthController : ControllerBase
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("Created recruiter_users record for {ClerkId}", clerkUserId);
             }
-
-            var profileExists = await _context.RecruiterProfiles.AnyAsync(p => p.ClerkId == clerkUserId);
-            if (!profileExists)
-            {
-                _context.RecruiterProfiles.Add(new RecruiterProfile { ClerkId = clerkUserId });
-                await _context.SaveChangesAsync();
-                _logger.LogInformation("Created recruiter_profiles record for {ClerkId}", clerkUserId);
-            }
         }
 
         return Ok(new { message = "Role set successfully.", role = request.Role });
+    }
+
+    /// <summary>
+    /// Deletes the authenticated user's data from all ARIS tables, then removes them from Clerk.
+    /// </summary>
+    [Authorize]
+    [HttpDelete("account")]
+    public async Task<IActionResult> DeleteAccount()
+    {
+        var clerkUserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                       ?? User.FindFirstValue("sub");
+
+        if (string.IsNullOrEmpty(clerkUserId))
+            return Unauthorized("Could not determine user identity from token.");
+
+        // Seeker path: delete user_profiles then seeker_users
+        var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkUserId);
+        if (seekerUser != null)
+        {
+            var profiles = _context.UserProfiles.Where(p => p.SeekerUserId == seekerUser.Id);
+            _context.UserProfiles.RemoveRange(profiles);
+            _context.SeekerUsers.Remove(seekerUser);
+        }
+
+        // Recruiter path: delete job_postings then recruiter_users
+        var recruiterUser = await _context.RecruiterUsers.FirstOrDefaultAsync(r => r.ClerkId == clerkUserId);
+        if (recruiterUser != null)
+        {
+            var jobs = _context.JobPostings.Where(j => j.RecruiterUserId == recruiterUser.Id);
+            _context.JobPostings.RemoveRange(jobs);
+            _context.RecruiterUsers.Remove(recruiterUser);
+        }
+
+        await _context.SaveChangesAsync();
+
+        // Delete from Clerk
+        var secretKey = _config["Clerk:SecretKey"];
+        if (!string.IsNullOrEmpty(secretKey) && secretKey != "YOUR_CLERK_SECRET_KEY_HERE")
+        {
+            var client = _httpClientFactory.CreateClient("Clerk");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", secretKey);
+            var clerkResponse = await client.DeleteAsync($"users/{clerkUserId}");
+            if (!clerkResponse.IsSuccessStatusCode)
+            {
+                var error = await clerkResponse.Content.ReadAsStringAsync();
+                _logger.LogError("Clerk DELETE /users/{UserId} failed: {Status} {Error}", clerkUserId, clerkResponse.StatusCode, error);
+            }
+        }
+
+        _logger.LogInformation("Deleted account for Clerk user {ClerkId}", clerkUserId);
+        return Ok(new { message = "Account deleted." });
     }
 }
