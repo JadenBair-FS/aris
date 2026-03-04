@@ -39,18 +39,22 @@ builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(dataSource, o => o.UseVector()));
 
 // Semantic Kernel
-var ollamaUri = new Uri("http://192.168.4.45:11434");
+var mistralUriString = builder.Configuration["Ollama:MistralUri"] ?? "http://localhost:11434";
+var qwenUriString = builder.Configuration["Ollama:QwenUri"] ?? "http://localhost:11435";
+
+var mistralUri = new Uri(mistralUriString);
+var qwenUri = new Uri(qwenUriString);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "qwen3-embedding:0.6b");
+    var client = new OllamaApiClient(qwenUri, "qwen3-embedding:0.6b");
     client.SetTimeout(TimeSpan.FromHours(1));
     return client;
 });
 
 builder.Services.AddSingleton<IChatClient>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "mistral");
+    var client = new OllamaApiClient(mistralUri, "mistral");
     client.SetTimeout(TimeSpan.FromHours(1));
     return client;
 });

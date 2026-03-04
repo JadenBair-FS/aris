@@ -5,13 +5,15 @@ services:
     container_name: aris-postgres
     restart: always
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER:-aris_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aris_password_local}
+      POSTGRES_DB: ${POSTGRES_DB:-aris_db}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - aris-network
 
   # Neo4j Graph Database
   db-neo4j:
@@ -27,8 +29,98 @@ services:
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
+    networks:
+      - aris-network
+
+  # Ollama Service 1: Mistral (Allocated ~10GB Max VRAM out of 12GB for RTX 4070)
+  ollama-mistral:
+    image: ollama/ollama:latest
+    container_name: aris-ollama-mistral
+    restart: always
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_MAX_VRAM=10737418240 # Limit to 10GB VRAM to leave room for Qwen
+    volumes:
+      - ollama_mistral_data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - aris-network
+
+  # Ollama Service 2: Qwen3 Embedding (Allocated ~2GB Max VRAM)
+  ollama-qwen:
+    image: ollama/ollama:latest
+    container_name: aris-ollama-qwen
+    restart: always
+    ports:
+      - "11435:11434" # Exposed externally on 11435 to avoid port collision
+    environment:
+      - OLLAMA_MAX_VRAM=2147483648 # Limit to 2GB VRAM
+    volumes:
+      - ollama_qwen_data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - aris-network
+
+  # ARIS Backend API
+  aris-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aris-api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db-postgres;Database=aris_db;Username=aris_admin;Password=aris_password_local
+      - Neo4j__Uri=bolt://db-neo4j:7687
+      - Neo4j__User=neo4j
+      - Neo4j__Password=aris_password_local
+      # Map to internal docker DNS
+      - Ollama__MistralUri=http://ollama-mistral:11434
+      - Ollama__QwenUri=http://ollama-qwen:11434
+    depends_on:
+      - db-postgres
+      - db-neo4j
+      - ollama-mistral
+      - ollama-qwen
+    networks:
+      - aris-network
+
+  # ARIS Frontend Web
+  aris-web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aris-web
+    restart: always
+    ports:
+      - "3000:80" # Exposed externally on port 3000
+    depends_on:
+      - aris-api
+    networks:
+      - aris-network
+
+networks:
+  aris-network:
+    driver: bridge
 
 volumes:
   postgres_data:
   neo4j_data:
   neo4j_logs:
+  ollama_mistral_data:
+  ollama_qwen_data:
