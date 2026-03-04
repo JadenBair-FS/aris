@@ -51,7 +51,7 @@ builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp 
 
 builder.Services.AddSingleton<IChatClient>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "mistral");
+    var client = new OllamaApiClient(ollamaUri, "qwen3.5:4b");
     client.SetTimeout(TimeSpan.FromHours(1));
     return client;
 });
