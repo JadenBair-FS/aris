@@ -48,7 +48,7 @@ services:
       --host 0.0.0.0 
       --port 8080 
       -ngl 99 
-      -fa
+      --flash-attn
     deploy:
       resources:
         reservations:
@@ -77,6 +77,7 @@ services:
       -ngl 99 
       --embedding 
       --pooling last
+      -c 512
     deploy:
       resources:
         reservations:
