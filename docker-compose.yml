@@ -46,7 +46,6 @@ services:
       NEO4J_dbms_memory_heap_max__size: 4G
       NEO4J_dbms_memory_pagecache_size: 2G
       NEO4J_dbms_transaction_timeout: 60s
-      NEO4J_db_query__cache__size: 10000
       NEO4J_dbms_jvm_additional: >-
         -XX:+UseG1GC
         -XX:+ParallelRefProcEnabled
