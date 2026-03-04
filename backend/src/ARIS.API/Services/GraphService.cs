@@ -10,9 +10,9 @@ public class GraphService : IDisposable, IAsyncDisposable
     public GraphService(IConfiguration configuration, ILogger<GraphService> logger)
     {
         _logger = logger;
-        var uri = "bolt://localhost:7687";
-        var user = "neo4j";
-        var password = "aris_password_local";
+        var uri = configuration["Neo4j:Uri"] ?? "bolt://localhost:7687";
+        var user = configuration["Neo4j:User"] ?? "neo4j";
+        var password = configuration["Neo4j:Password"] ?? "aris_password_local";
 
         _logger.LogInformation("Connecting to Neo4j at {Uri} as user {User}", uri, user);
         _driver = GraphDatabase.Driver(uri, AuthTokens.Basic(user, password));
