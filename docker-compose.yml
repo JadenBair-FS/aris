@@ -92,6 +92,20 @@ services:
     networks:
       - aris-network
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: aris-pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@aris.local
+      PGADMIN_DEFAULT_PASSWORD: aris_password_local
+    depends_on:
+      - db-postgres
+    networks:
+      - aris-network
+
   # ARIS Frontend Web
   aris-web:
     build:
