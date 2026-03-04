@@ -32,7 +32,7 @@ services:
     networks:
       - aris-network
 
-  # Ollama Service 1: Mistral (Allocated ~10GB Max VRAM out of 12GB for RTX 4070)
+  # Ollama Service 1: Mistral
   ollama-mistral:
     image: ollama/ollama:latest
     container_name: aris-ollama-mistral
@@ -40,7 +40,11 @@ services:
     ports:
       - "11434:11434"
     environment:
-      - OLLAMA_MAX_VRAM=10737418240 # Limit to 10GB VRAM to leave room for Qwen
+      - OLLAMA_MAX_VRAM=10737418240 
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - OLLAMA_NUM_PARALLEL=4
+      - OLLAMA_KEEP_ALIVE=-1 # Keep model in VRAM forever
     volumes:
       - ollama_mistral_data:/root/.ollama
     deploy:
@@ -53,15 +57,18 @@ services:
     networks:
       - aris-network
 
-  # Ollama Service 2: Qwen3 Embedding (Allocated ~2GB Max VRAM)
+  # Ollama Service 2: Qwen3 Embedding
   ollama-qwen:
     image: ollama/ollama:latest
     container_name: aris-ollama-qwen
     restart: always
     ports:
-      - "11435:11434" # Exposed externally on 11435 to avoid port collision
+      - "11435:11434"
     environment:
-      - OLLAMA_MAX_VRAM=2147483648 # Limit to 2GB VRAM
+      - OLLAMA_MAX_VRAM=2147483648
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - OLLAMA_KEEP_ALIVE=-1
     volumes:
       - ollama_qwen_data:/root/.ollama
     deploy:
