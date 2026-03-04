@@ -300,7 +300,13 @@ namespace ARIS.API.Services
                     { 
                         ResponseFormat = ChatResponseFormat.Json, 
                         Temperature = 0.1f,
-                        MaxOutputTokens = 4096
+                        AdditionalProperties = new AdditionalPropertiesDictionary
+                        {
+                            ["stream"] = false,
+                            ["num_ctx"] = 8192,
+                            ["num_gpu"] = 35,
+                            ["num_thread"] = 8
+                        }
                     };
 
                     var response = await _chatClient.GetResponseAsync(messages, chatOptions);

@@ -32,52 +32,20 @@ services:
     networks:
       - aris-network
 
-  # llama.cpp Service 1: Mistral (Primary Inference)
-  llama-mistral:
-    image: ghcr.io/ggml-org/llama.cpp:server-cuda
-    container_name: aris-llama-mistral
+  # Unified Ollama Service (Hosts both Mistral and Qwen)
+  aris-ollama:
+    image: ollama/ollama:latest
+    container_name: aris-ollama
     restart: always
     ports:
-      - "11434:8080"
-    volumes:
-      - ./models:/models
+      - "11434:11434"
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
-    command: >
-      -m /models/mistral-7b-instruct-v0.3.Q4_K_M.gguf 
-      --host 0.0.0.0 
-      --port 8080 
-      -ngl 99 
-      --flash-attn on
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    networks:
-      - aris-network
-
-  # llama.cpp Service 2: Qwen3 Embedding (Secondary Inference)
-  llama-qwen:
-    image: ghcr.io/ggml-org/llama.cpp:server-cuda
-    container_name: aris-llama-qwen
-    restart: always
-    ports:
-      - "11435:8080"
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - OLLAMA_KEEP_ALIVE=-1
+      - OLLAMA_NUM_PARALLEL=4
     volumes:
-      - ./models:/models
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    command: >
-      -m /models/qwen3-embedding-0.6b-f16.gguf 
-      --host 0.0.0.0 
-      --port 8080 
-      -ngl 99 
-      --embedding 
-      --pooling last
-      -c 512
+      - ollama_data:/root/.ollama
     deploy:
       resources:
         reservations:
@@ -104,13 +72,11 @@ services:
       - Neo4j__User=neo4j
       - Neo4j__Password=aris_password_local
       # Map to internal docker DNS
-      - LlamaCpp__MistralUri=http://llama-mistral:8080/v1
-      - LlamaCpp__QwenUri=http://llama-qwen:8080/v1
+      - Ollama__Uri=http://aris-ollama:11434
     depends_on:
       - db-postgres
       - db-neo4j
-      - llama-mistral
-      - llama-qwen
+      - aris-ollama
     networks:
       - aris-network
 
@@ -138,3 +104,4 @@ volumes:
   postgres_data:
   neo4j_data:
   neo4j_logs:
+  ollama_data:
