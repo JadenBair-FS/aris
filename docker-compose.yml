@@ -1,5 +1,4 @@
 services:
-  # Postgres with pgvector extension (Tuned for performance)
   db-postgres:
     image: pgvector/pgvector:pg17
     container_name: aris-postgres
@@ -8,13 +7,19 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-aris_admin}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aris_password_local}
       POSTGRES_DB: ${POSTGRES_DB:-aris_db}
-    # Direct tuning via command line flags
     command: >
-      postgres 
-      -c shared_buffers=2GB 
-      -c work_mem=64MB 
-      -c maintenance_work_mem=512MB 
+      postgres
+      -c shared_buffers=2GB
+      -c work_mem=64MB
+      -c maintenance_work_mem=512MB
       -c effective_cache_size=6GB
+      -c random_page_cost=1.1
+      -c max_parallel_workers_per_gather=4
+      -c max_worker_processes=8
+      -c wal_buffers=64MB
+      -c checkpoint_completion_target=0.9
+      -c default_statistics_target=100
+      -c max_connections=50
     ports:
       - "5432:5432"
     volumes:
@@ -27,7 +32,6 @@ services:
     networks:
       - aris-network
 
-  # Neo4j Graph Database (Tuned for Graph Traversal speed)
   db-neo4j:
     image: neo4j:5.18.0
     container_name: aris-neo4j
@@ -38,11 +42,16 @@ services:
     environment:
       NEO4J_AUTH: neo4j/aris_password_local
       NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
-      # Memory tuning for large graphs
       NEO4J_dbms_memory_heap_initial__size: 2G
       NEO4J_dbms_memory_heap_max__size: 4G
       NEO4J_dbms_memory_pagecache_size: 2G
       NEO4J_dbms_transaction_timeout: 60s
+      NEO4J_db_query__cache__size: 10000
+      NEO4J_dbms_jvm_additional: >-
+        -XX:+UseG1GC
+        -XX:+ParallelRefProcEnabled
+        -XX:MaxGCPauseMillis=200
+        -XX:InitiatingHeapOccupancyPercent=45
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
@@ -54,7 +63,6 @@ services:
     networks:
       - aris-network
 
-  # ARIS Backend API (Optimized for Production)
   aris-api:
     build:
       context: ./backend
@@ -65,13 +73,13 @@ services:
       - "8080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Host=db-postgres;Database=aris_db;Username=aris_admin;Password=aris_password_local
+      - ConnectionStrings__DefaultConnection=Host=db-postgres;Database=aris_db;Username=aris_admin;Password=aris_password_local;Maximum Pool Size=20;Minimum Pool Size=5;Connection Idle Lifetime=300
       - Neo4j__Uri=bolt://db-neo4j:7687
       - Neo4j__User=neo4j
       - Neo4j__Password=aris_password_local
       - Ollama__Uri=http://host.docker.internal:11434
-      # .NET Concurrency tuning
-      - DOTNET_GCHeapHardLimit=0x100000000 # 4GB
+      - DOTNET_GCHeapHardLimit=0x100000000
+      - DOTNET_ReadyToRun=1
       - COMPlus_TieredCompilation=1
     extra_hosts:
       - "host.docker.internal:host-gateway"
