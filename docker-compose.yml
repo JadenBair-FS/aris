@@ -1,5 +1,5 @@
 services:
-  # Postgres with pgvector extension
+  # Postgres with pgvector extension (Tuned for performance)
   db-postgres:
     image: pgvector/pgvector:pg17
     container_name: aris-postgres
@@ -8,31 +8,53 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-aris_admin}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aris_password_local}
       POSTGRES_DB: ${POSTGRES_DB:-aris_db}
+    # Direct tuning via command line flags
+    command: >
+      postgres 
+      -c shared_buffers=2GB 
+      -c work_mem=64MB 
+      -c maintenance_work_mem=512MB 
+      -c effective_cache_size=6GB
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: 4G
     networks:
       - aris-network
 
-  # Neo4j Graph Database
+  # Neo4j Graph Database (Tuned for Graph Traversal speed)
   db-neo4j:
     image: neo4j:5.18.0
     container_name: aris-neo4j
     restart: always
     ports:
-      - "7474:7474" # HTTP Console
-      - "7687:7687" # Bolt Protocol
+      - "7474:7474"
+      - "7687:7687"
     environment:
       NEO4J_AUTH: neo4j/aris_password_local
       NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      # Memory tuning for large graphs
+      NEO4J_dbms_memory_heap_initial__size: 2G
+      NEO4J_dbms_memory_heap_max__size: 4G
+      NEO4J_dbms_memory_pagecache_size: 2G
+      NEO4J_dbms_transaction_timeout: 60s
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: 6G
     networks:
       - aris-network
 
-  # ARIS Backend API
+  # ARIS Backend API (Optimized for Production)
   aris-api:
     build:
       context: ./backend
@@ -47,13 +69,19 @@ services:
       - Neo4j__Uri=bolt://db-neo4j:7687
       - Neo4j__User=neo4j
       - Neo4j__Password=aris_password_local
-      # Point to the native Windows Ollama instance
       - Ollama__Uri=http://host.docker.internal:11434
+      # .NET Concurrency tuning
+      - DOTNET_GCHeapHardLimit=0x100000000 # 4GB
+      - COMPlus_TieredCompilation=1
     extra_hosts:
       - "host.docker.internal:host-gateway"
     depends_on:
       - db-postgres
       - db-neo4j
+    deploy:
+      resources:
+        reservations:
+          memory: 2G
     networks:
       - aris-network
 
