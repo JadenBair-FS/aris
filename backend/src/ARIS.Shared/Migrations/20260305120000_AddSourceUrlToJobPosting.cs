@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 #nullable disable
 
 namespace ARIS.Shared.Migrations
 {
-    /// <inheritdoc />
+    [DbContext(typeof(ARIS.Shared.Data.ArisDbContext))]
+    [Migration("20260305120000_AddSourceUrlToJobPosting")]
     public partial class AddSourceUrlToJobPosting : Migration
     {
         /// <inheritdoc />
