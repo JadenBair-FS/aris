@@ -36,11 +36,10 @@ namespace ARIS.Shared.Migrations
                     table.PrimaryKey("PK_candidate_skills", x => x.id);
                 });
 
-            // Unique constraint: same skill name within the same domain is one candidate entry
+            // Expression-based unique index: UNIQUE constraint syntax doesn't support COALESCE, must use CREATE UNIQUE INDEX
             migrationBuilder.Sql(@"
-                ALTER TABLE candidate_skills
-                ADD CONSTRAINT UQ_candidate_skills_name_domain
-                UNIQUE (normalized_name, COALESCE(domain_prefix, ''));
+                CREATE UNIQUE INDEX UQ_candidate_skills_name_domain
+                ON candidate_skills (normalized_name, COALESCE(domain_prefix, ''));
             ");
 
             migrationBuilder.CreateIndex(
@@ -51,6 +50,7 @@ namespace ARIS.Shared.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql("DROP INDEX IF EXISTS UQ_candidate_skills_name_domain;");
             migrationBuilder.DropTable(name: "candidate_skills");
         }
     }
