@@ -18,43 +18,16 @@ public class GraphService : IDisposable, IAsyncDisposable
         _driver = GraphDatabase.Driver(uri, AuthTokens.Basic(user, password));
     }
 
-    public static readonly HashSet<string> UniversalSkills = new(StringComparer.OrdinalIgnoreCase)
-    {
-        // Generic O*NET soft skills / management competencies
-        "Writing", "Management of Personnel Resources", "Service Orientation",
-        "Operations Analysis", "Social Perceptiveness", "Negotiation",
-        "Complex Problem Solving", "Time Management", "Active Listening",
-        "Critical Thinking", "Coordination", "Instructing", "Speaking",
-        "Management of Material Resources", "Management of Financial Resources",
-        "Science", "Judgment and Decision Making", "Monitoring", "Persuasion",
-        "Operation and Control", "Equipment Maintenance", "Repairing", "Equipment Selection",
-        "Systems Analysis", "Systems Evaluation", "Active Learning",
-        // Broad O*NET knowledge categories — too generic to be meaningful intermediate bridge hops.
-        // A non-medical candidate having 'Biology' in their expanded neighborhood should NOT
-        // count as a stepping-stone to specialized EHR/OR-suite software. These terms still
-        // function as bridge seeds for users who have them EXPLICITLY in their CleanSignal skills.
-        "Physics", "Biology", "Chemistry", "Mathematics",
-        "Computers and Electronics", "Hardware knowledge",
-        "Engineering and Technology", "Life, Physical, and Social Science",
-        // Additional O*NET general-use categories that were still acting as cross-domain hops
-        // after the first round of filtering (e.g. "Working with Computers" → EHR software,
-        // "Medicine and Dentistry" → surgical tools for non-clinical candidates).
-        "Working with Computers", "Medicine and Dentistry", "Algebra"
-    };
-
     /// <summary>
     /// Returns the valid skill neighborhood: the user's known skills plus all reachable neighbors
     /// within 2 hops via SUBSET_OF (up and down) and BRIDGE_TO edges.
     /// When includeTechSkills is false, only Roadmap.sh-sourced tech skills are excluded —
     /// domain tool bridges (CRM, EHR, etc.) that carry is_tech=true but source='ONET_Skill' are still allowed.
     /// </summary>
-    public async Task<HashSet<string>> GetValidNeighborhoodAsync(IEnumerable<string> userSkills, bool includeTechSkills = true, bool skipUniversalFilter = false)
+    public async Task<HashSet<string>> GetValidNeighborhoodAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
         var validSkills = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        var universalList = skipUniversalFilter ? new List<string>() : UniversalSkills.ToList();
-        var expansionSeed = skipUniversalFilter
-            ? userSkills.ToList()
-            : userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
+        var expansionSeed = userSkills.ToList();
 
         foreach (var skill in userSkills)
         {
@@ -69,19 +42,16 @@ public class GraphService : IDisposable, IAsyncDisposable
                 // 1. Hierarchical UP: s -> parent (Foundations)
                 MATCH (s)-[:SUBSET_OF*1..2]->(parent:Skill)
                 WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
-                  AND NOT toLower(parent.name) IN [u IN $universal | toLower(u)]
                 RETURN parent.name as Name
                 UNION
                 // 2. Hierarchical DOWN: child -> s (s is a parent/foundation)
                 MATCH (child:Skill)-[:SUBSET_OF*1..2]->(s)
                 WHERE ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
-                  AND NOT toLower(child.name) IN [u IN $universal | toLower(u)]
                 RETURN child.name as Name
                 UNION
                 // 3. Peer/Bridge traversal (Lateral) - 1 hop only to prevent domain leakage
                 MATCH (s)-[:BRIDGE_TO]-(neighbor:Skill)
                 WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
-                  AND NOT toLower(neighbor.name) IN [u IN $universal | toLower(u)]
                 RETURN neighbor.name as Name
             }
             RETURN DISTINCT Name
@@ -91,7 +61,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         {
             await using var session = _driver.AsyncSession();
             var result = await session.ExecuteReadAsync(async tx => {
-                var cursor = await tx.RunAsync(query, new { expansionSeed, universal = universalList, includeTech = includeTechSkills });
+                var cursor = await tx.RunAsync(query, new { expansionSeed, includeTech = includeTechSkills });
                 return await cursor.ToListAsync();
             });
 
@@ -112,13 +82,10 @@ public class GraphService : IDisposable, IAsyncDisposable
         return validSkills;
     }
 
-    public async Task<HashSet<string>> GetPrerequisiteMetSkillsAsync(IEnumerable<string> userSkills, IEnumerable<string> missingSkills, bool includeTechSkills = true, bool skipUniversalFilter = false)
+    public async Task<HashSet<string>> GetPrerequisiteMetSkillsAsync(IEnumerable<string> userSkills, IEnumerable<string> missingSkills, bool includeTechSkills = true)
     {
         var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        var universalList = skipUniversalFilter ? new List<string>() : UniversalSkills.ToList();
-        var expansionSeed = skipUniversalFilter
-            ? userSkills.ToList()
-            : userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
+        var expansionSeed = userSkills.ToList();
 
         const string query = @"
             // Direction 1: job skill -[:SUBSET_OF*1..2]-> user skill (user has the parent foundation)
@@ -128,7 +95,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (child:Skill)-[:SUBSET_OF*1..2]->(parent)
             WHERE toLower(child.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
-              AND NOT toLower(child.name) IN [u IN $universal | toLower(u)]
             RETURN DISTINCT child.name AS Name
 
             UNION
@@ -140,7 +106,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (foundation)-[:SUBSET_OF*1..2]->(target:Skill)
             WHERE toLower(target.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(target.is_tech, false) AND target.source = 'Roadmap.sh'))
-              AND NOT toLower(target.name) IN [u IN $universal | toLower(u)]
             RETURN DISTINCT target.name AS Name
         ";
 
@@ -149,7 +114,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             await using var session = _driver.AsyncSession();
             var records = await session.ExecuteReadAsync(async tx =>
             {
-                var cursor = await tx.RunAsync(query, new { expansionSeed, missingSkills = missingSkills.ToList(), universal = universalList, includeTech = includeTechSkills });
+                var cursor = await tx.RunAsync(query, new { expansionSeed, missingSkills = missingSkills.ToList(), includeTech = includeTechSkills });
                 return await cursor.ToListAsync();
             });
 
@@ -177,13 +142,10 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// BRIDGE_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
     /// DOWN traversal (parent → children) belongs in GetPrerequisiteMetSkillsAsync.
     /// </summary>
-    public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true, bool skipUniversalFilter = false)
+    public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
         var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        var universalList = skipUniversalFilter ? new List<string>() : UniversalSkills.ToList();
-        var expansionSeed = skipUniversalFilter
-            ? userSkills.ToList()
-            : userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
+        var expansionSeed = userSkills.ToList();
 
         const string query = @"
             // UP: child -> parent (user knows specialization → implicitly knows foundation)
@@ -192,7 +154,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             WHERE toLower(child.name) IN [s IN $expansionSeed | toLower(s)]
             MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
             WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
-              AND NOT toLower(parent.name) IN [u IN $universal | toLower(u)]
             RETURN DISTINCT parent.name AS Name
         ";
 
@@ -201,7 +162,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             await using var session = _driver.AsyncSession();
             var records = await session.ExecuteReadAsync(async tx =>
             {
-                var cursor = await tx.RunAsync(query, new { expansionSeed, universal = universalList, includeTech = includeTechSkills });
+                var cursor = await tx.RunAsync(query, new { expansionSeed, includeTech = includeTechSkills });
                 return await cursor.ToListAsync();
             });
 
@@ -227,12 +188,10 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// Used by MatchService to enrich SkillGapItem objects with BridgePath and BridgeSource context.
     /// </summary>
     public async Task<List<(string SkillName, string ViaSkill, string BridgeType, string? BridgeSource)>> GetBridgeablePathsAsync(
-        IEnumerable<string> userSkills, IEnumerable<string> missingSkills, bool skipUniversalFilter = false)
+        IEnumerable<string> userSkills, IEnumerable<string> missingSkills)
     {
         var result = new List<(string, string, string, string?)>();
-        var userList = skipUniversalFilter
-            ? userSkills.ToList()
-            : userSkills.Where(s => !UniversalSkills.Contains(s)).ToList();
+        var userList = userSkills.ToList();
         var missingList = missingSkills.ToList();
 
         if (userList.Count == 0 || missingList.Count == 0)

@@ -28,7 +28,7 @@ public class MatchService
         _logger = logger;
     }
 
-    public async Task<MatchAnalysisResult?> AnalyzeMatchAsync(Guid userProfileId, Guid jobId, bool skipUniversalFilter = false)
+    public async Task<MatchAnalysisResult?> AnalyzeMatchAsync(Guid userProfileId, Guid jobId)
     {
         var user = await _context.UserProfiles.FindAsync(userProfileId);
         var job = await _context.JobPostings.FindAsync(jobId);
@@ -81,7 +81,7 @@ public class MatchService
         bool isCandidateTech = DomainClassifier.IsTechDomain(
             candidatePrimaryRole?.OnetCode, candidatePrimaryRole?.Title);
 
-        var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech, skipUniversalFilter);
+        var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
 
         var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
         foreach (var s in implicitSkills) totalUserSkills.Add(s);
@@ -116,21 +116,14 @@ public class MatchService
             .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        if (!skipUniversalFilter)
-        {
-            missingSkills = missingSkills
-                .Where(s => !GraphService.UniversalSkills.Contains(s))
-                .ToList();
-        }
-
         var bridgeable = new List<SkillGapItem>();
         var prerequisiteMet = new List<SkillGapItem>();
         var hardGaps = new List<SkillGapItem>();
 
         if (missingSkills.Count > 0)
         {
-            var neighborhood = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech, skipUniversalFilter);
-            var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech, skipUniversalFilter);
+            var neighborhood = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech);
+            var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech);
 
             var roadmapTechSkillNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -154,7 +147,7 @@ public class MatchService
             _logger.LogInformation("Graph Neighborhood for User: {Neighborhood}", string.Join(", ", neighborhood));
             _logger.LogInformation("Prerequisite-Met Skills: {PrereqMet}", string.Join(", ", prerequisiteMetSet));
 
-            var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills, skipUniversalFilter);
+            var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
             var bridgePathBySkill = bridgePaths.ToDictionary(
                 p => p.SkillName,
                 p => (p.ViaSkill, p.BridgeType, p.BridgeSource),

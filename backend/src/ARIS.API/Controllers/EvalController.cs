@@ -44,29 +44,6 @@ public class EvalController : ControllerBase
         public Guid UserProfileId { get; set; }
     }
 
-    public class AnalyzeNoFilterRequest
-    {
-        public Guid UserProfileId { get; set; }
-        public Guid JobId { get; set; }
-    }
-
-    /// <summary>
-    /// Runs AnalyzeMatchAsync with the UniversalSkills filter disabled.
-    /// Used only for the UniversalSkills impact experiment — not for production matching.
-    /// </summary>
-    [HttpPost("analyze-no-filter")]
-    public async Task<IActionResult> RunAnalyzeNoFilter([FromBody] AnalyzeNoFilterRequest request)
-    {
-        if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
-            return BadRequest("UserProfileId and JobId are required.");
-
-        var result = await _matchService.AnalyzeMatchAsync(request.UserProfileId, request.JobId, skipUniversalFilter: true);
-        if (result == null)
-            return NotFound("Profile or job not found, or missing CleanSignal/embedding.");
-
-        return Ok(result);
-    }
-
     /// <summary>
     /// Computes the Graph Grounding Score for arbitrary text against a user's valid skill neighborhood.
     /// Thesis RQ2 novel metric — measures how grounded LLM output is in the knowledge graph.

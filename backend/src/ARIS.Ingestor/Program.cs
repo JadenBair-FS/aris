@@ -48,7 +48,8 @@ builder.Services.AddHttpClient<RoadmapService>();
 builder.Services.AddSingleton<Neo4jIngestionService>();
 
 // AI - MEAI with Ollama
-var ollamaUri = new Uri("http://192.168.4.45:11434");
+var ollamaUri = new Uri(
+    Environment.GetEnvironmentVariable("Ollama__BaseUrl") ?? "http://localhost:11434");
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {

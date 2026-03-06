@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.AI;
 using ARIS.Shared.Data;
 using Pgvector.EntityFrameworkCore;
+using System.Text.Json;
 
 using PgVectorType = Pgvector.Vector;
 
@@ -24,6 +25,15 @@ public class IngestionWorker : BackgroundService
     // Valid node types in Roadmap.sh JSON that represent learnable skills
     private static readonly HashSet<string> ValidRoadmapNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic", "skill" };
+
+    // Pedagogical label prefixes/patterns to skip — these are instructional headings,
+    // not skill names. They never appear in resumes or job descriptions.
+    private static readonly string[] PedagogicalPrefixes =
+    [
+        "learn ", "introduction to", "what is", "why ", "how to", "overview of",
+        "getting started", "basics of", "fundamentals of", "understanding ",
+        "working with ", "intro to"
+    ];
 
     private static readonly string[] RoleRoadmapSlugs =
     [
@@ -136,6 +146,12 @@ public class IngestionWorker : BackgroundService
                 isRoleRoadmap: false, [], stoppingToken);
         }
 
+        // Phase 5: Ontology Enrichment — BRIDGE_TO and SUBSET_OF edge generation via LLM
+        // Runs automatically after every full ingestion (not just --fresh) so the graph
+        // is always fully enriched without requiring a separate --optimize-graph pass.
+        _logger.LogInformation("=== Phase 5: Ontology Enrichment ===");
+        await RunOptimizeGraphAsync(args, neo4jService, ontologyService, stoppingToken);
+
         _logger.LogInformation("Ingestion Complete.");
         _hostApplicationLifetime.StopApplication();
     }
@@ -181,29 +197,11 @@ public class IngestionWorker : BackgroundService
                 await dbContext.SaveChangesAsync(ct);
             }
 
-            // Cognitive / psychomotor / sensory skills → IsTech = false
-            foreach (var skillName in details.Skills)
-            {
-                var canon = await DeduplicateOrCreateSkillAsync(
-                    dbContext, neo4j, skillName, "ONET_Skill", isTech: false, ct);
-                await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
-                await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
-            }
-
-            // Domain knowledge areas (e.g. "Building and Construction", "Customer Service") → IsTech = false
+            // Domain knowledge areas (top 8 by relevance, e.g. "Building and Construction") → IsTech = false
             foreach (var knowledgeName in details.Knowledge)
             {
                 var canon = await DeduplicateOrCreateSkillAsync(
                     dbContext, neo4j, knowledgeName, "ONET_Skill", isTech: false, ct);
-                await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
-                await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
-            }
-
-            // Work activities (on-the-job tasks, e.g. "Inspecting Equipment") → IsTech = false
-            foreach (var activityName in details.WorkActivities)
-            {
-                var canon = await DeduplicateOrCreateSkillAsync(
-                    dbContext, neo4j, activityName, "ONET_Skill", isTech: false, ct);
                 await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
                 await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
             }
@@ -293,6 +291,10 @@ public class IngestionWorker : BackgroundService
             if (!ValidRoadmapNodeTypes.Contains(node.Type ?? "")) continue;
             var label = node.Data?.Label?.Trim();
             if (string.IsNullOrWhiteSpace(label) || node.Id == null) continue;
+
+            // Skip pedagogical headings — they are instructional labels, not skill names
+            var labelLower = label.ToLowerInvariant();
+            if (PedagogicalPrefixes.Any(p => labelLower.StartsWith(p))) continue;
 
             var canon = await DeduplicateOrCreateSkillAsync(
                 dbContext, neo4j, label, "Roadmap.sh", isTech: true, ct);
@@ -491,7 +493,37 @@ public class IngestionWorker : BackgroundService
         }
     }
 
-    // --optimize-graph Mode
+    private static readonly string CheckpointPath =
+        Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "aris_ingestor_checkpoint.json");
+
+    private sealed record IngestionCheckpoint(
+        int Step, int DepIndex, int SiblingsIndex, int BridgeIndex, int DomainIndex, string Timestamp);
+
+    private static async Task WriteCheckpointAsync(
+        int step, int depIdx, int siblIdx, int bridgeIdx, int domainIdx)
+    {
+        var cp = new IngestionCheckpoint(step, depIdx, siblIdx, bridgeIdx, domainIdx,
+            DateTimeOffset.UtcNow.ToString("O"));
+        await File.WriteAllTextAsync(CheckpointPath,
+            JsonSerializer.Serialize(cp, new JsonSerializerOptions { WriteIndented = true }));
+    }
+
+    private static async Task<IngestionCheckpoint?> ReadCheckpointAsync()
+    {
+        if (!File.Exists(CheckpointPath)) return null;
+        try
+        {
+            return JsonSerializer.Deserialize<IngestionCheckpoint>(
+                await File.ReadAllTextAsync(CheckpointPath));
+        }
+        catch { return null; }
+    }
+
+    private static void DeleteCheckpoint()
+    {
+        if (File.Exists(CheckpointPath)) File.Delete(CheckpointPath);
+    }
+
     private async Task RunOptimizeGraphAsync(
         string[] args,
         Neo4jIngestionService neo4jService,
@@ -526,6 +558,27 @@ public class IngestionWorker : BackgroundService
         if (resumeSiblingsIndex > 0)
             _logger.LogInformation("Step 2: Resuming from sibling cluster index: {ResumeIndex}", resumeSiblingsIndex);
 
+        var checkpoint = await ReadCheckpointAsync();
+        if (checkpoint != null)
+        {
+            _logger.LogInformation("Auto-resuming from checkpoint (Step {Step}, {Timestamp})",
+                checkpoint.Step, checkpoint.Timestamp);
+            if (!args.Contains("--resume-deps") && checkpoint.DepIndex > 0)
+            {
+                _logger.LogInformation("  Checkpoint overriding dep index to {Index}", checkpoint.DepIndex);
+            }
+            if (!args.Contains("--resume-siblings") && checkpoint.SiblingsIndex > 0)
+            {
+                resumeSiblingsIndex = checkpoint.SiblingsIndex;
+                _logger.LogInformation("  Checkpoint overriding siblings index to {Index}", checkpoint.SiblingsIndex);
+            }
+            if (!args.Contains("--resume") && checkpoint.BridgeIndex > 0)
+            {
+                resumeIndex = checkpoint.BridgeIndex;
+                _logger.LogInformation("  Checkpoint overriding bridge index to {Index}", checkpoint.BridgeIndex);
+            }
+        }
+
         int maxClusterSize = 150;
         var maxClusterIdx = Array.IndexOf(args, "--max-cluster");
         if (maxClusterIdx >= 0 && maxClusterIdx + 1 < args.Length &&
@@ -555,6 +608,11 @@ public class IngestionWorker : BackgroundService
             var processedSkillHashes3 = new HashSet<string>();
             var processedCount3 = 0;
 
+            var depsResumeIndex = args.Contains("--resume-deps")
+                ? int.Parse(args[Array.IndexOf(args, "--resume-deps") + 1]) : 0;
+            if (checkpoint != null && !args.Contains("--resume-deps") && checkpoint.DepIndex > 0)
+                depsResumeIndex = checkpoint.DepIndex;
+
             foreach (var role in roles3)
             {
                 if (stoppingToken.IsCancellationRequested) break;
@@ -566,9 +624,6 @@ public class IngestionWorker : BackgroundService
                 if (techSkills.Count <= 1 || !processedSkillHashes3.Add(skillHash)) continue;
 
                 processedCount3++;
-
-                var depsResumeIndex = args.Contains("--resume-deps")
-                    ? int.Parse(args[Array.IndexOf(args, "--resume-deps") + 1]) : 0;
 
                 if (processedCount3 < depsResumeIndex)
                 {
@@ -592,6 +647,8 @@ public class IngestionWorker : BackgroundService
                             "OntologyEnrichment");
                     }
                 }
+
+                await WriteCheckpointAsync(1, processedCount3 + 1, 0, 0, 0);
             }
         }
 
@@ -653,6 +710,8 @@ public class IngestionWorker : BackgroundService
                                 "OntologyEnrichment");
                         }
                     }
+
+                    await WriteCheckpointAsync(2, 0, clusterCount + 1, 0, 0);
                 }
             }
 
@@ -712,6 +771,8 @@ public class IngestionWorker : BackgroundService
                                 "OntologyEnrichment");
                         }
                     }
+
+                    await WriteCheckpointAsync(3, 0, 0, processedCount2 + 1, 0);
                 }
             }
 
@@ -727,6 +788,8 @@ public class IngestionWorker : BackgroundService
             if (domainResumeIdx >= 0 && domainResumeIdx + 1 < args.Length &&
                 int.TryParse(args[domainResumeIdx + 1], out var parsedDomainResume))
                 domainResumeIndex = parsedDomainResume;
+            if (checkpoint != null && !args.Contains("--resume-domain") && checkpoint.DomainIndex > 0)
+                domainResumeIndex = checkpoint.DomainIndex;
 
             if (domainResumeIndex > 0)
                 _logger.LogInformation("Step 4: Resuming from index: {ResumeIndex}", domainResumeIndex);
@@ -771,7 +834,12 @@ public class IngestionWorker : BackgroundService
                             "OntologyEnrichment");
                     }
                 }
+
+                await WriteCheckpointAsync(4, 0, 0, 0, processedDomainCount + 1);
             }
         }
+
+        DeleteCheckpoint();
+        _logger.LogInformation("Ontology enrichment complete. Checkpoint cleared.");
     }
 }
