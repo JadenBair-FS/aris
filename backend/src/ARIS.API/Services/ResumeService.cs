@@ -622,7 +622,6 @@ namespace ARIS.API.Services
 
                     if (match != null && match.Distance < 0.35)
                     {
-                        signal.Roles[i].Title = match.Title;
                         signal.Roles[i].OnetCode = match.OnetCode;
                     }
                 }
@@ -671,6 +670,17 @@ namespace ARIS.API.Services
                         }
                     }
                 }
+
+                signal.Skills = signal.Skills
+                    .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+                    .Select(g => new ResumeSkill
+                    {
+                        Name = g.First().Name,
+                        Category = g.First().Category,
+                        Proficiency = g.First().Proficiency,
+                        YearsOfExperience = g.Sum(s => s.YearsOfExperience)
+                    })
+                    .ToList();
             }
             catch (Exception ex)
             {
