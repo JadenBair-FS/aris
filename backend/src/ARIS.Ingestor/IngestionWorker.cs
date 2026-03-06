@@ -20,9 +20,7 @@ public class IngestionWorker : BackgroundService
     private readonly IHostApplicationLifetime _hostApplicationLifetime;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingService;
 
-    private const double DedupThreshold = 0.10;
-
-    // Valid node types in Roadmap.sh JSON that represent learnable skills
+// Valid node types in Roadmap.sh JSON that represent learnable skills
     private static readonly HashSet<string> ValidRoadmapNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic", "skill" };
 
@@ -386,48 +384,65 @@ public class IngestionWorker : BackgroundService
     {
         if (string.IsNullOrWhiteSpace(name)) return string.Empty;
 
-        var embedding = await GenerateEmbeddingAsync(name);
-        if (embedding == null) return name;
-
-        var canonicalMatch = await dbContext.Skills
-            .Where(s => s.Embedding != null)
-            .Select(s => new { Skill = s, Distance = s.Embedding!.CosineDistance(embedding) })
-            .Where(x => x.Distance < DedupThreshold)
-            .OrderBy(x => x.Distance)
-            .FirstOrDefaultAsync(ct);
+        var exactMatch = await dbContext.Skills
+            .FirstOrDefaultAsync(s => s.Name == name, ct);
 
         string canonicalName;
 
-        if (canonicalMatch != null)
+        if (exactMatch != null)
         {
-            canonicalName = canonicalMatch.Skill.Name;
-            _logger.LogDebug("Deduplicated: '{Raw}' -> '{Canonical}' (Dist: {Dist:F3})",
-                name, canonicalName, canonicalMatch.Distance);
+            canonicalName = exactMatch.Name;
 
-            // Only Roadmap.sh can upgrade an existing skill to is_tech=true.
-            // O*NET's /technology_skills endpoint uses a broad "technical skills" definition
-            // that includes cognitive skills (e.g. "Critical Thinking", "Mathematics"),
-            // so allowing ONET_Skill source to upgrade would corrupt the cognitive taxonomy.
-            if (isTech && !canonicalMatch.Skill.IsTech && source == "Roadmap.sh")
+            if (isTech && !exactMatch.IsTech && source == "Roadmap.sh")
             {
                 _logger.LogInformation("Upgrading '{Skill}' to is_tech=true (Roadmap.sh)", canonicalName);
-                canonicalMatch.Skill.IsTech = true;
+                exactMatch.IsTech = true;
                 await dbContext.SaveChangesAsync(ct);
                 await neo4j.SetSkillIsTechAsync(canonicalName, true);
             }
         }
         else
         {
-            var skill = new RefSkill
+            var embedding = await GenerateEmbeddingAsync(name);
+            if (embedding == null) return name;
+
+            // Tight threshold — catches naming variants (React / React.js, JS / JavaScript)
+            // but keeps distinct tools separate (MySQL vs PostgreSQL sit at ~0.12+)
+            const double variantThreshold = 0.05;
+            var variantMatch = await dbContext.Skills
+                .Where(s => s.Embedding != null)
+                .Select(s => new { Skill = s, Distance = s.Embedding!.CosineDistance(embedding) })
+                .Where(x => x.Distance < variantThreshold)
+                .OrderBy(x => x.Distance)
+                .FirstOrDefaultAsync(ct);
+
+            if (variantMatch != null)
             {
-                Name = name,
-                Source = source,
-                IsTech = isTech,
-                Embedding = embedding
-            };
-            dbContext.Skills.Add(skill);
-            await dbContext.SaveChangesAsync(ct);
-            canonicalName = name;
+                canonicalName = variantMatch.Skill.Name;
+                _logger.LogDebug("Variant merged: '{Raw}' -> '{Canonical}' (dist {Dist:F3})",
+                    name, canonicalName, variantMatch.Distance);
+
+                if (isTech && !variantMatch.Skill.IsTech && source == "Roadmap.sh")
+                {
+                    _logger.LogInformation("Upgrading '{Skill}' to is_tech=true (Roadmap.sh)", canonicalName);
+                    variantMatch.Skill.IsTech = true;
+                    await dbContext.SaveChangesAsync(ct);
+                    await neo4j.SetSkillIsTechAsync(canonicalName, true);
+                }
+            }
+            else
+            {
+                var skill = new RefSkill
+                {
+                    Name = name,
+                    Source = source,
+                    IsTech = isTech,
+                    Embedding = embedding
+                };
+                dbContext.Skills.Add(skill);
+                await dbContext.SaveChangesAsync(ct);
+                canonicalName = name;
+            }
         }
 
         await neo4j.MergeSkillAsync(canonicalName, source, isTech);
