@@ -25,6 +25,69 @@ namespace ARIS.Shared.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "vector");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ARIS.Shared.Entities.CandidateSkill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("DomainPrefix")
+                        .HasColumnType("text")
+                        .HasColumnName("domain_prefix");
+
+                    b.Property<Vector>("Embedding")
+                        .HasColumnType("vector(1024)")
+                        .HasColumnName("embedding");
+
+                    b.Property<bool>("IsTech")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_tech");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<string>("NormalizedName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("normalized_name");
+
+                    b.Property<int>("ObservationCount")
+                        .HasColumnType("integer")
+                        .HasColumnName("observation_count");
+
+                    b.Property<int?>("PromotedSkillId")
+                        .HasColumnType("integer")
+                        .HasColumnName("promoted_skill_id");
+
+                    b.Property<string[]>("SourceDocumentIds")
+                        .IsRequired()
+                        .HasColumnType("text[]")
+                        .HasColumnName("source_document_ids");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("status");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_candidate_skills_status");
+
+                    b.ToTable("candidate_skills", (string)null);
+                });
+
             modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
                 {
                     b.Property<Guid>("Id")

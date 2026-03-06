@@ -318,6 +318,47 @@ public class GraphService : IDisposable, IAsyncDisposable
         return sb.ToString();
     }
 
+    /// <summary>
+    /// Creates or updates a Skill node in Neo4j. Safe to call on an existing node
+    /// </summary>
+    public async Task CreateSkillNodeAsync(string name, string source, bool isTech)
+    {
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(async tx =>
+        {
+            await tx.RunAsync(
+                "MERGE (s:Skill {name: $name}) SET s.source = $source, s.is_tech = $isTech",
+                new { name, source, isTech });
+        });
+    }
+
+    /// <summary>
+    /// Writes SUBSET_OF and BRIDGE_TO edges for a newly promoted skill.
+    /// Only creates edges where both endpoint nodes already exist in the graph.
+    /// </summary>
+    public async Task CreateSkillEdgesAsync(string skillName, IEnumerable<string> subsetOf, IEnumerable<string> bridgeTo)
+    {
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(async tx =>
+        {
+            foreach (var parent in subsetOf)
+            {
+                await tx.RunAsync(
+                    @"MATCH (child:Skill {name: $child}), (parent:Skill {name: $parent})
+                      MERGE (child)-[:SUBSET_OF]->(parent)",
+                    new { child = skillName, parent });
+            }
+
+            foreach (var peer in bridgeTo)
+            {
+                await tx.RunAsync(
+                    @"MATCH (a:Skill {name: $a}), (b:Skill {name: $b})
+                      MERGE (a)-[:BRIDGE_TO]->(b)",
+                    new { a = skillName, b = peer });
+            }
+        });
+    }
+
     public void Dispose()
     {
         _driver?.Dispose();

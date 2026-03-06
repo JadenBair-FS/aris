@@ -80,6 +80,7 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
+        private readonly OntologyExpansionService _expansionService;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
@@ -91,11 +92,12 @@ namespace ARIS.API.Services
 
         private const int MaxExtractionAttempts = 3;
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, OntologyExpansionService expansionService, ILogger<ResumeService> logger)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
+            _expansionService = expansionService;
             _logger = logger;
         }
 
@@ -133,7 +135,7 @@ namespace ARIS.API.Services
                     return null;
                 }
 
-                await GroundCleanSignalAsync(cleanSignal);
+                await GroundCleanSignalAsync(cleanSignal, userId);
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
                 var truncatedSymmetric = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
@@ -208,7 +210,7 @@ namespace ARIS.API.Services
                     .Where(r => r.Embedding != null)
                     .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(8)
+                    .Take(5)
                     .ToListAsync();
 
                 var bestRole = topRoles.FirstOrDefault();
@@ -228,7 +230,7 @@ namespace ARIS.API.Services
                                   && rs.Skill.Embedding != null)
                         .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
-                        .Take(15)
+                        .Take(8)
                         .ToListAsync();
                     domainSkillNames = domainSkills.Select(s => s.Name).ToList();
                 }
@@ -242,11 +244,11 @@ namespace ARIS.API.Services
                 var globalSkillNames = (await skillQuery
                     .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                     .OrderBy(x => x.Distance)
-                    .Take(30)
+                    .Take(15)
                     .ToListAsync())
                     .Where(s => !domainSet.Contains(s.Name))
                     .Select(s => s.Name)
-                    .Take(15)
+                    .Take(7)
                     .ToList();
 
                 var combinedSkills = domainSkillNames.Concat(globalSkillNames).ToList();
@@ -595,7 +597,7 @@ namespace ARIS.API.Services
             return jsonString;
         }
 
-        private async Task GroundCleanSignalAsync(ResumeCleanSignal signal)
+        private async Task GroundCleanSignalAsync(ResumeCleanSignal signal, string sourceDocId)
         {
             var roleTitles = signal.Roles.Select(r => r.Title).ToList();
             var skillNames = signal.Skills.Select(s => s.Name).ToList();
@@ -636,6 +638,8 @@ namespace ARIS.API.Services
                 bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
 
                 int skillOffset = roleTitles.Count;
+                var unknownSkills = new List<(string Name, Vector Embedding)>();
+
                 for (int i = 0; i < skillNames.Count; i++)
                 {
                     var vector = vectors[skillOffset + i];
@@ -649,25 +653,31 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < 0.35)
+                    if (domainMatch != null && domainMatch.Distance < 0.25)
                     {
                         signal.Skills[i].Name = domainMatch.Name;
+                        continue;
+                    }
+
+                    var query = _context.Skills.Where(s => s.Embedding != null);
+                    if (!isTech)
+                        query = query.Where(s => s.Source != "Roadmap.sh");
+
+                    var generalMatch = await query
+                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
+
+                    if (generalMatch != null && generalMatch.Distance < 0.40)
+                    {
+                        signal.Skills[i].Name = generalMatch.Name;
                     }
                     else
                     {
-                        var query = _context.Skills.Where(s => s.Embedding != null);
-                        if (!isTech)
-                            query = query.Where(s => s.Source != "Roadmap.sh");
-
-                        var generalMatch = await query
-                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                            .OrderBy(x => x.Distance)
-                            .FirstOrDefaultAsync();
-
-                        if (generalMatch != null)
-                        {
-                            signal.Skills[i].Name = generalMatch.Name;
-                        }
+                        // No acceptable canonical match — keep original LLM text, queue for ontology expansion
+                        unknownSkills.Add((signal.Skills[i].Name, vector));
+                        _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — queued for ontology expansion.",
+                            signal.Skills[i].Name, generalMatch?.Distance ?? 1.0);
                     }
                 }
 
@@ -681,6 +691,9 @@ namespace ARIS.API.Services
                         YearsOfExperience = g.Sum(s => s.YearsOfExperience)
                     })
                     .ToList();
+
+                foreach (var (name, vector) in unknownSkills)
+                    await _expansionService.RecordCandidateAsync(name, vector, domainPrefix, isTech, sourceDocId);
             }
             catch (Exception ex)
             {

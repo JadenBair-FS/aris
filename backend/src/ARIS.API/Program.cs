@@ -73,6 +73,7 @@ builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
 builder.Services.AddScoped<ARIS.API.Services.PersonalInfoExtractor>();
 builder.Services.AddScoped<ARIS.API.Services.ResumePdfService>();
+builder.Services.AddScoped<ARIS.API.Services.OntologyExpansionService>();
 
 // Auth — Clerk JWT Bearer
 var clerkAuthority = builder.Configuration["Clerk:Authority"]
