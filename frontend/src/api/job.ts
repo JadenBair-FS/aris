@@ -2,10 +2,10 @@ import { apiClient } from './client';
 import type { JobRecommendationResponse, JobPostingDetail } from '../types/api';
 
 export const jobApi = {
-    postJob: (description: string) => {
+    postJob: (description: string, sourceUrl?: string) => {
         return apiClient<{ message: string; jobId: string }>('/job', {
             method: 'POST',
-            body: JSON.stringify({ description }),
+            body: JSON.stringify({ description, sourceUrl: sourceUrl || null }),
         });
     },
     getJobsByRecruiter: () => {

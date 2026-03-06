@@ -10,7 +10,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Loader2, ScanSearch, Info, Wand2 } from 'lucide-react';
+import { ArrowLeft, Loader2, ScanSearch, Info, Wand2, ExternalLink } from 'lucide-react';
 import { formatArisScore } from '@/utils/score';
 import type { MatchAnalysisResult, TailoredBullet } from '@/types/api';
 
@@ -43,8 +43,23 @@ function JobPanel({ jobId }: { jobId: string }) {
         <div className="space-y-3">
             <Card>
                 <CardContent className="px-4 py-3">
-                    <h2 className="text-base font-semibold text-slate-900">{primaryRole}</h2>
-                    <p className="text-xs text-slate-400 font-mono mt-0.5">{job.id.slice(0, 8)}</p>
+                    <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                            <h2 className="text-base font-semibold text-slate-900">{primaryRole}</h2>
+                            <p className="text-xs text-slate-400 font-mono mt-0.5">{job.id.slice(0, 8)}</p>
+                        </div>
+                        {job.sourceUrl && (
+                            <a
+                                href={job.sourceUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Button variant="outline" size="sm" className="shrink-0 gap-1.5">
+                                    <ExternalLink className="h-3.5 w-3.5" /> View Posting
+                                </Button>
+                            </a>
+                        )}
+                    </div>
                     {signal?.target_roles && signal.target_roles.length > 1 && (
                         <div className="flex flex-wrap gap-1.5 mt-2">
                             {signal.target_roles.slice(1).map((r, i) => (
