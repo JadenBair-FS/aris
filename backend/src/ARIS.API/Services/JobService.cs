@@ -62,7 +62,10 @@ namespace ARIS.API.Services
                     }
                 }
 
-                await GroundCleanSignalAsync(cleanSignal, recruiterId);
+                // Pre-generate the ID so we can pass it as the sourceDocId for ontology expansion.
+                // Using recruiterId would cause all jobs from one recruiter to count as a single observation.
+                var jobPostingId = Guid.NewGuid();
+                await GroundCleanSignalAsync(cleanSignal, jobPostingId.ToString());
 
                 var symmetricString = BuildSymmetricString(cleanSignal);
                 var truncatedSymmetric = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
@@ -71,6 +74,7 @@ namespace ARIS.API.Services
 
                 var jobPosting = new JobPosting
                 {
+                    Id = jobPostingId,
                     RecruiterId = recruiterId,
                     RawDescription = rawDescription,
                     CleanSignal = cleanSignal,
