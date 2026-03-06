@@ -33,5 +33,8 @@ public class JobPosting
     [Column("recruiter_user_id")]
     public Guid? RecruiterUserId { get; set; }
 
+    [Column("source_url", TypeName = "text")]
+    public string? SourceUrl { get; set; }
+
     public RecruiterUser? RecruiterUser { get; set; }
 }

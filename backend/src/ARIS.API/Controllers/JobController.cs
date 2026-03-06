@@ -41,7 +41,7 @@ namespace ARIS.API.Controllers
 
             _logger.LogInformation("Received job posting from Recruiter: {RecruiterId}", recruiterId);
 
-            var jobId = await _service.CreateJobPostingAsync(request.Description, recruiterId);
+            var jobId = await _service.CreateJobPostingAsync(request.Description, recruiterId, request.SourceUrl);
 
             if (!jobId.HasValue)
                 return StatusCode(500, "Failed to process job posting.");
@@ -124,6 +124,7 @@ namespace ARIS.API.Controllers
                     j.Id,
                     j.RecruiterId,
                     j.CleanSignal,
+                    j.SourceUrl,
                     j.CreatedAt,
                     j.UpdatedAt
                 })

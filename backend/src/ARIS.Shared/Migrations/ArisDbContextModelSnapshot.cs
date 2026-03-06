@@ -57,6 +57,10 @@ namespace ARIS.Shared.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("recruiter_user_id");
 
+                    b.Property<string>("SourceUrl")
+                        .HasColumnType("text")
+                        .HasColumnName("source_url");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");

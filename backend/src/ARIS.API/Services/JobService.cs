@@ -37,7 +37,7 @@ namespace ARIS.API.Services
             _logger = logger;
         }
 
-        public async Task<Guid?> CreateJobPostingAsync(string rawDescription, string recruiterId)
+        public async Task<Guid?> CreateJobPostingAsync(string rawDescription, string recruiterId, string? sourceUrl = null)
         {
             try
             {
@@ -73,6 +73,7 @@ namespace ARIS.API.Services
                     RawDescription = rawDescription,
                     CleanSignal = cleanSignal,
                     Embedding = new Vector(vectorData),
+                    SourceUrl = sourceUrl,
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow
                 };

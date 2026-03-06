@@ -558,6 +558,6 @@ public class MatchService
     {
         var job = await _context.JobPostings.FindAsync(id);
         if (job == null) return null;
-        return new { job.Id, job.RecruiterId, job.CleanSignal };
+        return new { job.Id, job.RecruiterId, job.CleanSignal, job.SourceUrl };
     }
 }

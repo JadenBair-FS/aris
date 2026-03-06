@@ -109,6 +109,7 @@ export interface JobPostingDetail {
     recruiterId: string;
     rawDescription: string;
     cleanSignal: JobCleanSignal | null;
+    sourceUrl?: string | null;
     createdAt?: string;
     updatedAt?: string;
 }

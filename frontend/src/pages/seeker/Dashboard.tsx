@@ -2,7 +2,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router';
-import { Building2, Star, Search, Loader2, ChevronRight } from 'lucide-react';
+import { Building2, Star, Search, Loader2, ChevronRight, ExternalLink } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { apiClient } from '@/api/client';
 import { jobApi } from '@/api/job';
@@ -83,9 +83,22 @@ export default function Dashboard() {
                                                     >
                                                         {primaryRole}
                                                     </Link>
-                                                    <div className="flex items-center text-sm text-muted-foreground gap-1.5">
-                                                        <Building2 className="h-3.5 w-3.5" />
-                                                        <span className="font-mono text-xs">{match.jobId.slice(0, 8)}</span>
+                                                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                                        <span className="flex items-center gap-1.5">
+                                                            <Building2 className="h-3.5 w-3.5" />
+                                                            <span className="font-mono text-xs">{match.jobId.slice(0, 8)}</span>
+                                                        </span>
+                                                        {match.job?.sourceUrl && (
+                                                            <a
+                                                                href={match.job.sourceUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center gap-1 text-xs text-primary hover:underline"
+                                                                onClick={e => e.stopPropagation()}
+                                                            >
+                                                                <ExternalLink className="h-3 w-3" /> View posting
+                                                            </a>
+                                                        )}
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2">

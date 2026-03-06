@@ -2,7 +2,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router';
-import { Briefcase, Users, Plus, Search, Loader2 } from 'lucide-react';
+import { Briefcase, Users, Plus, Search, Loader2, ExternalLink } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
@@ -90,6 +90,17 @@ export default function Dashboard() {
                                                         <Users className="h-3.5 w-3.5" />
                                                         {job.cleanSignal.required_skills.length} required skills
                                                     </div>
+                                                )}
+                                                {job.sourceUrl && (
+                                                    <a
+                                                        href={job.sourceUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-1 text-xs text-primary hover:underline"
+                                                        onClick={e => e.stopPropagation()}
+                                                    >
+                                                        <ExternalLink className="h-3 w-3" /> Original posting
+                                                    </a>
                                                 )}
                                             </div>
                                         </CardContent>
