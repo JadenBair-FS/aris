@@ -677,7 +677,25 @@ namespace ARIS.API.Services
                     string.Equals(s.OriginalName, correction.From, StringComparison.OrdinalIgnoreCase));
                 if (groundedMatch != null)
                 {
-                    groundedMatch.Name = correction.To;
+                    if (string.IsNullOrEmpty(correction.To))
+                    {
+                        // User marked as unlisted — move back to ungrounded with the original extracted name
+                        cs.RequiredSkills.Remove(groundedMatch);
+                        if (!cs.UngroundedSkills.Any(s => string.Equals(s.Name, groundedMatch.OriginalName, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            cs.UngroundedSkills.Add(new JobSkill
+                            {
+                                Name = groundedMatch.OriginalName!,
+                                Category = groundedMatch.Category,
+                                Importance = groundedMatch.Importance,
+                                YearsOfExperience = groundedMatch.YearsOfExperience
+                            });
+                        }
+                    }
+                    else
+                    {
+                        groundedMatch.Name = correction.To;
+                    }
                 }
             }
 
