@@ -40,10 +40,58 @@ public class IngestionWorker : BackgroundService
         "android", "ios", "game-developer", "server-side-game-developer",
         "ai-engineer", "ai-data-scientist", "ai-agents", "ai-red-teaming",
         "machine-learning", "mlops", "data-analyst", "data-engineer", "bi-analyst",
-        "qa", "cyber-security", "blockchain",
+        "qa", "cyber-security",
         "software-architect", "ux-design", "technical-writer",
-        "product-manager", "engineering-manager", "devrel"
+        "product-manager", "engineering-manager"
     ];
+
+    // Manual O*NET code mappings for role slugs where embedding search is unreliable.
+    // Codes verified against O*NET 29.0. Embedding fallback handles anything not listed here.
+    private static readonly Dictionary<string, string[]> SlugToOnetCodes =
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            // Web / App Development
+            ["frontend"]                    = ["15-1254.00"],  // Web Developers
+            ["backend"]                     = ["15-1252.00"],  // Software Developers
+            ["full-stack"]                  = ["15-1254.00"],  // Web Developers
+            ["android"]                     = ["15-1252.00"],  // Software Developers
+            ["ios"]                         = ["15-1252.00"],  // Software Developers
+
+            // Infrastructure / Operations
+            ["devops"]                      = ["15-1244.00"],  // Network and Computer Systems Administrators
+            ["devsecops"]                   = ["15-1212.00"],  // Information Security Analysts
+            ["mlops"]                       = ["15-1244.00"],  // Network and Computer Systems Administrators
+
+            // AI / Data
+            ["ai-engineer"]                 = ["15-2051.00"],  // Data Scientists
+            ["ai-data-scientist"]           = ["15-2051.00"],  // Data Scientists
+            ["ai-agents"]                   = ["15-2051.00"],  // Data Scientists
+            ["ai-red-teaming"]              = ["15-1212.00"],  // Information Security Analysts
+            ["machine-learning"]            = ["15-2051.00"],  // Data Scientists
+            ["data-analyst"]                = ["15-2051.01"],  // Business Intelligence Analysts
+            ["data-engineer"]               = ["15-1243.00"],  // Database Architects
+            ["bi-analyst"]                  = ["15-2051.01"],  // Business Intelligence Analysts
+
+            // Quality / Security
+            ["qa"]                          = ["15-1253.00"],  // Software Quality Assurance Analysts and Testers
+            ["cyber-security"]              = ["15-1212.00"],  // Information Security Analysts
+
+            // Architecture / Design
+            ["software-architect"]          = ["15-1252.00"],  // Software Developers
+            ["ux-design"]                   = ["15-1255.00"],  // Web and Digital Interface Designers
+
+            // Games
+            ["game-developer"]              = ["15-1252.00"],  // Software Developers
+            ["server-side-game-developer"]  = ["15-1252.00"],  // Software Developers
+
+            // Management / Other
+            ["product-manager"]             = ["11-3021.00"],  // Computer and Information Systems Managers
+            ["engineering-manager"]         = ["11-3021.00"],  // Computer and Information Systems Managers
+            ["technical-writer"]            = ["27-3042.00"],  // Technical Writers
+
+            // blockchain and devrel intentionally omitted — no reliable O*NET analog;
+            // embedding fallback will attempt a match and skip if nothing is close enough.
+        };
 
     private static readonly string[] SkillRoadmapSlugs =
     [
@@ -251,9 +299,23 @@ public class IngestionWorker : BackgroundService
     {
         var map = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
 
+        // Pre-load all role codes that exist in the DB so we can validate manual entries
+        var existingCodes = await dbContext.Roles
+            .Where(r => r.OnetCode != null)
+            .Select(r => r.OnetCode!)
+            .ToHashSetAsync(ct);
+
         foreach (var slug in slugs)
         {
             if (ct.IsCancellationRequested) break;
+            if (SlugToOnetCodes.TryGetValue(slug, out var manualCodes))
+            {
+                var validCodes = manualCodes.Where(c => existingCodes.Contains(c)).ToList();
+                map[slug] = validCodes;
+                _logger.LogInformation("Slug '{Slug}' → manual map → {Count} O*NET roles: {Roles}",
+                    slug, validCodes.Count, string.Join(", ", validCodes));
+                continue;
+            }
 
             var roadmap = await roadmapService.GetRoadmapAsync(slug, ct);
             var title = roadmap?.Title?.Card ?? slug.Replace("-", " ");
@@ -274,7 +336,7 @@ public class IngestionWorker : BackgroundService
                 .ToListAsync(ct);
 
             map[slug] = matches.Select(m => m.OnetCode).OfType<string>().ToList();
-            _logger.LogInformation("Slug '{Slug}' ({Title}) → {Count} O*NET roles: {Roles}",
+            _logger.LogInformation("Slug '{Slug}' ({Title}) → embedding fallback → {Count} O*NET roles: {Roles}",
                 slug, title, map[slug].Count,
                 string.Join(", ", matches.Select(m => $"{m.Title} ({m.OnetCode})")));
 
@@ -284,7 +346,6 @@ public class IngestionWorker : BackgroundService
         return map;
     }
 
-    // ── Phase 1a: O*NET Soft Skill Taxonomy ────────────────────────────────────
 
     private async Task IngestOnetSkillTaxonomiesAsync(
         ArisDbContext dbContext,
@@ -330,7 +391,6 @@ public class IngestionWorker : BackgroundService
         }
     }
 
-    //Phases 3 + 4: Roadmap Ingestion
 
     private async Task IngestRoadmapAsync(
         ArisDbContext dbContext,
@@ -415,20 +475,32 @@ public class IngestionWorker : BackgroundService
         }
         else
         {
-            // Role roadmap: link all skills to each matched O*NET role via REQUIRES
             if (matchedRoleCodes.Count == 0)
             {
                 _logger.LogWarning(
-                    "Roadmap '{Slug}' has no matched O*NET roles — skills ingested without REQUIRES links.", slug);
+                    "Roadmap '{Slug}' has no matched O*NET roles — skipping skill ingestion to avoid orphaned nodes.", slug);
+                return;
             }
+
+            var pgRoles = await dbContext.Roles
+                .Where(r => r.OnetCode != null && matchedRoleCodes.Contains(r.OnetCode))
+                .ToListAsync(ct);
 
             foreach (var (_, canonName) in nodeIdToCanonical)
             {
                 foreach (var roleCode in matchedRoleCodes)
                 {
+                    // Neo4j REQUIRES edge
                     await neo4j.MergeRoleSkillRelationshipAsync(roleCode, canonName);
                 }
+
+                foreach (var pgRole in pgRoles)
+                {
+                    await LinkSkillToRoleInPostgresAsync(dbContext, pgRole.Id, canonName, ct);
+                }
             }
+
+            await dbContext.SaveChangesAsync(ct);
         }
 
         await Task.Delay(500, ct);

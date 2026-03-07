@@ -688,7 +688,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (generalMatch != null && generalMatch.Distance < 0.40)
+                    if (generalMatch != null && generalMatch.Distance < 0.25)
                     {
                         signal.Skills[i].Name = generalMatch.Name;
                     }
