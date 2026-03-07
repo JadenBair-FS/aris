@@ -473,43 +473,16 @@ public class IngestionWorker : BackgroundService
             var embedding = await GenerateEmbeddingAsync(name);
             if (embedding == null) return name;
 
-            // Tight threshold — catches naming variants (React / React.js, JS / JavaScript)
-            // but keeps distinct tools separate (MySQL vs PostgreSQL sit at ~0.12+)
-            const double variantThreshold = 0.05;
-            var variantMatch = await dbContext.Skills
-                .Where(s => s.Embedding != null)
-                .Select(s => new { Skill = s, Distance = s.Embedding!.CosineDistance(embedding) })
-                .Where(x => x.Distance < variantThreshold)
-                .OrderBy(x => x.Distance)
-                .FirstOrDefaultAsync(ct);
-
-            if (variantMatch != null)
+            var skill = new RefSkill
             {
-                canonicalName = variantMatch.Skill.Name;
-                _logger.LogDebug("Variant merged: '{Raw}' -> '{Canonical}' (dist {Dist:F3})",
-                    name, canonicalName, variantMatch.Distance);
-
-                if (isTech && !variantMatch.Skill.IsTech && source == "Roadmap.sh")
-                {
-                    _logger.LogInformation("Upgrading '{Skill}' to is_tech=true (Roadmap.sh)", canonicalName);
-                    variantMatch.Skill.IsTech = true;
-                    await dbContext.SaveChangesAsync(ct);
-                    await neo4j.SetSkillIsTechAsync(canonicalName, true);
-                }
-            }
-            else
-            {
-                var skill = new RefSkill
-                {
-                    Name = name,
-                    Source = source,
-                    IsTech = isTech,
-                    Embedding = embedding
-                };
-                dbContext.Skills.Add(skill);
-                await dbContext.SaveChangesAsync(ct);
-                canonicalName = name;
-            }
+                Name = name,
+                Source = source,
+                IsTech = isTech,
+                Embedding = embedding
+            };
+            dbContext.Skills.Add(skill);
+            await dbContext.SaveChangesAsync(ct);
+            canonicalName = name;
         }
 
         await neo4j.MergeSkillAsync(canonicalName, source, isTech);
