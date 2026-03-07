@@ -80,8 +80,8 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
-        private readonly double _groundingSkillThreshold;
-        private readonly double _groundingSoftSkillThreshold;
+        private readonly double _firstPassThreshold;
+        private readonly double _secondPassThreshold;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
@@ -91,15 +91,13 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        private const int MaxExtractionAttempts = 3;
-
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
-            _groundingSkillThreshold = groundingSkillThreshold;
-            _groundingSoftSkillThreshold = groundingSoftSkillThreshold;
+            _firstPassThreshold = firstPassThreshold;
+            _secondPassThreshold = secondPassThreshold;
             _logger = logger;
         }
 
@@ -200,90 +198,6 @@ namespace ARIS.API.Services
             return sb.ToString().Trim();
         }
 
-        private async Task<(string roles, string skills)> RetrieveReferenceVocabularyAsync(string rawText)
-        {
-            try
-            {
-                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
-                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
-                var vector = new Vector(embeddings[0].Vector);
-
-                var topRoles = await _context.Roles
-                    .Where(r => r.Embedding != null)
-                    .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
-                    .OrderBy(x => x.Distance)
-                    .Take(5)
-                    .ToListAsync();
-
-                var bestRole = topRoles.FirstOrDefault();
-                bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
-                string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
-                    ? bestRole.OnetCode.Split('-')[0]
-                    : null;
-
-                List<string> domainSkillNames = [];
-                if (domainPrefix != null)
-                {
-                    var domainSkills = await _context.RoleSkills
-                        .Include(rs => rs.Skill)
-                        .Include(rs => rs.Role)
-                        .Where(rs => rs.Role.OnetCode != null
-                                  && rs.Role.OnetCode.StartsWith(domainPrefix)
-                                  && rs.Skill.Embedding != null)
-                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
-                        .OrderBy(x => x.Distance)
-                        .Take(8)
-                        .ToListAsync();
-                    domainSkillNames = domainSkills.Select(s => s.Name).ToList();
-                }
-
-                var skillQuery = _context.Skills.Where(s => s.Embedding != null);
-                if (!isTech)
-                    skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
-
-                var domainSet = new HashSet<string>(domainSkillNames, StringComparer.OrdinalIgnoreCase);
-
-                var globalSkillNames = (await skillQuery
-                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                    .OrderBy(x => x.Distance)
-                    .Take(15)
-                    .ToListAsync())
-                    .Where(s => !domainSet.Contains(s.Name))
-                    .Select(s => s.Name)
-                    .Take(7)
-                    .ToList();
-
-                var combinedSkills = domainSkillNames.Concat(globalSkillNames).ToList();
-
-                return (
-                    string.Join(", ", topRoles.Select(r => r.Title)),
-                    string.Join(", ", combinedSkills)
-                );
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary. Proceeding without it.");
-                return ("", "");
-            }
-        }
-
-        private async Task<string> RetrieveSoftSkillsAsync()
-        {
-            try
-            {
-                var names = await _context.Skills
-                    .Where(s => s.Source == "ONET_Taxonomy")
-                    .OrderBy(s => s.Name)
-                    .Select(s => s.Name)
-                    .ToListAsync();
-                return string.Join(", ", names);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to retrieve soft skills vocabulary. Proceeding without it.");
-                return "";
-            }
-        }
 
         private async Task<ResumeCleanSignal?> ExtractCleanSignalAsync(string rawText)
         {
@@ -293,17 +207,10 @@ namespace ARIS.API.Services
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeExtraction.md");
                 var template = await File.ReadAllTextAsync(promptPath);
 
-                var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
-                var softSkills = await RetrieveSoftSkillsAsync();
+                // NuExtract: truncate to ~6000 chars (fits within 2000-token text limit)
+                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
 
-                userPrompt = template
-                    .Replace("{reference_roles}", refRoles)
-                    .Replace("{reference_skills}", refSkills)
-                    .Replace("{soft_skills}", softSkills)
-                    .Replace("{raw_text}", rawText);
-
-                _logger.LogInformation("Reference Roles Sent: {Roles}", refRoles);
-                _logger.LogInformation("Reference Skills Sent: {Skills}", refSkills);
+                userPrompt = template.Replace("{raw_text}", truncatedText);
             }
             catch (Exception ex)
             {
@@ -311,114 +218,53 @@ namespace ARIS.API.Services
                 return null;
             }
 
-            string? previousOutput = null;
-            string? validationFailure = null;
-
-            for (int attempt = 1; attempt <= MaxExtractionAttempts; attempt++)
+            try
             {
-                try
+                var messages = BuildExtractionMessages(userPrompt);
+                var chatOptions = new ChatOptions { Temperature = 0f };
+                var response = await _chatClient.GetResponseAsync(messages, chatOptions);
+                var jsonString = response?.Text?.Trim();
+
+                if (string.IsNullOrWhiteSpace(jsonString))
                 {
-                    var messages = BuildExtractionMessages(userPrompt, attempt, validationFailure, previousOutput);
-                    
-                    var chatOptions = new ChatOptions 
-                    { 
-                        ResponseFormat = ChatResponseFormat.Json, 
-                        Temperature = 0.1f,
-                    };
-
-                    var response = await _chatClient.GetResponseAsync(messages, chatOptions);
-                    var jsonString = response?.Text?.Trim();
-
-                    if (string.IsNullOrWhiteSpace(jsonString))
-                    {
-                        _logger.LogWarning("LLM returned empty response (attempt {Attempt})", attempt);
-                        continue;
-                    }
-
-                    _logger.LogInformation("LLM Response (attempt {Attempt}): {Json}", attempt, jsonString);
-
-                    jsonString = UnwrapIfNeeded(jsonString);
-
-                    jsonString = NormalizeFieldNames(jsonString);
-
-                    var signal = JsonSerializer.Deserialize<ResumeCleanSignal>(jsonString, _jsonOptions);
-                    if (signal == null)
-                    {
-                        _logger.LogWarning("Deserialization returned null (attempt {Attempt})", attempt);
-                        previousOutput = jsonString;
-                        validationFailure = "Deserialization produced a null object.";
-                        continue;
-                    }
-
-                    PostProcessCleanSignal(signal);
-
-                    var validation = ValidateCleanSignal(signal);
-                    if (validation == null)
-                    {
-                        _logger.LogInformation("Clean Signal extraction succeeded on attempt {Attempt}", attempt);
-                        return signal;
-                    }
-
-                    _logger.LogWarning("Validation failed (attempt {Attempt}): {Reason}", attempt, validation);
-                    previousOutput = jsonString;
-                    validationFailure = validation;
-                }
-                catch (JsonException ex)
-                {
-                    _logger.LogWarning(ex, "JSON parsing failed (attempt {Attempt})", attempt);
-                    validationFailure = $"JSON parse error: {ex.Message}";
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "LLM extraction failed (attempt {Attempt})", attempt);
+                    _logger.LogWarning("NuExtract returned empty response for resume.");
                     return null;
                 }
-            }
 
-            _logger.LogError("Clean Signal extraction failed after {MaxAttempts} attempts", MaxExtractionAttempts);
-            return null;
-        }
+                _logger.LogInformation("NuExtract resume response: {Json}", jsonString);
 
-        private static List<ChatMessage> BuildExtractionMessages(string userPrompt, int attempt, string? validationFailure, string? previousOutput)
-        {
-            var messages = new List<ChatMessage>
-            {
-                new(ChatRole.System, "You are a resume-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"roles\", \"skills\", \"experience_summary\", \"education\". No other keys are allowed. Do not nest the result inside a wrapper object. For every skill: \"years_of_experience\" must always be a number — NEVER null, use 0.0 if unknown. All \"year\" values must be strings (e.g. \"2019\", not 2019)."),
-                new(ChatRole.User, userPrompt)
-            };
+                jsonString = UnwrapIfNeeded(jsonString);
+                jsonString = NormalizeFieldNames(jsonString);
 
-            if (attempt > 1 && validationFailure != null && previousOutput != null)
-            {
-                messages.Add(new ChatMessage(ChatRole.User, BuildCorrectionPrompt(validationFailure, previousOutput)));
-            }
-
-            return messages;
-        }
-
-        private static string BuildCorrectionPrompt(string validationFailure, string previousOutput)
-        {
-            return $$"""
-                Your previous output failed validation: {{validationFailure}}
-
-                Previous output:
-                {{previousOutput}}
-
-                Please fix the issue and output the corrected JSON using EXACTLY this schema (pay attention to the property names inside each object):
-
+                var signal = JsonSerializer.Deserialize<ResumeCleanSignal>(jsonString, _jsonOptions);
+                if (signal == null)
                 {
-                  "roles": [{ "title": "string", "duration": "string", "is_current": true/false }],
-                  "skills": [{ "name": "string", "category": "string", "proficiency": "string", "years_of_experience": 0.0 }],
-                  "experience_summary": [{ "role": "string", "company": "string", "bullets": ["string"] }],
-                  "education": [{ "degree": "string", "institution": "string", "year": "string" }]
+                    _logger.LogWarning("Resume deserialization returned null.");
+                    return null;
                 }
 
-                Critical field requirements:
-                - roles[].title MUST be a string (not "name")
-                - skills[].years_of_experience MUST be a number — NEVER null, use 0.0 if unknown
-                - experience_summary[] entries MUST use "role" (not "title"), "company", "bullets" (array of strings)
-                - education[].year MUST be a string, e.g. "2019" not 2019
-                """;
+                PostProcessCleanSignal(signal);
+
+                var validation = ValidateCleanSignal(signal);
+                if (validation != null)
+                    _logger.LogWarning("Resume validation warning: {Reason}", validation);
+
+                return signal;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "NuExtract resume extraction failed.");
+                return null;
+            }
         }
+
+        private static List<ChatMessage> BuildExtractionMessages(string userPrompt)
+        {
+            // NuExtract: no system message — the Template/Example/Text format in the user message
+            // is the full instruction the model needs.
+            return [new(ChatRole.User, userPrompt)];
+        }
+
 
         private static string? ValidateCleanSignal(ResumeCleanSignal signal)
         {
@@ -661,7 +507,7 @@ namespace ARIS.API.Services
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.Skills[i];
 
-                    // Pass 1: tight match — domain-specific skills first, then general, at 0.10
+                    // Pass 1: tight match — domain-specific skills first, then general
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -671,7 +517,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < _groundingSkillThreshold)
+                    if (domainMatch != null && domainMatch.Distance < _firstPassThreshold)
                     {
                         groundedSkills.Add(new ResumeSkill
                         {
@@ -692,7 +538,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (generalMatch != null && generalMatch.Distance < _groundingSkillThreshold)
+                    if (generalMatch != null && generalMatch.Distance < _firstPassThreshold)
                     {
                         groundedSkills.Add(new ResumeSkill
                         {
@@ -704,22 +550,20 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: fuzzy match — search only non-tech skills at a looser threshold.
-                    // Non-tech bucket excludes Roadmap.sh, so technical near-matches like
-                    // "React Hooks" → "React" cannot occur here. Only O*NET soft/domain skills.
-                    var fuzzyMatch = await _context.Skills
-                        .Where(s => !s.IsTech && s.Embedding != null)
+                    // Pass 2: wider search across all skills at the second pass threshold
+                    var secondPassMatch = await _context.Skills
+                        .Where(s => s.Embedding != null)
                         .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (fuzzyMatch != null && fuzzyMatch.Distance < _groundingSoftSkillThreshold)
+                    if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                     {
-                        _logger.LogInformation("Skill '{Skill}' grounded via fuzzy pass: '{Canonical}' ({Distance:F3}).",
-                            originalSkill.Name, fuzzyMatch.Name, fuzzyMatch.Distance);
+                        _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                            originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
                         groundedSkills.Add(new ResumeSkill
                         {
-                            Name = fuzzyMatch.Name,
+                            Name = secondPassMatch.Name,
                             Category = originalSkill.Category,
                             Proficiency = originalSkill.Proficiency,
                             YearsOfExperience = originalSkill.YearsOfExperience
@@ -727,8 +571,8 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    _logger.LogInformation("Skill '{Skill}' ungrounded — tight best: {TightDist:F3}, fuzzy best: {FuzzyDist:F3}.",
-                        originalSkill.Name, generalMatch?.Distance ?? 1.0, fuzzyMatch?.Distance ?? 1.0);
+                    _logger.LogInformation("Skill '{Skill}' not on graph — pass 1 best: {P1:F3}, pass 2 best: {P2:F3}.",
+                        originalSkill.Name, generalMatch?.Distance ?? 1.0, secondPassMatch?.Distance ?? 1.0);
                     ungroundedSkills.Add(originalSkill);
                 }
 

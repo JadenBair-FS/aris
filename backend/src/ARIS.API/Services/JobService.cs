@@ -18,6 +18,7 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
+        private readonly IChatClient _extractionClient;
         private readonly double _groundingSkillThreshold;
         private readonly double _groundingSoftSkillThreshold;
         private readonly ILogger<JobService> _logger;
@@ -29,13 +30,12 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        private const int MaxExtractionAttempts = 3;
-
-        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<JobService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
+        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, IChatClient extractionClient, ILogger<JobService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
+            _extractionClient = extractionClient;
             _groundingSkillThreshold = groundingSkillThreshold;
             _groundingSoftSkillThreshold = groundingSoftSkillThreshold;
             _logger = logger;
@@ -428,90 +428,6 @@ namespace ARIS.API.Services
             }
         }
 
-        private async Task<(string roles, string skills)> RetrieveReferenceVocabularyAsync(string rawText)
-        {
-            try
-            {
-                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
-                var embeddings = await _embeddingGenerator.GenerateAsync([truncatedText]);
-                var vector = new Vector(embeddings[0].Vector);
-
-                var topRoles = await _context.Roles
-                    .Where(r => r.Embedding != null)
-                    .Select(r => new { r.Title, r.OnetCode, Distance = r.Embedding!.CosineDistance(vector) })
-                    .OrderBy(x => x.Distance)
-                    .Take(5)
-                    .ToListAsync();
-
-                var bestRole = topRoles.FirstOrDefault();
-                bool isTech = DomainClassifier.IsTechDomain(bestRole?.OnetCode);
-                string? domainPrefix = bestRole?.OnetCode?.Contains('-') == true
-                    ? bestRole.OnetCode.Split('-')[0]
-                    : null;
-
-                List<string> domainSkillNames = [];
-                if (domainPrefix != null)
-                {
-                    var domainSkills = await _context.RoleSkills
-                        .Include(rs => rs.Skill)
-                        .Include(rs => rs.Role)
-                        .Where(rs => rs.Role.OnetCode != null
-                                  && rs.Role.OnetCode.StartsWith(domainPrefix)
-                                  && rs.Skill.Embedding != null)
-                        .Select(rs => new { rs.Skill.Name, Distance = rs.Skill.Embedding!.CosineDistance(vector) })
-                        .OrderBy(x => x.Distance)
-                        .Take(8)
-                        .ToListAsync();
-                    domainSkillNames = domainSkills.Select(s => s.Name).ToList();
-                }
-
-                var skillQuery = _context.Skills.Where(s => s.Embedding != null);
-                if (!isTech)
-                    skillQuery = skillQuery.Where(s => s.Source != "Roadmap.sh");
-
-                var domainSet = new HashSet<string>(domainSkillNames, StringComparer.OrdinalIgnoreCase);
-
-                var globalSkillNames = (await skillQuery
-                    .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                    .OrderBy(x => x.Distance)
-                    .Take(15)
-                    .ToListAsync())
-                    .Where(s => !domainSet.Contains(s.Name))
-                    .Select(s => s.Name)
-                    .Take(7)
-                    .ToList();
-
-                var combinedSkills = domainSkillNames.Concat(globalSkillNames).ToList();
-
-                return (
-                    string.Join(", ", topRoles.Select(r => r.Title)),
-                    string.Join(", ", combinedSkills)
-                );
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to retrieve reference vocabulary for job posting. Proceeding without it.");
-                return ("", "");
-            }
-        }
-
-        private async Task<string> RetrieveSoftSkillsAsync()
-        {
-            try
-            {
-                var names = await _context.Skills
-                    .Where(s => s.Source == "ONET_Taxonomy")
-                    .OrderBy(s => s.Name)
-                    .Select(s => s.Name)
-                    .ToListAsync();
-                return string.Join(", ", names);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to retrieve soft skills vocabulary. Proceeding without it.");
-                return "";
-            }
-        }
 
         private async Task<JobPostingCleanSignal?> ExtractJobCleanSignalAsync(string rawText)
         {
@@ -521,17 +437,10 @@ namespace ARIS.API.Services
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "JobExtraction.md");
                 var template = await File.ReadAllTextAsync(promptPath);
 
-                var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
-                var softSkills = await RetrieveSoftSkillsAsync();
+                // NuExtract: truncate to ~6000 chars (fits within 2000-token text limit)
+                var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
 
-                userPrompt = template
-                    .Replace("{reference_roles}", refRoles)
-                    .Replace("{reference_skills}", refSkills)
-                    .Replace("{soft_skills}", softSkills)
-                    .Replace("{raw_text}", rawText);
-
-                _logger.LogInformation("Reference Roles Sent (Job): {Roles}", refRoles);
-                _logger.LogInformation("Reference Skills Sent (Job): {Skills}", refSkills);
+                userPrompt = template.Replace("{raw_text}", truncatedText);
             }
             catch (Exception ex)
             {
@@ -539,111 +448,46 @@ namespace ARIS.API.Services
                 return null;
             }
 
-            string? previousOutput = null;
-            string? validationFailure = null;
-
-            for (int attempt = 1; attempt <= MaxExtractionAttempts; attempt++)
+            try
             {
-                try
+                var messages = new List<ChatMessage> { new(ChatRole.User, userPrompt) };
+                var chatOptions = new ChatOptions { Temperature = 0f };
+                var response = await _extractionClient.GetResponseAsync(messages, chatOptions);
+                var jsonString = response?.Text?.Trim();
+
+                if (string.IsNullOrWhiteSpace(jsonString))
                 {
-                    var messages = BuildJobExtractionMessages(userPrompt, attempt, validationFailure, previousOutput);
-                    
-                    var chatOptions = new ChatOptions 
-                    { 
-                        ResponseFormat = ChatResponseFormat.Json,
-                        Temperature = 0.1f,
-                    };
-                    var response = await _chatClient.GetResponseAsync(messages, chatOptions);
-                    var jsonString = response?.Text?.Trim();
-
-                    if (string.IsNullOrWhiteSpace(jsonString))
-                    {
-                        _logger.LogWarning("LLM returned empty response for job (attempt {Attempt})", attempt);
-                        continue;
-                    }
-
-                    _logger.LogInformation("LLM Response (Job attempt {Attempt}): {Json}", attempt, jsonString);
-
-                    jsonString = UnwrapIfNeeded(jsonString);
-                    jsonString = NormalizeJobFieldNames(jsonString);
-
-                    var signal = JsonSerializer.Deserialize<JobPostingCleanSignal>(jsonString, _jsonOptions);
-                    if (signal == null)
-                    {
-                        _logger.LogWarning("Deserialization returned null for job (attempt {Attempt})", attempt);
-                        previousOutput = jsonString;
-                        validationFailure = "Deserialization produced a null object.";
-                        continue;
-                    }
-
-                    PostProcessJobCleanSignal(signal);
-
-                    var validation = ValidateJobCleanSignal(signal);
-                    if (validation == null)
-                    {
-                        _logger.LogInformation("Job Clean Signal extraction succeeded on attempt {Attempt}", attempt);
-                        return signal;
-                    }
-
-                    _logger.LogWarning("Job Validation failed (attempt {Attempt}): {Reason}", attempt, validation);
-                    previousOutput = jsonString;
-                    validationFailure = validation;
-                }
-                catch (JsonException ex)
-                {
-                    _logger.LogWarning(ex, "Job JSON parsing failed (attempt {Attempt})", attempt);
-                    validationFailure = $"JSON parse error: {ex.Message}";
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "LLM Job extraction failed (attempt {Attempt})", attempt);
+                    _logger.LogWarning("NuExtract returned empty response for job.");
                     return null;
                 }
-            }
 
-            _logger.LogError("Job Clean Signal extraction failed after {MaxAttempts} attempts", MaxExtractionAttempts);
-            return null;
-        }
+                _logger.LogInformation("NuExtract job response: {Json}", jsonString);
 
-        private static List<ChatMessage> BuildJobExtractionMessages(string userPrompt, int attempt, string? validationFailure, string? previousOutput)
-        {
-            var messages = new List<ChatMessage>
-            {
-                new(ChatRole.System, "You are a job-description-to-JSON extraction engine. You MUST output a single JSON object with exactly these 4 top-level keys: \"target_roles\", \"required_skills\", \"responsibilities\", \"minimum_education\". No other keys are allowed. For every skill: \"importance\" must be either \"Essential\" or \"Preferred\" — never null or any other value. \"years_of_experience\" must always be a number — NEVER null, use 0.0 if unknown."),
-                new(ChatRole.User, userPrompt)
-            };
+                jsonString = UnwrapIfNeeded(jsonString);
+                jsonString = NormalizeJobFieldNames(jsonString);
 
-            if (attempt > 1 && validationFailure != null && previousOutput != null)
-            {
-                messages.Add(new ChatMessage(ChatRole.User, BuildJobCorrectionPrompt(validationFailure, previousOutput)));
-            }
-
-            return messages;
-        }
-
-        private static string BuildJobCorrectionPrompt(string validationFailure, string previousOutput)
-        {
-            return $$"""
-                Your previous output failed validation: {{validationFailure}}
-
-                Previous output:
-                {{previousOutput}}
-
-                Please fix the issue and output the corrected JSON using EXACTLY this schema:
-
+                var signal = JsonSerializer.Deserialize<JobPostingCleanSignal>(jsonString, _jsonOptions);
+                if (signal == null)
                 {
-                  "target_roles": [{ "title": "string", "priority": "Primary/Secondary" }],
-                  "required_skills": [{ "name": "string", "importance": "Essential/Preferred", "years_of_experience": 0.0 }],
-                  "responsibilities": ["string"],
-                  "minimum_education": [{ "degree": "string", "required": true/false }]
+                    _logger.LogWarning("Job deserialization returned null.");
+                    return null;
                 }
 
-                Critical field requirements:
-                - required_skills[].importance MUST be "Essential" or "Preferred" — never null, never any other value
-                - required_skills[].years_of_experience MUST be a number — NEVER null, use 0.0 if unknown
-                - required_skills[].name MUST be a concise skill name of 1-5 words — never a full sentence
-                """;
+                PostProcessJobCleanSignal(signal);
+
+                var validation = ValidateJobCleanSignal(signal);
+                if (validation != null)
+                    _logger.LogWarning("Job validation warning: {Reason}", validation);
+
+                return signal;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "NuExtract job extraction failed.");
+                return null;
+            }
         }
+
 
         private static string? ValidateJobCleanSignal(JobPostingCleanSignal signal)
         {

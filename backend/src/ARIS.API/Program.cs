@@ -43,15 +43,16 @@ var ollamaUriString = builder.Configuration["Ollama:Uri"] ?? "http://localhost:1
 var ollamaUri = new Uri(ollamaUriString);
 
 var chatModel = builder.Configuration["Ollama:ChatModel"] ?? "mistral";
+var extractionModel = builder.Configuration["Ollama:ExtractionModel"] ?? "nuextract:latest";
 var embeddingModel = builder.Configuration["Ollama:EmbeddingModel"] ?? "qwen3-embedding:0.6b";
 var numCtx = builder.Configuration.GetValue<int>("Ollama:NumCtx", 4096);
 
-var groundingSkillThreshold = builder.Configuration.GetValue<double>("Grounding:SkillThreshold", 0.10);
-var groundingSoftSkillThreshold = builder.Configuration.GetValue<double>("Grounding:SoftSkillThreshold", 0.35);
+var groundingFirstPassThreshold = builder.Configuration.GetValue<double>("Grounding:FirstPassThreshold", 0.10);
+var groundingSecondPassThreshold = builder.Configuration.GetValue<double>("Grounding:SecondPassThreshold", 0.35);
 
-Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
-    ollamaUriString, chatModel, embeddingModel, numCtx);
-Log.Information("Grounding thresholds — Technical: {TechThreshold}, Soft: {SoftThreshold}", groundingSkillThreshold, groundingSoftSkillThreshold);
+Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Extraction: {ExtractionModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
+    ollamaUriString, chatModel, extractionModel, embeddingModel, numCtx);
+Log.Information("Grounding thresholds — Pass 1: {First}, Pass 2: {Second}", groundingFirstPassThreshold, groundingSecondPassThreshold);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
@@ -67,6 +68,13 @@ builder.Services.AddSingleton<IChatClient>(sp =>
     return new NumCtxChatClient(inner, numCtx);
 });
 
+builder.Services.AddKeyedSingleton<IChatClient>("extraction", (sp, _) =>
+{
+    var inner = new OllamaApiClient(ollamaUri, extractionModel);
+    inner.SetTimeout(TimeSpan.FromHours(1));
+    return inner;
+});
+
 // HttpClient for Clerk Backend API
 builder.Services.AddHttpClient("Clerk", client =>
 {
@@ -80,18 +88,19 @@ builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
     new ARIS.API.Services.ResumeService(
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
-        sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        sp.GetRequiredKeyedService<Microsoft.Extensions.AI.IChatClient>("extraction"),
         sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),
-        groundingSkillThreshold,
-        groundingSoftSkillThreshold));
+        groundingFirstPassThreshold,
+        groundingSecondPassThreshold));
 builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
     new ARIS.API.Services.JobService(
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        sp.GetRequiredKeyedService<Microsoft.Extensions.AI.IChatClient>("extraction"),
         sp.GetRequiredService<ILogger<ARIS.API.Services.JobService>>(),
-        groundingSkillThreshold,
-        groundingSoftSkillThreshold));
+        groundingFirstPassThreshold,
+        groundingSecondPassThreshold));
 builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
