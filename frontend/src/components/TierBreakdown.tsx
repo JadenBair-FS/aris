@@ -1,9 +1,9 @@
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './ui/collapsible';
 import { Badge } from './ui/badge';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CheckCircle2, XCircle, MinusCircle } from 'lucide-react';
 import { useState } from 'react';
 import { SkillBadge } from './SkillBadge';
-import type { SkillGapItem } from '../types/api';
+import type { SkillGapItem, UngroundedSkillComparison } from '../types/api';
 
 const TierSection = ({
     title,
@@ -56,13 +56,19 @@ export function TierBreakdown({
     prerequisiteMetSkills,
     bridgeableSkills,
     hardGaps,
+    ungroundedComparison,
 }: {
     matchingSkills: SkillGapItem[];
     implicitlyDiscoveredSkills: string[];
     prerequisiteMetSkills: SkillGapItem[];
     bridgeableSkills: SkillGapItem[];
     hardGaps: SkillGapItem[];
+    ungroundedComparison?: UngroundedSkillComparison;
 }) {
+    const ungroundedTotal = (ungroundedComparison?.matched.length ?? 0) +
+        (ungroundedComparison?.missingFromResume.length ?? 0) +
+        (ungroundedComparison?.extraInResume.length ?? 0);
+
     return (
         <div className="w-full space-y-2">
             <TierSection
@@ -144,6 +150,48 @@ export function TierBreakdown({
                     </div>
                 ))}
             </TierSection>
+
+            {ungroundedComparison && ungroundedTotal > 0 && (
+                <TierSection
+                    title="Unlisted Skill Comparison"
+                    count={ungroundedTotal}
+                    borderColor="border-slate-300"
+                    emptyLabel="No unlisted skills"
+                >
+                    <p className="text-xs text-slate-400 mb-2">Skills not in the canonical database, compared by name.</p>
+                    <div className="space-y-1">
+                        {ungroundedComparison.matched.map((s, i) => (
+                            <div key={`m-${i}`} className="flex items-center gap-2 py-1 border-b border-slate-50 last:border-0">
+                                <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0" />
+                                <span className="text-sm text-slate-700">{s}</span>
+                            </div>
+                        ))}
+                        {ungroundedComparison.missingFromResume.map((s, i) => (
+                            <div key={`miss-${i}`} className="flex items-center gap-2 py-1 border-b border-slate-50 last:border-0">
+                                <XCircle className="h-3.5 w-3.5 text-red-400 shrink-0" />
+                                <span className="text-sm text-slate-700">{s}</span>
+                            </div>
+                        ))}
+                        {ungroundedComparison.extraInResume.map((s, i) => (
+                            <div key={`extra-${i}`} className="flex items-center gap-2 py-1 border-b border-slate-50 last:border-0">
+                                <MinusCircle className="h-3.5 w-3.5 text-slate-300 shrink-0" />
+                                <span className="text-sm text-slate-500">{s}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex gap-4 mt-2 pt-2 border-t border-slate-50">
+                        <span className="flex items-center gap-1 text-xs text-slate-400">
+                            <CheckCircle2 className="h-3 w-3 text-green-500" /> Matched
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-slate-400">
+                            <XCircle className="h-3 w-3 text-red-400" /> Missing from resume
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-slate-400">
+                            <MinusCircle className="h-3 w-3 text-slate-300" /> Extra (bonus)
+                        </span>
+                    </div>
+                </TierSection>
+            )}
         </div>
     );
 }

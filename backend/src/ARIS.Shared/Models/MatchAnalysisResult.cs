@@ -19,4 +19,5 @@ public class MatchAnalysisResult
     public List<SkillGapItem> PrerequisiteMetSkills { get; set; } = new(); // Tier 3: user has foundation/parent
     public List<SkillGapItem> BridgeableSkills { get; set; } = new();      // Tier 4: reachable via graph bridge
     public List<SkillGapItem> HardGaps { get; set; } = new();              // Tier 5: true gaps (certs, no path)
+    public UngroundedSkillComparison UngroundedComparison { get; set; } = new();
 }

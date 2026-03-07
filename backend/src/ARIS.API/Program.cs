@@ -46,8 +46,11 @@ var chatModel = builder.Configuration["Ollama:ChatModel"] ?? "mistral";
 var embeddingModel = builder.Configuration["Ollama:EmbeddingModel"] ?? "qwen3-embedding:0.6b";
 var numCtx = builder.Configuration.GetValue<int>("Ollama:NumCtx", 4096);
 
+var groundingSkillThreshold = builder.Configuration.GetValue<double>("Grounding:SkillThreshold", 0.10);
+
 Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
     ollamaUriString, chatModel, embeddingModel, numCtx);
+Log.Information("Grounding skill threshold: {Threshold}", groundingSkillThreshold);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
@@ -72,15 +75,26 @@ builder.Services.AddHttpClient("Clerk", client =>
 
 // Domain Services
 builder.Services.AddScoped<ARIS.API.Services.DictionaryService>();
-builder.Services.AddScoped<ARIS.API.Services.ResumeService>();
-builder.Services.AddScoped<ARIS.API.Services.JobService>();
+builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
+    new ARIS.API.Services.ResumeService(
+        sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),
+        groundingSkillThreshold));
+builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
+    new ARIS.API.Services.JobService(
+        sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        sp.GetRequiredService<ILogger<ARIS.API.Services.JobService>>(),
+        groundingSkillThreshold));
 builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
 builder.Services.AddScoped<ARIS.API.Services.PersonalInfoExtractor>();
 builder.Services.AddScoped<ARIS.API.Services.ResumePdfService>();
-builder.Services.AddScoped<ARIS.API.Services.OntologyExpansionService>();
 
 // Auth — Clerk JWT Bearer
 var clerkAuthority = builder.Configuration["Clerk:Authority"]

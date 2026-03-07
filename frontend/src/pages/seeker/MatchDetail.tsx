@@ -116,6 +116,19 @@ function JobPanel({ jobId }: { jobId: string }) {
                                 </div>
                             </div>
                         )}
+                        {signal.ungrounded_skills && signal.ungrounded_skills.length > 0 && (
+                            <div>
+                                <p className="text-xs text-slate-400 mb-1.5">Not in Database</p>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {signal.ungrounded_skills.map(s => (
+                                        <Badge key={s.name} variant="outline" className="text-xs text-slate-500 border-dashed">
+                                            {s.name}
+                                            {s.years_of_experience > 0 && <span className="ml-1 opacity-60">· {s.years_of_experience}yr</span>}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </CardContent>
                 </Card>
             )}
@@ -246,6 +259,7 @@ function AnalysisPanel({
                     prerequisiteMetSkills={analysis.prerequisiteMetSkills}
                     bridgeableSkills={analysis.bridgeableSkills}
                     hardGaps={analysis.hardGaps}
+                    ungroundedComparison={analysis.ungroundedComparison}
                 />
             </div>
 

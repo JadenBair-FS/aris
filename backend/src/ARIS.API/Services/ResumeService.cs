@@ -80,7 +80,7 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
-        private readonly OntologyExpansionService _expansionService;
+        private readonly double _groundingSkillThreshold;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
@@ -92,12 +92,12 @@ namespace ARIS.API.Services
 
         private const int MaxExtractionAttempts = 3;
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, OntologyExpansionService expansionService, ILogger<ResumeService> logger)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double groundingSkillThreshold = 0.10)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
-            _expansionService = expansionService;
+            _groundingSkillThreshold = groundingSkillThreshold;
             _logger = logger;
         }
 
@@ -651,11 +651,13 @@ namespace ARIS.API.Services
                 bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
 
                 int skillOffset = roleTitles.Count;
-                var unknownSkills = new List<(string Name, Vector Embedding)>();
+                var groundedSkills = new List<ResumeSkill>();
+                var ungroundedSkills = new List<ResumeSkill>();
 
                 for (int i = 0; i < skillNames.Count; i++)
                 {
                     var vector = vectors[skillOffset + i];
+                    var originalSkill = signal.Skills[i];
 
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
@@ -666,9 +668,15 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < 0.25)
+                    if (domainMatch != null && domainMatch.Distance < _groundingSkillThreshold)
                     {
-                        signal.Skills[i].Name = domainMatch.Name;
+                        groundedSkills.Add(new ResumeSkill
+                        {
+                            Name = domainMatch.Name,
+                            Category = originalSkill.Category,
+                            Proficiency = originalSkill.Proficiency,
+                            YearsOfExperience = originalSkill.YearsOfExperience
+                        });
                         continue;
                     }
 
@@ -681,20 +689,25 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (generalMatch != null && generalMatch.Distance < 0.25)
+                    if (generalMatch != null && generalMatch.Distance < _groundingSkillThreshold)
                     {
-                        signal.Skills[i].Name = generalMatch.Name;
+                        groundedSkills.Add(new ResumeSkill
+                        {
+                            Name = generalMatch.Name,
+                            Category = originalSkill.Category,
+                            Proficiency = originalSkill.Proficiency,
+                            YearsOfExperience = originalSkill.YearsOfExperience
+                        });
                     }
                     else
                     {
-                        // No acceptable canonical match — keep original LLM text, queue for ontology expansion
-                        unknownSkills.Add((signal.Skills[i].Name, vector));
-                        _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — queued for ontology expansion.",
-                            signal.Skills[i].Name, generalMatch?.Distance ?? 1.0);
+                        _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
+                            originalSkill.Name, generalMatch?.Distance ?? 1.0);
+                        ungroundedSkills.Add(originalSkill);
                     }
                 }
 
-                signal.Skills = signal.Skills
+                signal.Skills = groundedSkills
                     .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
                     .Select(g => new ResumeSkill
                     {
@@ -705,8 +718,19 @@ namespace ARIS.API.Services
                     })
                     .ToList();
 
-                foreach (var (name, vector) in unknownSkills)
-                    await _expansionService.RecordCandidateAsync(name, vector, domainPrefix, isTech, sourceDocId);
+                signal.UngroundedSkills = ungroundedSkills
+                    .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+                    .Select(g => new ResumeSkill
+                    {
+                        Name = g.First().Name,
+                        Category = g.First().Category,
+                        Proficiency = g.First().Proficiency,
+                        YearsOfExperience = g.Sum(s => s.YearsOfExperience)
+                    })
+                    .ToList();
+
+                _logger.LogInformation("Grounding complete: {Grounded} canonical, {Ungrounded} ungrounded.",
+                    signal.Skills.Count, signal.UngroundedSkills.Count);
             }
             catch (Exception ex)
             {

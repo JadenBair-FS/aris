@@ -7,6 +7,12 @@ export interface SkillGapItem {
     bridgeSource: string | null;
 }
 
+export interface UngroundedSkillComparison {
+    matched: string[];
+    missingFromResume: string[];
+    extraInResume: string[];
+}
+
 export interface MatchAnalysisResult {
     jobId: string;
     vectorSimilarity: number;
@@ -16,6 +22,7 @@ export interface MatchAnalysisResult {
     prerequisiteMetSkills: SkillGapItem[];
     bridgeableSkills: SkillGapItem[];
     hardGaps: SkillGapItem[];
+    ungroundedComparison: UngroundedSkillComparison;
 }
 
 export interface MatchSummaryResult {
@@ -69,6 +76,7 @@ export interface ResumeCleanSignal {
     skills: CleanSignalSkill[];
     experience_summary: ExperienceSummaryEntry[];
     education: EducationEntry[];
+    ungrounded_skills: CleanSignalSkill[];
 }
 
 export interface UserProfileDetail {
@@ -102,6 +110,7 @@ export interface JobCleanSignal {
     required_skills: JobRequiredSkill[];
     responsibilities: string[];
     minimum_education: JobEducation[];
+    ungrounded_skills: JobRequiredSkill[];
 }
 
 export interface JobPostingDetail {

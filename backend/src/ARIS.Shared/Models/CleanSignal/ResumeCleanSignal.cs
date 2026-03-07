@@ -17,6 +17,9 @@ namespace ARIS.Shared.Models.CleanSignal
         [JsonPropertyName("education")]
         public List<Education> Education { get; set; } = [];
 
+        [JsonPropertyName("ungrounded_skills")]
+        public List<ResumeSkill> UngroundedSkills { get; set; } = [];
+
         [JsonIgnore]
         public bool HasMeaningfulContent =>
             Skills.Count > 0 && (Roles.Count > 0 || ExperienceSummary.Count > 0);

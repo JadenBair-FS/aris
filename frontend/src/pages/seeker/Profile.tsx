@@ -131,7 +131,7 @@ export default function Profile() {
                 </div>
 
                 {/* Right column: Skills */}
-                {Object.keys(skillsByCategory).length > 0 && (
+                {(Object.keys(skillsByCategory).length > 0 || signal.ungrounded_skills?.length > 0) && (
                     <Card>
                         <CardHeader className="pb-2 pt-4 px-5">
                             <CardTitle className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Skills</CardTitle>
@@ -155,6 +155,24 @@ export default function Profile() {
                                     </div>
                                 </div>
                             ))}
+                            {signal.ungrounded_skills?.length > 0 && (
+                                <div>
+                                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Not in Database</p>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {signal.ungrounded_skills.map((skill, i) => (
+                                            <span
+                                                key={i}
+                                                className="border border-dashed border-slate-300 text-slate-500 rounded-full px-3 py-1 text-sm"
+                                            >
+                                                {skill.name}
+                                                {skill.years_of_experience > 0 && (
+                                                    <span className="text-slate-400 ml-1">· {skill.years_of_experience}yr</span>
+                                                )}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </CardContent>
                     </Card>
                 )}

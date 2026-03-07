@@ -15,6 +15,9 @@ public class JobPostingCleanSignal
 
     [JsonPropertyName("minimum_education")]
     public List<JobEducation> MinimumEducation { get; set; } = [];
+
+    [JsonPropertyName("ungrounded_skills")]
+    public List<JobSkill> UngroundedSkills { get; set; } = [];
 }
 
 public class JobRole

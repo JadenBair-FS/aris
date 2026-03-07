@@ -6,6 +6,7 @@ using Microsoft.Extensions.AI;
 using Pgvector.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ARIS.API.Services;
 
@@ -219,6 +220,29 @@ public class MatchService
             1.0);
         var arisScore = 0.40 * similarity + 0.60 * graphCoverageScore;
 
+        static string Normalize(string s) =>
+            Regex.Replace(s.ToLowerInvariant().Trim(), @"\.(js|ts|py|net|rb|go)$", "");
+
+        var resumeUngrounded = user.CleanSignal?.UngroundedSkills ?? [];
+        var jobUngrounded    = job.CleanSignal?.UngroundedSkills ?? [];
+
+        var resumeMap = resumeUngrounded
+            .GroupBy(s => Normalize(s.Name))
+            .ToDictionary(g => g.Key, g => g.First().Name);
+        var jobMap = jobUngrounded
+            .GroupBy(s => Normalize(s.Name))
+            .ToDictionary(g => g.Key, g => g.First().Name);
+
+        var ungroundedComparison = new UngroundedSkillComparison
+        {
+            Matched           = jobMap.Keys.Intersect(resumeMap.Keys)
+                                      .Select(k => jobMap[k]).Order().ToList(),
+            MissingFromResume = jobMap.Keys.Except(resumeMap.Keys)
+                                      .Select(k => jobMap[k]).Order().ToList(),
+            ExtraInResume     = resumeMap.Keys.Except(jobMap.Keys)
+                                      .Select(k => resumeMap[k]).Order().ToList(),
+        };
+
         return new MatchAnalysisResult
         {
             JobId = job.Id,
@@ -228,7 +252,8 @@ public class MatchService
             ImplicitlyDiscoveredSkills = implicitlyMatched,
             BridgeableSkills = bridgeable,
             PrerequisiteMetSkills = prerequisiteMet,
-            HardGaps = hardGaps
+            HardGaps = hardGaps,
+            UngroundedComparison = ungroundedComparison
         };
     }
 
