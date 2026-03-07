@@ -327,35 +327,8 @@ namespace ARIS.API.Services
                     var originalSkill = signal.RequiredSkills[i];
                     bool isSoft = string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase);
 
-                    if (isSoft)
-                    {
-                        // Soft skills: ground against is_tech=false skills at a looser threshold
-                        var softMatch = await _context.Skills
-                            .Where(s => !s.IsTech && s.Embedding != null)
-                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                            .OrderBy(x => x.Distance)
-                            .FirstOrDefaultAsync();
-
-                        if (softMatch != null && softMatch.Distance < _groundingSoftSkillThreshold)
-                        {
-                            groundedSkills.Add(new JobSkill
-                            {
-                                Name = softMatch.Name,
-                                Category = originalSkill.Category,
-                                Importance = originalSkill.Importance,
-                                YearsOfExperience = originalSkill.YearsOfExperience
-                            });
-                        }
-                        else
-                        {
-                            _logger.LogInformation("Soft skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
-                                originalSkill.Name, softMatch?.Distance ?? 1.0);
-                            ungroundedSkills.Add(originalSkill);
-                        }
-                        continue;
-                    }
-
-                    // Technical skills: try domain match first, then general at tight threshold
+                    // Always try the technical (domain + general) bucket first at tight threshold.
+                    // This protects against LLM mis-labeling a technical skill as "Soft".
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -395,13 +368,36 @@ namespace ARIS.API.Services
                             Importance = originalSkill.Importance,
                             YearsOfExperience = originalSkill.YearsOfExperience
                         });
+                        continue;
                     }
-                    else
+
+                    // Tech bucket failed — if the skill is labeled Soft, try the soft bucket at the looser threshold
+                    if (isSoft)
                     {
-                        _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
-                            originalSkill.Name, generalMatch?.Distance ?? 1.0);
-                        ungroundedSkills.Add(originalSkill);
+                        var softMatch = await _context.Skills
+                            .Where(s => !s.IsTech && s.Embedding != null)
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (softMatch != null && softMatch.Distance < _groundingSoftSkillThreshold)
+                        {
+                            _logger.LogInformation("Soft skill '{Skill}' grounded via soft bucket: '{Canonical}' ({Distance:F3}).",
+                                originalSkill.Name, softMatch.Name, softMatch.Distance);
+                            groundedSkills.Add(new JobSkill
+                            {
+                                Name = softMatch.Name,
+                                Category = originalSkill.Category,
+                                Importance = originalSkill.Importance,
+                                YearsOfExperience = originalSkill.YearsOfExperience
+                            });
+                            continue;
+                        }
                     }
+
+                    _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
+                        originalSkill.Name, generalMatch?.Distance ?? 1.0);
+                    ungroundedSkills.Add(originalSkill);
                 }
 
                 signal.RequiredSkills = groundedSkills
