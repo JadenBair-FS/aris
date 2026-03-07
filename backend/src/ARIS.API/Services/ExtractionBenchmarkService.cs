@@ -78,13 +78,6 @@ public class ExtractionBenchmarkService
         {
             ResponseFormat = ChatResponseFormat.Json,
             Temperature = 0.1f,
-            AdditionalProperties = new AdditionalPropertiesDictionary
-            {
-                ["stream"] = false,
-                ["num_ctx"] = 8192,
-                ["num_gpu"] = 35,
-                ["num_thread"] = 8,
-            }
         };
 
         foreach (var modelName in request.Models)

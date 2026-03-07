@@ -163,21 +163,40 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
             return;
         }
 
-        const string query = @"
-            MERGE (a:Skill {name: $skillA})
-            ON CREATE SET a.source = $source, a.created_at = datetime()
-            ON MATCH SET a.source = coalesce(a.source, $source)
-            WITH a
-            MERGE (b:Skill {name: $skillB})
-            ON CREATE SET b.source = $source, b.created_at = datetime()
-            ON MATCH SET b.source = coalesce(b.source, $source)
-            MERGE (a)-[rel:BRIDGE_TO]-(b)
-            ON CREATE SET rel.confidence = 0.9, rel.source = $source, rel.created_at = datetime()
-            ON MATCH SET rel.source = coalesce(rel.source, $source)
-        ";
-
-        await using var session = _driver.AsyncSession();
-        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { skillA, skillB, source }));
+        // ONET_Category bridges: create nodes if they don't exist (deterministic data)
+        // OntologyEnrichment / Roadmap.sh bridges: only link existing nodes —
+        // hallucinated names from the LLM must not create orphaned Skill nodes.
+        if (source == "ONET_Category")
+        {
+            const string createQuery = @"
+                MERGE (a:Skill {name: $skillA})
+                ON CREATE SET a.source = $source, a.created_at = datetime()
+                ON MATCH SET a.source = coalesce(a.source, $source)
+                WITH a
+                MERGE (b:Skill {name: $skillB})
+                ON CREATE SET b.source = $source, b.created_at = datetime()
+                ON MATCH SET b.source = coalesce(b.source, $source)
+                MERGE (a)-[rel:BRIDGE_TO]-(b)
+                ON CREATE SET rel.confidence = 0.9, rel.source = $source, rel.created_at = datetime()
+                ON MATCH SET rel.source = coalesce(rel.source, $source)
+            ";
+            await using var session = _driver.AsyncSession();
+            await session.ExecuteWriteAsync(tx => tx.RunAsync(createQuery, new { skillA, skillB, source }));
+        }
+        else
+        {
+            // Safe path: only create the edge if BOTH nodes already exist in the graph.
+            // If either name was hallucinated by the LLM it simply produces no edge.
+            const string matchQuery = @"
+                MATCH (a:Skill {name: $skillA})
+                MATCH (b:Skill {name: $skillB})
+                MERGE (a)-[rel:BRIDGE_TO]-(b)
+                ON CREATE SET rel.confidence = 0.9, rel.source = $source, rel.created_at = datetime()
+                ON MATCH SET rel.source = coalesce(rel.source, $source)
+            ";
+            await using var session = _driver.AsyncSession();
+            await session.ExecuteWriteAsync(tx => tx.RunAsync(matchQuery, new { skillA, skillB, source }));
+        }
     }
 
     /// <summary>

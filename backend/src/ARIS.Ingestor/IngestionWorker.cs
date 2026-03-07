@@ -25,13 +25,138 @@ public class IngestionWorker : BackgroundService
     private static readonly HashSet<string> ValidRoadmapNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic", "skill" };
 
-    // Pedagogical label prefixes/patterns to skip — these are instructional headings,
-    // not skill names. They never appear in resumes or job descriptions.
+    // Pedagogical label prefixes — instructional headings that never appear on resumes.
     private static readonly string[] PedagogicalPrefixes =
     [
-        "learn ", "introduction to", "what is", "why ", "how to", "overview of",
-        "getting started", "basics of", "fundamentals of", "understanding ",
-        "working with ", "intro to"
+        "learn ", "introduction to", "what is", "what are", "why ", "how to",
+        "overview of", "getting started", "basics of", "fundamentals of",
+        "understanding ", "working with ", "intro to", "history of",
+        "types of ", "when to use", "why use"
+    ];
+
+    // Exact-match syntax noise — language keywords, primitive types, control flow
+    // constructs, and operator tokens that are not transferable skills.
+    private static readonly HashSet<string> SyntaxNoiseExact =
+        new(StringComparer.OrdinalIgnoreCase)
+    {
+        // Control flow keywords
+        "for", "while", "do...while", "if", "if...else", "switch", "Switch",
+        "break", "continue", "break / continue", "throw", "throw statement",
+        "try/catch/finally", "redo", "next", "unless", "case", "until",
+
+        // Variable declaration keywords
+        "var", "let", "const",
+
+        // Primitive type keywords
+        "null", "nil", "undefined", "boolean", "number", "string", "bigint",
+        "integer", "float", "symbol", "Symbol", "Object", "Block",
+        "Function", "Global",
+
+        // Language construct categories (too generic)
+        "Variables", "Functions", "Operators", "Control Flow Statements",
+        "Built-in Types", "Built-in Functions", "Conditional Statements",
+        "Loops", "Loops & Enumerations", "Conditionals", "Exceptions",
+        "Methods", "Classes", "Inheritance", "Recursion", "Data Types",
+        "Type Casting", "Arithmetic",
+
+        // Collection type names (the type, not the skill of using it)
+        "Lists", "Tuples", "Sets", "Dictionaries", "Arrays", "Collections",
+        "Lambdas", "Iterators", "Generators",
+
+        // Asset/file-type nouns — not skills
+        "Images", "Fonts", "Other File Types", "Icons", "Sounds", "Assets",
+
+        // ECMAScript spec-internal algorithm names
+        "SameValue", "SameValueZero", "isLooselyEqual", "isStrictlyEqual",
+
+        // Generic networking constructs (protocol descriptions, not tool skills)
+        "HTTP", "HTTPS", "OSI Model", "White / Grey Listing", "Domain Keys",
+        "Forward Proxy", "Reverse Proxy", "Caching Server",
+
+        // Abstract design-pattern category names
+        "Availability", "Data Management", "Design and Implementation",
+        "Management and Monitoring",
+
+        // CS theory fragments not specific to any language
+        "HashMaps", "Binary Search Tree", "Arrays and Linked Lists",
+        "Heaps Stacks and Queues", "Sorting Algorithms",
+
+        // Flutter/Dart internal framework primitives
+        "ChangeNotifier", "ValueNotifier", "Animation Controller",
+        "Animated Builder", "Animated Widget", "Core Libraries",
+        "flutter pub / dart pub", "JSON Serialize / Deserialize",
+        "Isolates", "Futures", "Async / Await", "3 Trees",
+        "Render Objects", "Curved Animation", "Hero", "Opacity",
+        "Flutter Inspector", "Flutter Outline", "Memory Allocation",
+
+        // Ruby syntax fragments
+        "Defining methods", "Method Parameters", "Scope", "Chaining Methods",
+        "Defining Classes", "Instance variables", "Attributes accessors",
+        "Method Lookup",
+
+        // JavaScript context sub-nodes
+        "in a method", "in a function", "using it alone",
+        "in event handlers", "in arrow functions",
+
+        // Python/generic fragments
+        "Basic Syntax", "Variables and Data Types", "Encapsulation",
+        "File Handling", "Variable Declarations", "Variable Naming Rules",
+        "GIL", "Builtin", "Custom", "Asynchrony",
+
+        // Storage / duplicate generic headings
+        "Storage", "Deployment", "Logging",
+
+        // Cloud design pattern categories (too abstract)
+        "Cloud Specific Tools",
+    };
+
+    // Regex patterns for noise that cannot be caught by exact match.
+    // Evaluated against the lowercased label.
+    private static readonly (System.Text.RegularExpressions.Regex Pattern, string Reason)[] NoisePatterns =
+    [
+        // Bare lowercase single word = language keyword (e.g. "for", "nil", "string")
+        (new System.Text.RegularExpressions.Regex(@"^[a-z][a-z0-9]*$"),
+            "bare lowercase keyword"),
+
+        // Widget subcategory: "Stateless Widgets", "Material Widgets", etc.
+        (new System.Text.RegularExpressions.Regex(@"^(stateless|stateful|responsive|inherited|styled|material|cupertino|adaptive)\s+(widget|component)s?$"),
+            "widget subcategory"),
+
+        // Animation internal API class: "Animation Controller", "Animated Builder"
+        (new System.Text.RegularExpressions.Regex(@"^(animation|animated)\s+\w+"),
+            "animation internal"),
+
+        // Gerund phrase = implementation sub-step, not a skill
+        (new System.Text.RegularExpressions.Regex(@"^(defining|handling|chaining|creating|building|implementing|setting up|configuring|managing|running|deploying|using)\s"),
+            "gerund fragment"),
+
+        // "in a X" / "using it X" context sub-nodes
+        (new System.Text.RegularExpressions.Regex(@"^(in a |using it |in event )"),
+            "context sub-node"),
+
+        // Config/artifact file names: pyproject.toml, Dockerfile.yaml, etc.
+        (new System.Text.RegularExpressions.Regex(@"\.(toml|cfg|ini|yaml|yml|json|xml|lock)$"),
+            "config file name"),
+
+        // Contains a question mark = roadmap heading
+        (new System.Text.RegularExpressions.Regex(@"\?"),
+            "question heading"),
+
+        // "Debugging X" sub-activities (keep bare "Debugging" which is a real skill)
+        (new System.Text.RegularExpressions.Regex(@"^debugging (issues|memory leaks|performance|errors|crashes)$"),
+            "debugging sub-activity"),
+
+        // Loop/iteration syntax: "for...in loop", "for...of loop"
+        (new System.Text.RegularExpressions.Regex(@"^(for\.\.\.|do\.\.\.)"),
+            "loop syntax"),
+
+        // Operator-level ECMAScript: "== operator", "=== operator"
+        (new System.Text.RegularExpressions.Regex(@"^[=!<>]{1,3}$"),
+            "operator token"),
+
+        // Variable/Method/Instance sub-property fragments
+        (new System.Text.RegularExpressions.Regex(@"^(instance|class|method|object)\s+(variables?|parameters?|accessors?|attributes?|lookup)$"),
+            "OOP sub-property"),
     ];
 
     private static readonly string[] RoleRoadmapSlugs =
@@ -417,9 +542,15 @@ public class IngestionWorker : BackgroundService
             var label = node.Data?.Label?.Trim();
             if (string.IsNullOrWhiteSpace(label) || node.Id == null) continue;
 
-            // Skip pedagogical headings — they are instructional labels, not skill names
+            // Skip pedagogical headings
             var labelLower = label.ToLowerInvariant();
             if (PedagogicalPrefixes.Any(p => labelLower.StartsWith(p))) continue;
+
+            // Skip exact-match syntax noise and concept fragments
+            if (SyntaxNoiseExact.Contains(label)) continue;
+
+            // Skip regex-matched noise patterns
+            if (NoisePatterns.Any(np => np.Pattern.IsMatch(labelLower))) continue;
 
             var canon = await DeduplicateOrCreateSkillAsync(
                 dbContext, neo4j, label, "Roadmap.sh", isTech: true, ct);
@@ -532,7 +663,8 @@ public class IngestionWorker : BackgroundService
         {
             canonicalName = exactMatch.Name;
 
-            if (isTech && !exactMatch.IsTech && source == "Roadmap.sh")
+            if (isTech && !exactMatch.IsTech && source == "Roadmap.sh"
+                && exactMatch.Source != "ONET_Taxonomy")
             {
                 _logger.LogInformation("Upgrading '{Skill}' to is_tech=true (Roadmap.sh)", canonicalName);
                 exactMatch.IsTech = true;

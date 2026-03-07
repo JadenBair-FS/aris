@@ -64,12 +64,6 @@ public class OntologyEnrichmentService
             {
                 ResponseFormat = ChatResponseFormat.Json,
                 Temperature = 0.1f,
-                AdditionalProperties = new AdditionalPropertiesDictionary
-                {
-                    ["num_ctx"] = 8192,
-                    ["num_gpu"] = 35,
-                    ["num_thread"] = 8
-                }
             };
 
             using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
@@ -93,7 +87,6 @@ public class OntologyEnrichmentService
             using var doc = JsonDocument.Parse(text);
             var result = new List<BridgePair>();
 
-            // 1. Try specifically for the "bridges" key first
             if (doc.RootElement.ValueKind == JsonValueKind.Object && doc.RootElement.TryGetProperty("bridges", out var bridgesProp))
             {
                 if (bridgesProp.ValueKind == JsonValueKind.Array)
@@ -107,8 +100,7 @@ public class OntologyEnrichmentService
                     return result;
                 }
             }
-            
-            // 2. Fallback to direct array
+
             if (doc.RootElement.ValueKind == JsonValueKind.Array)
             {
                 foreach (var item in doc.RootElement.EnumerateArray())
@@ -230,12 +222,6 @@ public class OntologyEnrichmentService
             {
                 ResponseFormat = ChatResponseFormat.Json,
                 Temperature = 0.1f,
-                AdditionalProperties = new AdditionalPropertiesDictionary
-                {
-                    ["num_ctx"] = 8192,
-                    ["num_gpu"] = 35,
-                    ["num_thread"] = 8
-                }
             };
 
             using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
@@ -259,7 +245,7 @@ public class OntologyEnrichmentService
             using var doc = JsonDocument.Parse(text);
             var result = new List<DependencyPair>();
 
-            // 1. Try specifically for the "dependencies" key first
+   
             if (doc.RootElement.ValueKind == JsonValueKind.Object && doc.RootElement.TryGetProperty("dependencies", out var depsProp))
             {
                 if (depsProp.ValueKind == JsonValueKind.Array)

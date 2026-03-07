@@ -9,6 +9,7 @@ using Microsoft.Extensions.AI;
 using OllamaSharp;
 using ElBruno.OllamaSharp.Extensions;
 using Npgsql;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 
@@ -44,7 +45,13 @@ builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(dataSource, o => o.UseVector()));
 
 builder.Services.AddHttpClient<OnetService>();
-builder.Services.AddHttpClient<RoadmapService>();
+builder.Services.AddHttpClient<RoadmapService>()
+    .AddTypedClient((httpClient, sp) =>
+    {
+        var config = sp.GetRequiredService<IConfiguration>();
+        var logger = sp.GetRequiredService<ILoggerFactory>().CreateLogger<RoadmapService>();
+        return new RoadmapService(httpClient, logger, config);
+    });
 builder.Services.AddSingleton<Neo4jIngestionService>();
 
 // AI - MEAI with Ollama

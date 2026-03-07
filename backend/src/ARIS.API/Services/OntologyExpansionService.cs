@@ -225,11 +225,6 @@ public class OntologyExpansionService
             {
                 ResponseFormat = ChatResponseFormat.Json,
                 Temperature = 0.1f,
-                AdditionalProperties = new AdditionalPropertiesDictionary
-                {
-                    ["stream"] = false,
-                    ["num_ctx"] = 2048,
-                }
             };
 
             var response = await _chatClient.GetResponseAsync(

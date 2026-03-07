@@ -314,8 +314,7 @@ public class MatchService
         string summary;
         try
         {
-            var summaryOptions = new ChatOptions { AdditionalProperties = new() { ["num_ctx"] = 2048, ["num_gpu"] = 35 } };
-            var response = await _chatClient.GetResponseAsync(sb.ToString(), summaryOptions);
+            var response = await _chatClient.GetResponseAsync(sb.ToString());
             summary = response?.Text?.Trim() ?? "Summary unavailable.";
         }
         catch (Exception ex)
@@ -398,8 +397,7 @@ public class MatchService
         string fullResponse;
         try
         {
-            var recruiterOptions = new ChatOptions { AdditionalProperties = new() { ["num_ctx"] = 2048, ["num_gpu"] = 35 } };
-            var response = await _chatClient.GetResponseAsync(prompt, recruiterOptions);
+            var response = await _chatClient.GetResponseAsync(prompt);
             fullResponse = response?.Text?.Trim() ?? "Summary unavailable.";
         }
         catch (Exception ex)
