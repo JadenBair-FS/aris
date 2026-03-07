@@ -453,7 +453,7 @@ namespace ARIS.API.Services
 
             try
             {
-                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false };
+                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false, format = "json" };
                 using var httpResponse = await _extractionHttp.PostAsJsonAsync(_ollamaGenerateUrl, requestBody);
                 httpResponse.EnsureSuccessStatusCode();
                 var result = await httpResponse.Content.ReadFromJsonAsync<JsonElement>();
