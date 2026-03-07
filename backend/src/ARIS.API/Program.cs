@@ -68,12 +68,7 @@ builder.Services.AddSingleton<IChatClient>(sp =>
     return new NumCtxChatClient(inner, numCtx);
 });
 
-builder.Services.AddKeyedSingleton<IChatClient>("extraction", (sp, _) =>
-{
-    var inner = new OllamaApiClient(ollamaUri, extractionModel);
-    inner.SetTimeout(TimeSpan.FromHours(1));
-    return inner;
-});
+var ollamaGenerateUrl = $"{ollamaUriString.TrimEnd('/')}/api/generate";
 
 // HttpClient for Clerk Backend API
 builder.Services.AddHttpClient("Clerk", client =>
@@ -88,7 +83,9 @@ builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
     new ARIS.API.Services.ResumeService(
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
-        sp.GetRequiredKeyedService<Microsoft.Extensions.AI.IChatClient>("extraction"),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        ollamaGenerateUrl,
+        extractionModel,
         sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),
         groundingFirstPassThreshold,
         groundingSecondPassThreshold));
@@ -97,7 +94,8 @@ builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
-        sp.GetRequiredKeyedService<Microsoft.Extensions.AI.IChatClient>("extraction"),
+        ollamaGenerateUrl,
+        extractionModel,
         sp.GetRequiredService<ILogger<ARIS.API.Services.JobService>>(),
         groundingFirstPassThreshold,
         groundingSecondPassThreshold));

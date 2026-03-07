@@ -5,6 +5,7 @@ using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -80,9 +81,13 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
+        private readonly string _ollamaGenerateUrl;
+        private readonly string _extractionModel;
         private readonly double _firstPassThreshold;
         private readonly double _secondPassThreshold;
         private readonly ILogger<ResumeService> _logger;
+
+        private static readonly HttpClient _http = new() { Timeout = TimeSpan.FromHours(1) };
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
         {
@@ -91,11 +96,13 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
+            _ollamaGenerateUrl = ollamaGenerateUrl;
+            _extractionModel = extractionModel;
             _firstPassThreshold = firstPassThreshold;
             _secondPassThreshold = secondPassThreshold;
             _logger = logger;
@@ -220,10 +227,11 @@ namespace ARIS.API.Services
 
             try
             {
-                var messages = BuildExtractionMessages(userPrompt);
-                var chatOptions = new ChatOptions { Temperature = 0f };
-                var response = await _chatClient.GetResponseAsync(messages, chatOptions);
-                var jsonString = response?.Text?.Trim();
+                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false };
+                using var httpResponse = await _http.PostAsJsonAsync(_ollamaGenerateUrl, requestBody);
+                httpResponse.EnsureSuccessStatusCode();
+                var result = await httpResponse.Content.ReadFromJsonAsync<JsonElement>();
+                var jsonString = result.GetProperty("response").GetString()?.Trim();
 
                 if (string.IsNullOrWhiteSpace(jsonString))
                 {
@@ -258,12 +266,6 @@ namespace ARIS.API.Services
             }
         }
 
-        private static List<ChatMessage> BuildExtractionMessages(string userPrompt)
-        {
-            // NuExtract: no system message — the Template/Example/Text format in the user message
-            // is the full instruction the model needs.
-            return [new(ChatRole.User, userPrompt)];
-        }
 
 
         private static string? ValidateCleanSignal(ResumeCleanSignal signal)

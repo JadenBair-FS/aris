@@ -4,6 +4,7 @@ using ARIS.Shared.Helpers;
 using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.Extensions.AI;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -18,10 +19,13 @@ namespace ARIS.API.Services
         private readonly ArisDbContext _context;
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
-        private readonly IChatClient _extractionClient;
-        private readonly double _groundingSkillThreshold;
-        private readonly double _groundingSoftSkillThreshold;
+        private readonly string _ollamaGenerateUrl;
+        private readonly string _extractionModel;
+        private readonly double _firstPassThreshold;
+        private readonly double _secondPassThreshold;
         private readonly ILogger<JobService> _logger;
+
+        private static readonly HttpClient _extractionHttp = new() { Timeout = TimeSpan.FromHours(1) };
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
         {
@@ -30,14 +34,15 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, IChatClient extractionClient, ILogger<JobService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
+        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<JobService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
-            _extractionClient = extractionClient;
-            _groundingSkillThreshold = groundingSkillThreshold;
-            _groundingSoftSkillThreshold = groundingSoftSkillThreshold;
+            _ollamaGenerateUrl = ollamaGenerateUrl;
+            _extractionModel = extractionModel;
+            _firstPassThreshold = firstPassThreshold;
+            _secondPassThreshold = secondPassThreshold;
             _logger = logger;
         }
 
@@ -326,7 +331,7 @@ namespace ARIS.API.Services
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.RequiredSkills[i];
 
-                    // Pass 1: tight match — domain-specific skills first, then general, at 0.10
+                    // Pass 1: tight match — domain-specific skills first, then general
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -336,7 +341,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (domainMatch != null && domainMatch.Distance < _groundingSkillThreshold)
+                    if (domainMatch != null && domainMatch.Distance < _firstPassThreshold)
                     {
                         groundedSkills.Add(new JobSkill
                         {
@@ -357,7 +362,7 @@ namespace ARIS.API.Services
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (generalMatch != null && generalMatch.Distance < _groundingSkillThreshold)
+                    if (generalMatch != null && generalMatch.Distance < _firstPassThreshold)
                     {
                         groundedSkills.Add(new JobSkill
                         {
@@ -369,22 +374,20 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: fuzzy match — search only non-tech skills at a looser threshold.
-                    // Non-tech bucket excludes Roadmap.sh, so technical near-matches like
-                    // "React Hooks" → "React" cannot occur here. Only O*NET soft/domain skills.
-                    var fuzzyMatch = await _context.Skills
-                        .Where(s => !s.IsTech && s.Embedding != null)
+                    // Pass 2: wider search across all skills at the second pass threshold
+                    var secondPassMatch = await _context.Skills
+                        .Where(s => s.Embedding != null)
                         .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
 
-                    if (fuzzyMatch != null && fuzzyMatch.Distance < _groundingSoftSkillThreshold)
+                    if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                     {
-                        _logger.LogInformation("Skill '{Skill}' grounded via fuzzy pass: '{Canonical}' ({Distance:F3}).",
-                            originalSkill.Name, fuzzyMatch.Name, fuzzyMatch.Distance);
+                        _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                            originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
                         groundedSkills.Add(new JobSkill
                         {
-                            Name = fuzzyMatch.Name,
+                            Name = secondPassMatch.Name,
                             Category = originalSkill.Category,
                             Importance = originalSkill.Importance,
                             YearsOfExperience = originalSkill.YearsOfExperience
@@ -392,8 +395,8 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    _logger.LogInformation("Skill '{Skill}' ungrounded — tight best: {TightDist:F3}, fuzzy best: {FuzzyDist:F3}.",
-                        originalSkill.Name, generalMatch?.Distance ?? 1.0, fuzzyMatch?.Distance ?? 1.0);
+                    _logger.LogInformation("Skill '{Skill}' not on graph — pass 1 best: {P1:F3}, pass 2 best: {P2:F3}.",
+                        originalSkill.Name, generalMatch?.Distance ?? 1.0, secondPassMatch?.Distance ?? 1.0);
                     ungroundedSkills.Add(originalSkill);
                 }
 
@@ -450,10 +453,11 @@ namespace ARIS.API.Services
 
             try
             {
-                var messages = new List<ChatMessage> { new(ChatRole.User, userPrompt) };
-                var chatOptions = new ChatOptions { Temperature = 0f };
-                var response = await _extractionClient.GetResponseAsync(messages, chatOptions);
-                var jsonString = response?.Text?.Trim();
+                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false };
+                using var httpResponse = await _extractionHttp.PostAsJsonAsync(_ollamaGenerateUrl, requestBody);
+                httpResponse.EnsureSuccessStatusCode();
+                var result = await httpResponse.Content.ReadFromJsonAsync<JsonElement>();
+                var jsonString = result.GetProperty("response").GetString()?.Trim();
 
                 if (string.IsNullOrWhiteSpace(jsonString))
                 {
