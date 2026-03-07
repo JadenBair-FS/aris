@@ -21,261 +21,14 @@ public class IngestionWorker : BackgroundService
     private readonly IHostApplicationLifetime _hostApplicationLifetime;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingService;
 
-// Valid node types in Roadmap.sh JSON that represent learnable skills
+    // Structural node types in Roadmap.sh JSON — only these are candidates for skill extraction.
+    // Layout nodes (vertical, section, button, paragraph, etc.) are always skipped.
     private static readonly HashSet<string> ValidRoadmapNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic", "skill" };
 
-    // Pedagogical label prefixes — instructional headings that never appear on resumes.
-    private static readonly string[] PedagogicalPrefixes =
-    [
-        "learn ", "introduction to", "what is", "what are", "why ", "how to",
-        "overview of", "getting started", "basics of", "fundamentals of",
-        "understanding ", "working with ", "intro to", "history of",
-        "types of ", "when to use", "why use",
-        // Navigation / advice / imperative headings
-        "pick a", "visit ", "click ", "explore ", "check ", "gain ",
-        "follow ", "find ", "see the", "at this point", "you may", "you should",
-        "you need", "continue learning",
-        // Roadmap step/phase/checkpoint labels
-        "step ", "phase ", "part ", "checkpoint ",
-        // "for X" language construct headings (for loop, for range, for android)
-        "for ",
-        // Advanced/General/Basic section headings
-        "advanced ", "general ", "basic ",
-        // "Understand X" instructional headings (understand is not caught by "understanding ")
-        "understand ",
-        // Motivational/imperative UX copy — not skills
-        "be ", "make ", "ways of", "clear ", "create a", "add a", "set up a",
-    ];
-
-    // Exact-match syntax noise — language keywords, primitive types, control flow
-    // constructs, and operator tokens that are not transferable skills.
-    private static readonly HashSet<string> SyntaxNoiseExact =
-        new(StringComparer.OrdinalIgnoreCase)
-    {
-        // Control flow keywords
-        "for", "while", "do...while", "if", "if...else", "switch", "Switch",
-        "break", "continue", "break / continue", "throw", "throw statement",
-        "try/catch/finally", "redo", "next", "unless", "case", "until",
-
-        // Variable declaration keywords
-        "var", "let", "const",
-
-        // Primitive type keywords
-        "null", "nil", "undefined", "boolean", "number", "string", "bigint",
-        "integer", "float", "symbol", "Symbol", "Object", "Block",
-        "Function", "Global",
-
-        // Language construct categories (too generic)
-        "Variables", "Functions", "Operators", "Control Flow Statements",
-        "Built-in Types", "Built-in Functions", "Conditional Statements",
-        "Loops", "Loops & Enumerations", "Conditionals", "Exceptions",
-        "Methods", "Classes", "Inheritance", "Recursion", "Data Types",
-        "Type Casting", "Arithmetic",
-
-        // Collection type names (the type, not the skill of using it)
-        "Lists", "Tuples", "Sets", "Dictionaries", "Arrays", "Collections",
-        "Lambdas", "Iterators", "Generators",
-
-        // Asset/file-type nouns — not skills
-        "Images", "Fonts", "Other File Types", "Icons", "Sounds", "Assets",
-
-        // ECMAScript spec-internal algorithm names
-        "SameValue", "SameValueZero", "isLooselyEqual", "isStrictlyEqual",
-
-        // Generic networking constructs (protocol descriptions, not tool skills)
-        "HTTP", "HTTPS", "OSI Model", "White / Grey Listing", "Domain Keys",
-        "Forward Proxy", "Reverse Proxy", "Caching Server",
-
-        // Abstract design-pattern category names
-        "Availability", "Data Management", "Design and Implementation",
-        "Management and Monitoring",
-
-        // CS theory fragments not specific to any language
-        "HashMaps", "Binary Search Tree", "Arrays and Linked Lists",
-        "Heaps Stacks and Queues", "Sorting Algorithms",
-
-        // Flutter/Dart internal framework primitives
-        "ChangeNotifier", "ValueNotifier", "Animation Controller",
-        "Animated Builder", "Animated Widget", "Core Libraries",
-        "flutter pub / dart pub", "JSON Serialize / Deserialize",
-        "Isolates", "Futures", "Async / Await", "3 Trees",
-        "Render Objects", "Curved Animation", "Hero", "Opacity",
-        "Flutter Inspector", "Flutter Outline", "Memory Allocation",
-
-        // Ruby syntax fragments
-        "Defining methods", "Method Parameters", "Scope", "Chaining Methods",
-        "Defining Classes", "Instance variables", "Attributes accessors",
-        "Method Lookup",
-
-        // JavaScript context sub-nodes
-        "in a method", "in a function", "using it alone",
-        "in event handlers", "in arrow functions",
-
-        // Python/generic fragments
-        "Basic Syntax", "Variables and Data Types", "Encapsulation",
-        "File Handling", "Variable Declarations", "Variable Naming Rules",
-        "GIL", "Builtin", "Custom", "Asynchrony",
-
-        // Storage / duplicate generic headings
-        "Storage", "Deployment", "Logging",
-
-        // Cloud design pattern categories (too abstract)
-        "Cloud Specific Tools",
-
-        // Generic game-dev dimension descriptors — not standalone skills
-        "2D", "3D",
-
-        // Generic roadmap section headings
-        "Introduction", "Overview", "Basics", "Fundamentals", "Core Concepts",
-        "Advanced Topics", "Skills", "Applications", "Scripting", "Testing",
-        "Security", "Agents", "Realtime", "Streaming", "Telemetry",
-        "Observability", "Provisioning", "Containerization", "Scheduling",
-        "Networking", "Authentication", "Authorization",
-
-        // Generic container/infrastructure nouns (too broad as standalone skills)
-        "Containers", "Volumes", "Networks", "Databases", "Pods", "Images",
-        "Nodes", "Services", "Workloads", "Deployments", "Endpoints",
-
-        // Roadmap website UI nodes
-        "roadmap.sh", "Related Roadmaps", "Skills",
-
-        // Generic process/practice category labels
-        "Package Managers", "Programming Languages", "Application Architecture",
-        "Command Line Utilities", "Debuggers", "Terminal Knowledge",
-        "Text Manipulation", "Process Monitoring", "Performance Monitoring",
-        "Resource Management", "Secret Management",
-    };
-
-    // Regex patterns for noise that cannot be caught by exact match.
-    // Evaluated against the lowercased label.
-    private static readonly (System.Text.RegularExpressions.Regex Pattern, string Reason)[] NoisePatterns =
-    [
-        // Bare lowercase single word = language keyword (e.g. "for", "nil", "string")
-        (new System.Text.RegularExpressions.Regex(@"^[a-z][a-z0-9]*$"),
-            "bare lowercase keyword"),
-
-        // Widget subcategory: "Stateless Widgets", "Material Widgets", etc.
-        (new System.Text.RegularExpressions.Regex(@"^(stateless|stateful|responsive|inherited|styled|material|cupertino|adaptive)\s+(widget|component)s?$"),
-            "widget subcategory"),
-
-        // Animation internal API class: "Animation Controller", "Animated Builder"
-        (new System.Text.RegularExpressions.Regex(@"^(animation|animated)\s+\w+"),
-            "animation internal"),
-
-        // Gerund phrase = implementation sub-step, not a skill
-        (new System.Text.RegularExpressions.Regex(@"^(defining|handling|chaining|creating|building|implementing|setting up|configuring|managing|running|deploying|using)\s"),
-            "gerund fragment"),
-
-        // "in a X" / "using it X" context sub-nodes
-        (new System.Text.RegularExpressions.Regex(@"^(in a |using it |in event )"),
-            "context sub-node"),
-
-        // Config/artifact file names: pyproject.toml, Dockerfile.yaml, etc.
-        (new System.Text.RegularExpressions.Regex(@"\.(toml|cfg|ini|yaml|yml|json|xml|lock)$"),
-            "config file name"),
-
-        // Contains a question mark = roadmap heading
-        (new System.Text.RegularExpressions.Regex(@"\?"),
-            "question heading"),
-
-        // "Debugging X" sub-activities (keep bare "Debugging" which is a real skill)
-        (new System.Text.RegularExpressions.Regex(@"^debugging (issues|memory leaks|performance|errors|crashes)$"),
-            "debugging sub-activity"),
-
-        // Loop/iteration syntax: "for...in loop", "for...of loop"
-        (new System.Text.RegularExpressions.Regex(@"^(for\.\.\.|do\.\.\.)"),
-            "loop syntax"),
-
-        // Operator-level ECMAScript: "== operator", "=== operator"
-        (new System.Text.RegularExpressions.Regex(@"^[=!<>]{1,3}$"),
-            "operator token"),
-
-        // Variable/Method/Instance sub-property fragments
-        (new System.Text.RegularExpressions.Regex(@"^(instance|class|method|object)\s+(variables?|parameters?|accessors?|attributes?|lookup)$"),
-            "OOP sub-property"),
-
-        // Shell variable tokens and MongoDB/query operators: $#, $*, $0, $eq, $gt, etc.
-        (new System.Text.RegularExpressions.Regex(@"^\$"),
-            "shell/query operator token"),
-
-        // @ template directives: @if, @each, etc.
-        (new System.Text.RegularExpressions.Regex(@"^@"),
-            "template directive"),
-
-        // Bare operator symbols: *, +, -, etc.
-        (new System.Text.RegularExpressions.Regex(@"^[\*\+\-\/\|\\]{1,3}$"),
-            "bare operator symbol"),
-
-        // "X vs Y" comparison headings: "Bare Metal vs VMs vs Containers", "AI vs Traditional Coding"
-        (new System.Text.RegularExpressions.Regex(@"\bvs\.?\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase),
-            "comparison heading"),
-
-        // "X Best Practices" prescription headings
-        (new System.Text.RegularExpressions.Regex(@"[Bb]est [Pp]ractices?$"),
-            "best practices heading"),
-
-        // "Others (...)" catch-all category nodes
-        (new System.Text.RegularExpressions.Regex(@"^[Oo]thers?\s*[\(\[]"),
-            "catch-all category"),
-
-        // Ends with "Options" or "Providers" — generic category headers
-        (new System.Text.RegularExpressions.Regex(@"\s+[Oo]ptions?\s*$"),
-            "generic options category"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]roviders?\s*$"),
-            "generic providers category"),
-
-        // Ends with "Roadmap" — roadmap navigation cross-reference nodes
-        (new System.Text.RegularExpressions.Regex(@"\s+[Rr]oadmap\s*$"),
-            "roadmap navigation node"),
-
-        // Ends with "Ideas" — project idea suggestion nodes
-        (new System.Text.RegularExpressions.Regex(@"\s+[Ii]deas?\s*$"),
-            "project ideas node"),
-
-        // Ends with "Fundamentals" — section heading
-        (new System.Text.RegularExpressions.Regex(@"\s+[Ff]undamentals?\s*$"),
-            "fundamentals heading"),
-
-        // Ends with plural "Patterns", "Concepts", "Techniques", "Principles" — category headings
-        // (singular kept: "Builder Pattern", "CAP Theorem" etc. are real named skills)
-        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]atterns\s*$"),
-            "patterns category heading"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Cc]oncepts\s*$"),
-            "concepts category heading"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Tt]echniques\s*$"),
-            "techniques category heading"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]rinciples\s*$"),
-            "principles category heading"),
-
-        // Numbered list items: "1) Predicting...", "2. Learn..."
-        (new System.Text.RegularExpressions.Regex(@"^[0-9]+[.)]\s"),
-            "numbered list item"),
-
-        // "X Strategies" and "X Usecases" — category section headings
-        (new System.Text.RegularExpressions.Regex(@"\s+[Ss]trategies\s*$"),
-            "strategies category heading"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Uu]se\s*[Cc]ases?\s*$"),
-            "use cases category heading"),
-        (new System.Text.RegularExpressions.Regex(@"\s+[Uu]secases?\s*$"),
-            "usecases category heading"),
-
-        // "Git Basics", "Python Basics" — ends with Basics (plural section heading)
-        (new System.Text.RegularExpressions.Regex(@"\s+[Bb]asics\s*$"),
-            "basics section heading"),
-
-        // CLI commands with flags: "bash -n", "kubectl apply -f", "docker run -d"
-        (new System.Text.RegularExpressions.Regex(@"[a-z] -[a-zA-Z]"),
-            "cli flag argument"),
-
-        // Parenthetical with 2+ commas = catch-all list: "(ghcr, ecr, gcr, acr, etc)"
-        (new System.Text.RegularExpressions.Regex(@"\([^)]*,[^)]*,[^)]*\)"),
-            "catch-all list"),
-
-        // Labels longer than 60 chars = prose description, not a skill name
-        (new System.Text.RegularExpressions.Regex(@".{61,}"),
-            "prose description"),
-    ];
+    // Directory where LLM-preprocessed skill allowlists are stored (one JSON file per slug).
+    private static readonly string PreprocessedDirectory =
+        Path.Combine(AppContext.BaseDirectory, "Roadmaps", "preprocessed");
 
     private static readonly string[] RoleRoadmapSlugs =
     [
@@ -392,6 +145,23 @@ public class IngestionWorker : BackgroundService
             var seeder = scope.ServiceProvider.GetRequiredService<GoldStandardSeeder>();
             await seeder.RunSeedingAsync("C:\\dev\\Masters Capstone\\GoldStandard");
             _logger.LogInformation("Gold Standard Seeding Complete.");
+            _hostApplicationLifetime.StopApplication();
+            return;
+        }
+
+        if (args.Contains("--preprocess-roadmaps"))
+        {
+            _logger.LogInformation(">>> ROADMAP PREPROCESSING MODE <<<");
+            Directory.CreateDirectory(PreprocessedDirectory);
+            var allSlugs = RoleRoadmapSlugs.Concat(SkillRoadmapSlugs).ToArray();
+            _logger.LogInformation("Preprocessing {Count} roadmaps...", allSlugs.Length);
+            foreach (var slug in allSlugs)
+            {
+                if (stoppingToken.IsCancellationRequested) break;
+                await PreprocessRoadmapAsync(slug, roadmapService, ontologyService, stoppingToken);
+                await Task.Delay(300, stoppingToken);
+            }
+            _logger.LogInformation("Roadmap preprocessing complete. Run --roadmap-only to ingest.");
             _hostApplicationLifetime.StopApplication();
             return;
         }
@@ -651,7 +421,33 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        //Process all valid nodes → build nodeId → canonical skill name map
+        // Load LLM-approved allowlist produced by --preprocess-roadmaps.
+        // If no file exists, all structurally valid nodes are processed (best-effort).
+        HashSet<string>? allowlist = null;
+        var preprocessedFile = Path.Combine(PreprocessedDirectory, $"{slug}.json");
+        if (File.Exists(preprocessedFile))
+        {
+            try
+            {
+                var json = await File.ReadAllTextAsync(preprocessedFile, ct);
+                var approved = JsonSerializer.Deserialize<List<string>>(json);
+                if (approved != null)
+                {
+                    allowlist = new HashSet<string>(approved, StringComparer.OrdinalIgnoreCase);
+                    _logger.LogInformation("Roadmap '{Slug}': using allowlist with {Count} approved skills.", slug, allowlist.Count);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to load preprocessed allowlist for '{Slug}' — proceeding without it.", slug);
+            }
+        }
+        else
+        {
+            _logger.LogWarning("No preprocessed allowlist found for '{Slug}'. Run --preprocess-roadmaps for best quality.", slug);
+        }
+
+        // Build nodeId → canonical skill name map (allowlist-filtered)
         var nodeIdToCanonical = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var node in roadmap.Nodes)
@@ -660,15 +456,8 @@ public class IngestionWorker : BackgroundService
             var label = node.Data?.Label?.Trim();
             if (string.IsNullOrWhiteSpace(label) || node.Id == null) continue;
 
-            // Skip pedagogical headings
-            var labelLower = label.ToLowerInvariant();
-            if (PedagogicalPrefixes.Any(p => labelLower.StartsWith(p))) continue;
-
-            // Skip exact-match syntax noise and concept fragments
-            if (SyntaxNoiseExact.Contains(label)) continue;
-
-            // Skip regex-matched noise patterns
-            if (NoisePatterns.Any(np => np.Pattern.IsMatch(labelLower))) continue;
+            // If allowlist exists, skip anything the LLM did not approve
+            if (allowlist != null && !allowlist.Contains(label)) continue;
 
             var canon = await DeduplicateOrCreateSkillAsync(
                 dbContext, neo4j, label, "Roadmap.sh", isTech: true, ct);
@@ -753,6 +542,52 @@ public class IngestionWorker : BackgroundService
         }
 
         await Task.Delay(500, ct);
+    }
+
+    // ── Roadmap Preprocessing ──────────────────────────────────────────────────
+
+    /// <summary>
+    /// Runs the LLM against a single roadmap's node labels and saves the approved
+    /// skill list to Roadmaps/preprocessed/{slug}.json. Skips if file already exists.
+    /// </summary>
+    private async Task PreprocessRoadmapAsync(
+        string slug,
+        RoadmapService roadmapService,
+        OntologyEnrichmentService ontologyService,
+        CancellationToken ct)
+    {
+        var outputPath = Path.Combine(PreprocessedDirectory, $"{slug}.json");
+        if (File.Exists(outputPath))
+        {
+            _logger.LogInformation("Preprocessed file already exists for '{Slug}' — skipping.", slug);
+            return;
+        }
+
+        var roadmap = await roadmapService.GetRoadmapAsync(slug, ct);
+        if (roadmap?.Nodes == null)
+        {
+            _logger.LogWarning("Roadmap '{Slug}' returned no nodes — skipping preprocessing.", slug);
+            return;
+        }
+
+        var labels = roadmap.Nodes
+            .Where(n => ValidRoadmapNodeTypes.Contains(n.Type ?? ""))
+            .Select(n => n.Data?.Label?.Trim())
+            .Where(l => !string.IsNullOrWhiteSpace(l))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .Cast<string>()
+            .ToList();
+
+        _logger.LogInformation("Roadmap '{Slug}': {Count} unique labels to classify.", slug, labels.Count);
+
+        var approved = await ontologyService.ExtractSkillsFromRoadmapAsync(slug, labels, ct);
+
+        _logger.LogInformation("Roadmap '{Slug}': {Approved}/{Total} labels approved as real skills.",
+            slug, approved.Count, labels.Count);
+
+        var json = JsonSerializer.Serialize(approved, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(outputPath, json, ct);
+        _logger.LogInformation("Saved: {Path}", outputPath);
     }
 
     //Shared Helpers

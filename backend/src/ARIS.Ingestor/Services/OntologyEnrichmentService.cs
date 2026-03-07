@@ -14,8 +14,10 @@ public class OntologyEnrichmentService
     private readonly string _promptPath;
     private readonly string _dependencyPromptPath;
 
+    private readonly string _extractionPromptPath;
+
     public OntologyEnrichmentService(
-        IChatClient chatClient, 
+        IChatClient chatClient,
         IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator,
         ILogger<OntologyEnrichmentService> logger)
     {
@@ -24,6 +26,7 @@ public class OntologyEnrichmentService
         _logger = logger;
         _promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "OntologyEnrichment.md");
         _dependencyPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "DependencyDetection.md");
+        _extractionPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "RoadmapSkillExtraction.md");
     }
 
     public async Task<List<BridgePair>> FindBridgesAsync(string roleName, List<string> skills, List<(string Child, string Parent)> hierarchies, CancellationToken ct = default, string? promptOverridePath = null, int timeoutSeconds = 120)
@@ -353,5 +356,109 @@ public class OntologyEnrichmentService
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Uses the LLM to classify roadmap node labels, returning only those that are
+    /// real named professional skills (tools, frameworks, libraries, methodologies).
+    /// Labels are sent in batches to stay within context limits.
+    /// </summary>
+    public async Task<List<string>> ExtractSkillsFromRoadmapAsync(
+        string slug,
+        List<string> labels,
+        CancellationToken ct = default,
+        int timeoutSeconds = 300)
+    {
+        if (labels.Count == 0) return [];
+
+        string promptTemplate;
+        try
+        {
+            var fallbackPath = Path.Combine(Directory.GetCurrentDirectory(), "../ARIS.Shared/Prompts/RoadmapSkillExtraction.md");
+            var path = File.Exists(_extractionPromptPath) ? _extractionPromptPath : fallbackPath;
+            promptTemplate = await File.ReadAllTextAsync(path, ct);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to read RoadmapSkillExtraction prompt.");
+            return [];
+        }
+
+        const int batchSize = 120;
+        var approved = new List<string>();
+
+        for (var i = 0; i < labels.Count; i += batchSize)
+        {
+            var batch = labels.Skip(i).Take(batchSize).ToList();
+            var labelList = string.Join("\n", batch.Select(l => $"- {l}"));
+
+            var prompt = promptTemplate
+                .Replace("{slug}", slug)
+                .Replace("{labels}", labelList);
+
+            var text = string.Empty;
+            try
+            {
+                var messages = new List<ChatMessage>
+                {
+                    new ChatMessage(ChatRole.System,
+                        "You are a precise skill classifier. Return only valid JSON. Do not explain your choices."),
+                    new ChatMessage(ChatRole.User, prompt)
+                };
+
+                var chatOptions = new ChatOptions
+                {
+                    ResponseFormat = ChatResponseFormat.Json,
+                    Temperature = 0.0f,
+                };
+
+                using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+                timeoutCts.CancelAfter(TimeSpan.FromSeconds(timeoutSeconds));
+
+                var response = await _chatClient.GetResponseAsync(messages, chatOptions, cancellationToken: timeoutCts.Token);
+                text = response.Text?.Trim() ?? string.Empty;
+
+                if (string.IsNullOrEmpty(text)) continue;
+
+                if (text.Contains("```json"))
+                    text = text.Split("```json")[1].Split("```")[0].Trim();
+                else if (text.Contains("```"))
+                    text = text.Split("```")[1].Split("```")[0].Trim();
+
+                using var doc = JsonDocument.Parse(text);
+
+                JsonElement skillsArray = default;
+                if (doc.RootElement.ValueKind == JsonValueKind.Object &&
+                    doc.RootElement.TryGetProperty("skills", out skillsArray) &&
+                    skillsArray.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (var item in skillsArray.EnumerateArray())
+                    {
+                        var name = item.GetString();
+                        if (!string.IsNullOrWhiteSpace(name))
+                            approved.Add(name);
+                    }
+                }
+                else if (doc.RootElement.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (var item in doc.RootElement.EnumerateArray())
+                    {
+                        var name = item.GetString();
+                        if (!string.IsNullOrWhiteSpace(name))
+                            approved.Add(name);
+                    }
+                }
+            }
+            catch (OperationCanceledException) when (!ct.IsCancellationRequested)
+            {
+                _logger.LogWarning("LLM timeout during skill extraction for '{Slug}' batch {Batch}.", slug, i / batchSize + 1);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning("Failed to parse skill extraction response for '{Slug}': {Msg}\nRaw: {Text}", slug, ex.Message, text);
+            }
+        }
+
+        return approved;
     }
 }
