@@ -80,6 +80,7 @@ services:
       - DOTNET_GCHeapHardLimit=0x100000000
       - DOTNET_ReadyToRun=1
       - COMPlus_TieredCompilation=1
+      - Clerk__Authority=${CLERK_AUTHORITY}
       - Clerk__SecretKey=${CLERK_SECRET_KEY}
     extra_hosts:
       - "host.docker.internal:host-gateway"
