@@ -1,6 +1,7 @@
 using ARIS.API.Services;
 using ARIS.Shared.Data;
 using ARIS.Shared.Models;
+using ARIS.Shared.Models.CleanSignal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -62,7 +63,23 @@ namespace ARIS.API.Controllers
                 }
             }
 
-            return Ok(new { message = "Job processed and ingested successfully.", jobId = jobId.Value });
+            var createdJob = await _context.JobPostings.FindAsync(jobId.Value);
+            return Ok(new { message = "Job processed and ingested successfully.", jobId = jobId.Value, cleanSignal = createdJob?.CleanSignal });
+        }
+
+        public class GroundingRequest
+        {
+            public List<GroundingCorrectionItem> Corrections { get; set; } = [];
+        }
+
+        [HttpPatch("{id:guid}/grounding")]
+        public async Task<IActionResult> ApplyGrounding(Guid id, [FromBody] GroundingRequest request)
+        {
+            var updatedSignal = await _service.ApplyGroundingCorrectionsAsync(id, request.Corrections);
+            if (updatedSignal == null)
+                return NotFound($"Job {id} not found or has no clean signal.");
+
+            return Ok(new { message = "Grounding corrections applied.", cleanSignal = updatedSignal });
         }
 
         [HttpGet("match/{userProfileId}")]

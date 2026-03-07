@@ -47,10 +47,11 @@ var embeddingModel = builder.Configuration["Ollama:EmbeddingModel"] ?? "qwen3-em
 var numCtx = builder.Configuration.GetValue<int>("Ollama:NumCtx", 4096);
 
 var groundingSkillThreshold = builder.Configuration.GetValue<double>("Grounding:SkillThreshold", 0.10);
+var groundingSoftSkillThreshold = builder.Configuration.GetValue<double>("Grounding:SoftSkillThreshold", 0.35);
 
 Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
     ollamaUriString, chatModel, embeddingModel, numCtx);
-Log.Information("Grounding skill threshold: {Threshold}", groundingSkillThreshold);
+Log.Information("Grounding thresholds — Technical: {TechThreshold}, Soft: {SoftThreshold}", groundingSkillThreshold, groundingSoftSkillThreshold);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
@@ -81,14 +82,16 @@ builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
         sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),
-        groundingSkillThreshold));
+        groundingSkillThreshold,
+        groundingSoftSkillThreshold));
 builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
     new ARIS.API.Services.JobService(
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
         sp.GetRequiredService<ILogger<ARIS.API.Services.JobService>>(),
-        groundingSkillThreshold));
+        groundingSkillThreshold,
+        groundingSoftSkillThreshold));
 builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();

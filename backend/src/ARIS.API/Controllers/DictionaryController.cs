@@ -16,6 +16,16 @@ public class DictionaryController : ControllerBase
         _service = service;
     }
 
+    [HttpGet("skill-candidates")]
+    public async Task<IActionResult> GetSkillCandidates([FromQuery] string name, [FromQuery] int limit = 10)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return BadRequest("name is required.");
+
+        var results = await _service.GetSkillCandidatesAsync(name, Math.Min(limit, 20));
+        return Ok(results);
+    }
+
     [HttpPost("search/roles")]
     public async Task<ActionResult<List<RefRole>>> SearchRoles([FromBody] SearchRequest request)
     {

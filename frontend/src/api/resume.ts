@@ -1,5 +1,5 @@
 import { apiClient, fetchBlobWithAuth } from './client';
-import type { UserProfileDetail, TailoredBullet, MatchAnalysisResult } from '../types/api';
+import type { UserProfileDetail, TailoredBullet, MatchAnalysisResult, ResumeUploadResult, GroundingCorrection } from '../types/api';
 
 function buildTierPayload(analysis: MatchAnalysisResult) {
     return {
@@ -15,17 +15,22 @@ export const resumeApi = {
     uploadPdf: (file: File) => {
         const formData = new FormData();
         formData.append('file', file);
-        return apiClient<{ message: string; id: string }>('/resume/upload', {
+        return apiClient<ResumeUploadResult>('/resume/upload', {
             method: 'POST',
             body: formData,
         });
     },
     uploadText: (content: string) => {
-        return apiClient<{ message: string; id: string }>('/resume/upload-text', {
+        return apiClient<ResumeUploadResult>('/resume/upload-text', {
             method: 'POST',
             body: JSON.stringify({ content }),
         });
     },
+    applyGrounding: (profileId: string, corrections: GroundingCorrection[]) =>
+        apiClient<{ message: string }>(`/resume/${profileId}/grounding`, {
+            method: 'PATCH',
+            body: JSON.stringify({ corrections }),
+        }),
     getProfileByUserId: (clerkId: string) => {
         return apiClient<UserProfileDetail>(`/resume/by-user/${clerkId}`);
     },

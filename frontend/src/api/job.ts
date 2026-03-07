@@ -1,13 +1,18 @@
 import { apiClient } from './client';
-import type { JobRecommendationResponse, JobPostingDetail } from '../types/api';
+import type { JobRecommendationResponse, JobPostingDetail, JobUploadResult, GroundingCorrection } from '../types/api';
 
 export const jobApi = {
     postJob: (description: string, sourceUrl?: string) => {
-        return apiClient<{ message: string; jobId: string }>('/job', {
+        return apiClient<JobUploadResult>('/job', {
             method: 'POST',
             body: JSON.stringify({ description, sourceUrl: sourceUrl || null }),
         });
     },
+    applyGrounding: (jobId: string, corrections: GroundingCorrection[]) =>
+        apiClient<{ message: string }>(`/job/${jobId}/grounding`, {
+            method: 'PATCH',
+            body: JSON.stringify({ corrections }),
+        }),
     getJobsByRecruiter: () => {
         return apiClient<JobPostingDetail[]>('/job/by-recruiter');
     },

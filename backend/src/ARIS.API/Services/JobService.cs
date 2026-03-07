@@ -19,6 +19,7 @@ namespace ARIS.API.Services
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
         private readonly double _groundingSkillThreshold;
+        private readonly double _groundingSoftSkillThreshold;
         private readonly ILogger<JobService> _logger;
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
@@ -30,12 +31,13 @@ namespace ARIS.API.Services
 
         private const int MaxExtractionAttempts = 3;
 
-        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<JobService> logger, double groundingSkillThreshold = 0.10)
+        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<JobService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
             _groundingSkillThreshold = groundingSkillThreshold;
+            _groundingSoftSkillThreshold = groundingSoftSkillThreshold;
             _logger = logger;
         }
 
@@ -323,7 +325,37 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.RequiredSkills[i];
+                    bool isSoft = string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase);
 
+                    if (isSoft)
+                    {
+                        // Soft skills: ground against is_tech=false skills at a looser threshold
+                        var softMatch = await _context.Skills
+                            .Where(s => !s.IsTech && s.Embedding != null)
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (softMatch != null && softMatch.Distance < _groundingSoftSkillThreshold)
+                        {
+                            groundedSkills.Add(new JobSkill
+                            {
+                                Name = softMatch.Name,
+                                Category = originalSkill.Category,
+                                Importance = originalSkill.Importance,
+                                YearsOfExperience = originalSkill.YearsOfExperience
+                            });
+                        }
+                        else
+                        {
+                            _logger.LogInformation("Soft skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
+                                originalSkill.Name, softMatch?.Distance ?? 1.0);
+                            ungroundedSkills.Add(originalSkill);
+                        }
+                        continue;
+                    }
+
+                    // Technical skills: try domain match first, then general at tight threshold
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -338,6 +370,7 @@ namespace ARIS.API.Services
                         groundedSkills.Add(new JobSkill
                         {
                             Name = domainMatch.Name,
+                            Category = originalSkill.Category,
                             Importance = originalSkill.Importance,
                             YearsOfExperience = originalSkill.YearsOfExperience
                         });
@@ -358,6 +391,7 @@ namespace ARIS.API.Services
                         groundedSkills.Add(new JobSkill
                         {
                             Name = generalMatch.Name,
+                            Category = originalSkill.Category,
                             Importance = originalSkill.Importance,
                             YearsOfExperience = originalSkill.YearsOfExperience
                         });
@@ -375,6 +409,7 @@ namespace ARIS.API.Services
                     .Select(g => new JobSkill
                     {
                         Name = g.First().Name,
+                        Category = g.First().Category,
                         Importance = g.Any(s => s.Importance == "Essential") ? "Essential" : g.First().Importance,
                         YearsOfExperience = g.Sum(s => s.YearsOfExperience)
                     })
@@ -385,6 +420,7 @@ namespace ARIS.API.Services
                     .Select(g => new JobSkill
                     {
                         Name = g.First().Name,
+                        Category = g.First().Category,
                         Importance = g.Any(s => s.Importance == "Essential") ? "Essential" : g.First().Importance,
                         YearsOfExperience = g.Sum(s => s.YearsOfExperience)
                     })
@@ -757,6 +793,45 @@ namespace ARIS.API.Services
             catch { }
 
             return jsonString;
+        }
+
+        public async Task<JobPostingCleanSignal?> ApplyGroundingCorrectionsAsync(Guid jobId, List<GroundingCorrectionItem> corrections)
+        {
+            var job = await _context.JobPostings.FindAsync(jobId);
+            if (job?.CleanSignal == null) return null;
+
+            var cs = job.CleanSignal;
+
+            foreach (var correction in corrections)
+            {
+                var match = cs.UngroundedSkills.FirstOrDefault(s =>
+                    string.Equals(s.Name, correction.From, StringComparison.OrdinalIgnoreCase));
+                if (match == null) continue;
+
+                cs.UngroundedSkills.Remove(match);
+                if (!cs.RequiredSkills.Any(s => string.Equals(s.Name, correction.To, StringComparison.OrdinalIgnoreCase)))
+                {
+                    cs.RequiredSkills.Add(new JobSkill
+                    {
+                        Name = correction.To,
+                        Category = match.Category,
+                        Importance = match.Importance,
+                        YearsOfExperience = match.YearsOfExperience
+                    });
+                }
+            }
+
+            var symStr = BuildSymmetricString(cs);
+            var truncated = symStr.Length > 2000 ? symStr[..2000] : symStr;
+            var emb = await _embeddingGenerator.GenerateAsync([truncated]);
+            job.Embedding = new Vector(emb[0].Vector);
+            job.UpdatedAt = DateTime.UtcNow;
+
+            _context.Entry(job).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Applied {Count} grounding corrections to job {JobId}.", corrections.Count, jobId);
+            return cs;
         }
 
         private static string BuildSymmetricString(JobPostingCleanSignal signal)

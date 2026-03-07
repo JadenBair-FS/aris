@@ -3,13 +3,13 @@ using ARIS.Shared.Entities;
 using ARIS.Shared.Helpers;
 using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using UglyToad.PdfPig;
 using Pgvector;
-using Microsoft.EntityFrameworkCore;
 using Pgvector.EntityFrameworkCore;
 
 namespace ARIS.API.Services
@@ -81,6 +81,7 @@ namespace ARIS.API.Services
         private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
         private readonly IChatClient _chatClient;
         private readonly double _groundingSkillThreshold;
+        private readonly double _groundingSoftSkillThreshold;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly JsonSerializerOptions _jsonOptions = new()
@@ -92,12 +93,13 @@ namespace ARIS.API.Services
 
         private const int MaxExtractionAttempts = 3;
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double groundingSkillThreshold = 0.10)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, ILogger<ResumeService> logger, double groundingSkillThreshold = 0.10, double groundingSoftSkillThreshold = 0.35)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
             _groundingSkillThreshold = groundingSkillThreshold;
+            _groundingSoftSkillThreshold = groundingSoftSkillThreshold;
             _logger = logger;
         }
 
@@ -658,7 +660,37 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.Skills[i];
+                    bool isSoft = string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase);
 
+                    if (isSoft)
+                    {
+                        // Soft skills: ground against is_tech=false skills at a looser threshold
+                        var softMatch = await _context.Skills
+                            .Where(s => !s.IsTech && s.Embedding != null)
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (softMatch != null && softMatch.Distance < _groundingSoftSkillThreshold)
+                        {
+                            groundedSkills.Add(new ResumeSkill
+                            {
+                                Name = softMatch.Name,
+                                Category = originalSkill.Category,
+                                Proficiency = originalSkill.Proficiency,
+                                YearsOfExperience = originalSkill.YearsOfExperience
+                            });
+                        }
+                        else
+                        {
+                            _logger.LogInformation("Soft skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
+                                originalSkill.Name, softMatch?.Distance ?? 1.0);
+                            ungroundedSkills.Add(originalSkill);
+                        }
+                        continue;
+                    }
+
+                    // Technical skills: try domain match first, then general at tight threshold
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -788,6 +820,45 @@ namespace ARIS.API.Services
                 _logger.LogWarning(ex, "Failed to strip references section. Using full text.");
             }
             return text;
+        }
+
+        public async Task<ResumeCleanSignal?> ApplyGroundingCorrectionsAsync(Guid profileId, List<GroundingCorrectionItem> corrections)
+        {
+            var profile = await _context.UserProfiles.FindAsync(profileId);
+            if (profile?.CleanSignal == null) return null;
+
+            var cs = profile.CleanSignal;
+
+            foreach (var correction in corrections)
+            {
+                var match = cs.UngroundedSkills.FirstOrDefault(s =>
+                    string.Equals(s.Name, correction.From, StringComparison.OrdinalIgnoreCase));
+                if (match == null) continue;
+
+                cs.UngroundedSkills.Remove(match);
+                if (!cs.Skills.Any(s => string.Equals(s.Name, correction.To, StringComparison.OrdinalIgnoreCase)))
+                {
+                    cs.Skills.Add(new ResumeSkill
+                    {
+                        Name = correction.To,
+                        Category = match.Category,
+                        Proficiency = match.Proficiency,
+                        YearsOfExperience = match.YearsOfExperience
+                    });
+                }
+            }
+
+            var symStr = BuildSymmetricString(cs);
+            var truncated = symStr.Length > 2000 ? symStr[..2000] : symStr;
+            var emb = await _embeddingGenerator.GenerateAsync([truncated]);
+            profile.Embedding = new Vector(emb[0].Vector);
+            profile.UpdatedAt = DateTime.UtcNow;
+
+            _context.Entry(profile).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            _logger.LogInformation("Applied {Count} grounding corrections to profile {ProfileId}.", corrections.Count, profileId);
+            return cs;
         }
 
         public async Task<List<TailoredBullet>?> TailorResumeAsync(

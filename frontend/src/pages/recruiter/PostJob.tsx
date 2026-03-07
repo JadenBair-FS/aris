@@ -8,17 +8,24 @@ import { useNavigate } from 'react-router';
 import { jobApi } from '@/api/job';
 import { useMutation } from '@tanstack/react-query';
 import { UploadProgress, JOB_PHASES } from '@/components/UploadProgress';
+import GroundingReviewModal from '@/components/GroundingReviewModal';
+import type { JobUploadResult, GroundingCorrection } from '@/types/api';
 
 export default function PostJob() {
     const [description, setDescription] = useState('');
     const [sourceUrl, setSourceUrl] = useState('');
     const [errorText, setErrorText] = useState('');
+    const [uploadResult, setUploadResult] = useState<JobUploadResult | null>(null);
+    const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     const postJobMutation = useMutation({
         mutationFn: ({ desc, url }: { desc: string; url: string }) =>
             jobApi.postJob(desc, url || undefined),
-        onSuccess: () => navigate('/profile/jobs'),
+        onSuccess: (data) => {
+            setUploadResult(data);
+            setShowModal(true);
+        },
         onError: (err: any) => setErrorText(err.message),
     });
 
@@ -29,11 +36,31 @@ export default function PostJob() {
         postJobMutation.mutate({ desc: description, url: sourceUrl });
     };
 
+    const handleGroundingConfirm = async (corrections: GroundingCorrection[]) => {
+        if (uploadResult && corrections.length > 0) {
+            await jobApi.applyGrounding(uploadResult.jobId, corrections);
+        }
+        navigate('/profile/jobs');
+    };
+
     const isPending = postJobMutation.isPending;
+    const cleanSignal = uploadResult?.cleanSignal;
+    const groundedTechnical = cleanSignal?.required_skills.filter(s => s.category !== 'Soft') ?? [];
+    const groundedSoft = cleanSignal?.required_skills.filter(s => s.category === 'Soft') ?? [];
+    const ungroundedSkills = cleanSignal?.ungrounded_skills ?? [];
 
     return (
         <div className="max-w-2xl mx-auto space-y-6">
             <UploadProgress isVisible={isPending} phases={JOB_PHASES} />
+
+            <GroundingReviewModal
+                isOpen={showModal}
+                groundedTechnical={groundedTechnical}
+                groundedSoft={groundedSoft}
+                ungroundedSkills={ungroundedSkills}
+                onConfirm={handleGroundingConfirm}
+                onSkip={() => navigate('/profile/jobs')}
+            />
 
             <div>
                 <h1 className="text-2xl font-semibold text-slate-900">Post a Job</h1>

@@ -37,6 +37,9 @@ public class JobSkill
     [JsonPropertyName("name")]
     public string Name { get; set; } = string.Empty;
 
+    [JsonPropertyName("category")]
+    public string Category { get; set; } = "Technical"; // Technical or Soft
+
     [JsonPropertyName("importance")]
     public string Importance { get; set; } = "Essential"; // Essential or Preferred
 

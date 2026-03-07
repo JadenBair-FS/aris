@@ -96,6 +96,7 @@ export interface JobRole {
 
 export interface JobRequiredSkill {
     name: string;
+    category: 'Technical' | 'Soft' | string;
     importance: 'Essential' | 'Preferred' | string;
     years_of_experience: number;
 }
@@ -134,6 +135,29 @@ export interface JobMatchResult {
 export interface JobRecommendationResponse {
     matches: JobMatchResult[];
     analysis: string;
+}
+
+export interface SkillCandidate {
+    name: string;
+    distance: number;
+    isTech: boolean;
+}
+
+export interface GroundingCorrection {
+    from: string;
+    to: string;
+}
+
+export interface ResumeUploadResult {
+    message: string;
+    id: string;
+    cleanSignal: ResumeCleanSignal;
+}
+
+export interface JobUploadResult {
+    message: string;
+    jobId: string;
+    cleanSignal: JobCleanSignal;
 }
 
 export interface CandidateResult {

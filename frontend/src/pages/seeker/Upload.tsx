@@ -9,24 +9,33 @@ import { Upload as UploadIcon } from 'lucide-react';
 import { resumeApi } from '@/api/resume';
 import { useMutation } from '@tanstack/react-query';
 import { UploadProgress, RESUME_PHASES } from '@/components/UploadProgress';
+import GroundingReviewModal from '@/components/GroundingReviewModal';
+import type { ResumeUploadResult, GroundingCorrection } from '@/types/api';
 
 export default function Upload() {
     const [file, setFile] = useState<File | null>(null);
     const [text, setText] = useState('');
     const [errorText, setErrorText] = useState('');
     const [isDragging, setIsDragging] = useState(false);
+    const [uploadResult, setUploadResult] = useState<ResumeUploadResult | null>(null);
+    const [showModal, setShowModal] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
 
+    const handleUploadSuccess = (data: ResumeUploadResult) => {
+        setUploadResult(data);
+        setShowModal(true);
+    };
+
     const uploadPdfMutation = useMutation({
         mutationFn: (f: File) => resumeApi.uploadPdf(f),
-        onSuccess: () => navigate('/profile'),
+        onSuccess: handleUploadSuccess,
         onError: (err: any) => setErrorText(err.message),
     });
 
     const uploadTextMutation = useMutation({
         mutationFn: (content: string) => resumeApi.uploadText(content),
-        onSuccess: () => navigate('/profile'),
+        onSuccess: handleUploadSuccess,
         onError: (err: any) => setErrorText(err.message),
     });
 
@@ -57,9 +66,30 @@ export default function Upload() {
         }
     };
 
+    const handleGroundingConfirm = async (corrections: GroundingCorrection[]) => {
+        if (uploadResult && corrections.length > 0) {
+            await resumeApi.applyGrounding(uploadResult.id, corrections);
+        }
+        navigate('/profile');
+    };
+
+    const cleanSignal = uploadResult?.cleanSignal;
+    const groundedTechnical = cleanSignal?.skills.filter(s => s.category !== 'Soft') ?? [];
+    const groundedSoft = cleanSignal?.skills.filter(s => s.category === 'Soft') ?? [];
+    const ungroundedSkills = cleanSignal?.ungrounded_skills ?? [];
+
     return (
         <div className="max-w-xl mx-auto space-y-6">
             <UploadProgress isVisible={isPending} phases={RESUME_PHASES} />
+
+            <GroundingReviewModal
+                isOpen={showModal}
+                groundedTechnical={groundedTechnical}
+                groundedSoft={groundedSoft}
+                ungroundedSkills={ungroundedSkills}
+                onConfirm={handleGroundingConfirm}
+                onSkip={() => navigate('/profile')}
+            />
 
             <div>
                 <h1 className="text-2xl font-semibold text-slate-900">Upload Resume</h1>
@@ -86,7 +116,6 @@ export default function Upload() {
 
                         <TabsContent value="pdf">
                             <form onSubmit={handlePdfSubmit} className="space-y-4">
-                                {/* Drag-drop zone */}
                                 <div
                                     onClick={() => fileInputRef.current?.click()}
                                     onDragOver={e => { e.preventDefault(); setIsDragging(true); }}

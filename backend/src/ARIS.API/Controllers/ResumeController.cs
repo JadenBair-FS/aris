@@ -1,5 +1,6 @@
 using ARIS.API.Services;
 using ARIS.Shared.Data;
+using ARIS.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -59,7 +60,8 @@ namespace ARIS.API.Controllers
 
             if (profileId.HasValue)
             {
-                return Ok(new { message = "Resume processed and ingested successfully.", id = profileId.Value });
+                var profile = await _context.UserProfiles.FindAsync(profileId.Value);
+                return Ok(new { message = "Resume processed and ingested successfully.", id = profileId.Value, cleanSignal = profile?.CleanSignal });
             }
             else
             {
@@ -92,7 +94,8 @@ namespace ARIS.API.Controllers
 
             if (profileId.HasValue)
             {
-                return Ok(new { message = "Resume text processed and ingested successfully.", id = profileId.Value });
+                var profile = await _context.UserProfiles.FindAsync(profileId.Value);
+                return Ok(new { message = "Resume text processed and ingested successfully.", id = profileId.Value, cleanSignal = profile?.CleanSignal });
             }
             else
             {
@@ -157,6 +160,21 @@ namespace ARIS.API.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Resume cleared." });
+        }
+
+        public class GroundingRequest
+        {
+            public List<GroundingCorrectionItem> Corrections { get; set; } = [];
+        }
+
+        [HttpPatch("{id:guid}/grounding")]
+        public async Task<IActionResult> ApplyGrounding(Guid id, [FromBody] GroundingRequest request)
+        {
+            var updatedSignal = await _service.ApplyGroundingCorrectionsAsync(id, request.Corrections);
+            if (updatedSignal == null)
+                return NotFound($"Profile {id} not found or has no clean signal.");
+
+            return Ok(new { message = "Grounding corrections applied.", cleanSignal = updatedSignal });
         }
 
         [HttpPost("tailor")]

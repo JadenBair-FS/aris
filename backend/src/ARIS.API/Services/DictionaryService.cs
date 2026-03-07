@@ -8,6 +8,8 @@ using System.Text;
 
 namespace ARIS.API.Services;
 
+public record SkillCandidateResult(string Name, double Distance, bool IsTech);
+
 public class DictionaryService
 {
     private readonly ArisDbContext _context;
@@ -38,6 +40,21 @@ public class DictionaryService
             .OrderBy(r => r.Embedding!.CosineDistance(vector))
             .Take(limit)
             .ToListAsync();
+    }
+
+    public async Task<List<SkillCandidateResult>> GetSkillCandidatesAsync(string skillName, int limit = 10)
+    {
+        var embeddings = await _embeddingGenerator.GenerateAsync([skillName]);
+        var vector = new Vector(embeddings[0].Vector);
+
+        var raw = await _context.Skills
+            .Where(s => s.Embedding != null)
+            .Select(s => new { s.Name, s.IsTech, Distance = s.Embedding!.CosineDistance(vector) })
+            .OrderBy(x => x.Distance)
+            .Take(limit)
+            .ToListAsync();
+
+        return raw.Select(x => new SkillCandidateResult(x.Name, x.Distance, x.IsTech)).ToList();
     }
 
     public async Task<List<RefSkill>> SearchSkillsAsync(string query, int limit = 10)
