@@ -55,21 +55,38 @@ builder.Services.AddHttpClient<RoadmapService>()
 builder.Services.AddSingleton<Neo4jIngestionService>();
 
 // AI - MEAI with Ollama
-var ollamaUri = new Uri(
-    Environment.GetEnvironmentVariable("Ollama__BaseUrl") ?? "http://localhost:11434");
+var ollamaBaseUrl = Environment.GetEnvironmentVariable("Ollama__BaseUrl")
+    ?? builder.Configuration["Ollama:BaseUrl"]
+    ?? "http://localhost:11434";
+var ollamaUri = new Uri(ollamaBaseUrl);
+
+var chatModel = Environment.GetEnvironmentVariable("Ollama__ChatModel")
+    ?? builder.Configuration["Ollama:ChatModel"]
+    ?? "mistral";
+
+var embeddingModel = Environment.GetEnvironmentVariable("Ollama__EmbeddingModel")
+    ?? builder.Configuration["Ollama:EmbeddingModel"]
+    ?? "qwen3-embedding:0.6b";
+
+var numCtx = int.TryParse(Environment.GetEnvironmentVariable("Ollama__NumCtx"), out var envCtx)
+    ? envCtx
+    : builder.Configuration.GetValue<int>("Ollama:NumCtx", 4096);
+
+Log.Information("Ollama: {BaseUrl} | Chat: {ChatModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
+    ollamaBaseUrl, chatModel, embeddingModel, numCtx);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "qwen3-embedding:0.6b");
+    var client = new OllamaApiClient(ollamaUri, embeddingModel);
     client.SetTimeout(TimeSpan.FromHours(1));
     return client;
 });
 
 builder.Services.AddSingleton<IChatClient>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "mistral");
-    client.SetTimeout(TimeSpan.FromHours(1));
-    return client;
+    var inner = new OllamaApiClient(ollamaUri, chatModel);
+    inner.SetTimeout(TimeSpan.FromHours(1));
+    return new NumCtxChatClient(inner, numCtx);
 });
 
 builder.Services.AddTransient<OntologyEnrichmentService>();
@@ -136,4 +153,33 @@ if (args.Contains("--seed-gold-standard"))
 else
 {
     host.Run();
+}
+
+/// <summary>
+/// Wraps an IChatClient to inject a fixed num_ctx (context window size) into every request,
+/// sourced from appsettings.json so it can be changed without rebuilding.
+/// </summary>
+file sealed class NumCtxChatClient(IChatClient inner, int numCtx) : DelegatingChatClient(inner)
+{
+#pragma warning disable CS8765
+    public override Task<ChatResponse> GetResponseAsync(
+        IEnumerable<ChatMessage> messages,
+        ChatOptions options,
+        CancellationToken cancellationToken)
+    {
+        var opts = (options ?? new ChatOptions()).Clone();
+        (opts.AdditionalProperties ??= new())["num_ctx"] = numCtx;
+        return base.GetResponseAsync(messages, opts, cancellationToken);
+    }
+
+    public override IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(
+        IEnumerable<ChatMessage> messages,
+        ChatOptions options,
+        CancellationToken cancellationToken)
+    {
+        var opts = (options ?? new ChatOptions()).Clone();
+        (opts.AdditionalProperties ??= new())["num_ctx"] = numCtx;
+        return base.GetStreamingResponseAsync(messages, opts, cancellationToken);
+    }
+#pragma warning restore CS8765
 }

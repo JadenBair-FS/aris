@@ -38,22 +38,29 @@ var dataSource = dataSourceBuilder.Build();
 builder.Services.AddDbContext<ArisDbContext>(options =>
     options.UseNpgsql(dataSource, o => o.UseVector()));
 
-// Semantic Kernel (Unified Ollama)
+// Ollama
 var ollamaUriString = builder.Configuration["Ollama:Uri"] ?? "http://localhost:11434";
 var ollamaUri = new Uri(ollamaUriString);
 
+var chatModel = builder.Configuration["Ollama:ChatModel"] ?? "mistral";
+var embeddingModel = builder.Configuration["Ollama:EmbeddingModel"] ?? "qwen3-embedding:0.6b";
+var numCtx = builder.Configuration.GetValue<int>("Ollama:NumCtx", 4096);
+
+Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
+    ollamaUriString, chatModel, embeddingModel, numCtx);
+
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "qwen3-embedding:0.6b");
+    var client = new OllamaApiClient(ollamaUri, embeddingModel);
     client.SetTimeout(TimeSpan.FromHours(1));
     return client;
 });
 
 builder.Services.AddSingleton<IChatClient>(sp =>
 {
-    var client = new OllamaApiClient(ollamaUri, "mistral");
-    client.SetTimeout(TimeSpan.FromHours(1));
-    return client;
+    var inner = new OllamaApiClient(ollamaUri, chatModel);
+    inner.SetTimeout(TimeSpan.FromHours(1));
+    return new NumCtxChatClient(inner, numCtx);
 });
 
 // HttpClient for Clerk Backend API
@@ -125,3 +132,32 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
+
+/// <summary>
+/// Wraps an IChatClient to inject a fixed num_ctx (context window size) into every request,
+/// sourced from appsettings.json so it can be changed without rebuilding.
+/// </summary>
+file sealed class NumCtxChatClient(IChatClient inner, int numCtx) : DelegatingChatClient(inner)
+{
+#pragma warning disable CS8765
+    public override Task<ChatResponse> GetResponseAsync(
+        IEnumerable<ChatMessage> messages,
+        ChatOptions options,
+        CancellationToken cancellationToken)
+    {
+        var opts = (options ?? new ChatOptions()).Clone();
+        (opts.AdditionalProperties ??= new())["num_ctx"] = numCtx;
+        return base.GetResponseAsync(messages, opts, cancellationToken);
+    }
+
+    public override IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(
+        IEnumerable<ChatMessage> messages,
+        ChatOptions options,
+        CancellationToken cancellationToken)
+    {
+        var opts = (options ?? new ChatOptions()).Clone();
+        (opts.AdditionalProperties ??= new())["num_ctx"] = numCtx;
+        return base.GetStreamingResponseAsync(messages, opts, cancellationToken);
+    }
+#pragma warning restore CS8765
+}
