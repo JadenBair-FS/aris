@@ -660,10 +660,8 @@ namespace ARIS.API.Services
                 {
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.Skills[i];
-                    bool isSoft = string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase);
 
-                    // Always try the technical (domain + general) bucket first at tight threshold.
-                    // This protects against LLM mis-labeling a technical skill as "Soft".
+                    // Pass 1: tight match — domain-specific skills first, then general, at 0.10
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -685,11 +683,11 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    var query = _context.Skills.Where(s => s.Embedding != null);
+                    var generalQuery = _context.Skills.Where(s => s.Embedding != null);
                     if (!isTech)
-                        query = query.Where(s => s.Source != "Roadmap.sh");
+                        generalQuery = generalQuery.Where(s => s.Source != "Roadmap.sh");
 
-                    var generalMatch = await query
+                    var generalMatch = await generalQuery
                         .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
                         .OrderBy(x => x.Distance)
                         .FirstOrDefaultAsync();
@@ -706,32 +704,31 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Tech bucket failed — if the skill is labeled Soft, try the soft bucket at the looser threshold
-                    if (isSoft)
-                    {
-                        var softMatch = await _context.Skills
-                            .Where(s => !s.IsTech && s.Embedding != null)
-                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                            .OrderBy(x => x.Distance)
-                            .FirstOrDefaultAsync();
+                    // Pass 2: fuzzy match — search only non-tech skills at a looser threshold.
+                    // Non-tech bucket excludes Roadmap.sh, so technical near-matches like
+                    // "React Hooks" → "React" cannot occur here. Only O*NET soft/domain skills.
+                    var fuzzyMatch = await _context.Skills
+                        .Where(s => !s.IsTech && s.Embedding != null)
+                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                        .OrderBy(x => x.Distance)
+                        .FirstOrDefaultAsync();
 
-                        if (softMatch != null && softMatch.Distance < _groundingSoftSkillThreshold)
+                    if (fuzzyMatch != null && fuzzyMatch.Distance < _groundingSoftSkillThreshold)
+                    {
+                        _logger.LogInformation("Skill '{Skill}' grounded via fuzzy pass: '{Canonical}' ({Distance:F3}).",
+                            originalSkill.Name, fuzzyMatch.Name, fuzzyMatch.Distance);
+                        groundedSkills.Add(new ResumeSkill
                         {
-                            _logger.LogInformation("Soft skill '{Skill}' grounded via soft bucket: '{Canonical}' ({Distance:F3}).",
-                                originalSkill.Name, softMatch.Name, softMatch.Distance);
-                            groundedSkills.Add(new ResumeSkill
-                            {
-                                Name = softMatch.Name,
-                                Category = originalSkill.Category,
-                                Proficiency = originalSkill.Proficiency,
-                                YearsOfExperience = originalSkill.YearsOfExperience
-                            });
-                            continue;
-                        }
+                            Name = fuzzyMatch.Name,
+                            Category = originalSkill.Category,
+                            Proficiency = originalSkill.Proficiency,
+                            YearsOfExperience = originalSkill.YearsOfExperience
+                        });
+                        continue;
                     }
 
-                    _logger.LogInformation("Skill '{Skill}' has no canonical match (best distance {Distance:F3}) — routing to ungrounded list.",
-                        originalSkill.Name, generalMatch?.Distance ?? 1.0);
+                    _logger.LogInformation("Skill '{Skill}' ungrounded — tight best: {TightDist:F3}, fuzzy best: {FuzzyDist:F3}.",
+                        originalSkill.Name, generalMatch?.Distance ?? 1.0, fuzzyMatch?.Distance ?? 1.0);
                     ungroundedSkills.Add(originalSkill);
                 }
 
