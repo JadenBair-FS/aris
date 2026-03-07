@@ -526,6 +526,7 @@ namespace ARIS.API.Services
                         groundedSkills.Add(new ResumeSkill
                         {
                             Name = domainMatch.Name,
+                            OriginalName = string.Equals(originalSkill.Name, domainMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
                             Category = originalSkill.Category,
                             Proficiency = originalSkill.Proficiency,
                             YearsOfExperience = originalSkill.YearsOfExperience
@@ -547,6 +548,7 @@ namespace ARIS.API.Services
                         groundedSkills.Add(new ResumeSkill
                         {
                             Name = generalMatch.Name,
+                            OriginalName = string.Equals(originalSkill.Name, generalMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
                             Category = originalSkill.Category,
                             Proficiency = originalSkill.Proficiency,
                             YearsOfExperience = originalSkill.YearsOfExperience
@@ -568,6 +570,7 @@ namespace ARIS.API.Services
                         groundedSkills.Add(new ResumeSkill
                         {
                             Name = secondPassMatch.Name,
+                            OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
                             Category = originalSkill.Category,
                             Proficiency = originalSkill.Proficiency,
                             YearsOfExperience = originalSkill.YearsOfExperience
@@ -585,6 +588,9 @@ namespace ARIS.API.Services
                     .Select(g => new ResumeSkill
                     {
                         Name = g.First().Name,
+                        // Only preserve OriginalName when exactly one extracted skill mapped here;
+                        // if multiple collapsed to the same canonical it's ambiguous so omit it.
+                        OriginalName = g.Count() == 1 ? g.First().OriginalName : null,
                         Category = g.First().Category,
                         Proficiency = g.First().Proficiency,
                         YearsOfExperience = g.Sum(s => s.YearsOfExperience)
@@ -672,20 +678,33 @@ namespace ARIS.API.Services
 
             foreach (var correction in corrections)
             {
-                var match = cs.UngroundedSkills.FirstOrDefault(s =>
+                // Case 1: correction targets an ungrounded skill (move to grounded list)
+                var ungroundedMatch = cs.UngroundedSkills.FirstOrDefault(s =>
                     string.Equals(s.Name, correction.From, StringComparison.OrdinalIgnoreCase));
-                if (match == null) continue;
-
-                cs.UngroundedSkills.Remove(match);
-                if (!cs.Skills.Any(s => string.Equals(s.Name, correction.To, StringComparison.OrdinalIgnoreCase)))
+                if (ungroundedMatch != null)
                 {
-                    cs.Skills.Add(new ResumeSkill
+                    cs.UngroundedSkills.Remove(ungroundedMatch);
+                    if (!cs.Skills.Any(s => string.Equals(s.Name, correction.To, StringComparison.OrdinalIgnoreCase)))
                     {
-                        Name = correction.To,
-                        Category = match.Category,
-                        Proficiency = match.Proficiency,
-                        YearsOfExperience = match.YearsOfExperience
-                    });
+                        cs.Skills.Add(new ResumeSkill
+                        {
+                            Name = correction.To,
+                            OriginalName = ungroundedMatch.Name,
+                            Category = ungroundedMatch.Category,
+                            Proficiency = ungroundedMatch.Proficiency,
+                            YearsOfExperience = ungroundedMatch.YearsOfExperience
+                        });
+                    }
+                    continue;
+                }
+
+                // Case 2: correction overrides an already-grounded skill (matched by OriginalName)
+                var groundedMatch = cs.Skills.FirstOrDefault(s =>
+                    s.OriginalName != null &&
+                    string.Equals(s.OriginalName, correction.From, StringComparison.OrdinalIgnoreCase));
+                if (groundedMatch != null)
+                {
+                    groundedMatch.Name = correction.To;
                 }
             }
 

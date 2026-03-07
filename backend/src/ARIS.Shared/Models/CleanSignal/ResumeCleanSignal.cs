@@ -44,6 +44,13 @@ namespace ARIS.Shared.Models.CleanSignal
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
 
+        /// <summary>
+        /// The raw name extracted by the LLM before grounding replaced it with a canonical name.
+        /// Null when the extracted name already matched the canonical (no substitution occurred).
+        /// </summary>
+        [JsonPropertyName("original_name")]
+        public string? OriginalName { get; set; }
+
         [JsonPropertyName("category")]
         public string Category { get; set; } = string.Empty;
 

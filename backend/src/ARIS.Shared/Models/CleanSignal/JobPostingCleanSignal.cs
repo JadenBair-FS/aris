@@ -37,6 +37,13 @@ public class JobSkill
     [JsonPropertyName("name")]
     public string Name { get; set; } = string.Empty;
 
+    /// <summary>
+    /// The raw name extracted by the LLM before grounding replaced it with a canonical name.
+    /// Null when the extracted name already matched the canonical (no substitution occurred).
+    /// </summary>
+    [JsonPropertyName("original_name")]
+    public string? OriginalName { get; set; }
+
     [JsonPropertyName("category")]
     public string Category { get; set; } = "Technical"; // Technical or Soft
 

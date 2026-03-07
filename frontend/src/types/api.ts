@@ -48,6 +48,7 @@ export interface RecruiterSummaryResult {
 // Resume CleanSignal — matches ResumeCleanSignal.cs (snake_case from JSON)
 export interface CleanSignalSkill {
     name: string;
+    original_name?: string;
     category: string;
     proficiency: string;
     years_of_experience: number;
@@ -96,6 +97,7 @@ export interface JobRole {
 
 export interface JobRequiredSkill {
     name: string;
+    original_name?: string;
     category: 'Technical' | 'Soft' | string;
     importance: 'Essential' | 'Preferred' | string;
     years_of_experience: number;

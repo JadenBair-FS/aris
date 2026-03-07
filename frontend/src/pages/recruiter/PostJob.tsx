@@ -45,9 +45,12 @@ export default function PostJob() {
 
     const isPending = postJobMutation.isPending;
     const cleanSignal = uploadResult?.cleanSignal;
-    const groundedTechnical = cleanSignal?.required_skills.filter(s => s.category !== 'Soft') ?? [];
-    const groundedSoft = cleanSignal?.required_skills.filter(s => s.category === 'Soft') ?? [];
-    const ungroundedSkills = cleanSignal?.ungrounded_skills ?? [];
+    const groundedTechnical = (cleanSignal?.required_skills.filter(s => s.category !== 'Soft') ?? [])
+        .map(s => ({ name: s.name, originalName: s.original_name, category: s.category }));
+    const groundedSoft = (cleanSignal?.required_skills.filter(s => s.category === 'Soft') ?? [])
+        .map(s => ({ name: s.name, originalName: s.original_name, category: s.category }));
+    const ungroundedSkills = (cleanSignal?.ungrounded_skills ?? [])
+        .map(s => ({ name: s.name, category: s.category }));
 
     return (
         <div className="max-w-2xl mx-auto space-y-6">
