@@ -1,0 +1,1750 @@
+{
+  "title": {
+    "card": "System Design",
+    "page": "System Design Roadmap"
+  },
+  "description": "Everything you need to know about designing large-scale systems in @currentYear@",
+  "nodes": [
+    {
+      "id": "9_t9UR6FVSn41Ha8kfbyJ",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "2dBw7KwXyXzZAZUSw0EAy",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "yy2gnfWzDpMa1KChmfrgy",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "IG4lMqEfFCgQyz3tyiGgk",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iCaCrvC5uord0zs0UtP4a",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wM_Z9VLxO_vpwR1Kfx_qK",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FT5tOhtkEXCcUj3xRKsVW",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "UQKMEfR6t72oqk0qTfYi9",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "HAkZP9cC1VtsnANNLNKn2",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "-0XsGJCcC8hIaPgNPMsoC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gvSx-FcbHjuuSYICrv2BW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ii6jsjup_8pRe5mBK0iJt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O3b90NuLijJq9a-WuPXDs",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "rLSI7a7h09MxAXM86LfpN",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "vwomvb6mMBiKcd9jg7iWI",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "fXbUXsM1KbLqTyeOIGMJN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Abp4pD1x7gM8zFInV-6SK",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "FWDXTm_Fu7E2X0r6L4xkf",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "FwGeTZ0ItXYI9Nn5skyx0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JTHRP_HfSOwmqJErt9tGB",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "bCRi5W6CHyle35zUo56er",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "urVudVWogiwLJMybuf7f8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sM7epahS3ZKtTKcpC7aYw",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "FguoNXuSg-7m3z5dp0fp6",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "MRD8SlWGmk8hoaZL6U690",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "_hYN0gEi9BL24nptEtXWU",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "idLHBxhvcIqZTqmh_E8Az",
+      "type": "subtopic",
+      "data": {
+        "label": "What is System Design?"
+      }
+    },
+    {
+      "id": "os3Pa6W9SSNEzgmlBbglQ",
+      "type": "subtopic",
+      "data": {
+        "label": "How to approach System Design?"
+      }
+    },
+    {
+      "id": "Yj8mGmDmELssP8D_Ujh0F",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "e_15lymUjFc6VWqzPnKxG",
+      "type": "topic",
+      "data": {
+        "label": "Performance vs Scalability"
+      }
+    },
+    {
+      "id": "O3wAHLnzrkvLWr4afHDdr",
+      "type": "topic",
+      "data": {
+        "label": "Latency vs Throughput"
+      }
+    },
+    {
+      "id": "uJc27BNAuP321HQNbjftn",
+      "type": "topic",
+      "data": {
+        "label": "Availability vs Consistency"
+      }
+    },
+    {
+      "id": "tcGdVQsCEobdV9hgOq3eG",
+      "type": "subtopic",
+      "data": {
+        "label": "CAP Theorem"
+      }
+    },
+    {
+      "id": "m4xqKqnCvrCc13oO86z1h",
+      "type": "label",
+      "data": {
+        "label": "AP - Availability \u002B Partition Tolerance"
+      }
+    },
+    {
+      "id": "2b5j0CJbR1NahDu9VmB6F",
+      "type": "label",
+      "data": {
+        "label": "CP - Consistency \u002B Partition Tolerance"
+      }
+    },
+    {
+      "id": "GHe8V-REu1loRpDnHbyUn",
+      "type": "topic",
+      "data": {
+        "label": "Consistency Patterns"
+      }
+    },
+    {
+      "id": "EKD5AikZtwjtsEYRPJhQ2",
+      "type": "subtopic",
+      "data": {
+        "label": "Weak Consistency"
+      }
+    },
+    {
+      "id": "rRDGVynX43inSeQ9lR_FS",
+      "type": "subtopic",
+      "data": {
+        "label": "Eventual Consistency"
+      }
+    },
+    {
+      "id": "JjB7eB8gdRCAYf5M0RcT7",
+      "type": "subtopic",
+      "data": {
+        "label": "Strong Consistency"
+      }
+    },
+    {
+      "id": "ezptoTqeaepByegxS5kHL",
+      "type": "topic",
+      "data": {
+        "label": "Availability Patterns"
+      }
+    },
+    {
+      "id": "L_jRfjvMGjFbHEbozeVQl",
+      "type": "subtopic",
+      "data": {
+        "label": "Fail-Over"
+      }
+    },
+    {
+      "id": "d_Cg6Zjyf2HEs0l5cpX8P",
+      "type": "label",
+      "data": {
+        "label": "Active - Active"
+      }
+    },
+    {
+      "id": "OUz9JOof4kkNAIsTzklS3",
+      "type": "label",
+      "data": {
+        "label": "Active - Passive"
+      }
+    },
+    {
+      "id": "vJkqOyqXGa-aRjx3M1H-K",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "0RQ5jzZKdadYY0h_QZ0Bb",
+      "type": "subtopic",
+      "data": {
+        "label": "Replication"
+      }
+    },
+    {
+      "id": "mKV71c9XnnRbgVlmwlsbw",
+      "type": "label",
+      "data": {
+        "label": "Master - Slave"
+      }
+    },
+    {
+      "id": "K8xJZfEGkwOFcqb7CRJ7f",
+      "type": "label",
+      "data": {
+        "label": "Master - Master"
+      }
+    },
+    {
+      "id": "uHdrZllrZFAnVkwIB3y5-",
+      "type": "subtopic",
+      "data": {
+        "label": "Availability in Numbers"
+      }
+    },
+    {
+      "id": "0mI68m25Zrhj6Uoc1om2B",
+      "type": "label",
+      "data": {
+        "label": "99.9% Availability - three 9s"
+      }
+    },
+    {
+      "id": "rgadr3yf8Xq_1kCEJ0exf",
+      "type": "label",
+      "data": {
+        "label": "99.99% Availability - four 9s"
+      }
+    },
+    {
+      "id": "XJrLBec_U4QXa7IOecFbL",
+      "type": "label",
+      "data": {
+        "label": "Availability in Parallel vs Sequence"
+      }
+    },
+    {
+      "id": "DOESIlBThd_wp2uOSd_CS",
+      "type": "topic",
+      "data": {
+        "label": "Background Jobs"
+      }
+    },
+    {
+      "id": "NEsPjQifNDlZJE-2YLVl1",
+      "type": "subtopic",
+      "data": {
+        "label": "Event-Driven"
+      }
+    },
+    {
+      "id": "zoViI4kzpKIxpU20T89K_",
+      "type": "subtopic",
+      "data": {
+        "label": "Schedule Driven"
+      }
+    },
+    {
+      "id": "2gRIstNT-fTkv5GZ692gx",
+      "type": "subtopic",
+      "data": {
+        "label": "Returning Results"
+      }
+    },
+    {
+      "id": "Uk6J8JRcKVEFz4_8rLfnQ",
+      "type": "topic",
+      "data": {
+        "label": "Domain Name System"
+      }
+    },
+    {
+      "id": "O730v5Ww3ByAiBSs6fwyM",
+      "type": "topic",
+      "data": {
+        "label": "Content Delivery Networks"
+      }
+    },
+    {
+      "id": "uIerrf_oziiLg-KEyz8WM",
+      "type": "subtopic",
+      "data": {
+        "label": "Push CDNs"
+      }
+    },
+    {
+      "id": "HkXiEMLqxJoQyAHav3ccL",
+      "type": "subtopic",
+      "data": {
+        "label": "Pull CDNs"
+      }
+    },
+    {
+      "id": "14KqLKgh090Rb3MDwelWY",
+      "type": "topic",
+      "data": {
+        "label": "Load Balancers"
+      }
+    },
+    {
+      "id": "ocdcbhHrwjJX0KWgmsOL6",
+      "type": "subtopic",
+      "data": {
+        "label": "LB vs Reverse Proxy"
+      }
+    },
+    {
+      "id": "urSjLyLTE5IIz0TFxMBWL",
+      "type": "subtopic",
+      "data": {
+        "label": "Load Balancing Algorithms"
+      }
+    },
+    {
+      "id": "e69-JVbDj7dqV_p1j1kML",
+      "type": "subtopic",
+      "data": {
+        "label": "Layer 7 Load Balancing"
+      }
+    },
+    {
+      "id": "MpM9rT1-_LGD7YbnBjqOk",
+      "type": "subtopic",
+      "data": {
+        "label": "Layer 4 Load Balancing"
+      }
+    },
+    {
+      "id": "IkUCfSWNY-02wg2WCo1c6",
+      "type": "subtopic",
+      "data": {
+        "label": "Horizontal Scaling"
+      }
+    },
+    {
+      "id": "XXuzTrP5UNVwSpAk-tAGr",
+      "type": "topic",
+      "data": {
+        "label": "Application Layer"
+      }
+    },
+    {
+      "id": "UKTiaHCzYXnrNw31lHriv",
+      "type": "subtopic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "Nt0HUWLOl4O77elF8Is1S",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Discovery"
+      }
+    },
+    {
+      "id": "5FXwwRMNBhG7LT5ub6t2L",
+      "type": "topic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "KLnpMR2FxlQkCHZP6-tZm",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL vs NoSQL"
+      }
+    },
+    {
+      "id": "dc-aIbBwUdlwgwQKGrq49",
+      "type": "subtopic",
+      "data": {
+        "label": "Replication"
+      }
+    },
+    {
+      "id": "FX6dcV_93zOfbZMdM_-li",
+      "type": "subtopic",
+      "data": {
+        "label": "Sharding"
+      }
+    },
+    {
+      "id": "DGmVRI7oWdSOeIUn_g0rI",
+      "type": "subtopic",
+      "data": {
+        "label": "Federation"
+      }
+    },
+    {
+      "id": "Zp9D4--DgtlAjE2nIfaO_",
+      "type": "subtopic",
+      "data": {
+        "label": "Denormalization"
+      }
+    },
+    {
+      "id": "fY8zgbB13wxZ1CFtMSdZZ",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Tuning"
+      }
+    },
+    {
+      "id": "uyrV_iIIQQvEDSUM9gt7H",
+      "type": "label",
+      "data": {
+        "label": "RDBMS"
+      }
+    },
+    {
+      "id": "KFtdmmce4bRkDyvFXZzLN",
+      "type": "subtopic",
+      "data": {
+        "label": "Key-Value Store"
+      }
+    },
+    {
+      "id": "didEznSlVHqqlijtyOSr3",
+      "type": "subtopic",
+      "data": {
+        "label": "Document Store"
+      }
+    },
+    {
+      "id": "WHq1AdISkcgthaugE9uY7",
+      "type": "subtopic",
+      "data": {
+        "label": "Wide Column Store"
+      }
+    },
+    {
+      "id": "6RLgnL8qLBzYkllHeaI-Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Graph Databases"
+      }
+    },
+    {
+      "id": "de-uXrRy3XDwZbLyXXluK",
+      "type": "label",
+      "data": {
+        "label": "NoSQL"
+      }
+    },
+    {
+      "id": "-X4g8kljgVBOBcf1DDzgi",
+      "type": "topic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "Bgqgl67FK56ioLNFivIsc",
+      "type": "subtopic",
+      "data": {
+        "label": "Refresh Ahead"
+      }
+    },
+    {
+      "id": "vNndJ-MWetcbaF2d-3-JP",
+      "type": "subtopic",
+      "data": {
+        "label": "Write-behind"
+      }
+    },
+    {
+      "id": "RNITLR1FUQWkRbSBXTD_z",
+      "type": "subtopic",
+      "data": {
+        "label": "Write-through"
+      }
+    },
+    {
+      "id": "bffJlvoLHFldS0CluWifP",
+      "type": "subtopic",
+      "data": {
+        "label": "Cache Aside"
+      }
+    },
+    {
+      "id": "AUCyMMaN7s2OnCEMo2-Or",
+      "type": "label",
+      "data": {
+        "label": "Strategies"
+      }
+    },
+    {
+      "id": "RHNRb6QWiGvCK3KQOPK3u",
+      "type": "subtopic",
+      "data": {
+        "label": "Client Caching"
+      }
+    },
+    {
+      "id": "Kisvxlrjb7XnKFCOdxRtb",
+      "type": "subtopic",
+      "data": {
+        "label": "CDN Caching"
+      }
+    },
+    {
+      "id": "o532nPnL-d2vXJn9k6vMl",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Server Caching"
+      }
+    },
+    {
+      "id": "BeIg4jzbij2cwc_a_VpYG",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Caching"
+      }
+    },
+    {
+      "id": "5Ux_JBDOkflCaIm4tVBgO",
+      "type": "subtopic",
+      "data": {
+        "label": "Application Caching"
+      }
+    },
+    {
+      "id": "84N4XY31PwXRntXX1sdCU",
+      "type": "topic",
+      "data": {
+        "label": "Asynchronism"
+      }
+    },
+    {
+      "id": "YiYRZFE_zwPMiCZxz9FnP",
+      "type": "subtopic",
+      "data": {
+        "label": "Back Pressure"
+      }
+    },
+    {
+      "id": "a9wGW_H1HpvvdYCXoS-Rf",
+      "type": "subtopic",
+      "data": {
+        "label": "Task Queues"
+      }
+    },
+    {
+      "id": "37X1_9eCmkZkz5RDudE5N",
+      "type": "subtopic",
+      "data": {
+        "label": "Message Queues"
+      }
+    },
+    {
+      "id": "8FbjRx2vPtjeayul0aczD",
+      "type": "label",
+      "data": {
+        "label": "Types of Caching"
+      }
+    },
+    {
+      "id": "3ewsWpHDMS3XBucSnG3Ab",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3pRi8M4xQXsehkdfUNtYL",
+      "type": "topic",
+      "data": {
+        "label": "Idempotent Operations"
+      }
+    },
+    {
+      "id": "xqPpYbDLE8si-QW58dswv",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uQFzD_ryd-8Dr1ppjorYJ",
+      "type": "topic",
+      "data": {
+        "label": "Communication"
+      }
+    },
+    {
+      "id": "I_nR6EwjNXSG7_hw-_VhX",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP"
+      }
+    },
+    {
+      "id": "2nF5uC6fYKbf0RFgGNHiP",
+      "type": "subtopic",
+      "data": {
+        "label": "TCP"
+      }
+    },
+    {
+      "id": "LC5aTmUKNiw9RuSUt3fSE",
+      "type": "subtopic",
+      "data": {
+        "label": "UDP"
+      }
+    },
+    {
+      "id": "ixqucoAkgnphWYAFnsMe-",
+      "type": "subtopic",
+      "data": {
+        "label": "RPC"
+      }
+    },
+    {
+      "id": "6-bgmfDTAQ9zABhpmVoHV",
+      "type": "subtopic",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "Hw2v1rCYn24qxBhhmdc28",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC"
+      }
+    },
+    {
+      "id": "jwv2g2Yeq-6Xv5zSd746R",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "p--uEm6klLx_hKxKJiXE5",
+      "type": "topic",
+      "data": {
+        "label": "Performance Antipatterns"
+      }
+    },
+    {
+      "id": "hxiV2uF7tvhZKe4K-4fTn",
+      "type": "subtopic",
+      "data": {
+        "label": "Busy Database"
+      }
+    },
+    {
+      "id": "i_2M3VloG-xTgWDWp4ngt",
+      "type": "subtopic",
+      "data": {
+        "label": "Busy Frontend"
+      }
+    },
+    {
+      "id": "0IzQwuYi_E00bJwxDuw2B",
+      "type": "subtopic",
+      "data": {
+        "label": "Chatty I/O"
+      }
+    },
+    {
+      "id": "6u3XmtJFWyJnyZUnJcGYb",
+      "type": "subtopic",
+      "data": {
+        "label": "Extraneous Fetching"
+      }
+    },
+    {
+      "id": "lwMs4yiUHF3nQwcvauers",
+      "type": "subtopic",
+      "data": {
+        "label": "Improper Instantiation"
+      }
+    },
+    {
+      "id": "p1QhCptnwzTGUXVMnz_Oz",
+      "type": "subtopic",
+      "data": {
+        "label": "Monolithic Persistence"
+      }
+    },
+    {
+      "id": "klvHk1_e03Jarn5T46QNi",
+      "type": "subtopic",
+      "data": {
+        "label": "No Caching"
+      }
+    },
+    {
+      "id": "r7uQxmurvfsYtTCieHqly",
+      "type": "subtopic",
+      "data": {
+        "label": "Noisy Neighbor"
+      }
+    },
+    {
+      "id": "LNmAJmh2ndFtOQIpvX_ga",
+      "type": "subtopic",
+      "data": {
+        "label": "Retry Storm"
+      }
+    },
+    {
+      "id": "Ihnmxo_bVgZABDwg1QGGk",
+      "type": "subtopic",
+      "data": {
+        "label": "Synchronous I/O"
+      }
+    },
+    {
+      "id": "hDFYlGFYwcwWXLmrxodFX",
+      "type": "topic",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "hkjYvLoVt9xKDzubm0Jy3",
+      "type": "subtopic",
+      "data": {
+        "label": "Health Monitoring"
+      }
+    },
+    {
+      "id": "rVrwaioGURvrqNBufF2dj",
+      "type": "subtopic",
+      "data": {
+        "label": "Availability Monitoring"
+      }
+    },
+    {
+      "id": "x1i3qWFtNNjd00-kAvFHw",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance Monitoring"
+      }
+    },
+    {
+      "id": "I_NfmDcBph8-oyFVFTknL",
+      "type": "subtopic",
+      "data": {
+        "label": "Security Monitoring"
+      }
+    },
+    {
+      "id": "eSZq74lROh5lllLyTBK5a",
+      "type": "subtopic",
+      "data": {
+        "label": "Usage Monitoring"
+      }
+    },
+    {
+      "id": "Q0fKphqmPwjTD0dhqiP6K",
+      "type": "subtopic",
+      "data": {
+        "label": "Instrumentation"
+      }
+    },
+    {
+      "id": "IwMOTpsYHApdvHZOhXtIw",
+      "type": "subtopic",
+      "data": {
+        "label": "Visualization \u0026 Alerts"
+      }
+    },
+    {
+      "id": "8ZK2iHO4D3cONYu2JN74F",
+      "type": "paragraph",
+      "data": {
+        "label": "The design patterns given in this section are of varying importance. You don\u0027t need to master all of them. Simply get an overview of each and this will give you some insight into designing scalable systems."
+      }
+    },
+    {
+      "id": "THlzcZTNnPGLRiHPWT-Jv",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Design Patterns"
+      }
+    },
+    {
+      "id": "MPrL72ZLsxJeLKHHCIo3s",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "dsWpta3WIBvv2K9pNVPo0",
+      "type": "topic",
+      "data": {
+        "label": "Messaging"
+      }
+    },
+    {
+      "id": "VgvUWAC6JYFyPZKBRoEqf",
+      "type": "subtopic",
+      "data": {
+        "label": "Sequential Convoy"
+      }
+    },
+    {
+      "id": "uR1fU6pm7zTtdBcNgSRi4",
+      "type": "subtopic",
+      "data": {
+        "label": "Scheduling Agent Supervisor"
+      }
+    },
+    {
+      "id": "LncTxPg-wx8loy55r5NmV",
+      "type": "subtopic",
+      "data": {
+        "label": "Queue-Based Load Leveling"
+      }
+    },
+    {
+      "id": "2ryzJhRDTo98gGgn9mAxR",
+      "type": "subtopic",
+      "data": {
+        "label": "Publisher/Subscriber"
+      }
+    },
+    {
+      "id": "DZcZEOi7h3u0744YhASet",
+      "type": "subtopic",
+      "data": {
+        "label": "Priority Queue"
+      }
+    },
+    {
+      "id": "siXdR3TB9-4wx_qWieJ5w",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipes and Filters"
+      }
+    },
+    {
+      "id": "9Ld07KLOqP0ICtXEjngYM",
+      "type": "subtopic",
+      "data": {
+        "label": "Competing Consumers"
+      }
+    },
+    {
+      "id": "aCzRgUkVBvtHUeLU6p5ZH",
+      "type": "subtopic",
+      "data": {
+        "label": "Choreography"
+      }
+    },
+    {
+      "id": "kl4upCnnZvJSf2uII1Pa0",
+      "type": "subtopic",
+      "data": {
+        "label": "Claim Check"
+      }
+    },
+    {
+      "id": "eNFNXPsFiryVxFe4unVxk",
+      "type": "subtopic",
+      "data": {
+        "label": "Async Request Reply"
+      }
+    },
+    {
+      "id": "W0cUCrhiwH_Nrzxw50x3L",
+      "type": "topic",
+      "data": {
+        "label": "Data Management"
+      }
+    },
+    {
+      "id": "stZOcr8EUBOK_ZB48uToj",
+      "type": "subtopic",
+      "data": {
+        "label": "Valet Key"
+      }
+    },
+    {
+      "id": "-lKq-LT7EPK7r3xbXLgwS",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Content Hosting"
+      }
+    },
+    {
+      "id": "R6YehzA3X6DDo6oGBoBAx",
+      "type": "subtopic",
+      "data": {
+        "label": "Sharding"
+      }
+    },
+    {
+      "id": "WB7vQ4IJ0TPh2MbZvxP6V",
+      "type": "subtopic",
+      "data": {
+        "label": "Materialized View"
+      }
+    },
+    {
+      "id": "AH0nVeVsfYOjcI3vZvcdz",
+      "type": "subtopic",
+      "data": {
+        "label": "Index Table"
+      }
+    },
+    {
+      "id": "7OgRKlwFqrk3XO2z49EI1",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Sourcing"
+      }
+    },
+    {
+      "id": "LTD3dn05c0ruUJW0IQO7z",
+      "type": "subtopic",
+      "data": {
+        "label": "CQRS"
+      }
+    },
+    {
+      "id": "PK4V9OWNVi8StdA2N13X2",
+      "type": "subtopic",
+      "data": {
+        "label": "Cache-Aside"
+      }
+    },
+    {
+      "id": "PtJ7-v1VCLsyaWWYHYujV",
+      "type": "topic",
+      "data": {
+        "label": "Design \u0026 Implementation"
+      }
+    },
+    {
+      "id": "VIbXf7Jh9PbQ9L-g6pHUG",
+      "type": "subtopic",
+      "data": {
+        "label": "Strangler Fig"
+      }
+    },
+    {
+      "id": "izPT8NfJy1JC6h3i7GJYl",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Content Hosting"
+      }
+    },
+    {
+      "id": "AAgOGrra5Yz3_eG6tD2Fx",
+      "type": "subtopic",
+      "data": {
+        "label": "Sidecar"
+      }
+    },
+    {
+      "id": "WkoFezOXLf1H2XI9AtBtv",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipes \u0026 Filters"
+      }
+    },
+    {
+      "id": "beWKUIB6Za27yhxQwEYe3",
+      "type": "subtopic",
+      "data": {
+        "label": "Leader Election"
+      }
+    },
+    {
+      "id": "LXH_mDlILqcyIKtMYTWqy",
+      "type": "subtopic",
+      "data": {
+        "label": "Gateway Routing"
+      }
+    },
+    {
+      "id": "0SOWAA8hrLM-WsG5k66fd",
+      "type": "subtopic",
+      "data": {
+        "label": "Gateway Offloading"
+      }
+    },
+    {
+      "id": "bANGLm_5zR9mqMd6Oox8s",
+      "type": "subtopic",
+      "data": {
+        "label": "Gateway Aggregation"
+      }
+    },
+    {
+      "id": "BrgXwf7g2F-6Rqfjryvpj",
+      "type": "subtopic",
+      "data": {
+        "label": "External Config Store"
+      }
+    },
+    {
+      "id": "ODjVoXnvJasPvCS2A5iMO",
+      "type": "subtopic",
+      "data": {
+        "label": "Compute Resource Consolidation"
+      }
+    },
+    {
+      "id": "ivr3mh0OES5n86FI1PN4N",
+      "type": "subtopic",
+      "data": {
+        "label": "CQRS"
+      }
+    },
+    {
+      "id": "n4It-lr7FFtSY83DcGydX",
+      "type": "subtopic",
+      "data": {
+        "label": "Backends for Frontend"
+      }
+    },
+    {
+      "id": "4hi7LvjLcv8eR6m-uk8XQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Anti-Corruption Layer"
+      }
+    },
+    {
+      "id": "Hja4YF3JcgM6CPwB1mxmo",
+      "type": "subtopic",
+      "data": {
+        "label": "Ambassador"
+      }
+    },
+    {
+      "id": "DYkdM_L7T2GcTPAoZNnUR",
+      "type": "topic",
+      "data": {
+        "label": "Reliability Patterns"
+      }
+    },
+    {
+      "id": "DOvQbApZ6k15FwOTAi9kP",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Xzkvf4naveszLGV9b-8ih",
+      "type": "topic",
+      "data": {
+        "label": "Availability"
+      }
+    },
+    {
+      "id": "FPPJw-I1cw8OxKwmDh0dT",
+      "type": "subtopic",
+      "data": {
+        "label": "Deployment Stamps"
+      }
+    },
+    {
+      "id": "Ml9lPDGjRAJTHkBnX51Un",
+      "type": "subtopic",
+      "data": {
+        "label": "Geodes"
+      }
+    },
+    {
+      "id": "cNJQoMNZmxNygWAJIA8HI",
+      "type": "subtopic",
+      "data": {
+        "label": "Health Endpoint Monitoring"
+      }
+    },
+    {
+      "id": "-M3Zd8w79sKBAY6_aJRE8",
+      "type": "subtopic",
+      "data": {
+        "label": "Queue-Based Load Leveling"
+      }
+    },
+    {
+      "id": "6YVkguDOtwveyeP4Z1NL3",
+      "type": "subtopic",
+      "data": {
+        "label": "Throttling"
+      }
+    },
+    {
+      "id": "wPe7Xlwqws7tEpTAVvYjr",
+      "type": "topic",
+      "data": {
+        "label": "High Availability"
+      }
+    },
+    {
+      "id": "Ze471tPbAwlwZyU4oIzH9",
+      "type": "subtopic",
+      "data": {
+        "label": "Deployment Stamps"
+      }
+    },
+    {
+      "id": "6hOSEZJZ7yezVN67h5gmS",
+      "type": "subtopic",
+      "data": {
+        "label": "Geodes"
+      }
+    },
+    {
+      "id": "uK5o7NgDvr2pV0ulF0Fh9",
+      "type": "subtopic",
+      "data": {
+        "label": "Health Endpoint Monitoring"
+      }
+    },
+    {
+      "id": "IR2_kgs2U9rnAJiDBmpqK",
+      "type": "subtopic",
+      "data": {
+        "label": "Bulkhead"
+      }
+    },
+    {
+      "id": "D1OmCoqvd3-_af3u0ciHr",
+      "type": "subtopic",
+      "data": {
+        "label": "Circuit Breaker"
+      }
+    },
+    {
+      "id": "wlAWMjxZF6yav3ZXOScxH",
+      "type": "topic",
+      "data": {
+        "label": "Resiliency"
+      }
+    },
+    {
+      "id": "PLn9TF9GYnPcbpTdDMQbG",
+      "type": "subtopic",
+      "data": {
+        "label": "Bulkhead"
+      }
+    },
+    {
+      "id": "O4zYDqvVWD7sMI27k_0Nl",
+      "type": "subtopic",
+      "data": {
+        "label": "Circuit Breaker"
+      }
+    },
+    {
+      "id": "MNlWNjrG8eh5OzPVlbb9t",
+      "type": "subtopic",
+      "data": {
+        "label": "Compensating Transaction"
+      }
+    },
+    {
+      "id": "CKCNk3obx4u43rBqUj2Yf",
+      "type": "subtopic",
+      "data": {
+        "label": "Health Endpoint Monitoring"
+      }
+    },
+    {
+      "id": "AJLBFyAsEdQYF6ygO0MmQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Leader Election"
+      }
+    },
+    {
+      "id": "NybkOwl1lgaglZPRJQJ_Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Queue-Based Load Leveling"
+      }
+    },
+    {
+      "id": "xX_9VGUaOkBYFH3jPjnww",
+      "type": "subtopic",
+      "data": {
+        "label": "Retry "
+      }
+    },
+    {
+      "id": "RTEJHZ26znfBLrpQPtNvn",
+      "type": "subtopic",
+      "data": {
+        "label": "Scheduler Agent Supervisor"
+      }
+    },
+    {
+      "id": "ZvYpE6-N5dAtRDIwqcAu6",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "lHPl-kr1ArblR7bJeQEB9",
+      "type": "subtopic",
+      "data": {
+        "label": "Federated Identity"
+      }
+    },
+    {
+      "id": "DTQJu0AvgWOhMFcOYqzTD",
+      "type": "subtopic",
+      "data": {
+        "label": "Gatekeeper"
+      }
+    },
+    {
+      "id": "VltZgIrApHOwZ8YHvdmHB",
+      "type": "subtopic",
+      "data": {
+        "label": "Valet Key"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant tracks to learn more"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CH_K6mmFX_GdSzi2n1ID7",
+      "type": "button",
+      "data": {
+        "label": "Software Architect"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "5YmUrGQwDYxumNM8EDLpr",
+      "type": "linksgroup",
+      "data": {
+        "label": "Other Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "XX0I26JoVMVXIe_7bVMix",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "_hYN0gEi9BL24nptEtXWU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "dFn6kGOoJ-0BzJJEb9DSG",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "idLHBxhvcIqZTqmh_E8Az",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "arkF7QJJRbCBYWp0crqa2",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "os3Pa6W9SSNEzgmlBbglQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GHe8V-REu1loRpDnHbyUnz2-rRDGVynX43inSeQ9lR_FSy1",
+      "source": "GHe8V-REu1loRpDnHbyUn",
+      "target": "rRDGVynX43inSeQ9lR_FS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GHe8V-REu1loRpDnHbyUnz2-EKD5AikZtwjtsEYRPJhQ2y1",
+      "source": "GHe8V-REu1loRpDnHbyUn",
+      "target": "EKD5AikZtwjtsEYRPJhQ2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GHe8V-REu1loRpDnHbyUnz2-JjB7eB8gdRCAYf5M0RcT7y1",
+      "source": "GHe8V-REu1loRpDnHbyUn",
+      "target": "JjB7eB8gdRCAYf5M0RcT7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GHe8V-REu1loRpDnHbyUnx2-ezptoTqeaepByegxS5kHLw2",
+      "source": "GHe8V-REu1loRpDnHbyUn",
+      "target": "ezptoTqeaepByegxS5kHL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ezptoTqeaepByegxS5kHLx2-DOESIlBThd_wp2uOSd_CSz1",
+      "source": "ezptoTqeaepByegxS5kHL",
+      "target": "DOESIlBThd_wp2uOSd_CS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zoViI4kzpKIxpU20T89K_x2-2gRIstNT-fTkv5GZ692gxw1",
+      "source": "zoViI4kzpKIxpU20T89K_",
+      "target": "2gRIstNT-fTkv5GZ692gx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DOESIlBThd_wp2uOSd_CSy2-NEsPjQifNDlZJE-2YLVl1z2",
+      "source": "DOESIlBThd_wp2uOSd_CS",
+      "target": "NEsPjQifNDlZJE-2YLVl1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DOESIlBThd_wp2uOSd_CSy2-zoViI4kzpKIxpU20T89K_z1",
+      "source": "DOESIlBThd_wp2uOSd_CS",
+      "target": "zoViI4kzpKIxpU20T89K_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DOESIlBThd_wp2uOSd_CSx2-O730v5Ww3ByAiBSs6fwyMw1",
+      "source": "DOESIlBThd_wp2uOSd_CS",
+      "target": "Uk6J8JRcKVEFz4_8rLfnQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Uk6J8JRcKVEFz4_8rLfnQz2-O730v5Ww3ByAiBSs6fwyMy1",
+      "source": "Uk6J8JRcKVEFz4_8rLfnQ",
+      "target": "O730v5Ww3ByAiBSs6fwyM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-O730v5Ww3ByAiBSs6fwyMz2-HkXiEMLqxJoQyAHav3ccLy1",
+      "source": "O730v5Ww3ByAiBSs6fwyM",
+      "target": "HkXiEMLqxJoQyAHav3ccL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O730v5Ww3ByAiBSs6fwyMz2-uIerrf_oziiLg-KEyz8WMy1",
+      "source": "O730v5Ww3ByAiBSs6fwyM",
+      "target": "uIerrf_oziiLg-KEyz8WM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYz2-ocdcbhHrwjJX0KWgmsOL6y1",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "ocdcbhHrwjJX0KWgmsOL6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYz2-urSjLyLTE5IIz0TFxMBWLy1",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "urSjLyLTE5IIz0TFxMBWL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYz2-e69-JVbDj7dqV_p1j1kMLy2",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "e69-JVbDj7dqV_p1j1kML",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYz2-MpM9rT1-_LGD7YbnBjqOky1",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "MpM9rT1-_LGD7YbnBjqOk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYz2-IkUCfSWNY-02wg2WCo1c6y1",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "IkUCfSWNY-02wg2WCo1c6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-14KqLKgh090Rb3MDwelWYy2-XXuzTrP5UNVwSpAk-tAGrz2",
+      "source": "14KqLKgh090Rb3MDwelWY",
+      "target": "XXuzTrP5UNVwSpAk-tAGr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-XXuzTrP5UNVwSpAk-tAGrw2-Nt0HUWLOl4O77elF8Is1Sx2",
+      "source": "XXuzTrP5UNVwSpAk-tAGr",
+      "target": "Nt0HUWLOl4O77elF8Is1S",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XXuzTrP5UNVwSpAk-tAGrx2-84N4XY31PwXRntXX1sdCUw1",
+      "source": "XXuzTrP5UNVwSpAk-tAGr",
+      "target": "5FXwwRMNBhG7LT5ub6t2L",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-84N4XY31PwXRntXX1sdCUx2-KLnpMR2FxlQkCHZP6-tZmw2",
+      "source": "5FXwwRMNBhG7LT5ub6t2L",
+      "target": "KLnpMR2FxlQkCHZP6-tZm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5FXwwRMNBhG7LT5ub6t2Lz2-84N4XY31PwXRntXX1sdCUw1",
+      "source": "5FXwwRMNBhG7LT5ub6t2L",
+      "target": "-X4g8kljgVBOBcf1DDzgi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--X4g8kljgVBOBcf1DDzgix2-84N4XY31PwXRntXX1sdCUw2",
+      "source": "-X4g8kljgVBOBcf1DDzgi",
+      "target": "84N4XY31PwXRntXX1sdCU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-84N4XY31PwXRntXX1sdCUy2-a9wGW_H1HpvvdYCXoS-Rfz1",
+      "source": "84N4XY31PwXRntXX1sdCU",
+      "target": "a9wGW_H1HpvvdYCXoS-Rf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-84N4XY31PwXRntXX1sdCUy2-37X1_9eCmkZkz5RDudE5Nz1",
+      "source": "84N4XY31PwXRntXX1sdCU",
+      "target": "37X1_9eCmkZkz5RDudE5N",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-84N4XY31PwXRntXX1sdCUy2-YiYRZFE_zwPMiCZxz9FnPz1",
+      "source": "84N4XY31PwXRntXX1sdCU",
+      "target": "YiYRZFE_zwPMiCZxz9FnP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-3pRi8M4xQXsehkdfUNtYLy2-uQFzD_ryd-8Dr1ppjorYJz1",
+      "source": "3pRi8M4xQXsehkdfUNtYL",
+      "target": "uQFzD_ryd-8Dr1ppjorYJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-uQFzD_ryd-8Dr1ppjorYJy2-LC5aTmUKNiw9RuSUt3fSEz2",
+      "source": "uQFzD_ryd-8Dr1ppjorYJ",
+      "target": "LC5aTmUKNiw9RuSUt3fSE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-p--uEm6klLx_hKxKJiXE5z2-hDFYlGFYwcwWXLmrxodFXw1",
+      "source": "p--uEm6klLx_hKxKJiXE5",
+      "target": "hDFYlGFYwcwWXLmrxodFX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-I_NfmDcBph8-oyFVFTknLy1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "I_NfmDcBph8-oyFVFTknL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-hkjYvLoVt9xKDzubm0Jy3y1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "hkjYvLoVt9xKDzubm0Jy3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-rVrwaioGURvrqNBufF2djy1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "rVrwaioGURvrqNBufF2dj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-x1i3qWFtNNjd00-kAvFHwy1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "x1i3qWFtNNjd00-kAvFHw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-eSZq74lROh5lllLyTBK5ay1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "eSZq74lROh5lllLyTBK5a",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-Q0fKphqmPwjTD0dhqiP6Ky1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "Q0fKphqmPwjTD0dhqiP6K",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hDFYlGFYwcwWXLmrxodFXz2-IwMOTpsYHApdvHZOhXtIwy1",
+      "source": "hDFYlGFYwcwWXLmrxodFX",
+      "target": "IwMOTpsYHApdvHZOhXtIw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-THlzcZTNnPGLRiHPWT-Jvy2-PtJ7-v1VCLsyaWWYHYujVz1",
+      "source": "THlzcZTNnPGLRiHPWT-Jv",
+      "target": "PtJ7-v1VCLsyaWWYHYujV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-THlzcZTNnPGLRiHPWT-Jvz2-DYkdM_L7T2GcTPAoZNnURw1",
+      "source": "THlzcZTNnPGLRiHPWT-Jv",
+      "target": "DYkdM_L7T2GcTPAoZNnUR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DYkdM_L7T2GcTPAoZNnURx2-0vLaVNJaJSHZ_bHli6Qzsz1",
+      "source": "DYkdM_L7T2GcTPAoZNnUR",
+      "target": "0vLaVNJaJSHZ_bHli6Qzs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

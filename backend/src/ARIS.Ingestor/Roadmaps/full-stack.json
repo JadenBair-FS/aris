@@ -1,0 +1,732 @@
+{
+  "title": {
+    "card": "Full Stack",
+    "page": "Full Stack Developer"
+  },
+  "description": "Step by step guide to becoming a modern full stack developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "yrZUjoNj7mjOHaZVRiFJV",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kPPgIGhyoDoJoUJnP-vOY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tmRyxL2cIei7PVHdOvmuJ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue Learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Full Stack"
+      }
+    },
+    {
+      "id": "sQsxo9QyLKZyhMnFUcxhS",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "B0kARTODvCBi0iOF8iiqI",
+      "type": "topic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "dAJHWmGeiYdzZ1ZjrWz1S",
+      "type": "topic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "T9PB6WQf-Fa9NXKKvVOy_",
+      "type": "topic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "mGgx_QTEPmVKf6AijX9fi",
+      "type": "topic",
+      "data": {
+        "label": "npm"
+      }
+    },
+    {
+      "id": "WsdUAEaI7FX6DKKhPXUHp",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint - Static Webpages"
+      }
+    },
+    {
+      "id": "arAWBttFmMY6g99PcEaeA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "2DFzoIUjKdAKGjfu_SCfa",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint - Interactivity"
+      }
+    },
+    {
+      "id": "CVVeXklBu8uEr7oyiSEhQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "We2APJpOPTr-VNfowG0kI",
+      "type": "topic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "8sPXL8iClpPqje03ksses",
+      "type": "topic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "R4aeJNOrfWyVp3ea-qF4H",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint - External Packages"
+      }
+    },
+    {
+      "id": "PW10DTLV-5U2ue770SXtM",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "CVCqdPkq_hGQfI8EEi5RC",
+      "type": "topic",
+      "data": {
+        "label": "Tailwind CSS"
+      }
+    },
+    {
+      "id": "khoUtTUxdf8udAzN9_CAb",
+      "type": "topic",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "zFGWxgLPcZoW7KIzlnSV9",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint - Collaborative Work"
+      }
+    },
+    {
+      "id": "8MhESAMICF6j7X3RL9bFE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "H63WyNiiJ2Yr9HWs98EjR",
+      "type": "paragraph",
+      "data": {
+        "label": "Feel free to skip these and revisit after learning Backend"
+      }
+    },
+    {
+      "id": "QfW-odmDYknm_qXNcDu5o",
+      "type": "paragraph",
+      "data": {
+        "label": "Start Backend Development"
+      }
+    },
+    {
+      "id": "7JU1cVggMDoZUV-adGsf-",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint - Frontend Apps"
+      }
+    },
+    {
+      "id": "_aA6Hp4KkgJeptqo8oKTg",
+      "type": "topic",
+      "data": {
+        "label": "Node.js"
+      }
+    },
+    {
+      "id": "qCV1wiNSXj4OSHyMqxRIK",
+      "type": "paragraph",
+      "data": {
+        "label": "You can pick any backend programming language. My recommendation is Node.js because you are already familiar with JavaScript and it\u0027s easier to pick."
+      }
+    },
+    {
+      "id": "0QKpvDD33C3WCmNGtRanp",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WqNcVZ8IkyqEubdd9JCa1",
+      "type": "label",
+      "data": {
+        "label": "Backend Starts here"
+      }
+    },
+    {
+      "id": "JGu0TKwAw-ieiG92BytYI",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 CLI Apps"
+      }
+    },
+    {
+      "id": "o72NM00uoHXswkadhqVVW",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "vmHbWdmMHF53otXIrqzRV",
+      "type": "topic",
+      "data": {
+        "label": "RESTful APIs"
+      }
+    },
+    {
+      "id": "3EtGLO6cwkLc1-o9gwFNk",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Simple CRUD Apps"
+      }
+    },
+    {
+      "id": "BQV2ycD-EnmssO1idTgx9",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "vHojhJYjiN0IwruEqi1Dv",
+      "type": "topic",
+      "data": {
+        "label": "JWT Auth"
+      }
+    },
+    {
+      "id": "Onfd7Sl8LG2sjh2aQY7gb",
+      "type": "topic",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "SHTSvMDqI7X1_ZT7-m--n",
+      "type": "topic",
+      "data": {
+        "label": "Linux Basics"
+      }
+    },
+    {
+      "id": "gSUWhfd0DQoJjDpHEkk0i",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "v4NF25lJElAtkU0Rm6Fob",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Complete App"
+      }
+    },
+    {
+      "id": "Oav7YPRBmsE1gVhEURckg",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Dj2QhtEuuIgKc2CvgFGyK",
+      "type": "label",
+      "data": {
+        "label": "DevOps starts here"
+      }
+    },
+    {
+      "id": "cUOfvOlQ_0Uu1VX3i67kJ",
+      "type": "topic",
+      "data": {
+        "label": "Basic AWS Services"
+      }
+    },
+    {
+      "id": "6oBIxYj8WPcUHidQ99tus",
+      "type": "subtopic",
+      "data": {
+        "label": "EC2"
+      }
+    },
+    {
+      "id": "QtL-bLKtWIdH00K6k_PdC",
+      "type": "subtopic",
+      "data": {
+        "label": "VPC"
+      }
+    },
+    {
+      "id": "5zyYpu9cyuTFwQCjTbHpS",
+      "type": "subtopic",
+      "data": {
+        "label": "Route53"
+      }
+    },
+    {
+      "id": "B-cphY7Imnv6JBMujVIF7",
+      "type": "subtopic",
+      "data": {
+        "label": "SES"
+      }
+    },
+    {
+      "id": "n2Xp_ijJ2OS8xhE7xMWxk",
+      "type": "subtopic",
+      "data": {
+        "label": "S3"
+      }
+    },
+    {
+      "id": "fKzuMTsf6XL_0Ik6t8SAX",
+      "type": "paragraph",
+      "data": {
+        "label": "Use the checkpoints and do not forget to practice what you learn. There are project ideas at each checkpoint that you can build to solidify your knowledge."
+      }
+    },
+    {
+      "id": "y1SFX7uvWaCy4OYBnECLu",
+      "type": "topic",
+      "data": {
+        "label": "Monit"
+      }
+    },
+    {
+      "id": "HGhnbMg6jh6cAmUH4DtOx",
+      "type": "topic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "J2_IWAb1s9zZcxOY3NXm2",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Deployment"
+      }
+    },
+    {
+      "id": "863KMXcFJzInvTp_-Ldmz",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "zh4DYU0QpAolXJ6wE0CEe",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NQmEl27eBPYhivcXdOEz3",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Monitoring"
+      }
+    },
+    {
+      "id": "rFXupYpUFfp7vZO8zh614",
+      "type": "topic",
+      "data": {
+        "label": "Ansible"
+      }
+    },
+    {
+      "id": "WJIx6JGqxoNT-vKk4LMQp",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "liaY1GnlOateB_ZKBjNpY",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 CI / CD"
+      }
+    },
+    {
+      "id": "2kKHuQZScu7hCDgQWxl5u",
+      "type": "topic",
+      "data": {
+        "label": "Terraform"
+      }
+    },
+    {
+      "id": "gJhoy4tQwP4Gtwh0wL343",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sO_9-l4FECbaqiaFnyeXO",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Automation"
+      }
+    },
+    {
+      "id": "b7EdI-25v_eVMkqTBa0se",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "YVMyHFSCVF-GgXydq-SFJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoint \u2014 Infrastructure"
+      }
+    },
+    {
+      "id": "DezWXw5LWeP1S5Sosj90S",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "DsvdvpHWD0FgTjdkSJ9Uu",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "AWS"
+      }
+    },
+    {
+      "id": "2bi7EWaC5QIWX6_Vl6988",
+      "type": "paragraph",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "aaWX__NQvUofoN1VzwgD0",
+      "type": "label",
+      "data": {
+        "label": "Key topics to learn"
+      }
+    },
+    {
+      "id": "kvS4x6z7YWJjMpkpU01yh",
+      "type": "paragraph",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7HLG5FTMmOWGS-mOpqnQh",
+      "type": "label",
+      "data": {
+        "label": "Project ideas and suggestions"
+      }
+    },
+    {
+      "id": "9mrs26igEG0D9GpMv2NZc",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "X8Gvqj2h4wkfA1Cx2d1iW",
+      "type": "paragraph",
+      "data": {
+        "label": "If you are already a full-stack developer you should visit the following tracks."
+      }
+    },
+    {
+      "id": "7cbUuhyNE2SoZbm2Zh_t7",
+      "type": "paragraph",
+      "data": {
+        "label": "Target audience for this roadmap is absolute beginners wanting to get into full-stack development."
+      }
+    },
+    {
+      "id": "p1nlhjqz_BiKFFop2yHpJ",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "bt_V8XXqg8XDAJCzHrbWt",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "x1j-a82XiCX3bNIgLFryZ",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-mGgx_QTEPmVKf6AijX9fiy2",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "B0kARTODvCBi0iOF8iiqI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-B0kARTODvCBi0iOF8iiqIz2-mGgx_QTEPmVKf6AijX9fiy2",
+      "source": "B0kARTODvCBi0iOF8iiqI",
+      "target": "dAJHWmGeiYdzZ1ZjrWz1S",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-khoUtTUxdf8udAzN9_CAbz2-mGgx_QTEPmVKf6AijX9fiw1",
+      "source": "T9PB6WQf-Fa9NXKKvVOy_",
+      "target": "mGgx_QTEPmVKf6AijX9fi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-dAJHWmGeiYdzZ1ZjrWz1Sz2-khoUtTUxdf8udAzN9_CAby2",
+      "source": "dAJHWmGeiYdzZ1ZjrWz1S",
+      "target": "T9PB6WQf-Fa9NXKKvVOy_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mGgx_QTEPmVKf6AijX9fix2-We2APJpOPTr-VNfowG0kIz2",
+      "source": "mGgx_QTEPmVKf6AijX9fi",
+      "target": "We2APJpOPTr-VNfowG0kI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-We2APJpOPTr-VNfowG0kIy2-khoUtTUxdf8udAzN9_CAbz1",
+      "source": "We2APJpOPTr-VNfowG0kI",
+      "target": "8sPXL8iClpPqje03ksses",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8sPXL8iClpPqje03kssesy2-khoUtTUxdf8udAzN9_CAbz1",
+      "source": "8sPXL8iClpPqje03ksses",
+      "target": "CVCqdPkq_hGQfI8EEi5RC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2kKHuQZScu7hCDgQWxl5uy2-khoUtTUxdf8udAzN9_CAbz2",
+      "source": "CVCqdPkq_hGQfI8EEi5RC",
+      "target": "khoUtTUxdf8udAzN9_CAb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-khoUtTUxdf8udAzN9_CAby2-QfW-odmDYknm_qXNcDu5oy1",
+      "source": "khoUtTUxdf8udAzN9_CAb",
+      "target": "QfW-odmDYknm_qXNcDu5o",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-QfW-odmDYknm_qXNcDu5oz2-2kKHuQZScu7hCDgQWxl5uy1",
+      "source": "QfW-odmDYknm_qXNcDu5o",
+      "target": "_aA6Hp4KkgJeptqo8oKTg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2kKHuQZScu7hCDgQWxl5ux2-cUOfvOlQ_0Uu1VX3i67kJz1",
+      "source": "HGhnbMg6jh6cAmUH4DtOx",
+      "target": "vmHbWdmMHF53otXIrqzRV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vmHbWdmMHF53otXIrqzRVy2-cUOfvOlQ_0Uu1VX3i67kJz2",
+      "source": "vmHbWdmMHF53otXIrqzRV",
+      "target": "vHojhJYjiN0IwruEqi1Dv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vHojhJYjiN0IwruEqi1Dvy2-cUOfvOlQ_0Uu1VX3i67kJz1",
+      "source": "vHojhJYjiN0IwruEqi1Dv",
+      "target": "Onfd7Sl8LG2sjh2aQY7gb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Onfd7Sl8LG2sjh2aQY7gby2-cUOfvOlQ_0Uu1VX3i67kJw1",
+      "source": "Onfd7Sl8LG2sjh2aQY7gb",
+      "target": "SHTSvMDqI7X1_ZT7-m--n",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SHTSvMDqI7X1_ZT7-m--nz2-cUOfvOlQ_0Uu1VX3i67kJy2",
+      "source": "SHTSvMDqI7X1_ZT7-m--n",
+      "target": "cUOfvOlQ_0Uu1VX3i67kJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-cUOfvOlQ_0Uu1VX3i67kJz2-2kKHuQZScu7hCDgQWxl5uw2",
+      "source": "cUOfvOlQ_0Uu1VX3i67kJ",
+      "target": "y1SFX7uvWaCy4OYBnECLu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_aA6Hp4KkgJeptqo8oKTgz2-HGhnbMg6jh6cAmUH4DtOxw1",
+      "source": "_aA6Hp4KkgJeptqo8oKTg",
+      "target": "HGhnbMg6jh6cAmUH4DtOx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-y1SFX7uvWaCy4OYBnECLux2-2kKHuQZScu7hCDgQWxl5uz1",
+      "source": "y1SFX7uvWaCy4OYBnECLu",
+      "target": "863KMXcFJzInvTp_-Ldmz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-863KMXcFJzInvTp_-Ldmzy2-2kKHuQZScu7hCDgQWxl5uz2",
+      "source": "863KMXcFJzInvTp_-Ldmz",
+      "target": "rFXupYpUFfp7vZO8zh614",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-rFXupYpUFfp7vZO8zh614y2-2kKHuQZScu7hCDgQWxl5uw1",
+      "source": "rFXupYpUFfp7vZO8zh614",
+      "target": "2kKHuQZScu7hCDgQWxl5u",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2kKHuQZScu7hCDgQWxl5ux2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "2kKHuQZScu7hCDgQWxl5u",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

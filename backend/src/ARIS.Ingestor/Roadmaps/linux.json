@@ -1,0 +1,1259 @@
+{
+  "title": {
+    "card": "Linux",
+    "page": "Linux Roadmap"
+  },
+  "description": "Step by step guide to learning Linux in @currentYear@",
+  "nodes": [
+    {
+      "id": "k_AR2YBSv077a6RwpCpZT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "5xQ5fcVJsUgSPyTR0Uu9u",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0RUdgwm8iZ-ESxhdnWmLE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CSVnyS5MDoz4YRQLSDgEt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "u2K2QU5WxT9sSe9FCB-CA",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "SVEfguTRO7MyqPkqdZOAc",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Linux"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "y7KjVfSI6CAduyHd4mBFT",
+      "type": "topic",
+      "data": {
+        "label": "Navigation Basics"
+      }
+    },
+    {
+      "id": "qLeEEwBvlGt1fP5Qcreah",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Commands"
+      }
+    },
+    {
+      "id": "q-Ky0ietZGpyUcBQfh-BJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Moving Files / Directories"
+      }
+    },
+    {
+      "id": "9oo2fxTM2_p0VYPBroqxa",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating \u0026 Deleting Files / Dirs"
+      }
+    },
+    {
+      "id": "3fzuXKH7az_LVnmnoXB1p",
+      "type": "subtopic",
+      "data": {
+        "label": "Directory Hierarchy Overview"
+      }
+    },
+    {
+      "id": "HGmeYvRf7_XusZl_K4x9k",
+      "type": "topic",
+      "data": {
+        "label": "Editing Files"
+      }
+    },
+    {
+      "id": "8QBMyL8D5jPovxN8jyZW9",
+      "type": "topic",
+      "data": {
+        "label": "Shell and Other Basics"
+      }
+    },
+    {
+      "id": "wx-CpX3NJtKrdr_dQHZi9",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "XiZz7EFIey1XKS292GN4t",
+      "type": "subtopic",
+      "data": {
+        "label": "Vim"
+      }
+    },
+    {
+      "id": "yqRwmcZThjQuqh2ao0dWK",
+      "type": "subtopic",
+      "data": {
+        "label": "Nano"
+      }
+    },
+    {
+      "id": "moGMHNR58wFlzhS7je1wc",
+      "type": "subtopic",
+      "data": {
+        "label": "Command Path"
+      }
+    },
+    {
+      "id": "zwXEmpPYjA7_msS43z7I0",
+      "type": "subtopic",
+      "data": {
+        "label": "Environment Variables"
+      }
+    },
+    {
+      "id": "KaMSsQnJzNqGHg0Oia4uy",
+      "type": "subtopic",
+      "data": {
+        "label": "Command Help"
+      }
+    },
+    {
+      "id": "JgoZzx4BfK7tmosgpZOsf",
+      "type": "subtopic",
+      "data": {
+        "label": "Redirects"
+      }
+    },
+    {
+      "id": "NIBSZGE9PskVrluJpdom0",
+      "type": "subtopic",
+      "data": {
+        "label": "Super User"
+      }
+    },
+    {
+      "id": "RsOTPZPZGTEIt1Lk41bQV",
+      "type": "topic",
+      "data": {
+        "label": "Working with Files"
+      }
+    },
+    {
+      "id": "TnrT-cqMA8urew9nLv0Ns",
+      "type": "subtopic",
+      "data": {
+        "label": "File Permissions"
+      }
+    },
+    {
+      "id": "iD073xTmpzvQFfXwcwXcY",
+      "type": "subtopic",
+      "data": {
+        "label": "Archiving and Compressing"
+      }
+    },
+    {
+      "id": "abKO6KuuIfl9ruVxBw6t_",
+      "type": "subtopic",
+      "data": {
+        "label": "Copying and Renaming"
+      }
+    },
+    {
+      "id": "KaXHG_EKxI5PUXmcvlJt6",
+      "type": "subtopic",
+      "data": {
+        "label": "Soft Links / Hard Links"
+      }
+    },
+    {
+      "id": "-B2Dvz7160Er0OBHzS6ro",
+      "type": "topic",
+      "data": {
+        "label": "Text Processing"
+      }
+    },
+    {
+      "id": "t3fxSgCgtxuMtHjclPHA6",
+      "type": "subtopic",
+      "data": {
+        "label": "stdout / stdin / stderr"
+      }
+    },
+    {
+      "id": "Z5Mf_e5G24IkmxEHgYBe2",
+      "type": "subtopic",
+      "data": {
+        "label": "cut"
+      }
+    },
+    {
+      "id": "5658kdqJw-pIOyyhll80a",
+      "type": "subtopic",
+      "data": {
+        "label": "paste"
+      }
+    },
+    {
+      "id": "1WRIy3xHtQfiQFZrprobP",
+      "type": "subtopic",
+      "data": {
+        "label": "sort"
+      }
+    },
+    {
+      "id": "6xdkFk_GT93MigeTSSGCp",
+      "type": "subtopic",
+      "data": {
+        "label": "head"
+      }
+    },
+    {
+      "id": "O9Vci_WpUY-79AkA4HDx3",
+      "type": "subtopic",
+      "data": {
+        "label": "tr"
+      }
+    },
+    {
+      "id": "Yyk28H6TiteZEGv6Aps1h",
+      "type": "subtopic",
+      "data": {
+        "label": "tail"
+      }
+    },
+    {
+      "id": "vfcCS1GoyKpU1rQaE8I5r",
+      "type": "subtopic",
+      "data": {
+        "label": "join"
+      }
+    },
+    {
+      "id": "Pl9s2ti25hsSEljXJvBTj",
+      "type": "subtopic",
+      "data": {
+        "label": "split"
+      }
+    },
+    {
+      "id": "v32PJl4fzIFTOirOm6G44",
+      "type": "subtopic",
+      "data": {
+        "label": "pipe"
+      }
+    },
+    {
+      "id": "Bo9CdrGJej-QcNmw46k9t",
+      "type": "subtopic",
+      "data": {
+        "label": "tee"
+      }
+    },
+    {
+      "id": "YSfGrmT795miIeIZrtC3D",
+      "type": "subtopic",
+      "data": {
+        "label": "nl"
+      }
+    },
+    {
+      "id": "LIGOJwrXexnIcPyHVlhQ8",
+      "type": "subtopic",
+      "data": {
+        "label": "wc"
+      }
+    },
+    {
+      "id": "TZuDVFS7DZFBgaSYYXoGe",
+      "type": "subtopic",
+      "data": {
+        "label": "expand"
+      }
+    },
+    {
+      "id": "sKduFaX6xZaUUBdXRMKCL",
+      "type": "subtopic",
+      "data": {
+        "label": "unexpand"
+      }
+    },
+    {
+      "id": "qnBbzphImflQbEbtFub9x",
+      "type": "subtopic",
+      "data": {
+        "label": "uniq"
+      }
+    },
+    {
+      "id": "umlhxidsvtZG9k40Ca0Ac",
+      "type": "subtopic",
+      "data": {
+        "label": "grep"
+      }
+    },
+    {
+      "id": "QTmECqpRVMjNgQU70uCF8",
+      "type": "subtopic",
+      "data": {
+        "label": "awk"
+      }
+    },
+    {
+      "id": "jSzfQf0MlnXtWHCc-HYvr",
+      "type": "topic",
+      "data": {
+        "label": "Server Review"
+      }
+    },
+    {
+      "id": "19lTWqAvZFT2CDlhLlPSq",
+      "type": "subtopic",
+      "data": {
+        "label": "Uptime and Load"
+      }
+    },
+    {
+      "id": "WwybfdKuP9ogCGpT7d3NU",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication Logs"
+      }
+    },
+    {
+      "id": "ewUuI_x-YhOQIYd3MTgJJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Services Running"
+      }
+    },
+    {
+      "id": "tx0nh6cbBjVxwNlyrBNYm",
+      "type": "subtopic",
+      "data": {
+        "label": "Available Memory / Disk"
+      }
+    },
+    {
+      "id": "J6ptF9of4cYcyLO0iAMao",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "h01Y6dW09ChidlM2HYoav",
+      "type": "topic",
+      "data": {
+        "label": "Process Management"
+      }
+    },
+    {
+      "id": "mUKoiGUTpIaUgQNF3BND_",
+      "type": "subtopic",
+      "data": {
+        "label": "Background / Foreground Processes"
+      }
+    },
+    {
+      "id": "lf3_CRyOI2ZXGzz5ff451",
+      "type": "subtopic",
+      "data": {
+        "label": "Listing / Finding Processes"
+      }
+    },
+    {
+      "id": "VkLWTvKnRXzvLGWza2v45",
+      "type": "subtopic",
+      "data": {
+        "label": "Process Signals"
+      }
+    },
+    {
+      "id": "0FLUI9r7znMqi6YKReLzD",
+      "type": "subtopic",
+      "data": {
+        "label": "Killing Processes"
+      }
+    },
+    {
+      "id": "5anSYRhaKIs3dCLWlvZfT",
+      "type": "subtopic",
+      "data": {
+        "label": "Process Priorities"
+      }
+    },
+    {
+      "id": "Rib7h9lh_ndiXkwNbftz_",
+      "type": "subtopic",
+      "data": {
+        "label": "Process Forking"
+      }
+    },
+    {
+      "id": "g6n7f1Qi0BPr_BGvisWuz",
+      "type": "topic",
+      "data": {
+        "label": "User Management"
+      }
+    },
+    {
+      "id": "R9TZfkgVUQNLnMpDhovJa",
+      "type": "subtopic",
+      "data": {
+        "label": "Create / Delete / Update"
+      }
+    },
+    {
+      "id": "h8wc8XEwWYHErna68w7Mg",
+      "type": "subtopic",
+      "data": {
+        "label": "Users and Groups"
+      }
+    },
+    {
+      "id": "L6RMExeqi9501y-eCHDt1",
+      "type": "subtopic",
+      "data": {
+        "label": "Managing Permissions"
+      }
+    },
+    {
+      "id": "F1sU3O1ouxTOvpidDfN3k",
+      "type": "topic",
+      "data": {
+        "label": "Service Management (systemd)"
+      }
+    },
+    {
+      "id": "34UUrc8Yjc_8lvTL8itc3",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating New Services"
+      }
+    },
+    {
+      "id": "FStz-bftQBK0M6zz2Bxl4",
+      "type": "subtopic",
+      "data": {
+        "label": "Checking Service Logs"
+      }
+    },
+    {
+      "id": "DuEfJNrm4Jfmp8-8Pggrf",
+      "type": "subtopic",
+      "data": {
+        "label": "Starting / Stopping Services"
+      }
+    },
+    {
+      "id": "xk5Xgi797HlVjdZJRfwX1",
+      "type": "subtopic",
+      "data": {
+        "label": "Checking Service Status"
+      }
+    },
+    {
+      "id": "4eINX8jYMJxfYh7ZV47YI",
+      "type": "topic",
+      "data": {
+        "label": "Package Management"
+      }
+    },
+    {
+      "id": "2oQiuQ2j02SCt9t5eV6hg",
+      "type": "subtopic",
+      "data": {
+        "label": "Package Repositories"
+      }
+    },
+    {
+      "id": "Z23eJZjmWoeXQuezR9AhG",
+      "type": "subtopic",
+      "data": {
+        "label": "Finding \u0026 Installing Packages"
+      }
+    },
+    {
+      "id": "48wAoAAlCNt3j5mBpKTWC",
+      "type": "subtopic",
+      "data": {
+        "label": "Listing Installed Packages"
+      }
+    },
+    {
+      "id": "xEHiB-egkkcBuZmgMoqHT",
+      "type": "subtopic",
+      "data": {
+        "label": "Install / Remove / Upgrade Packages"
+      }
+    },
+    {
+      "id": "eKyMZn30UxQeBZQ7FxFbF",
+      "type": "subtopic",
+      "data": {
+        "label": "Snap"
+      }
+    },
+    {
+      "id": "Fn_uYKigJRgb7r_iYGVBr",
+      "type": "topic",
+      "data": {
+        "label": "Disks and Filesystems"
+      }
+    },
+    {
+      "id": "AwQJYL60NNbA5_z7iLcM7",
+      "type": "subtopic",
+      "data": {
+        "label": "Inodes"
+      }
+    },
+    {
+      "id": "LFPhSHOhUqM98fUxMjQUw",
+      "type": "subtopic",
+      "data": {
+        "label": "Filesystems"
+      }
+    },
+    {
+      "id": "AWosNs2nvDGV8r6WvgBI1",
+      "type": "subtopic",
+      "data": {
+        "label": "Swap"
+      }
+    },
+    {
+      "id": "zmb5lK_EGMAChPoPvP9E0",
+      "type": "subtopic",
+      "data": {
+        "label": "Mounts"
+      }
+    },
+    {
+      "id": "4xBaZPk0eSsWG1vK3e2yW",
+      "type": "subtopic",
+      "data": {
+        "label": "Adding Disks"
+      }
+    },
+    {
+      "id": "I3LNa1cM_zRkBy8wKdz3g",
+      "type": "subtopic",
+      "data": {
+        "label": "LVM"
+      }
+    },
+    {
+      "id": "DQEa8LrJ9TVW4ULBE4aHJ",
+      "type": "topic",
+      "data": {
+        "label": "Booting Linux"
+      }
+    },
+    {
+      "id": "ru7mpLQZKE1QxAdiA1sS3",
+      "type": "subtopic",
+      "data": {
+        "label": "Logs"
+      }
+    },
+    {
+      "id": "o5lSQFW-V_PqndGqo1mp3",
+      "type": "subtopic",
+      "data": {
+        "label": "Boot Loaders"
+      }
+    },
+    {
+      "id": "Mb42VFjCzMZn_PovKIfKx",
+      "type": "topic",
+      "data": {
+        "label": "Networking"
+      }
+    },
+    {
+      "id": "0pciSsiQqIGJh3x8465_s",
+      "type": "subtopic",
+      "data": {
+        "label": "TCP/IP Stack"
+      }
+    },
+    {
+      "id": "Xszo9vXuwwXZo26seHehD",
+      "type": "subtopic",
+      "data": {
+        "label": "Subnetting"
+      }
+    },
+    {
+      "id": "4ees23q281J1DPVAc7iXd",
+      "type": "subtopic",
+      "data": {
+        "label": "Ethernet \u0026 arp/rarp"
+      }
+    },
+    {
+      "id": "X6Jw95kbyPgsDNRhvkQP9",
+      "type": "subtopic",
+      "data": {
+        "label": "DHCP"
+      }
+    },
+    {
+      "id": "D0yUzzaJsfhtdBWMtquAj",
+      "type": "subtopic",
+      "data": {
+        "label": "IP Routing"
+      }
+    },
+    {
+      "id": "f5oQYhmjNM2_FD7Qe1zGK",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS Resolution"
+      }
+    },
+    {
+      "id": "bZ8Yj6QfBeDdh8hRM_aZs",
+      "type": "subtopic",
+      "data": {
+        "label": "Netfilter"
+      }
+    },
+    {
+      "id": "uk6UMuI8Uhf02TBAGVeLS",
+      "type": "subtopic",
+      "data": {
+        "label": "SSH"
+      }
+    },
+    {
+      "id": "tVrbVcNEfc11FbEUoO2Dk",
+      "type": "subtopic",
+      "data": {
+        "label": "File Transfer"
+      }
+    },
+    {
+      "id": "4tFZ1PLpz50bddf7zSFrW",
+      "type": "topic",
+      "data": {
+        "label": "Shell Programming"
+      }
+    },
+    {
+      "id": "-pW7R76yNIeGf7TQoX4QL",
+      "type": "subtopic",
+      "data": {
+        "label": "Literals"
+      }
+    },
+    {
+      "id": "JyxvZOb7iusOSUYSlniGl",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "WJT-yrMq8cEI87RHWA2jY",
+      "type": "subtopic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "rQxfp7UWqN72iqewZhOdc",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "rOGnHbGIr3xPCFdpkqoeK",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "bdQNcr1sj94aX_gjwf2Fa",
+      "type": "topic",
+      "data": {
+        "label": "Troubleshooting"
+      }
+    },
+    {
+      "id": "Ymf3u_sG1dyt8ZR_LbwqJ",
+      "type": "subtopic",
+      "data": {
+        "label": "ICMP"
+      }
+    },
+    {
+      "id": "Uc36t92UAlILgM3_XxcMG",
+      "type": "subtopic",
+      "data": {
+        "label": "ping"
+      }
+    },
+    {
+      "id": "BnB3Rirh4R7a7LW7-k-95",
+      "type": "subtopic",
+      "data": {
+        "label": "traceroute"
+      }
+    },
+    {
+      "id": "yrxNYMluJ9OAQCKuM5W1u",
+      "type": "subtopic",
+      "data": {
+        "label": "netstat"
+      }
+    },
+    {
+      "id": "7seneb4TWts4v1_x8xlcZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Packet Analysis"
+      }
+    },
+    {
+      "id": "3OpGaQhyNtk1n1MLp-tlb",
+      "type": "topic",
+      "data": {
+        "label": "Containerization"
+      }
+    },
+    {
+      "id": "QgfenmhMc18cU_JngQ1n0",
+      "type": "subtopic",
+      "data": {
+        "label": "ulimits"
+      }
+    },
+    {
+      "id": "23lsrUw8ux6ZP9JlDNNu2",
+      "type": "subtopic",
+      "data": {
+        "label": "cgroups"
+      }
+    },
+    {
+      "id": "bVCwRoFsYb3HD8X4xuKOo",
+      "type": "subtopic",
+      "data": {
+        "label": "Container Runtime"
+      }
+    },
+    {
+      "id": "MfengY3ouz6sSOx3PXYf8",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "ef-jFKMs8jw3Ti94jem96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "UloavCkIvZnD1XMFohYVT",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "StxLh1r3qXqyRSqfJGird",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "FvhlQssaMmHOjHv_3Ubo_",
+      "type": "button",
+      "data": {
+        "label": "Shell / Bash Roadmap"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "y7KjVfSI6CAduyHd4mBFT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-qLeEEwBvlGt1fP5Qcreahy2",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "qLeEEwBvlGt1fP5Qcreah",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-q-Ky0ietZGpyUcBQfh-BJy1",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "q-Ky0ietZGpyUcBQfh-BJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-9oo2fxTM2_p0VYPBroqxay2",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "9oo2fxTM2_p0VYPBroqxa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-3fzuXKH7az_LVnmnoXB1py1",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "3fzuXKH7az_LVnmnoXB1p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HGmeYvRf7_XusZl_K4x9ky2-yqRwmcZThjQuqh2ao0dWKz2",
+      "source": "HGmeYvRf7_XusZl_K4x9k",
+      "target": "yqRwmcZThjQuqh2ao0dWK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HGmeYvRf7_XusZl_K4x9kx2-3OpGaQhyNtk1n1MLp-tlbw1",
+      "source": "HGmeYvRf7_XusZl_K4x9k",
+      "target": "8QBMyL8D5jPovxN8jyZW9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-KaMSsQnJzNqGHg0Oia4uyz1",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "KaMSsQnJzNqGHg0Oia4uy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-moGMHNR58wFlzhS7je1wcz1",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "moGMHNR58wFlzhS7je1wc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-zwXEmpPYjA7_msS43z7I0z2",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "zwXEmpPYjA7_msS43z7I0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-JgoZzx4BfK7tmosgpZOsfz1",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "JgoZzx4BfK7tmosgpZOsf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-NIBSZGE9PskVrluJpdom0z1",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "NIBSZGE9PskVrluJpdom0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVz2-3OpGaQhyNtk1n1MLp-tlby2",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "-B2Dvz7160Er0OBHzS6ro",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVy2-TnrT-cqMA8urew9nLv0Nsz1",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "TnrT-cqMA8urew9nLv0Ns",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVy2-iD073xTmpzvQFfXwcwXcYz2",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "iD073xTmpzvQFfXwcwXcY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVy2-abKO6KuuIfl9ruVxBw6t_z1",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "abKO6KuuIfl9ruVxBw6t_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVy2-KaXHG_EKxI5PUXmcvlJt6z1",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "KaXHG_EKxI5PUXmcvlJt6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-B2Dvz7160Er0OBHzS6rox2-3OpGaQhyNtk1n1MLp-tlbw1",
+      "source": "-B2Dvz7160Er0OBHzS6ro",
+      "target": "jSzfQf0MlnXtWHCc-HYvr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbx2-19lTWqAvZFT2CDlhLlPSqw1",
+      "source": "jSzfQf0MlnXtWHCc-HYvr",
+      "target": "19lTWqAvZFT2CDlhLlPSq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jSzfQf0MlnXtWHCc-HYvry2-3OpGaQhyNtk1n1MLp-tlbz2",
+      "source": "jSzfQf0MlnXtWHCc-HYvr",
+      "target": "h01Y6dW09ChidlM2HYoav",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbx2-mUKoiGUTpIaUgQNF3BND_w1",
+      "source": "h01Y6dW09ChidlM2HYoav",
+      "target": "mUKoiGUTpIaUgQNF3BND_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h01Y6dW09ChidlM2HYoavy2-g6n7f1Qi0BPr_BGvisWuzw1",
+      "source": "h01Y6dW09ChidlM2HYoav",
+      "target": "g6n7f1Qi0BPr_BGvisWuz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__u2K2QU5WxT9sSe9FCB-CAx2-3OpGaQhyNtk1n1MLp-tlbw1",
+      "source": "u2K2QU5WxT9sSe9FCB-CA",
+      "target": "F1sU3O1ouxTOvpidDfN3k",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-34UUrc8Yjc_8lvTL8itc3y2",
+      "source": "F1sU3O1ouxTOvpidDfN3k",
+      "target": "34UUrc8Yjc_8lvTL8itc3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-FStz-bftQBK0M6zz2Bxl4y1",
+      "source": "F1sU3O1ouxTOvpidDfN3k",
+      "target": "FStz-bftQBK0M6zz2Bxl4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-DuEfJNrm4Jfmp8-8Pggrfy1",
+      "source": "F1sU3O1ouxTOvpidDfN3k",
+      "target": "DuEfJNrm4Jfmp8-8Pggrf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-xk5Xgi797HlVjdZJRfwX1y1",
+      "source": "F1sU3O1ouxTOvpidDfN3k",
+      "target": "xk5Xgi797HlVjdZJRfwX1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__F1sU3O1ouxTOvpidDfN3kx2-3OpGaQhyNtk1n1MLp-tlbw1",
+      "source": "F1sU3O1ouxTOvpidDfN3k",
+      "target": "4eINX8jYMJxfYh7ZV47YI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4eINX8jYMJxfYh7ZV47YIz2-3OpGaQhyNtk1n1MLp-tlby1",
+      "source": "4eINX8jYMJxfYh7ZV47YI",
+      "target": "Fn_uYKigJRgb7r_iYGVBr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-o5lSQFW-V_PqndGqo1mp3z1",
+      "source": "DQEa8LrJ9TVW4ULBE4aHJ",
+      "target": "o5lSQFW-V_PqndGqo1mp3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-ru7mpLQZKE1QxAdiA1sS3z1",
+      "source": "DQEa8LrJ9TVW4ULBE4aHJ",
+      "target": "ru7mpLQZKE1QxAdiA1sS3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Fn_uYKigJRgb7r_iYGVBrx2-3OpGaQhyNtk1n1MLp-tlbw2",
+      "source": "Fn_uYKigJRgb7r_iYGVBr",
+      "target": "DQEa8LrJ9TVW4ULBE4aHJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__DQEa8LrJ9TVW4ULBE4aHJx2-3OpGaQhyNtk1n1MLp-tlbw1",
+      "source": "DQEa8LrJ9TVW4ULBE4aHJ",
+      "target": "Mb42VFjCzMZn_PovKIfKx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-0pciSsiQqIGJh3x8465_sz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "0pciSsiQqIGJh3x8465_s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-Xszo9vXuwwXZo26seHehDz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "Xszo9vXuwwXZo26seHehD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-4ees23q281J1DPVAc7iXdz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "4ees23q281J1DPVAc7iXd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-D0yUzzaJsfhtdBWMtquAjz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "D0yUzzaJsfhtdBWMtquAj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-f5oQYhmjNM2_FD7Qe1zGKz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "f5oQYhmjNM2_FD7Qe1zGK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-uk6UMuI8Uhf02TBAGVeLSz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "uk6UMuI8Uhf02TBAGVeLS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlby2-tVrbVcNEfc11FbEUoO2Dkz1",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "tVrbVcNEfc11FbEUoO2Dk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Mb42VFjCzMZn_PovKIfKxx2-3OpGaQhyNtk1n1MLp-tlbz2",
+      "source": "Mb42VFjCzMZn_PovKIfKx",
+      "target": "4tFZ1PLpz50bddf7zSFrW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbw2-rOGnHbGIr3xPCFdpkqoeKx1",
+      "source": "4tFZ1PLpz50bddf7zSFrW",
+      "target": "rOGnHbGIr3xPCFdpkqoeK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4tFZ1PLpz50bddf7zSFrWx2-3OpGaQhyNtk1n1MLp-tlbw2",
+      "source": "4tFZ1PLpz50bddf7zSFrW",
+      "target": "bdQNcr1sj94aX_gjwf2Fa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-BnB3Rirh4R7a7LW7-k-95y1",
+      "source": "bdQNcr1sj94aX_gjwf2Fa",
+      "target": "BnB3Rirh4R7a7LW7-k-95",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-yrxNYMluJ9OAQCKuM5W1uy2",
+      "source": "bdQNcr1sj94aX_gjwf2Fa",
+      "target": "yrxNYMluJ9OAQCKuM5W1u",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-Ymf3u_sG1dyt8ZR_LbwqJy1",
+      "source": "bdQNcr1sj94aX_gjwf2Fa",
+      "target": "Ymf3u_sG1dyt8ZR_LbwqJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbz2-7seneb4TWts4v1_x8xlcZy2",
+      "source": "bdQNcr1sj94aX_gjwf2Fa",
+      "target": "7seneb4TWts4v1_x8xlcZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__bdQNcr1sj94aX_gjwf2Fax2-3OpGaQhyNtk1n1MLp-tlby1",
+      "source": "bdQNcr1sj94aX_gjwf2Fa",
+      "target": "3OpGaQhyNtk1n1MLp-tlb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbw2-MfengY3ouz6sSOx3PXYf8x1",
+      "source": "3OpGaQhyNtk1n1MLp-tlb",
+      "target": "MfengY3ouz6sSOx3PXYf8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__8QBMyL8D5jPovxN8jyZW9x2-FvhlQssaMmHOjHv_3Ubo_w1",
+      "source": "8QBMyL8D5jPovxN8jyZW9",
+      "target": "FvhlQssaMmHOjHv_3Ubo_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RsOTPZPZGTEIt1Lk41bQVw2-FvhlQssaMmHOjHv_3Ubo_x2",
+      "source": "RsOTPZPZGTEIt1Lk41bQV",
+      "target": "FvhlQssaMmHOjHv_3Ubo_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

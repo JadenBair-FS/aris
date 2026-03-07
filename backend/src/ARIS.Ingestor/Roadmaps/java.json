@@ -1,0 +1,1118 @@
+{
+  "title": {
+    "card": "Java",
+    "page": "Java Developer"
+  },
+  "description": "Step by step guide to becoming a Java developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "CdLumO1g7RNbOkwUFkVC3",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "VheIOU0XKrEw_5M-Wv4yv",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "8Ej86dM3j55V5r29WHTef",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "phhoZcCGuVm_zYFfcArb8",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iv_f10rCHm21sz5hesZxj",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "l40LZhtS-ldRtJ2cgiiXc",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7HWfRgtCU9Dv2N_3oHwYe",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "BUES6hALwmHMS0oAKPKz0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "pbxsWeOonIRXRxPpdV-zo",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "myugQ4WCRi1GGRZJ8uu5k",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ofYL6wlERXJaXuKL075zY",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "FY6qOOwg_pdFKoYPVOeys",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ekkBrbM8BtpMu3TpHadYb",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "FyTlaUqrK5h3e5mWwkvVg",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "o5yOEJFOR-wScK0GWPuQq",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "hp15XdmPlKKTbYnrYfCBl",
+      "type": "title",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "2TGq1y2QthnxxN-FfToSe",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "rj8ATHPvFP-QtD9mDLY0Z",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OlbQNB6YXZjO1J7D0lZU1",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Syntax"
+      }
+    },
+    {
+      "id": "5g9mmi01WeZ4aDqNzwx_V",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "sG_3ZQIE1-FQXQkk-OduQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "5khApwg1FZ-0qorsLyH-F",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrays "
+      }
+    },
+    {
+      "id": "JHUhVEjWFXTn6-wKcKevg",
+      "type": "subtopic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "VBNcAO0STaZJ1iV9A7utv",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables and Scopes"
+      }
+    },
+    {
+      "id": "yNDbk6r5wFqBi25xmIRF_",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Casting"
+      }
+    },
+    {
+      "id": "aEaBobzFWv0mJHGAbgxKY",
+      "type": "subtopic",
+      "data": {
+        "label": "Strings and Methods"
+      }
+    },
+    {
+      "id": "ziD_XwzJSFQP_3iLjq9pA",
+      "type": "subtopic",
+      "data": {
+        "label": "Math Operations"
+      }
+    },
+    {
+      "id": "QgWalJLIb6Fw0HhN1wb02",
+      "type": "subtopic",
+      "data": {
+        "label": "Lifecycle of a Program"
+      }
+    },
+    {
+      "id": "LenPrQwxFsE1UVbXO_dE7",
+      "type": "subtopic",
+      "data": {
+        "label": "Classes and Objects"
+      }
+    },
+    {
+      "id": "xTwJYcA6ldgaw3yGmbDEd",
+      "type": "subtopic",
+      "data": {
+        "label": "Attributes and Methods"
+      }
+    },
+    {
+      "id": "KYndNwfQcwRCf3zCXOwd_",
+      "type": "subtopic",
+      "data": {
+        "label": "Access Specifiers"
+      }
+    },
+    {
+      "id": "ZcNxO6qIXIg7RaWYnZj2e",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Keyword"
+      }
+    },
+    {
+      "id": "zDBW20W2XMCtNTG3emJ_A",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested Classes"
+      }
+    },
+    {
+      "id": "DZ4BX4NYeCQbjGSj56lng",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of OOP"
+      }
+    },
+    {
+      "id": "zNHDLv26Xn3oMrDVSAP1Z",
+      "type": "paragraph",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "ryMPhTTScI9pJMkQsZaaM",
+      "type": "label",
+      "data": {
+        "label": "Basics of OOP"
+      }
+    },
+    {
+      "id": "X6xl98_RqAQY79baHmRRI",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "sHYmeXbdREoxrru0PZ3Px",
+      "type": "label",
+      "data": {
+        "label": "More about OOP"
+      }
+    },
+    {
+      "id": "Ax2ouIZgN1DpPzKDy4fwp",
+      "type": "subtopic",
+      "data": {
+        "label": "Method Chaining"
+      }
+    },
+    {
+      "id": "ey1f8IsdAlDv1O3E_tNog",
+      "type": "subtopic",
+      "data": {
+        "label": "Enums"
+      }
+    },
+    {
+      "id": "Ajuc_rHObqMQBXLqRIuxh",
+      "type": "subtopic",
+      "data": {
+        "label": "Final Keyword"
+      }
+    },
+    {
+      "id": "3qowgj1pas1X7oRric9eU",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Lifecycle"
+      }
+    },
+    {
+      "id": "qdA6bK9ZkP8p0_NH_wMuj",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstraction"
+      }
+    },
+    {
+      "id": "PXpPEmCEBUKRjwP3B5LzJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Inheritance"
+      }
+    },
+    {
+      "id": "y-i56f1P_mMdvyBr7J4XE",
+      "type": "subtopic",
+      "data": {
+        "label": "Method Overloading / Overriding"
+      }
+    },
+    {
+      "id": "Kjdj862xnz8fqDYE3HKhC",
+      "type": "subtopic",
+      "data": {
+        "label": "Static vs Dynamic Binding"
+      }
+    },
+    {
+      "id": "6wTRN2PYC6zM_Txkekx53",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "iH9wSsOK4a77pS7U0Yu5z",
+      "type": "subtopic",
+      "data": {
+        "label": "Encapsulation"
+      }
+    },
+    {
+      "id": "VqLV7kolfRFnvOuJAvzlg",
+      "type": "subtopic",
+      "data": {
+        "label": "Record"
+      }
+    },
+    {
+      "id": "60POZOjwHSdKYL6rfkyEy",
+      "type": "subtopic",
+      "data": {
+        "label": "Packages"
+      }
+    },
+    {
+      "id": "dg_UpaO8TzIN7w_QZ1n-6",
+      "type": "subtopic",
+      "data": {
+        "label": "Initializer Block"
+      }
+    },
+    {
+      "id": "3r0Er9XZHovIZz3gNyj4A",
+      "type": "subtopic",
+      "data": {
+        "label": "Pass by Value / Pass by Reference"
+      }
+    },
+    {
+      "id": "c--y6GcKj9am0CBdu_Hnt",
+      "type": "topic",
+      "data": {
+        "label": "Annotations"
+      }
+    },
+    {
+      "id": "00_q6I95eO-PUUrKpPFY8",
+      "type": "topic",
+      "data": {
+        "label": "Lambda Expressions"
+      }
+    },
+    {
+      "id": "kdxy8Zssnc5lJjdmjUyMc",
+      "type": "topic",
+      "data": {
+        "label": "Modules"
+      }
+    },
+    {
+      "id": "a-EQiBUlSgdZba1mW36op",
+      "type": "subtopic",
+      "data": {
+        "label": "Array vs ArrayList"
+      }
+    },
+    {
+      "id": "XjkNd5WJ9yxW48dwHQNkZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Set"
+      }
+    },
+    {
+      "id": "eKtdDtiJygKQ4PuEylFQY",
+      "type": "subtopic",
+      "data": {
+        "label": "Map"
+      }
+    },
+    {
+      "id": "ThoWhXb4vUvNfE70_wMfa",
+      "type": "subtopic",
+      "data": {
+        "label": "Queue"
+      }
+    },
+    {
+      "id": "DzfE_9WLAp-BrG3C1-MwU",
+      "type": "subtopic",
+      "data": {
+        "label": "Stack"
+      }
+    },
+    {
+      "id": "DWO2-EPIUeKK5aQGiTuKc",
+      "type": "subtopic",
+      "data": {
+        "label": "Dequeue"
+      }
+    },
+    {
+      "id": "-17LFO72I8RKjJRMXct9k",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterator"
+      }
+    },
+    {
+      "id": "PX4ZcshR0QtsPElyZzSel",
+      "type": "label",
+      "data": {
+        "label": "Collections"
+      }
+    },
+    {
+      "id": "eL4pc6SaNiKP48PzN7mNe",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Collections"
+      }
+    },
+    {
+      "id": "Z_rjrHtWp1Zp1G2YN0KfD",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "l9fxK8K9fcUqR7hs5TkWU",
+      "type": "topic",
+      "data": {
+        "label": "Optionals"
+      }
+    },
+    {
+      "id": "g9P3548F38tYGjevBc42w",
+      "type": "topic",
+      "data": {
+        "label": "Exception Handling"
+      }
+    },
+    {
+      "id": "D1woaibP6qkuqmBQkZrhO",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_W84u4UXMSY0zvy6RJvFi",
+      "type": "topic",
+      "data": {
+        "label": "Web Frameworks"
+      }
+    },
+    {
+      "id": "xoryfi4SpJlkz-PV05ql6",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring (Spring Boot)"
+      }
+    },
+    {
+      "id": "kN-mXxqUPNJNsJGQ0U_7J",
+      "type": "subtopic",
+      "data": {
+        "label": "Play Framework"
+      }
+    },
+    {
+      "id": "w-kcKPh8U0P_jtT90_1Xy",
+      "type": "subtopic",
+      "data": {
+        "label": "Quarkus"
+      }
+    },
+    {
+      "id": "aqTfDatV26H0rOAhyQo0q",
+      "type": "label",
+      "data": {
+        "label": "Spring Boot is recommended"
+      }
+    },
+    {
+      "id": "81N1cZLue_Ii0uD5CV6kZ",
+      "type": "topic",
+      "data": {
+        "label": "Build Tools"
+      }
+    },
+    {
+      "id": "VdL_fAHxmRbuF0J627beA",
+      "type": "subtopic",
+      "data": {
+        "label": "Maven"
+      }
+    },
+    {
+      "id": "rmDIm5dqtdlNfPhvpqS7-",
+      "type": "subtopic",
+      "data": {
+        "label": "Gradle"
+      }
+    },
+    {
+      "id": "6FMj9tMAQPii_1kLtHJLk",
+      "type": "subtopic",
+      "data": {
+        "label": "Bazel"
+      }
+    },
+    {
+      "id": "zItXmuluDtl6HkTYQ7qMh",
+      "type": "topic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "M0ybgK1JCycXhZ1dEpCFo",
+      "type": "topic",
+      "data": {
+        "label": "I/O Operations"
+      }
+    },
+    {
+      "id": "NowpzyPVFcX082j5YS5i8",
+      "type": "topic",
+      "data": {
+        "label": "File Operations"
+      }
+    },
+    {
+      "id": "H-TpLxAx_BnJhyFc4HK6M",
+      "type": "label",
+      "data": {
+        "label": "v"
+      }
+    },
+    {
+      "id": "shqS9-hg__mkOtnnl_I4l",
+      "type": "topic",
+      "data": {
+        "label": "Concurrency"
+      }
+    },
+    {
+      "id": "u_YysD7Bpnq-xkFX5yJGz",
+      "type": "subtopic",
+      "data": {
+        "label": "Threads"
+      }
+    },
+    {
+      "id": "vJSq1GJLIMQ6IIB8CMK8g",
+      "type": "subtopic",
+      "data": {
+        "label": "Virtual Threads"
+      }
+    },
+    {
+      "id": "wEc7pSVU5G2c6Zqmtb_1k",
+      "type": "subtopic",
+      "data": {
+        "label": "Java Memory Model"
+      }
+    },
+    {
+      "id": "U4Wx3MH3LgJLa0n9Ne0Br",
+      "type": "subtopic",
+      "data": {
+        "label": "volatile keyword"
+      }
+    },
+    {
+      "id": "_wV2VQq6MIY1rVHjK8pfu",
+      "type": "topic",
+      "data": {
+        "label": "Cryptography"
+      }
+    },
+    {
+      "id": "9h20XVRli7TDq0QIJwX2U",
+      "type": "topic",
+      "data": {
+        "label": "Date and Time"
+      }
+    },
+    {
+      "id": "UGccAJeFA636IiCySl-zF",
+      "type": "label",
+      "data": {
+        "label": "Functional Programming"
+      }
+    },
+    {
+      "id": "1Mk_zXxCCcUoX-gFxtlnf",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Composition"
+      }
+    },
+    {
+      "id": "dz6bCmB4dgA7VVZ448cN6",
+      "type": "subtopic",
+      "data": {
+        "label": "High Order Functions"
+      }
+    },
+    {
+      "id": "SityDdjhhNZ9CO3Tg0VI9",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Interfaces"
+      }
+    },
+    {
+      "id": "WHxAwfdKHQSOg0TLX05EG",
+      "type": "subtopic",
+      "data": {
+        "label": "Stream API"
+      }
+    },
+    {
+      "id": "JeMG0gU8IVRBZgczjXmPi",
+      "type": "topic",
+      "data": {
+        "label": "Networking"
+      }
+    },
+    {
+      "id": "C7rB3jkshHFN7TkHRJPlz",
+      "type": "topic",
+      "data": {
+        "label": "Regular Expressions"
+      }
+    },
+    {
+      "id": "fV-gW51jhna2__Ln2HIIh",
+      "type": "topic",
+      "data": {
+        "label": "Database Access"
+      }
+    },
+    {
+      "id": "WzWOxBUKKg6LeuBmVesc2",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Data JPA"
+      }
+    },
+    {
+      "id": "UEiDzzodyEu5O1xFAFDly",
+      "type": "subtopic",
+      "data": {
+        "label": "Hibernate"
+      }
+    },
+    {
+      "id": "X2rJ3BY1ytFKsbJqJETFu",
+      "type": "subtopic",
+      "data": {
+        "label": "EBean"
+      }
+    },
+    {
+      "id": "d9F5Wt8onY125DLuzNULg",
+      "type": "topic",
+      "data": {
+        "label": "Logging Frameworks"
+      }
+    },
+    {
+      "id": "okC1uMdyfIJAhX_R9Npsw",
+      "type": "subtopic",
+      "data": {
+        "label": "Logback"
+      }
+    },
+    {
+      "id": "sFaNj_1MviaTc6UIfjXl6",
+      "type": "subtopic",
+      "data": {
+        "label": "Log4j2"
+      }
+    },
+    {
+      "id": "LGlZHKqyQ-aWtHnhklhgn",
+      "type": "subtopic",
+      "data": {
+        "label": "SLF4J"
+      }
+    },
+    {
+      "id": "Fn7aAaGbwYsAp4xLuuFud",
+      "type": "subtopic",
+      "data": {
+        "label": "TinyLog"
+      }
+    },
+    {
+      "id": "LgpsnXV0CTvTspjnsd0Rd",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "9UbRG752qxJdUwmqEAjN3",
+      "type": "subtopic",
+      "data": {
+        "label": "JDBC"
+      }
+    },
+    {
+      "id": "ahcnPvftbi83gtiqV6VTP",
+      "type": "label",
+      "data": {
+        "label": "Unit Testing"
+      }
+    },
+    {
+      "id": "hY1-sEpTmpaj1PregdkFf",
+      "type": "subtopic",
+      "data": {
+        "label": "JUnit"
+      }
+    },
+    {
+      "id": "XU2C8bF9ICej8LS7ZGTTv",
+      "type": "subtopic",
+      "data": {
+        "label": "TestNG"
+      }
+    },
+    {
+      "id": "lI6ST4WcGtPdKSoWIxStg",
+      "type": "label",
+      "data": {
+        "label": "Integration Testing"
+      }
+    },
+    {
+      "id": "gB4XUR9nCdF1-dOEwGcHi",
+      "type": "subtopic",
+      "data": {
+        "label": "REST Assured"
+      }
+    },
+    {
+      "id": "U2BqOY49HaII6mKQB3SVt",
+      "type": "subtopic",
+      "data": {
+        "label": "JMeter"
+      }
+    },
+    {
+      "id": "BFX3fjnFTHVnNnqMudZoK",
+      "type": "label",
+      "data": {
+        "label": "Behavior Testing"
+      }
+    },
+    {
+      "id": "UFDy19TNkykRsKv4vRsVJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Cucumber-JVM"
+      }
+    },
+    {
+      "id": "mLM1HJf6_pxrUDOmb45ew",
+      "type": "subtopic",
+      "data": {
+        "label": "Mocking \u003E Mockito"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit Backend path and see what you missed"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "t7TlesNLK0sOM8Zv7t-MF",
+      "type": "paragraph",
+      "data": {
+        "label": "This is Java specific roadmap and intentionally skips some backend topics."
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "Visit Backend Roadmap"
+      }
+    },
+    {
+      "id": "OrkJa48HIDmrLOgCBpimA",
+      "type": "subtopic",
+      "data": {
+        "label": "Javalin"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "vRZAtylN3zfHIv3SidYkA",
+      "type": "topic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "d3Tsc7KPhtjS0eC4Zbq8B",
+      "type": "subtopic",
+      "data": {
+        "label": "Javadoc"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-hp15XdmPlKKTbYnrYfCBlx2-Rhk7BrJqNEXQT3LGlGLM6w1",
+      "source": "hp15XdmPlKKTbYnrYfCBl",
+      "target": "2TGq1y2QthnxxN-FfToSe",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6y2-OlbQNB6YXZjO1J7D0lZU1z1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "OlbQNB6YXZjO1J7D0lZU1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6y2-QgWalJLIb6Fw0HhN1wb02z1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "5g9mmi01WeZ4aDqNzwx_V",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6y2-VBNcAO0STaZJ1iV9A7utvz1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "VBNcAO0STaZJ1iV9A7utv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6y2-yNDbk6r5wFqBi25xmIRF_z1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "yNDbk6r5wFqBi25xmIRF_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6z2-5khApwg1FZ-0qorsLyH-Fy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "5khApwg1FZ-0qorsLyH-F",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6z2-sG_3ZQIE1-FQXQkk-OduQy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "sG_3ZQIE1-FQXQkk-OduQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Rhk7BrJqNEXQT3LGlGLM6z2-DZ4BX4NYeCQbjGSj56lngy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "JHUhVEjWFXTn6-wKcKevg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2TGq1y2QthnxxN-FfToSez2-ziD_XwzJSFQP_3iLjq9pAy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "ziD_XwzJSFQP_3iLjq9pA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2TGq1y2QthnxxN-FfToSez2-aEaBobzFWv0mJHGAbgxKYy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "aEaBobzFWv0mJHGAbgxKY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2TGq1y2QthnxxN-FfToSey2-QgWalJLIb6Fw0HhN1wb02z1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "QgWalJLIb6Fw0HhN1wb02",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2TGq1y2QthnxxN-FfToSez2-DZ4BX4NYeCQbjGSj56lngy1",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "DZ4BX4NYeCQbjGSj56lng",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2TGq1y2QthnxxN-FfToSex2-zNHDLv26Xn3oMrDVSAP1Zw2",
+      "source": "2TGq1y2QthnxxN-FfToSe",
+      "target": "zNHDLv26Xn3oMrDVSAP1Z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zNHDLv26Xn3oMrDVSAP1Zx2-FyTlaUqrK5h3e5mWwkvVgw1",
+      "source": "zNHDLv26Xn3oMrDVSAP1Z",
+      "target": "FyTlaUqrK5h3e5mWwkvVg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zNHDLv26Xn3oMrDVSAP1Zz2-g9P3548F38tYGjevBc42ww1",
+      "source": "zNHDLv26Xn3oMrDVSAP1Z",
+      "target": "g9P3548F38tYGjevBc42w",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-g9P3548F38tYGjevBc42wx2-00_q6I95eO-PUUrKpPFY8w1",
+      "source": "g9P3548F38tYGjevBc42w",
+      "target": "00_q6I95eO-PUUrKpPFY8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-81N1cZLue_Ii0uD5CV6kZw2-6FMj9tMAQPii_1kLtHJLkx2",
+      "source": "81N1cZLue_Ii0uD5CV6kZ",
+      "target": "6FMj9tMAQPii_1kLtHJLk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zItXmuluDtl6HkTYQ7qMhx2-M0ybgK1JCycXhZ1dEpCFow2",
+      "source": "zItXmuluDtl6HkTYQ7qMh",
+      "target": "M0ybgK1JCycXhZ1dEpCFo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-LgpsnXV0CTvTspjnsd0Rdw2-kN-mXxqUPNJNsJGQ0U_7Jx1",
+      "source": "_W84u4UXMSY0zvy6RJvFi",
+      "target": "kN-mXxqUPNJNsJGQ0U_7J",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LgpsnXV0CTvTspjnsd0Rdy2-81N1cZLue_Ii0uD5CV6kZz2",
+      "source": "_W84u4UXMSY0zvy6RJvFi",
+      "target": "81N1cZLue_Ii0uD5CV6kZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-JeMG0gU8IVRBZgczjXmPiw2-u_YysD7Bpnq-xkFX5yJGzx1",
+      "source": "shqS9-hg__mkOtnnl_I4l",
+      "target": "u_YysD7Bpnq-xkFX5yJGz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_W84u4UXMSY0zvy6RJvFiz2-LgpsnXV0CTvTspjnsd0Rdy1",
+      "source": "_W84u4UXMSY0zvy6RJvFi",
+      "target": "fV-gW51jhna2__Ln2HIIh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-LgpsnXV0CTvTspjnsd0Rdw2-WzWOxBUKKg6LeuBmVesc2x1",
+      "source": "fV-gW51jhna2__Ln2HIIh",
+      "target": "WzWOxBUKKg6LeuBmVesc2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fV-gW51jhna2__Ln2HIIhx2-LgpsnXV0CTvTspjnsd0Rdw1",
+      "source": "fV-gW51jhna2__Ln2HIIh",
+      "target": "d9F5Wt8onY125DLuzNULg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-d9F5Wt8onY125DLuzNULgy2-d9F5Wt8onY125DLuzNULgy1",
+      "source": "d9F5Wt8onY125DLuzNULg",
+      "target": "d9F5Wt8onY125DLuzNULg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-LgpsnXV0CTvTspjnsd0Rdx2-0vLaVNJaJSHZ_bHli6Qzsw1",
+      "source": "LgpsnXV0CTvTspjnsd0Rd",
+      "target": "0vLaVNJaJSHZ_bHli6Qzs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__d9F5Wt8onY125DLuzNULgy2-vRZAtylN3zfHIv3SidYkAz2",
+      "source": "d9F5Wt8onY125DLuzNULg",
+      "target": "vRZAtylN3zfHIv3SidYkA",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vRZAtylN3zfHIv3SidYkAx2-LgpsnXV0CTvTspjnsd0Rdw2",
+      "source": "vRZAtylN3zfHIv3SidYkA",
+      "target": "LgpsnXV0CTvTspjnsd0Rd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vRZAtylN3zfHIv3SidYkAy2-d3Tsc7KPhtjS0eC4Zbq8Bz2",
+      "source": "vRZAtylN3zfHIv3SidYkA",
+      "target": "d3Tsc7KPhtjS0eC4Zbq8B",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,706 @@
+{
+  "title": {
+    "card": "Spring Boot",
+    "page": "Spring Boot Developer"
+  },
+  "description": "Step by step guide to becoming a Spring Boot developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Spring Boot"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "For ecosystem and more, check these other tracks involving Spring Boot"
+      }
+    },
+    {
+      "id": "6AIUtChWC_gK8Ax0UuBjd",
+      "type": "button",
+      "data": {
+        "label": "Frontend Roadmap"
+      }
+    },
+    {
+      "id": "f5WRewBlpeYMf71cPcXs-",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "WJtVLmJLvKk_vvqhFItZ2",
+      "type": "button",
+      "data": {
+        "label": "Visit Java Roadmap"
+      }
+    },
+    {
+      "id": "jy2heDVZuM6ASCXlI1TDn",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "OB--nMudscm0p6RqqfA7T",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuration"
+      }
+    },
+    {
+      "id": "C2EQ5J1aJYF9e9Rr2KysT",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "PlUU_vzFQ3Xx6Z5XREIYP",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring IOC"
+      }
+    },
+    {
+      "id": "wV1_I_4czMIxpBionvLs4",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring AOP"
+      }
+    },
+    {
+      "id": "QiNWE4sMTao3cVzjt3yPp",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring MVC"
+      }
+    },
+    {
+      "id": "HdCpfGMrMaXxk5QrtYn3X",
+      "type": "subtopic",
+      "data": {
+        "label": "Annotations"
+      }
+    },
+    {
+      "id": "KdN62IpNgPFMndXfLaYa1",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Bean Scope"
+      }
+    },
+    {
+      "id": "WrUCyVfFNUpHB8jyjjKna",
+      "type": "subtopic",
+      "data": {
+        "label": "Terminology"
+      }
+    },
+    {
+      "id": "yuXN-rD4AyyPYUYOR50L_",
+      "type": "subtopic",
+      "data": {
+        "label": "Architecture"
+      }
+    },
+    {
+      "id": "WGf3W6bdWL0rK0o6O28G2",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use Spring?"
+      }
+    },
+    {
+      "id": "KaUdyVWEiZa6lUDRBlOKt",
+      "type": "topic",
+      "data": {
+        "label": "Spring Security"
+      }
+    },
+    {
+      "id": "ssdk2iAt4avhc8B5tnIzQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "c7w7Z3Coa81FKa_yAKTse",
+      "type": "subtopic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "p7t3RlIIm9U08GFC6azff",
+      "type": "subtopic",
+      "data": {
+        "label": "OAuth2"
+      }
+    },
+    {
+      "id": "1My7mbdwAbRcJoiA50pWW",
+      "type": "subtopic",
+      "data": {
+        "label": "JWT Authentication"
+      }
+    },
+    {
+      "id": "Vx7GXHYuM0ZOB9_ovS6sw",
+      "type": "paragraph",
+      "data": {
+        "label": "Spring Boot"
+      }
+    },
+    {
+      "id": "JrH2hiu27PhIO1VtrArMa",
+      "type": "topic",
+      "data": {
+        "label": "Spring Boot Starters"
+      }
+    },
+    {
+      "id": "88-h3d7kb-VmUBsnUUXW_",
+      "type": "topic",
+      "data": {
+        "label": "Autoconfiguration"
+      }
+    },
+    {
+      "id": "N7hd3d_XQtvOgnCqdCFt3",
+      "type": "topic",
+      "data": {
+        "label": "Actuators"
+      }
+    },
+    {
+      "id": "ONb0VnSUMY8JBeW3G2mTp",
+      "type": "topic",
+      "data": {
+        "label": "Embedded Server"
+      }
+    },
+    {
+      "id": "h5-HnycxfbJgwalSdXTAz",
+      "type": "topic",
+      "data": {
+        "label": "Hibernate"
+      }
+    },
+    {
+      "id": "H9Z0EvKT_148vD0mR-dUf",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "D4ybyh0ydvl9W2_xUcvZ_",
+      "type": "subtopic",
+      "data": {
+        "label": "Relationships"
+      }
+    },
+    {
+      "id": "Ijmy0J3VyaeTGXtu2VkkQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Entity Lifecycle"
+      }
+    },
+    {
+      "id": "pvVLbFQoT50vz_VRK4VbJ",
+      "type": "topic",
+      "data": {
+        "label": "Spring Data"
+      }
+    },
+    {
+      "id": "6u08QN-pUeFm3o0h5Scfm",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Data JPA"
+      }
+    },
+    {
+      "id": "fy-TphbqkLpR1zvFcr7dg",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Data MongoDB"
+      }
+    },
+    {
+      "id": "dd1A-MyzBs_kNOtVG7f1D",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Data JDBC"
+      }
+    },
+    {
+      "id": "jU_KHoPUSU_HoIKk0ZpRF",
+      "type": "topic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "VWNDYSw83Vzi2UPQprJ5z",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Cloud"
+      }
+    },
+    {
+      "id": "f-i0NX2KOzCh3JwkaSPFo",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Cloud Gateway"
+      }
+    },
+    {
+      "id": "9hG3CB8r41bUb_s8-0u73",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Config"
+      }
+    },
+    {
+      "id": "kqpSlO--X9-xYxfq1KFVe",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Cloud Circuit Breaker"
+      }
+    },
+    {
+      "id": "EKSXTMSN2xdaleJ4wOV1A",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Cloud Open Feign"
+      }
+    },
+    {
+      "id": "GsmBGRohWbJ6XOaALFZ8o",
+      "type": "subtopic",
+      "data": {
+        "label": "Micrometer"
+      }
+    },
+    {
+      "id": "6sLE6gb5Y477SmO2GhQIG",
+      "type": "subtopic",
+      "data": {
+        "label": "Eureka"
+      }
+    },
+    {
+      "id": "S-BbOoRD7anvoJrprjoKF",
+      "type": "topic",
+      "data": {
+        "label": "Spring MVC"
+      }
+    },
+    {
+      "id": "35NTx2eO1j02sjy4m6DPq",
+      "type": "subtopic",
+      "data": {
+        "label": "Servlet"
+      }
+    },
+    {
+      "id": "Lz0GPMiYzb30iFJdv1dL6",
+      "type": "subtopic",
+      "data": {
+        "label": "JSP Files"
+      }
+    },
+    {
+      "id": "_vS_zdJZegZS6MIKAFyg8",
+      "type": "subtopic",
+      "data": {
+        "label": "Architecture"
+      }
+    },
+    {
+      "id": "sgA06Tu9Y4cEHtfI8CyLL",
+      "type": "subtopic",
+      "data": {
+        "label": "Components"
+      }
+    },
+    {
+      "id": "7Qqrh_Rz_7uAD49g9sDzi",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "Nhx2QiSD_4pVWD17lsCbu",
+      "type": "subtopic",
+      "data": {
+        "label": "JPA Test"
+      }
+    },
+    {
+      "id": "5d1BERqTKNJMKiBcqa8Ie",
+      "type": "subtopic",
+      "data": {
+        "label": "Mock MVC"
+      }
+    },
+    {
+      "id": "p91CaVPh5GMzFU0yEU_hl",
+      "type": "subtopic",
+      "data": {
+        "label": "@SpringBootTest Annotation"
+      }
+    },
+    {
+      "id": "i77NTa0hpGGBjmql9u_CT",
+      "type": "subtopic",
+      "data": {
+        "label": "@MockBean Annotation"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-WJtVLmJLvKk_vvqhFItZ2w2",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "WJtVLmJLvKk_vvqhFItZ2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WJtVLmJLvKk_vvqhFItZ2x2-C2N5yOxCtdn_R6ceWvQlyw1",
+      "source": "WJtVLmJLvKk_vvqhFItZ2",
+      "target": "jy2heDVZuM6ASCXlI1TDn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-wV1_I_4czMIxpBionvLs4y2",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "wV1_I_4czMIxpBionvLs4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-QiNWE4sMTao3cVzjt3yPpy1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "QiNWE4sMTao3cVzjt3yPp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-PlUU_vzFQ3Xx6Z5XREIYPy1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "PlUU_vzFQ3Xx6Z5XREIYP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-C2EQ5J1aJYF9e9Rr2KysTy1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "C2EQ5J1aJYF9e9Rr2KysT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-OB--nMudscm0p6RqqfA7Ty1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "OB--nMudscm0p6RqqfA7T",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-HdCpfGMrMaXxk5QrtYn3Xy1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "HdCpfGMrMaXxk5QrtYn3X",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-KdN62IpNgPFMndXfLaYa1y1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "KdN62IpNgPFMndXfLaYa1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-WGf3W6bdWL0rK0o6O28G2y1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "WGf3W6bdWL0rK0o6O28G2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-yuXN-rD4AyyPYUYOR50L_y1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "yuXN-rD4AyyPYUYOR50L_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyz2-WrUCyVfFNUpHB8jyjjKnay1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "WrUCyVfFNUpHB8jyjjKna",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jy2heDVZuM6ASCXlI1TDnx2-C2N5yOxCtdn_R6ceWvQlyw1",
+      "source": "jy2heDVZuM6ASCXlI1TDn",
+      "target": "KaUdyVWEiZa6lUDRBlOKt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyy2-ssdk2iAt4avhc8B5tnIzQz1",
+      "source": "KaUdyVWEiZa6lUDRBlOKt",
+      "target": "ssdk2iAt4avhc8B5tnIzQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyy2-c7w7Z3Coa81FKa_yAKTsez1",
+      "source": "KaUdyVWEiZa6lUDRBlOKt",
+      "target": "c7w7Z3Coa81FKa_yAKTse",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyy2-p7t3RlIIm9U08GFC6azffz1",
+      "source": "KaUdyVWEiZa6lUDRBlOKt",
+      "target": "p7t3RlIIm9U08GFC6azff",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyy2-dd1A-MyzBs_kNOtVG7f1Dz1",
+      "source": "KaUdyVWEiZa6lUDRBlOKt",
+      "target": "1My7mbdwAbRcJoiA50pWW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C2N5yOxCtdn_R6ceWvQlyx2-Vx7GXHYuM0ZOB9_ovS6sww1",
+      "source": "KaUdyVWEiZa6lUDRBlOKt",
+      "target": "Vx7GXHYuM0ZOB9_ovS6sw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Vx7GXHYuM0ZOB9_ovS6swx2-JrH2hiu27PhIO1VtrArMaw2",
+      "source": "Vx7GXHYuM0ZOB9_ovS6sw",
+      "target": "JrH2hiu27PhIO1VtrArMa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ONb0VnSUMY8JBeW3G2mTpy2-ZWFWkB61L8UbG-SREw6SJz2",
+      "source": "ONb0VnSUMY8JBeW3G2mTp",
+      "target": "h5-HnycxfbJgwalSdXTAz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZWFWkB61L8UbG-SREw6SJw2-dd1A-MyzBs_kNOtVG7f1Dx1",
+      "source": "h5-HnycxfbJgwalSdXTAz",
+      "target": "Ijmy0J3VyaeTGXtu2VkkQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h5-HnycxfbJgwalSdXTAzx2-ZWFWkB61L8UbG-SREw6SJw1",
+      "source": "h5-HnycxfbJgwalSdXTAz",
+      "target": "pvVLbFQoT50vz_VRK4VbJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZWFWkB61L8UbG-SREw6SJx2-6u08QN-pUeFm3o0h5Scfmw1",
+      "source": "pvVLbFQoT50vz_VRK4VbJ",
+      "target": "6u08QN-pUeFm3o0h5Scfm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__pvVLbFQoT50vz_VRK4VbJz2-ZWFWkB61L8UbG-SREw6SJy1",
+      "source": "pvVLbFQoT50vz_VRK4VbJ",
+      "target": "jU_KHoPUSU_HoIKk0ZpRF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZWFWkB61L8UbG-SREw6SJz2-VWNDYSw83Vzi2UPQprJ5zy1",
+      "source": "jU_KHoPUSU_HoIKk0ZpRF",
+      "target": "VWNDYSw83Vzi2UPQprJ5z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VWNDYSw83Vzi2UPQprJ5zw2-kqpSlO--X9-xYxfq1KFVex2",
+      "source": "VWNDYSw83Vzi2UPQprJ5z",
+      "target": "kqpSlO--X9-xYxfq1KFVe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VWNDYSw83Vzi2UPQprJ5zx2-sgA06Tu9Y4cEHtfI8CyLLw1",
+      "source": "VWNDYSw83Vzi2UPQprJ5z",
+      "target": "EKSXTMSN2xdaleJ4wOV1A",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jU_KHoPUSU_HoIKk0ZpRFx2-7Qqrh_Rz_7uAD49g9sDziw2",
+      "source": "jU_KHoPUSU_HoIKk0ZpRF",
+      "target": "S-BbOoRD7anvoJrprjoKF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__S-BbOoRD7anvoJrprjoKFx2-7Qqrh_Rz_7uAD49g9sDziw1",
+      "source": "S-BbOoRD7anvoJrprjoKF",
+      "target": "7Qqrh_Rz_7uAD49g9sDzi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7Qqrh_Rz_7uAD49g9sDzix2-O5dely89N5UCMBeUfh8udw1",
+      "source": "7Qqrh_Rz_7uAD49g9sDzi",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__S-BbOoRD7anvoJrprjoKFz2-35NTx2eO1j02sjy4m6DPqy2",
+      "source": "S-BbOoRD7anvoJrprjoKF",
+      "target": "35NTx2eO1j02sjy4m6DPq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__S-BbOoRD7anvoJrprjoKFz2-Lz0GPMiYzb30iFJdv1dL6y2",
+      "source": "S-BbOoRD7anvoJrprjoKF",
+      "target": "Lz0GPMiYzb30iFJdv1dL6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__S-BbOoRD7anvoJrprjoKFz2-_vS_zdJZegZS6MIKAFyg8y1",
+      "source": "S-BbOoRD7anvoJrprjoKF",
+      "target": "_vS_zdJZegZS6MIKAFyg8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__S-BbOoRD7anvoJrprjoKFz2-sgA06Tu9Y4cEHtfI8CyLLy1",
+      "source": "S-BbOoRD7anvoJrprjoKF",
+      "target": "sgA06Tu9Y4cEHtfI8CyLL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7Qqrh_Rz_7uAD49g9sDziy2-5d1BERqTKNJMKiBcqa8Iez1",
+      "source": "7Qqrh_Rz_7uAD49g9sDzi",
+      "target": "5d1BERqTKNJMKiBcqa8Ie",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7Qqrh_Rz_7uAD49g9sDziy2-p91CaVPh5GMzFU0yEU_hlz2",
+      "source": "7Qqrh_Rz_7uAD49g9sDzi",
+      "target": "p91CaVPh5GMzFU0yEU_hl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7Qqrh_Rz_7uAD49g9sDziy2-i77NTa0hpGGBjmql9u_CTz1",
+      "source": "7Qqrh_Rz_7uAD49g9sDzi",
+      "target": "i77NTa0hpGGBjmql9u_CT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

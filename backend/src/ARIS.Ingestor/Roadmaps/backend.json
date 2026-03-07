@@ -1,0 +1,2066 @@
+{
+  "title": {
+    "card": "Backend",
+    "page": "Backend Developer"
+  },
+  "description": "Step by step guide to becoming a modern backend developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "NcwvlqPrUyqiXCMzIBxPs",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bnfR9u5-60gaAjV2QFbq_",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "v7X73KuvPLPfFLBsc1ej-",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jNaBIO07ntPC3Ebc2ERpQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gQDmXWYHoGnsBlHFqgX6H",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "TzpKarpzxF7jJOF3TRsEa",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GCNJ-mXtIeQzeYy4vYA_5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8T_stFPnPpBUqSGDU9GUH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8DLXb9IFuhIKl-_3iS8a_",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "V6wD2xqqVSrOF0xU8pE1J",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "fszhaIFWgn31PMH13rO7h",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "8v3u-FpQ0c8C8492XsROG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "wFIwLeIGuwg9-_QvbLMYX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lOL03vonn8z-FLFmY2xrA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "zBhipmm1ptQ7gNqgI_PQa",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Os9E7FSRWhn7wsK1AOBh2",
+      "type": "paragraph",
+      "data": {
+        "label": "Time Series"
+      }
+    },
+    {
+      "id": "qdvDOpBG4DByI4ZABVzsl",
+      "type": "paragraph",
+      "data": {
+        "label": "Realtime"
+      }
+    },
+    {
+      "id": "k9Xcn33w669GorNeaI4Wz",
+      "type": "paragraph",
+      "data": {
+        "label": "Key-Value"
+      }
+    },
+    {
+      "id": "TcfbKmrUwzOwl13Pthm8z",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "aaGac1eorlfnbvr3XwytQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "SakiRhomfNJvPXc0XAzAO",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "9cD5ag1L0GqHx4_zxc5JX",
+      "type": "subtopic",
+      "data": {
+        "label": "Open API Specs"
+      }
+    },
+    {
+      "id": "NKyoiJPX3UjxIoILzR4sx",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "YPUwsVj_EAUTMe7rCZ9Mk",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Wdb3AbK-axX5E414evLE4",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3iYNzFYaQ7LCpvTOuDLHD",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwbuCRE0bdSiwZ_BqxCcr",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "r2bvRM2MXeIljg1V9mDfN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bmMB66PtLxjdmO9i6XykI",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UFd8PEg6IwJMXvuv8Ow1f",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following relevant tracks"
+      }
+    },
+    {
+      "id": "gKTSe9yQFVbPVlLzWB0hC",
+      "type": "topic",
+      "data": {
+        "label": "Search Engines"
+      }
+    },
+    {
+      "id": "EwvLPSI6AlZ4TnNIJTZA4",
+      "type": "topic",
+      "data": {
+        "label": "Learn about APIs"
+      }
+    },
+    {
+      "id": "4_q73_Fz02yj45i7NcRlA",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "SiYUdtYMDImRPmV2_XPkH",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "CWwh2abwqx4hAxpAGvhIx",
+      "type": "subtopic",
+      "data": {
+        "label": "Rust"
+      }
+    },
+    {
+      "id": "l9Wrq_Ad9-Ju4NIB0m5Ha",
+      "type": "subtopic",
+      "data": {
+        "label": "PHP"
+      }
+    },
+    {
+      "id": "BdXbcz4-ar3XOX0wIKzBp",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "8-lO-v6jCYYoklEJXULxN",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "ANeSwxJDJyQ-49pO2-CCI",
+      "type": "subtopic",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "J_sVHsD72Yzyqb9KCIvAY",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "rImbMHLLfJwjf3l25vBkc",
+      "type": "subtopic",
+      "data": {
+        "label": "C#"
+      }
+    },
+    {
+      "id": "SlH0Rl07yURDko2nDPfFy",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "2f0ZO6GJElfZ2Eis28Hzg",
+      "type": "topic",
+      "data": {
+        "label": "Pick a Backend Language"
+      }
+    },
+    {
+      "id": "_I1E__wCIVrhjMk6IMieE",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "ezdqQW9wTUw93F6kjOzku",
+      "type": "topic",
+      "data": {
+        "label": "Version Control Systems"
+      }
+    },
+    {
+      "id": "ptD8EVqwFUYr4W5A_tABY",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "Wcp-VDdFHipwa7hNAp1z_",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab"
+      }
+    },
+    {
+      "id": "NvUcSDWBhzJZ31nzT4UlE",
+      "type": "topic",
+      "data": {
+        "label": "Repo Hosting Services"
+      }
+    },
+    {
+      "id": "FihTrMO56kj9jT8O_pO2T",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "dEsTje8kfHwWjCI3zcgLC",
+      "type": "subtopic",
+      "data": {
+        "label": "MS SQL"
+      }
+    },
+    {
+      "id": "VPxOdjJtKAqmM5V0LR5OC",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL"
+      }
+    },
+    {
+      "id": "h1SAjQltHtztSt8QmRgab",
+      "type": "subtopic",
+      "data": {
+        "label": "Oracle"
+      }
+    },
+    {
+      "id": "tD3i-8gBpMKCHB-ITyDiU",
+      "type": "subtopic",
+      "data": {
+        "label": "MariaDB"
+      }
+    },
+    {
+      "id": "r45b461NxLN6wBODJ5CNP",
+      "type": "topic",
+      "data": {
+        "label": "Relational Databases"
+      }
+    },
+    {
+      "id": "F8frGuv1dunOdcVJ_IiGs",
+      "type": "topic",
+      "data": {
+        "label": "NoSQL Databases"
+      }
+    },
+    {
+      "id": "Z7jp_Juj5PffSxV7UZcBb",
+      "type": "subtopic",
+      "data": {
+        "label": "ORMs"
+      }
+    },
+    {
+      "id": "Ge2SnKBrQQrU-oGLz6TmT",
+      "type": "subtopic",
+      "data": {
+        "label": "Normalization"
+      }
+    },
+    {
+      "id": "qSAdfaGUfn8mtmDjHJi3z",
+      "type": "subtopic",
+      "data": {
+        "label": "ACID"
+      }
+    },
+    {
+      "id": "GwApfL4Yx-b5Y8dB9Vy__",
+      "type": "subtopic",
+      "data": {
+        "label": "Failure Modes"
+      }
+    },
+    {
+      "id": "rq_y_OBMD9AH_4aoecvAi",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "SYXJhanu0lFmGj2m2XXhS",
+      "type": "subtopic",
+      "data": {
+        "label": "Profiling Performance"
+      }
+    },
+    {
+      "id": "bQnOAu863hsHdyNMNyJop",
+      "type": "subtopic",
+      "data": {
+        "label": "N\u002B1 Problem"
+      }
+    },
+    {
+      "id": "LJt27onEOeIBomiEMTyKd",
+      "type": "topic",
+      "data": {
+        "label": "More about Databases"
+      }
+    },
+    {
+      "id": "y-xkHFE9YzhNIX3EiWspL",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Indexes"
+      }
+    },
+    {
+      "id": "zWstl08R4uzqve4BdYurp",
+      "type": "subtopic",
+      "data": {
+        "label": "Sharding Strategies"
+      }
+    },
+    {
+      "id": "wrl7HHWXOaxoKVlNZxZ6d",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Replication"
+      }
+    },
+    {
+      "id": "LAdKDJ4LcMaDWqslMvE8X",
+      "type": "subtopic",
+      "data": {
+        "label": "CAP Theorem"
+      }
+    },
+    {
+      "id": "95d9itpUZ4s9roZN8kG9x",
+      "type": "topic",
+      "data": {
+        "label": "Scaling Databases"
+      }
+    },
+    {
+      "id": "sNceS4MpSIjRkWhNDmrFg",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON APIs"
+      }
+    },
+    {
+      "id": "sSNf93azjuyMzQqIHE0Rh",
+      "type": "subtopic",
+      "data": {
+        "label": "SOAP"
+      }
+    },
+    {
+      "id": "J-TOE2lT4At1mSdNoxPS1",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC"
+      }
+    },
+    {
+      "id": "lfNFDZZNdrB0lbEaMtU71",
+      "type": "subtopic",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "zp3bq38tMnutT2N0tktOW",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "KWTbEVX_WxS8jmSaAX3Fe",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP Caching"
+      }
+    },
+    {
+      "id": "uPjCrDGA2MHylWXbZvMBM",
+      "type": "topic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "RBrIP5KbVQ2F0ly7kMfTo",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Security"
+      }
+    },
+    {
+      "id": "381Kw1IMRv7CJp-Uf--qd",
+      "type": "subtopic",
+      "data": {
+        "label": "Integration Testing"
+      }
+    },
+    {
+      "id": "NAGisfq2CgeK3SsuRjnMw",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Testing"
+      }
+    },
+    {
+      "id": "3OYm6b9f6WOrKi4KTOZYK",
+      "type": "subtopic",
+      "data": {
+        "label": "Unit Testing"
+      }
+    },
+    {
+      "id": "STQQbPa7PE3gbjMdL6P-t",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "mGfD7HfuP184lFkXZzGjG",
+      "type": "topic",
+      "data": {
+        "label": "CI / CD"
+      }
+    },
+    {
+      "id": "Ke522R-4k6TDeiDRyZbbU",
+      "type": "subtopic",
+      "data": {
+        "label": "Monolith"
+      }
+    },
+    {
+      "id": "n14b7sfTOwsjKTpFC9EZ2",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Mesh"
+      }
+    },
+    {
+      "id": "tObmzWpjsJtK4GWhx6pwB",
+      "type": "subtopic",
+      "data": {
+        "label": "SOA"
+      }
+    },
+    {
+      "id": "8DmabQJXlrT__COZrDVTV",
+      "type": "subtopic",
+      "data": {
+        "label": "Twelve Factor Apps"
+      }
+    },
+    {
+      "id": "tHiUpG9LN35E5RaHddMv5",
+      "type": "topic",
+      "data": {
+        "label": "Architectural Patterns"
+      }
+    },
+    {
+      "id": "GPFRMcY1DEtRgnaZwJ3vW",
+      "type": "subtopic",
+      "data": {
+        "label": "RabbitMQ"
+      }
+    },
+    {
+      "id": "VoYSis1F1ZfTxMlQlXQKB",
+      "type": "subtopic",
+      "data": {
+        "label": "Kafka"
+      }
+    },
+    {
+      "id": "nJ5FpFgGCRaALcWmAKBKT",
+      "type": "topic",
+      "data": {
+        "label": "Message Brokers"
+      }
+    },
+    {
+      "id": "31ZlpfIPr9-5vYZqvjUeL",
+      "type": "subtopic",
+      "data": {
+        "label": "LXC"
+      }
+    },
+    {
+      "id": "sVuIdAe08IWJVqAt4z-ag",
+      "type": "subtopic",
+      "data": {
+        "label": "WebSockets"
+      }
+    },
+    {
+      "id": "RUSdlokJUcEYbCvq5FJBJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Server Sent Events"
+      }
+    },
+    {
+      "id": "z5AdThp9ByulmM9uekgm-",
+      "type": "subtopic",
+      "data": {
+        "label": "Nginx"
+      }
+    },
+    {
+      "id": "Op-PSPNoyj6Ss9CS09AXh",
+      "type": "subtopic",
+      "data": {
+        "label": "Caddy"
+      }
+    },
+    {
+      "id": "jjjonHTHHo-NiAf6p9xPv",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache"
+      }
+    },
+    {
+      "id": "0NJDgfe6eMa7qPUOI6Eya",
+      "type": "subtopic",
+      "data": {
+        "label": "MS IIS"
+      }
+    },
+    {
+      "id": "fekyMpEnaGqjh1Cu4Nyc4",
+      "type": "topic",
+      "data": {
+        "label": "Learn about Web Servers"
+      }
+    },
+    {
+      "id": "SHmbcMRsc3SygEDksJQBD",
+      "type": "topic",
+      "data": {
+        "label": "Building For Scale"
+      }
+    },
+    {
+      "id": "g8GjkJAhvnSxXTZks0V1g",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "xPvVwGQw28uMeLYIWn8yn",
+      "type": "subtopic",
+      "data": {
+        "label": "Memcached"
+      }
+    },
+    {
+      "id": "UxAr1obi4rfJnohRmi9I0",
+      "type": "paragraph",
+      "data": {
+        "label": "Document DBs"
+      }
+    },
+    {
+      "id": "28U6q_X-NTYf7OSKHjoWH",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "qOlNzZ7U8LhIGukb67n7U",
+      "type": "subtopic",
+      "data": {
+        "label": "CouchDB"
+      }
+    },
+    {
+      "id": "lz1qUvdtuZ5_MUBDw2M7B",
+      "type": "paragraph",
+      "data": {
+        "label": "Graph DBs"
+      }
+    },
+    {
+      "id": "BTNJfWemFKEeNeTyENXui",
+      "type": "subtopic",
+      "data": {
+        "label": "Neo4j"
+      }
+    },
+    {
+      "id": "HEQGhXCFv9Fi82V7MyRwt",
+      "type": "button",
+      "data": {
+        "label": "Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "SqTnY2zykzA6857nHHwG2",
+      "type": "paragraph",
+      "data": {
+        "label": "Mitigation Strategies"
+      }
+    },
+    {
+      "id": "G9AI_i3MkUE1BsO3_-PH7",
+      "type": "subtopic",
+      "data": {
+        "label": "Graceful Degradation"
+      }
+    },
+    {
+      "id": "qAu-Y4KI2Z_y-EqiG86cR",
+      "type": "subtopic",
+      "data": {
+        "label": "Throttling"
+      }
+    },
+    {
+      "id": "JansCqGDyXecQkD1K7E7e",
+      "type": "subtopic",
+      "data": {
+        "label": "Backpressure"
+      }
+    },
+    {
+      "id": "HoQdX7a4SnkFRU4RPQ-D5",
+      "type": "subtopic",
+      "data": {
+        "label": "Loadshifting"
+      }
+    },
+    {
+      "id": "spkiQTPvXY4qrhhVUkoPV",
+      "type": "subtopic",
+      "data": {
+        "label": "Circuit Breaker"
+      }
+    },
+    {
+      "id": "Uhj-lrUhQQnwOdn_e6_hd",
+      "type": "paragraph",
+      "data": {
+        "label": "Core Concepts"
+      }
+    },
+    {
+      "id": "4X-sbqpP0NDhM99bKdqIa",
+      "type": "subtopic",
+      "data": {
+        "label": "Instrumentation"
+      }
+    },
+    {
+      "id": "QvMEEsXh0-rzn5hDGcmEv",
+      "type": "subtopic",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "neVRtPjIHP_VG7lHwfah0",
+      "type": "subtopic",
+      "data": {
+        "label": "Telemetry"
+      }
+    },
+    {
+      "id": "apYJ_HEOinr5L0w82IBYL",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "jWwA6yX4Zjx-r_KpDaD3c",
+      "type": "subtopic",
+      "data": {
+        "label": "MD5"
+      }
+    },
+    {
+      "id": "JVN38r5jENoteia3YeIQ3",
+      "type": "subtopic",
+      "data": {
+        "label": "SHA"
+      }
+    },
+    {
+      "id": "kGTALrvCpxyVCXHRmkI7s",
+      "type": "subtopic",
+      "data": {
+        "label": "scrypt"
+      }
+    },
+    {
+      "id": "dlG1bVkDmjI3PEGpkm1xH",
+      "type": "subtopic",
+      "data": {
+        "label": "bcrypt"
+      }
+    },
+    {
+      "id": "x-WBJjBd8u93ym5gtxGsR",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTPS"
+      }
+    },
+    {
+      "id": "AAgciyxuDvS2B_c6FRMvT",
+      "type": "subtopic",
+      "data": {
+        "label": "OWASP Risks"
+      }
+    },
+    {
+      "id": "0v3OsaghJEGHeXX0c5kqn",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL/TLS"
+      }
+    },
+    {
+      "id": "LU6WUbkWKbPM1rb2_gEqa",
+      "type": "subtopic",
+      "data": {
+        "label": "CORS"
+      }
+    },
+    {
+      "id": "TZ0BWOENPv6pQm8qYB8Ow",
+      "type": "subtopic",
+      "data": {
+        "label": "Server Security"
+      }
+    },
+    {
+      "id": "HgQBde1zLUFtlwB66PR6_",
+      "type": "subtopic",
+      "data": {
+        "label": "CSP"
+      }
+    },
+    {
+      "id": "sSG9zK0ZGTBSk-nFIOq8A",
+      "type": "button",
+      "data": {
+        "label": "API Security Best Practices"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qN-6iiXWgn5qSzK3o0Tjo",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "MfErpYwkJ0wiWJZEUVfrb",
+      "type": "button",
+      "data": {
+        "label": "Visit Beginner Friendly Version"
+      }
+    },
+    {
+      "id": "yCnn-NfSxIybUQ2iTuUGq",
+      "type": "subtopic",
+      "data": {
+        "label": "How does the internet work?"
+      }
+    },
+    {
+      "id": "R12sArWVpbIs_PHxBqVaR",
+      "type": "subtopic",
+      "data": {
+        "label": "What is HTTP?"
+      }
+    },
+    {
+      "id": "ZhSuu2VArnzPDp6dPQQSC",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Domain Name?"
+      }
+    },
+    {
+      "id": "aqMaEY8gkKMikiqleV5EP",
+      "type": "subtopic",
+      "data": {
+        "label": "What is hosting?"
+      }
+    },
+    {
+      "id": "hkxw9jPGYphmjhTjw8766",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS and how it works?"
+      }
+    },
+    {
+      "id": "P82WFaTPgQEPNp5IIuZ1Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Browsers and how they work?"
+      }
+    },
+    {
+      "id": "PY9G7KQy8bF6eIdr1ydHf",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "UxS_mzVUjLigEwKrXnEeB",
+      "type": "subtopic",
+      "data": {
+        "label": "JWT"
+      }
+    },
+    {
+      "id": "yRiJgjjv2s1uV9vgo3n8m",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Authentication"
+      }
+    },
+    {
+      "id": "0rGj7FThLJZouSQUhnqGW",
+      "type": "subtopic",
+      "data": {
+        "label": "Token Authentication"
+      }
+    },
+    {
+      "id": "vp-muizdICcmU0gN8zmkS",
+      "type": "subtopic",
+      "data": {
+        "label": "OAuth"
+      }
+    },
+    {
+      "id": "ffzsh8_5yRq85trFt9Xhk",
+      "type": "subtopic",
+      "data": {
+        "label": "Cookie Based Auth"
+      }
+    },
+    {
+      "id": "z3EJBpgGm0_Uj3ymhypbX",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenID"
+      }
+    },
+    {
+      "id": "UCHtaePVxS-0kpqlYxbfC",
+      "type": "subtopic",
+      "data": {
+        "label": "SAML"
+      }
+    },
+    {
+      "id": "Ms0TfvSRA1z7NGJAQhdqy",
+      "type": "label",
+      "data": {
+        "label": "Hashing Algorithms"
+      }
+    },
+    {
+      "id": "94oRYuULJPdOMI1wihFrU",
+      "type": "button",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "vDaxr8AIaPbG_3mHr0N6X",
+      "type": "button",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "NulaE1isWqn-feYHg4YQT",
+      "type": "subtopic",
+      "data": {
+        "label": "Elasticsearch"
+      }
+    },
+    {
+      "id": "iN_1EuIwCx_7lRBw1Io4U",
+      "type": "subtopic",
+      "data": {
+        "label": "Solr"
+      }
+    },
+    {
+      "id": "5XGvep2qoti31bsyqNzrU",
+      "type": "topic",
+      "data": {
+        "label": "Real-Time Data"
+      }
+    },
+    {
+      "id": "osvajAJlwGI3XnX0fE-kA",
+      "type": "subtopic",
+      "data": {
+        "label": "Long / Short Polling"
+      }
+    },
+    {
+      "id": "M0iaSSdVPWaCUpyTG50Vf",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "dwfEHInbX2eFiafM-nRMX",
+      "type": "subtopic",
+      "data": {
+        "label": "DynamoDB"
+      }
+    },
+    {
+      "id": "RyJFLLGieJ8Xjt-DlIayM",
+      "type": "subtopic",
+      "data": {
+        "label": "Firebase"
+      }
+    },
+    {
+      "id": "5T0ljwlHL0545ICCeehcQ",
+      "type": "subtopic",
+      "data": {
+        "label": "RethinkDB"
+      }
+    },
+    {
+      "id": "kdulE3Z_BdbtRmq6T2KmR",
+      "type": "subtopic",
+      "data": {
+        "label": "SQLite"
+      }
+    },
+    {
+      "id": "XbM4TDImSH-56NsITjyHK",
+      "type": "subtopic",
+      "data": {
+        "label": "Influx DB"
+      }
+    },
+    {
+      "id": "WiAK70I0z-_bzbWNwiHUd",
+      "type": "subtopic",
+      "data": {
+        "label": "TimescaleDB"
+      }
+    },
+    {
+      "id": "-SkGi8qy2AGwO2_ACw0aD",
+      "type": "paragraph",
+      "data": {
+        "label": "Column DBs"
+      }
+    },
+    {
+      "id": "zsiZLWJ2bMvrjuHch5fX_",
+      "type": "subtopic",
+      "data": {
+        "label": "Cassandra"
+      }
+    },
+    {
+      "id": "5xy66yQrz1P1w7n6PcAFq",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS Neptune"
+      }
+    },
+    {
+      "id": "Z01E67D6KjrShvQCHjGR7",
+      "type": "subtopic",
+      "data": {
+        "label": "Observability"
+      }
+    },
+    {
+      "id": "yAWJWj4D761M0i8iERID3",
+      "type": "button",
+      "data": {
+        "label": "Basic Operations Skills"
+      }
+    },
+    {
+      "id": "cnZFR67IbmEL-SkNwYc5S",
+      "type": "label",
+      "data": {
+        "label": "Click to visit the roadmap"
+      }
+    },
+    {
+      "id": "q1EM7Wog8l_MbYlKsb7Y5",
+      "type": "button",
+      "data": {
+        "label": "Full Stack"
+      }
+    },
+    {
+      "id": "oyg5g4-cY5EBEUgVkjnL3",
+      "type": "topic",
+      "data": {
+        "label": "Frontend Basics"
+      }
+    },
+    {
+      "id": "9-pCsW650T1mfj5dmRB9L",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "utA1W2O6pzoV_LbtDE5DN",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "An2lMuJEkkpL0cfw4RrSl",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "WH2EEQ3SQ8IlZLCv8aXjJ",
+      "type": "label",
+      "data": {
+        "label": "API Styles"
+      }
+    },
+    {
+      "id": "mI9Rq9IpLuMpn4sQT5vVw",
+      "type": "paragraph",
+      "data": {
+        "label": "Learn one language and build lots of projects before moving on"
+      }
+    },
+    {
+      "id": "cQUhtRHvkSaYbb40jWho_",
+      "type": "button",
+      "data": {
+        "label": "Beginner Project Ideas"
+      }
+    },
+    {
+      "id": "FQwaN_0-E9rx_CixqUqIE",
+      "type": "paragraph",
+      "data": {
+        "label": "At this point, you should know enough to get a job. Gain hands-on practice by building projects."
+      }
+    },
+    {
+      "id": "pBAPWRos4jspRkdKkU0-M",
+      "type": "button",
+      "data": {
+        "label": "Intermediate Project Ideas"
+      }
+    },
+    {
+      "id": "KrMr6qlHG_ZDpKTIYAHAS",
+      "type": "label",
+      "data": {
+        "label": "Server Side"
+      }
+    },
+    {
+      "id": "SIzm-oc6cJrTXSeMzC4D9",
+      "type": "label",
+      "data": {
+        "label": "Containerization"
+      }
+    },
+    {
+      "id": "BQbVZ1Hgr4Vt1kR2Zrtgp",
+      "type": "label",
+      "data": {
+        "label": "Container Orchestration"
+      }
+    },
+    {
+      "id": "ruK1Bf7XVIgOHguNFxYlY",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "K55h3aqOGe6-hgVhiFisT",
+      "type": "subtopic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "nkmIv3dNwre4yrULMgTh3",
+      "type": "subtopic",
+      "data": {
+        "label": "Serverless"
+      }
+    },
+    {
+      "id": "ZyGLSvx17p7QmYDy1LFbM",
+      "type": "subtopic",
+      "data": {
+        "label": "ClickHouse"
+      }
+    },
+    {
+      "id": "aArZ3gKwObzafCkTOd-Hj",
+      "type": "subtopic",
+      "data": {
+        "label": "ScyllaDB"
+      }
+    },
+    {
+      "id": "GKrcTsUi5XWj_pP1TOK0S",
+      "type": "subtopic",
+      "data": {
+        "label": "DGraph"
+      }
+    },
+    {
+      "id": "4kTcBU2it8NcngnddEfWS",
+      "type": "paragraph",
+      "data": {
+        "label": "You may never need most of these, just know what they are and when to use them"
+      }
+    },
+    {
+      "id": "MOLAXgs0CMCT7o84L0EaK",
+      "type": "subtopic",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "RcC1fVuePQZ59AsJfeTdR",
+      "type": "subtopic",
+      "data": {
+        "label": "Claude Code"
+      }
+    },
+    {
+      "id": "HQrxxDxKN8gizvXRU5psW",
+      "type": "subtopic",
+      "data": {
+        "label": "Copilot"
+      }
+    },
+    {
+      "id": "CKlkVK_7GZ7xzIUHJqZr8",
+      "type": "subtopic",
+      "data": {
+        "label": "Cursor"
+      }
+    },
+    {
+      "id": "E7-LveK7jO2npxVTLUDfw",
+      "type": "subtopic",
+      "data": {
+        "label": "Antigravity"
+      }
+    },
+    {
+      "id": "tUNP5VRKvrPcufPDPPEo8",
+      "type": "subtopic",
+      "data": {
+        "label": "How LLMs work"
+      }
+    },
+    {
+      "id": "IZKl6PxbvgNkryAkdy3-p",
+      "type": "subtopic",
+      "data": {
+        "label": "AI vs Traditional Coding"
+      }
+    },
+    {
+      "id": "0TMdly8yiqnNR8sx36iqc",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Reviews"
+      }
+    },
+    {
+      "id": "q7NpwqQXUp4wt2to-yFiP",
+      "type": "subtopic",
+      "data": {
+        "label": "Documentation Generation"
+      }
+    },
+    {
+      "id": "UTupdqjOyLh7-56_0SXJ8",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "fA3yi9puMbTFmbPpo6OjN",
+      "type": "topic",
+      "data": {
+        "label": "AI Assisted Coding"
+      }
+    },
+    {
+      "id": "xL8d-uHMpJKwUvT8z-Jia",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompting Techniques"
+      }
+    },
+    {
+      "id": "Bic4PHhz-YqzPWRimJO83",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemini"
+      }
+    },
+    {
+      "id": "-ye5ZtYFDoYGpj-UJaBP8",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI"
+      }
+    },
+    {
+      "id": "Lw2nR7x8PYgq1P5CxPAxi",
+      "type": "subtopic",
+      "data": {
+        "label": "Anthropic"
+      }
+    },
+    {
+      "id": "EYT2rTLZ8tUW2u8DOnAWF",
+      "type": "subtopic",
+      "data": {
+        "label": "Refactoring"
+      }
+    },
+    {
+      "id": "Nx7mjvYgqLpmJ0_iSx5of",
+      "type": "topic",
+      "data": {
+        "label": "Applications"
+      }
+    },
+    {
+      "id": "k4hMVVBMatedUq5EKiMo4",
+      "type": "button",
+      "data": {
+        "label": "Prompt Engineering Roadmap"
+      }
+    },
+    {
+      "id": "vpimgXt10UQFBDVHR21IU",
+      "type": "button",
+      "data": {
+        "label": "AI Agents Roadmap"
+      }
+    },
+    {
+      "id": "Kvqsa2B03-sEQrlIeE_Kt",
+      "type": "label",
+      "data": {
+        "label": "AI in Development"
+      }
+    },
+    {
+      "id": "9f-aWi3_7USy4XpNzrTL6",
+      "type": "subtopic",
+      "data": {
+        "label": "Streaming"
+      }
+    },
+    {
+      "id": "GMxPmyatxYmIPRFHfRAnr",
+      "type": "subtopic",
+      "data": {
+        "label": "Structured Outputs"
+      }
+    },
+    {
+      "id": "Uve-UObgOBfrd-cLayVWe",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Calling"
+      }
+    },
+    {
+      "id": "iatQ3RCxESHt1CwN3PSfx",
+      "type": "topic",
+      "data": {
+        "label": "Integration Patterns"
+      }
+    },
+    {
+      "id": "6PCOCzCbx7jo9wO2Hl2gy",
+      "type": "subtopic",
+      "data": {
+        "label": "RAGs"
+      }
+    },
+    {
+      "id": "yKNdBbahm_h81xdMDT-qx",
+      "type": "subtopic",
+      "data": {
+        "label": "Vectors"
+      }
+    },
+    {
+      "id": "Ofv__kXuBk-Vv2jVhaFss",
+      "type": "subtopic",
+      "data": {
+        "label": "Embeddings"
+      }
+    },
+    {
+      "id": "AAKnlJqWaAc8-zRvtIC6E",
+      "type": "label",
+      "data": {
+        "label": "Building AI-powered features"
+      }
+    },
+    {
+      "id": "mHnI19RgZ57XDEIDaHxD0",
+      "type": "subtopic",
+      "data": {
+        "label": "MCP"
+      }
+    },
+    {
+      "id": "IWubGe3oquSj882QVnhLU",
+      "type": "subtopic",
+      "data": {
+        "label": "Skills"
+      }
+    },
+    {
+      "id": "w1D3-bSg93ndKK9XJTu7z",
+      "type": "subtopic",
+      "data": {
+        "label": "Agents"
+      }
+    },
+    {
+      "id": "fVgKQ27R3HxbZvrqXM7Zi",
+      "type": "label",
+      "data": {
+        "label": "AI Providers"
+      }
+    },
+    {
+      "id": "A7tBRtcV8EvcnODcokETG",
+      "type": "label",
+      "data": {
+        "label": "Advanced Backend"
+      }
+    },
+    {
+      "id": "AHPDippztOUkPgpwlIok6",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-NVSQ4OtmvRp7p4cOEvKh7w1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "SiYUdtYMDImRPmV2_XPkH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-yCnn-NfSxIybUQ2iTuUGqy1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "yCnn-NfSxIybUQ2iTuUGq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-R12sArWVpbIs_PHxBqVaRy1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "R12sArWVpbIs_PHxBqVaR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-ZhSuu2VArnzPDp6dPQQSCy1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "ZhSuu2VArnzPDp6dPQQSC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-aqMaEY8gkKMikiqleV5EPy1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "aqMaEY8gkKMikiqleV5EP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-hkxw9jPGYphmjhTjw8766y1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "hkxw9jPGYphmjhTjw8766",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-P82WFaTPgQEPNp5IIuZ1Yy2",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "P82WFaTPgQEPNp5IIuZ1Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ezdqQW9wTUw93F6kjOzkuz2-_I1E__wCIVrhjMk6IMieEy1",
+      "source": "ezdqQW9wTUw93F6kjOzku",
+      "target": "_I1E__wCIVrhjMk6IMieE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NvUcSDWBhzJZ31nzT4UlEz2-ptD8EVqwFUYr4W5A_tABYy1",
+      "source": "NvUcSDWBhzJZ31nzT4UlE",
+      "target": "ptD8EVqwFUYr4W5A_tABY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NvUcSDWBhzJZ31nzT4UlEx2-r45b461NxLN6wBODJ5CNPw1",
+      "source": "NvUcSDWBhzJZ31nzT4UlE",
+      "target": "r45b461NxLN6wBODJ5CNP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__r45b461NxLN6wBODJ5CNPy2-FihTrMO56kj9jT8O_pO2Tz1",
+      "source": "r45b461NxLN6wBODJ5CNP",
+      "target": "FihTrMO56kj9jT8O_pO2T",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__r45b461NxLN6wBODJ5CNPy2-kdulE3Z_BdbtRmq6T2KmRz1",
+      "source": "r45b461NxLN6wBODJ5CNP",
+      "target": "kdulE3Z_BdbtRmq6T2KmR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__r45b461NxLN6wBODJ5CNPy2-h1SAjQltHtztSt8QmRgabz1",
+      "source": "r45b461NxLN6wBODJ5CNP",
+      "target": "h1SAjQltHtztSt8QmRgab",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__r45b461NxLN6wBODJ5CNPx2-EwvLPSI6AlZ4TnNIJTZA4w1",
+      "source": "r45b461NxLN6wBODJ5CNP",
+      "target": "EwvLPSI6AlZ4TnNIJTZA4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mI9Rq9IpLuMpn4sQT5vVwz2-ezdqQW9wTUw93F6kjOzkuy1",
+      "source": "mI9Rq9IpLuMpn4sQT5vVw",
+      "target": "ezdqQW9wTUw93F6kjOzku",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__EwvLPSI6AlZ4TnNIJTZA4z2-9cD5ag1L0GqHx4_zxc5JXy1",
+      "source": "EwvLPSI6AlZ4TnNIJTZA4",
+      "target": "9cD5ag1L0GqHx4_zxc5JX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__EwvLPSI6AlZ4TnNIJTZA4x2-ELj8af7Mi38kUbaPJfCURw2",
+      "source": "EwvLPSI6AlZ4TnNIJTZA4",
+      "target": "uPjCrDGA2MHylWXbZvMBM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LJt27onEOeIBomiEMTyKdz2-STQQbPa7PE3gbjMdL6P-ty1",
+      "source": "LJt27onEOeIBomiEMTyKd",
+      "target": "STQQbPa7PE3gbjMdL6P-t",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__STQQbPa7PE3gbjMdL6P-tx2-TcfbKmrUwzOwl13Pthm8zw1",
+      "source": "STQQbPa7PE3gbjMdL6P-t",
+      "target": "TcfbKmrUwzOwl13Pthm8z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__TcfbKmrUwzOwl13Pthm8zz2-nJ5FpFgGCRaALcWmAKBKTy2",
+      "source": "TcfbKmrUwzOwl13Pthm8z",
+      "target": "nJ5FpFgGCRaALcWmAKBKT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__tHiUpG9LN35E5RaHddMv5y2-K55h3aqOGe6-hgVhiFisTz1",
+      "source": "tHiUpG9LN35E5RaHddMv5",
+      "target": "K55h3aqOGe6-hgVhiFisT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__tHiUpG9LN35E5RaHddMv5y2-nkmIv3dNwre4yrULMgTh3z1",
+      "source": "tHiUpG9LN35E5RaHddMv5",
+      "target": "nkmIv3dNwre4yrULMgTh3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__tHiUpG9LN35E5RaHddMv5y2-n14b7sfTOwsjKTpFC9EZ2z2",
+      "source": "tHiUpG9LN35E5RaHddMv5",
+      "target": "n14b7sfTOwsjKTpFC9EZ2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__tHiUpG9LN35E5RaHddMv5y2-8DmabQJXlrT__COZrDVTVz1",
+      "source": "tHiUpG9LN35E5RaHddMv5",
+      "target": "8DmabQJXlrT__COZrDVTV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gKTSe9yQFVbPVlLzWB0hCy2-tHiUpG9LN35E5RaHddMv5z1",
+      "source": "gKTSe9yQFVbPVlLzWB0hC",
+      "target": "tHiUpG9LN35E5RaHddMv5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5XGvep2qoti31bsyqNzrUz2-sVuIdAe08IWJVqAt4z-agy1",
+      "source": "5XGvep2qoti31bsyqNzrU",
+      "target": "sVuIdAe08IWJVqAt4z-ag",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5XGvep2qoti31bsyqNzrUz2-osvajAJlwGI3XnX0fE-kAy1",
+      "source": "5XGvep2qoti31bsyqNzrU",
+      "target": "osvajAJlwGI3XnX0fE-kA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RUSdlokJUcEYbCvq5FJBJy2-5XGvep2qoti31bsyqNzrUz1",
+      "source": "RUSdlokJUcEYbCvq5FJBJ",
+      "target": "5XGvep2qoti31bsyqNzrU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__95d9itpUZ4s9roZN8kG9xy2-LAdKDJ4LcMaDWqslMvE8Xz1",
+      "source": "95d9itpUZ4s9roZN8kG9x",
+      "target": "LAdKDJ4LcMaDWqslMvE8X",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__95d9itpUZ4s9roZN8kG9xy2-zWstl08R4uzqve4BdYurpz1",
+      "source": "95d9itpUZ4s9roZN8kG9x",
+      "target": "zWstl08R4uzqve4BdYurp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__95d9itpUZ4s9roZN8kG9xy2-wrl7HHWXOaxoKVlNZxZ6dz1",
+      "source": "95d9itpUZ4s9roZN8kG9x",
+      "target": "wrl7HHWXOaxoKVlNZxZ6d",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__95d9itpUZ4s9roZN8kG9xy2-y-xkHFE9YzhNIX3EiWspLz1",
+      "source": "95d9itpUZ4s9roZN8kG9x",
+      "target": "y-xkHFE9YzhNIX3EiWspL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__95d9itpUZ4s9roZN8kG9xx2-F8frGuv1dunOdcVJ_IiGsw1",
+      "source": "95d9itpUZ4s9roZN8kG9x",
+      "target": "F8frGuv1dunOdcVJ_IiGs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__F8frGuv1dunOdcVJ_IiGsy2-4kTcBU2it8NcngnddEfWSz2",
+      "source": "F8frGuv1dunOdcVJ_IiGs",
+      "target": "4kTcBU2it8NcngnddEfWS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__F8frGuv1dunOdcVJ_IiGsz2-yAWJWj4D761M0i8iERID3y1",
+      "source": "F8frGuv1dunOdcVJ_IiGs",
+      "target": "yAWJWj4D761M0i8iERID3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "loYS1cqaIk953RwjVphqr",
+      "source": "iatQ3RCxESHt1CwN3PSfx",
+      "target": "9f-aWi3_7USy4XpNzrTL6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "SqyoZ-c-9KH6eAQlESgAa",
+      "source": "iatQ3RCxESHt1CwN3PSfx",
+      "target": "GMxPmyatxYmIPRFHfRAnr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "YJAHlej2Akp_T5h7K4gci",
+      "source": "iatQ3RCxESHt1CwN3PSfx",
+      "target": "Uve-UObgOBfrd-cLayVWe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KWTbEVX_WxS8jmSaAX3Fey2-fekyMpEnaGqjh1Cu4Nyc4z1",
+      "source": "KWTbEVX_WxS8jmSaAX3Fe",
+      "target": "fekyMpEnaGqjh1Cu4Nyc4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fekyMpEnaGqjh1Cu4Nyc4x2-Kvqsa2B03-sEQrlIeE_Ktw2",
+      "source": "fekyMpEnaGqjh1Cu4Nyc4",
+      "target": "Kvqsa2B03-sEQrlIeE_Kt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Kvqsa2B03-sEQrlIeE_Ktx2-UTupdqjOyLh7-56_0SXJ8w1",
+      "source": "Kvqsa2B03-sEQrlIeE_Kt",
+      "target": "UTupdqjOyLh7-56_0SXJ8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__UTupdqjOyLh7-56_0SXJ8z2-tUNP5VRKvrPcufPDPPEo8y1",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "tUNP5VRKvrPcufPDPPEo8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UTupdqjOyLh7-56_0SXJ8z2-IZKl6PxbvgNkryAkdy3-py1",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "IZKl6PxbvgNkryAkdy3-p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UTupdqjOyLh7-56_0SXJ8z2-Ofv__kXuBk-Vv2jVhaFssy2",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "Ofv__kXuBk-Vv2jVhaFss",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UTupdqjOyLh7-56_0SXJ8z2-yKNdBbahm_h81xdMDT-qxy1",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "yKNdBbahm_h81xdMDT-qx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "fFFC-_2_eqSo6w98NlfsU",
+      "source": "Nx7mjvYgqLpmJ0_iSx5of",
+      "target": "0TMdly8yiqnNR8sx36iqc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UTupdqjOyLh7-56_0SXJ8x2-Nx7mjvYgqLpmJ0_iSx5ofw1",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "Nx7mjvYgqLpmJ0_iSx5of",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fA3yi9puMbTFmbPpo6OjNy2-Nx7mjvYgqLpmJ0_iSx5ofz2",
+      "source": "fA3yi9puMbTFmbPpo6OjN",
+      "target": "Nx7mjvYgqLpmJ0_iSx5of",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fA3yi9puMbTFmbPpo6OjNx2-A7tBRtcV8EvcnODcokETGw2",
+      "source": "fA3yi9puMbTFmbPpo6OjN",
+      "target": "AAKnlJqWaAc8-zRvtIC6E",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__iatQ3RCxESHt1CwN3PSfxx2-A7tBRtcV8EvcnODcokETGw1",
+      "source": "iatQ3RCxESHt1CwN3PSfx",
+      "target": "A7tBRtcV8EvcnODcokETG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__A7tBRtcV8EvcnODcokETGy2-mGfD7HfuP184lFkXZzGjGz1",
+      "source": "A7tBRtcV8EvcnODcokETG",
+      "target": "mGfD7HfuP184lFkXZzGjG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LJt27onEOeIBomiEMTyKdw2-mGfD7HfuP184lFkXZzGjGx1",
+      "source": "LJt27onEOeIBomiEMTyKd",
+      "target": "mGfD7HfuP184lFkXZzGjG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LJt27onEOeIBomiEMTyKdx2-rq_y_OBMD9AH_4aoecvAiw1",
+      "source": "LJt27onEOeIBomiEMTyKd",
+      "target": "rq_y_OBMD9AH_4aoecvAi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__STQQbPa7PE3gbjMdL6P-tz2-381Kw1IMRv7CJp-Uf--qdy1",
+      "source": "STQQbPa7PE3gbjMdL6P-t",
+      "target": "381Kw1IMRv7CJp-Uf--qd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__STQQbPa7PE3gbjMdL6P-tz2-3OYm6b9f6WOrKi4KTOZYKy1",
+      "source": "STQQbPa7PE3gbjMdL6P-t",
+      "target": "3OYm6b9f6WOrKi4KTOZYK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__STQQbPa7PE3gbjMdL6P-tz2-NAGisfq2CgeK3SsuRjnMwy1",
+      "source": "STQQbPa7PE3gbjMdL6P-t",
+      "target": "NAGisfq2CgeK3SsuRjnMw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nJ5FpFgGCRaALcWmAKBKTx2-gKTSe9yQFVbPVlLzWB0hCw2",
+      "source": "nJ5FpFgGCRaALcWmAKBKT",
+      "target": "gKTSe9yQFVbPVlLzWB0hC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__HEQGhXCFv9Fi82V7MyRwtx2-5XGvep2qoti31bsyqNzrUw1",
+      "source": "HEQGhXCFv9Fi82V7MyRwt",
+      "target": "5XGvep2qoti31bsyqNzrU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5XGvep2qoti31bsyqNzrUx2-95d9itpUZ4s9roZN8kG9xw1",
+      "source": "5XGvep2qoti31bsyqNzrU",
+      "target": "95d9itpUZ4s9roZN8kG9x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Uhj-lrUhQQnwOdn_e6_hdx2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "Uhj-lrUhQQnwOdn_e6_hd",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

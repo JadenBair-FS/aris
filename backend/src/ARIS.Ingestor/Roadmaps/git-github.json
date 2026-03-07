@@ -1,0 +1,2027 @@
+{
+  "title": {
+    "card": "Git and GitHub",
+    "page": "Learn Git and GitHub"
+  },
+  "description": "Step by step guide to learn Git and GitHub in @currentYear@",
+  "nodes": [
+    {
+      "id": "lGNqOaL2J0jaYewnPbrxZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lqrIjDM7CfF2CNgcIOq3Z",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ZRB7mytelAk8pg5gsu2Xs",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "mGoWfyS0DO8L-JwPDK5p9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WyueeGiceOzKqHrM2Mn_v",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GVLwJZlzs2me5ogEcf_f9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MtX03b7FVvVq6kDKfmidT",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "gZ7dytie1YH3DDtKKcyiQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "e5O8lUSSEOEFR-dlZV5wN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "-KKWgOEFEaVxuaHPDjJmA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bVGSRi7pMd3rHQ1X6UrA1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9tkYqqVy0v42G4tijnDAP",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "uDsTnM22jHuGBvJfRgv9v",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "I-sIkdwJlt8JK0gdvdloQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "zyFrOb5yF198jH5vjZTg1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CK9zYMrsw7Rl1ux4PU5wl",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Qq13cf04JGzV_H3glm_D5",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5Z9o-b3vBA-ITFg86zzYM",
+      "type": "title",
+      "data": {
+        "label": "Git and GitHub"
+      }
+    },
+    {
+      "id": "XgM_I974PlXAu4AbeqHX1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HlUUGj3dOZ68t4gIjerXh",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "bY6b1GV2XQQ52NOx8gWFj",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Version Control?"
+      }
+    },
+    {
+      "id": "dhIx1GnynvbSUriqYLUt0",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use Version Control?"
+      }
+    },
+    {
+      "id": "_jSTrYN9G8EsGHkbusKPU",
+      "type": "subtopic",
+      "data": {
+        "label": "Git vs Other VCS"
+      }
+    },
+    {
+      "id": "v7hCNbgPByi3YiLSs46BK",
+      "type": "subtopic",
+      "data": {
+        "label": "Installing Git Locally"
+      }
+    },
+    {
+      "id": "PtU5Qwfzn3N1i3oRlCGoR",
+      "type": "topic",
+      "data": {
+        "label": "What is a Repository"
+      }
+    },
+    {
+      "id": "1iOkbO5juk2LO-WZHx_W6",
+      "type": "subtopic",
+      "data": {
+        "label": "git init"
+      }
+    },
+    {
+      "id": "NMCWgzhhfUvFOMO5GbF_u",
+      "type": "subtopic",
+      "data": {
+        "label": "git config"
+      }
+    },
+    {
+      "id": "tVvxC5JQgUb_B8kOqYpD8",
+      "type": "subtopic",
+      "data": {
+        "label": "Local vs Global Config"
+      }
+    },
+    {
+      "id": "hzL8j8473CoyFf5ab2f_B",
+      "type": "label",
+      "data": {
+        "label": "Repository Initialization"
+      }
+    },
+    {
+      "id": "XB_mRInocRU6nPjt_iOo5",
+      "type": "label",
+      "data": {
+        "label": "Intro and Git Commands"
+      }
+    },
+    {
+      "id": "Sv36oxTZwlUv-i1K28NeP",
+      "type": "subtopic",
+      "data": {
+        "label": "Working Directory"
+      }
+    },
+    {
+      "id": "h71Tx3nkfUrnhaqcHlDkQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Staging Area"
+      }
+    },
+    {
+      "id": "2_z3R7seCvQVj-Na4H1SV",
+      "type": "subtopic",
+      "data": {
+        "label": "Committing Changes"
+      }
+    },
+    {
+      "id": "oz2oRAhaEQb0Fm3aRJQG8",
+      "type": "subtopic",
+      "data": {
+        "label": ".gitignore"
+      }
+    },
+    {
+      "id": "IfUm5D_zNaUKMd4HX4Fi4",
+      "type": "subtopic",
+      "data": {
+        "label": "Viewing Commit History"
+      }
+    },
+    {
+      "id": "bXfCUG3h1TIFPgD4WUDph",
+      "type": "topic",
+      "data": {
+        "label": "Branching Basics"
+      }
+    },
+    {
+      "id": "OegitQ5Ngjvd3ZfMpfrkM",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Branch"
+      }
+    },
+    {
+      "id": "_dPOVUbxApx0pfKPH8fgr",
+      "type": "subtopic",
+      "data": {
+        "label": "Renaming Branch"
+      }
+    },
+    {
+      "id": "1uDenoQ6zu7CT69FR2iQB",
+      "type": "subtopic",
+      "data": {
+        "label": "Deleting Branch"
+      }
+    },
+    {
+      "id": "PtRo-wGiNAagZ6CykfvMr",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkout Branch"
+      }
+    },
+    {
+      "id": "sNuy6NMjLOEkJlqdEjFPq",
+      "type": "subtopic",
+      "data": {
+        "label": "Merging Basics"
+      }
+    },
+    {
+      "id": "fIfmS6BkkOFWzCB1RqrhK",
+      "type": "paragraph",
+      "data": {
+        "label": "Basic Collaboration"
+      }
+    },
+    {
+      "id": "NeSvgS2yA5x8qbcJHrV__",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Essentials"
+      }
+    },
+    {
+      "id": "i7fIIHcBEk473te8bniJ5",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Account"
+      }
+    },
+    {
+      "id": "qZFtRABvlBbVvsy6T00J2",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Interface"
+      }
+    },
+    {
+      "id": "GS3f1FKFVKT0-GJQrgCm8",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting up Profile"
+      }
+    },
+    {
+      "id": "c_FO6xMixrrMo6iisfsvl",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Repositories"
+      }
+    },
+    {
+      "id": "KbVvFVQ4k77R2_ddsc7WT",
+      "type": "subtopic",
+      "data": {
+        "label": "Profile Readme"
+      }
+    },
+    {
+      "id": "HEqBbw_A4ZbJI5zEy8ViN",
+      "type": "subtopic",
+      "data": {
+        "label": "Private vs Public"
+      }
+    },
+    {
+      "id": "aWx9WHUrgofcTr8B-fQYe",
+      "type": "topic",
+      "data": {
+        "label": "Git Remotes"
+      }
+    },
+    {
+      "id": "sBQOInoFBU9XfkPZ-JlyT",
+      "type": "subtopic",
+      "data": {
+        "label": "Managing Remotes"
+      }
+    },
+    {
+      "id": "ZVMCh9om37ee1qsecFa-N",
+      "type": "subtopic",
+      "data": {
+        "label": "Pushing / Pulling Changes"
+      }
+    },
+    {
+      "id": "Gybnekbd1rJKTOf4hJ4Sh",
+      "type": "subtopic",
+      "data": {
+        "label": "Fetch without Merge"
+      }
+    },
+    {
+      "id": "d_GNnB6PBINz1jxGNWAE-",
+      "type": "topic",
+      "data": {
+        "label": "Collaboration on GitHub"
+      }
+    },
+    {
+      "id": "l1Wf7Pe_ah8ycCgslfSK4",
+      "type": "subtopic",
+      "data": {
+        "label": "Forking vs Cloning"
+      }
+    },
+    {
+      "id": "crdllx5cH_seIpgVPvHg_",
+      "type": "subtopic",
+      "data": {
+        "label": "Issues"
+      }
+    },
+    {
+      "id": "1Koej79yTv-OAswVZwgGq",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloning Repositories"
+      }
+    },
+    {
+      "id": "x6eILrLCQrVpz4j8uOuy6",
+      "type": "subtopic",
+      "data": {
+        "label": "Pull Requests"
+      }
+    },
+    {
+      "id": "8lXXVFkgK6n5IHaYkYe3l",
+      "type": "subtopic",
+      "data": {
+        "label": "PR from a Fork"
+      }
+    },
+    {
+      "id": "r-u1vTpUyuvsB0revOU0C",
+      "type": "subtopic",
+      "data": {
+        "label": "Collaborators"
+      }
+    },
+    {
+      "id": "aFuWO8Z74Lbiwh9F27Yrh",
+      "type": "label",
+      "data": {
+        "label": "Creating PR"
+      }
+    },
+    {
+      "id": "y4DkB5NvTh41IeT0G2gr-",
+      "type": "subtopic",
+      "data": {
+        "label": "Labelling Issues / PRs"
+      }
+    },
+    {
+      "id": "dQS1V0zZxeKhHhUo3STBK",
+      "type": "subtopic",
+      "data": {
+        "label": "Saved Replies"
+      }
+    },
+    {
+      "id": "oWMaOWU06juoIuzXNe-wt",
+      "type": "subtopic",
+      "data": {
+        "label": "Mentions"
+      }
+    },
+    {
+      "id": "XstmIysIi_lWo6RzszLBt",
+      "type": "subtopic",
+      "data": {
+        "label": "Reactions"
+      }
+    },
+    {
+      "id": "Lw3oG5flufLskTN1AGIGc",
+      "type": "label",
+      "data": {
+        "label": "Commenting"
+      }
+    },
+    {
+      "id": "0rHDUbAdXqH9zQW2VfJ8v",
+      "type": "topic",
+      "data": {
+        "label": "Merge Strategies"
+      }
+    },
+    {
+      "id": "agtPWS8j6i6wQPk10cy8E",
+      "type": "subtopic",
+      "data": {
+        "label": "Fast-Forward vs Non-FF"
+      }
+    },
+    {
+      "id": "9Dt4Gyiiq5jteWSKxsRMK",
+      "type": "subtopic",
+      "data": {
+        "label": "Handling Conflicts"
+      }
+    },
+    {
+      "id": "99FVJ3Zs8n6lr8L95mG6g",
+      "type": "subtopic",
+      "data": {
+        "label": "Rebase"
+      }
+    },
+    {
+      "id": "Z-srOhYFGVEKDexlJ6cjt",
+      "type": "subtopic",
+      "data": {
+        "label": "Squash"
+      }
+    },
+    {
+      "id": "eFf2fesrs-1aVM5tH3ORQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Cherry Picking Commits"
+      }
+    },
+    {
+      "id": "C1ai9r31b7HPySw0o9tyT",
+      "type": "paragraph",
+      "data": {
+        "label": "Best Practices"
+      }
+    },
+    {
+      "id": "7lRUYWNSpHvJ-QyIE8RMa",
+      "type": "subtopic",
+      "data": {
+        "label": "Commit Messages"
+      }
+    },
+    {
+      "id": "ks1Pip-RM-UWD6zuF2j4n",
+      "type": "subtopic",
+      "data": {
+        "label": "Branch Naming"
+      }
+    },
+    {
+      "id": "GwDNk2HBjASr_NWIL4G3-",
+      "type": "subtopic",
+      "data": {
+        "label": "PR Guidelines"
+      }
+    },
+    {
+      "id": "xLB2fhsOm0Vu3xg_PusJB",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Reviews"
+      }
+    },
+    {
+      "id": "pJ-najh7dXhhYA_0bDiR5",
+      "type": "subtopic",
+      "data": {
+        "label": "Contribution Guidelines"
+      }
+    },
+    {
+      "id": "D2WIExwfSnkAPIa5O-Hp5",
+      "type": "topic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "1Ulxl4VUvRSfyCPpi-iv8",
+      "type": "subtopic",
+      "data": {
+        "label": "Markdown"
+      }
+    },
+    {
+      "id": "WIVr7JxO1AJTNObW8mtY3",
+      "type": "subtopic",
+      "data": {
+        "label": "Project Readme"
+      }
+    },
+    {
+      "id": "lONqOqD-4slxa9B5i9ADX",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Wikis"
+      }
+    },
+    {
+      "id": "i3AbARgzQtxtlB-1AS8zv",
+      "type": "subtopic",
+      "data": {
+        "label": "Clean Git History"
+      }
+    },
+    {
+      "id": "yMx3LdadPz4g25CL3N8da",
+      "type": "topic",
+      "data": {
+        "label": "Working in a Team"
+      }
+    },
+    {
+      "id": "RMrxQLhrINO5g4Mhxh5qS",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Organizations"
+      }
+    },
+    {
+      "id": "_ft-uvXt6s_xrcMT3fbSF",
+      "type": "subtopic",
+      "data": {
+        "label": "Collaborators / Members"
+      }
+    },
+    {
+      "id": "wydgCxR5VnieBpRolXt8i",
+      "type": "subtopic",
+      "data": {
+        "label": "Teams within Organization"
+      }
+    },
+    {
+      "id": "DzFJDdqnSy5GeGHWOpcVo",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Projects"
+      }
+    },
+    {
+      "id": "q0zy_hXav5iXw8LpGVJVd",
+      "type": "subtopic",
+      "data": {
+        "label": "Project Planning"
+      }
+    },
+    {
+      "id": "RFJgfuxoVxt22QlwLI5mW",
+      "type": "subtopic",
+      "data": {
+        "label": "Kanban Boards"
+      }
+    },
+    {
+      "id": "sxvT2hGko2PDRBoBrCGWD",
+      "type": "subtopic",
+      "data": {
+        "label": "Roadmaps"
+      }
+    },
+    {
+      "id": "TNBz5755PhI6iKxTQTqcS",
+      "type": "subtopic",
+      "data": {
+        "label": "Automations"
+      }
+    },
+    {
+      "id": "snWQHCQECZyUXHdn6ppIk",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Discussions"
+      }
+    },
+    {
+      "id": "hes8XQqAvpxWITcbU9tiH",
+      "type": "paragraph",
+      "data": {
+        "label": "Intermediate Git Topics"
+      }
+    },
+    {
+      "id": "X9K3PBpGsMoXkJsKdJPI7",
+      "type": "topic",
+      "data": {
+        "label": "Git Stash Basics"
+      }
+    },
+    {
+      "id": "zen3RRdK9_nPAYgicRoHk",
+      "type": "topic",
+      "data": {
+        "label": "History"
+      }
+    },
+    {
+      "id": "lXC07j6dOa3rQixY1P-Ob",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear vs Non-Linear"
+      }
+    },
+    {
+      "id": "V8nLIvddyOKTzEjOJX5GW",
+      "type": "subtopic",
+      "data": {
+        "label": "HEAD"
+      }
+    },
+    {
+      "id": "0cLf7FiI9CX--UX45sm2f",
+      "type": "subtopic",
+      "data": {
+        "label": "Detached HEAD"
+      }
+    },
+    {
+      "id": "qFEonbCMLri8iA0yONwuf",
+      "type": "subtopic",
+      "data": {
+        "label": "git log options"
+      }
+    },
+    {
+      "id": "0Yi4cryT2v2SGBjouOas3",
+      "type": "topic",
+      "data": {
+        "label": "Undoing Changes"
+      }
+    },
+    {
+      "id": "dLr55Om7IOvI53c1DgTKc",
+      "type": "subtopic",
+      "data": {
+        "label": "git revert"
+      }
+    },
+    {
+      "id": "igrR7LguU1jemg_mf_AD6",
+      "type": "subtopic",
+      "data": {
+        "label": "git reset"
+      }
+    },
+    {
+      "id": "Uc7FyfAKpDFRGRNHwztFo",
+      "type": "subtopic",
+      "data": {
+        "label": "--soft"
+      }
+    },
+    {
+      "id": "V_joZNpQsS9G9PI-o-GmC",
+      "type": "subtopic",
+      "data": {
+        "label": "--hard"
+      }
+    },
+    {
+      "id": "qis7Z5VRxMcOmbesQlegZ",
+      "type": "subtopic",
+      "data": {
+        "label": "--mixed"
+      }
+    },
+    {
+      "id": "-0zQvCHG8jS_ghSjmTeIx",
+      "type": "topic",
+      "data": {
+        "label": "Viewing Diffs"
+      }
+    },
+    {
+      "id": "Rwpeltygwzcf6hnuZNURE",
+      "type": "subtopic",
+      "data": {
+        "label": "Between Commits"
+      }
+    },
+    {
+      "id": "O-zoAWkDvyn7B8_TmY257",
+      "type": "subtopic",
+      "data": {
+        "label": "Between Branches"
+      }
+    },
+    {
+      "id": "mzjtCdpke1ayHcEuS-YUS",
+      "type": "subtopic",
+      "data": {
+        "label": "Staged Changes"
+      }
+    },
+    {
+      "id": "uxqJzQFRcALqatNRIWR0w",
+      "type": "subtopic",
+      "data": {
+        "label": "Unstaged Changes"
+      }
+    },
+    {
+      "id": "sOoC-XxEoIvwKct00oKlX",
+      "type": "topic",
+      "data": {
+        "label": "Rewriting History"
+      }
+    },
+    {
+      "id": "NjPnEXLf1Lt9qzgxccogv",
+      "type": "subtopic",
+      "data": {
+        "label": "git commit --amend"
+      }
+    },
+    {
+      "id": "HMEfUFNu_Wp_Pac7VWHr-",
+      "type": "subtopic",
+      "data": {
+        "label": "git rebase"
+      }
+    },
+    {
+      "id": "BKVA6Q7DXemAYjyQOA0nh",
+      "type": "subtopic",
+      "data": {
+        "label": "git filter-branch"
+      }
+    },
+    {
+      "id": "OQOmxg9mCfcjt80hpvXkA",
+      "type": "subtopic",
+      "data": {
+        "label": "git push --force"
+      }
+    },
+    {
+      "id": "iFJBF-EEnLjQVsFSXjo_i",
+      "type": "topic",
+      "data": {
+        "label": "Tagging"
+      }
+    },
+    {
+      "id": "NeU38WPbEphJuJ_AMkH82",
+      "type": "subtopic",
+      "data": {
+        "label": "Managing Tags"
+      }
+    },
+    {
+      "id": "E3HAGNM-kXLL4Oci5JzpQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Pushing Tags"
+      }
+    },
+    {
+      "id": "62E1tDMXB6K74OEN0WsS0",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkout Tags"
+      }
+    },
+    {
+      "id": "YmnTrjJtqHPXbEVrP8vd7",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Releases"
+      }
+    },
+    {
+      "id": "pqBV7BMAs0z6qpfZeW2XP",
+      "type": "topic",
+      "data": {
+        "label": "Git hooks"
+      }
+    },
+    {
+      "id": "v7uabKuMQPOD_hBIaHOVT",
+      "type": "subtopic",
+      "data": {
+        "label": "What and Why?"
+      }
+    },
+    {
+      "id": "zsU6R2zvJKnYNU2ac4o4p",
+      "type": "subtopic",
+      "data": {
+        "label": "Client vs Server Hooks"
+      }
+    },
+    {
+      "id": "jzYjHx-gIKSP8dQUTqWVw",
+      "type": "subtopic",
+      "data": {
+        "label": "commit-msg"
+      }
+    },
+    {
+      "id": "SANEQI2rgOtsMQyn4qUCq",
+      "type": "subtopic",
+      "data": {
+        "label": "post-checkout"
+      }
+    },
+    {
+      "id": "buxb5TpzQ-xxn0vqtGdS3",
+      "type": "subtopic",
+      "data": {
+        "label": "post-update"
+      }
+    },
+    {
+      "id": "HhpAIzYMlMiQ9msrYZyDB",
+      "type": "subtopic",
+      "data": {
+        "label": "pre-commit"
+      }
+    },
+    {
+      "id": "j5kWEUKwBFg5EMm8-61K9",
+      "type": "subtopic",
+      "data": {
+        "label": "pre-push"
+      }
+    },
+    {
+      "id": "fEdLEowaTG4nyqxV5BPbk",
+      "type": "label",
+      "data": {
+        "label": "Common Hooks"
+      }
+    },
+    {
+      "id": "fjAFNjNNbPOzme9Uk_fDV",
+      "type": "topic",
+      "data": {
+        "label": "Submodules"
+      }
+    },
+    {
+      "id": "x4bnsPVTiX2xOCSyrgWpF",
+      "type": "subtopic",
+      "data": {
+        "label": "Adding / Updating"
+      }
+    },
+    {
+      "id": "d0-u_-_vtPK8tnUpnj_NB",
+      "type": "subtopic",
+      "data": {
+        "label": "What and Why use?"
+      }
+    },
+    {
+      "id": "Nr3MMuTWvDY6p1N7gSRDz",
+      "type": "paragraph",
+      "data": {
+        "label": "GitHub Workflow"
+      }
+    },
+    {
+      "id": "h9cf_dh_pwjialOXOlNW-",
+      "type": "topic",
+      "data": {
+        "label": "GitHub CLI"
+      }
+    },
+    {
+      "id": "vHfpoVbOW0DHNtiy0VN4X",
+      "type": "subtopic",
+      "data": {
+        "label": "Installation and Setup"
+      }
+    },
+    {
+      "id": "lw4zHuhtxIO4kDvbyiVfq",
+      "type": "subtopic",
+      "data": {
+        "label": "Repository management"
+      }
+    },
+    {
+      "id": "kGnZifvXbHBf5zXIsfAQw",
+      "type": "subtopic",
+      "data": {
+        "label": "Issue Management"
+      }
+    },
+    {
+      "id": "s3MzDYFPMASqiS8UnvWzW",
+      "type": "subtopic",
+      "data": {
+        "label": "Pull Requests"
+      }
+    },
+    {
+      "id": "AmetdCURXXob5TUsikAab",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "p6rq3lQ9YRrTqwcc31O23",
+      "type": "subtopic",
+      "data": {
+        "label": "YAML Syntax"
+      }
+    },
+    {
+      "id": "55uHPFNwYPVZx8Cy3c985",
+      "type": "subtopic",
+      "data": {
+        "label": "Workflow Triggers"
+      }
+    },
+    {
+      "id": "uS1H9KoKGNONvETCuFBbz",
+      "type": "subtopic",
+      "data": {
+        "label": "Scheduled Worfklows"
+      }
+    },
+    {
+      "id": "6QwlY3dEvjfAOPALcWKXQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Workflow Runners"
+      }
+    },
+    {
+      "id": "BnPiTu1Jw2kIW560a2A5T",
+      "type": "subtopic",
+      "data": {
+        "label": "Workflow Context"
+      }
+    },
+    {
+      "id": "aflP7oWsQzAr4YPo2LLiQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Secrets and Env Vars"
+      }
+    },
+    {
+      "id": "HMNhzzV6ApTKj4I_FOmUB",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching Dependencies"
+      }
+    },
+    {
+      "id": "alysXC4b1hGi9ZdQ5-40y",
+      "type": "subtopic",
+      "data": {
+        "label": "Storing Artifacts"
+      }
+    },
+    {
+      "id": "jc4R1zhd1YeCEbVuxwJWy",
+      "type": "subtopic",
+      "data": {
+        "label": "Workflow Status"
+      }
+    },
+    {
+      "id": "SsogoCgJIbeTD6tk8UhTe",
+      "type": "subtopic",
+      "data": {
+        "label": "Marketplace Actions"
+      }
+    },
+    {
+      "id": "PUnYNBrAZWoZiopjtNgnA",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "Ni3HKVLanFvSrJ3u8i5I1",
+      "type": "subtopic",
+      "data": {
+        "label": "What are these?"
+      }
+    },
+    {
+      "id": "ninjmIn5APEPuIbDhRuUh",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Y0EWgPsS4kZxH3y53jNxY",
+      "type": "subtopic",
+      "data": {
+        "label": "Use in Automation"
+      }
+    },
+    {
+      "id": "sFf1PdFfmEdQxsEntfeFq",
+      "type": "topic",
+      "data": {
+        "label": "Git Patch"
+      }
+    },
+    {
+      "id": "Q7BSE-ueezjXkYluzMecJ",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Git Topics"
+      }
+    },
+    {
+      "id": "hru0sL1-D4bJSQI1efEyU",
+      "type": "subtopic",
+      "data": {
+        "label": "Git Reflog"
+      }
+    },
+    {
+      "id": "ExXuwTQSI_lg4SRGW3Iu1",
+      "type": "subtopic",
+      "data": {
+        "label": "Git Bisect"
+      }
+    },
+    {
+      "id": "4dxVN81rXWn6VZqK99yq0",
+      "type": "subtopic",
+      "data": {
+        "label": "Git Worktree"
+      }
+    },
+    {
+      "id": "CGj_UX5JMOOCKinedsNRc",
+      "type": "subtopic",
+      "data": {
+        "label": "Git Attributes"
+      }
+    },
+    {
+      "id": "zdunaucVe8J1tKf_z-NQo",
+      "type": "subtopic",
+      "data": {
+        "label": "Git LFS"
+      }
+    },
+    {
+      "id": "xK8mSkkxTABUZV9zZjDPH",
+      "type": "paragraph",
+      "data": {
+        "label": "GitHub Developer Tools"
+      }
+    },
+    {
+      "id": "CDde9XlrZz6YZa9oo5WHl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "NV2HAXLEN7tskfgyFrbaf",
+      "type": "topic",
+      "data": {
+        "label": "GitHub API"
+      }
+    },
+    {
+      "id": "lSCnKhmRr6xrKVYxO8idD",
+      "type": "subtopic",
+      "data": {
+        "label": "REST API"
+      }
+    },
+    {
+      "id": "KlXPt-K6br8PtpLgELaCj",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL API"
+      }
+    },
+    {
+      "id": "5Oax1p7zIZ9HD2hmENPof",
+      "type": "topic",
+      "data": {
+        "label": "Creating Apps"
+      }
+    },
+    {
+      "id": "560GJXFTt7DPdJjKtSDOo",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Apps"
+      }
+    },
+    {
+      "id": "qrdOARfqGPF9xhF6snbAn",
+      "type": "subtopic",
+      "data": {
+        "label": "OAuth Apps"
+      }
+    },
+    {
+      "id": "MoG7D9kqPuA6o52-z_WDN",
+      "type": "topic",
+      "data": {
+        "label": "Webhooks"
+      }
+    },
+    {
+      "id": "RvqrjCowu0YK5QWK2ZVyg",
+      "type": "paragraph",
+      "data": {
+        "label": "More GitHub Features"
+      }
+    },
+    {
+      "id": "GyhfjObOGq-CwF_VIwO8b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vhdGUhMAyre_Xya6IxZ-t",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Sponsors"
+      }
+    },
+    {
+      "id": "bnai6R6pOq_L5CPdbVwMW",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Pages"
+      }
+    },
+    {
+      "id": "M2_hBvXou7cCNqsMnexCt",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Gists"
+      }
+    },
+    {
+      "id": "rqPCHh25xX_ROMr-ULpaw",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Packages"
+      }
+    },
+    {
+      "id": "ZHplGidvhxEIC3HN8KqRa",
+      "type": "subtopic",
+      "data": {
+        "label": "Deploying Static Websites"
+      }
+    },
+    {
+      "id": "VdoxEWaU56-QCbHFRw649",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Domains"
+      }
+    },
+    {
+      "id": "iwfNYDlAgbA_rpWYcoHCC",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Site Generators"
+      }
+    },
+    {
+      "id": "NdfwgwMOewiyEAFyC2l7U",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Codespaces"
+      }
+    },
+    {
+      "id": "pFyMiyNQ16-kP7jKaKKEU",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Education"
+      }
+    },
+    {
+      "id": "XRSVRl6iHncMmgSXoB7Lq",
+      "type": "subtopic",
+      "data": {
+        "label": "Student Developer Pack"
+      }
+    },
+    {
+      "id": "Pg6G4fzYb_RUhANeRKlRX",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Classroom"
+      }
+    },
+    {
+      "id": "B1KiSOt2b8t8FYD7Jxw2A",
+      "type": "subtopic",
+      "data": {
+        "label": "Campus Program"
+      }
+    },
+    {
+      "id": "R20LXLLEzNn-SpyFDMRXj",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Marketplace"
+      }
+    },
+    {
+      "id": "f2PG4t6iVtfIH8BVe5H7f",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Security"
+      }
+    },
+    {
+      "id": "4slyjdk2Eeg5VYY6gCDG6",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Models"
+      }
+    },
+    {
+      "id": "iWn3zDMOfLLjSp6f1jQoE",
+      "type": "topic",
+      "data": {
+        "label": "GitHub Copilot"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "P8nE-yRpa7NmoTENNv-Qz",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "N0zxK2dVGTxmMLEsvkRGl",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "xU5kwxmH2Ir9e2xKTH82n",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Full-stack"
+      }
+    },
+    {
+      "id": "GFOiV1rK5PlVHk15QZmTd",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JN1S4v1vCH6o_1FGxLu6i",
+      "type": "paragraph",
+      "data": {
+        "label": "If you are a beginner, we\u0027d recommend you to visit the beginner friendly version."
+      }
+    },
+    {
+      "id": "MfErpYwkJ0wiWJZEUVfrb",
+      "type": "button",
+      "data": {
+        "label": "Visit the Beginner Version"
+      }
+    },
+    {
+      "id": "Ddkss13_qDJTquDHbVTVs",
+      "type": "subtopic",
+      "data": {
+        "label": "CITATION files"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-5Z9o-b3vBA-ITFg86zzYMx2-HlUUGj3dOZ68t4gIjerXhw1",
+      "source": "5Z9o-b3vBA-ITFg86zzYM",
+      "target": "HlUUGj3dOZ68t4gIjerXh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-bY6b1GV2XQQ52NOx8gWFjy1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "bY6b1GV2XQQ52NOx8gWFj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-dhIx1GnynvbSUriqYLUt0y1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "dhIx1GnynvbSUriqYLUt0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-_jSTrYN9G8EsGHkbusKPUy2",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "_jSTrYN9G8EsGHkbusKPU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-v7hCNbgPByi3YiLSs46BKy2",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "v7hCNbgPByi3YiLSs46BK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhx2-bXfCUG3h1TIFPgD4WUDphw2",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "PtU5Qwfzn3N1i3oRlCGoR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-PtU5Qwfzn3N1i3oRlCGoRz2-bXfCUG3h1TIFPgD4WUDphy1",
+      "source": "PtU5Qwfzn3N1i3oRlCGoR",
+      "target": "bXfCUG3h1TIFPgD4WUDph",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-bXfCUG3h1TIFPgD4WUDphx2-OegitQ5Ngjvd3ZfMpfrkMw2",
+      "source": "bXfCUG3h1TIFPgD4WUDph",
+      "target": "OegitQ5Ngjvd3ZfMpfrkM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fIfmS6BkkOFWzCB1RqrhKx2-NeSvgS2yA5x8qbcJHrV__w1",
+      "source": "fIfmS6BkkOFWzCB1RqrhK",
+      "target": "NeSvgS2yA5x8qbcJHrV__",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-NeSvgS2yA5x8qbcJHrV__x2-i7fIIHcBEk473te8bniJ5w2",
+      "source": "NeSvgS2yA5x8qbcJHrV__",
+      "target": "i7fIIHcBEk473te8bniJ5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GS3f1FKFVKT0-GJQrgCm8z2-KbVvFVQ4k77R2_ddsc7WTy1",
+      "source": "GS3f1FKFVKT0-GJQrgCm8",
+      "target": "KbVvFVQ4k77R2_ddsc7WT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-c_FO6xMixrrMo6iisfsvlz2-HEqBbw_A4ZbJI5zEy8ViNy1",
+      "source": "c_FO6xMixrrMo6iisfsvl",
+      "target": "HEqBbw_A4ZbJI5zEy8ViN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-bXfCUG3h1TIFPgD4WUDphy2-fIfmS6BkkOFWzCB1RqrhKw2",
+      "source": "bXfCUG3h1TIFPgD4WUDph",
+      "target": "fIfmS6BkkOFWzCB1RqrhK",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-NeSvgS2yA5x8qbcJHrV__y2-zLSGqFLjw2kodmMwurzrYz1",
+      "source": "NeSvgS2yA5x8qbcJHrV__",
+      "target": "aWx9WHUrgofcTr8B-fQYe",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-0rHDUbAdXqH9zQW2VfJ8vy2-agtPWS8j6i6wQPk10cy8Ez1",
+      "source": "0rHDUbAdXqH9zQW2VfJ8v",
+      "target": "agtPWS8j6i6wQPk10cy8E",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0rHDUbAdXqH9zQW2VfJ8vy2-Z-srOhYFGVEKDexlJ6cjtz1",
+      "source": "0rHDUbAdXqH9zQW2VfJ8v",
+      "target": "Z-srOhYFGVEKDexlJ6cjt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0rHDUbAdXqH9zQW2VfJ8vy2-9Dt4Gyiiq5jteWSKxsRMKz1",
+      "source": "0rHDUbAdXqH9zQW2VfJ8v",
+      "target": "9Dt4Gyiiq5jteWSKxsRMK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0rHDUbAdXqH9zQW2VfJ8vy2-eFf2fesrs-1aVM5tH3ORQz1",
+      "source": "0rHDUbAdXqH9zQW2VfJ8v",
+      "target": "eFf2fesrs-1aVM5tH3ORQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-d_GNnB6PBINz1jxGNWAE-z2-C1ai9r31b7HPySw0o9tyTy1",
+      "source": "d_GNnB6PBINz1jxGNWAE-",
+      "target": "C1ai9r31b7HPySw0o9tyT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-C1ai9r31b7HPySw0o9tyTw2-i3AbARgzQtxtlB-1AS8zvx1",
+      "source": "C1ai9r31b7HPySw0o9tyT",
+      "target": "xLB2fhsOm0Vu3xg_PusJB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-C1ai9r31b7HPySw0o9tyTx2-i3AbARgzQtxtlB-1AS8zvw1",
+      "source": "C1ai9r31b7HPySw0o9tyT",
+      "target": "pJ-najh7dXhhYA_0bDiR5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-x6eILrLCQrVpz4j8uOuy6z2-8lXXVFkgK6n5IHaYkYe3ly1",
+      "source": "x6eILrLCQrVpz4j8uOuy6",
+      "target": "8lXXVFkgK6n5IHaYkYe3l",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-x6eILrLCQrVpz4j8uOuy6z2-r-u1vTpUyuvsB0revOU0Cy1",
+      "source": "x6eILrLCQrVpz4j8uOuy6",
+      "target": "r-u1vTpUyuvsB0revOU0C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-C1ai9r31b7HPySw0o9tyTz2-D2WIExwfSnkAPIa5O-Hp5y1",
+      "source": "C1ai9r31b7HPySw0o9tyT",
+      "target": "D2WIExwfSnkAPIa5O-Hp5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-D2WIExwfSnkAPIa5O-Hp5x2-yMx3LdadPz4g25CL3N8daw1",
+      "source": "D2WIExwfSnkAPIa5O-Hp5",
+      "target": "yMx3LdadPz4g25CL3N8da",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-yMx3LdadPz4g25CL3N8day2-DzFJDdqnSy5GeGHWOpcVoz1",
+      "source": "yMx3LdadPz4g25CL3N8da",
+      "target": "DzFJDdqnSy5GeGHWOpcVo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DzFJDdqnSy5GeGHWOpcVox2-q0zy_hXav5iXw8LpGVJVdw2",
+      "source": "DzFJDdqnSy5GeGHWOpcVo",
+      "target": "q0zy_hXav5iXw8LpGVJVd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DzFJDdqnSy5GeGHWOpcVoy2-hes8XQqAvpxWITcbU9tiHz2",
+      "source": "DzFJDdqnSy5GeGHWOpcVo",
+      "target": "hes8XQqAvpxWITcbU9tiH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hes8XQqAvpxWITcbU9tiHw2-X9K3PBpGsMoXkJsKdJPI7x2",
+      "source": "hes8XQqAvpxWITcbU9tiH",
+      "target": "X9K3PBpGsMoXkJsKdJPI7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hes8XQqAvpxWITcbU9tiHx2-iFJBF-EEnLjQVsFSXjo_iw1",
+      "source": "hes8XQqAvpxWITcbU9tiH",
+      "target": "zen3RRdK9_nPAYgicRoHk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-lXC07j6dOa3rQixY1P-Obz1",
+      "source": "zen3RRdK9_nPAYgicRoHk",
+      "target": "lXC07j6dOa3rQixY1P-Ob",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-V8nLIvddyOKTzEjOJX5GWz1",
+      "source": "zen3RRdK9_nPAYgicRoHk",
+      "target": "V8nLIvddyOKTzEjOJX5GW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-0cLf7FiI9CX--UX45sm2fz1",
+      "source": "zen3RRdK9_nPAYgicRoHk",
+      "target": "0cLf7FiI9CX--UX45sm2f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-qFEonbCMLri8iA0yONwufz2",
+      "source": "zen3RRdK9_nPAYgicRoHk",
+      "target": "qFEonbCMLri8iA0yONwuf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zen3RRdK9_nPAYgicRoHkx2-iFJBF-EEnLjQVsFSXjo_iw2",
+      "source": "zen3RRdK9_nPAYgicRoHk",
+      "target": "0Yi4cryT2v2SGBjouOas3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-igrR7LguU1jemg_mf_AD6z2",
+      "source": "0Yi4cryT2v2SGBjouOas3",
+      "target": "igrR7LguU1jemg_mf_AD6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-igrR7LguU1jemg_mf_AD6y2-V_joZNpQsS9G9PI-o-GmCz1",
+      "source": "igrR7LguU1jemg_mf_AD6",
+      "target": "V_joZNpQsS9G9PI-o-GmC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-igrR7LguU1jemg_mf_AD6y2-qis7Z5VRxMcOmbesQlegZz1",
+      "source": "igrR7LguU1jemg_mf_AD6",
+      "target": "qis7Z5VRxMcOmbesQlegZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-igrR7LguU1jemg_mf_AD6y2-Uc7FyfAKpDFRGRNHwztFoz1",
+      "source": "igrR7LguU1jemg_mf_AD6",
+      "target": "Uc7FyfAKpDFRGRNHwztFo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0Yi4cryT2v2SGBjouOas3z2-iFJBF-EEnLjQVsFSXjo_iy1",
+      "source": "0Yi4cryT2v2SGBjouOas3",
+      "target": "-0zQvCHG8jS_ghSjmTeIx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-Rwpeltygwzcf6hnuZNUREy1",
+      "source": "-0zQvCHG8jS_ghSjmTeIx",
+      "target": "Rwpeltygwzcf6hnuZNURE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-O-zoAWkDvyn7B8_TmY257y1",
+      "source": "-0zQvCHG8jS_ghSjmTeIx",
+      "target": "O-zoAWkDvyn7B8_TmY257",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-mzjtCdpke1ayHcEuS-YUSy1",
+      "source": "-0zQvCHG8jS_ghSjmTeIx",
+      "target": "mzjtCdpke1ayHcEuS-YUS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-uxqJzQFRcALqatNRIWR0wy1",
+      "source": "-0zQvCHG8jS_ghSjmTeIx",
+      "target": "uxqJzQFRcALqatNRIWR0w",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--0zQvCHG8jS_ghSjmTeIxx2-iFJBF-EEnLjQVsFSXjo_iw1",
+      "source": "-0zQvCHG8jS_ghSjmTeIx",
+      "target": "sOoC-XxEoIvwKct00oKlX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-NjPnEXLf1Lt9qzgxccogvy1",
+      "source": "sOoC-XxEoIvwKct00oKlX",
+      "target": "NjPnEXLf1Lt9qzgxccogv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-HMEfUFNu_Wp_Pac7VWHr-y1",
+      "source": "sOoC-XxEoIvwKct00oKlX",
+      "target": "HMEfUFNu_Wp_Pac7VWHr-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-BKVA6Q7DXemAYjyQOA0nhy1",
+      "source": "sOoC-XxEoIvwKct00oKlX",
+      "target": "BKVA6Q7DXemAYjyQOA0nh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-OQOmxg9mCfcjt80hpvXkAy1",
+      "source": "sOoC-XxEoIvwKct00oKlX",
+      "target": "OQOmxg9mCfcjt80hpvXkA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-sOoC-XxEoIvwKct00oKlXx2-iFJBF-EEnLjQVsFSXjo_iw1",
+      "source": "sOoC-XxEoIvwKct00oKlX",
+      "target": "iFJBF-EEnLjQVsFSXjo_i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-NeU38WPbEphJuJ_AMkH82y1",
+      "source": "iFJBF-EEnLjQVsFSXjo_i",
+      "target": "NeU38WPbEphJuJ_AMkH82",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-E3HAGNM-kXLL4Oci5JzpQy1",
+      "source": "iFJBF-EEnLjQVsFSXjo_i",
+      "target": "E3HAGNM-kXLL4Oci5JzpQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-62E1tDMXB6K74OEN0WsS0y1",
+      "source": "iFJBF-EEnLjQVsFSXjo_i",
+      "target": "62E1tDMXB6K74OEN0WsS0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iz2-YmnTrjJtqHPXbEVrP8vd7y1",
+      "source": "iFJBF-EEnLjQVsFSXjo_i",
+      "target": "YmnTrjJtqHPXbEVrP8vd7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iFJBF-EEnLjQVsFSXjo_iy2-sFf1PdFfmEdQxsEntfeFqz2",
+      "source": "iFJBF-EEnLjQVsFSXjo_i",
+      "target": "pqBV7BMAs0z6qpfZeW2XP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-sFf1PdFfmEdQxsEntfeFqw2-e5O8lUSSEOEFR-dlZV5wNx1",
+      "source": "pqBV7BMAs0z6qpfZeW2XP",
+      "target": "e5O8lUSSEOEFR-dlZV5wN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-sFf1PdFfmEdQxsEntfeFqx2-v7uabKuMQPOD_hBIaHOVTw2",
+      "source": "pqBV7BMAs0z6qpfZeW2XP",
+      "target": "v7uabKuMQPOD_hBIaHOVT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fjAFNjNNbPOzme9Uk_fDVw2-x4bnsPVTiX2xOCSyrgWpFx1",
+      "source": "fjAFNjNNbPOzme9Uk_fDV",
+      "target": "x4bnsPVTiX2xOCSyrgWpF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h9cf_dh_pwjialOXOlNW-z2-AmetdCURXXob5TUsikAaby2",
+      "source": "h9cf_dh_pwjialOXOlNW-",
+      "target": "AmetdCURXXob5TUsikAab",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-AmetdCURXXob5TUsikAabw2-PUnYNBrAZWoZiopjtNgnAx1",
+      "source": "AmetdCURXXob5TUsikAab",
+      "target": "PUnYNBrAZWoZiopjtNgnA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-hru0sL1-D4bJSQI1efEyUz1",
+      "source": "Q7BSE-ueezjXkYluzMecJ",
+      "target": "hru0sL1-D4bJSQI1efEyU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-ExXuwTQSI_lg4SRGW3Iu1z1",
+      "source": "Q7BSE-ueezjXkYluzMecJ",
+      "target": "ExXuwTQSI_lg4SRGW3Iu1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-4dxVN81rXWn6VZqK99yq0z1",
+      "source": "Q7BSE-ueezjXkYluzMecJ",
+      "target": "4dxVN81rXWn6VZqK99yq0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-CGj_UX5JMOOCKinedsNRcz1",
+      "source": "Q7BSE-ueezjXkYluzMecJ",
+      "target": "CGj_UX5JMOOCKinedsNRc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-zdunaucVe8J1tKf_z-NQoz1",
+      "source": "Q7BSE-ueezjXkYluzMecJ",
+      "target": "zdunaucVe8J1tKf_z-NQo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-5Oax1p7zIZ9HD2hmENPofz1",
+      "source": "xK8mSkkxTABUZV9zZjDPH",
+      "target": "NV2HAXLEN7tskfgyFrbaf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5Oax1p7zIZ9HD2hmENPofw2-KlXPt-K6br8PtpLgELaCjx1",
+      "source": "NV2HAXLEN7tskfgyFrbaf",
+      "target": "KlXPt-K6br8PtpLgELaCj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5Oax1p7zIZ9HD2hmENPofw2-qrdOARfqGPF9xhF6snbAnx1",
+      "source": "5Oax1p7zIZ9HD2hmENPof",
+      "target": "qrdOARfqGPF9xhF6snbAn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MoG7D9kqPuA6o52-z_WDNy2-5Oax1p7zIZ9HD2hmENPofz1",
+      "source": "NV2HAXLEN7tskfgyFrbaf",
+      "target": "5Oax1p7zIZ9HD2hmENPof",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygz2-MoG7D9kqPuA6o52-z_WDNy1",
+      "source": "xK8mSkkxTABUZV9zZjDPH",
+      "target": "MoG7D9kqPuA6o52-z_WDN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygz2-bnai6R6pOq_L5CPdbVwMWy2",
+      "source": "RvqrjCowu0YK5QWK2ZVyg",
+      "target": "bnai6R6pOq_L5CPdbVwMW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-pFyMiyNQ16-kP7jKaKKEUx2-XRSVRl6iHncMmgSXoB7Lqw1",
+      "source": "pFyMiyNQ16-kP7jKaKKEU",
+      "target": "XRSVRl6iHncMmgSXoB7Lq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-M2_hBvXou7cCNqsMnexCtz1",
+      "source": "RvqrjCowu0YK5QWK2ZVyg",
+      "target": "M2_hBvXou7cCNqsMnexCt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-rqPCHh25xX_ROMr-ULpawz1",
+      "source": "RvqrjCowu0YK5QWK2ZVyg",
+      "target": "rqPCHh25xX_ROMr-ULpaw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-NdfwgwMOewiyEAFyC2l7Uz1",
+      "source": "RvqrjCowu0YK5QWK2ZVyg",
+      "target": "NdfwgwMOewiyEAFyC2l7U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RvqrjCowu0YK5QWK2ZVygy2-f2PG4t6iVtfIH8BVe5H7fz1",
+      "source": "RvqrjCowu0YK5QWK2ZVyg",
+      "target": "f2PG4t6iVtfIH8BVe5H7f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-D2WIExwfSnkAPIa5O-Hp5w2-Ddkss13_qDJTquDHbVTVsx1",
+      "source": "D2WIExwfSnkAPIa5O-Hp5",
+      "target": "Ddkss13_qDJTquDHbVTVs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

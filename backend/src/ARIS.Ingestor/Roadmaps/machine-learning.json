@@ -1,0 +1,2018 @@
+{
+  "title": {
+    "card": "Machine Learning",
+    "page": "Machine Learning"
+  },
+  "description": "Step by step guide to becoming a Machine Learning Engineer in @currentYear@",
+  "nodes": [
+    {
+      "id": "cEqaGDCSHcziRkbYub-nL",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "NPwtRNBoFScSbN6uNo-r5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gBE8BENsb4ufx8LIDajfW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "doQmzhu5Lc0_T_HhY_ZRQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Dg-BWXbboOxih40Zsbx1w",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ojcgfvfZH0b9HPCzyrr76",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "cbnLwCjLf_psaeZi-iYp8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OtUNfcDZePAfofunkmrhT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PqMBUlZoOdcug-UAFsLJb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "zHP366x1cR1wN-vPiYHhZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7IJICU4JD1nx6U_RBSzP5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-QuPBTN17APQs_K_5dthH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Th-lcjV757LPbE9-GiV0n",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "psWP39v7s4pzceS0Md_LC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xLcOV9sOrq1NqJ1pryE-Z",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "l4tmzOF538jdw5JxxLSHG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "684iPXqT5NHpzH0dlad9X",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UPQHSVwx7SxxAdnf7qfom",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Jkl-KlZvQU3RqJAM93A9n",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MfIHWV_un6KsJxM8yKNDx",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UnCK701KLCuDm02-rRA-A",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "1Yrc0ZVM3XjZuCm_Us-s0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "AvbMQ5vY3ip1oX_6Yq4ie",
+      "type": "paragraph",
+      "data": {
+        "label": "Programming Fundamentals "
+      }
+    },
+    {
+      "id": "9CPcys38Ir077u37jFe02",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7aSscXd-UMNWOX7A_vxYh",
+      "type": "title",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "_LvWarjrzvIOi8StMezyM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JqcGwkk1cuTnXA8SHpTKr",
+      "type": "label",
+      "data": {
+        "label": "Pre-requisites"
+      }
+    },
+    {
+      "id": "PUVM4XqV7j5nXBAbIAKwG",
+      "type": "button",
+      "data": {
+        "label": "Python Roadmap"
+      }
+    },
+    {
+      "id": "iAWm99EoRnpzLlw6XDuaf",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "MEL6y3vwiqwAV6FQihF34",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "GHO6lN3GTiIRH1P70IRaZ",
+      "type": "subtopic",
+      "data": {
+        "label": "ML Engineer vs AI Engineer"
+      }
+    },
+    {
+      "id": "BzZd-d5t63dY97SRSIb0J",
+      "type": "subtopic",
+      "data": {
+        "label": "Skills and Responsibilities"
+      }
+    },
+    {
+      "id": "FgzPlLUfGdlZPvPku0-Xl",
+      "type": "subtopic",
+      "data": {
+        "label": "What is an ML Engineer?"
+      }
+    },
+    {
+      "id": "iQi7BVBigtFDZTMno2Kbq",
+      "type": "paragraph",
+      "data": {
+        "label": "Mathematical Foundations "
+      }
+    },
+    {
+      "id": "83UDoO1vC0LjL-qpI0Jh-",
+      "type": "topic",
+      "data": {
+        "label": "Linear Algebra"
+      }
+    },
+    {
+      "id": "wHlEinHuRARp5OfSulpA-",
+      "type": "topic",
+      "data": {
+        "label": "Calculus"
+      }
+    },
+    {
+      "id": "jJukG4XxfFcID_VlQKqe-",
+      "type": "subtopic",
+      "data": {
+        "label": "Chain rule of derivation"
+      }
+    },
+    {
+      "id": "3BxbkrBp8veZj38zdwN8s",
+      "type": "subtopic",
+      "data": {
+        "label": "Gradient, Jacobian, Hessian"
+      }
+    },
+    {
+      "id": "GN6SnI7RXIeW8JeD-qORW",
+      "type": "subtopic",
+      "data": {
+        "label": "Derivatives, Partial Derivatives"
+      }
+    },
+    {
+      "id": "d7J8GEkut61NDGRzROJoP",
+      "type": "subtopic",
+      "data": {
+        "label": "Scalars, Vectors, Tensors"
+      }
+    },
+    {
+      "id": "yGs2h10gZcO4GMaWfI3uW",
+      "type": "subtopic",
+      "data": {
+        "label": "Singular Value Decomposition"
+      }
+    },
+    {
+      "id": "1IhaXJxNREq2HA1nT-lMM",
+      "type": "subtopic",
+      "data": {
+        "label": "Matrix \u0026 Matrix Operations"
+      }
+    },
+    {
+      "id": "3p98Uwf8gyALDr-89lBEZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Eigenvalues, Diagonalization"
+      }
+    },
+    {
+      "id": "XmnWnPE1sVXheuc-M_Ew7",
+      "type": "subtopic",
+      "data": {
+        "label": "Determinants, inverse of Matrix"
+      }
+    },
+    {
+      "id": "5DiaZkljhHAGPi9DkaH3b",
+      "type": "topic",
+      "data": {
+        "label": "Statistics"
+      }
+    },
+    {
+      "id": "p8q1Gtt9x19jw5_-YjAGh",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Probability"
+      }
+    },
+    {
+      "id": "ZaoZ2XxicKuTDn4uxe52L",
+      "type": "subtopic",
+      "data": {
+        "label": "Descriptive Statistics"
+      }
+    },
+    {
+      "id": "P32Rmnln5NCFWz4LP0k05",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic concepts"
+      }
+    },
+    {
+      "id": "WLlZE_vto-CYY5GLV_w7o",
+      "type": "subtopic",
+      "data": {
+        "label": "Types of Distribution"
+      }
+    },
+    {
+      "id": "P576TdYcbE6v3RpJntiKw",
+      "type": "subtopic",
+      "data": {
+        "label": "Random Variances, PDFs"
+      }
+    },
+    {
+      "id": "7o6g0wQxHH9i9MMCoDq2C",
+      "type": "subtopic",
+      "data": {
+        "label": "Bayes Theorem"
+      }
+    },
+    {
+      "id": "DUIrJwuYHlhJvZJT2acaY",
+      "type": "subtopic",
+      "data": {
+        "label": "Inferential Statistics"
+      }
+    },
+    {
+      "id": "MYZUJ1uHIaRd1Gb4ORzwG",
+      "type": "subtopic",
+      "data": {
+        "label": "Graphs \u0026 Charts"
+      }
+    },
+    {
+      "id": "tP0oBkjvJC9hrtARkgLon",
+      "type": "topic",
+      "data": {
+        "label": "Probability"
+      }
+    },
+    {
+      "id": "N_vLjBVdsGsoePtqlqh2w",
+      "type": "topic",
+      "data": {
+        "label": "Discrete Mathematics"
+      }
+    },
+    {
+      "id": "qDn1elMoPIBgQSCWiYkLI",
+      "type": "topic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "hWA7RtuqltMTmHdcCnmES",
+      "type": "topic",
+      "data": {
+        "label": "Basic Syntax"
+      }
+    },
+    {
+      "id": "dEFLBGpiH6nbSMeR7ecaT",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables and Data Types"
+      }
+    },
+    {
+      "id": "NP1kjSk0ujU0Gx-ajNHlR",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "R9DQNc0AyAQ2HLpP4HOk6",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Structures"
+      }
+    },
+    {
+      "id": "fNTb9y3zs1HPYclAmu_Wv",
+      "type": "subtopic",
+      "data": {
+        "label": "Exceptions"
+      }
+    },
+    {
+      "id": "-DJgS6l2qngfwurExlmmT",
+      "type": "subtopic",
+      "data": {
+        "label": "Functions, Builtin Functions"
+      }
+    },
+    {
+      "id": "Dvy7BnNzK55qbh_SgOk8m",
+      "type": "subtopic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "nN9BumBHi-c9HKFlgL2GH",
+      "type": "topic",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "ybqwtlHG4HMm5lyUKW2SO",
+      "type": "topic",
+      "data": {
+        "label": "Essential libraries"
+      }
+    },
+    {
+      "id": "nKE9sO-f2fdMiuLu2xby1",
+      "type": "subtopic",
+      "data": {
+        "label": "Numpy"
+      }
+    },
+    {
+      "id": "PnOoShqB3z4LuUvp0Gh2e",
+      "type": "subtopic",
+      "data": {
+        "label": "Pandas"
+      }
+    },
+    {
+      "id": "OXbATvlhBXTQ1iRGwPUfb",
+      "type": "subtopic",
+      "data": {
+        "label": "Matplotlib"
+      }
+    },
+    {
+      "id": "VYVLUxhp3XxxknNr5V966",
+      "type": "subtopic",
+      "data": {
+        "label": "Seaborn"
+      }
+    },
+    {
+      "id": "FACaPgaf1EZRCYqh_yQlE",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Collection"
+      }
+    },
+    {
+      "id": "-oRH7LgigHcfBkNF1xwxh",
+      "type": "topic",
+      "data": {
+        "label": "Data Sources"
+      }
+    },
+    {
+      "id": "VdMhrAi48V-JXw544YTKI",
+      "type": "subtopic",
+      "data": {
+        "label": "Databases (SQL, No-SQL)"
+      }
+    },
+    {
+      "id": "cxTriSZvrmXP4axKynIZW",
+      "type": "subtopic",
+      "data": {
+        "label": "Internet"
+      }
+    },
+    {
+      "id": "s-wUPMaagyRupT2RdfHks",
+      "type": "subtopic",
+      "data": {
+        "label": "APIs"
+      }
+    },
+    {
+      "id": "dJZqe47kzRqYIG-4AZTlz",
+      "type": "subtopic",
+      "data": {
+        "label": "Mobile Apps"
+      }
+    },
+    {
+      "id": "KeGCHoJRHp-mBX-P5to4Y",
+      "type": "subtopic",
+      "data": {
+        "label": "IoT"
+      }
+    },
+    {
+      "id": "U4LGIEE3igeE5Ed3EWzsu",
+      "type": "topic",
+      "data": {
+        "label": "Data Formats"
+      }
+    },
+    {
+      "id": "kagKVPUyLtx8UPAFjRvbN",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON"
+      }
+    },
+    {
+      "id": "tq6WRwUpaCok9fX-0bY7m",
+      "type": "subtopic",
+      "data": {
+        "label": "Parquet"
+      }
+    },
+    {
+      "id": "MWfdLCb_w06A0jqwUJUxl",
+      "type": "subtopic",
+      "data": {
+        "label": "CSV"
+      }
+    },
+    {
+      "id": "K9Si7kJe946CcGWBGmDsZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Excel"
+      }
+    },
+    {
+      "id": "qRHeaD2udDaItAxmiIiUg",
+      "type": "subtopic",
+      "data": {
+        "label": "Other Data Formats"
+      }
+    },
+    {
+      "id": "NTjpKlN0f93p9iSToXhNW",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Cleaning"
+      }
+    },
+    {
+      "id": "MdhfkuKWTDCE73hczzG3D",
+      "type": "topic",
+      "data": {
+        "label": "Preprocessing Techniques"
+      }
+    },
+    {
+      "id": "5v0jRBYrRuVXQC90IseRG",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Cleaning"
+      }
+    },
+    {
+      "id": "y3-nWiDjlY6ZwqmxBUvhd",
+      "type": "subtopic",
+      "data": {
+        "label": "Dimensionality Reduction"
+      }
+    },
+    {
+      "id": "UmGdV94afOIbAL8MaxOWv",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Engineering"
+      }
+    },
+    {
+      "id": "cigwKoltemM0q-M5O50Is",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Selection"
+      }
+    },
+    {
+      "id": "iBkTNbk8Xz626F_a3Bo5J",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Scaling \u0026 Normalization"
+      }
+    },
+    {
+      "id": "zdv96JeIxVl1ToieWcoAz",
+      "type": "paragraph",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "Ns2zKn8BL_kTEI6O65pCp",
+      "type": "topic",
+      "data": {
+        "label": "Types of Machine Learning"
+      }
+    },
+    {
+      "id": "36ryjK5isV1MD4MgZP2Jn",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsupervised Learning"
+      }
+    },
+    {
+      "id": "Yho0zf9F-ROhEnTxRMq_M",
+      "type": "subtopic",
+      "data": {
+        "label": "Semi-supervised Learning"
+      }
+    },
+    {
+      "id": "5MUwKGfSTKlam8KCG0A1U",
+      "type": "subtopic",
+      "data": {
+        "label": "Supervised Learning"
+      }
+    },
+    {
+      "id": "NC1A2SQVyc1n-KEf6yl-4",
+      "type": "subtopic",
+      "data": {
+        "label": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "lgO7luG7-R_FY5nwFjRE0",
+      "type": "subtopic",
+      "data": {
+        "label": "Self-supervised Learning"
+      }
+    },
+    {
+      "id": "rzhVFzl5H5MWtcvr8ayRk",
+      "type": "topic",
+      "data": {
+        "label": "What is Machine Learning?"
+      }
+    },
+    {
+      "id": "ajKU5CPlbn7BbWHEhUNaB",
+      "type": "topic",
+      "data": {
+        "label": "What is Supervised Learning?"
+      }
+    },
+    {
+      "id": "D1vCHxbpoDqeieiZGC5Kp",
+      "type": "paragraph",
+      "data": {
+        "label": "Supervised Learning"
+      }
+    },
+    {
+      "id": "cffITx6oAcnvJlK1VLdi8",
+      "type": "topic",
+      "data": {
+        "label": "Classification"
+      }
+    },
+    {
+      "id": "aHOjajXwkDMOssqW1VGrm",
+      "type": "subtopic",
+      "data": {
+        "label": " Logistic Regression "
+      }
+    },
+    {
+      "id": "_jS66rGAWecXH3zVF-5ds",
+      "type": "subtopic",
+      "data": {
+        "label": "Support Vector Machines"
+      }
+    },
+    {
+      "id": "x7vlCNAxfJzobj9HcTaJy",
+      "type": "subtopic",
+      "data": {
+        "label": "K-Nearest Neighbors (KNN)"
+      }
+    },
+    {
+      "id": "JuTTbL_pm1ltGvhUsIzQd",
+      "type": "subtopic",
+      "data": {
+        "label": "Gradient Boosting Machines"
+      }
+    },
+    {
+      "id": "arlmRF5pYglsbHb-HR-2x",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Trees, Random Forest"
+      }
+    },
+    {
+      "id": "gKu6tnpTO2PhDDMYp2u7F",
+      "type": "topic",
+      "data": {
+        "label": "Regression"
+      }
+    },
+    {
+      "id": "xGO1X9aZRgKcgzi6r1xq8",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Regression"
+      }
+    },
+    {
+      "id": "hfr2MU8QkVt9KhVi1Okpv",
+      "type": "subtopic",
+      "data": {
+        "label": "Polynomial Regression"
+      }
+    },
+    {
+      "id": "7rjXtHQhJF6B4iytzS6uu",
+      "type": "paragraph",
+      "data": {
+        "label": "Unsupervised Learning"
+      }
+    },
+    {
+      "id": "9oWdnQd-vwVJi62JQLgJ5",
+      "type": "topic",
+      "data": {
+        "label": "What is Unsupervised Learning?"
+      }
+    },
+    {
+      "id": "CBSGvGPoI53p7BezXNm6M",
+      "type": "topic",
+      "data": {
+        "label": "Clustering"
+      }
+    },
+    {
+      "id": "vQI-4uFQJ6694nm1SCpDR",
+      "type": "topic",
+      "data": {
+        "label": "Dimensionality Reduction"
+      }
+    },
+    {
+      "id": "BzUunjJrUMlh6K1NOOD87",
+      "type": "subtopic",
+      "data": {
+        "label": "Overlapping"
+      }
+    },
+    {
+      "id": "jJ8cXfHV2LG5PJGZRTHxB",
+      "type": "subtopic",
+      "data": {
+        "label": "Hierarchical"
+      }
+    },
+    {
+      "id": "eErzKbR8sRNlrYcwNSRSh",
+      "type": "subtopic",
+      "data": {
+        "label": "Exclusive"
+      }
+    },
+    {
+      "id": "VrLaUipVKWvwnFF0ZbIlo",
+      "type": "subtopic",
+      "data": {
+        "label": "Probabilistic"
+      }
+    },
+    {
+      "id": "owSUO9Ut9sggd1OiWr3O7",
+      "type": "subtopic",
+      "data": {
+        "label": "Autoencoders"
+      }
+    },
+    {
+      "id": "K-x_L3z8JTSHwtTeHm4EG",
+      "type": "subtopic",
+      "data": {
+        "label": "Principal Component Analysis "
+      }
+    },
+    {
+      "id": "6pRmzfpARAApr1JRCC7f5",
+      "type": "paragraph",
+      "data": {
+        "label": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "EtU_9MOklVBvnvyg30Yfx",
+      "type": "topic",
+      "data": {
+        "label": "What is Reinforcement Learning?"
+      }
+    },
+    {
+      "id": "PZ-WxKGTcWTrXmYI_inD_",
+      "type": "subtopic",
+      "data": {
+        "label": "Policy Gradient"
+      }
+    },
+    {
+      "id": "4Vy6lW9vF_SWwbKLU0qno",
+      "type": "subtopic",
+      "data": {
+        "label": "Actor-Critic Methods"
+      }
+    },
+    {
+      "id": "9o-ZT9oZIE3hCXD6eWZI0",
+      "type": "subtopic",
+      "data": {
+        "label": "Deep-Q Networks"
+      }
+    },
+    {
+      "id": "wxq5dkrpgvs3axmLmeHCk",
+      "type": "subtopic",
+      "data": {
+        "label": "Q-Learning"
+      }
+    },
+    {
+      "id": "GdPSm-37Qw8J7uNj9XWYJ",
+      "type": "paragraph",
+      "data": {
+        "label": "Model Evaluation"
+      }
+    },
+    {
+      "id": "99TI95HVGrXIYr-PIDxhC",
+      "type": "topic",
+      "data": {
+        "label": "What is Model Evaluation?"
+      }
+    },
+    {
+      "id": "5dKl6SUQhOsZfUtVR5hzw",
+      "type": "topic",
+      "data": {
+        "label": "Metrics to Evaluate"
+      }
+    },
+    {
+      "id": "3wib9UH0_OLhKjqKoZEMv",
+      "type": "subtopic",
+      "data": {
+        "label": "Accuracy"
+      }
+    },
+    {
+      "id": "mja35tndhAT5z_ysv-hDe",
+      "type": "subtopic",
+      "data": {
+        "label": "Precision"
+      }
+    },
+    {
+      "id": "DH33Na9zz_WGmbD-Dxvq1",
+      "type": "subtopic",
+      "data": {
+        "label": "Recall"
+      }
+    },
+    {
+      "id": "FdNY8QUbPPpeHFgD8TTaD",
+      "type": "subtopic",
+      "data": {
+        "label": "F1-Score"
+      }
+    },
+    {
+      "id": "anEGWHVpcp75e3jQrj_LZ",
+      "type": "subtopic",
+      "data": {
+        "label": "ROC-AUC"
+      }
+    },
+    {
+      "id": "7fOp3t283GeOn6Tf4kEuN",
+      "type": "subtopic",
+      "data": {
+        "label": "Log Loss"
+      }
+    },
+    {
+      "id": "oyL0M2OP4NTNbIO3zq-Hz",
+      "type": "subtopic",
+      "data": {
+        "label": "Confusion Matrix"
+      }
+    },
+    {
+      "id": "PSDG8k44DbOiMrSYsQ0Rx",
+      "type": "paragraph",
+      "data": {
+        "label": "Deep Learning"
+      }
+    },
+    {
+      "id": "LWLqa61GK5ukYzHpjinYi",
+      "type": "subtopic",
+      "data": {
+        "label": "Forward propagation"
+      }
+    },
+    {
+      "id": "0meihv22e11GwqnRdSJ9g",
+      "type": "subtopic",
+      "data": {
+        "label": "Back Propagation"
+      }
+    },
+    {
+      "id": "8425N_E43Dv5mcmEcXRIa",
+      "type": "subtopic",
+      "data": {
+        "label": "Perceptron, Multi-layer Perceptrons"
+      }
+    },
+    {
+      "id": "RXTci1N6i6D9HqTbsLYIy",
+      "type": "subtopic",
+      "data": {
+        "label": "Activation Functions"
+      }
+    },
+    {
+      "id": "4dxZmLg0UEaaVEORupOOC",
+      "type": "topic",
+      "data": {
+        "label": "Neural Network (NN) Basics"
+      }
+    },
+    {
+      "id": "KcfFjpxFTFxI6HR6hBPrl",
+      "type": "subtopic",
+      "data": {
+        "label": "Loss Functions"
+      }
+    },
+    {
+      "id": "ZVbnAF9I1r8qWFFYG6nXv",
+      "type": "topic",
+      "data": {
+        "label": "Scikit-learn"
+      }
+    },
+    {
+      "id": "CLBEDsXWxTG1SBaZWN3wr",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "eFw46u6SbFjl7CUMQIoby",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "nKtNZ-LuCLRGQ3XKGz5WV",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "1aX_vO5zxfTV8_kUIFHkR",
+      "type": "subtopic",
+      "data": {
+        "label": "Ridge"
+      }
+    },
+    {
+      "id": "EXogp25SPW1bBfb1gRDAe",
+      "type": "subtopic",
+      "data": {
+        "label": "Lasso"
+      }
+    },
+    {
+      "id": "0hi0LdCtj9Paimgfc-l1O",
+      "type": "topic",
+      "data": {
+        "label": "Validation Techniques"
+      }
+    },
+    {
+      "id": "GKMhIXEuSKdW75-24Zopb",
+      "type": "subtopic",
+      "data": {
+        "label": "LOOCV"
+      }
+    },
+    {
+      "id": "vRS7DW2WUaXiHk9oJgg3z",
+      "type": "subtopic",
+      "data": {
+        "label": "K-Fold Cross Validation"
+      }
+    },
+    {
+      "id": "_Z2miSW4PwILMRtBFajBn",
+      "type": "topic",
+      "data": {
+        "label": "Deep Learning Architectures"
+      }
+    },
+    {
+      "id": "BtO2wH7YYqE25HShI6sd9",
+      "type": "topic",
+      "data": {
+        "label": "Convolutional Neural Network"
+      }
+    },
+    {
+      "id": "I-GEE7PvpQmhQSfZmxqwA",
+      "type": "subtopic",
+      "data": {
+        "label": "Pooling"
+      }
+    },
+    {
+      "id": "a2PGTDnXKp759vFZzkjSF",
+      "type": "subtopic",
+      "data": {
+        "label": "Padding"
+      }
+    },
+    {
+      "id": "MtoYStcZBduLSbjRuPjq0",
+      "type": "subtopic",
+      "data": {
+        "label": "Convolution"
+      }
+    },
+    {
+      "id": "YWxSI45e5K_4YOrvmh6LV",
+      "type": "subtopic",
+      "data": {
+        "label": "Strides"
+      }
+    },
+    {
+      "id": "gCGHtxqD4V_Ite_AXMspf",
+      "type": "topic",
+      "data": {
+        "label": "Applications of CNNs"
+      }
+    },
+    {
+      "id": "E4k6WgNXdnNoApR675VKb",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Classification"
+      }
+    },
+    {
+      "id": "iSX9YExs1gS4L2CBQux5w",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Segmentation"
+      }
+    },
+    {
+      "id": "jPvZdgye7cBf0bPMVGf7a",
+      "type": "subtopic",
+      "data": {
+        "label": "Image \u0026 Video Recognition"
+      }
+    },
+    {
+      "id": "_eKuBhCCwUHnEGwHNQY-g",
+      "type": "subtopic",
+      "data": {
+        "label": "Recommendation Systems"
+      }
+    },
+    {
+      "id": "H0cscBaExZPNZuFubBUv7",
+      "type": "topic",
+      "data": {
+        "label": "Recurrent Neural Networks"
+      }
+    },
+    {
+      "id": "LpggrF1MMvAxtO9EJe3wY",
+      "type": "subtopic",
+      "data": {
+        "label": "RNN"
+      }
+    },
+    {
+      "id": "ZWDSLqxmfg3aPBZFH479q",
+      "type": "subtopic",
+      "data": {
+        "label": "GRU"
+      }
+    },
+    {
+      "id": "LdUwTWfCIcowwC-e6q3ac",
+      "type": "subtopic",
+      "data": {
+        "label": "LSMT"
+      }
+    },
+    {
+      "id": "-tzeA13f2jYDm4aO5JciT",
+      "type": "topic",
+      "data": {
+        "label": "Attention Mechanisms"
+      }
+    },
+    {
+      "id": "kvf2CUKBe4qSbZla4Brh3",
+      "type": "topic",
+      "data": {
+        "label": "Autoencoders"
+      }
+    },
+    {
+      "id": "rDIg16eb6B6um1P8uMy51",
+      "type": "subtopic",
+      "data": {
+        "label": "Transformers"
+      }
+    },
+    {
+      "id": "J1aGPkZqDZfUwpVmC88AL",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi-head Attention"
+      }
+    },
+    {
+      "id": "oTKC1o1OOnPiTh60a8yVc",
+      "type": "subtopic",
+      "data": {
+        "label": "Self-Attention"
+      }
+    },
+    {
+      "id": "IR0wVIcu1MxOOBiLBnn8S",
+      "type": "topic",
+      "data": {
+        "label": "Generative Adversarial Networks"
+      }
+    },
+    {
+      "id": "2eiJQUo9lA32lOTR6kbBp",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Concepts in ML"
+      }
+    },
+    {
+      "id": "JVXe2QDQaqiJYPupIMhWe",
+      "type": "topic",
+      "data": {
+        "label": "Natural Language Processing"
+      }
+    },
+    {
+      "id": "QbftToskhtBlTz1jyiRkb",
+      "type": "subtopic",
+      "data": {
+        "label": "Tokenization"
+      }
+    },
+    {
+      "id": "pP0VeUSK9CDodgz-BQmrP",
+      "type": "subtopic",
+      "data": {
+        "label": "Lemmatization"
+      }
+    },
+    {
+      "id": "UO1GEUe8e22uRB6DAxfpe",
+      "type": "subtopic",
+      "data": {
+        "label": "Stemming"
+      }
+    },
+    {
+      "id": "CaHbAXDIJQXcQ9DZqziod",
+      "type": "subtopic",
+      "data": {
+        "label": "Embeddings"
+      }
+    },
+    {
+      "id": "sChxcuQ2OruKVx8P4wAK_",
+      "type": "subtopic",
+      "data": {
+        "label": "Attention Models"
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Also visit the following related roadmaps"
+      }
+    },
+    {
+      "id": "hl06pnTWoMnzLmiOz9Sga",
+      "type": "button",
+      "data": {
+        "label": "AI \u0026 Data Scientist"
+      }
+    },
+    {
+      "id": "KGFYqDgOVSFXd2lbg8vGx",
+      "type": "button",
+      "data": {
+        "label": "MLOps"
+      }
+    },
+    {
+      "id": "xcOlVnhYfnSCfzLpkcaRS",
+      "type": "button",
+      "data": {
+        "label": "AI Engineer"
+      }
+    },
+    {
+      "id": "UZq7Aq3nhidsXdsKeEnNF",
+      "type": "button",
+      "data": {
+        "label": "AI Agents"
+      }
+    },
+    {
+      "id": "Tv3sZvus76dmu0X9AqCIU",
+      "type": "topic",
+      "data": {
+        "label": "Explainable AI"
+      }
+    },
+    {
+      "id": "5xxAg18h74pDAUPy6P8NQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Train - Test Data"
+      }
+    },
+    {
+      "id": "-W2uAccH7Y2XIwhfl9mDF",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Preparation"
+      }
+    },
+    {
+      "id": "bIhGv4886V4RWJD3tX0a0",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Loading"
+      }
+    },
+    {
+      "id": "m4vmnxRMBf7zwNnwrMEnk",
+      "type": "subtopic",
+      "data": {
+        "label": "Tuning"
+      }
+    },
+    {
+      "id": "vBnqnIh_xSn0OuY9oQ5e-",
+      "type": "subtopic",
+      "data": {
+        "label": "Prediction"
+      }
+    },
+    {
+      "id": "Ddhph9saFgfMi-uUFGK75",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Selection"
+      }
+    },
+    {
+      "id": "A_Kx3pEj0jpnLJzdOpcQ9",
+      "type": "topic",
+      "data": {
+        "label": "Deep Learning Libraries"
+      }
+    },
+    {
+      "id": "Ru8_xMyFxye1hyzCUYvnj",
+      "type": "subtopic",
+      "data": {
+        "label": "TensorFlow"
+      }
+    },
+    {
+      "id": "zoXnXI4Wf5sxddHqYwQjP",
+      "type": "subtopic",
+      "data": {
+        "label": "Keras"
+      }
+    },
+    {
+      "id": "7RSW-Pypf3QpZp4O21AGl",
+      "type": "subtopic",
+      "data": {
+        "label": "PyTorch"
+      }
+    },
+    {
+      "id": "yKtRmgwrJ75VVz7_txZ-S",
+      "type": "subtopic",
+      "data": {
+        "label": "Scikit-learn"
+      }
+    },
+    {
+      "id": "0-6BV-MggAyD7g3JH45B7",
+      "type": "subtopic",
+      "data": {
+        "label": "ElasticNet Regularization"
+      }
+    },
+    {
+      "id": "vmERbhRIevLLNc7Ny2pWp",
+      "type": "topic",
+      "data": {
+        "label": "Why is it important?"
+      }
+    },
+    {
+      "id": "pzEgbKewpTcphOkGFhoKb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__7aSscXd-UMNWOX7A_vxYhx2-fY8LEcCRTKUVEqLH1Qlc0w1",
+      "source": "7aSscXd-UMNWOX7A_vxYh",
+      "target": "MEL6y3vwiqwAV6FQihF34",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-3BxbkrBp8veZj38zdwN8sy2",
+      "source": "MEL6y3vwiqwAV6FQihF34",
+      "target": "BzZd-d5t63dY97SRSIb0J",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-jJukG4XxfFcID_VlQKqe-y1",
+      "source": "MEL6y3vwiqwAV6FQihF34",
+      "target": "GHO6lN3GTiIRH1P70IRaZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__WSYIFni7G2C9Jr0pwuamiz2-GN6SnI7RXIeW8JeD-qORWy1",
+      "source": "MEL6y3vwiqwAV6FQihF34",
+      "target": "FgzPlLUfGdlZPvPku0-Xl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5DiaZkljhHAGPi9DkaH3bx2-d-aZ5nQDWiMmqeMIodZzJw2",
+      "source": "MEL6y3vwiqwAV6FQihF34",
+      "target": "iQi7BVBigtFDZTMno2Kbq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5DiaZkljhHAGPi9DkaH3bw2-3BxbkrBp8veZj38zdwN8sx1",
+      "source": "wHlEinHuRARp5OfSulpA-",
+      "target": "3BxbkrBp8veZj38zdwN8s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRky2-5DiaZkljhHAGPi9DkaH3bz1",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "wHlEinHuRARp5OfSulpA-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__d-aZ5nQDWiMmqeMIodZzJx2-rzhVFzl5H5MWtcvr8ayRkw2",
+      "source": "iQi7BVBigtFDZTMno2Kbq",
+      "target": "83UDoO1vC0LjL-qpI0Jh-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-P32Rmnln5NCFWz4LP0k05y2",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "1IhaXJxNREq2HA1nT-lMM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-p8q1Gtt9x19jw5_-YjAGhy1",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "d7J8GEkut61NDGRzROJoP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-DUIrJwuYHlhJvZJT2acaYy2",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "yGs2h10gZcO4GMaWfI3uW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-P576TdYcbE6v3RpJntiKwy1",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "XmnWnPE1sVXheuc-M_Ew7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-7o6g0wQxHH9i9MMCoDq2Cy2",
+      "source": "83UDoO1vC0LjL-qpI0Jh-",
+      "target": "3p98Uwf8gyALDr-89lBEZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5DiaZkljhHAGPi9DkaH3bx2-P32Rmnln5NCFWz4LP0k05w1",
+      "source": "5DiaZkljhHAGPi9DkaH3b",
+      "target": "P32Rmnln5NCFWz4LP0k05",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5DiaZkljhHAGPi9DkaH3bz2-rzhVFzl5H5MWtcvr8ayRky1",
+      "source": "5DiaZkljhHAGPi9DkaH3b",
+      "target": "tP0oBkjvJC9hrtARkgLon",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkw2-WLlZE_vto-CYY5GLV_w7ox2",
+      "source": "tP0oBkjvJC9hrtARkgLon",
+      "target": "WLlZE_vto-CYY5GLV_w7o",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AvbMQ5vY3ip1oX_6Yq4iex2-hWA7RtuqltMTmHdcCnmESw2",
+      "source": "AvbMQ5vY3ip1oX_6Yq4ie",
+      "target": "hWA7RtuqltMTmHdcCnmES",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkz2-hWA7RtuqltMTmHdcCnmESy1",
+      "source": "nN9BumBHi-c9HKFlgL2GH",
+      "target": "hWA7RtuqltMTmHdcCnmES",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nN9BumBHi-c9HKFlgL2GHx2-rzhVFzl5H5MWtcvr8ayRkw1",
+      "source": "nN9BumBHi-c9HKFlgL2GH",
+      "target": "ybqwtlHG4HMm5lyUKW2SO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__AvbMQ5vY3ip1oX_6Yq4iey2-tP0oBkjvJC9hrtARkgLonz2",
+      "source": "AvbMQ5vY3ip1oX_6Yq4ie",
+      "target": "tP0oBkjvJC9hrtARkgLon",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rzhVFzl5H5MWtcvr8ayRkx2-xScVB1Swn0AWGTrAE0DFRw2",
+      "source": "ybqwtlHG4HMm5lyUKW2SO",
+      "target": "FACaPgaf1EZRCYqh_yQlE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__-oRH7LgigHcfBkNF1xwxhx2-rzhVFzl5H5MWtcvr8ayRkw1",
+      "source": "-oRH7LgigHcfBkNF1xwxh",
+      "target": "U4LGIEE3igeE5Ed3EWzsu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zdv96JeIxVl1ToieWcoAzy2--oRH7LgigHcfBkNF1xwxhz1",
+      "source": "FACaPgaf1EZRCYqh_yQlE",
+      "target": "-oRH7LgigHcfBkNF1xwxh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__gKu6tnpTO2PhDDMYp2u7Fy2-xGO1X9aZRgKcgzi6r1xq8z1",
+      "source": "Ns2zKn8BL_kTEI6O65pCp",
+      "target": "5MUwKGfSTKlam8KCG0A1U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gKu6tnpTO2PhDDMYp2u7Fy2-S6kkjbImrp1fl3S6_2Uqxz1",
+      "source": "Ns2zKn8BL_kTEI6O65pCp",
+      "target": "36ryjK5isV1MD4MgZP2Jn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NOJ-uL1ABewYriqMDVZ3Mz2-gKu6tnpTO2PhDDMYp2u7Fy1",
+      "source": "Yho0zf9F-ROhEnTxRMq_M",
+      "target": "Ns2zKn8BL_kTEI6O65pCp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0-6BV-MggAyD7g3JH45B7z2-gKu6tnpTO2PhDDMYp2u7Fy2",
+      "source": "lgO7luG7-R_FY5nwFjRE0",
+      "target": "Ns2zKn8BL_kTEI6O65pCp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__1kOOEtDdcj3mrmFql2pU0z2-gKu6tnpTO2PhDDMYp2u7Fy2",
+      "source": "NC1A2SQVyc1n-KEf6yl-4",
+      "target": "Ns2zKn8BL_kTEI6O65pCp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__vQI-4uFQJ6694nm1SCpDRx2-K-x_L3z8JTSHwtTeHm4EGw1",
+      "source": "vQI-4uFQJ6694nm1SCpDR",
+      "target": "K-x_L3z8JTSHwtTeHm4EG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__U4LGIEE3igeE5Ed3EWzsuz2-NTjpKlN0f93p9iSToXhNWy2",
+      "source": "U4LGIEE3igeE5Ed3EWzsu",
+      "target": "NTjpKlN0f93p9iSToXhNW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__hWA7RtuqltMTmHdcCnmESx2-dEFLBGpiH6nbSMeR7ecaTw1",
+      "source": "hWA7RtuqltMTmHdcCnmES",
+      "target": "dEFLBGpiH6nbSMeR7ecaT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AvbMQ5vY3ip1oX_6Yq4iew2-qDn1elMoPIBgQSCWiYkLIx2",
+      "source": "AvbMQ5vY3ip1oX_6Yq4ie",
+      "target": "qDn1elMoPIBgQSCWiYkLI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zdv96JeIxVl1ToieWcoAzx2-rzhVFzl5H5MWtcvr8ayRkw1",
+      "source": "zdv96JeIxVl1ToieWcoAz",
+      "target": "rzhVFzl5H5MWtcvr8ayRk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wHlEinHuRARp5OfSulpA-x2-N_vLjBVdsGsoePtqlqh2ww1",
+      "source": "wHlEinHuRARp5OfSulpA-",
+      "target": "N_vLjBVdsGsoePtqlqh2w",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__N_vLjBVdsGsoePtqlqh2wx2-5DiaZkljhHAGPi9DkaH3bw2",
+      "source": "N_vLjBVdsGsoePtqlqh2w",
+      "target": "5DiaZkljhHAGPi9DkaH3b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Ns2zKn8BL_kTEI6O65pCpx2-ZVbnAF9I1r8qWFFYG6nXvw2",
+      "source": "Ns2zKn8BL_kTEI6O65pCp",
+      "target": "ZVbnAF9I1r8qWFFYG6nXv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2--W2uAccH7Y2XIwhfl9mDFy2",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "-W2uAccH7Y2XIwhfl9mDF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2-bIhGv4886V4RWJD3tX0a0y1",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "bIhGv4886V4RWJD3tX0a0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2-5xxAg18h74pDAUPy6P8NQy1",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "5xxAg18h74pDAUPy6P8NQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2-Ddhph9saFgfMi-uUFGK75y1",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "Ddhph9saFgfMi-uUFGK75",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2-m4vmnxRMBf7zwNnwrMEnky1",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "m4vmnxRMBf7zwNnwrMEnk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvz2-vBnqnIh_xSn0OuY9oQ5e-y1",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "vBnqnIh_xSn0OuY9oQ5e-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZVbnAF9I1r8qWFFYG6nXvx2-D1vCHxbpoDqeieiZGC5Kpw2",
+      "source": "ZVbnAF9I1r8qWFFYG6nXv",
+      "target": "D1vCHxbpoDqeieiZGC5Kp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__D1vCHxbpoDqeieiZGC5Kpy2-ajKU5CPlbn7BbWHEhUNaBz1",
+      "source": "D1vCHxbpoDqeieiZGC5Kp",
+      "target": "ajKU5CPlbn7BbWHEhUNaB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ajKU5CPlbn7BbWHEhUNaBx2-cffITx6oAcnvJlK1VLdi8w2",
+      "source": "ajKU5CPlbn7BbWHEhUNaB",
+      "target": "cffITx6oAcnvJlK1VLdi8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__cffITx6oAcnvJlK1VLdi8x2-x7vlCNAxfJzobj9HcTaJyw1",
+      "source": "cffITx6oAcnvJlK1VLdi8",
+      "target": "x7vlCNAxfJzobj9HcTaJy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cffITx6oAcnvJlK1VLdi8z2-gKu6tnpTO2PhDDMYp2u7Fy2",
+      "source": "cffITx6oAcnvJlK1VLdi8",
+      "target": "gKu6tnpTO2PhDDMYp2u7F",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__gKu6tnpTO2PhDDMYp2u7Fx2-xGO1X9aZRgKcgzi6r1xq8w1",
+      "source": "gKu6tnpTO2PhDDMYp2u7F",
+      "target": "xGO1X9aZRgKcgzi6r1xq8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gKu6tnpTO2PhDDMYp2u7Fz2-7rjXtHQhJF6B4iytzS6uuy1",
+      "source": "gKu6tnpTO2PhDDMYp2u7F",
+      "target": "7rjXtHQhJF6B4iytzS6uu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__CBSGvGPoI53p7BezXNm6My2-vQI-4uFQJ6694nm1SCpDRz1",
+      "source": "CBSGvGPoI53p7BezXNm6M",
+      "target": "vQI-4uFQJ6694nm1SCpDR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vQI-4uFQJ6694nm1SCpDRy2-6pRmzfpARAApr1JRCC7f5w2",
+      "source": "vQI-4uFQJ6694nm1SCpDR",
+      "target": "6pRmzfpARAApr1JRCC7f5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__EtU_9MOklVBvnvyg30Yfxz2-GdPSm-37Qw8J7uNj9XWYJy2",
+      "source": "EtU_9MOklVBvnvyg30Yfx",
+      "target": "GdPSm-37Qw8J7uNj9XWYJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vmERbhRIevLLNc7Ny2pWpx2-5dKl6SUQhOsZfUtVR5hzww1",
+      "source": "vmERbhRIevLLNc7Ny2pWp",
+      "target": "5dKl6SUQhOsZfUtVR5hzw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__GdPSm-37Qw8J7uNj9XWYJx2-99TI95HVGrXIYr-PIDxhCw2",
+      "source": "GdPSm-37Qw8J7uNj9XWYJ",
+      "target": "99TI95HVGrXIYr-PIDxhC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5dKl6SUQhOsZfUtVR5hzwz2-oyL0M2OP4NTNbIO3zq-Hzy1",
+      "source": "5dKl6SUQhOsZfUtVR5hzw",
+      "target": "oyL0M2OP4NTNbIO3zq-Hz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5dKl6SUQhOsZfUtVR5hzwz2-anEGWHVpcp75e3jQrj_LZy1",
+      "source": "5dKl6SUQhOsZfUtVR5hzw",
+      "target": "anEGWHVpcp75e3jQrj_LZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5dKl6SUQhOsZfUtVR5hzwz2-FdNY8QUbPPpeHFgD8TTaDy1",
+      "source": "5dKl6SUQhOsZfUtVR5hzw",
+      "target": "FdNY8QUbPPpeHFgD8TTaD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5dKl6SUQhOsZfUtVR5hzwz2-3wib9UH0_OLhKjqKoZEMvy1",
+      "source": "5dKl6SUQhOsZfUtVR5hzw",
+      "target": "3wib9UH0_OLhKjqKoZEMv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5dKl6SUQhOsZfUtVR5hzwx2-0hi0LdCtj9Paimgfc-l1Ow2",
+      "source": "5dKl6SUQhOsZfUtVR5hzw",
+      "target": "0hi0LdCtj9Paimgfc-l1O",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0hi0LdCtj9Paimgfc-l1Oz2-vRS7DW2WUaXiHk9oJgg3zy1",
+      "source": "0hi0LdCtj9Paimgfc-l1O",
+      "target": "vRS7DW2WUaXiHk9oJgg3z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0hi0LdCtj9Paimgfc-l1Oz2-GKMhIXEuSKdW75-24Zopby1",
+      "source": "0hi0LdCtj9Paimgfc-l1O",
+      "target": "GKMhIXEuSKdW75-24Zopb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0hi0LdCtj9Paimgfc-l1Oy2-PSDG8k44DbOiMrSYsQ0Rxz1",
+      "source": "0hi0LdCtj9Paimgfc-l1O",
+      "target": "PSDG8k44DbOiMrSYsQ0Rx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4dxZmLg0UEaaVEORupOOCz2-A_Kx3pEj0jpnLJzdOpcQ9y1",
+      "source": "4dxZmLg0UEaaVEORupOOC",
+      "target": "A_Kx3pEj0jpnLJzdOpcQ9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__A_Kx3pEj0jpnLJzdOpcQ9z2-_Z2miSW4PwILMRtBFajBny1",
+      "source": "A_Kx3pEj0jpnLJzdOpcQ9",
+      "target": "_Z2miSW4PwILMRtBFajBn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__BtO2wH7YYqE25HShI6sd9y2-I-GEE7PvpQmhQSfZmxqwAz1",
+      "source": "BtO2wH7YYqE25HShI6sd9",
+      "target": "I-GEE7PvpQmhQSfZmxqwA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BtO2wH7YYqE25HShI6sd9y2-YWxSI45e5K_4YOrvmh6LVz1",
+      "source": "BtO2wH7YYqE25HShI6sd9",
+      "target": "YWxSI45e5K_4YOrvmh6LV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gCGHtxqD4V_Ite_AXMspfy2-H0cscBaExZPNZuFubBUv7z1",
+      "source": "gCGHtxqD4V_Ite_AXMspf",
+      "target": "H0cscBaExZPNZuFubBUv7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__H0cscBaExZPNZuFubBUv7y2--tzeA13f2jYDm4aO5JciTw1",
+      "source": "H0cscBaExZPNZuFubBUv7",
+      "target": "-tzeA13f2jYDm4aO5JciT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__-tzeA13f2jYDm4aO5JciTz2-oTKC1o1OOnPiTh60a8yVcy1",
+      "source": "-tzeA13f2jYDm4aO5JciT",
+      "target": "oTKC1o1OOnPiTh60a8yVc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-tzeA13f2jYDm4aO5JciTz2-rDIg16eb6B6um1P8uMy51y1",
+      "source": "-tzeA13f2jYDm4aO5JciT",
+      "target": "rDIg16eb6B6um1P8uMy51",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-tzeA13f2jYDm4aO5JciTz2-J1aGPkZqDZfUwpVmC88ALy2",
+      "source": "-tzeA13f2jYDm4aO5JciT",
+      "target": "J1aGPkZqDZfUwpVmC88AL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-tzeA13f2jYDm4aO5JciTx2-kvf2CUKBe4qSbZla4Brh3w2",
+      "source": "-tzeA13f2jYDm4aO5JciT",
+      "target": "kvf2CUKBe4qSbZla4Brh3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kvf2CUKBe4qSbZla4Brh3z2-IR0wVIcu1MxOOBiLBnn8Sy1",
+      "source": "kvf2CUKBe4qSbZla4Brh3",
+      "target": "IR0wVIcu1MxOOBiLBnn8S",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__IR0wVIcu1MxOOBiLBnn8Sz2-2eiJQUo9lA32lOTR6kbBpy1",
+      "source": "IR0wVIcu1MxOOBiLBnn8S",
+      "target": "2eiJQUo9lA32lOTR6kbBp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JVXe2QDQaqiJYPupIMhWey2-Tv3sZvus76dmu0X9AqCIUz1",
+      "source": "JVXe2QDQaqiJYPupIMhWe",
+      "target": "Tv3sZvus76dmu0X9AqCIU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

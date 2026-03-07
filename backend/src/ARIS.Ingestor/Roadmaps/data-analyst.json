@@ -1,0 +1,1420 @@
+{
+  "title": {
+    "card": "Data Analyst",
+    "page": "Data Analyst Roadmap"
+  },
+  "description": "Step by step guide to becoming an Data Analyst in @currentYear@",
+  "nodes": [
+    {
+      "id": "s53kNESX2DeFOZX5X4C1w",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "mjrtkv8khMV_doNvDW33w",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vjPbrUxt7m9mi_-41gepg",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Wf38aF9E2p2d4HjaEz_jA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9JPrXvAn4Ygvd-0l46e-b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "eYtoaWaZyQbfAVq8d3tFE",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IKDpwowMgjPy_91gd8hBJ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "U90uRMtULJfxfX5D4Lvet",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Mmb2g51O5AH43xdv4q9L0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LXzQof9GV5YFNXEnsJmSe",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "mM_v9xK6A6p3-02lc1Xsw",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NdLvmwQiqaHevxiaz6Bcx",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "gVDCgxnwW0ueuay58qLfa",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Keep learning with the following relevant track"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Data Analyst"
+      }
+    },
+    {
+      "id": "3xp2fogAVmwXQhdzhZDWR",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "AI and Data Scientist Roadmap"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yCnn-NfSxIybUQ2iTuUGq",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Data Analytics"
+      }
+    },
+    {
+      "id": "Lsapbmg-eMIYJAHpV97nO",
+      "type": "topic",
+      "data": {
+        "label": "Types of Data Analytics"
+      }
+    },
+    {
+      "id": "wITmMpWlQy2z-fhJJsuJS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "hWDh0ooidbqZb000ENVok",
+      "type": "subtopic",
+      "data": {
+        "label": "Descriptive Analytics"
+      }
+    },
+    {
+      "id": "j7DA2J3speSaBsZAV4M0v",
+      "type": "subtopic",
+      "data": {
+        "label": "Diagnostic Analytics"
+      }
+    },
+    {
+      "id": "3WZORRCwme3HsaKew23Z5",
+      "type": "subtopic",
+      "data": {
+        "label": "Predictive Analytics"
+      }
+    },
+    {
+      "id": "DFMR-0MbmVCCrJu0I9JWG",
+      "type": "subtopic",
+      "data": {
+        "label": "Prescriptive Analytics"
+      }
+    },
+    {
+      "id": "R12sArWVpbIs_PHxBqVaR",
+      "type": "subtopic",
+      "data": {
+        "label": "Key Concepts of Data"
+      }
+    },
+    {
+      "id": "mDUSpexdq3ITV6qokwSJl",
+      "type": "subtopic",
+      "data": {
+        "label": "Collection"
+      }
+    },
+    {
+      "id": "nC7tViln4UyQFYP_-fyjB",
+      "type": "subtopic",
+      "data": {
+        "label": "Cleanup"
+      }
+    },
+    {
+      "id": "XFnw4_dQYSzm96-srWa7X",
+      "type": "subtopic",
+      "data": {
+        "label": "Exploration"
+      }
+    },
+    {
+      "id": "jowh4CFLQiFzKaaElyCuQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Visualisation"
+      }
+    },
+    {
+      "id": "2pUq-7hu5EjGpowz98YoV",
+      "type": "subtopic",
+      "data": {
+        "label": "Statistical Analysis"
+      }
+    },
+    {
+      "id": "U55hwR0HRCIz2cveVR8FZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "zF-aibk1m_zAsafT04efn",
+      "type": "paragraph",
+      "data": {
+        "label": "Building a Strong Foundation"
+      }
+    },
+    {
+      "id": "sgXIjVTbwdwdYoaxN3XBM",
+      "type": "topic",
+      "data": {
+        "label": "Analysis / Reporting with Excel"
+      }
+    },
+    {
+      "id": "wME4MSldOWlMB54ekpReS",
+      "type": "subtopic",
+      "data": {
+        "label": "IF"
+      }
+    },
+    {
+      "id": "yBlJrNo9eO470dLp6OaQZ",
+      "type": "subtopic",
+      "data": {
+        "label": "DATEDIF"
+      }
+    },
+    {
+      "id": "9sIP-jpNjtA1JPCBjTf-H",
+      "type": "subtopic",
+      "data": {
+        "label": "VLOOKUP / HLOOKUP"
+      }
+    },
+    {
+      "id": "dke_pySrqYZZ7K3rprnIT",
+      "type": "subtopic",
+      "data": {
+        "label": "REPLACE / SUBSTITUTE"
+      }
+    },
+    {
+      "id": "YReKRRgE_2dWfGGdBQqbf",
+      "type": "subtopic",
+      "data": {
+        "label": "UPPER / LOWER / PROPER"
+      }
+    },
+    {
+      "id": "SIiIfcy-jeiRoDlxw385V",
+      "type": "subtopic",
+      "data": {
+        "label": "CONCAT"
+      }
+    },
+    {
+      "id": "D5Q6o6ydr1j51kB0ASFPE",
+      "type": "subtopic",
+      "data": {
+        "label": "TRIM"
+      }
+    },
+    {
+      "id": "FDYunL9KJkR_tHEcUV2iC",
+      "type": "subtopic",
+      "data": {
+        "label": "AVERAGE"
+      }
+    },
+    {
+      "id": "uAdxP1ZkgzcU8JcWjvw6d",
+      "type": "subtopic",
+      "data": {
+        "label": "COUNT"
+      }
+    },
+    {
+      "id": "_FO80Cm2iAD_bThmnsEgp",
+      "type": "subtopic",
+      "data": {
+        "label": "SUM"
+      }
+    },
+    {
+      "id": "F3-cr5onkWqKKPRdxu8lV",
+      "type": "subtopic",
+      "data": {
+        "label": "MIN / MAX"
+      }
+    },
+    {
+      "id": "5GarFKYApjrhxHBLNPVnJ",
+      "type": "label",
+      "data": {
+        "label": "Learn Common Functions"
+      }
+    },
+    {
+      "id": "KBqpT6IbJCgJ0TRy3ey-H",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Vk3JErqxpnPY44iyfkLMl",
+      "type": "subtopic",
+      "data": {
+        "label": "Charting"
+      }
+    },
+    {
+      "id": "2DDJUFr0AJTVR2Whj8zub",
+      "type": "subtopic",
+      "data": {
+        "label": "Pivot Tables"
+      }
+    },
+    {
+      "id": "i2uEcaO4bJhcZ5ayRs2CQ",
+      "type": "topic",
+      "data": {
+        "label": "Learn a Programming Lang."
+      }
+    },
+    {
+      "id": "4UNRDLVOlXSR5u6tdypth",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "g_EBQizZsIe-vn8ir6FTv",
+      "type": "subtopic",
+      "data": {
+        "label": "R"
+      }
+    },
+    {
+      "id": "M1QtGTLyygIjePoCfvjve",
+      "type": "topic",
+      "data": {
+        "label": "Data Manipulation Libraries"
+      }
+    },
+    {
+      "id": "l1SnPc4EMqGdaIAhIQfrT",
+      "type": "topic",
+      "data": {
+        "label": "Data Visualisation Libraries"
+      }
+    },
+    {
+      "id": "_sjXCLHHTbZromJYn6fnu",
+      "type": "topic",
+      "data": {
+        "label": "Data Collection"
+      }
+    },
+    {
+      "id": "r1ZlPtp7j6PFIdgrFrOx0",
+      "type": "paragraph",
+      "data": {
+        "label": "Mastering Data Handling"
+      }
+    },
+    {
+      "id": "tYPeLCxbqvMFlTkCGjdHg",
+      "type": "subtopic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "iWOK0mRY-hAGxMnHYJ0tt",
+      "type": "subtopic",
+      "data": {
+        "label": "CSV Files"
+      }
+    },
+    {
+      "id": "4DFcXSSHxg5wv0uXLIRij",
+      "type": "subtopic",
+      "data": {
+        "label": "APIs"
+      }
+    },
+    {
+      "id": "qQ64ZhSlbbWu9pP8KTE67",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Scraping"
+      }
+    },
+    {
+      "id": "E6cpb6kvluJM8OGuDcFBT",
+      "type": "topic",
+      "data": {
+        "label": "Data Cleanup"
+      }
+    },
+    {
+      "id": "X9WmfHOks82BIAzs6abqO",
+      "type": "subtopic",
+      "data": {
+        "label": "Handling Missing Data"
+      }
+    },
+    {
+      "id": "Xltm7B-8TZ1-igLjVJXoR",
+      "type": "subtopic",
+      "data": {
+        "label": "Removing Duplicates"
+      }
+    },
+    {
+      "id": "-rQ8h_6NFxEOhxXgo7LHo",
+      "type": "subtopic",
+      "data": {
+        "label": "Finding Outliers"
+      }
+    },
+    {
+      "id": "t_BRtEharsrOZxoyX0OzV",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Transformation"
+      }
+    },
+    {
+      "id": "TucngXKNptbeo3PtdJHX8",
+      "type": "subtopic",
+      "data": {
+        "label": "Pandas"
+      }
+    },
+    {
+      "id": "v8TfY-b4W5ygOv7r-syHq",
+      "type": "subtopic",
+      "data": {
+        "label": "Dplyr"
+      }
+    },
+    {
+      "id": "Yx0ICrkjMA_VQdS9DROMb",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Analysis Techniques"
+      }
+    },
+    {
+      "id": "il6KQXVPGBza5libN38ib",
+      "type": "topic",
+      "data": {
+        "label": "Descriptive Analysis"
+      }
+    },
+    {
+      "id": "2ldO-_ZnIg364Eo8Jyfgr",
+      "type": "subtopic",
+      "data": {
+        "label": "Dispersion"
+      }
+    },
+    {
+      "id": "Fyqg3MRcwY7g-Q3gjiqwK",
+      "type": "subtopic",
+      "data": {
+        "label": "Distribution Shape"
+      }
+    },
+    {
+      "id": "923KGEUG9ofBm7dYkkrxz",
+      "type": "subtopic",
+      "data": {
+        "label": "Mean"
+      }
+    },
+    {
+      "id": "qdXoikVh2xkJkOQNKcyvb",
+      "type": "subtopic",
+      "data": {
+        "label": "Median"
+      }
+    },
+    {
+      "id": "fY8zVG2tVbmtx5OhY7hj-",
+      "type": "subtopic",
+      "data": {
+        "label": "Mode"
+      }
+    },
+    {
+      "id": "tSxtyJhL5wjU0XJcjsJmm",
+      "type": "subtopic",
+      "data": {
+        "label": "Range"
+      }
+    },
+    {
+      "id": "ict4JkoVM-AzPbp9bDztg",
+      "type": "subtopic",
+      "data": {
+        "label": "Variance"
+      }
+    },
+    {
+      "id": "MXIP8ekH4YtczODKM_G_l",
+      "type": "subtopic",
+      "data": {
+        "label": "Standard Deviation"
+      }
+    },
+    {
+      "id": "VfcCRRqwLxkYpIX0ZKNNX",
+      "type": "subtopic",
+      "data": {
+        "label": "Skewness"
+      }
+    },
+    {
+      "id": "PqGO8AU1zE2ZdtqrIrOkZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Kurtosis"
+      }
+    },
+    {
+      "id": "BJTVa4ur_bJB7mMtD2-hQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Central Tendency"
+      }
+    },
+    {
+      "id": "nYqQXh3j-d5mpOhyTO6dW",
+      "type": "paragraph",
+      "data": {
+        "label": "Generating Statistics"
+      }
+    },
+    {
+      "id": "Sz2Y8HLbSmDjSKAJztDql",
+      "type": "subtopic",
+      "data": {
+        "label": "Tableau"
+      }
+    },
+    {
+      "id": "SJLeose5vZU8w_18C8_t0",
+      "type": "subtopic",
+      "data": {
+        "label": "Power BI"
+      }
+    },
+    {
+      "id": "tvDdXwaRPsUSTqJGaLS3P",
+      "type": "subtopic",
+      "data": {
+        "label": "Matplotlib"
+      }
+    },
+    {
+      "id": "-cJb8gEBvdVFf7FlgG3Ud",
+      "type": "subtopic",
+      "data": {
+        "label": "Seaborn"
+      }
+    },
+    {
+      "id": "n3M49lgNPn28hm7kzki-a",
+      "type": "subtopic",
+      "data": {
+        "label": "ggplot2"
+      }
+    },
+    {
+      "id": "zq6DItyQQ2Sxpzm5ZBJUX",
+      "type": "paragraph",
+      "data": {
+        "label": "Tools"
+      }
+    },
+    {
+      "id": "1YilPs0bQSuHkMeMiJfO-",
+      "type": "paragraph",
+      "data": {
+        "label": "Libraries"
+      }
+    },
+    {
+      "id": "hieeryNX0lh6B8Alh77vi",
+      "type": "paragraph",
+      "data": {
+        "label": "Charting"
+      }
+    },
+    {
+      "id": "EVk1H-QLtTlpG7lVEenDt",
+      "type": "subtopic",
+      "data": {
+        "label": "Bar Charts"
+      }
+    },
+    {
+      "id": "v9T0DX56jFNhUz9nzubzS",
+      "type": "subtopic",
+      "data": {
+        "label": "Line Chart"
+      }
+    },
+    {
+      "id": "A5YQv7D4qRcskdZ64XldH",
+      "type": "subtopic",
+      "data": {
+        "label": "Scatter Plot"
+      }
+    },
+    {
+      "id": "muFy-C2agCX9vR_NU7UZF",
+      "type": "subtopic",
+      "data": {
+        "label": "Funnel Charts"
+      }
+    },
+    {
+      "id": "FEyBFZLaGJqTC-IUEcOVS",
+      "type": "subtopic",
+      "data": {
+        "label": "Histograms"
+      }
+    },
+    {
+      "id": "329BrtmXjXNLfi1SFfdeo",
+      "type": "subtopic",
+      "data": {
+        "label": "Stacked Charts"
+      }
+    },
+    {
+      "id": "G8resQXEVEHCaQfDlt3nj",
+      "type": "subtopic",
+      "data": {
+        "label": "Heatmap"
+      }
+    },
+    {
+      "id": "K9xwm_Vpdup9ujYqlD9F3",
+      "type": "subtopic",
+      "data": {
+        "label": "Pie Charts"
+      }
+    },
+    {
+      "id": "2g19zjEASJw2ve57hxpr0",
+      "type": "topic",
+      "data": {
+        "label": "Data Visualisation"
+      }
+    },
+    {
+      "id": "TeewVruErSsD4VLXcaDxp",
+      "type": "topic",
+      "data": {
+        "label": "Statistical Analysis"
+      }
+    },
+    {
+      "id": "3vIpMdHQ8BVgUuu1S_mSJ",
+      "type": "paragraph",
+      "data": {
+        "label": "Learn to analyze relationships and make data driven decisions"
+      }
+    },
+    {
+      "id": "Xygwu0m5TeYT6S_8FKKXh",
+      "type": "subtopic",
+      "data": {
+        "label": "Hypothesis Testing"
+      }
+    },
+    {
+      "id": "murioZ0NdrTix_lqSGz-8",
+      "type": "subtopic",
+      "data": {
+        "label": "Correlation Analysis"
+      }
+    },
+    {
+      "id": "lTycWscyFPi-BtkNg9cdm",
+      "type": "subtopic",
+      "data": {
+        "label": "Regression"
+      }
+    },
+    {
+      "id": "mCUW07rx74_dUNi7OGVlj",
+      "type": "subtopic",
+      "data": {
+        "label": "Visualizing Distributions"
+      }
+    },
+    {
+      "id": "g45cn450Awr2W5hadxKY3",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "f4GuzeokP9w_gwtOquP0g",
+      "type": "topic",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "XdBwqLoYYiLJNlWPBEDUj",
+      "type": "subtopic",
+      "data": {
+        "label": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "FntL9E2yVAYwIrlANDNKE",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsupervised Learning"
+      }
+    },
+    {
+      "id": "FIYCkGXofKMsXmsqHSMh9",
+      "type": "subtopic",
+      "data": {
+        "label": "Supervised Learning"
+      }
+    },
+    {
+      "id": "HAKzVeRkJWxLc-kFmkpkH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vHDm_9Lh4EqvXNYSOBaqZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Trees"
+      }
+    },
+    {
+      "id": "zbUw5PyVsdccbgDTRHg7d",
+      "type": "subtopic",
+      "data": {
+        "label": "Naive Byes"
+      }
+    },
+    {
+      "id": "h2xF5bZeUByDgsAi4dga2",
+      "type": "subtopic",
+      "data": {
+        "label": "K-Means Clustering"
+      }
+    },
+    {
+      "id": "7ikA373qH88HBx5irCgIH",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Evaluation Techniques"
+      }
+    },
+    {
+      "id": "_aUQZWUhFRvNu0MZ8CPit",
+      "type": "topic",
+      "data": {
+        "label": "Big Data Technologies"
+      }
+    },
+    {
+      "id": "m1IfG2sEedUxMXrv_B8GW",
+      "type": "subtopic",
+      "data": {
+        "label": "Big Data Concepts"
+      }
+    },
+    {
+      "id": "SStzU_iXSvI_9QWbvGNou",
+      "type": "subtopic",
+      "data": {
+        "label": "KNN"
+      }
+    },
+    {
+      "id": "ofOQKAIu4rezWmgZeE-KT",
+      "type": "subtopic",
+      "data": {
+        "label": "Logistic Regression"
+      }
+    },
+    {
+      "id": "Fwwve0j-KDfc605IIgmil",
+      "type": "subtopic",
+      "data": {
+        "label": "Parallel Processing"
+      }
+    },
+    {
+      "id": "uEn7siAHnnYEzU2CJItvo",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Processing Frameworks"
+      }
+    },
+    {
+      "id": "wECWIRMlWNoTxz5eKwaSf",
+      "type": "subtopic",
+      "data": {
+        "label": "Hadoop"
+      }
+    },
+    {
+      "id": "vaiigToDh4522rtWamuSM",
+      "type": "subtopic",
+      "data": {
+        "label": "Spark"
+      }
+    },
+    {
+      "id": "yOEspbP24pJctynHMd0eL",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Processing Techniques"
+      }
+    },
+    {
+      "id": "fqCAH4Enc4AAJHoSkk2Pe",
+      "type": "subtopic",
+      "data": {
+        "label": "MPI"
+      }
+    },
+    {
+      "id": "eAM9orCNwzqh34uvGBVm8",
+      "type": "subtopic",
+      "data": {
+        "label": "MapReduce"
+      }
+    },
+    {
+      "id": "SiYUdtYMDImRPmV2_XPkH",
+      "type": "topic",
+      "data": {
+        "label": "Deep Learning (Optional)"
+      }
+    },
+    {
+      "id": "29NGSuCu_LZ2DhGNwq4UE",
+      "type": "paragraph",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "gGHsKcS92StK5FolzmVvm",
+      "type": "subtopic",
+      "data": {
+        "label": "Neural Networks"
+      }
+    },
+    {
+      "id": "XlCv2OirEfuBFa4ranyyE",
+      "type": "subtopic",
+      "data": {
+        "label": "CNNs"
+      }
+    },
+    {
+      "id": "Gocm98_tRg5BGxKcP-7zg",
+      "type": "subtopic",
+      "data": {
+        "label": "RNN"
+      }
+    },
+    {
+      "id": "NhmKafQe87sR8hqPBWszq",
+      "type": "paragraph",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "FJ4Sx477FWxyDsQr0R8rl",
+      "type": "subtopic",
+      "data": {
+        "label": "Tensorflow"
+      }
+    },
+    {
+      "id": "LJSqfz6aYJbCe_bK8EWI1",
+      "type": "subtopic",
+      "data": {
+        "label": "Pytorch"
+      }
+    },
+    {
+      "id": "owMhaho3OruAkPEVjfIk1",
+      "type": "paragraph",
+      "data": {
+        "label": "Practice Training Models"
+      }
+    },
+    {
+      "id": "bHPJ6yOHtUq5EjJBSrJUE",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Recognition"
+      }
+    },
+    {
+      "id": "DFv-eiYDicF4cA4jgVk9_",
+      "type": "subtopic",
+      "data": {
+        "label": "Natural Language Processing"
+      }
+    },
+    {
+      "id": "reuRSWs_FOllfoRJKaz2A",
+      "type": "paragraph",
+      "data": {
+        "label": "Build a portfolio of projects. Some example projects:"
+      }
+    },
+    {
+      "id": "2D6mKlVuB6sFGfxzZLNOg",
+      "type": "paragraph",
+      "data": {
+        "label": "1) Predicting sales trends 2) Customer Segmentation."
+      }
+    },
+    {
+      "id": "GcJGq4OPx-NqIDIoSJgIy",
+      "type": "paragraph",
+      "data": {
+        "label": "Participate in Kaggle Competitions"
+      }
+    },
+    {
+      "id": "rn8NylkALsvBT7qDJTEIs",
+      "type": "paragraph",
+      "data": {
+        "label": "Participate in competitions and learn from community"
+      }
+    },
+    {
+      "id": "RFTRCQ99DNPcTLPgTBFEi",
+      "type": "paragraph",
+      "data": {
+        "label": "Online Courses and Certifications"
+      }
+    },
+    {
+      "id": "E5Pp9prCfmhWfuiPka4cF",
+      "type": "paragraph",
+      "data": {
+        "label": "Platforms like Coursera, edX, Udemy and Datacamp offer courses in Data Analytics and related topics."
+      }
+    },
+    {
+      "id": "dOrnsftQKhJAmOmsSzDI0",
+      "type": "paragraph",
+      "data": {
+        "label": "Stay Updated and Network"
+      }
+    },
+    {
+      "id": "l4Dw_u91dR92hHQCbA848",
+      "type": "paragraph",
+      "data": {
+        "label": "Join networking events, communities, seek mentorship, attend webinars and engage in discussions to expand your network."
+      }
+    },
+    {
+      "id": "ma5qE4EbrnFqnWm8-koQX",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "9dfYjsY9P25QrQIqW5_m5",
+      "type": "label",
+      "data": {
+        "label": "Popular ML Algorithms"
+      }
+    },
+    {
+      "id": "1DgiVLBYwEDPiRf11C2NS",
+      "type": "label",
+      "data": {
+        "label": "Learn Different Techniques"
+      }
+    },
+    {
+      "id": "vPVfEbf1N9Pm-OGipCAFs",
+      "type": "label",
+      "data": {
+        "label": "Machine Learning Types"
+      }
+    },
+    {
+      "id": "qoTejLLexhNdpCwhfpDwn",
+      "type": "label",
+      "data": {
+        "label": "Using Libraries for Cleanup"
+      }
+    },
+    {
+      "id": "YDomoxzf-65sru6XVu0_X",
+      "type": "paragraph",
+      "data": {
+        "label": "Gain Programming Skills"
+      }
+    },
+    {
+      "id": "iTmtpXe7dR4XKslgpsk2q",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Storage Solutions"
+      }
+    },
+    {
+      "id": "aopqiF0Svmpq94g6OQBX0",
+      "type": "label",
+      "data": {
+        "label": "1"
+      }
+    },
+    {
+      "id": "ClwrtyoxnU-slBd3nQ6zG",
+      "type": "label",
+      "data": {
+        "label": "2"
+      }
+    },
+    {
+      "id": "NsoLCA-sJ8W9N4TrMzV8-",
+      "type": "label",
+      "data": {
+        "label": "3"
+      }
+    },
+    {
+      "id": "VVU8uggtiOrRNaN-IzatG",
+      "type": "button",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "BnvNJCHnPsTo25Hn0dN9v",
+      "type": "button",
+      "data": {
+        "label": "Learn SQL"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-NVSQ4OtmvRp7p4cOEvKh7w1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "3xp2fogAVmwXQhdzhZDWR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-yCnn-NfSxIybUQ2iTuUGqy1",
+      "source": "3xp2fogAVmwXQhdzhZDWR",
+      "target": "yCnn-NfSxIybUQ2iTuUGq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-R12sArWVpbIs_PHxBqVaRy2",
+      "source": "3xp2fogAVmwXQhdzhZDWR",
+      "target": "Lsapbmg-eMIYJAHpV97nO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Lsapbmg-eMIYJAHpV97nOx2-hWDh0ooidbqZb000ENVokw2",
+      "source": "Lsapbmg-eMIYJAHpV97nO",
+      "target": "hWDh0ooidbqZb000ENVok",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHx2-R12sArWVpbIs_PHxBqVaRw1",
+      "source": "3xp2fogAVmwXQhdzhZDWR",
+      "target": "R12sArWVpbIs_PHxBqVaR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-jzT54cgNpZc76XxjuNN3Bz1",
+      "source": "3xp2fogAVmwXQhdzhZDWR",
+      "target": "zF-aibk1m_zAsafT04efn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jzT54cgNpZc76XxjuNN3Bx2-SiYUdtYMDImRPmV2_XPkHw1",
+      "source": "zF-aibk1m_zAsafT04efn",
+      "target": "sgXIjVTbwdwdYoaxN3XBM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-r1ZlPtp7j6PFIdgrFrOx0y2-SiYUdtYMDImRPmV2_XPkHz1",
+      "source": "r1ZlPtp7j6PFIdgrFrOx0",
+      "target": "_sjXCLHHTbZromJYn6fnu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-t_BRtEharsrOZxoyX0OzVz2",
+      "source": "_sjXCLHHTbZromJYn6fnu",
+      "target": "tYPeLCxbqvMFlTkCGjdHg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-iWOK0mRY-hAGxMnHYJ0ttz1",
+      "source": "_sjXCLHHTbZromJYn6fnu",
+      "target": "iWOK0mRY-hAGxMnHYJ0tt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-4DFcXSSHxg5wv0uXLIRijz1",
+      "source": "_sjXCLHHTbZromJYn6fnu",
+      "target": "4DFcXSSHxg5wv0uXLIRij",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-Fyqg3MRcwY7g-Q3gjiqwKz2",
+      "source": "_sjXCLHHTbZromJYn6fnu",
+      "target": "qQ64ZhSlbbWu9pP8KTE67",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_sjXCLHHTbZromJYn6fnux2-SiYUdtYMDImRPmV2_XPkHw1",
+      "source": "_sjXCLHHTbZromJYn6fnu",
+      "target": "E6cpb6kvluJM8OGuDcFBT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-Xltm7B-8TZ1-igLjVJXoRy1",
+      "source": "E6cpb6kvluJM8OGuDcFBT",
+      "target": "Xltm7B-8TZ1-igLjVJXoR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-X9WmfHOks82BIAzs6abqOy1",
+      "source": "E6cpb6kvluJM8OGuDcFBT",
+      "target": "X9WmfHOks82BIAzs6abqO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2--rQ8h_6NFxEOhxXgo7LHoy1",
+      "source": "E6cpb6kvluJM8OGuDcFBT",
+      "target": "-rQ8h_6NFxEOhxXgo7LHo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-t_BRtEharsrOZxoyX0OzVy1",
+      "source": "E6cpb6kvluJM8OGuDcFBT",
+      "target": "t_BRtEharsrOZxoyX0OzV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-E6cpb6kvluJM8OGuDcFBTx2-Yx0ICrkjMA_VQdS9DROMbw2",
+      "source": "E6cpb6kvluJM8OGuDcFBT",
+      "target": "Yx0ICrkjMA_VQdS9DROMb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yx0ICrkjMA_VQdS9DROMbx2-SiYUdtYMDImRPmV2_XPkHz2",
+      "source": "Yx0ICrkjMA_VQdS9DROMb",
+      "target": "il6KQXVPGBza5libN38ib",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-il6KQXVPGBza5libN38ibz2-SiYUdtYMDImRPmV2_XPkHy1",
+      "source": "il6KQXVPGBza5libN38ib",
+      "target": "2g19zjEASJw2ve57hxpr0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-il6KQXVPGBza5libN38iby2-nYqQXh3j-d5mpOhyTO6dWz1",
+      "source": "il6KQXVPGBza5libN38ib",
+      "target": "nYqQXh3j-d5mpOhyTO6dW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2g19zjEASJw2ve57hxpr0y2-SiYUdtYMDImRPmV2_XPkHz2",
+      "source": "2g19zjEASJw2ve57hxpr0",
+      "target": "TeewVruErSsD4VLXcaDxp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-Xygwu0m5TeYT6S_8FKKXhz2",
+      "source": "TeewVruErSsD4VLXcaDxp",
+      "target": "Xygwu0m5TeYT6S_8FKKXh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-murioZ0NdrTix_lqSGz-8z1",
+      "source": "TeewVruErSsD4VLXcaDxp",
+      "target": "murioZ0NdrTix_lqSGz-8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHx2-uZD9Hf3dY9acGZAmmQtdww1",
+      "source": "TeewVruErSsD4VLXcaDxp",
+      "target": "g45cn450Awr2W5hadxKY3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-uZD9Hf3dY9acGZAmmQtdwx2-SiYUdtYMDImRPmV2_XPkHw1",
+      "source": "g45cn450Awr2W5hadxKY3",
+      "target": "f4GuzeokP9w_gwtOquP0g",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-f4GuzeokP9w_gwtOquP0gz2-SiYUdtYMDImRPmV2_XPkHy1",
+      "source": "f4GuzeokP9w_gwtOquP0g",
+      "target": "_aUQZWUhFRvNu0MZ8CPit",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-il6KQXVPGBza5libN38iby2-mCUW07rx74_dUNi7OGVljz2",
+      "source": "il6KQXVPGBza5libN38ib",
+      "target": "mCUW07rx74_dUNi7OGVlj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_aUQZWUhFRvNu0MZ8CPity2-SiYUdtYMDImRPmV2_XPkHz1",
+      "source": "_aUQZWUhFRvNu0MZ8CPit",
+      "target": "SiYUdtYMDImRPmV2_XPkH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHw2-29NGSuCu_LZ2DhGNwq4UEx2",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "29NGSuCu_LZ2DhGNwq4UE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHy2-owMhaho3OruAkPEVjfIk1z1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "NhmKafQe87sR8hqPBWszq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHx2-owMhaho3OruAkPEVjfIk1w1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "owMhaho3OruAkPEVjfIk1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SiYUdtYMDImRPmV2_XPkHz2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "SiYUdtYMDImRPmV2_XPkH",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_aUQZWUhFRvNu0MZ8CPitx2-iTmtpXe7dR4XKslgpsk2qw2",
+      "source": "_aUQZWUhFRvNu0MZ8CPit",
+      "target": "m1IfG2sEedUxMXrv_B8GW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YDomoxzf-65sru6XVu0_Xz2-r1ZlPtp7j6PFIdgrFrOx0w1",
+      "source": "YDomoxzf-65sru6XVu0_X",
+      "target": "r1ZlPtp7j6PFIdgrFrOx0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-TeewVruErSsD4VLXcaDxpy2-lTycWscyFPi-BtkNg9cdmz1",
+      "source": "TeewVruErSsD4VLXcaDxp",
+      "target": "lTycWscyFPi-BtkNg9cdm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BnvNJCHnPsTo25Hn0dN9vz2-YDomoxzf-65sru6XVu0_Xy1",
+      "source": "BnvNJCHnPsTo25Hn0dN9v",
+      "target": "YDomoxzf-65sru6XVu0_X",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

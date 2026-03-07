@@ -1,0 +1,804 @@
+{
+  "title": {
+    "card": "Docker",
+    "page": "Docker Roadmap"
+  },
+  "description": "Step by step guide to learning Docker in @currentYear@",
+  "nodes": [
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "QFrmceEMSWqSTx85CLEvb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LTCtOuWPt7VvcS-4b8En8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lmhPJG0cnXvH9W-cpnWOV",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "f2Q86LutJi9-3nThGlx10",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gZYttWDLUm4h-cRhNUnBE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "2YqGqA6lNx0vOXhZqi-gl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Q0WbmEuk4RWOhRnd969Lf",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "Py9nst2FDJ1_hoXeX_qSF",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "74JxgfJ_1qmVNZ_QRp9Ne",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Containers?"
+      }
+    },
+    {
+      "id": "i4ijY3T5gLgNz0XqRipXe",
+      "type": "subtopic",
+      "data": {
+        "label": "Why do we need Containers?"
+      }
+    },
+    {
+      "id": "3hatcMVLDbMuz73uTx-9P",
+      "type": "subtopic",
+      "data": {
+        "label": "Bare Metal vs VMs vs Containers"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "UloavCkIvZnD1XMFohYVT",
+      "type": "button",
+      "data": {
+        "label": "Kubernetes Roadmap"
+      }
+    },
+    {
+      "id": "ef-jFKMs8jw3Ti94jem96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "DevOps Roadmap"
+      }
+    },
+    {
+      "id": "BbxLcczAQNKIEPwkUYGAU",
+      "type": "paragraph",
+      "data": {
+        "label": "Roadmap was made in partnership with Sid Palas. Checkout his free course covering Docker in Depth"
+      }
+    },
+    {
+      "id": "oMnJCTcTGk1sbYRi_8a3u",
+      "type": "button",
+      "data": {
+        "label": "Docker Beginner to Pro"
+      }
+    },
+    {
+      "id": "Wm2VPi1Tn_Y7dqPowny69",
+      "type": "linksgroup",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "43drPbTwPqJQPyzwYUdBT",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker and OCI"
+      }
+    },
+    {
+      "id": "mw-weCutd2ECKlx2DE_ZJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "uKjB2qntFTpPuYUT9sdxd",
+      "type": "subtopic",
+      "data": {
+        "label": "Users / Groups Permissions"
+      }
+    },
+    {
+      "id": "W5kX5jn49hghRgkEw6_S3",
+      "type": "subtopic",
+      "data": {
+        "label": "Shell Commands"
+      }
+    },
+    {
+      "id": "InlMtuaUJ9EXO-OD9x1jj",
+      "type": "subtopic",
+      "data": {
+        "label": "Shell Scripting"
+      }
+    },
+    {
+      "id": "3aevqob1G4jO-cLr42jFF",
+      "type": "label",
+      "data": {
+        "label": "Linux Fundamentals"
+      }
+    },
+    {
+      "id": "XxT9UUjbKW1ARyERSLH_W",
+      "type": "subtopic",
+      "data": {
+        "label": "Programming Languages"
+      }
+    },
+    {
+      "id": "EqYWfBL5l5OOquok_OvOW",
+      "type": "subtopic",
+      "data": {
+        "label": "Application Architecture"
+      }
+    },
+    {
+      "id": "ia9TdlZx7Aj6LJ--tY-X5",
+      "type": "label",
+      "data": {
+        "label": "Web Development"
+      }
+    },
+    {
+      "id": "jrH1qE6EnFXL4fTyYU8gR",
+      "type": "topic",
+      "data": {
+        "label": "Underlying Technologies"
+      }
+    },
+    {
+      "id": "BvV8VCX39wRB-g8WvGF1g",
+      "type": "subtopic",
+      "data": {
+        "label": "Namespaces"
+      }
+    },
+    {
+      "id": "fRl4EfNwlBiidzn3IV34-",
+      "type": "subtopic",
+      "data": {
+        "label": "cgroups"
+      }
+    },
+    {
+      "id": "vEUfw_vobshuZI0-q8RZo",
+      "type": "subtopic",
+      "data": {
+        "label": "Union Filesystems"
+      }
+    },
+    {
+      "id": "ykP7LxOoklfcjEeMW_Cli",
+      "type": "label",
+      "data": {
+        "label": "Just get the basic idea of these"
+      }
+    },
+    {
+      "id": "01nDXqxVdMv4SeXc0nYHH",
+      "type": "topic",
+      "data": {
+        "label": "Installation / Setup"
+      }
+    },
+    {
+      "id": "NCdsPRhJy7UtQFNLo1J1f",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker Desktop (Win/Mac/Linux)"
+      }
+    },
+    {
+      "id": "0NKqLUWtJMlXn-m6wpA6f",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker Engine ( Linux )"
+      }
+    },
+    {
+      "id": "kIqx7Inf50mE9W0juwNBz",
+      "type": "topic",
+      "data": {
+        "label": "Basics of Docker"
+      }
+    },
+    {
+      "id": "uUPYXmwu27SBPqKZx6U_q",
+      "type": "topic",
+      "data": {
+        "label": "Data Persistence"
+      }
+    },
+    {
+      "id": "086zZYjtzdCaDHm-MkSqg",
+      "type": "subtopic",
+      "data": {
+        "label": "Ephemeral Container Filesystem"
+      }
+    },
+    {
+      "id": "woemCQmWTR-hIoWAci3d5",
+      "type": "subtopic",
+      "data": {
+        "label": "Volume Mounts"
+      }
+    },
+    {
+      "id": "wZcCW1ojGzUakHCv2AaI1",
+      "type": "subtopic",
+      "data": {
+        "label": "Bind Mounts"
+      }
+    },
+    {
+      "id": "LShK3-1EGGuXnEvdScFR7",
+      "type": "topic",
+      "data": {
+        "label": "Using 3rd Party Container Images"
+      }
+    },
+    {
+      "id": "jKSE_wKYf4P9wnSh_LkMi",
+      "type": "subtopic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "YzpB7rgSR4ueQRLa0bRWa",
+      "type": "subtopic",
+      "data": {
+        "label": "Command Line Utilities"
+      }
+    },
+    {
+      "id": "5OEfBQaYNOCi999x6QUqW",
+      "type": "topic",
+      "data": {
+        "label": "Building Container Images"
+      }
+    },
+    {
+      "id": "yGRQcx64S-yBGEoOeMc55",
+      "type": "subtopic",
+      "data": {
+        "label": "Dockerfiles"
+      }
+    },
+    {
+      "id": "frshJqVMP8D7o_7tMZMPI",
+      "type": "subtopic",
+      "data": {
+        "label": "Efficient Layer Caching"
+      }
+    },
+    {
+      "id": "-8wAzF6_3gruiM3VYMvB0",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Size and Security"
+      }
+    },
+    {
+      "id": "3VKPiMfbGBxv9m_SljIQV",
+      "type": "topic",
+      "data": {
+        "label": "Container Registries"
+      }
+    },
+    {
+      "id": "rxVR62_yXIjc-L4GFSV6u",
+      "type": "subtopic",
+      "data": {
+        "label": "Dockerhub"
+      }
+    },
+    {
+      "id": "Vs4WQwgJFhA63U9Gf2ym0",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Tagging Best Practices"
+      }
+    },
+    {
+      "id": "fh5aERX7c-lY9FPsmftoF",
+      "type": "subtopic",
+      "data": {
+        "label": "Others (ghcr, ecr, gcr, acr, etc)"
+      }
+    },
+    {
+      "id": "z2eeBXPzo-diQ67Fcfyhc",
+      "type": "topic",
+      "data": {
+        "label": "Running Containers"
+      }
+    },
+    {
+      "id": "6eu5NRA1sJuaHTlHtNurc",
+      "type": "subtopic",
+      "data": {
+        "label": "docker run"
+      }
+    },
+    {
+      "id": "jjA9E0J8N2frfeJCNtA1m",
+      "type": "subtopic",
+      "data": {
+        "label": "docker compose"
+      }
+    },
+    {
+      "id": "mAaEz-bwB5DLaBbOSYGMn",
+      "type": "subtopic",
+      "data": {
+        "label": "Runtime Configuration Options"
+      }
+    },
+    {
+      "id": "78YFahP3Fg-c27reLkuK4",
+      "type": "topic",
+      "data": {
+        "label": "Container Security"
+      }
+    },
+    {
+      "id": "vYug8kcwrMoWf8ft4UDNI",
+      "type": "subtopic",
+      "data": {
+        "label": "Runtime Security"
+      }
+    },
+    {
+      "id": "M5UG-ZcyhBPbksZd0ZdNt",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Security"
+      }
+    },
+    {
+      "id": "b-LwyYiegbF0jIrn7HYRv",
+      "type": "topic",
+      "data": {
+        "label": "Docker CLI"
+      }
+    },
+    {
+      "id": "3Nsg-F3wMKEzEsXw1MBZv",
+      "type": "subtopic",
+      "data": {
+        "label": "Images"
+      }
+    },
+    {
+      "id": "jhwe-xfVc-C7qy8YuS5dZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "eHtVLB6v3h7hatJb-9cZK",
+      "type": "subtopic",
+      "data": {
+        "label": "Volumes"
+      }
+    },
+    {
+      "id": "w5QjzvOaciK2rotOkjvjQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Networks"
+      }
+    },
+    {
+      "id": "hHXTth0ZP8O-iMGR9xfu9",
+      "type": "topic",
+      "data": {
+        "label": "Developer Experience"
+      }
+    },
+    {
+      "id": "4p5d3rzCHy4vjg2PRX-2k",
+      "type": "subtopic",
+      "data": {
+        "label": "Hot Reloading"
+      }
+    },
+    {
+      "id": "LiAV9crrTHhLqeZhD25a2",
+      "type": "subtopic",
+      "data": {
+        "label": "Debuggers"
+      }
+    },
+    {
+      "id": "Kmyo1_Mor9WHLkRhNShRZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Tests"
+      }
+    },
+    {
+      "id": "oyqw4tr-taZcxt5kREh1g",
+      "type": "subtopic",
+      "data": {
+        "label": "Continuous Integration"
+      }
+    },
+    {
+      "id": "qXOGqORi3EdqwsP9Uhi9m",
+      "type": "topic",
+      "data": {
+        "label": "Deploying Containers"
+      }
+    },
+    {
+      "id": "PP_RRBo_pThe2mgf6xzMP",
+      "type": "subtopic",
+      "data": {
+        "label": "PaaS Options"
+      }
+    },
+    {
+      "id": "RqXpX2XabtHYVjgg1EZR_",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "r1eJZDZYouUjnGwAtRbyU",
+      "type": "subtopic",
+      "data": {
+        "label": "Nomad"
+      }
+    },
+    {
+      "id": "ks6PFN-0Z9zH7gtWaWgxz",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker Swarm"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "9NuHwfytnUTpeVmnMpZZC",
+      "type": "topic",
+      "data": {
+        "label": "Networking"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__Ji35JsKgUQXN4DJGEgTACx2-jrH1qE6EnFXL4fTyYU8gRw1",
+      "source": "Ji35JsKgUQXN4DJGEgTAC",
+      "target": "Py9nst2FDJ1_hoXeX_qSF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-74JxgfJ_1qmVNZ_QRp9Ney1",
+      "source": "Py9nst2FDJ1_hoXeX_qSF",
+      "target": "74JxgfJ_1qmVNZ_QRp9Ne",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-i4ijY3T5gLgNz0XqRipXey1",
+      "source": "Py9nst2FDJ1_hoXeX_qSF",
+      "target": "i4ijY3T5gLgNz0XqRipXe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-43drPbTwPqJQPyzwYUdBTy2",
+      "source": "Py9nst2FDJ1_hoXeX_qSF",
+      "target": "3hatcMVLDbMuz73uTx-9P",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-43drPbTwPqJQPyzwYUdBTy1",
+      "source": "Py9nst2FDJ1_hoXeX_qSF",
+      "target": "43drPbTwPqJQPyzwYUdBT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Py9nst2FDJ1_hoXeX_qSFx2-jrH1qE6EnFXL4fTyYU8gRw1",
+      "source": "Py9nst2FDJ1_hoXeX_qSF",
+      "target": "jrH1qE6EnFXL4fTyYU8gR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-vEUfw_vobshuZI0-q8RZoy1",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "vEUfw_vobshuZI0-q8RZo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-BvV8VCX39wRB-g8WvGF1gy1",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "BvV8VCX39wRB-g8WvGF1g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRx2-kIqx7Inf50mE9W0juwNBzw2",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "01nDXqxVdMv4SeXc0nYHH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kIqx7Inf50mE9W0juwNBzz2-NCdsPRhJy7UtQFNLo1J1fy1",
+      "source": "01nDXqxVdMv4SeXc0nYHH",
+      "target": "NCdsPRhJy7UtQFNLo1J1f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kIqx7Inf50mE9W0juwNBzz2-0NKqLUWtJMlXn-m6wpA6fy1",
+      "source": "01nDXqxVdMv4SeXc0nYHH",
+      "target": "0NKqLUWtJMlXn-m6wpA6f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kIqx7Inf50mE9W0juwNBzx2-5OEfBQaYNOCi999x6QUqWw1",
+      "source": "kIqx7Inf50mE9W0juwNBz",
+      "target": "uUPYXmwu27SBPqKZx6U_q",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5OEfBQaYNOCi999x6QUqWz2-086zZYjtzdCaDHm-MkSqgy1",
+      "source": "uUPYXmwu27SBPqKZx6U_q",
+      "target": "086zZYjtzdCaDHm-MkSqg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5OEfBQaYNOCi999x6QUqWz2-woemCQmWTR-hIoWAci3d5y1",
+      "source": "uUPYXmwu27SBPqKZx6U_q",
+      "target": "woemCQmWTR-hIoWAci3d5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__b-LwyYiegbF0jIrn7HYRvy2-5OEfBQaYNOCi999x6QUqWz1",
+      "source": "uUPYXmwu27SBPqKZx6U_q",
+      "target": "LShK3-1EGGuXnEvdScFR7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5OEfBQaYNOCi999x6QUqWz2-b-LwyYiegbF0jIrn7HYRvy1",
+      "source": "5OEfBQaYNOCi999x6QUqW",
+      "target": "3VKPiMfbGBxv9m_SljIQV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__b-LwyYiegbF0jIrn7HYRvx2-rxVR62_yXIjc-L4GFSV6uw2",
+      "source": "3VKPiMfbGBxv9m_SljIQV",
+      "target": "rxVR62_yXIjc-L4GFSV6u",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3VKPiMfbGBxv9m_SljIQVz2-b-LwyYiegbF0jIrn7HYRvy1",
+      "source": "3VKPiMfbGBxv9m_SljIQV",
+      "target": "z2eeBXPzo-diQ67Fcfyhc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jjA9E0J8N2frfeJCNtA1my2-mAaEz-bwB5DLaBbOSYGMnz1",
+      "source": "jjA9E0J8N2frfeJCNtA1m",
+      "target": "mAaEz-bwB5DLaBbOSYGMn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__78YFahP3Fg-c27reLkuK4y2-b-LwyYiegbF0jIrn7HYRvz1",
+      "source": "78YFahP3Fg-c27reLkuK4",
+      "target": "b-LwyYiegbF0jIrn7HYRv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__b-LwyYiegbF0jIrn7HYRvy2-jhwe-xfVc-C7qy8YuS5dZz1",
+      "source": "b-LwyYiegbF0jIrn7HYRv",
+      "target": "jhwe-xfVc-C7qy8YuS5dZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__b-LwyYiegbF0jIrn7HYRvy2-w5QjzvOaciK2rotOkjvjQz1",
+      "source": "b-LwyYiegbF0jIrn7HYRv",
+      "target": "w5QjzvOaciK2rotOkjvjQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qXOGqORi3EdqwsP9Uhi9my2-4p5d3rzCHy4vjg2PRX-2kz1",
+      "source": "hHXTth0ZP8O-iMGR9xfu9",
+      "target": "4p5d3rzCHy4vjg2PRX-2k",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qXOGqORi3EdqwsP9Uhi9my2-LiAV9crrTHhLqeZhD25a2z1",
+      "source": "hHXTth0ZP8O-iMGR9xfu9",
+      "target": "LiAV9crrTHhLqeZhD25a2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qXOGqORi3EdqwsP9Uhi9my2-Kmyo1_Mor9WHLkRhNShRZz2",
+      "source": "hHXTth0ZP8O-iMGR9xfu9",
+      "target": "Kmyo1_Mor9WHLkRhNShRZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qXOGqORi3EdqwsP9Uhi9my2-oyqw4tr-taZcxt5kREh1gz1",
+      "source": "hHXTth0ZP8O-iMGR9xfu9",
+      "target": "oyqw4tr-taZcxt5kREh1g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hHXTth0ZP8O-iMGR9xfu9z2-qXOGqORi3EdqwsP9Uhi9my1",
+      "source": "hHXTth0ZP8O-iMGR9xfu9",
+      "target": "qXOGqORi3EdqwsP9Uhi9m",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qXOGqORi3EdqwsP9Uhi9mw2-PP_RRBo_pThe2mgf6xzMPx1",
+      "source": "qXOGqORi3EdqwsP9Uhi9m",
+      "target": "PP_RRBo_pThe2mgf6xzMP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__b-LwyYiegbF0jIrn7HYRvx2-9NuHwfytnUTpeVmnMpZZCw1",
+      "source": "b-LwyYiegbF0jIrn7HYRv",
+      "target": "9NuHwfytnUTpeVmnMpZZC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__9NuHwfytnUTpeVmnMpZZCx2-hHXTth0ZP8O-iMGR9xfu9w1",
+      "source": "9NuHwfytnUTpeVmnMpZZC",
+      "target": "hHXTth0ZP8O-iMGR9xfu9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1374 @@
+{
+  "title": {
+    "card": "SQL",
+    "page": "SQL Roadmap"
+  },
+  "description": "Step by step guide to learning SQL in @currentYear@",
+  "nodes": [
+    {
+      "id": "7DdMLjcx-zh7nwoILnWgn",
+      "type": "linksgroup",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "uAWe6RysRWSe8PqyYQKKX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GEdhZU9WflZsSbHIAL6Y8",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "hWk-3dRw9XQyHpc9_oxet",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bxQ-MepnAll0CkNFpqeJA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "V800FmJL7JvYLHj_s6Qpe",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "XeLCXJ5VfwHrIFGqcB8QH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "eyqdjMFVONWDshElnh-fS",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "5iMBYXe8Al0ZeiRBnJ-cn",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "H-11E5G6rdTKj3k7PK12l",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "6FdHTzqQwJqR4czP5qXAY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "nSShTLakj1E_JAHdcsfe4",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "OPT7zGno_ghrrj4dAUKaW",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "vVvwzfWSzMXhGop1nX_9k",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BZD3zEjZNwFZN5Erp2UwN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WigElh37ztiRYRstQR9NE",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tUokjJrzZ4hp8c6f7iBI0",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Zr7u2K8_wGkPwWzTvSJJu",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "zO8ETJn55ShzPf8ifDqO2",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "80OaUGoB4961Qak9JZ7sS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6yiWcpPgkAuYFZlDGlM1P",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vpSPxfiH2jcZiDF4glMnG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7YsPMUciWuosgKwI9YJrI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following related roadmaps"
+      }
+    },
+    {
+      "id": "OQpi63qND2KBXVvKBNMST",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "iuSv7V59YxUZawN38Qlli",
+      "type": "button",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "R9DQNc0AyAQ2HLpP4HOk6",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Relational Databases?"
+      }
+    },
+    {
+      "id": "fNTb9y3zs1HPYclAmu_Wv",
+      "type": "subtopic",
+      "data": {
+        "label": "RDBMS Benefits and Limitations"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "nhUKKWyBH80nyKfGT8ErC",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "U0fJo2a3vnaodNJhfZ78I",
+      "type": "button",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "gx4KaFqKgJX9n9_ZGMqlZ",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL vs NoSQL Databases"
+      }
+    },
+    {
+      "id": "JDDG4KfhtIlw1rkNCzUli",
+      "type": "topic",
+      "data": {
+        "label": "Basic SQL Syntax"
+      }
+    },
+    {
+      "id": "6yoo7qC6X2jYDIjd3HIm7",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Keywords"
+      }
+    },
+    {
+      "id": "tBzMDfCMh6MIagNaxCzin",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "ffwniprGJHZzJ7t3lQcXz",
+      "type": "subtopic",
+      "data": {
+        "label": "Operators"
+      }
+    },
+    {
+      "id": "rmqXH29n1oXtZ8tvmcRFn",
+      "type": "subtopic",
+      "data": {
+        "label": "SELECT"
+      }
+    },
+    {
+      "id": "mPj6BiK5FKKkIQ9WsWEo6",
+      "type": "subtopic",
+      "data": {
+        "label": "INSERT"
+      }
+    },
+    {
+      "id": "eu9dJFi6gBPMBdy08Y5Bb",
+      "type": "subtopic",
+      "data": {
+        "label": "UPDATE"
+      }
+    },
+    {
+      "id": "ddtVaA4Ls6qRj-7OtTSIH",
+      "type": "subtopic",
+      "data": {
+        "label": "DELETE"
+      }
+    },
+    {
+      "id": "91OF3VQdzsu_YPsT6zrVT",
+      "type": "label",
+      "data": {
+        "label": "Statements"
+      }
+    },
+    {
+      "id": "xPOeXK1EPBNG56vgfG-VV",
+      "type": "topic",
+      "data": {
+        "label": "Data Definition Language (DDL)"
+      }
+    },
+    {
+      "id": "K5vhqTJrdPK08Txv8zaEj",
+      "type": "subtopic",
+      "data": {
+        "label": "Truncate Table"
+      }
+    },
+    {
+      "id": "WjXlO42WL9saDS7RIGapt",
+      "type": "subtopic",
+      "data": {
+        "label": "Alter Table"
+      }
+    },
+    {
+      "id": "epEpBxRosLhuAuKwp823r",
+      "type": "subtopic",
+      "data": {
+        "label": "Create Table"
+      }
+    },
+    {
+      "id": "YzJ6QmY2arMfRzMAPaI0T",
+      "type": "subtopic",
+      "data": {
+        "label": "Drop Table"
+      }
+    },
+    {
+      "id": "WMSXi-eez_hHGDM8kUdWz",
+      "type": "topic",
+      "data": {
+        "label": "Data Manipulation Language (DML)"
+      }
+    },
+    {
+      "id": "i8u8E_sne6XiKJo2FXDog",
+      "type": "subtopic",
+      "data": {
+        "label": "Select"
+      }
+    },
+    {
+      "id": "N1Racr3ZpU320gS545We8",
+      "type": "subtopic",
+      "data": {
+        "label": "FROM"
+      }
+    },
+    {
+      "id": "WhYAy6f7Euk3E49-ot644",
+      "type": "subtopic",
+      "data": {
+        "label": "WHERE"
+      }
+    },
+    {
+      "id": "NfCiSPrL4upMssukcw3Kh",
+      "type": "subtopic",
+      "data": {
+        "label": "ORDER BY"
+      }
+    },
+    {
+      "id": "14TKE6KhrH1yFtHcSZSXq",
+      "type": "subtopic",
+      "data": {
+        "label": "GROUP BY"
+      }
+    },
+    {
+      "id": "ytwCkSMTiTuemE0KVfAfy",
+      "type": "subtopic",
+      "data": {
+        "label": "HAVING"
+      }
+    },
+    {
+      "id": "4UQQYbjzwVxZOAxBuXKQS",
+      "type": "subtopic",
+      "data": {
+        "label": "JOINs"
+      }
+    },
+    {
+      "id": "-Hew0y53ziZK3epQnGA0O",
+      "type": "subtopic",
+      "data": {
+        "label": "INSERT"
+      }
+    },
+    {
+      "id": "KJJ6PYjTnr_3yU2mNPL9v",
+      "type": "subtopic",
+      "data": {
+        "label": "UPDATE"
+      }
+    },
+    {
+      "id": "zWnvuHJLHr03PWkrW1wZZ",
+      "type": "subtopic",
+      "data": {
+        "label": "DELETE"
+      }
+    },
+    {
+      "id": "68Y4cMQtdnJrbqSvl7aHc",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LX9nzJ4uqznHN4SksoDvr",
+      "type": "topic",
+      "data": {
+        "label": "Aggregate Queries"
+      }
+    },
+    {
+      "id": "w4T3jFb0ilf1KNw-AvRXG",
+      "type": "subtopic",
+      "data": {
+        "label": "SUM"
+      }
+    },
+    {
+      "id": "9aHYrOQDkA84tlxcVK5aD",
+      "type": "subtopic",
+      "data": {
+        "label": "COUNT"
+      }
+    },
+    {
+      "id": "Wou6YXLYUgomvcELh851L",
+      "type": "subtopic",
+      "data": {
+        "label": "AVG"
+      }
+    },
+    {
+      "id": "bFEYMlqPZtTUYtDQxqHzT",
+      "type": "subtopic",
+      "data": {
+        "label": "MIN"
+      }
+    },
+    {
+      "id": "YqDJq3fPxUZlwsdq0kJg7",
+      "type": "subtopic",
+      "data": {
+        "label": "MAX"
+      }
+    },
+    {
+      "id": "Zw8IHfCCMSxmVjx5Ho5ff",
+      "type": "subtopic",
+      "data": {
+        "label": "GROUP BY"
+      }
+    },
+    {
+      "id": "HhICJpCK5__b-itUoEBES",
+      "type": "subtopic",
+      "data": {
+        "label": "HAVING"
+      }
+    },
+    {
+      "id": "qBios3sZVhcJMpXmj9f7B",
+      "type": "topic",
+      "data": {
+        "label": "Data Constraints"
+      }
+    },
+    {
+      "id": "Jlwmyq6CUQeDAlL4dazOP",
+      "type": "subtopic",
+      "data": {
+        "label": "Primary Key"
+      }
+    },
+    {
+      "id": "DHz6sRLYhFeCbAcNJS8hm",
+      "type": "subtopic",
+      "data": {
+        "label": "Foreign Key"
+      }
+    },
+    {
+      "id": "5yGo8i7eplxtXOD_qfzOs",
+      "type": "subtopic",
+      "data": {
+        "label": "Unique"
+      }
+    },
+    {
+      "id": "M4M_-vjM9GNy0NmXZneDA",
+      "type": "subtopic",
+      "data": {
+        "label": "NOT NULL"
+      }
+    },
+    {
+      "id": "Q0h9Wfnl_W9ThOkv7Q17A",
+      "type": "subtopic",
+      "data": {
+        "label": "CHECK"
+      }
+    },
+    {
+      "id": "1Crqx9BUhD84lOdUAjFA4",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8V6yw7kLaow-VVcv_K_pL",
+      "type": "topic",
+      "data": {
+        "label": "JOIN Queries"
+      }
+    },
+    {
+      "id": "aaua13CkTxLOYXr8cAgPm",
+      "type": "subtopic",
+      "data": {
+        "label": "INNER JOIN"
+      }
+    },
+    {
+      "id": "X9cJJ8zLZCF2cOoqxwFfY",
+      "type": "subtopic",
+      "data": {
+        "label": "LEFT JOIN"
+      }
+    },
+    {
+      "id": "shpgZkh1CLqUwjOaRtAFy",
+      "type": "subtopic",
+      "data": {
+        "label": "RIGHT JOIN"
+      }
+    },
+    {
+      "id": "aS5zCyJRA779yHF0G2pje",
+      "type": "subtopic",
+      "data": {
+        "label": "FULL OUTER JOIN"
+      }
+    },
+    {
+      "id": "6qG0AVYd6Y1B8LOSDoMX9",
+      "type": "subtopic",
+      "data": {
+        "label": "Self Join"
+      }
+    },
+    {
+      "id": "7ow6tiSSCnTpv_GYQU017",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross Join"
+      }
+    },
+    {
+      "id": "0Rk1z-F_PEgOIh1qeG8rJ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "86iZ8s8EdhSuYwgwAM_EO",
+      "type": "topic",
+      "data": {
+        "label": "Subqueries"
+      }
+    },
+    {
+      "id": "eXQ-TrTlqL5p2AdGnozkL",
+      "type": "subtopic",
+      "data": {
+        "label": "Scalar"
+      }
+    },
+    {
+      "id": "wmtt-3auWLdQWuVdwZLPd",
+      "type": "subtopic",
+      "data": {
+        "label": "Column"
+      }
+    },
+    {
+      "id": "aLDl75i8gtLRA2Ud-fMmQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Row"
+      }
+    },
+    {
+      "id": "R9WDMRd-3wxsKH97-sT3n",
+      "type": "subtopic",
+      "data": {
+        "label": "Table"
+      }
+    },
+    {
+      "id": "zEWmq0Y1LFPMQelpucrph",
+      "type": "label",
+      "data": {
+        "label": "Different Types"
+      }
+    },
+    {
+      "id": "xkPJ2MYiXmzC4yqQWyB_7",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested Subqueries"
+      }
+    },
+    {
+      "id": "JZqS3Xapw6mfSPVgFW7av",
+      "type": "subtopic",
+      "data": {
+        "label": "Correlated Subqueries"
+      }
+    },
+    {
+      "id": "vTMd0bqz4eTgLnhfgY61h",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Functions"
+      }
+    },
+    {
+      "id": "o2SH4iQn1Ap2yDZ7cVYLO",
+      "type": "subtopic",
+      "data": {
+        "label": "FLOOR"
+      }
+    },
+    {
+      "id": "6vYFb_D1N_-tLWZftL-Az",
+      "type": "subtopic",
+      "data": {
+        "label": "ABS"
+      }
+    },
+    {
+      "id": "OUw--8zEq6lk5-6oySVHe",
+      "type": "subtopic",
+      "data": {
+        "label": "MOD"
+      }
+    },
+    {
+      "id": "9DntFiZV1AyaRPhYP5q6u",
+      "type": "subtopic",
+      "data": {
+        "label": "ROUND"
+      }
+    },
+    {
+      "id": "BAqJQvcguhIhzyII5LRH6",
+      "type": "subtopic",
+      "data": {
+        "label": "CEILING"
+      }
+    },
+    {
+      "id": "KI9LVF49Zml1StWiN0wUe",
+      "type": "label",
+      "data": {
+        "label": "Numeric Functions"
+      }
+    },
+    {
+      "id": "5inpEqafeVCfqsURHzQQg",
+      "type": "subtopic",
+      "data": {
+        "label": "CONCAT"
+      }
+    },
+    {
+      "id": "RH8DLiQpDUWqw3U1522q5",
+      "type": "subtopic",
+      "data": {
+        "label": "LENGTH"
+      }
+    },
+    {
+      "id": "PnG_5D6q66NAKxXVOwA6N",
+      "type": "subtopic",
+      "data": {
+        "label": "SUBSTRING"
+      }
+    },
+    {
+      "id": "VNbb3YPc0FtrROylRns8h",
+      "type": "subtopic",
+      "data": {
+        "label": "REPLACE"
+      }
+    },
+    {
+      "id": "Othfo7NvTVzfyL906PLM1",
+      "type": "subtopic",
+      "data": {
+        "label": "UPPER"
+      }
+    },
+    {
+      "id": "knTG6pAq2mYP24WMa29xI",
+      "type": "subtopic",
+      "data": {
+        "label": "LOWER"
+      }
+    },
+    {
+      "id": "Va_B9PyyGaQ_aX4ySyhUn",
+      "type": "label",
+      "data": {
+        "label": "String Functions"
+      }
+    },
+    {
+      "id": "W2ePJHdfEiEJ3ZKoRQKt_",
+      "type": "subtopic",
+      "data": {
+        "label": "CASE"
+      }
+    },
+    {
+      "id": "KI6vngoYcHsnpIk8ErhhS",
+      "type": "subtopic",
+      "data": {
+        "label": "NULLIF"
+      }
+    },
+    {
+      "id": "k7lZe4QRt9q4InUImFmvx",
+      "type": "subtopic",
+      "data": {
+        "label": "COALESCE"
+      }
+    },
+    {
+      "id": "K2k3gFdSE63CqWmHeFUEs",
+      "type": "label",
+      "data": {
+        "label": "Conditional"
+      }
+    },
+    {
+      "id": "Ivqo2wa-_NhGU3vGd0pUI",
+      "type": "subtopic",
+      "data": {
+        "label": "DATE"
+      }
+    },
+    {
+      "id": "88KlrMqSza9_YaD7Dv61p",
+      "type": "subtopic",
+      "data": {
+        "label": "TIME"
+      }
+    },
+    {
+      "id": "7hEqkoxkdAWmakGZsMJx-",
+      "type": "subtopic",
+      "data": {
+        "label": "TIMESTAMP"
+      }
+    },
+    {
+      "id": "BJ4fQvagTO0B5UtXblyx8",
+      "type": "subtopic",
+      "data": {
+        "label": "DATEPART"
+      }
+    },
+    {
+      "id": "1E1WdWOyqxbbdiIbw26dZ",
+      "type": "subtopic",
+      "data": {
+        "label": "DATEADD"
+      }
+    },
+    {
+      "id": "KWHyyOO605SQTAwdt3um_",
+      "type": "label",
+      "data": {
+        "label": "Date and Time"
+      }
+    },
+    {
+      "id": "2tyezwOIxV6O84N-Q3Awh",
+      "type": "topic",
+      "data": {
+        "label": "Views"
+      }
+    },
+    {
+      "id": "PcsGK4VBh0zNQIPZvNES4",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Views"
+      }
+    },
+    {
+      "id": "3eE-l-P93nOXoWfLr8PSW",
+      "type": "subtopic",
+      "data": {
+        "label": "Modifying Views"
+      }
+    },
+    {
+      "id": "MIOuWWcCjLAmgzog2DBC3",
+      "type": "subtopic",
+      "data": {
+        "label": "Dropping Views"
+      }
+    },
+    {
+      "id": "Mwwbw0gZzeM27ewaUh49a",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "LcljR70T-OnzSrJJDqOWf",
+      "type": "topic",
+      "data": {
+        "label": "Indexes"
+      }
+    },
+    {
+      "id": "NtxGd6Vx-REBclry7lZuE",
+      "type": "subtopic",
+      "data": {
+        "label": "Managing Indexes"
+      }
+    },
+    {
+      "id": "Ps9Yv2s-bKvEegGAbPsiA",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "OdaBXz2XBAVLsQ-m7xtAM",
+      "type": "topic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "7sTW1vwUhCFOMXYjScVEt",
+      "type": "subtopic",
+      "data": {
+        "label": "BEGIN"
+      }
+    },
+    {
+      "id": "3cMECz5QPVDOFrk5duObs",
+      "type": "subtopic",
+      "data": {
+        "label": "COMMIT"
+      }
+    },
+    {
+      "id": "xbD67KVlt3UhHpKh8HLx8",
+      "type": "subtopic",
+      "data": {
+        "label": "ROLLBACK"
+      }
+    },
+    {
+      "id": "pJtYvXUo81aZfPuRjIbMq",
+      "type": "subtopic",
+      "data": {
+        "label": "SAVEPOINT"
+      }
+    },
+    {
+      "id": "igg34gLPl3HYVAmRNFGcV",
+      "type": "subtopic",
+      "data": {
+        "label": "ACID"
+      }
+    },
+    {
+      "id": "ujeq8EIFcrqkBjoFizsJM",
+      "type": "subtopic",
+      "data": {
+        "label": "Transaction Isolation Levels"
+      }
+    },
+    {
+      "id": "R1ktDJpXOz0PTllAcBrdu",
+      "type": "topic",
+      "data": {
+        "label": "Data Integrity \u0026 Security"
+      }
+    },
+    {
+      "id": "mBQ3Z8GlFcpIena3IB7D_",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Integrity Constraints"
+      }
+    },
+    {
+      "id": "03qMopxzjx_-dZbYw9b7J",
+      "type": "subtopic",
+      "data": {
+        "label": "GRANT and Revoke"
+      }
+    },
+    {
+      "id": "vhBZqqmUcEon6-Vwvla4q",
+      "type": "subtopic",
+      "data": {
+        "label": "DB Security Best Practices"
+      }
+    },
+    {
+      "id": "w7FNjdwqjY7X69aJqqBy4",
+      "type": "topic",
+      "data": {
+        "label": "Stored Procedures \u0026 Functions"
+      }
+    },
+    {
+      "id": "4rqCPpTb0dAgpheBKshRG",
+      "type": "topic",
+      "data": {
+        "label": "Performance Optimization"
+      }
+    },
+    {
+      "id": "9wOgP0i9G4HSeZGn2Gm7r",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Indexes"
+      }
+    },
+    {
+      "id": "C0dhS6uLf4TUSfvcWyXhv",
+      "type": "subtopic",
+      "data": {
+        "label": "Optimizing Joins"
+      }
+    },
+    {
+      "id": "UVTgbZrqpbYl1bQvQejcF",
+      "type": "subtopic",
+      "data": {
+        "label": "Reducing Subqueries"
+      }
+    },
+    {
+      "id": "w53CSY53nAAN0ux-XeJ4c",
+      "type": "subtopic",
+      "data": {
+        "label": "Selective Projection"
+      }
+    },
+    {
+      "id": "s7WusVSHajNBKOLoo1COz",
+      "type": "label",
+      "data": {
+        "label": "Query Optimization Techniques"
+      }
+    },
+    {
+      "id": "C6P69YiFdS-ioPXMNfX07",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Analysis Techniques"
+      }
+    },
+    {
+      "id": "UDqbT1y-YzBrljfKSz_RG",
+      "type": "topic",
+      "data": {
+        "label": "Advanced SQL"
+      }
+    },
+    {
+      "id": "TjgwabhEtaSoYMLNr6q9l",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursive Queries"
+      }
+    },
+    {
+      "id": "nwFaz9i-1s0WVrVaFsoqb",
+      "type": "subtopic",
+      "data": {
+        "label": "Pivot / Unpivot Operations"
+      }
+    },
+    {
+      "id": "tBvXLLp5FKeSSN35Kj1X4",
+      "type": "subtopic",
+      "data": {
+        "label": "Window Functions"
+      }
+    },
+    {
+      "id": "tedQynR0xicVKhuR1oahw",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Table Expressions"
+      }
+    },
+    {
+      "id": "z5Sf0VU14ZCQ80kL1qOqc",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic SQL"
+      }
+    },
+    {
+      "id": "zW27ZHdLwQY-85iqbBKQZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Row_number"
+      }
+    },
+    {
+      "id": "cucCPw3KfetAP2OMFUs0X",
+      "type": "subtopic",
+      "data": {
+        "label": "rank"
+      }
+    },
+    {
+      "id": "QM0ltgPu8lLLYc2MsTLj-",
+      "type": "subtopic",
+      "data": {
+        "label": "dense_rank"
+      }
+    },
+    {
+      "id": "aJJjaGunRrwyh9MjQfJt-",
+      "type": "subtopic",
+      "data": {
+        "label": "lead"
+      }
+    },
+    {
+      "id": "BcXdxY6bld5c0YNFSKkh-",
+      "type": "subtopic",
+      "data": {
+        "label": "lag"
+      }
+    },
+    {
+      "id": "FcAeu8woDM7N51do6aiBV",
+      "type": "paragraph",
+      "data": {
+        "label": "We just launched our premium SQL course, check it out below"
+      }
+    },
+    {
+      "id": "5n6N956H6tfwlQ0vqXW7e",
+      "type": "button",
+      "data": {
+        "label": "NEW / Premium SQL Course"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliz2-gx4KaFqKgJX9n9_ZGMqlZy1",
+      "source": "nhUKKWyBH80nyKfGT8ErC",
+      "target": "gx4KaFqKgJX9n9_ZGMqlZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-nhUKKWyBH80nyKfGT8ErCx2-JDDG4KfhtIlw1rkNCzUliw2",
+      "source": "nhUKKWyBH80nyKfGT8ErC",
+      "target": "JDDG4KfhtIlw1rkNCzUli",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliy2-6yoo7qC6X2jYDIjd3HIm7z1",
+      "source": "JDDG4KfhtIlw1rkNCzUli",
+      "target": "6yoo7qC6X2jYDIjd3HIm7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliy2-tBzMDfCMh6MIagNaxCzinz1",
+      "source": "JDDG4KfhtIlw1rkNCzUli",
+      "target": "tBzMDfCMh6MIagNaxCzin",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliy2-ffwniprGJHZzJ7t3lQcXzz1",
+      "source": "JDDG4KfhtIlw1rkNCzUli",
+      "target": "ffwniprGJHZzJ7t3lQcXz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliz2-xPOeXK1EPBNG56vgfG-VVy1",
+      "source": "JDDG4KfhtIlw1rkNCzUli",
+      "target": "xPOeXK1EPBNG56vgfG-VV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-nhUKKWyBH80nyKfGT8ErCw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "nhUKKWyBH80nyKfGT8ErC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nhUKKWyBH80nyKfGT8ErCz2-R9DQNc0AyAQ2HLpP4HOk6y1",
+      "source": "nhUKKWyBH80nyKfGT8ErC",
+      "target": "R9DQNc0AyAQ2HLpP4HOk6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-nhUKKWyBH80nyKfGT8ErCz2-fNTb9y3zs1HPYclAmu_Wvy1",
+      "source": "nhUKKWyBH80nyKfGT8ErC",
+      "target": "fNTb9y3zs1HPYclAmu_Wv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvry2-bFEYMlqPZtTUYtDQxqHzTz1",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "bFEYMlqPZtTUYtDQxqHzT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvry2-9aHYrOQDkA84tlxcVK5aDz1",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "9aHYrOQDkA84tlxcVK5aD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvry2-YqDJq3fPxUZlwsdq0kJg7z2",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "YqDJq3fPxUZlwsdq0kJg7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvry2-Zw8IHfCCMSxmVjx5Ho5ffz1",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "Zw8IHfCCMSxmVjx5Ho5ff",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvry2-HhICJpCK5__b-itUoEBESz1",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "HhICJpCK5__b-itUoEBES",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LX9nzJ4uqznHN4SksoDvrx2-8V6yw7kLaow-VVcv_K_pLy1",
+      "source": "LX9nzJ4uqznHN4SksoDvr",
+      "target": "qBios3sZVhcJMpXmj9f7B",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qBios3sZVhcJMpXmj9f7Bx2-8V6yw7kLaow-VVcv_K_pLw2",
+      "source": "qBios3sZVhcJMpXmj9f7B",
+      "target": "8V6yw7kLaow-VVcv_K_pL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8V6yw7kLaow-VVcv_K_pLy2-86iZ8s8EdhSuYwgwAM_EOz2",
+      "source": "8V6yw7kLaow-VVcv_K_pL",
+      "target": "86iZ8s8EdhSuYwgwAM_EO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-86iZ8s8EdhSuYwgwAM_EOy2-xkPJ2MYiXmzC4yqQWyB_7z1",
+      "source": "86iZ8s8EdhSuYwgwAM_EO",
+      "target": "xkPJ2MYiXmzC4yqQWyB_7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-86iZ8s8EdhSuYwgwAM_EOy2-JZqS3Xapw6mfSPVgFW7avz1",
+      "source": "86iZ8s8EdhSuYwgwAM_EO",
+      "target": "JZqS3Xapw6mfSPVgFW7av",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vTMd0bqz4eTgLnhfgY61hz2-6FdHTzqQwJqR4czP5qXAYy1",
+      "source": "vTMd0bqz4eTgLnhfgY61h",
+      "target": "6FdHTzqQwJqR4czP5qXAY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LcljR70T-OnzSrJJDqOWfx2-UDqbT1y-YzBrljfKSz_RGw1",
+      "source": "LcljR70T-OnzSrJJDqOWf",
+      "target": "OdaBXz2XBAVLsQ-m7xtAM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-OdaBXz2XBAVLsQ-m7xtAMy2-UDqbT1y-YzBrljfKSz_RGz1",
+      "source": "OdaBXz2XBAVLsQ-m7xtAM",
+      "target": "R1ktDJpXOz0PTllAcBrdu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-R1ktDJpXOz0PTllAcBrduy2-UDqbT1y-YzBrljfKSz_RGz1",
+      "source": "R1ktDJpXOz0PTllAcBrdu",
+      "target": "w7FNjdwqjY7X69aJqqBy4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-w7FNjdwqjY7X69aJqqBy4x2-UDqbT1y-YzBrljfKSz_RGw1",
+      "source": "w7FNjdwqjY7X69aJqqBy4",
+      "target": "4rqCPpTb0dAgpheBKshRG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGx2-C6P69YiFdS-ioPXMNfX07w1",
+      "source": "4rqCPpTb0dAgpheBKshRG",
+      "target": "C6P69YiFdS-ioPXMNfX07",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4rqCPpTb0dAgpheBKshRGz2-UDqbT1y-YzBrljfKSz_RGw1",
+      "source": "4rqCPpTb0dAgpheBKshRG",
+      "target": "UDqbT1y-YzBrljfKSz_RG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGz2-tBvXLLp5FKeSSN35Kj1X4y1",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "tBvXLLp5FKeSSN35Kj1X4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGz2-nwFaz9i-1s0WVrVaFsoqby2",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "nwFaz9i-1s0WVrVaFsoqb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGz2-TjgwabhEtaSoYMLNr6q9ly1",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "TjgwabhEtaSoYMLNr6q9l",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGz2-tedQynR0xicVKhuR1oahwy1",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "tedQynR0xicVKhuR1oahw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGz2-z5Sf0VU14ZCQ80kL1qOqcy1",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "z5Sf0VU14ZCQ80kL1qOqc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UDqbT1y-YzBrljfKSz_RGx2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "UDqbT1y-YzBrljfKSz_RG",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WigElh37ztiRYRstQR9NEz2-zEWmq0Y1LFPMQelpucrphy1",
+      "source": "WigElh37ztiRYRstQR9NE",
+      "target": "zEWmq0Y1LFPMQelpucrph",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

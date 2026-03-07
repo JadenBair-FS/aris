@@ -1,0 +1,1400 @@
+{
+  "title": {
+    "card": "Flutter",
+    "page": "Flutter Developer"
+  },
+  "description": "Step by step guide to becoming a Flutter developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "5mP-UAw3ZjHClOmXevcU_",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "n2IRnFeXxm37LNHB5EqZ7",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "nMLKgPvjL-vRx9itbT53K",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nRDiKS9TzLsCE3cdglG_q",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "olFvv80YQDb89MPyE9C3e",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "oxNlCMcDBbk8C3Kw8rcEY",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fDeDX_IqdhW50Gw12LZgG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JUN0S_NdgATxRFArC0bgV",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "SSg6HqXQPqLLAnro-aLX3",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "G9pXbNeZhNvoAhAITWaIy",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "U8CNANgKT7FqoQsYZsyku",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xCj1NOkQYSULuiUOWlYFp",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rtD3LR8ks9KtCk1EFDQqI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4NfDI-vNQxBgufzYCG_SG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3096G0YlAraf2CtJCmy1I",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Cvpnb9g1aY1tBvhWTWQie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "aDmL9nN4QDtRbPDDMo98J",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "adCMiccu0p2zrKI-K9aA1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JqVBp4ISOz4vu49cvE6du",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "2mGGqg3ycxw4Rd7blYE-Y",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Flutter"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "AubSeLi2nwNTUA-L3Kfn4",
+      "type": "topic",
+      "data": {
+        "label": "Basics of Dart"
+      }
+    },
+    {
+      "id": "vR38pAZOfI55R7N7NLY5N",
+      "type": "subtopic",
+      "data": {
+        "label": "Dart Pad"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with these following relevant tracks"
+      }
+    },
+    {
+      "id": "6AIUtChWC_gK8Ax0UuBjd",
+      "type": "button",
+      "data": {
+        "label": "React Native"
+      }
+    },
+    {
+      "id": "Rwl7DmMmFBhQ0Q0rvlQud",
+      "type": "button",
+      "data": {
+        "label": "Android"
+      }
+    },
+    {
+      "id": "P-SbMLN-AaNMss_7X0_5N",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "TT6HoilzgmS8CAPiTTKZ0",
+      "type": "subtopic",
+      "data": {
+        "label": "Built-in Types"
+      }
+    },
+    {
+      "id": "Pek6vOO-qKCetTznCGv6f",
+      "type": "subtopic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "Q2S4__BB30KljB7SlquJx",
+      "type": "subtopic",
+      "data": {
+        "label": "Operators"
+      }
+    },
+    {
+      "id": "keS-4La_a227quDYYbOJT",
+      "type": "subtopic",
+      "data": {
+        "label": "Control Flow Statements"
+      }
+    },
+    {
+      "id": "HCJXVgnglYuRhK0zl3iPG",
+      "type": "topic",
+      "data": {
+        "label": "Development Environment"
+      }
+    },
+    {
+      "id": "FrbleiQ4BbIEbR4_v9o8N",
+      "type": "subtopic",
+      "data": {
+        "label": "Flutter CLI"
+      }
+    },
+    {
+      "id": "m92WPPeZUIeD8IgunLXe2",
+      "type": "subtopic",
+      "data": {
+        "label": "FVM"
+      }
+    },
+    {
+      "id": "tg16K0Wjugv4ytayHfgTw",
+      "type": "label",
+      "data": {
+        "label": "IDEs"
+      }
+    },
+    {
+      "id": "HMDsgljLshA63XX-hhAxV",
+      "type": "subtopic",
+      "data": {
+        "label": "VS Code"
+      }
+    },
+    {
+      "id": "QHPiMRg4IJXDErrEYamrJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Android Studio"
+      }
+    },
+    {
+      "id": "lkABkFigkVzl1x4_8xEZz",
+      "type": "subtopic",
+      "data": {
+        "label": "IntelliJ Idea"
+      }
+    },
+    {
+      "id": "dy2Jep9hIIECaLutx-3K0",
+      "type": "topic",
+      "data": {
+        "label": "Widgets"
+      }
+    },
+    {
+      "id": "lCpJQ8GZp5KhpGO4Sttgu",
+      "type": "subtopic",
+      "data": {
+        "label": "Responsive Widgets"
+      }
+    },
+    {
+      "id": "DKt8U-iZcrXU5gWGRONqZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Inherited Widgets"
+      }
+    },
+    {
+      "id": "e-m4iKuK6NqFaQLE5viNI",
+      "type": "subtopic",
+      "data": {
+        "label": "Stateless Widgets"
+      }
+    },
+    {
+      "id": "07tpSQeeMLKggWwdUXAej",
+      "type": "subtopic",
+      "data": {
+        "label": "Stateful Widgets"
+      }
+    },
+    {
+      "id": "wBSdmrVPv3Zuys3X8VvBm",
+      "type": "subtopic",
+      "data": {
+        "label": "Styled Widgets"
+      }
+    },
+    {
+      "id": "DrQqq-C8XdiXVXBMLS4Wy",
+      "type": "subtopic",
+      "data": {
+        "label": "Material Widgets"
+      }
+    },
+    {
+      "id": "L8oUQA4OAINr-WshHaOPZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Cupertino Widgets"
+      }
+    },
+    {
+      "id": "z50iixpcCMe9sTh-gwTI3",
+      "type": "topic",
+      "data": {
+        "label": "Working with Assets"
+      }
+    },
+    {
+      "id": "cXsIM4rZsBChVdrm8poOp",
+      "type": "subtopic",
+      "data": {
+        "label": "Fonts"
+      }
+    },
+    {
+      "id": "7v3VFKGaRFjm87319gBpw",
+      "type": "subtopic",
+      "data": {
+        "label": "Images"
+      }
+    },
+    {
+      "id": "WnG31VsKQRlxGX85qNIum",
+      "type": "subtopic",
+      "data": {
+        "label": "Other File Types"
+      }
+    },
+    {
+      "id": "2nz5JoAPsZftFNLypr3Is",
+      "type": "topic",
+      "data": {
+        "label": "Version Control Systems"
+      }
+    },
+    {
+      "id": "yQyIPT09n62f1v8JbkoYJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "qGN95GG0Q3dur72GS3EDX",
+      "type": "topic",
+      "data": {
+        "label": "Repo Hosting Services"
+      }
+    },
+    {
+      "id": "V0R4VyQ64Bwwj6O8XbZyF",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "drwRSEnl1-ziCvxWJZMJ2",
+      "type": "topic",
+      "data": {
+        "label": "Design Principles"
+      }
+    },
+    {
+      "id": "fhPl9rycPa1r10fuEuNhi",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "MLdt_37kpF2eV0oy56GZF",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Patterns"
+      }
+    },
+    {
+      "id": "VKqo4dAcy-JiZo7Lw5jeg",
+      "type": "subtopic",
+      "data": {
+        "label": "SOLID Principles"
+      }
+    },
+    {
+      "id": "1-dfwbhXgeRT3VVq3RSRv",
+      "type": "subtopic",
+      "data": {
+        "label": "OOP"
+      }
+    },
+    {
+      "id": "med4T8PVkxIo465VuKDEj",
+      "type": "topic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "lXruqvSShlQrdVEo_xPm1",
+      "type": "subtopic",
+      "data": {
+        "label": "pub.dev"
+      }
+    },
+    {
+      "id": "9xZlW6S-5-uDNWb7qzBmG",
+      "type": "subtopic",
+      "data": {
+        "label": "flutter pub / dart pub"
+      }
+    },
+    {
+      "id": "9Az7tmevGI6bVqCTvVL50",
+      "type": "topic",
+      "data": {
+        "label": "Working with APIs"
+      }
+    },
+    {
+      "id": "TMHrKxnciIpd8F1WLjray",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON Serialize / Deserialize"
+      }
+    },
+    {
+      "id": "SUFuHR-r6NfAzIICXGHkK",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Sockets"
+      }
+    },
+    {
+      "id": "Ym-8x_FNrs1C-Ki3aykIW",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "soi3pRxOp6A4ZmGZPQCn3",
+      "type": "subtopic",
+      "data": {
+        "label": "RESTful APIs"
+      }
+    },
+    {
+      "id": "P_wptV7oenaYwef1QhKhu",
+      "type": "topic",
+      "data": {
+        "label": "Storage"
+      }
+    },
+    {
+      "id": "NPaqiuUpzQbrsXA5XNI7U",
+      "type": "subtopic",
+      "data": {
+        "label": "SQLite"
+      }
+    },
+    {
+      "id": "Fdv7Nu26Egtl9tklKn5-8",
+      "type": "subtopic",
+      "data": {
+        "label": "Shared Preferences"
+      }
+    },
+    {
+      "id": "EVd1rLBHjKbtgkIE7InS7",
+      "type": "subtopic",
+      "data": {
+        "label": "Firebase"
+      }
+    },
+    {
+      "id": "lCVoKYJlQEYE2viAuThk7",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "x4B0gmCo5sXFHYs3CYsOn",
+      "type": "subtopic",
+      "data": {
+        "label": "Storage"
+      }
+    },
+    {
+      "id": "cMfsRtvzvDZZJ0TqeUOxm",
+      "type": "subtopic",
+      "data": {
+        "label": "Firestore"
+      }
+    },
+    {
+      "id": "YzJrDGmfS0vbWjnPnSFVo",
+      "type": "subtopic",
+      "data": {
+        "label": "Push Notifications"
+      }
+    },
+    {
+      "id": "4ZbGj54WR5iuk0V8X_cpL",
+      "type": "subtopic",
+      "data": {
+        "label": "Remote Config"
+      }
+    },
+    {
+      "id": "bVeHBEoR_4kfPsEHmVYbp",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Functions"
+      }
+    },
+    {
+      "id": "bvojoCWJRSB6pdBFM1SbY",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Dart"
+      }
+    },
+    {
+      "id": "nQio4JabDrFCmScx59Qit",
+      "type": "subtopic",
+      "data": {
+        "label": "Core Libraries"
+      }
+    },
+    {
+      "id": "C4wC3_wqNGl8umJ050-hJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "fIOq8ZumOrAo5uz4nbq2k",
+      "type": "subtopic",
+      "data": {
+        "label": "Streams"
+      }
+    },
+    {
+      "id": "I1cqvOsVD7-86VPnrdTAv",
+      "type": "subtopic",
+      "data": {
+        "label": "Futures"
+      }
+    },
+    {
+      "id": "Nx6YqH-MiqX-UFMQNqeEp",
+      "type": "subtopic",
+      "data": {
+        "label": "Collections"
+      }
+    },
+    {
+      "id": "tMeuk-nsFMx3kVS7Yn4T0",
+      "type": "subtopic",
+      "data": {
+        "label": "Lambdas"
+      }
+    },
+    {
+      "id": "x5q_bWpxmpJFK8eaWZxuY",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Programming"
+      }
+    },
+    {
+      "id": "t_75W0nyd0UBytwvJAQ1x",
+      "type": "subtopic",
+      "data": {
+        "label": "Isolates"
+      }
+    },
+    {
+      "id": "_guWOSGfTpErGkzs69g1R",
+      "type": "subtopic",
+      "data": {
+        "label": "Async / Await"
+      }
+    },
+    {
+      "id": "bYJ0G-g4R5faoJfFjRQW7",
+      "type": "topic",
+      "data": {
+        "label": "State Management"
+      }
+    },
+    {
+      "id": "VRWeqMV7qOdPzM5RfgpGF",
+      "type": "subtopic",
+      "data": {
+        "label": "ChangeNotifier"
+      }
+    },
+    {
+      "id": "aRmdyC2pzmR9r1ybU2CTP",
+      "type": "subtopic",
+      "data": {
+        "label": "ValueNotifier"
+      }
+    },
+    {
+      "id": "DoqnE2Iy3lKzEm88qjKI-",
+      "type": "subtopic",
+      "data": {
+        "label": "Redux"
+      }
+    },
+    {
+      "id": "KWT-Lu-HCeA3GdZawD0a7",
+      "type": "subtopic",
+      "data": {
+        "label": "Riverpod"
+      }
+    },
+    {
+      "id": "ZfkaTipYJ1jLY-RC3mdmt",
+      "type": "subtopic",
+      "data": {
+        "label": "BLoC"
+      }
+    },
+    {
+      "id": "MfqUMirRIEiM7pr5NiGF_",
+      "type": "subtopic",
+      "data": {
+        "label": "Provider"
+      }
+    },
+    {
+      "id": "nK_ZKTfNc8P-RJoz5jY32",
+      "type": "subtopic",
+      "data": {
+        "label": "GetX"
+      }
+    },
+    {
+      "id": "wbush8eQsi9aDSRobGAyG",
+      "type": "topic",
+      "data": {
+        "label": "Reactive Programming"
+      }
+    },
+    {
+      "id": "ozQQKmfO_Ir9aJIMBvijK",
+      "type": "subtopic",
+      "data": {
+        "label": "RxDart"
+      }
+    },
+    {
+      "id": "KLoL-055KShGrQ-NQosy8",
+      "type": "topic",
+      "data": {
+        "label": "Animations"
+      }
+    },
+    {
+      "id": "eXaP_U-EzptBuOp5R0KK3",
+      "type": "subtopic",
+      "data": {
+        "label": "Animation Controller"
+      }
+    },
+    {
+      "id": "M6iJ0VZWB8mreItlxvvqI",
+      "type": "subtopic",
+      "data": {
+        "label": "Animated Builder"
+      }
+    },
+    {
+      "id": "yRY8MJuXxhDV6Hd-hTMRu",
+      "type": "subtopic",
+      "data": {
+        "label": "Animated Widget"
+      }
+    },
+    {
+      "id": "F1kbyjRR2uHRbTe90LTFP",
+      "type": "subtopic",
+      "data": {
+        "label": "Curved Animation"
+      }
+    },
+    {
+      "id": "5WPok-30ubqU8uox7XiSf",
+      "type": "subtopic",
+      "data": {
+        "label": "Hero"
+      }
+    },
+    {
+      "id": "aet6mLBkB1BtxI8e7x-h3",
+      "type": "subtopic",
+      "data": {
+        "label": "Opacity"
+      }
+    },
+    {
+      "id": "zGkDu5j8ln8U9kZgz3TDJ",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "BCsv2fKHVxaB22RJJJPWM",
+      "type": "subtopic",
+      "data": {
+        "label": "Unit Testing"
+      }
+    },
+    {
+      "id": "9hNfDtZK7_b9qUOXlFGFZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Widget Testing"
+      }
+    },
+    {
+      "id": "2RqGKWi13TLleTT7KpdZV",
+      "type": "subtopic",
+      "data": {
+        "label": "Integration Testing"
+      }
+    },
+    {
+      "id": "JbM-Hbf2ShUQt268ZMeZA",
+      "type": "subtopic",
+      "data": {
+        "label": "TDD"
+      }
+    },
+    {
+      "id": "0fpwuPTW94iyNlsjXcPOO",
+      "type": "subtopic",
+      "data": {
+        "label": "BDD"
+      }
+    },
+    {
+      "id": "Jti4RmGDn7jVaHOxtTwPc",
+      "type": "topic",
+      "data": {
+        "label": "Dev Tools"
+      }
+    },
+    {
+      "id": "ehlGkYI3dqzu3B1pkhg9t",
+      "type": "subtopic",
+      "data": {
+        "label": "Flutter Inspector"
+      }
+    },
+    {
+      "id": "wisXrfrmnZYB3hs5f3_VS",
+      "type": "subtopic",
+      "data": {
+        "label": "Flutter Outline"
+      }
+    },
+    {
+      "id": "ZsruX7gozx2-0cQNIkZ6o",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Allocation"
+      }
+    },
+    {
+      "id": "dgdv8sDKkgQ365mR0kBR3",
+      "type": "topic",
+      "data": {
+        "label": "Flutter Internals"
+      }
+    },
+    {
+      "id": "9ytV8xPq60z7doFG07PHi",
+      "type": "subtopic",
+      "data": {
+        "label": "Render Objects"
+      }
+    },
+    {
+      "id": "24xYv3joKX1roqRGfBXmr",
+      "type": "subtopic",
+      "data": {
+        "label": "3 Trees"
+      }
+    },
+    {
+      "id": "lHzW9dyF1u3qmjfdb3vHe",
+      "type": "subtopic",
+      "data": {
+        "label": "Immutability"
+      }
+    },
+    {
+      "id": "ekKzwQCMOYJLVN5KAK-ew",
+      "type": "topic",
+      "data": {
+        "label": "CI / CD"
+      }
+    },
+    {
+      "id": "hd4O2UPI9bZiyGuCMA-J4",
+      "type": "subtopic",
+      "data": {
+        "label": "Fast Lane"
+      }
+    },
+    {
+      "id": "DcSBkhcOG55_dNaLF1FWA",
+      "type": "subtopic",
+      "data": {
+        "label": "Codemagic"
+      }
+    },
+    {
+      "id": "1xTlq-0MaHN15KZid31Dk",
+      "type": "subtopic",
+      "data": {
+        "label": "Bitrise"
+      }
+    },
+    {
+      "id": "8rCjcuZNL9kicMBXiL46l",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "akQ7SEHiZm9pZK49rsbO2",
+      "type": "subtopic",
+      "data": {
+        "label": "Firebase App Dist"
+      }
+    },
+    {
+      "id": "s5OVzjQp6k7rSphhv3hZE",
+      "type": "topic",
+      "data": {
+        "label": "Analytics"
+      }
+    },
+    {
+      "id": "PQ7o9Jw9SBEhHl8cc_46x",
+      "type": "subtopic",
+      "data": {
+        "label": "Segment"
+      }
+    },
+    {
+      "id": "RQMRtlRxvp0CZJzCjRtPu",
+      "type": "subtopic",
+      "data": {
+        "label": "Mix Panel"
+      }
+    },
+    {
+      "id": "g2qXhkk6oGaBJy8Y2JOwW",
+      "type": "subtopic",
+      "data": {
+        "label": "Firebase Analytics"
+      }
+    },
+    {
+      "id": "3IQRLoW9OEf0121-w4o5m",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Analytics"
+      }
+    },
+    {
+      "id": "mdSWrWi-1n_YlY5iTJwZp",
+      "type": "topic",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "BjE4Qvjpi0i_s4Oib9765",
+      "type": "subtopic",
+      "data": {
+        "label": "Guidelines \u0026 Protocols"
+      }
+    },
+    {
+      "id": "JHkdIQRgf1bbL-HASvGi0",
+      "type": "subtopic",
+      "data": {
+        "label": "AppStore"
+      }
+    },
+    {
+      "id": "wF8Iy7V-f52qQxOsAJobz",
+      "type": "subtopic",
+      "data": {
+        "label": "Playstore"
+      }
+    },
+    {
+      "id": "f5WRewBlpeYMf71cPcXs-",
+      "type": "button",
+      "data": {
+        "label": "iOS"
+      }
+    },
+    {
+      "id": "8VIfVY_-cRS-hcbZzv-lM",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "AubSeLi2nwNTUA-L3Kfn4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "AubSeLi2nwNTUA-L3Kfn4",
+      "target": "vR38pAZOfI55R7N7NLY5N",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3z2-cMfsRtvzvDZZJ0TqeUOxmy2",
+      "source": "AubSeLi2nwNTUA-L3Kfn4",
+      "target": "keS-4La_a227quDYYbOJT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Q2S4__BB30KljB7SlquJxy2-z50iixpcCMe9sTh-gwTI3z1",
+      "source": "Q2S4__BB30KljB7SlquJx",
+      "target": "AubSeLi2nwNTUA-L3Kfn4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3z2-Pek6vOO-qKCetTznCGv6fy1",
+      "source": "AubSeLi2nwNTUA-L3Kfn4",
+      "target": "Pek6vOO-qKCetTznCGv6f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3z2-TT6HoilzgmS8CAPiTTKZ0y2",
+      "source": "AubSeLi2nwNTUA-L3Kfn4",
+      "target": "TT6HoilzgmS8CAPiTTKZ0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3z2-P-SbMLN-AaNMss_7X0_5Ny1",
+      "source": "AubSeLi2nwNTUA-L3Kfn4",
+      "target": "P-SbMLN-AaNMss_7X0_5N",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3y2-2mGGqg3ycxw4Rd7blYE-Yz1",
+      "source": "HCJXVgnglYuRhK0zl3iPG",
+      "target": "2mGGqg3ycxw4Rd7blYE-Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3y2-lCpJQ8GZp5KhpGO4Sttguz1",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "lCpJQ8GZp5KhpGO4Sttgu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HCJXVgnglYuRhK0zl3iPGx2-mdSWrWi-1n_YlY5iTJwZpw1",
+      "source": "HCJXVgnglYuRhK0zl3iPG",
+      "target": "dy2Jep9hIIECaLutx-3K0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-DKt8U-iZcrXU5gWGRONqZz2",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "DKt8U-iZcrXU5gWGRONqZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-e-m4iKuK6NqFaQLE5viNIz1",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "e-m4iKuK6NqFaQLE5viNI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-07tpSQeeMLKggWwdUXAejz1",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "07tpSQeeMLKggWwdUXAej",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-wBSdmrVPv3Zuys3X8VvBmz2",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "wBSdmrVPv3Zuys3X8VvBm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-z50iixpcCMe9sTh-gwTI3y1",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "z50iixpcCMe9sTh-gwTI3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__dy2Jep9hIIECaLutx-3K0x2-mdSWrWi-1n_YlY5iTJwZpw2",
+      "source": "dy2Jep9hIIECaLutx-3K0",
+      "target": "2nz5JoAPsZftFNLypr3Is",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-V0R4VyQ64Bwwj6O8XbZyFy1",
+      "source": "qGN95GG0Q3dur72GS3EDX",
+      "target": "V0R4VyQ64Bwwj6O8XbZyF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qGN95GG0Q3dur72GS3EDXx2-mdSWrWi-1n_YlY5iTJwZpw1",
+      "source": "qGN95GG0Q3dur72GS3EDX",
+      "target": "drwRSEnl1-ziCvxWJZMJ2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-fhPl9rycPa1r10fuEuNhiy1",
+      "source": "drwRSEnl1-ziCvxWJZMJ2",
+      "target": "fhPl9rycPa1r10fuEuNhi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "drwRSEnl1-ziCvxWJZMJ2",
+      "target": "1-dfwbhXgeRT3VVq3RSRv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-VKqo4dAcy-JiZo7Lw5jegy1",
+      "source": "drwRSEnl1-ziCvxWJZMJ2",
+      "target": "VKqo4dAcy-JiZo7Lw5jeg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-MLdt_37kpF2eV0oy56GZFy2",
+      "source": "drwRSEnl1-ziCvxWJZMJ2",
+      "target": "MLdt_37kpF2eV0oy56GZF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__drwRSEnl1-ziCvxWJZMJ2y2-mdSWrWi-1n_YlY5iTJwZpz1",
+      "source": "drwRSEnl1-ziCvxWJZMJ2",
+      "target": "med4T8PVkxIo465VuKDEj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__med4T8PVkxIo465VuKDEjx2-mdSWrWi-1n_YlY5iTJwZpw1",
+      "source": "med4T8PVkxIo465VuKDEj",
+      "target": "9Az7tmevGI6bVqCTvVL50",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpx2-TMHrKxnciIpd8F1WLjrayw2",
+      "source": "9Az7tmevGI6bVqCTvVL50",
+      "target": "TMHrKxnciIpd8F1WLjray",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__9Az7tmevGI6bVqCTvVL50z2-mdSWrWi-1n_YlY5iTJwZpy1",
+      "source": "9Az7tmevGI6bVqCTvVL50",
+      "target": "P_wptV7oenaYwef1QhKhu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-NPaqiuUpzQbrsXA5XNI7Uy1",
+      "source": "P_wptV7oenaYwef1QhKhu",
+      "target": "NPaqiuUpzQbrsXA5XNI7U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-Fdv7Nu26Egtl9tklKn5-8y1",
+      "source": "P_wptV7oenaYwef1QhKhu",
+      "target": "Fdv7Nu26Egtl9tklKn5-8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpz2-EVd1rLBHjKbtgkIE7InS7y1",
+      "source": "P_wptV7oenaYwef1QhKhu",
+      "target": "EVd1rLBHjKbtgkIE7InS7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wptV7oenaYwef1QhKhux2-mdSWrWi-1n_YlY5iTJwZpw1",
+      "source": "P_wptV7oenaYwef1QhKhu",
+      "target": "bvojoCWJRSB6pdBFM1SbY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-x5q_bWpxmpJFK8eaWZxuYz1",
+      "source": "bvojoCWJRSB6pdBFM1SbY",
+      "target": "x5q_bWpxmpJFK8eaWZxuY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-tMeuk-nsFMx3kVS7Yn4T0z1",
+      "source": "bvojoCWJRSB6pdBFM1SbY",
+      "target": "tMeuk-nsFMx3kVS7Yn4T0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-_guWOSGfTpErGkzs69g1Rz1",
+      "source": "bvojoCWJRSB6pdBFM1SbY",
+      "target": "_guWOSGfTpErGkzs69g1R",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__bvojoCWJRSB6pdBFM1SbYx2-mdSWrWi-1n_YlY5iTJwZpw2",
+      "source": "bvojoCWJRSB6pdBFM1SbY",
+      "target": "bYJ0G-g4R5faoJfFjRQW7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-ozQQKmfO_Ir9aJIMBvijKz1",
+      "source": "bYJ0G-g4R5faoJfFjRQW7",
+      "target": "aRmdyC2pzmR9r1ybU2CTP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-KWT-Lu-HCeA3GdZawD0a7z1",
+      "source": "bYJ0G-g4R5faoJfFjRQW7",
+      "target": "KWT-Lu-HCeA3GdZawD0a7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-MfqUMirRIEiM7pr5NiGF_z1",
+      "source": "bYJ0G-g4R5faoJfFjRQW7",
+      "target": "MfqUMirRIEiM7pr5NiGF_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__oDgbRKKrdHWHyuodr8DS6z2-mdSWrWi-1n_YlY5iTJwZpy1",
+      "source": "bYJ0G-g4R5faoJfFjRQW7",
+      "target": "wbush8eQsi9aDSRobGAyG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wbush8eQsi9aDSRobGAyGx2-mdSWrWi-1n_YlY5iTJwZpw1",
+      "source": "wbush8eQsi9aDSRobGAyG",
+      "target": "KLoL-055KShGrQ-NQosy8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-yRY8MJuXxhDV6Hd-hTMRuz2",
+      "source": "KLoL-055KShGrQ-NQosy8",
+      "target": "yRY8MJuXxhDV6Hd-hTMRu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-M6iJ0VZWB8mreItlxvvqIz1",
+      "source": "KLoL-055KShGrQ-NQosy8",
+      "target": "M6iJ0VZWB8mreItlxvvqI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-F1kbyjRR2uHRbTe90LTFPz1",
+      "source": "KLoL-055KShGrQ-NQosy8",
+      "target": "F1kbyjRR2uHRbTe90LTFP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eXaP_U-EzptBuOp5R0KK3z2-mdSWrWi-1n_YlY5iTJwZpy1",
+      "source": "eXaP_U-EzptBuOp5R0KK3",
+      "target": "KLoL-055KShGrQ-NQosy8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-aet6mLBkB1BtxI8e7x-h3z1",
+      "source": "KLoL-055KShGrQ-NQosy8",
+      "target": "aet6mLBkB1BtxI8e7x-h3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KLoL-055KShGrQ-NQosy8x2-zGkDu5j8ln8U9kZgz3TDJw1",
+      "source": "KLoL-055KShGrQ-NQosy8",
+      "target": "zGkDu5j8ln8U9kZgz3TDJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zGkDu5j8ln8U9kZgz3TDJx2-RQMRtlRxvp0CZJzCjRtPuw1",
+      "source": "zGkDu5j8ln8U9kZgz3TDJ",
+      "target": "2RqGKWi13TLleTT7KpdZV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zGkDu5j8ln8U9kZgz3TDJy2-mdSWrWi-1n_YlY5iTJwZpz1",
+      "source": "zGkDu5j8ln8U9kZgz3TDJ",
+      "target": "Jti4RmGDn7jVaHOxtTwPc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Jti4RmGDn7jVaHOxtTwPcy2-mdSWrWi-1n_YlY5iTJwZpz1",
+      "source": "Jti4RmGDn7jVaHOxtTwPc",
+      "target": "dgdv8sDKkgQ365mR0kBR3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ekKzwQCMOYJLVN5KAK-ewz2-mdSWrWi-1n_YlY5iTJwZpy1",
+      "source": "ekKzwQCMOYJLVN5KAK-ew",
+      "target": "s5OVzjQp6k7rSphhv3hZE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Jti4RmGDn7jVaHOxtTwPcx2-ehlGkYI3dqzu3B1pkhg9tw2",
+      "source": "Jti4RmGDn7jVaHOxtTwPc",
+      "target": "ehlGkYI3dqzu3B1pkhg9t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpx2-g2qXhkk6oGaBJy8Y2JOwWw1",
+      "source": "s5OVzjQp6k7rSphhv3hZE",
+      "target": "g2qXhkk6oGaBJy8Y2JOwW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mdSWrWi-1n_YlY5iTJwZpy2-O5dely89N5UCMBeUfh8udz1",
+      "source": "mdSWrWi-1n_YlY5iTJwZp",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

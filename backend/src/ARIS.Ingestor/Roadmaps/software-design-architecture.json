@@ -1,0 +1,1139 @@
+{
+  "title": {
+    "card": "Software Design and Architecture",
+    "page": "Software Design and Architecture"
+  },
+  "description": "Step by step guide to learn software design and architecture",
+  "nodes": [
+    {
+      "id": "P72dYqoD4ySm0uRaUOJ5v",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qA_Y7AgD-Z6is-1hqOqzH",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3DjhvOMcTs6HwQkmnJyqS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6Bx4SL1VB3tkS38lGpiaQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "VbFXAyIhGjJtHs_L0bXk3",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "efjRPzVNm00Fe6CC3LT1N",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "SgOLJllVsYIWZZmHzJUK7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-yVW4ejTnj5vN8y0s_qTa",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UJ14WYeOlnd8vkKhwqTjP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sqpYr4D6lzaJsphbPVfit",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JyEXyTp5_UxhyRY3ZULZG",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "VThkejHxNxNQgqjwDN67c",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "kLnJC5PdxpgmRU2X57V64",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "JwkzZU185OsVZ5VSUjC0f",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Software Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TJZgsxpfOmltUUChMzlEM",
+      "type": "subtopic",
+      "data": {
+        "label": "Clean Code"
+      }
+    },
+    {
+      "id": "RgYq3YOJhPGSf5in1Rcdp",
+      "type": "subtopic",
+      "data": {
+        "label": "Programming Paradigms"
+      }
+    },
+    {
+      "id": "qZQDOe2MHBh8wNcmvkLQm",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "p96fNXv0Z4rEEXJR9hAYX",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Principles"
+      }
+    },
+    {
+      "id": "gyQw885dvupmkohzJPg3a",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Patterns"
+      }
+    },
+    {
+      "id": "XBCxWdpvQyK2iIG2eEA1K",
+      "type": "subtopic",
+      "data": {
+        "label": "Architectural Principles"
+      }
+    },
+    {
+      "id": "En_hvwRvY6k_itsNCQBYE",
+      "type": "subtopic",
+      "data": {
+        "label": "Architectural Styles"
+      }
+    },
+    {
+      "id": "jq916t7svaMw5sFOcqZSi",
+      "type": "subtopic",
+      "data": {
+        "label": "Architectural Patterns"
+      }
+    },
+    {
+      "id": "WrzsvLgo7cf2KjvJhtJEC",
+      "type": "subtopic",
+      "data": {
+        "label": "Enterprise Patterns"
+      }
+    },
+    {
+      "id": "uLYSP9v3y51h8Ttdt5ije",
+      "type": "label",
+      "data": {
+        "label": "Minimap of Topics"
+      }
+    },
+    {
+      "id": "pd0_ffU8fTHcg_nLPae6W",
+      "type": "button",
+      "data": {
+        "label": "Backend Developer Roadmap"
+      }
+    },
+    {
+      "id": "kpF15oUmlUmk1qVGEBB7Y",
+      "type": "paragraph",
+      "data": {
+        "label": "Also visit Khalil\u0027s guide covering how to learn Software Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "JS5a5FraWCwfgwt8GAyc7",
+      "type": "button",
+      "data": {
+        "label": "Software Design and Architecture"
+      }
+    },
+    {
+      "id": "08qKtgnhJ3tlb5JKfTDf5",
+      "type": "topic",
+      "data": {
+        "label": "Clean Code Principles"
+      }
+    },
+    {
+      "id": "2SOZvuEcy8Cy8ymN7x4L-",
+      "type": "subtopic",
+      "data": {
+        "label": "Be consistent"
+      }
+    },
+    {
+      "id": "6Cd1BbGsmPJs_5jKhumyV",
+      "type": "subtopic",
+      "data": {
+        "label": "Meaningful names over comments"
+      }
+    },
+    {
+      "id": "81WOL1nxb56ZbAOvxJ7NK",
+      "type": "subtopic",
+      "data": {
+        "label": "Indentation and Code Style"
+      }
+    },
+    {
+      "id": "XEwC6Fyf2DNNHQsoGTrQj",
+      "type": "subtopic",
+      "data": {
+        "label": "Keep methods / classes / files small"
+      }
+    },
+    {
+      "id": "5S5A5wCJUCNPLlHJ5fRjU",
+      "type": "subtopic",
+      "data": {
+        "label": "Pure functions"
+      }
+    },
+    {
+      "id": "qZzl0hAD2LkShsPql1IlZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Minimize cyclomatic complexity"
+      }
+    },
+    {
+      "id": "yyKvmutbxu3iVHTuqr5q4",
+      "type": "subtopic",
+      "data": {
+        "label": "Avoid passing nulls, booleans"
+      }
+    },
+    {
+      "id": "OoCCy-3W5y7bUcKz_iyBw",
+      "type": "subtopic",
+      "data": {
+        "label": "Keep framework code distant"
+      }
+    },
+    {
+      "id": "S1m7ty7Qrzu1rr4Jl-WgM",
+      "type": "subtopic",
+      "data": {
+        "label": "Use correct constructs"
+      }
+    },
+    {
+      "id": "mzt7fvx6ab3tmG1R1NcLO",
+      "type": "subtopic",
+      "data": {
+        "label": "Tests should be fast and independent"
+      }
+    },
+    {
+      "id": "kp86Vc3uue3IxTN9B9p59",
+      "type": "subtopic",
+      "data": {
+        "label": "Organize code by actor it belongs to"
+      }
+    },
+    {
+      "id": "tLbckKmfVxgn59j_dlh8b",
+      "type": "subtopic",
+      "data": {
+        "label": "Command query separation"
+      }
+    },
+    {
+      "id": "9naCfoHF1LW1OEsVZGi8v",
+      "type": "subtopic",
+      "data": {
+        "label": "Keep it simple and refactor often"
+      }
+    },
+    {
+      "id": "isbQTvteWitvwVwBtwAr3",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "TDhTYdEyBuOnDKcQJzTAk",
+      "type": "topic",
+      "data": {
+        "label": "Programming Paradigms"
+      }
+    },
+    {
+      "id": "VhSEH_RoWFt1z2lial7xZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Structured Programming"
+      }
+    },
+    {
+      "id": "YswaOqZNYcmDwly2IXrTT",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Programming"
+      }
+    },
+    {
+      "id": "VZrERRRYhmqDx4slnZtdc",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "HhYdURE4X-a9GVwJhAyE0",
+      "type": "topic",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "0VO_-1g-TS29y0Ji2yCjc",
+      "type": "topic",
+      "data": {
+        "label": "Model-Driven Design"
+      }
+    },
+    {
+      "id": "I25ghe8xYWpZ-9pRcHfOh",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain Models"
+      }
+    },
+    {
+      "id": "c6n-wOHylTbzpxqgoXtdw",
+      "type": "subtopic",
+      "data": {
+        "label": "Class Variants"
+      }
+    },
+    {
+      "id": "HN160YgryBBtVGjnWxNie",
+      "type": "subtopic",
+      "data": {
+        "label": "Layered Architectures"
+      }
+    },
+    {
+      "id": "kWNQd3paQrhMHMJzM35w8",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain Language"
+      }
+    },
+    {
+      "id": "nVaoI4IDPVEsdtFcjGNRw",
+      "type": "subtopic",
+      "data": {
+        "label": "Anemic Models"
+      }
+    },
+    {
+      "id": "RMkEE7c0jdVFqZ4fmjL6Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstract Classes"
+      }
+    },
+    {
+      "id": "hd6GJ-H4p9I4aaiRTni57",
+      "type": "subtopic",
+      "data": {
+        "label": "Concrete Classes"
+      }
+    },
+    {
+      "id": "b-YIbw-r-nESVt_PUFQeq",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope / Visibility"
+      }
+    },
+    {
+      "id": "SrcPhS4F7aT80qNjbv54f",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "Dj36yLBShoazj7SAw6a_A",
+      "type": "subtopic",
+      "data": {
+        "label": "Inheritance"
+      }
+    },
+    {
+      "id": "4DVW4teisMz8-58XttMGt",
+      "type": "subtopic",
+      "data": {
+        "label": "Polymorphism"
+      }
+    },
+    {
+      "id": "VA8FMrhF4non9x-J3urY8",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstraction"
+      }
+    },
+    {
+      "id": "GJxfVjhiLuuc36hatx9dP",
+      "type": "subtopic",
+      "data": {
+        "label": "Encapsulation"
+      }
+    },
+    {
+      "id": "9dMbo4Q1_Sd9wW6-HSCA9",
+      "type": "topic",
+      "data": {
+        "label": "Design Principles"
+      }
+    },
+    {
+      "id": "Izno7xX7wDvwPEg7f_d1Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Composition over Inheritance"
+      }
+    },
+    {
+      "id": "3eWirbQGbJZd4g7CS1xk_",
+      "type": "label",
+      "data": {
+        "label": "Primary Principles"
+      }
+    },
+    {
+      "id": "9slZPeVCSqU5-5PqaNJOh",
+      "type": "label",
+      "data": {
+        "label": "Paradigm Features"
+      }
+    },
+    {
+      "id": "DlefJ9JuJ1LdQYC4WSx6y",
+      "type": "subtopic",
+      "data": {
+        "label": "Encapsulate what varies"
+      }
+    },
+    {
+      "id": "UZeY36dABmULhsHPhlzn_",
+      "type": "subtopic",
+      "data": {
+        "label": "Program against abstractions"
+      }
+    },
+    {
+      "id": "WzUhKlmFB9alTlAyV-MWJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Hollywood Principle"
+      }
+    },
+    {
+      "id": "vnLhItObDgp_XaDmplBsJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Law of Demeter"
+      }
+    },
+    {
+      "id": "0rGdh72HjqPZa2bCbY9Gz",
+      "type": "subtopic",
+      "data": {
+        "label": "Tell, don\u0027t ask"
+      }
+    },
+    {
+      "id": "3XckqZA--knUb8IYKOeVy",
+      "type": "subtopic",
+      "data": {
+        "label": "SOLID"
+      }
+    },
+    {
+      "id": "ltBnVWZ3UMAuUvDkU6o4P",
+      "type": "subtopic",
+      "data": {
+        "label": "DRY"
+      }
+    },
+    {
+      "id": "eEO-WeNIyjErBE53n8JsD",
+      "type": "subtopic",
+      "data": {
+        "label": "YAGNI"
+      }
+    },
+    {
+      "id": "Jd79KXxZavpnp3mtE1q0n",
+      "type": "topic",
+      "data": {
+        "label": "Design Patterns"
+      }
+    },
+    {
+      "id": "hlHl00ELlK9YdnzHDGnEW",
+      "type": "subtopic",
+      "data": {
+        "label": "GoF Design Patterns"
+      }
+    },
+    {
+      "id": "6VoDGFOPHj5p_gvaZ8kTt",
+      "type": "subtopic",
+      "data": {
+        "label": "PoSA Patterns"
+      }
+    },
+    {
+      "id": "dBq7ni-of5v1kxpdmh227",
+      "type": "topic",
+      "data": {
+        "label": "Architectural Principles"
+      }
+    },
+    {
+      "id": "8Bm0sRhUg6wZtnvtTmpgY",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Principles"
+      }
+    },
+    {
+      "id": "b_PvjjL2ZpEKETa5_bd0v",
+      "type": "subtopic",
+      "data": {
+        "label": "Policy vs Detail"
+      }
+    },
+    {
+      "id": "TXus3R5vVQDBeBag6B5qs",
+      "type": "subtopic",
+      "data": {
+        "label": "Coupling and Cohesion"
+      }
+    },
+    {
+      "id": "-Kw8hJhgQH2qInUFj2TUe",
+      "type": "subtopic",
+      "data": {
+        "label": "Boundaries"
+      }
+    },
+    {
+      "id": "37xWxG2D9lVuDsHUgLfzP",
+      "type": "topic",
+      "data": {
+        "label": "Architectural Styles"
+      }
+    },
+    {
+      "id": "j9j45Auf60kIskyEMUGE3",
+      "type": "topic",
+      "data": {
+        "label": "Messaging"
+      }
+    },
+    {
+      "id": "KtzcJBb6-EcIoXnwYvE7a",
+      "type": "subtopic",
+      "data": {
+        "label": "Event-Driven"
+      }
+    },
+    {
+      "id": "SX4vOVJY9slOXGwX_q1au",
+      "type": "subtopic",
+      "data": {
+        "label": "Publish-Subscribe"
+      }
+    },
+    {
+      "id": "3V74lLPlcOXFB-QRTUA5j",
+      "type": "topic",
+      "data": {
+        "label": "Distributed"
+      }
+    },
+    {
+      "id": "ZGIMUaNfBwE5b6O1yexSz",
+      "type": "subtopic",
+      "data": {
+        "label": "Client-Server"
+      }
+    },
+    {
+      "id": "Cf9Z2wxBcbnNg_q9PA6xA",
+      "type": "subtopic",
+      "data": {
+        "label": "Peer-to-Peer"
+      }
+    },
+    {
+      "id": "86Jw9kMBD7YP5nTV5jTz-",
+      "type": "topic",
+      "data": {
+        "label": "Structural"
+      }
+    },
+    {
+      "id": "a0geFJWl-vi3mYytTjYdb",
+      "type": "subtopic",
+      "data": {
+        "label": "Component-Based"
+      }
+    },
+    {
+      "id": "xYPR_X1KhBwdpqYzNJiuT",
+      "type": "subtopic",
+      "data": {
+        "label": "Monolithic"
+      }
+    },
+    {
+      "id": "IELEJcKYdZ6VN-UIq-Wln",
+      "type": "subtopic",
+      "data": {
+        "label": "Layered"
+      }
+    },
+    {
+      "id": "WdXJlH985x9GhAQfif26x",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "2uTlVYj9CvYcqtv9TN_8K",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gJYff_qD6XS3dg3I-jJFK",
+      "type": "topic",
+      "data": {
+        "label": "Architectural Patterns"
+      }
+    },
+    {
+      "id": "CD20zA6k9FxUpMgHnNYRJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain-Driven Design"
+      }
+    },
+    {
+      "id": "-arChRC9zG2DBmuSTHW0J",
+      "type": "subtopic",
+      "data": {
+        "label": "Model-View Controller"
+      }
+    },
+    {
+      "id": "eJsCCURZAURCKnOK-XeQe",
+      "type": "subtopic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "Kk7u2B67Fdg2sU8E_PGqr",
+      "type": "subtopic",
+      "data": {
+        "label": "Blackboard Pattern"
+      }
+    },
+    {
+      "id": "r-Yeca-gpdFM8iq7f0lYQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Microkernel"
+      }
+    },
+    {
+      "id": "5WSvAA3h3lmelL53UJSMy",
+      "type": "subtopic",
+      "data": {
+        "label": "Serverless Architecture"
+      }
+    },
+    {
+      "id": "GAs6NHBkUgxan3hyPvVs7",
+      "type": "subtopic",
+      "data": {
+        "label": "Message Queues / Streams"
+      }
+    },
+    {
+      "id": "K8X_-bsiy7gboInPzbiEb",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Sourcing"
+      }
+    },
+    {
+      "id": "FysFru2FJN4d4gj11gv--",
+      "type": "subtopic",
+      "data": {
+        "label": "SOA"
+      }
+    },
+    {
+      "id": "IU86cGkLPMXUJKvTBywPu",
+      "type": "subtopic",
+      "data": {
+        "label": "CQRS"
+      }
+    },
+    {
+      "id": "h0aeBhQRkDxNeFwDxT4Tf",
+      "type": "topic",
+      "data": {
+        "label": "Enterprise Patterns"
+      }
+    },
+    {
+      "id": "y_Qj7KITSB8aUWHwiZ2It",
+      "type": "subtopic",
+      "data": {
+        "label": "DTOs"
+      }
+    },
+    {
+      "id": "tb0X1HtuiGwz7YhQ5xPsV",
+      "type": "subtopic",
+      "data": {
+        "label": "Identity Maps"
+      }
+    },
+    {
+      "id": "gQ7Xj8tsl6IlCcyJgSz46",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "8y0ot5sbplUIUyXe9gvc8",
+      "type": "subtopic",
+      "data": {
+        "label": "Repositories"
+      }
+    },
+    {
+      "id": "ndUTgl2YBzOdu1MQKJocu",
+      "type": "subtopic",
+      "data": {
+        "label": "Mappers"
+      }
+    },
+    {
+      "id": "tyReIY4iO8kmyc_LPafp1",
+      "type": "subtopic",
+      "data": {
+        "label": "Transaction Script"
+      }
+    },
+    {
+      "id": "j_SUD3SxpKYZstN9LSP82",
+      "type": "subtopic",
+      "data": {
+        "label": "Commands / Queries"
+      }
+    },
+    {
+      "id": "Ks6njbfxOHiZ_TrJDnVtk",
+      "type": "subtopic",
+      "data": {
+        "label": "Value Objects"
+      }
+    },
+    {
+      "id": "NpSfbzYtGebmfrifkKsUf",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain Models"
+      }
+    },
+    {
+      "id": "VnW_7dl5G0IFL9W3YF_W3",
+      "type": "subtopic",
+      "data": {
+        "label": "Entities"
+      }
+    },
+    {
+      "id": "SYYulHfDceIyDkDT5fcqj",
+      "type": "subtopic",
+      "data": {
+        "label": "ORMs"
+      }
+    },
+    {
+      "id": "k_AR2YBSv077a6RwpCpZT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ef-jFKMs8jw3Ti94jem96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "StxLh1r3qXqyRSqfJGird",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-JS5a5FraWCwfgwt8GAyc7w2",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "pd0_ffU8fTHcg_nLPae6W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__pd0_ffU8fTHcg_nLPae6Wx2-h0aeBhQRkDxNeFwDxT4Tfw2",
+      "source": "pd0_ffU8fTHcg_nLPae6W",
+      "target": "08qKtgnhJ3tlb5JKfTDf5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__08qKtgnhJ3tlb5JKfTDf5x2-h0aeBhQRkDxNeFwDxT4Tfw1",
+      "source": "08qKtgnhJ3tlb5JKfTDf5",
+      "target": "TDhTYdEyBuOnDKcQJzTAk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-VhSEH_RoWFt1z2lial7xZz1",
+      "source": "TDhTYdEyBuOnDKcQJzTAk",
+      "target": "VhSEH_RoWFt1z2lial7xZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-YswaOqZNYcmDwly2IXrTTz1",
+      "source": "TDhTYdEyBuOnDKcQJzTAk",
+      "target": "YswaOqZNYcmDwly2IXrTT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-VZrERRRYhmqDx4slnZtdcz1",
+      "source": "TDhTYdEyBuOnDKcQJzTAk",
+      "target": "VZrERRRYhmqDx4slnZtdc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__TDhTYdEyBuOnDKcQJzTAkx2-h0aeBhQRkDxNeFwDxT4Tfw1",
+      "source": "TDhTYdEyBuOnDKcQJzTAk",
+      "target": "HhYdURE4X-a9GVwJhAyE0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__9dMbo4Q1_Sd9wW6-HSCA9z2-h0aeBhQRkDxNeFwDxT4Tfy1",
+      "source": "9dMbo4Q1_Sd9wW6-HSCA9",
+      "target": "Jd79KXxZavpnp3mtE1q0n",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-dBq7ni-of5v1kxpdmh227y1",
+      "source": "37xWxG2D9lVuDsHUgLfzP",
+      "target": "dBq7ni-of5v1kxpdmh227",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__37xWxG2D9lVuDsHUgLfzPx2-h0aeBhQRkDxNeFwDxT4Tfw1",
+      "source": "37xWxG2D9lVuDsHUgLfzP",
+      "target": "gJYff_qD6XS3dg3I-jJFK",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-Kk7u2B67Fdg2sU8E_PGqrz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "Kk7u2B67Fdg2sU8E_PGqr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-eJsCCURZAURCKnOK-XeQez1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "eJsCCURZAURCKnOK-XeQe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2--arChRC9zG2DBmuSTHW0Jz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "-arChRC9zG2DBmuSTHW0J",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-CD20zA6k9FxUpMgHnNYRJz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "CD20zA6k9FxUpMgHnNYRJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-r-Yeca-gpdFM8iq7f0lYQz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "r-Yeca-gpdFM8iq7f0lYQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-5WSvAA3h3lmelL53UJSMyz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "5WSvAA3h3lmelL53UJSMy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-GAs6NHBkUgxan3hyPvVs7z1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "GAs6NHBkUgxan3hyPvVs7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-K8X_-bsiy7gboInPzbiEbz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "K8X_-bsiy7gboInPzbiEb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfy2-IU86cGkLPMXUJKvTBywPuz1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "IU86cGkLPMXUJKvTBywPu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gJYff_qD6XS3dg3I-jJFKx2-h0aeBhQRkDxNeFwDxT4Tfw1",
+      "source": "gJYff_qD6XS3dg3I-jJFK",
+      "target": "h0aeBhQRkDxNeFwDxT4Tf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-tyReIY4iO8kmyc_LPafp1y1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "tyReIY4iO8kmyc_LPafp1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-ndUTgl2YBzOdu1MQKJocuy1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "ndUTgl2YBzOdu1MQKJocu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-8y0ot5sbplUIUyXe9gvc8y2",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "8y0ot5sbplUIUyXe9gvc8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-gQ7Xj8tsl6IlCcyJgSz46y1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "gQ7Xj8tsl6IlCcyJgSz46",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-tb0X1HtuiGwz7YhQ5xPsVy2",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "tb0X1HtuiGwz7YhQ5xPsV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-y_Qj7KITSB8aUWHwiZ2Ity1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "y_Qj7KITSB8aUWHwiZ2It",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-j_SUD3SxpKYZstN9LSP82y1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "j_SUD3SxpKYZstN9LSP82",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-Ks6njbfxOHiZ_TrJDnVtky1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "Ks6njbfxOHiZ_TrJDnVtk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-NpSfbzYtGebmfrifkKsUfy1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "NpSfbzYtGebmfrifkKsUf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-VnW_7dl5G0IFL9W3YF_W3y1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "VnW_7dl5G0IFL9W3YF_W3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__h0aeBhQRkDxNeFwDxT4Tfz2-SYYulHfDceIyDkDT5fcqjy1",
+      "source": "h0aeBhQRkDxNeFwDxT4Tf",
+      "target": "SYYulHfDceIyDkDT5fcqj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

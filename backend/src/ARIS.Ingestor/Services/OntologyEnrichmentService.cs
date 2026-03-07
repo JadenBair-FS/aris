@@ -151,6 +151,13 @@ public class OntologyEnrichmentService
         }
     }
 
+    // Strips LLM-appended context qualifiers such as "(used in Kubernetes)" or "(used with Docker)".
+    private static readonly Regex _contextQualifierRegex =
+        new(@"\s*\(used\s+(in|with|by|for)\s+[^)]+\)\s*$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    private static string CleanSkillName(string name) =>
+        _contextQualifierRegex.Replace(name, string.Empty).Trim();
+
     private BridgePair? ParseBridgePair(JsonElement element)
     {
         if (element.ValueKind != JsonValueKind.Object) return null;
@@ -177,6 +184,9 @@ public class OntologyEnrichmentService
                 _ => null
             };
         }
+
+        source = source != null ? CleanSkillName(source) : null;
+        target = target != null ? CleanSkillName(target) : null;
 
         if (!string.IsNullOrWhiteSpace(source) && !string.IsNullOrWhiteSpace(target))
         {

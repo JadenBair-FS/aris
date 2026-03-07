@@ -1,0 +1,1376 @@
+{
+  "title": {
+    "card": "CSS",
+    "page": "CSS"
+  },
+  "description": "Step by step guide to learning CSS in @currentYear@",
+  "nodes": [
+    {
+      "id": "3-r72MbPcYixXvogucYvc",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "zfHOn6JInimoGaD_ZTM9X",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "4COKdwIaO7_f80MEIGAZl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ECuI-W2BXmq-4rTQ0TChd",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jBmOD5XTUxeaPyOLDyg4y",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "bLa0-G6O4Vn34Ygwvxm0E",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LdS5-aJr8JXHehkXUdpA5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Z2zvtTQed-_n4mToEUVnI",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "U3kwKj1EL11lkG-WlYCUQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "k6SHaHeYm8bRMpbULBnyc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "RmoA5FXnGnyWGEjJd4Fvt",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "eym0CkDRJtrikIHQ0BZWS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "D7O5OOK4igVaskrvvvlp9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bRUSggy1mnWwct98-bjqh",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sAk8EsOI-7X4EPD__iqTv",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GYtRsqmjd2McYpr47r_WL",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Q4TSXB0Htesz3l9min6id",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UiudeSOdFOmwdEn9CzrJb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "oohtAP903vNNLJlr05j5d",
+      "type": "title",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "eR9zEKc2xQtOPNjOgke4_",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "6OjCZPf10yJqNIdFkI4l-",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "J1RsZPDKX-ocDvTh-Bg7N",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "9ZUXy6s9IAIEM5GHk_bXR",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "zW49OvVO-kLh0M4JCE4_w",
+      "type": "subtopic",
+      "data": {
+        "label": "Frontend development"
+      }
+    },
+    {
+      "id": "B0JUjbCN35MMGtFb5sCyB",
+      "type": "subtopic",
+      "data": {
+        "label": "Inline CSS"
+      }
+    },
+    {
+      "id": "kis-VQIdFVywHhBPr8tLY",
+      "type": "subtopic",
+      "data": {
+        "label": "External CSS"
+      }
+    },
+    {
+      "id": "gARjh5W-R_93_WeS8xxwe",
+      "type": "subtopic",
+      "data": {
+        "label": "Internal CSS"
+      }
+    },
+    {
+      "id": "Y4ODIPSKsWg0k1K5rHVh7",
+      "type": "subtopic",
+      "data": {
+        "label": "Cascading order"
+      }
+    },
+    {
+      "id": "hq4lsadaQAmTD6vBdmJ_W",
+      "type": "topic",
+      "data": {
+        "label": "CSS Basics"
+      }
+    },
+    {
+      "id": "v5fDxilI3q2vvt_B4Mxer",
+      "type": "subtopic",
+      "data": {
+        "label": "Selector"
+      }
+    },
+    {
+      "id": "GULUvSWLu8sPRuH0Xnbi5",
+      "type": "subtopic",
+      "data": {
+        "label": "Declaration"
+      }
+    },
+    {
+      "id": "obhoMq0OIyEolhppby1XM",
+      "type": "topic",
+      "data": {
+        "label": "Rules"
+      }
+    },
+    {
+      "id": "l7bBJLtKWkrzSfSPkZlBI",
+      "type": "subtopic",
+      "data": {
+        "label": "Absolute vs Relative"
+      }
+    },
+    {
+      "id": "yRqSmhRwvZXbNXuCNYCzo",
+      "type": "subtopic",
+      "data": {
+        "label": "Units with functions"
+      }
+    },
+    {
+      "id": "ffhmG-be4Ct09eOxwzU9y",
+      "type": "topic",
+      "data": {
+        "label": "CSS Units"
+      }
+    },
+    {
+      "id": "UKUulhLMTcmwi-jDDoGTp",
+      "type": "topic",
+      "data": {
+        "label": "Comments"
+      }
+    },
+    {
+      "id": "FKQcANNYYf-kYQj-kyKL_",
+      "type": "subtopic",
+      "data": {
+        "label": "element"
+      }
+    },
+    {
+      "id": "4LjxorN5jQnm9ZWKPk-pu",
+      "type": "subtopic",
+      "data": {
+        "label": "universal"
+      }
+    },
+    {
+      "id": "p3niPUep5J2h4x0tv4CLM",
+      "type": "subtopic",
+      "data": {
+        "label": "class"
+      }
+    },
+    {
+      "id": "TSItk9mQJphdRID9mgGwU",
+      "type": "subtopic",
+      "data": {
+        "label": "grouping"
+      }
+    },
+    {
+      "id": "U6dcnopmzzsppCQ9uy8E-",
+      "type": "subtopic",
+      "data": {
+        "label": "id"
+      }
+    },
+    {
+      "id": "BaIUVApePcGNdYabadnbz",
+      "type": "topic",
+      "data": {
+        "label": "Simple selectors"
+      }
+    },
+    {
+      "id": "HB0GXMRA87a-NWv6JXxWg",
+      "type": "subtopic",
+      "data": {
+        "label": "descendant"
+      }
+    },
+    {
+      "id": "qvOddcSKg21RJBG5XTGfU",
+      "type": "subtopic",
+      "data": {
+        "label": "Next Sibling"
+      }
+    },
+    {
+      "id": "UojAVB7wZgGhLd9r8ZVYF",
+      "type": "subtopic",
+      "data": {
+        "label": "child"
+      }
+    },
+    {
+      "id": "_dWrjp_fK4gmGwiWrgBbb",
+      "type": "subtopic",
+      "data": {
+        "label": "Subsequent Sibling"
+      }
+    },
+    {
+      "id": "8xpK4SVUDvxil_hR-LaJ4",
+      "type": "topic",
+      "data": {
+        "label": "Combinator selectors"
+      }
+    },
+    {
+      "id": "_KdEkwm0GmKHcahivCubL",
+      "type": "topic",
+      "data": {
+        "label": "Pseudo Classes"
+      }
+    },
+    {
+      "id": "yj2GTGrlDHp9gNd3C476k",
+      "type": "topic",
+      "data": {
+        "label": "Pseudo Elements"
+      }
+    },
+    {
+      "id": "m6KQMN1XWo4uWqs2F3KXH",
+      "type": "topic",
+      "data": {
+        "label": "Attribute selectors"
+      }
+    },
+    {
+      "id": "LZZheBKkxXSVwyW4hSCw5",
+      "type": "subtopic",
+      "data": {
+        "label": "Font families"
+      }
+    },
+    {
+      "id": "X2aBWF0Dl88M-dULDSL9J",
+      "type": "subtopic",
+      "data": {
+        "label": "Font Size"
+      }
+    },
+    {
+      "id": "Ha84l1MXtbuSrUeQxRq7g",
+      "type": "subtopic",
+      "data": {
+        "label": "Font Style"
+      }
+    },
+    {
+      "id": "KZ-B_6zH3gkJhFFL_yRSm",
+      "type": "subtopic",
+      "data": {
+        "label": "Font Shorthand"
+      }
+    },
+    {
+      "id": "1-agoKIdWelaazIOe3haM",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Fonts"
+      }
+    },
+    {
+      "id": "74sme3agcXP7TRSGjYcWG",
+      "type": "subtopic",
+      "data": {
+        "label": "rgb"
+      }
+    },
+    {
+      "id": "9vVxubL4bB3FPQOPoM0TV",
+      "type": "subtopic",
+      "data": {
+        "label": "Named Colors"
+      }
+    },
+    {
+      "id": "GA3Rqg75oRZgFYi2ZzLH6",
+      "type": "subtopic",
+      "data": {
+        "label": "hsl"
+      }
+    },
+    {
+      "id": "wgopn2aZpRKXKw3PSCvWQ",
+      "type": "subtopic",
+      "data": {
+        "label": "rgba, hsla"
+      }
+    },
+    {
+      "id": "ZlU2dJj5myMd3hOc4ycOi",
+      "type": "subtopic",
+      "data": {
+        "label": "hex"
+      }
+    },
+    {
+      "id": "ATd9RE303X79aAmqvwS08",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Color"
+      }
+    },
+    {
+      "id": "d-rp-EHKyHnzuIHWHOc7C",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Image"
+      }
+    },
+    {
+      "id": "_9QA5_mLJ8_eiQN0ucIkQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Gradient"
+      }
+    },
+    {
+      "id": "BBpeQcb7Y21C7-r3PFIMW",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Position"
+      }
+    },
+    {
+      "id": "6i0Zl05VMzUsh47cuUH4-",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Attachment"
+      }
+    },
+    {
+      "id": "qJ3bBc7pNgZQU5I31kqKA",
+      "type": "topic",
+      "data": {
+        "label": "Padding"
+      }
+    },
+    {
+      "id": "tOADYKk7o5cFaMLKxdiYa",
+      "type": "topic",
+      "data": {
+        "label": "Border"
+      }
+    },
+    {
+      "id": "e_m7y5YYPLFbVtoG79DBb",
+      "type": "topic",
+      "data": {
+        "label": "Margin"
+      }
+    },
+    {
+      "id": "jPSQNDH4UpmVoLEf6RIjy",
+      "type": "topic",
+      "data": {
+        "label": "Box Shadows"
+      }
+    },
+    {
+      "id": "Jipq1yvlLNL0TbsVImCDk",
+      "type": "subtopic",
+      "data": {
+        "label": "inline"
+      }
+    },
+    {
+      "id": "uhHBvhgHjmIZDeOEPi_pZ",
+      "type": "subtopic",
+      "data": {
+        "label": "block"
+      }
+    },
+    {
+      "id": "cQ4FdKzwvMu5FD0Xk-U73",
+      "type": "subtopic",
+      "data": {
+        "label": "inline-block"
+      }
+    },
+    {
+      "id": "doVYds82d5w1hIc33hkMq",
+      "type": "subtopic",
+      "data": {
+        "label": "none"
+      }
+    },
+    {
+      "id": "sO-XiY9yJZMedzyR_7Gdq",
+      "type": "subtopic",
+      "data": {
+        "label": "visibility"
+      }
+    },
+    {
+      "id": "un_IujSN8vtDM40OOJC1n",
+      "type": "topic",
+      "data": {
+        "label": "Position"
+      }
+    },
+    {
+      "id": "iLVla2ZPA3WlWFmP2sc6H",
+      "type": "topic",
+      "data": {
+        "label": "CSS Specificity"
+      }
+    },
+    {
+      "id": "-uEIqIN1xxqlQzOmVgVUc",
+      "type": "subtopic",
+      "data": {
+        "label": "Floating Elements"
+      }
+    },
+    {
+      "id": "KoJ7syHd7Y3gyWW93dRnQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Multicolumn layout"
+      }
+    },
+    {
+      "id": "Xa8oKhrZ2Y_Fsx3PjdMrt",
+      "type": "subtopic",
+      "data": {
+        "label": "Flexbox"
+      }
+    },
+    {
+      "id": "6nemkEmghB_0SWBOHyI7a",
+      "type": "subtopic",
+      "data": {
+        "label": "Grid"
+      }
+    },
+    {
+      "id": "I1wmKcLyjQUiJXPtsGye7",
+      "type": "topic",
+      "data": {
+        "label": "CSS Functions"
+      }
+    },
+    {
+      "id": "WGR5E9CXsZCxIhwZyCSKq",
+      "type": "topic",
+      "data": {
+        "label": "CSS Variables"
+      }
+    },
+    {
+      "id": "1-VTjOseACNKca6TU07aM",
+      "type": "topic",
+      "data": {
+        "label": "Media Queries"
+      }
+    },
+    {
+      "id": "IkN7i3ERk_lTOD0mBj3JO",
+      "type": "topic",
+      "data": {
+        "label": "Container Queries"
+      }
+    },
+    {
+      "id": "9XDJcFh7V-7ppAEP_8hJl",
+      "type": "topic",
+      "data": {
+        "label": "Responsive typography"
+      }
+    },
+    {
+      "id": "LDIZoK-XgmwqPdLH01vC5",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "-dPxULwMhdnnBoX3givbd",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "ZX8H0JCJ39zOp7-0y3tyy",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nbDTHlvZrqDQvVcWGj9Ij",
+      "type": "paragraph",
+      "data": {
+        "label": "Syntax Basics"
+      }
+    },
+    {
+      "id": "awMTGfeQlXQNILvEO8nOJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Properties \u0026 Values"
+      }
+    },
+    {
+      "id": "lYBxNkwO9CwWKCFnrOpQh",
+      "type": "paragraph",
+      "data": {
+        "label": "Layouts"
+      }
+    },
+    {
+      "id": "R-rnVeB73Ehhxrl1pcFXq",
+      "type": "paragraph",
+      "data": {
+        "label": "Reponsiveness"
+      }
+    },
+    {
+      "id": "OHSvaN7TUVaRhxtGkKaT0",
+      "type": "paragraph",
+      "data": {
+        "label": "Methodologies"
+      }
+    },
+    {
+      "id": "1bCeydLILdEKV9NJe83gK",
+      "type": "subtopic",
+      "data": {
+        "label": "Sass"
+      }
+    },
+    {
+      "id": "EOGYRC1TiXOwrR1pjW6Ky",
+      "type": "subtopic",
+      "data": {
+        "label": "PostCSS"
+      }
+    },
+    {
+      "id": "r28JBMZLEqZMDm-tVDYZk",
+      "type": "subtopic",
+      "data": {
+        "label": "BEM"
+      }
+    },
+    {
+      "id": "DjeaAmUlNtNV3f8W0-dKf",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS Modules"
+      }
+    },
+    {
+      "id": "UInkC4leVjIsSXPN1y62W",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS-in-JS  "
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue Learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "qXKNK_IsGS8-JgLK-Q9oU",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "slf6jmim4p9ti6ZRHOZe_",
+      "type": "button",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "Df3nTlTvSQkMGzpufRo9q",
+      "type": "button",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "Besey-5uUV60iuf43vzK4",
+      "type": "label",
+      "data": {
+        "label": "Fonts"
+      }
+    },
+    {
+      "id": "mGYDsQ1QzimmO3U1CnJUu",
+      "type": "subtopic",
+      "data": {
+        "label": "Font Variant"
+      }
+    },
+    {
+      "id": "vo34F_AHkMlyq6uNRPk-1",
+      "type": "topic",
+      "data": {
+        "label": "Text Styling"
+      }
+    },
+    {
+      "id": "lo6OuD5hsZ7_r01jp-u0U",
+      "type": "subtopic",
+      "data": {
+        "label": "Color"
+      }
+    },
+    {
+      "id": "ZyqKZMIkQ22ysFqmhL3ZN",
+      "type": "subtopic",
+      "data": {
+        "label": "Direction"
+      }
+    },
+    {
+      "id": "SABFbvM47j1cYCyeNfMZR",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Alignment"
+      }
+    },
+    {
+      "id": "AUzbo8UwpL-XxvhMCvtoe",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Decoration"
+      }
+    },
+    {
+      "id": "v0IUvnrLv3OiBQ-NkM9Lv",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Transform"
+      }
+    },
+    {
+      "id": "U3oH6TFRezkciuROAU0wd",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Spacing"
+      }
+    },
+    {
+      "id": "aB04IOoWwIxm7BvwfgTYj",
+      "type": "subtopic",
+      "data": {
+        "label": "Line Height"
+      }
+    },
+    {
+      "id": "RqyaHX4Krk9e-6Eq9FHnS",
+      "type": "topic",
+      "data": {
+        "label": "Background"
+      }
+    },
+    {
+      "id": "5DuEe4bkYGYXpf0egqCFE",
+      "type": "label",
+      "data": {
+        "label": "Colors"
+      }
+    },
+    {
+      "id": "Mq4Oo9cCWqkPGHkgpNRTz",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Shadows"
+      }
+    },
+    {
+      "id": "AJR5CRYOedHzJ20hROIjo",
+      "type": "topic",
+      "data": {
+        "label": "Box Model"
+      }
+    },
+    {
+      "id": "quGp1pgbrEH37WA5URb_g",
+      "type": "topic",
+      "data": {
+        "label": "Width / Height"
+      }
+    },
+    {
+      "id": "EirP1Bs-FGEtPxuY2k7wF",
+      "type": "topic",
+      "data": {
+        "label": "Outline"
+      }
+    },
+    {
+      "id": "aebaHO3XG8ung7KVJHRQO",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "SSAhePvKuRJU4TQw5NuVZ",
+      "type": "topic",
+      "data": {
+        "label": "Display"
+      }
+    },
+    {
+      "id": "gm7kRAgfG3FKJqZhZ3Noj",
+      "type": "topic",
+      "data": {
+        "label": "Opacity"
+      }
+    },
+    {
+      "id": "Hp51JS9rwAMdWhYnex5NB",
+      "type": "subtopic",
+      "data": {
+        "label": "Relative"
+      }
+    },
+    {
+      "id": "7LhPT3h-BEdHSF2iOevVl",
+      "type": "subtopic",
+      "data": {
+        "label": "Absolute"
+      }
+    },
+    {
+      "id": "mJifV0kjJTwkllmZVSqec",
+      "type": "subtopic",
+      "data": {
+        "label": "Sticky"
+      }
+    },
+    {
+      "id": "eL0kdDRPnwpCU_FWKDPkD",
+      "type": "subtopic",
+      "data": {
+        "label": "Fixed"
+      }
+    },
+    {
+      "id": "qaZfDil0Slda9t-RN0KWH",
+      "type": "subtopic",
+      "data": {
+        "label": "Static"
+      }
+    },
+    {
+      "id": "Q-6tdHPE-xpPGIG8J_Wz7",
+      "type": "topic",
+      "data": {
+        "label": "Tables"
+      }
+    },
+    {
+      "id": "xep8iF-7XOYLY2xeblM-A",
+      "type": "topic",
+      "data": {
+        "label": "Z-Index / Stacking Context"
+      }
+    },
+    {
+      "id": "kcfgt2pu3MCsgki391tpa",
+      "type": "topic",
+      "data": {
+        "label": "Images and Filters"
+      }
+    },
+    {
+      "id": "T8PEeZm0Oigsyz-OF_Yhe",
+      "type": "label",
+      "data": {
+        "label": "Layouting Techniques"
+      }
+    },
+    {
+      "id": "W5Du8ksMRZ_4SRMSXD5t3",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "U34z2pZgkH8NqiXMr5iuI",
+      "type": "topic",
+      "data": {
+        "label": "Flow Layout"
+      }
+    },
+    {
+      "id": "tlYeQAVMXlyev1GIgRUq6",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ZwlCU9jE9YBcEOBo0vFqq",
+      "type": "subtopic",
+      "data": {
+        "label": "Transforms"
+      }
+    },
+    {
+      "id": "qmKXfmheAvlap45aFrP9m",
+      "type": "subtopic",
+      "data": {
+        "label": "Keyframe Animations"
+      }
+    },
+    {
+      "id": "SNcVcjcvtph3W7KTx1N-v",
+      "type": "subtopic",
+      "data": {
+        "label": "Transitions"
+      }
+    },
+    {
+      "id": "d17BexZZkQ9ICp9oOXITV",
+      "type": "label",
+      "data": {
+        "label": "Animations"
+      }
+    },
+    {
+      "id": "XtEBEewCaLZE8dAzbS8Tw",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "XuySIveFuvA_FvqDnNPRL",
+      "type": "topic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "WV5iV0mpkWajzM7W2Qvjw",
+      "type": "paragraph",
+      "data": {
+        "label": "Best Practices"
+      }
+    },
+    {
+      "id": "Ph2xYPlqgXgOktxdvnGr9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9qiR3QUhE655-_nSMXD2z",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LMRtuasIc-CNFXDZpKpJZ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "jV9oHJdtocQzzALylaFnA",
+      "type": "subtopic",
+      "data": {
+        "label": "Font Weight"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "pnDZh7BYk9U_aXDHpqQU5",
+      "source": "oohtAP903vNNLJlr05j5d",
+      "target": "eR9zEKc2xQtOPNjOgke4_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eR9zEKc2xQtOPNjOgke4_z2-zW49OvVO-kLh0M4JCE4_wy1",
+      "source": "eR9zEKc2xQtOPNjOgke4_",
+      "target": "zW49OvVO-kLh0M4JCE4_w",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eR9zEKc2xQtOPNjOgke4_x2-hq4lsadaQAmTD6vBdmJ_Ww2",
+      "source": "eR9zEKc2xQtOPNjOgke4_",
+      "target": "hq4lsadaQAmTD6vBdmJ_W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__hq4lsadaQAmTD6vBdmJ_Wy2-B0JUjbCN35MMGtFb5sCyBz1",
+      "source": "hq4lsadaQAmTD6vBdmJ_W",
+      "target": "B0JUjbCN35MMGtFb5sCyB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hq4lsadaQAmTD6vBdmJ_Wy2-gARjh5W-R_93_WeS8xxwez2",
+      "source": "hq4lsadaQAmTD6vBdmJ_W",
+      "target": "gARjh5W-R_93_WeS8xxwe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hq4lsadaQAmTD6vBdmJ_Wy2-kis-VQIdFVywHhBPr8tLYz2",
+      "source": "hq4lsadaQAmTD6vBdmJ_W",
+      "target": "kis-VQIdFVywHhBPr8tLY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hq4lsadaQAmTD6vBdmJ_Wy2-Y4ODIPSKsWg0k1K5rHVh7z1",
+      "source": "hq4lsadaQAmTD6vBdmJ_W",
+      "target": "Y4ODIPSKsWg0k1K5rHVh7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hq4lsadaQAmTD6vBdmJ_Wx2-nX4hkHsXjtz1mFSQIUr07w2",
+      "source": "hq4lsadaQAmTD6vBdmJ_W",
+      "target": "nbDTHlvZrqDQvVcWGj9Ij",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nX4hkHsXjtz1mFSQIUr07z2-obhoMq0OIyEolhppby1XMy1",
+      "source": "nbDTHlvZrqDQvVcWGj9Ij",
+      "target": "obhoMq0OIyEolhppby1XM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ffhmG-be4Ct09eOxwzU9yx2-l7bBJLtKWkrzSfSPkZlBIw1",
+      "source": "ffhmG-be4Ct09eOxwzU9y",
+      "target": "l7bBJLtKWkrzSfSPkZlBI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BaIUVApePcGNdYabadnbzx2-FKQcANNYYf-kYQj-kyKL_w2",
+      "source": "BaIUVApePcGNdYabadnbz",
+      "target": "FKQcANNYYf-kYQj-kyKL_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BaIUVApePcGNdYabadnbzy2-8xpK4SVUDvxil_hR-LaJ4z2",
+      "source": "BaIUVApePcGNdYabadnbz",
+      "target": "8xpK4SVUDvxil_hR-LaJ4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__8xpK4SVUDvxil_hR-LaJ4y2-m6KQMN1XWo4uWqs2F3KXHz2",
+      "source": "8xpK4SVUDvxil_hR-LaJ4",
+      "target": "m6KQMN1XWo4uWqs2F3KXH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-AUzbo8UwpL-XxvhMCvtoey1",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "AUzbo8UwpL-XxvhMCvtoe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-v0IUvnrLv3OiBQ-NkM9Lvy1",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "v0IUvnrLv3OiBQ-NkM9Lv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-SABFbvM47j1cYCyeNfMZRy1",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "SABFbvM47j1cYCyeNfMZR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-lo6OuD5hsZ7_r01jp-u0Uy2",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "lo6OuD5hsZ7_r01jp-u0U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-U3oH6TFRezkciuROAU0wdy1",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "U3oH6TFRezkciuROAU0wd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoz2-Mq4Oo9cCWqkPGHkgpNRTzy2",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "aB04IOoWwIxm7BvwfgTYj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoy2-d-rp-EHKyHnzuIHWHOc7Cz1",
+      "source": "RqyaHX4Krk9e-6Eq9FHnS",
+      "target": "d-rp-EHKyHnzuIHWHOc7C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoy2-_9QA5_mLJ8_eiQN0ucIkQz1",
+      "source": "RqyaHX4Krk9e-6Eq9FHnS",
+      "target": "_9QA5_mLJ8_eiQN0ucIkQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoy2-ATd9RE303X79aAmqvwS08z1",
+      "source": "RqyaHX4Krk9e-6Eq9FHnS",
+      "target": "ATd9RE303X79aAmqvwS08",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoy2-BBpeQcb7Y21C7-r3PFIMWz1",
+      "source": "RqyaHX4Krk9e-6Eq9FHnS",
+      "target": "BBpeQcb7Y21C7-r3PFIMW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AJR5CRYOedHzJ20hROIjoy2-6i0Zl05VMzUsh47cuUH4-z1",
+      "source": "RqyaHX4Krk9e-6Eq9FHnS",
+      "target": "6i0Zl05VMzUsh47cuUH4-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gm7kRAgfG3FKJqZhZ3Nojz2-Mq4Oo9cCWqkPGHkgpNRTzy1",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "Mq4Oo9cCWqkPGHkgpNRTz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__vo34F_AHkMlyq6uNRPk-1x2-gm7kRAgfG3FKJqZhZ3Nojw2",
+      "source": "vo34F_AHkMlyq6uNRPk-1",
+      "target": "gm7kRAgfG3FKJqZhZ3Noj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__SSAhePvKuRJU4TQw5NuVZy2-un_IujSN8vtDM40OOJC1nz2",
+      "source": "SSAhePvKuRJU4TQw5NuVZ",
+      "target": "un_IujSN8vtDM40OOJC1n",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__SSAhePvKuRJU4TQw5NuVZx2-cQ4FdKzwvMu5FD0Xk-U73w1",
+      "source": "SSAhePvKuRJU4TQw5NuVZ",
+      "target": "cQ4FdKzwvMu5FD0Xk-U73",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kcfgt2pu3MCsgki391tpaz2-_KdEkwm0GmKHcahivCubLy1",
+      "source": "kcfgt2pu3MCsgki391tpa",
+      "target": "_KdEkwm0GmKHcahivCubL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge___KdEkwm0GmKHcahivCubLz2-yj2GTGrlDHp9gNd3C476ky2",
+      "source": "_KdEkwm0GmKHcahivCubL",
+      "target": "yj2GTGrlDHp9gNd3C476k",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__yj2GTGrlDHp9gNd3C476kx2-WV5iV0mpkWajzM7W2Qvjww1",
+      "source": "yj2GTGrlDHp9gNd3C476k",
+      "target": "lYBxNkwO9CwWKCFnrOpQh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WV5iV0mpkWajzM7W2Qvjwx2-U34z2pZgkH8NqiXMr5iuIw2",
+      "source": "lYBxNkwO9CwWKCFnrOpQh",
+      "target": "U34z2pZgkH8NqiXMr5iuI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__tlYeQAVMXlyev1GIgRUq6x2-R-rnVeB73Ehhxrl1pcFXqw1",
+      "source": "tlYeQAVMXlyev1GIgRUq6",
+      "target": "R-rnVeB73Ehhxrl1pcFXq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__R-rnVeB73Ehhxrl1pcFXqx2-1-VTjOseACNKca6TU07aMw2",
+      "source": "R-rnVeB73Ehhxrl1pcFXq",
+      "target": "1-VTjOseACNKca6TU07aM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__un_IujSN8vtDM40OOJC1nx2-xep8iF-7XOYLY2xeblM-Aw2",
+      "source": "un_IujSN8vtDM40OOJC1n",
+      "target": "xep8iF-7XOYLY2xeblM-A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__R-rnVeB73Ehhxrl1pcFXqz2-WGR5E9CXsZCxIhwZyCSKqy2",
+      "source": "R-rnVeB73Ehhxrl1pcFXq",
+      "target": "WGR5E9CXsZCxIhwZyCSKq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WGR5E9CXsZCxIhwZyCSKqz2-I1wmKcLyjQUiJXPtsGye7y1",
+      "source": "WGR5E9CXsZCxIhwZyCSKq",
+      "target": "I1wmKcLyjQUiJXPtsGye7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__I1wmKcLyjQUiJXPtsGye7x2-WV5iV0mpkWajzM7W2Qvjww2",
+      "source": "I1wmKcLyjQUiJXPtsGye7",
+      "target": "WV5iV0mpkWajzM7W2Qvjw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WV5iV0mpkWajzM7W2Qvjwy2--dPxULwMhdnnBoX3givbdz1",
+      "source": "WV5iV0mpkWajzM7W2Qvjw",
+      "target": "-dPxULwMhdnnBoX3givbd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__WV5iV0mpkWajzM7W2Qvjwy2-LDIZoK-XgmwqPdLH01vC5z1",
+      "source": "WV5iV0mpkWajzM7W2Qvjw",
+      "target": "LDIZoK-XgmwqPdLH01vC5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__WV5iV0mpkWajzM7W2Qvjwx2-OHSvaN7TUVaRhxtGkKaT0w2",
+      "source": "WV5iV0mpkWajzM7W2Qvjw",
+      "target": "OHSvaN7TUVaRhxtGkKaT0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__OHSvaN7TUVaRhxtGkKaT0x2-1bCeydLILdEKV9NJe83gKw1",
+      "source": "OHSvaN7TUVaRhxtGkKaT0",
+      "target": "1bCeydLILdEKV9NJe83gK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

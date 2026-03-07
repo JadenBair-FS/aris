@@ -1,0 +1,2244 @@
+{
+  "title": {
+    "card": "Go",
+    "page": "Go Developer"
+  },
+  "description": "Step by step guide to becoming a Go developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "AR2-U7q1ItVEqJVyBVKsg",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "7R3hrzfF-zL0A6kAT9jZW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "oQoPM28-CYKmgdcfu8Ork",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tDEljoDusXzRd0_VYC1mG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IhzXThqAkvzqGS2rnGpBO",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IUTESw1CC3ltD92GQeYa9",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Zm9DGGySWQMt_OVWTG9la",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vUBQd_Js-qwOQ0myxPdx6",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fOuMkI6XwllWrGttieR27",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TpFU2b3CuIg2j6gR2p9HV",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ln7AImDlt7BXJlUqvGDsQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qDD8nRSqHsi35hhylEWKE",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "6_MOEfQoOai8FMeapOzw9",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "HW4Smp6jia_TD6jfE8Jub",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sNJ6YI25i71MRoh4iOEsW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ohTkUQ6t0B2EVtVIKNW0o",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3r_l0g-6S1W78WvQ6zWsC",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "DSXT3PmTOTUX1l3EzAjHR",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "UE9jeUCaGXLeTacPkjIJ-",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WwLLyHL5psm0GOI9bmOne",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to Go"
+      }
+    },
+    {
+      "id": "4PrkkoZ5fY-oow0O-bVhu",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use Go"
+      }
+    },
+    {
+      "id": "2rlmLn_yQQV-7DpX1qT98",
+      "type": "subtopic",
+      "data": {
+        "label": "History of Go"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "J5mU0v491qrm-mr1W3Msd",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting up the Environment"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "PHHviBSqhYDSNuHBFbw3l",
+      "type": "subtopic",
+      "data": {
+        "label": "Hello World in Go"
+      }
+    },
+    {
+      "id": "_3_tFOpQisx6DSP4Yc2E2",
+      "type": "subtopic",
+      "data": {
+        "label": "\u0060go\u0060 command"
+      }
+    },
+    {
+      "id": "gu0QppNXop66pFxKFKb4r",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "OzNFGkXyGxjc62odgb7_T",
+      "type": "paragraph",
+      "data": {
+        "label": "Language Basics"
+      }
+    },
+    {
+      "id": "BZKSsTgm28WV4nA74NYHO",
+      "type": "topic",
+      "data": {
+        "label": "Variables \u0026 Constants"
+      }
+    },
+    {
+      "id": "pJUkMcrUvcxuR_w89-eEq",
+      "type": "subtopic",
+      "data": {
+        "label": "var vs :="
+      }
+    },
+    {
+      "id": "QWixUXjC8YG-i1gsKVY1v",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero Values"
+      }
+    },
+    {
+      "id": "-M-qrXwVt7HfJv0CSRNGS",
+      "type": "subtopic",
+      "data": {
+        "label": "const and iota"
+      }
+    },
+    {
+      "id": "xUKsD2eTP9-RszHvKYp9Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope and Shadowing"
+      }
+    },
+    {
+      "id": "0FJxELyk7_IiVHvZFFVm2",
+      "type": "topic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "PRTou83_rD0u7p2elGG4s",
+      "type": "subtopic",
+      "data": {
+        "label": "Boolean"
+      }
+    },
+    {
+      "id": "xDPm0ywddC1jeTOnehvFa",
+      "type": "label",
+      "data": {
+        "label": "Numeric Types"
+      }
+    },
+    {
+      "id": "EAqL8Up3J63AWCZnqQph0",
+      "type": "subtopic",
+      "data": {
+        "label": "Integers (Signed, Unsigned)"
+      }
+    },
+    {
+      "id": "EzaH378F3kOdQbczhVjhA",
+      "type": "subtopic",
+      "data": {
+        "label": "Floating Points"
+      }
+    },
+    {
+      "id": "Mn-M7kxOKEublJGitgjNA",
+      "type": "subtopic",
+      "data": {
+        "label": "Complex Numbers"
+      }
+    },
+    {
+      "id": "IAXI7OAAAG4fU6JvVNSZI",
+      "type": "subtopic",
+      "data": {
+        "label": "Runes"
+      }
+    },
+    {
+      "id": "s0LtVIz3PKR-YOBw43x7i",
+      "type": "label",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "nzPe6XVqhtOZFbea6f2Hg",
+      "type": "subtopic",
+      "data": {
+        "label": "Raw String Literals"
+      }
+    },
+    {
+      "id": "7h08RUNC_uAMI6vnGdcZ1",
+      "type": "subtopic",
+      "data": {
+        "label": "Interpreted String Literals"
+      }
+    },
+    {
+      "id": "KW77j0u1HkIEws-khdGdW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "2IFxz3sFqDvUvzWNVwlWC",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Conversion"
+      }
+    },
+    {
+      "id": "ywiNCAAvpSVXTwWwguxSZ",
+      "type": "topic",
+      "data": {
+        "label": "Commands \u0026 Docs"
+      }
+    },
+    {
+      "id": "TlJoo6YQVb5hGQRRbZfDy",
+      "type": "paragraph",
+      "data": {
+        "label": "Composite Types"
+      }
+    },
+    {
+      "id": "Eu8JV-_W-P_bCx_PglIW0",
+      "type": "topic",
+      "data": {
+        "label": "Arrays"
+      }
+    },
+    {
+      "id": "3aoMFQXIh3Qdo04isHwe_",
+      "type": "topic",
+      "data": {
+        "label": "Slices"
+      }
+    },
+    {
+      "id": "qUykEUH1-9Dzotc_ltV3g",
+      "type": "subtopic",
+      "data": {
+        "label": "Capacity and Growth"
+      }
+    },
+    {
+      "id": "PWrfmYnOJRlwgdFat91bC",
+      "type": "subtopic",
+      "data": {
+        "label": "make()"
+      }
+    },
+    {
+      "id": "j0zmfpaufr5TAZa_Bh8Vu",
+      "type": "subtopic",
+      "data": {
+        "label": "Slice to Array Conversion"
+      }
+    },
+    {
+      "id": "s1E4PQVVSlBeyNn7xBikW",
+      "type": "subtopic",
+      "data": {
+        "label": "Array to Slice Conversion"
+      }
+    },
+    {
+      "id": "ZxZpReGdPq8ziSlYmf2nj",
+      "type": "topic",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "XupDuVRsM5VjdaNs7JaT5",
+      "type": "topic",
+      "data": {
+        "label": "Maps"
+      }
+    },
+    {
+      "id": "dMdOz2kUc8If3LcLZEfYf",
+      "type": "subtopic",
+      "data": {
+        "label": "Comma-Ok Idiom"
+      }
+    },
+    {
+      "id": "wRwt9JHZPmq8uapxMjn0a",
+      "type": "topic",
+      "data": {
+        "label": "Structs"
+      }
+    },
+    {
+      "id": "SW2uMlhfC-dnQakShs2km",
+      "type": "subtopic",
+      "data": {
+        "label": "Struct Tags \u0026 JSON"
+      }
+    },
+    {
+      "id": "XLj16RmCe4-nKHW52Ebhf",
+      "type": "subtopic",
+      "data": {
+        "label": "Embedding Structs"
+      }
+    },
+    {
+      "id": "C7wzT161ytHsCpO2zfmXo",
+      "type": "topic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "dC-1LotbW29C4zZJv6ak6",
+      "type": "subtopic",
+      "data": {
+        "label": "if"
+      }
+    },
+    {
+      "id": "2XaDvTJ5pyChgt1GFZF8W",
+      "type": "subtopic",
+      "data": {
+        "label": "if-else"
+      }
+    },
+    {
+      "id": "ZmPhiTrB8EK0LDdaJOhc8",
+      "type": "subtopic",
+      "data": {
+        "label": "switch"
+      }
+    },
+    {
+      "id": "orpxzKHFcf1BDQSefHl6O",
+      "type": "topic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "ijS-b400c9BldRO6PlrC1",
+      "type": "subtopic",
+      "data": {
+        "label": "for loop"
+      }
+    },
+    {
+      "id": "j0w6e8Pksh30PKDvXj3yk",
+      "type": "subtopic",
+      "data": {
+        "label": "for range"
+      }
+    },
+    {
+      "id": "Q6ic-AGG_gnXEOdmqom89",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterating Maps"
+      }
+    },
+    {
+      "id": "PC-azlCZ6wDCn1_nRyhUn",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterating Strings"
+      }
+    },
+    {
+      "id": "IWdAJ1BXqJv8EMYvFWRaH",
+      "type": "subtopic",
+      "data": {
+        "label": "break"
+      }
+    },
+    {
+      "id": "BRKryB5HawXyXeBWM4QqU",
+      "type": "subtopic",
+      "data": {
+        "label": "continue"
+      }
+    },
+    {
+      "id": "O29VoTfPiU8GZ_c16ZJIp",
+      "type": "subtopic",
+      "data": {
+        "label": "goto (discouraged)"
+      }
+    },
+    {
+      "id": "axhcEfCEoFkLey4AbA84A",
+      "type": "topic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "MBafBhpEV_7qgDNPOIBBs",
+      "type": "subtopic",
+      "data": {
+        "label": "Functions Basics"
+      }
+    },
+    {
+      "id": "MUJfa0jIL_S_b2ndNpVVw",
+      "type": "subtopic",
+      "data": {
+        "label": "Variadic Functions"
+      }
+    },
+    {
+      "id": "ai2s1bwiTcPzrXQTxFDwV",
+      "type": "subtopic",
+      "data": {
+        "label": "Multiple Return Values"
+      }
+    },
+    {
+      "id": "cEQ9NQX7ZkKLwz_hg9L_7",
+      "type": "subtopic",
+      "data": {
+        "label": "Anonymous Functions"
+      }
+    },
+    {
+      "id": "ZSiNvYDTW2RYyPttls5iz",
+      "type": "subtopic",
+      "data": {
+        "label": "Closures"
+      }
+    },
+    {
+      "id": "HIvwT8Dcr6B2NjOjy9hFv",
+      "type": "subtopic",
+      "data": {
+        "label": "Named Return Values"
+      }
+    },
+    {
+      "id": "z8-8nt-3GA7uN-cvOI-Qn",
+      "type": "subtopic",
+      "data": {
+        "label": "Call by Value"
+      }
+    },
+    {
+      "id": "JW5G_ADRlbphkQF1E7TSJ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "naBjKGrTBzlpapXzLHfvG",
+      "type": "topic",
+      "data": {
+        "label": "Pointers"
+      }
+    },
+    {
+      "id": "P0fUxEbb3bVYg35VWyg8R",
+      "type": "subtopic",
+      "data": {
+        "label": "Pointers Basics"
+      }
+    },
+    {
+      "id": "NfYlEY8f_YPITT6Exp3Iw",
+      "type": "subtopic",
+      "data": {
+        "label": "Pointers with Structs "
+      }
+    },
+    {
+      "id": "oAvCO3GOKktkbmPahkPlT",
+      "type": "subtopic",
+      "data": {
+        "label": "With Maps \u0026 Slices"
+      }
+    },
+    {
+      "id": "ItMgLOzaUCCdiTk221pAF",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Management"
+      }
+    },
+    {
+      "id": "GG0j6MNVudvITHEOXUxim",
+      "type": "subtopic",
+      "data": {
+        "label": "Garbage Collection"
+      }
+    },
+    {
+      "id": "GoLRVsKEbQysLmYEnA8we",
+      "type": "label",
+      "data": {
+        "label": "Get a Brief Overview"
+      }
+    },
+    {
+      "id": "_xrFkxXlUv3ZFFA5dXyms",
+      "type": "paragraph",
+      "data": {
+        "label": "Methods and Interfaces"
+      }
+    },
+    {
+      "id": "jx1vln8hqRJqVZfJi6CST",
+      "type": "topic",
+      "data": {
+        "label": "Methods vs Functions"
+      }
+    },
+    {
+      "id": "6NKgb-OjGdT3QsMrDU05b",
+      "type": "topic",
+      "data": {
+        "label": "Pointer Receivers"
+      }
+    },
+    {
+      "id": "99a4irV044ybZN-boMgHv",
+      "type": "topic",
+      "data": {
+        "label": "Value Receivers"
+      }
+    },
+    {
+      "id": "hIRMnPyHRGh8xCU8BTS2n",
+      "type": "topic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "ueJ7ndK2SKniDVjN2aUlO",
+      "type": "subtopic",
+      "data": {
+        "label": "Empty Interfaces"
+      }
+    },
+    {
+      "id": "wK7GNTbOsMNs0N_1N4-dU",
+      "type": "subtopic",
+      "data": {
+        "label": "Embedding Interfaces"
+      }
+    },
+    {
+      "id": "4EJ4WnH2HA3ci2uoqmNex",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Assertions"
+      }
+    },
+    {
+      "id": "6r9XbwlBtHmJrhviG2cTD",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Switch"
+      }
+    },
+    {
+      "id": "nkONsPlFYCMqzWHTm_EPB",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces Basics"
+      }
+    },
+    {
+      "id": "uEpTANOBHlFwCg5p44Lh0",
+      "type": "topic",
+      "data": {
+        "label": "Generics"
+      }
+    },
+    {
+      "id": "9EdDI0vJaEmz3XxXMrpX9",
+      "type": "subtopic",
+      "data": {
+        "label": "Why Generics?"
+      }
+    },
+    {
+      "id": "p7L4EUsjMnJlrbb-oDvlf",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Functions"
+      }
+    },
+    {
+      "id": "eWZzradMaH57H4mI7Qw6n",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Types / Interfaces"
+      }
+    },
+    {
+      "id": "8o6A2kGnupGYaaTwgsTDp",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Constraints"
+      }
+    },
+    {
+      "id": "36gt0FmNDxuIIV47aqBeH",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Inference"
+      }
+    },
+    {
+      "id": "ohWCM1FzxgR2iXkqBaIHW",
+      "type": "paragraph",
+      "data": {
+        "label": "Error Handling"
+      }
+    },
+    {
+      "id": "7EKUfKx7_7lZOs3d84iyL",
+      "type": "subtopic",
+      "data": {
+        "label": "Error Handling Basics"
+      }
+    },
+    {
+      "id": "0mMP6QR0V-Zi25njD1TFT",
+      "type": "subtopic",
+      "data": {
+        "label": "\u0060error\u0060 interface"
+      }
+    },
+    {
+      "id": "dHk6Y0zFqxtCuDiQcHQsi",
+      "type": "subtopic",
+      "data": {
+        "label": "errors.New"
+      }
+    },
+    {
+      "id": "LVaWjZfij6-z_uwkAc0MK",
+      "type": "subtopic",
+      "data": {
+        "label": "fmt.Errorf"
+      }
+    },
+    {
+      "id": "s2WlOMMKNXf6O2Qiqcm_m",
+      "type": "subtopic",
+      "data": {
+        "label": "Wrapping/Unwrapping Errors"
+      }
+    },
+    {
+      "id": "vjfqq1XVS25FVe9smtel0",
+      "type": "subtopic",
+      "data": {
+        "label": "Sentinel Errors"
+      }
+    },
+    {
+      "id": "2KyzUjcMiMgo_AvlPjYbx",
+      "type": "subtopic",
+      "data": {
+        "label": "\u0060panic\u0060 and \u0060recover\u0060"
+      }
+    },
+    {
+      "id": "rR_BIgiSR63rVlO2Igzin",
+      "type": "subtopic",
+      "data": {
+        "label": "Stack Traces \u0026 Debugging"
+      }
+    },
+    {
+      "id": "gjtBbWZBDFuwU1LqqDz1K",
+      "type": "paragraph",
+      "data": {
+        "label": "Code Organization"
+      }
+    },
+    {
+      "id": "kep_536v13aS1V9XwHKSr",
+      "type": "topic",
+      "data": {
+        "label": "Modules \u0026 Dependencies"
+      }
+    },
+    {
+      "id": "zWXJOXo8dRnuTvYlWOL6r",
+      "type": "subtopic",
+      "data": {
+        "label": "go mod init"
+      }
+    },
+    {
+      "id": "6rwVq1bMSHoGatEfm9hkp",
+      "type": "subtopic",
+      "data": {
+        "label": "go mod tidy"
+      }
+    },
+    {
+      "id": "jOiAk5coeDNVXP2QiwQis",
+      "type": "subtopic",
+      "data": {
+        "label": "go mod vendor"
+      }
+    },
+    {
+      "id": "AcYzrGFrwmeVYFEfhEiSZ",
+      "type": "topic",
+      "data": {
+        "label": "Packages"
+      }
+    },
+    {
+      "id": "dA8SMhCev1NWNM1Tsxu57",
+      "type": "topic",
+      "data": {
+        "label": "Package Import Rules"
+      }
+    },
+    {
+      "id": "eBv3i2cNA7vc01jLAbB8m",
+      "type": "topic",
+      "data": {
+        "label": "Using 3rd Party Packages"
+      }
+    },
+    {
+      "id": "CysLmwRqmQzOGAKM01AKF",
+      "type": "topic",
+      "data": {
+        "label": "Publishing Modules"
+      }
+    },
+    {
+      "id": "08QOxnF3rKEDekrkX7w1j",
+      "type": "topic",
+      "data": {
+        "label": "Goroutines"
+      }
+    },
+    {
+      "id": "EgXagvLpJkXUI2od5K1FD",
+      "type": "topic",
+      "data": {
+        "label": "Channels"
+      }
+    },
+    {
+      "id": "4_nvU_YOs9Psey5TZLQFb",
+      "type": "subtopic",
+      "data": {
+        "label": "Buffered vs Unbuffered"
+      }
+    },
+    {
+      "id": "RBr1uAdngIsvSpIdHHOyV",
+      "type": "subtopic",
+      "data": {
+        "label": "Select Statement"
+      }
+    },
+    {
+      "id": "z8ItWHAupaastLcXY3npY",
+      "type": "topic",
+      "data": {
+        "label": "Worker Pools"
+      }
+    },
+    {
+      "id": "nOI0juYhqJXNTiJBU4bKH",
+      "type": "topic",
+      "data": {
+        "label": "\u0060sync\u0060 Package"
+      }
+    },
+    {
+      "id": "6ydgmac11Zu9Ithe0kKj9",
+      "type": "subtopic",
+      "data": {
+        "label": "Mutexes"
+      }
+    },
+    {
+      "id": "amqOwSgVFDymAsDIobwiK",
+      "type": "subtopic",
+      "data": {
+        "label": "WaitGroups"
+      }
+    },
+    {
+      "id": "vxB3aGreqWBrNhiu8hcPE",
+      "type": "topic",
+      "data": {
+        "label": "\u0060context\u0060 Package"
+      }
+    },
+    {
+      "id": "p5u2tWRmRtyfBgKcSUHFU",
+      "type": "subtopic",
+      "data": {
+        "label": "Deadlines \u0026 Cancellations"
+      }
+    },
+    {
+      "id": "gChqUzY3SbPJH0H0jcoAp",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Usecases"
+      }
+    },
+    {
+      "id": "2yKVKaCXrcv5X4o2d6oqm",
+      "type": "topic",
+      "data": {
+        "label": "Concurrency Patterns"
+      }
+    },
+    {
+      "id": "8BrnnM7HM-bijbUDgnW49",
+      "type": "subtopic",
+      "data": {
+        "label": "fan-in"
+      }
+    },
+    {
+      "id": "pN8EsuKUPDUKyskodu_sC",
+      "type": "subtopic",
+      "data": {
+        "label": "fan-out"
+      }
+    },
+    {
+      "id": "loozcCzPzkni7BOdcvt1S",
+      "type": "subtopic",
+      "data": {
+        "label": "pipeline"
+      }
+    },
+    {
+      "id": "GoV8yaQARJmO47e0_l_GY",
+      "type": "topic",
+      "data": {
+        "label": "Race Detection"
+      }
+    },
+    {
+      "id": "-Qy9DEWVYUNRHWiXXhIWU",
+      "type": "topic",
+      "data": {
+        "label": "Standard Library"
+      }
+    },
+    {
+      "id": "7SYEXD5r9WKEDfecQdO5d",
+      "type": "subtopic",
+      "data": {
+        "label": "I/O \u0026 File Handling"
+      }
+    },
+    {
+      "id": "-8E79Ns4q-uAgcxtghPzf",
+      "type": "subtopic",
+      "data": {
+        "label": "flag"
+      }
+    },
+    {
+      "id": "aK9EQO1JR9hYIMkS3mdai",
+      "type": "subtopic",
+      "data": {
+        "label": "time"
+      }
+    },
+    {
+      "id": "uB1fE15OprBcwN7p7ffJF",
+      "type": "subtopic",
+      "data": {
+        "label": "encoding/json"
+      }
+    },
+    {
+      "id": "9S1gkzBvt32uLy0IFZjrg",
+      "type": "subtopic",
+      "data": {
+        "label": "os"
+      }
+    },
+    {
+      "id": "Z8j6Zkg1LYEYcoRgs23Ms",
+      "type": "subtopic",
+      "data": {
+        "label": "bufio"
+      }
+    },
+    {
+      "id": "hFlbSSBMcJtjXNL8jAcbc",
+      "type": "subtopic",
+      "data": {
+        "label": "slog"
+      }
+    },
+    {
+      "id": "9K5ffACdKNPJiWPq4tUWD",
+      "type": "subtopic",
+      "data": {
+        "label": "regexp"
+      }
+    },
+    {
+      "id": "iIPk-jK1vBCG_rKI_MPiu",
+      "type": "subtopic",
+      "data": {
+        "label": "go:embed for embedding"
+      }
+    },
+    {
+      "id": "0ZfFyzvMGeMN5vDUPvWXR",
+      "type": "paragraph",
+      "data": {
+        "label": "Testing \u0026 Benchmarking"
+      }
+    },
+    {
+      "id": "nZkLFmm2GENL81y5LB0c1",
+      "type": "subtopic",
+      "data": {
+        "label": "\u0060testing\u0060 package basics"
+      }
+    },
+    {
+      "id": "6-mr65JzXbRzIukE7jzoZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Table-driven Tests"
+      }
+    },
+    {
+      "id": "LjLbm4JEZ19howOkju7zQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Mocks and Stubs"
+      }
+    },
+    {
+      "id": "Zt4FpqCEVlpMzclJeDiMs",
+      "type": "subtopic",
+      "data": {
+        "label": "\u0060httptest\u0060  for HTTP Tests"
+      }
+    },
+    {
+      "id": "t9xOuLBrAzEvv2-bOU2hF",
+      "type": "subtopic",
+      "data": {
+        "label": "Benchmarks"
+      }
+    },
+    {
+      "id": "27lhNAdKwRrc2S2ha3QNG",
+      "type": "subtopic",
+      "data": {
+        "label": "Coverage"
+      }
+    },
+    {
+      "id": "Qm60sk8MH0Y38gfmUlG-h",
+      "type": "paragraph",
+      "data": {
+        "label": "Ecosystem \u0026 Popular Libraries"
+      }
+    },
+    {
+      "id": "2fk1ewM42WnFlDejVETys",
+      "type": "topic",
+      "data": {
+        "label": "Building CLIs"
+      }
+    },
+    {
+      "id": "3frPZLeFXnHroY7_Uk5Dn",
+      "type": "subtopic",
+      "data": {
+        "label": "Cobra"
+      }
+    },
+    {
+      "id": "bmNLSk-XuK2EuLxPR1Sxh",
+      "type": "subtopic",
+      "data": {
+        "label": "urfave/cli"
+      }
+    },
+    {
+      "id": "x9hDkF73rmvbewrgRgyOv",
+      "type": "subtopic",
+      "data": {
+        "label": "bubbletea"
+      }
+    },
+    {
+      "id": "CwGw3CDVLqErQGTwjzhmL",
+      "type": "topic",
+      "data": {
+        "label": "Web Development"
+      }
+    },
+    {
+      "id": "NMLmbKjfMSqz-Iz2CooCl",
+      "type": "subtopic",
+      "data": {
+        "label": "net/http (standard)"
+      }
+    },
+    {
+      "id": "NeDYtjfUJHsz_Lbez1YZR",
+      "type": "label",
+      "data": {
+        "label": "Frameworks (Optional)"
+      }
+    },
+    {
+      "id": "xM1uUCXNrJwfTgi9E75KV",
+      "type": "subtopic",
+      "data": {
+        "label": "gin"
+      }
+    },
+    {
+      "id": "1qhqEYf6wYf5sfXgTUnmi",
+      "type": "subtopic",
+      "data": {
+        "label": "echo"
+      }
+    },
+    {
+      "id": "5lJPsJwgy0_T7Xl6eQxuB",
+      "type": "subtopic",
+      "data": {
+        "label": "fiber"
+      }
+    },
+    {
+      "id": "p7yeYkbQKAjr2aA_eUno4",
+      "type": "subtopic",
+      "data": {
+        "label": "beego"
+      }
+    },
+    {
+      "id": "tBY6UB3gWZAxHPCFHoU_d",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC \u0026 Protocol Buffers"
+      }
+    },
+    {
+      "id": "VcHHuIZ4lGzTxOoTwxA3e",
+      "type": "topic",
+      "data": {
+        "label": "ORMs \u0026 DB Access"
+      }
+    },
+    {
+      "id": "cOj6klfBzTQQ8G75umLQZ",
+      "type": "subtopic",
+      "data": {
+        "label": "pgx"
+      }
+    },
+    {
+      "id": "fJdZIbAgOAB8nOEHQNsq6",
+      "type": "subtopic",
+      "data": {
+        "label": "GORM"
+      }
+    },
+    {
+      "id": "mGia5cJ7HFVXM0Fx5xhQE",
+      "type": "topic",
+      "data": {
+        "label": "Logging"
+      }
+    },
+    {
+      "id": "TR7N68_evDMu3qWHbGJcz",
+      "type": "subtopic",
+      "data": {
+        "label": "Zerolog"
+      }
+    },
+    {
+      "id": "4D8QsZVAUB9vGbVFgRHt4",
+      "type": "subtopic",
+      "data": {
+        "label": "Zap"
+      }
+    },
+    {
+      "id": "o2EYfm1WSd8Eq_ZcXYreo",
+      "type": "topic",
+      "data": {
+        "label": "Realtime Communication"
+      }
+    },
+    {
+      "id": "N0EG-7sU9lGFwgidXuPkV",
+      "type": "subtopic",
+      "data": {
+        "label": "Melody"
+      }
+    },
+    {
+      "id": "LOl-7BtdmYrBS0PTtHI1I",
+      "type": "subtopic",
+      "data": {
+        "label": "Centrifugo"
+      }
+    },
+    {
+      "id": "RVshe30fpsFPGDejc1Gxh",
+      "type": "paragraph",
+      "data": {
+        "label": "Go Toolchain and Tools"
+      }
+    },
+    {
+      "id": "rW4QPWIS2TWzFY0Ljny2N",
+      "type": "subtopic",
+      "data": {
+        "label": "go run"
+      }
+    },
+    {
+      "id": "4Q2HbxsKe7gO4Cimn1tCJ",
+      "type": "label",
+      "data": {
+        "label": "Core Go Commands"
+      }
+    },
+    {
+      "id": "LXqEJwGA_0cVUbF6DVwBG",
+      "type": "subtopic",
+      "data": {
+        "label": "go build"
+      }
+    },
+    {
+      "id": "k35Ogbvr9yTdJPo4RV4tM",
+      "type": "subtopic",
+      "data": {
+        "label": "go install"
+      }
+    },
+    {
+      "id": "CPFiclXXVQCsbooA0iCEy",
+      "type": "subtopic",
+      "data": {
+        "label": "go fmt"
+      }
+    },
+    {
+      "id": "5hnaPrYSBzxEIxFeg5tCK",
+      "type": "subtopic",
+      "data": {
+        "label": "go mod"
+      }
+    },
+    {
+      "id": "EskFmwCwOmZHcVzedPOJI",
+      "type": "subtopic",
+      "data": {
+        "label": "go test"
+      }
+    },
+    {
+      "id": "bxXzXM0zUm1vux1DKOLyf",
+      "type": "subtopic",
+      "data": {
+        "label": "go clean"
+      }
+    },
+    {
+      "id": "SoD0P5k4aSVRN96XxR5on",
+      "type": "subtopic",
+      "data": {
+        "label": "go doc"
+      }
+    },
+    {
+      "id": "LnhQJVsEaS_gSijCUqAMq",
+      "type": "subtopic",
+      "data": {
+        "label": "go version"
+      }
+    },
+    {
+      "id": "8Hc67gXJuH-QrVR3bdtB2",
+      "type": "label",
+      "data": {
+        "label": "Code Generation / Build Tags"
+      }
+    },
+    {
+      "id": "TstTkc_-2RZMOqtSIklEM",
+      "type": "subtopic",
+      "data": {
+        "label": "go generate"
+      }
+    },
+    {
+      "id": "Jxt4HD2iA6lRXNRJIVCLs",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Tags"
+      }
+    },
+    {
+      "id": "xPDzoe5iL5vnDHGayz4Eb",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "WCVEGqzBFv8L3bpH_9pcX",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "SZWUIESlU0pr-RlBcONxx",
+      "type": "label",
+      "data": {
+        "label": "Code Quality and Analysis"
+      }
+    },
+    {
+      "id": "qoQ6_5MgTu3ur1mkEgqG5",
+      "type": "subtopic",
+      "data": {
+        "label": "go vet"
+      }
+    },
+    {
+      "id": "6RpfXYHnOGmM6pZ6ZBb29",
+      "type": "subtopic",
+      "data": {
+        "label": "goimports"
+      }
+    },
+    {
+      "id": "MsGmycmmsygssXKS59GOy",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "l2tX1GckFU69NJ8Fc4USr",
+      "type": "label",
+      "data": {
+        "label": "Linters"
+      }
+    },
+    {
+      "id": "ksimJz7uvSh80ZIekSn_-",
+      "type": "subtopic",
+      "data": {
+        "label": "revive"
+      }
+    },
+    {
+      "id": "954ffF8CmXYX-L36Lfl44",
+      "type": "subtopic",
+      "data": {
+        "label": "staticcheck"
+      }
+    },
+    {
+      "id": "hgiNcGh3ggf8dBJ8C0HCL",
+      "type": "subtopic",
+      "data": {
+        "label": "golangci-lint"
+      }
+    },
+    {
+      "id": "JqYhtLXAu2bJ1cUV8KSf8",
+      "type": "label",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "K__satcG2ETNRFBpPqrLw",
+      "type": "subtopic",
+      "data": {
+        "label": "govulncheck"
+      }
+    },
+    {
+      "id": "48vQko-BCbnnbFdG4um12",
+      "type": "label",
+      "data": {
+        "label": "Performance and Debugging"
+      }
+    },
+    {
+      "id": "Blz9cpgKhuqtY75oUQw6I",
+      "type": "subtopic",
+      "data": {
+        "label": "pprof"
+      }
+    },
+    {
+      "id": "RE2jfECHkWvy3ldDZL938",
+      "type": "subtopic",
+      "data": {
+        "label": "trace"
+      }
+    },
+    {
+      "id": "7aTYeCd915F3UHqb6j0Az",
+      "type": "subtopic",
+      "data": {
+        "label": "Race Detector"
+      }
+    },
+    {
+      "id": "SJMEnxdTBx7RV4L0EnhhQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "JNNSFCf-Odz-9qSmzSyzw",
+      "type": "label",
+      "data": {
+        "label": "Deployment \u0026 Tooling"
+      }
+    },
+    {
+      "id": "mvcWcecHA_jyQY1txFgL_",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-compilation"
+      }
+    },
+    {
+      "id": "zCUmPIGVslLfECqfUgAr2",
+      "type": "subtopic",
+      "data": {
+        "label": "Building Executables"
+      }
+    },
+    {
+      "id": "0Ti828PgiJQne_qMgT0Bd",
+      "type": "label",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "_2JpTdzmXxszFCauJONCi",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Mgmt. in Depth"
+      }
+    },
+    {
+      "id": "ixoXVtRlrvTittqQq-Bgo",
+      "type": "subtopic",
+      "data": {
+        "label": "Escape Analysis"
+      }
+    },
+    {
+      "id": "GO50AoBOjO-EaK3s36jSS",
+      "type": "subtopic",
+      "data": {
+        "label": "Reflection"
+      }
+    },
+    {
+      "id": "tM-AAWqMJsYZ1i6DCfBeD",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsafe Package"
+      }
+    },
+    {
+      "id": "zmBYvecc5zSoLCinH68gc",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Constraints \u0026 Tags"
+      }
+    },
+    {
+      "id": "mxbs96wFJ5XGDoETA0fU_",
+      "type": "subtopic",
+      "data": {
+        "label": "CGO Basics"
+      }
+    },
+    {
+      "id": "xsjUeyxweN2GbcjknDjT8",
+      "type": "subtopic",
+      "data": {
+        "label": "Compiler \u0026 Linker Flags"
+      }
+    },
+    {
+      "id": "NlkrCAdUCJ7kU9meQJM5_",
+      "type": "subtopic",
+      "data": {
+        "label": "Plugins \u0026 Dynamic Loading"
+      }
+    },
+    {
+      "id": "x4z4QS5TZSF8CkFojfL-4",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "hl06pnTWoMnzLmiOz9Sga",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "5EKw7nx2Y6DLXyae_zkxS",
+      "type": "button",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "UZq7Aq3nhidsXdsKeEnNF",
+      "type": "button",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "jMjqrTbe6jh0SPOAjfQl9",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "A3mGfXE-jg1eSX7gIqSjT",
+      "type": "label",
+      "data": {
+        "label": "Concurrency"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "WwLLyHL5psm0GOI9bmOne",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "WwLLyHL5psm0GOI9bmOne",
+      "target": "4PrkkoZ5fY-oow0O-bVhu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-VhSEH_RoWFt1z2lial7xZy2",
+      "source": "WwLLyHL5psm0GOI9bmOne",
+      "target": "J5mU0v491qrm-mr1W3Msd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-6r9XbwlBtHmJrhviG2cTDy2",
+      "source": "WwLLyHL5psm0GOI9bmOne",
+      "target": "PHHviBSqhYDSNuHBFbw3l",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-qj6X-U4iWsQlGhMaa4A9wz1",
+      "source": "WwLLyHL5psm0GOI9bmOne",
+      "target": "OzNFGkXyGxjc62odgb7_T",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUx2-mdv4XdvKdSO_Un49h53xjw1",
+      "source": "BZKSsTgm28WV4nA74NYHO",
+      "target": "pJUkMcrUvcxuR_w89-eEq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BZKSsTgm28WV4nA74NYHOz2-uvnV1IjE8RV-FKDxHntUUy1",
+      "source": "BZKSsTgm28WV4nA74NYHO",
+      "target": "0FJxELyk7_IiVHvZFFVm2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0FJxELyk7_IiVHvZFFVm2x2-uvnV1IjE8RV-FKDxHntUUw2",
+      "source": "0FJxELyk7_IiVHvZFFVm2",
+      "target": "ywiNCAAvpSVXTwWwguxSZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUx2-qj6X-U4iWsQlGhMaa4A9ww2",
+      "source": "ywiNCAAvpSVXTwWwguxSZ",
+      "target": "TlJoo6YQVb5hGQRRbZfDy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qj6X-U4iWsQlGhMaa4A9wx2-uvnV1IjE8RV-FKDxHntUUw2",
+      "source": "TlJoo6YQVb5hGQRRbZfDy",
+      "target": "Eu8JV-_W-P_bCx_PglIW0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-qUykEUH1-9Dzotc_ltV3gz2",
+      "source": "3aoMFQXIh3Qdo04isHwe_",
+      "target": "qUykEUH1-9Dzotc_ltV3g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-PWrfmYnOJRlwgdFat91bCz1",
+      "source": "3aoMFQXIh3Qdo04isHwe_",
+      "target": "PWrfmYnOJRlwgdFat91bC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-j0zmfpaufr5TAZa_Bh8Vuz2",
+      "source": "3aoMFQXIh3Qdo04isHwe_",
+      "target": "j0zmfpaufr5TAZa_Bh8Vu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-6r9XbwlBtHmJrhviG2cTDz2",
+      "source": "3aoMFQXIh3Qdo04isHwe_",
+      "target": "s1E4PQVVSlBeyNn7xBikW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUz2-ygq9q9ViPZyzqMcuz30cvy1",
+      "source": "XupDuVRsM5VjdaNs7JaT5",
+      "target": "dMdOz2kUc8If3LcLZEfYf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__XupDuVRsM5VjdaNs7JaT5x2-uvnV1IjE8RV-FKDxHntUUw2",
+      "source": "XupDuVRsM5VjdaNs7JaT5",
+      "target": "wRwt9JHZPmq8uapxMjn0a",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-6r9XbwlBtHmJrhviG2cTDz2",
+      "source": "wRwt9JHZPmq8uapxMjn0a",
+      "target": "XLj16RmCe4-nKHW52Ebhf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-SW2uMlhfC-dnQakShs2kmz1",
+      "source": "wRwt9JHZPmq8uapxMjn0a",
+      "target": "SW2uMlhfC-dnQakShs2km",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__C7wzT161ytHsCpO2zfmXoy2-uvnV1IjE8RV-FKDxHntUUz2",
+      "source": "C7wzT161ytHsCpO2zfmXo",
+      "target": "orpxzKHFcf1BDQSefHl6O",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-j0w6e8Pksh30PKDvXj3ykz1",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "j0w6e8Pksh30PKDvXj3yk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-Q6ic-AGG_gnXEOdmqom89z2",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "Q6ic-AGG_gnXEOdmqom89",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-PC-azlCZ6wDCn1_nRyhUnz1",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "PC-azlCZ6wDCn1_nRyhUn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-BRKryB5HawXyXeBWM4QqUz1",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "BRKryB5HawXyXeBWM4QqU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-6r9XbwlBtHmJrhviG2cTDz1",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "O29VoTfPiU8GZ_c16ZJIp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__orpxzKHFcf1BDQSefHl6Ox2-uvnV1IjE8RV-FKDxHntUUw2",
+      "source": "orpxzKHFcf1BDQSefHl6O",
+      "target": "axhcEfCEoFkLey4AbA84A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3aoMFQXIh3Qdo04isHwe_y2-s1E4PQVVSlBeyNn7xBikWz1",
+      "source": "3aoMFQXIh3Qdo04isHwe_",
+      "target": "s1E4PQVVSlBeyNn7xBikW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__axhcEfCEoFkLey4AbA84Ax2-uvnV1IjE8RV-FKDxHntUUw2",
+      "source": "axhcEfCEoFkLey4AbA84A",
+      "target": "naBjKGrTBzlpapXzLHfvG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-P0fUxEbb3bVYg35VWyg8Rz1",
+      "source": "naBjKGrTBzlpapXzLHfvG",
+      "target": "P0fUxEbb3bVYg35VWyg8R",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-NfYlEY8f_YPITT6Exp3Iwz1",
+      "source": "naBjKGrTBzlpapXzLHfvG",
+      "target": "NfYlEY8f_YPITT6Exp3Iw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-oAvCO3GOKktkbmPahkPlTz1",
+      "source": "naBjKGrTBzlpapXzLHfvG",
+      "target": "oAvCO3GOKktkbmPahkPlT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wRwt9JHZPmq8uapxMjn0az2-C7wzT161ytHsCpO2zfmXow1",
+      "source": "wRwt9JHZPmq8uapxMjn0a",
+      "target": "C7wzT161ytHsCpO2zfmXo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__B8n28mzznvOF72kNn6ugVx2-uEpTANOBHlFwCg5p44Lh0w2",
+      "source": "_xrFkxXlUv3ZFFA5dXyms",
+      "target": "jx1vln8hqRJqVZfJi6CST",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__99a4irV044ybZN-boMgHvx2-uEpTANOBHlFwCg5p44Lh0w2",
+      "source": "99a4irV044ybZN-boMgHv",
+      "target": "hIRMnPyHRGh8xCU8BTS2n",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0y2-6r9XbwlBtHmJrhviG2cTDz1",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "6r9XbwlBtHmJrhviG2cTD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0y2-4EJ4WnH2HA3ci2uoqmNexz1",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "4EJ4WnH2HA3ci2uoqmNex",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0y2-wK7GNTbOsMNs0N_1N4-dUz1",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "wK7GNTbOsMNs0N_1N4-dU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0y2-ueJ7ndK2SKniDVjN2aUlOz1",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "ueJ7ndK2SKniDVjN2aUlO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0y2-nkONsPlFYCMqzWHTm_EPBz2",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "nkONsPlFYCMqzWHTm_EPB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LVaWjZfij6-z_uwkAc0MKz2-uEpTANOBHlFwCg5p44Lh0y1",
+      "source": "hIRMnPyHRGh8xCU8BTS2n",
+      "target": "uEpTANOBHlFwCg5p44Lh0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0w2-36gt0FmNDxuIIV47aqBeHx1",
+      "source": "uEpTANOBHlFwCg5p44Lh0",
+      "target": "36gt0FmNDxuIIV47aqBeH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OzNFGkXyGxjc62odgb7_Tx2-BZKSsTgm28WV4nA74NYHOw2",
+      "source": "OzNFGkXyGxjc62odgb7_T",
+      "target": "BZKSsTgm28WV4nA74NYHO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__naBjKGrTBzlpapXzLHfvGx2-RVshe30fpsFPGDejc1Gxhw2",
+      "source": "naBjKGrTBzlpapXzLHfvG",
+      "target": "_xrFkxXlUv3ZFFA5dXyms",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uEpTANOBHlFwCg5p44Lh0x2-RVshe30fpsFPGDejc1Gxhw2",
+      "source": "uEpTANOBHlFwCg5p44Lh0",
+      "target": "ohWCM1FzxgR2iXkqBaIHW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhx2-7EKUfKx7_7lZOs3d84iyLw1",
+      "source": "ohWCM1FzxgR2iXkqBaIHW",
+      "target": "7EKUfKx7_7lZOs3d84iyL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ohWCM1FzxgR2iXkqBaIHWy2-RVshe30fpsFPGDejc1Gxhz1",
+      "source": "ohWCM1FzxgR2iXkqBaIHW",
+      "target": "gjtBbWZBDFuwU1LqqDz1K",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__EgXagvLpJkXUI2od5K1FDy2-6rwVq1bMSHoGatEfm9hkpz1",
+      "source": "kep_536v13aS1V9XwHKSr",
+      "target": "6rwVq1bMSHoGatEfm9hkp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__EgXagvLpJkXUI2od5K1FDy2-RBr1uAdngIsvSpIdHHOyVz2",
+      "source": "kep_536v13aS1V9XwHKSr",
+      "target": "jOiAk5coeDNVXP2QiwQis",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__EgXagvLpJkXUI2od5K1FDy2-zWXJOXo8dRnuTvYlWOL6rz2",
+      "source": "kep_536v13aS1V9XwHKSr",
+      "target": "zWXJOXo8dRnuTvYlWOL6r",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__vxB3aGreqWBrNhiu8hcPEz2-uialoSONK4CdWVZIa9LQyy1",
+      "source": "vxB3aGreqWBrNhiu8hcPE",
+      "target": "2yKVKaCXrcv5X4o2d6oqm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__2yKVKaCXrcv5X4o2d6oqmx2-uialoSONK4CdWVZIa9LQyw1",
+      "source": "2yKVKaCXrcv5X4o2d6oqm",
+      "target": "GoV8yaQARJmO47e0_l_GY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__GoV8yaQARJmO47e0_l_GYx2-uialoSONK4CdWVZIa9LQyw1",
+      "source": "GoV8yaQARJmO47e0_l_GY",
+      "target": "-Qy9DEWVYUNRHWiXXhIWU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__gjtBbWZBDFuwU1LqqDz1Kx2-kep_536v13aS1V9XwHKSrw1",
+      "source": "gjtBbWZBDFuwU1LqqDz1K",
+      "target": "kep_536v13aS1V9XwHKSr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyx2-tBY6UB3gWZAxHPCFHoU_dw2",
+      "source": "-Qy9DEWVYUNRHWiXXhIWU",
+      "target": "7SYEXD5r9WKEDfecQdO5d",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyy2-RVshe30fpsFPGDejc1Gxhz2",
+      "source": "-Qy9DEWVYUNRHWiXXhIWU",
+      "target": "0ZfFyzvMGeMN5vDUPvWXR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhy2-6-mr65JzXbRzIukE7jzoZz1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "6-mr65JzXbRzIukE7jzoZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhy2-nZkLFmm2GENL81y5LB0c1z1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "nZkLFmm2GENL81y5LB0c1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhy2-LjLbm4JEZ19howOkju7zQz1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "LjLbm4JEZ19howOkju7zQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhy2-Zt4FpqCEVlpMzclJeDiMsz1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "Zt4FpqCEVlpMzclJeDiMs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhy2-27lhNAdKwRrc2S2ha3QNGz1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "27lhNAdKwRrc2S2ha3QNG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0ZfFyzvMGeMN5vDUPvWXRx2-RVshe30fpsFPGDejc1Gxhw1",
+      "source": "0ZfFyzvMGeMN5vDUPvWXR",
+      "target": "Qm60sk8MH0Y38gfmUlG-h",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhx2-uialoSONK4CdWVZIa9LQyw1",
+      "source": "Qm60sk8MH0Y38gfmUlG-h",
+      "target": "2fk1ewM42WnFlDejVETys",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyy2-1qhqEYf6wYf5sfXgTUnmiz2",
+      "source": "2fk1ewM42WnFlDejVETys",
+      "target": "x9hDkF73rmvbewrgRgyOv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyy2-bmNLSk-XuK2EuLxPR1Sxhz2",
+      "source": "2fk1ewM42WnFlDejVETys",
+      "target": "bmNLSk-XuK2EuLxPR1Sxh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__2fk1ewM42WnFlDejVETysx2-uialoSONK4CdWVZIa9LQyw1",
+      "source": "2fk1ewM42WnFlDejVETys",
+      "target": "CwGw3CDVLqErQGTwjzhmL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyy2-NMLmbKjfMSqz-Iz2CooClz1",
+      "source": "CwGw3CDVLqErQGTwjzhmL",
+      "target": "NMLmbKjfMSqz-Iz2CooCl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyz2-tBY6UB3gWZAxHPCFHoU_dy1",
+      "source": "CwGw3CDVLqErQGTwjzhmL",
+      "target": "tBY6UB3gWZAxHPCFHoU_d",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__CwGw3CDVLqErQGTwjzhmLx2-uialoSONK4CdWVZIa9LQyw2",
+      "source": "CwGw3CDVLqErQGTwjzhmL",
+      "target": "VcHHuIZ4lGzTxOoTwxA3e",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyz2-N0EG-7sU9lGFwgidXuPkVy1",
+      "source": "VcHHuIZ4lGzTxOoTwxA3e",
+      "target": "cOj6klfBzTQQ8G75umLQZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VcHHuIZ4lGzTxOoTwxA3ex2-uialoSONK4CdWVZIa9LQyw2",
+      "source": "VcHHuIZ4lGzTxOoTwxA3e",
+      "target": "mGia5cJ7HFVXM0Fx5xhQE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyz2-N0EG-7sU9lGFwgidXuPkVy2",
+      "source": "mGia5cJ7HFVXM0Fx5xhQE",
+      "target": "TR7N68_evDMu3qWHbGJcz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mGia5cJ7HFVXM0Fx5xhQEx2-uialoSONK4CdWVZIa9LQyw2",
+      "source": "mGia5cJ7HFVXM0Fx5xhQE",
+      "target": "o2EYfm1WSd8Eq_ZcXYreo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uialoSONK4CdWVZIa9LQyz2-N0EG-7sU9lGFwgidXuPkVy1",
+      "source": "o2EYfm1WSd8Eq_ZcXYreo",
+      "target": "N0EG-7sU9lGFwgidXuPkV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LNmb2RjGSD6CPhebu8KnCy2-RVshe30fpsFPGDejc1Gxhz2",
+      "source": "o2EYfm1WSd8Eq_ZcXYreo",
+      "target": "RVshe30fpsFPGDejc1Gxh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__RVshe30fpsFPGDejc1Gxhx2-IhzXThqAkvzqGS2rnGpBOw1",
+      "source": "RVshe30fpsFPGDejc1Gxh",
+      "target": "IhzXThqAkvzqGS2rnGpBO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__CysLmwRqmQzOGAKM01AKFy2-08QOxnF3rKEDekrkX7w1jz1",
+      "source": "CysLmwRqmQzOGAKM01AKF",
+      "target": "08QOxnF3rKEDekrkX7w1j",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nOI0juYhqJXNTiJBU4bKHz2-vxB3aGreqWBrNhiu8hcPEy1",
+      "source": "nOI0juYhqJXNTiJBU4bKH",
+      "target": "vxB3aGreqWBrNhiu8hcPE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vxB3aGreqWBrNhiu8hcPEw2-gChqUzY3SbPJH0H0jcoApx1",
+      "source": "vxB3aGreqWBrNhiu8hcPE",
+      "target": "gChqUzY3SbPJH0H0jcoAp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

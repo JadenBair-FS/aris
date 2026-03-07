@@ -1,0 +1,1560 @@
+{
+  "title": {
+    "card": "WordPress",
+    "page": "WordPress"
+  },
+  "description": "Step by step guide to becoming a WordPress Developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "4pNKo0xpJKFBdvM0f_5hC",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "G-1edWzGdT4Aoxfd55TEG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "l-EecYwQSXIl2ZKvQMDGE",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "vyPLj7IsJ-stfEZx4nNjl",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "OY8XcvH3Vzq8sUxuUQlxr",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "xSQB3bGq-WR1ivKiwBPIb",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "khVramt5-Il9xqzfaLaT_",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ZuP4Rb_Kwx4FawtPwAv64",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9hsZmwNy7qabSAe9HJ4oQ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "VjAq7_a9EbOn6ffF8GeS5",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "8Xq5LbNFytrzKrHq8dO6A",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "hisvBeQA_BRQlT3N5g4A8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_rjkL_7jMqnc7NNCvW7CW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "dRzL03FeaJG-ALOxPIc6c",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "d8LBUMHmq-UovW-gEYRcx",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Qr5nT9fuolldwnO2JgJ-r",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "r1_DTSDTbijMxtUEqpEm2",
+      "type": "subtopic",
+      "data": {
+        "label": "How the Web Works?"
+      }
+    },
+    {
+      "id": "zc99eitvwwv7EmMRjhOSE",
+      "type": "subtopic",
+      "data": {
+        "label": "What is a CMS?"
+      }
+    },
+    {
+      "id": "LmEWD_XxAfoGvFqvmcT7Q",
+      "type": "subtopic",
+      "data": {
+        "label": "What is HTTP?"
+      }
+    },
+    {
+      "id": "moyU0BmFtCW6IVq_wKKGo",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "0X6ry0jNhMwd9ksFSlFYx",
+      "type": "topic",
+      "data": {
+        "label": "Installation \u0026 Setup"
+      }
+    },
+    {
+      "id": "dDmT2tDd7_3SktXDqGMa1",
+      "type": "subtopic",
+      "data": {
+        "label": "LocalWP"
+      }
+    },
+    {
+      "id": "4z0UM3vkE2m01G5vfH2rv",
+      "type": "subtopic",
+      "data": {
+        "label": "VVV"
+      }
+    },
+    {
+      "id": "Giqhdf6bmqsgEkCZ-aa65",
+      "type": "subtopic",
+      "data": {
+        "label": "XAMPP"
+      }
+    },
+    {
+      "id": "65zlrIkArzxRwVU_fTzhi",
+      "type": "subtopic",
+      "data": {
+        "label": "Block"
+      }
+    },
+    {
+      "id": "YcwvhxKuYYL8xd3Sx-fY_",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid"
+      }
+    },
+    {
+      "id": "_X1752swPqlH51enlkg2u",
+      "type": "subtopic",
+      "data": {
+        "label": "Classic"
+      }
+    },
+    {
+      "id": "wlFxhJTD3VZBhRTWKHaT6",
+      "type": "subtopic",
+      "data": {
+        "label": "Universal"
+      }
+    },
+    {
+      "id": "z7gh1lLCcgpwjK9Q9hJB0",
+      "type": "topic",
+      "data": {
+        "label": "Themes"
+      }
+    },
+    {
+      "id": "9vUEteBwtAyEFZsVXzKTl",
+      "type": "topic",
+      "data": {
+        "label": "Plugins"
+      }
+    },
+    {
+      "id": "sNJTLbzuzNIoezVmZt89M",
+      "type": "subtopic",
+      "data": {
+        "label": "Classic"
+      }
+    },
+    {
+      "id": "OAb9tYljyN-Xo1RRx4TED",
+      "type": "subtopic",
+      "data": {
+        "label": "Third-Party Page Builders"
+      }
+    },
+    {
+      "id": "WvQNMj6wTKVEDq9ro3NWp",
+      "type": "topic",
+      "data": {
+        "label": "Page Editors"
+      }
+    },
+    {
+      "id": "BYoMY5a7j-X5tAUB9N3-y",
+      "type": "topic",
+      "data": {
+        "label": "File Structure"
+      }
+    },
+    {
+      "id": "d8QcGVn2NoHxJlDxH_n_R",
+      "type": "topic",
+      "data": {
+        "label": "The Loop"
+      }
+    },
+    {
+      "id": "-YkWyPuFOn8n9l9UjJje9",
+      "type": "topic",
+      "data": {
+        "label": "Shortcodes"
+      }
+    },
+    {
+      "id": "zAV29-MTFNLLVPu3rlRFv",
+      "type": "subtopic",
+      "data": {
+        "label": "Actions"
+      }
+    },
+    {
+      "id": "k7JT0NaGrBd9OS3VhOsEM",
+      "type": "subtopic",
+      "data": {
+        "label": "Filters"
+      }
+    },
+    {
+      "id": "p2zuReNEeVSNKNqxDAVAt",
+      "type": "topic",
+      "data": {
+        "label": "Hooks"
+      }
+    },
+    {
+      "id": "5BNtWkac37Bydp6pFzHuP",
+      "type": "topic",
+      "data": {
+        "label": "Style \u0026 Script Enqueueing"
+      }
+    },
+    {
+      "id": "zOQLL3hD8NzAb-287CifD",
+      "type": "topic",
+      "data": {
+        "label": "Custom Post Types"
+      }
+    },
+    {
+      "id": "x4mnKW7I-du18ybY3Pb0r",
+      "type": "topic",
+      "data": {
+        "label": "Taxonomies"
+      }
+    },
+    {
+      "id": "yZ5sglhcY2--dT-JyPQFd",
+      "type": "topic",
+      "data": {
+        "label": "Coding Standards"
+      }
+    },
+    {
+      "id": "1rfPHsFNlnCCmk5gLPBoD",
+      "type": "topic",
+      "data": {
+        "label": "Classic vs Block Themes"
+      }
+    },
+    {
+      "id": "dPgcKkbULFFdx3po8Ijgf",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Hierarchy"
+      }
+    },
+    {
+      "id": "GG6uE_p44ybIxez--igF1",
+      "type": "subtopic",
+      "data": {
+        "label": "Child Themes"
+      }
+    },
+    {
+      "id": "rl-8l8nhjNLtVglNM_Aaw",
+      "type": "subtopic",
+      "data": {
+        "label": "Styles"
+      }
+    },
+    {
+      "id": "xAVlAoI_aSSfDxyW5fUkC",
+      "type": "subtopic",
+      "data": {
+        "label": "Overrides"
+      }
+    },
+    {
+      "id": "GzR7xWWm3m1laoQrQmbDZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Working with Databases"
+      }
+    },
+    {
+      "id": "_ijMALSgk7NpDQnuo15sB",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Tables"
+      }
+    },
+    {
+      "id": "TY_lQuXU5RkvnYxi-JsT6",
+      "type": "subtopic",
+      "data": {
+        "label": "External API Integrations"
+      }
+    },
+    {
+      "id": "CNWRqhsaWK6xrIDvN564O",
+      "type": "subtopic",
+      "data": {
+        "label": "WP-CLI"
+      }
+    },
+    {
+      "id": "eshQkhtAGQZYR-4YRQoFC",
+      "type": "subtopic",
+      "data": {
+        "label": "Sage"
+      }
+    },
+    {
+      "id": "ND0sr6SbdQYcEHic8mOxL",
+      "type": "subtopic",
+      "data": {
+        "label": "Bedrock"
+      }
+    },
+    {
+      "id": "SG0_5ZaQcDdnu4Th75Pje",
+      "type": "subtopic",
+      "data": {
+        "label": "Composer"
+      }
+    },
+    {
+      "id": "5IJERQdGXAGLi7GDDBBUP",
+      "type": "topic",
+      "data": {
+        "label": "Workflows \u0026 Automation"
+      }
+    },
+    {
+      "id": "Pg83mKnN_q2OPWZoSUeIw",
+      "type": "subtopic",
+      "data": {
+        "label": "OOP in PHP"
+      }
+    },
+    {
+      "id": "DGUKyNG_gTUWqmPRZNOpz",
+      "type": "subtopic",
+      "data": {
+        "label": "Composer \u0026 Autoloading"
+      }
+    },
+    {
+      "id": "sXDr-m69q3b7HTEwAx4Oe",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Patterns"
+      }
+    },
+    {
+      "id": "aI9yJGnzztuVayUhgIxAw",
+      "type": "topic",
+      "data": {
+        "label": "Advanced PHP \u0026 Architecture"
+      }
+    },
+    {
+      "id": "E559_d1l7iIMDb6QobOsh",
+      "type": "topic",
+      "data": {
+        "label": "Security \u0026 Hardening"
+      }
+    },
+    {
+      "id": "KR9cp-nDEGTab4vmz0XBZ",
+      "type": "topic",
+      "data": {
+        "label": "User Roles"
+      }
+    },
+    {
+      "id": "9jEQivDC8PpTGTJXMkD6t",
+      "type": "topic",
+      "data": {
+        "label": "Security Best Practices"
+      }
+    },
+    {
+      "id": "bDzltzHlI7p-0UqJg2N68",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewall \u0026 Malware Scanning"
+      }
+    },
+    {
+      "id": "GkaZLnXVhHqn2sQfChor7",
+      "type": "subtopic",
+      "data": {
+        "label": "Virtual Patching"
+      }
+    },
+    {
+      "id": "KBHvwgqRRRg-amfGTUAL3",
+      "type": "subtopic",
+      "data": {
+        "label": "Activity Logging"
+      }
+    },
+    {
+      "id": "1737UjumNSgI4woESMn49",
+      "type": "subtopic",
+      "data": {
+        "label": "User \u0026 Login Security"
+      }
+    },
+    {
+      "id": "pdoRrBaVwVTGCaJH4kY60",
+      "type": "subtopic",
+      "data": {
+        "label": "Vulnerability Monitoring"
+      }
+    },
+    {
+      "id": "4fIWzIY2720UME6qjLdhS",
+      "type": "topic",
+      "data": {
+        "label": "Backups \u0026 Recovery"
+      }
+    },
+    {
+      "id": "AGQ9uXMYuYQ5d6w56gJBP",
+      "type": "topic",
+      "data": {
+        "label": "Update Strategies"
+      }
+    },
+    {
+      "id": "sWgjddp7yGITFu_sYIVA7",
+      "type": "topic",
+      "data": {
+        "label": "Performance monitoring"
+      }
+    },
+    {
+      "id": "CLqqdBm5yQ85UabxPvlPw",
+      "type": "topic",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "UDQ3VQCllviOq8wI806Wk",
+      "type": "topic",
+      "data": {
+        "label": "Automated Deployments"
+      }
+    },
+    {
+      "id": "CLQwjime3I2HKRzLLnSL3",
+      "type": "topic",
+      "data": {
+        "label": "Basics of SEO"
+      }
+    },
+    {
+      "id": "hTlGnyRljCAkKdUJOZYH7",
+      "type": "title",
+      "data": {
+        "label": "WordPress"
+      }
+    },
+    {
+      "id": "8VHVU90O1So6K8iz8HQA5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "ZUwkxnEku7TW0mfOzJT74",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-M-oB6vZe2-MyR5OpzbA5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gsO2G0SbGw-HR3FJrdGKb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8ZMCYeqiy5fzoIWUk1XK5",
+      "type": "subtopic",
+      "data": {
+        "label": "Frontend Fundamentals"
+      }
+    },
+    {
+      "id": "oWXYF_l401eQLlkCT3rn6",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "qNr6gKBcxYoUJSOc4O3nn",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "soF98LgnxSW3o5y9PEY0t",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "W3fyV8zyFf-lJkGqkogtl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-62DkJGOnzTK21RT48ojG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Xy15NSxlS0QXYNzEvgocK",
+      "type": "subtopic",
+      "data": {
+        "label": "Backend Fundamentals"
+      }
+    },
+    {
+      "id": "fX71CXA26cUxY5WX_zABi",
+      "type": "subtopic",
+      "data": {
+        "label": "PHP"
+      }
+    },
+    {
+      "id": "F-9uI39S9oYVGA8hi7aZI",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "ftr0xEtlhgidAH2rB297J",
+      "type": "label",
+      "data": {
+        "label": "Start with local deployment"
+      }
+    },
+    {
+      "id": "7xRSY6VVjkVsjRWPrhxO7",
+      "type": "paragraph",
+      "data": {
+        "label": "WordPress Concepts"
+      }
+    },
+    {
+      "id": "YbzkrzDYtja8rhYvzkQU8",
+      "type": "subtopic",
+      "data": {
+        "label": "Block Editor"
+      }
+    },
+    {
+      "id": "PFN5W625KG6BjsCtdiaYv",
+      "type": "paragraph",
+      "data": {
+        "label": "Themes \u0026 Plugins"
+      }
+    },
+    {
+      "id": "6fq6xIYQtmIWQAOXhUGD3",
+      "type": "label",
+      "data": {
+        "label": "Classic Themes"
+      }
+    },
+    {
+      "id": "47mdVZFZl1CF-_mgG3qHF",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Files"
+      }
+    },
+    {
+      "id": "1BtXLjHOINLx9SJ1Y9gyd",
+      "type": "subtopic",
+      "data": {
+        "label": "style.css"
+      }
+    },
+    {
+      "id": "28RlVJKJinaFBCjROCYu-",
+      "type": "subtopic",
+      "data": {
+        "label": "functions.php"
+      }
+    },
+    {
+      "id": "-bOmhXgqJRei6uBUzyyTF",
+      "type": "label",
+      "data": {
+        "label": "Theme Structure"
+      }
+    },
+    {
+      "id": "6rmwfUecLKrhxOXQIRszK",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Fields"
+      }
+    },
+    {
+      "id": "Gr68jNPdHq19bLDpx17aU",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Tags"
+      }
+    },
+    {
+      "id": "Vh6DghBotNdejOQooysiE",
+      "type": "label",
+      "data": {
+        "label": "Theme Customization"
+      }
+    },
+    {
+      "id": "DzXBl8O1uwq_DgyD88qRq",
+      "type": "subtopic",
+      "data": {
+        "label": "Widgets"
+      }
+    },
+    {
+      "id": "_pPBxAMteOviyqkrCi2TM",
+      "type": "subtopic",
+      "data": {
+        "label": "Menus"
+      }
+    },
+    {
+      "id": "fh4oAQsCeAisrxUEqDbqu",
+      "type": "subtopic",
+      "data": {
+        "label": "Customizer"
+      }
+    },
+    {
+      "id": "JTWl8rqTwaD2YulcOnwu9",
+      "type": "subtopic",
+      "data": {
+        "label": "ACF"
+      }
+    },
+    {
+      "id": "uozpsemLlAJWS-uQkdy6X",
+      "type": "subtopic",
+      "data": {
+        "label": "Metabox"
+      }
+    },
+    {
+      "id": "r3hcgBKcIIuTuqqVIvpC9",
+      "type": "subtopic",
+      "data": {
+        "label": "Full Site Editing (FSE)"
+      }
+    },
+    {
+      "id": "Z5B-H955_t27CP4AYZ9NO",
+      "type": "label",
+      "data": {
+        "label": "Block Themes"
+      }
+    },
+    {
+      "id": "HGczCcVcLru6ac76YdcZW",
+      "type": "subtopic",
+      "data": {
+        "label": "Theme Structure"
+      }
+    },
+    {
+      "id": "lDuJRUjKyie7PbdU12d7r",
+      "type": "subtopic",
+      "data": {
+        "label": "Block Patterns"
+      }
+    },
+    {
+      "id": "SyKVTUomX-UB3zUnCfrdA",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Parts"
+      }
+    },
+    {
+      "id": "KmGbX5xFuap5EUUjQiJtK",
+      "type": "subtopic",
+      "data": {
+        "label": "File Structure"
+      }
+    },
+    {
+      "id": "CrD4HH8mht1KZ0_m1MUsm",
+      "type": "subtopic",
+      "data": {
+        "label": "Plugin Basics"
+      }
+    },
+    {
+      "id": "BS0poxbCfYfBvvnZzODH0",
+      "type": "subtopic",
+      "data": {
+        "label": "AJAX in WordPress"
+      }
+    },
+    {
+      "id": "tdJQiJJ47fdlyEk1Ze1P4",
+      "type": "subtopic",
+      "data": {
+        "label": "Cron Jobs"
+      }
+    },
+    {
+      "id": "F07fwxJYDQzYWh-1KNnmL",
+      "type": "label",
+      "data": {
+        "label": "Advanced Plugin"
+      }
+    },
+    {
+      "id": "WXTnOWylTg4aLn8r1mdwS",
+      "type": "subtopic",
+      "data": {
+        "label": "Transients API"
+      }
+    },
+    {
+      "id": "VVgrD8RFghqwZ9ISWKmus",
+      "type": "subtopic",
+      "data": {
+        "label": "REST API"
+      }
+    },
+    {
+      "id": "gpO6iYnsepFTjbYzUEET0",
+      "type": "topic",
+      "data": {
+        "label": "WordPress REST API"
+      }
+    },
+    {
+      "id": "cnBozFgNQnUQ3sCx_Uy5H",
+      "type": "label",
+      "data": {
+        "label": "Extending Functionality"
+      }
+    },
+    {
+      "id": "nTuHbvhf6OgM6ZekXqGSa",
+      "type": "subtopic",
+      "data": {
+        "label": "Admin Menu"
+      }
+    },
+    {
+      "id": "PlWlAn7qFY5qxYXjQkFrw",
+      "type": "subtopic",
+      "data": {
+        "label": "Settings Page"
+      }
+    },
+    {
+      "id": "1dOm-BAhGXVxhRu-xin25",
+      "type": "subtopic",
+      "data": {
+        "label": "Settings API"
+      }
+    },
+    {
+      "id": "AdJuUaPZxQ0MGOGCsm_96",
+      "type": "label",
+      "data": {
+        "label": "Plugin Administration"
+      }
+    },
+    {
+      "id": "bvmPbWarEJjJWYbIeuo50",
+      "type": "subtopic",
+      "data": {
+        "label": "Options API"
+      }
+    },
+    {
+      "id": "HFIYdCrRARH2iBJoUCaB0",
+      "type": "label",
+      "data": {
+        "label": "Plugin Basics"
+      }
+    },
+    {
+      "id": "oT5yJrNY2Q5IjqpFiTUW5",
+      "type": "topic",
+      "data": {
+        "label": "Licensing \u0026 Updates"
+      }
+    },
+    {
+      "id": "ElD1b6ktTIopHCl3WzE7Y",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced WordPress"
+      }
+    },
+    {
+      "id": "1FG5pAtfZjpQH6Mn-B1Nv",
+      "type": "topic",
+      "data": {
+        "label": "Headless WordPress"
+      }
+    },
+    {
+      "id": "uKMMyCkbH1-Na6vaG5bJQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "TX8dzu0k2sgXUnUOldhmZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Assets"
+      }
+    },
+    {
+      "id": "jsgjt-3B7KrkHIzyFwXOP",
+      "type": "label",
+      "data": {
+        "label": "Optimizations"
+      }
+    },
+    {
+      "id": "_Z0jfQot6JP9o2WocoPyx",
+      "type": "subtopic",
+      "data": {
+        "label": "Images"
+      }
+    },
+    {
+      "id": "5nd9YdT871IZF2Ry35bdh",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Tuning"
+      }
+    },
+    {
+      "id": "zEogtBBsOALQegh5QTy14",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "ktqvYkk7d680p2eRteAvR",
+      "type": "subtopic",
+      "data": {
+        "label": "Core Web Vitals"
+      }
+    },
+    {
+      "id": "PREVV_dtO35j4Vi1FwQjk",
+      "type": "subtopic",
+      "data": {
+        "label": "CDN Integration"
+      }
+    },
+    {
+      "id": "1Vq61V9Ddo0bk5y93HrCo",
+      "type": "paragraph",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "daXygaK4gRGClvibR8SyI",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "AhNZlM1DVdm0Klg5-essZ",
+      "type": "paragraph",
+      "data": {
+        "label": "Testing \u0026 Debugging"
+      }
+    },
+    {
+      "id": "InInDsldD3V7MHYCV7c89",
+      "type": "subtopic",
+      "data": {
+        "label": "WP_DEBUG"
+      }
+    },
+    {
+      "id": "lW3g0UO-UeyjddzF0lpup",
+      "type": "subtopic",
+      "data": {
+        "label": "PHPUnit"
+      }
+    },
+    {
+      "id": "N_M4ICk29TBAmDX-xokG4",
+      "type": "subtopic",
+      "data": {
+        "label": "Log Files"
+      }
+    },
+    {
+      "id": "e5DY4WPJmaKzuj1KncBuY",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Monitor"
+      }
+    },
+    {
+      "id": "sywXUuRlvcxQAdbLo5aB0",
+      "type": "paragraph",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "6bg1IT2mC4cbKv7dn1__l",
+      "type": "paragraph",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "Y7a4TRYbgUOO2F_gO877f",
+      "type": "subtopic",
+      "data": {
+        "label": "Managed"
+      }
+    },
+    {
+      "id": "7p44mAXvgrxoeJU1h0sP1",
+      "type": "subtopic",
+      "data": {
+        "label": "VPS"
+      }
+    },
+    {
+      "id": "r-1Dz77W-afY3PARBR5LI",
+      "type": "subtopic",
+      "data": {
+        "label": "Shared"
+      }
+    },
+    {
+      "id": "E2DN0Vj9Ak7hxf8QZwmz6",
+      "type": "label",
+      "data": {
+        "label": "Hosting Options"
+      }
+    },
+    {
+      "id": "dyZC4MVm-TqclSnTVznPo",
+      "type": "topic",
+      "data": {
+        "label": "Localization"
+      }
+    },
+    {
+      "id": "yfkZv_REsq-ttyeiW9c8y",
+      "type": "topic",
+      "data": {
+        "label": "Multisite"
+      }
+    },
+    {
+      "id": "bfFSH7alQ8IZZJ5gUed-T",
+      "type": "topic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "PHP"
+      }
+    },
+    {
+      "id": "k9-YjpBsN8ID0haGR6ucq",
+      "type": "subtopic",
+      "data": {
+        "label": "wordpress.com \u0026 wordpress.org"
+      }
+    },
+    {
+      "id": "2W-s3ugsrRpkFj0WQFDKe",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "bM7grwJzuauC3ap7MNwuN",
+      "type": "subtopic",
+      "data": {
+        "label": "Third-Party"
+      }
+    },
+    {
+      "id": "prgqgwBX-RtBQi5YeF33q",
+      "type": "paragraph",
+      "data": {
+        "label": "Career Growth"
+      }
+    },
+    {
+      "id": "IJ_aNI71Z0H5CMLIDRvqR",
+      "type": "subtopic",
+      "data": {
+        "label": "Contribute to WordPress"
+      }
+    },
+    {
+      "id": "dGHHlz26kn14_o7emPcFV",
+      "type": "subtopic",
+      "data": {
+        "label": "Boost your WordPress Career"
+      }
+    },
+    {
+      "id": "0FtAQxN7lVZcTOVjbffvW",
+      "type": "subtopic",
+      "data": {
+        "label": "WordPress Credit Program"
+      }
+    },
+    {
+      "id": "85tg21XMAo3gVmmRu_-7u",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "H7ZsI5k-Nw9Milee3kJDN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "DDQr7hYVa2HKBr3toxKac",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "lXiJ07yzAxfdrivnVCzDa",
+      "type": "paragraph",
+      "data": {
+        "label": "Special thanks to Melapress for helping us create this roadmap"
+      }
+    },
+    {
+      "id": "K8clGWGRrzrxQVlEcMVB6",
+      "type": "button",
+      "data": {
+        "label": "Visit Melapress Website"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__hTlGnyRljCAkKdUJOZYH7x2-moyU0BmFtCW6IVq_wKKGow1",
+      "source": "hTlGnyRljCAkKdUJOZYH7",
+      "target": "moyU0BmFtCW6IVq_wKKGo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGox2-0X6ry0jNhMwd9ksFSlFYxw1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "0X6ry0jNhMwd9ksFSlFYx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0X6ry0jNhMwd9ksFSlFYxx2-t7P16iJguQg-u_GezLLy8w1",
+      "source": "0X6ry0jNhMwd9ksFSlFYx",
+      "target": "7xRSY6VVjkVsjRWPrhxO7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5BNtWkac37Bydp6pFzHuPy2-zOQLL3hD8NzAb-287CifDz1",
+      "source": "5BNtWkac37Bydp6pFzHuP",
+      "target": "zOQLL3hD8NzAb-287CifD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__yZ5sglhcY2--dT-JyPQFdz2-t7P16iJguQg-u_GezLLy8y2",
+      "source": "yZ5sglhcY2--dT-JyPQFd",
+      "target": "PFN5W625KG6BjsCtdiaYv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__oT5yJrNY2Q5IjqpFiTUW5x2-xSQB3bGq-WR1ivKiwBPIbw1",
+      "source": "1rfPHsFNlnCCmk5gLPBoD",
+      "target": "xSQB3bGq-WR1ivKiwBPIb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t7P16iJguQg-u_GezLLy8z2-oT5yJrNY2Q5IjqpFiTUW5y1",
+      "source": "PFN5W625KG6BjsCtdiaYv",
+      "target": "1rfPHsFNlnCCmk5gLPBoD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGoz2-LmEWD_XxAfoGvFqvmcT7Qy1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "LmEWD_XxAfoGvFqvmcT7Q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGoz2-r1_DTSDTbijMxtUEqpEm2y1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "r1_DTSDTbijMxtUEqpEm2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGoz2-k9-YjpBsN8ID0haGR6ucqy1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "zc99eitvwwv7EmMRjhOSE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGoy2-8ZMCYeqiy5fzoIWUk1XK5z1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "8ZMCYeqiy5fzoIWUk1XK5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__moyU0BmFtCW6IVq_wKKGoy2-Xy15NSxlS0QXYNzEvgocKz1",
+      "source": "moyU0BmFtCW6IVq_wKKGo",
+      "target": "Xy15NSxlS0QXYNzEvgocK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0X6ry0jNhMwd9ksFSlFYxz2-Qr5nT9fuolldwnO2JgJ-ry2",
+      "source": "0X6ry0jNhMwd9ksFSlFYx",
+      "target": "Qr5nT9fuolldwnO2JgJ-r",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7xRSY6VVjkVsjRWPrhxO7y2-z7gh1lLCcgpwjK9Q9hJB0z1",
+      "source": "7xRSY6VVjkVsjRWPrhxO7",
+      "target": "z7gh1lLCcgpwjK9Q9hJB0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7xRSY6VVjkVsjRWPrhxO7z2-9vUEteBwtAyEFZsVXzKTly1",
+      "source": "7xRSY6VVjkVsjRWPrhxO7",
+      "target": "9vUEteBwtAyEFZsVXzKTl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WvQNMj6wTKVEDq9ro3NWpy2-p2zuReNEeVSNKNqxDAVAtz1",
+      "source": "WvQNMj6wTKVEDq9ro3NWp",
+      "target": "p2zuReNEeVSNKNqxDAVAt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__p2zuReNEeVSNKNqxDAVAty2-k7JT0NaGrBd9OS3VhOsEMz1",
+      "source": "p2zuReNEeVSNKNqxDAVAt",
+      "target": "k7JT0NaGrBd9OS3VhOsEM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__oT5yJrNY2Q5IjqpFiTUW5x2-6bg1IT2mC4cbKv7dn1__lw1",
+      "source": "oT5yJrNY2Q5IjqpFiTUW5",
+      "target": "uKMMyCkbH1-Na6vaG5bJQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__E559_d1l7iIMDb6QobOshy2-bDzltzHlI7p-0UqJg2N68z1",
+      "source": "E559_d1l7iIMDb6QobOsh",
+      "target": "bDzltzHlI7p-0UqJg2N68",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E559_d1l7iIMDb6QobOshy2-KBHvwgqRRRg-amfGTUAL3z1",
+      "source": "E559_d1l7iIMDb6QobOsh",
+      "target": "KBHvwgqRRRg-amfGTUAL3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E559_d1l7iIMDb6QobOshy2-pdoRrBaVwVTGCaJH4kY60z1",
+      "source": "E559_d1l7iIMDb6QobOsh",
+      "target": "pdoRrBaVwVTGCaJH4kY60",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E559_d1l7iIMDb6QobOshy2-GkaZLnXVhHqn2sQfChor7z1",
+      "source": "E559_d1l7iIMDb6QobOsh",
+      "target": "GkaZLnXVhHqn2sQfChor7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E559_d1l7iIMDb6QobOshy2-1737UjumNSgI4woESMn49z2",
+      "source": "E559_d1l7iIMDb6QobOsh",
+      "target": "1737UjumNSgI4woESMn49",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6bg1IT2mC4cbKv7dn1__lx2-E559_d1l7iIMDb6QobOshw1",
+      "source": "1Vq61V9Ddo0bk5y93HrCo",
+      "target": "E559_d1l7iIMDb6QobOsh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__UDQ3VQCllviOq8wI806Wkz2-prgqgwBX-RtBQi5YeF33qy1",
+      "source": "UDQ3VQCllviOq8wI806Wk",
+      "target": "ElD1b6ktTIopHCl3WzE7Y",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__prgqgwBX-RtBQi5YeF33qz2-5IJERQdGXAGLi7GDDBBUPy1",
+      "source": "ElD1b6ktTIopHCl3WzE7Y",
+      "target": "5IJERQdGXAGLi7GDDBBUP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__aI9yJGnzztuVayUhgIxAwy2-Pg83mKnN_q2OPWZoSUeIwz1",
+      "source": "aI9yJGnzztuVayUhgIxAw",
+      "target": "Pg83mKnN_q2OPWZoSUeIw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aI9yJGnzztuVayUhgIxAwy2-sXDr-m69q3b7HTEwAx4Oez1",
+      "source": "aI9yJGnzztuVayUhgIxAw",
+      "target": "sXDr-m69q3b7HTEwAx4Oe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aI9yJGnzztuVayUhgIxAwy2-DGUKyNG_gTUWqmPRZNOpzz1",
+      "source": "aI9yJGnzztuVayUhgIxAw",
+      "target": "DGUKyNG_gTUWqmPRZNOpz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__k9-YjpBsN8ID0haGR6ucqy2-moyU0BmFtCW6IVq_wKKGoz1",
+      "source": "k9-YjpBsN8ID0haGR6ucq",
+      "target": "moyU0BmFtCW6IVq_wKKGo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__CLQwjime3I2HKRzLLnSL3y2-prgqgwBX-RtBQi5YeF33qz2",
+      "source": "CLQwjime3I2HKRzLLnSL3",
+      "target": "prgqgwBX-RtBQi5YeF33q",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__dGHHlz26kn14_o7emPcFVz2-prgqgwBX-RtBQi5YeF33qy2",
+      "source": "dGHHlz26kn14_o7emPcFV",
+      "target": "prgqgwBX-RtBQi5YeF33q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__IJ_aNI71Z0H5CMLIDRvqRw2-0FtAQxN7lVZcTOVjbffvWx2",
+      "source": "IJ_aNI71Z0H5CMLIDRvqR",
+      "target": "0FtAQxN7lVZcTOVjbffvW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__prgqgwBX-RtBQi5YeF33qx2-O5dely89N5UCMBeUfh8udw2",
+      "source": "prgqgwBX-RtBQi5YeF33q",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__prgqgwBX-RtBQi5YeF33qy2-IJ_aNI71Z0H5CMLIDRvqRz2",
+      "source": "prgqgwBX-RtBQi5YeF33q",
+      "target": "IJ_aNI71Z0H5CMLIDRvqR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__9jEQivDC8PpTGTJXMkD6tx2-AhNZlM1DVdm0Klg5-essZw1",
+      "source": "9jEQivDC8PpTGTJXMkD6t",
+      "target": "AhNZlM1DVdm0Klg5-essZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__AhNZlM1DVdm0Klg5-essZz2-N_M4ICk29TBAmDX-xokG4y1",
+      "source": "AhNZlM1DVdm0Klg5-essZ",
+      "target": "N_M4ICk29TBAmDX-xokG4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AhNZlM1DVdm0Klg5-essZz2-e5DY4WPJmaKzuj1KncBuYy1",
+      "source": "AhNZlM1DVdm0Klg5-essZ",
+      "target": "e5DY4WPJmaKzuj1KncBuY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AhNZlM1DVdm0Klg5-essZz2-InInDsldD3V7MHYCV7c89y1",
+      "source": "AhNZlM1DVdm0Klg5-essZ",
+      "target": "InInDsldD3V7MHYCV7c89",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AhNZlM1DVdm0Klg5-essZz2-lW3g0UO-UeyjddzF0lpupy1",
+      "source": "AhNZlM1DVdm0Klg5-essZ",
+      "target": "lW3g0UO-UeyjddzF0lpup",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__sywXUuRlvcxQAdbLo5aB0w2-AhNZlM1DVdm0Klg5-essZx2",
+      "source": "sywXUuRlvcxQAdbLo5aB0",
+      "target": "AhNZlM1DVdm0Klg5-essZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__sywXUuRlvcxQAdbLo5aB0z2-4fIWzIY2720UME6qjLdhSy1",
+      "source": "sywXUuRlvcxQAdbLo5aB0",
+      "target": "4fIWzIY2720UME6qjLdhS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__sWgjddp7yGITFu_sYIVA7y2-6bg1IT2mC4cbKv7dn1__lz1",
+      "source": "sWgjddp7yGITFu_sYIVA7",
+      "target": "6bg1IT2mC4cbKv7dn1__l",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__G-1edWzGdT4Aoxfd55TEGx2-CLqqdBm5yQ85UabxPvlPww1",
+      "source": "G-1edWzGdT4Aoxfd55TEG",
+      "target": "CLqqdBm5yQ85UabxPvlPw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

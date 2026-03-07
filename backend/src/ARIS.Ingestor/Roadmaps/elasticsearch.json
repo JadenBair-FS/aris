@@ -1,0 +1,1492 @@
+{
+  "title": {
+    "card": "Elasticsearch",
+    "page": "Elasticsearch"
+  },
+  "description": "Step by step guide to mastering Elasticsearch in @currentYear@",
+  "nodes": [
+    {
+      "id": "huxmEhktD8oHvAjQMF53X",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "NT7YuiYuLF80AWMsaZzzW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "YlHRqD1snFjyknaNmEkTN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Yj1vaSKIBbDU8GFaWaq8I",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iq76EQXUQ4WwqEM_vOSjv",
+      "type": "title",
+      "data": {
+        "label": "Elasticsearch"
+      }
+    },
+    {
+      "id": "CSMkULeOhJ6gaX46llEUj",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rWriosjh7LzGZbj8k_wih",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "Dp_0t96tvEvE36qZkXcK6",
+      "type": "label",
+      "data": {
+        "label": "Pre-requisites"
+      }
+    },
+    {
+      "id": "ppgShbqhYsD6maDw3Dgcx",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON"
+      }
+    },
+    {
+      "id": "ciLSkWlj0_WzCUydb9Cdz",
+      "type": "subtopic",
+      "data": {
+        "label": "REST API Basics"
+      }
+    },
+    {
+      "id": "8Ac1XFUWyaCl6HAXgbrkC",
+      "type": "label",
+      "data": {
+        "label": "What is Elasticsearch"
+      }
+    },
+    {
+      "id": "rWyeaFLWQdykUQMOn8t9k",
+      "type": "subtopic",
+      "data": {
+        "label": "Search Engines vs Relational DBs"
+      }
+    },
+    {
+      "id": "lmc1Eu4oacxPT778aGya5",
+      "type": "subtopic",
+      "data": {
+        "label": "The ELK Stack"
+      }
+    },
+    {
+      "id": "0-SJLGkO8Ek7hyC6wWHKv",
+      "type": "subtopic",
+      "data": {
+        "label": "Elasticsearch Usecases"
+      }
+    },
+    {
+      "id": "STiKXZvgBRRzqk2of0cpO",
+      "type": "label",
+      "data": {
+        "label": "Environment Setup"
+      }
+    },
+    {
+      "id": "hMmoVhZnoE0CdY-C135DW",
+      "type": "subtopic",
+      "data": {
+        "label": "Running with Docker"
+      }
+    },
+    {
+      "id": "TACmPj5o4tdyTkLXqSQFb",
+      "type": "subtopic",
+      "data": {
+        "label": "Elastic Cloud"
+      }
+    },
+    {
+      "id": "ST0yxc527eb2vRrSvTWAd",
+      "type": "subtopic",
+      "data": {
+        "label": "Kibana Console"
+      }
+    },
+    {
+      "id": "MVn7RMj1fg12TkMnJxe2K",
+      "type": "paragraph",
+      "data": {
+        "label": "Core Architecture"
+      }
+    },
+    {
+      "id": "-fa1FQ19s-PpGkKviU7Dk",
+      "type": "label",
+      "data": {
+        "label": "Logical Concepts"
+      }
+    },
+    {
+      "id": "UVFo66FzwLOPFjafCMQg2",
+      "type": "subtopic",
+      "data": {
+        "label": "Cluster (System)"
+      }
+    },
+    {
+      "id": "XjeQ-O1XA9q2wCIyzXLHg",
+      "type": "subtopic",
+      "data": {
+        "label": "Node (Instance)"
+      }
+    },
+    {
+      "id": "ECrKSI6rUU_N5fd3NFgch",
+      "type": "subtopic",
+      "data": {
+        "label": "Index (Database)"
+      }
+    },
+    {
+      "id": "tX_HGYnsoeipj4xu04wnX",
+      "type": "subtopic",
+      "data": {
+        "label": "Document (Row)"
+      }
+    },
+    {
+      "id": "1Qps2Z_Cp5ZrYkq5FXwDO",
+      "type": "subtopic",
+      "data": {
+        "label": "ID (Primary Key)"
+      }
+    },
+    {
+      "id": "OABRlPVnp6srZCZj6RR5M",
+      "type": "label",
+      "data": {
+        "label": "Physical Layout"
+      }
+    },
+    {
+      "id": "Mc96iYA5dzWQJ0Kz8mgZC",
+      "type": "subtopic",
+      "data": {
+        "label": "Master-Elegible Nodes"
+      }
+    },
+    {
+      "id": "0t2kxHBbL6kXn3C1sgGEE",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Nodes"
+      }
+    },
+    {
+      "id": "eIGt2YQdHRssD_7TncWdf",
+      "type": "subtopic",
+      "data": {
+        "label": "Coordinating Nodes"
+      }
+    },
+    {
+      "id": "HTAWlDRxrxBpuTknuxgBA",
+      "type": "label",
+      "data": {
+        "label": "Sharding \u0026 Scaling     "
+      }
+    },
+    {
+      "id": "nkqoh4_V4VRyETqN0ci1R",
+      "type": "subtopic",
+      "data": {
+        "label": "Primary Shards"
+      }
+    },
+    {
+      "id": "ANeRCig1fihD5-4a7l9lz",
+      "type": "subtopic",
+      "data": {
+        "label": "Replica Shards"
+      }
+    },
+    {
+      "id": "Q6djSLPsTlIBfXFOsael7",
+      "type": "subtopic",
+      "data": {
+        "label": "The \u0022Split Brain\u0022 Problem "
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "GXXrE4twaid9uP0gjDz6P",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "WBLMWa9Gnj8dHVa7p5N_b",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Modelling"
+      }
+    },
+    {
+      "id": "2ZJCuKPy1VnJzTI0CkgeI",
+      "type": "topic",
+      "data": {
+        "label": "Mappings"
+      }
+    },
+    {
+      "id": "4f09QKfGI-GaxYw0ngdiS",
+      "type": "subtopic",
+      "data": {
+        "label": "Explicit"
+      }
+    },
+    {
+      "id": "_SuYA1C-g5XOmhCAjXhXi",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic"
+      }
+    },
+    {
+      "id": "X_6Cyj7QIls5FK1gmvi4e",
+      "type": "subtopic",
+      "data": {
+        "label": "Mapping Explosion"
+      }
+    },
+    {
+      "id": "OfsRHpwJClzwPPRe9hai2",
+      "type": "topic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "1N0RYnq5dw1M1uwGcg8Eb",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "fm-9wz-qX6sHtsWWE-Zet",
+      "type": "label",
+      "data": {
+        "label": "Core Data Types"
+      }
+    },
+    {
+      "id": "HMsxMx1l_66jjEarijeaY",
+      "type": "label",
+      "data": {
+        "label": "Advanced Types"
+      }
+    },
+    {
+      "id": "YbSxtqBjtWKCKzuMTZM_W",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_L1JMJIEJQ3VzQc0LfhfF",
+      "type": "subtopic",
+      "data": {
+        "label": "Numeric"
+      }
+    },
+    {
+      "id": "8bNqL02B9VFraXaRDaxDq",
+      "type": "subtopic",
+      "data": {
+        "label": "Boolean"
+      }
+    },
+    {
+      "id": "Fmxstc6ZjXnMLpnWkZGOA",
+      "type": "subtopic",
+      "data": {
+        "label": "Text"
+      }
+    },
+    {
+      "id": "DZ_FX0ansCsXDN7J6u7_m",
+      "type": "subtopic",
+      "data": {
+        "label": "Keyword"
+      }
+    },
+    {
+      "id": "YHLYayCH8beVSkDF_U5_F",
+      "type": "subtopic",
+      "data": {
+        "label": "Dates"
+      }
+    },
+    {
+      "id": "d_VHRn6rWUEFfI6KVrcoS",
+      "type": "subtopic",
+      "data": {
+        "label": "Geo Points"
+      }
+    },
+    {
+      "id": "RHUajAEJqQy9lnKUv-yiF",
+      "type": "subtopic",
+      "data": {
+        "label": "Object"
+      }
+    },
+    {
+      "id": "vgXst45dhcu2w29Wm8Xwp",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested"
+      }
+    },
+    {
+      "id": "MSHYpBQEgv-ukJvvuHE1B",
+      "type": "subtopic",
+      "data": {
+        "label": "Flattened"
+      }
+    },
+    {
+      "id": "7u3B1q56g-CPRvNEqKU7j",
+      "type": "label",
+      "data": {
+        "label": "Text vs Keyword"
+      }
+    },
+    {
+      "id": "zcoyicuNMQdTUeTv6MG3Z",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Ingestion"
+      }
+    },
+    {
+      "id": "jZZUliVto2LOaXX8CEOJN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "raYmik0mnI2_gu2dpWKzF",
+      "type": "subtopic",
+      "data": {
+        "label": "Create Index"
+      }
+    },
+    {
+      "id": "amdn_KmQmPJgBf-kDzC3E",
+      "type": "subtopic",
+      "data": {
+        "label": "Index Document"
+      }
+    },
+    {
+      "id": "FGz2puNUy_cGRwE3Jfylq",
+      "type": "subtopic",
+      "data": {
+        "label": "Delete Index"
+      }
+    },
+    {
+      "id": "raSeqTXjH4aCFHuoqmrcJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Get Document"
+      }
+    },
+    {
+      "id": "5HcPuuPpsNudiuzpAFU8z",
+      "type": "subtopic",
+      "data": {
+        "label": "Update Document"
+      }
+    },
+    {
+      "id": "09gu0OMfC4VsSI0Ez6bmT",
+      "type": "label",
+      "data": {
+        "label": "CRUD Operations"
+      }
+    },
+    {
+      "id": "d5KjotJsfYrE5YH7a48XI",
+      "type": "subtopic",
+      "data": {
+        "label": "Delete Documents"
+      }
+    },
+    {
+      "id": "p4OEGguDO0roJQXVrn673",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3VH_cfXDDZbYma-DL14Fe",
+      "type": "subtopic",
+      "data": {
+        "label": "Bulk index"
+      }
+    },
+    {
+      "id": "Vv7YmE4OqTsn2WWHS6bQW",
+      "type": "subtopic",
+      "data": {
+        "label": "Optimizing Bulk Indexing"
+      }
+    },
+    {
+      "id": "NXnPGMrU_PByyRFHyd6UX",
+      "type": "label",
+      "data": {
+        "label": "Bulk Operations"
+      }
+    },
+    {
+      "id": "s1Finic6tTeSbgXt1nz30",
+      "type": "subtopic",
+      "data": {
+        "label": "Reindex API"
+      }
+    },
+    {
+      "id": "q-u0rz7mc0ohFUYkXjeD6",
+      "type": "subtopic",
+      "data": {
+        "label": "Update by Query"
+      }
+    },
+    {
+      "id": "0K5YzlwFFZbYCBJwk6vXC",
+      "type": "label",
+      "data": {
+        "label": "Migrations \u0026 Repair"
+      }
+    },
+    {
+      "id": "FYdnnc9kgkWYQAtJjBgTC",
+      "type": "subtopic",
+      "data": {
+        "label": "Delete by Query"
+      }
+    },
+    {
+      "id": "gYMl1QixMYQ6-6zCNhyEG",
+      "type": "subtopic",
+      "data": {
+        "label": "must_not"
+      }
+    },
+    {
+      "id": "f63E0rn-Ayz_AAUQM-o-N",
+      "type": "subtopic",
+      "data": {
+        "label": "must "
+      }
+    },
+    {
+      "id": "irtX2t6kTUp5lDHd0AVUF",
+      "type": "subtopic",
+      "data": {
+        "label": "filter"
+      }
+    },
+    {
+      "id": "QukRBV4aCfUtUE7L-qriv",
+      "type": "subtopic",
+      "data": {
+        "label": "should"
+      }
+    },
+    {
+      "id": "jx0CS3mRr5MB95cTRQMtv",
+      "type": "subtopic",
+      "data": {
+        "label": "The Inverted Index"
+      }
+    },
+    {
+      "id": "rkL_k2nxymtgPW8xf_04k",
+      "type": "subtopic",
+      "data": {
+        "label": "Doc values "
+      }
+    },
+    {
+      "id": "fuQ4okG1z02lMx8Gkw43M",
+      "type": "topic",
+      "data": {
+        "label": "How Search Works"
+      }
+    },
+    {
+      "id": "vkZK5cN6-W5qd-7GxM9Cl",
+      "type": "paragraph",
+      "data": {
+        "label": "Search Fundamentals"
+      }
+    },
+    {
+      "id": "R2G2jlvGl6rJkqphwHYGP",
+      "type": "subtopic",
+      "data": {
+        "label": "EQL"
+      }
+    },
+    {
+      "id": "Hg5LjcPxxBJyFcfhbrE_o",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "4-hkqr1z0p56K0HzbifEs",
+      "type": "subtopic",
+      "data": {
+        "label": "Query DSL"
+      }
+    },
+    {
+      "id": "bw5Rt_AxLRVB6KnetVWU9",
+      "type": "subtopic",
+      "data": {
+        "label": "ES|QL"
+      }
+    },
+    {
+      "id": "Ad5Ck2ZdLN3iphqRmFMIF",
+      "type": "subtopic",
+      "data": {
+        "label": "KQL"
+      }
+    },
+    {
+      "id": "jWST5oXpmJVhjXKucbUu5",
+      "type": "subtopic",
+      "data": {
+        "label": "Lucene"
+      }
+    },
+    {
+      "id": "Hd-frysdmNf6h-8HWMJ-e",
+      "type": "label",
+      "data": {
+        "label": "Search Contexts"
+      }
+    },
+    {
+      "id": "GUxc44CiMH8DAaHEB8H1I",
+      "type": "subtopic",
+      "data": {
+        "label": "Query"
+      }
+    },
+    {
+      "id": "Kzuy0BM4Dme2nFanEdWGC",
+      "type": "subtopic",
+      "data": {
+        "label": "Filter"
+      }
+    },
+    {
+      "id": "PJGX-8dqY9YS_0FmM9g7o",
+      "type": "label",
+      "data": {
+        "label": "Leaf Queries"
+      }
+    },
+    {
+      "id": "DT1CW94haEhGKeVM33NB3",
+      "type": "label",
+      "data": {
+        "label": "Query Languages"
+      }
+    },
+    {
+      "id": "hwZQg4HXZeQRX5ty47U9h",
+      "type": "subtopic",
+      "data": {
+        "label": "Match Query "
+      }
+    },
+    {
+      "id": "Eu76k_9GC5DNqWMKTogV4",
+      "type": "subtopic",
+      "data": {
+        "label": "Exists Query"
+      }
+    },
+    {
+      "id": "TIOwE5LY6D4y6DwYEsZXC",
+      "type": "subtopic",
+      "data": {
+        "label": "Term Query"
+      }
+    },
+    {
+      "id": "SmaMEuknItGuLiBv9PwIk",
+      "type": "subtopic",
+      "data": {
+        "label": "ID Query"
+      }
+    },
+    {
+      "id": "h0u093c6Ccx9SllBehnYt",
+      "type": "subtopic",
+      "data": {
+        "label": "Range Query "
+      }
+    },
+    {
+      "id": "dFKT1qTnnJwAreg9E0GsF",
+      "type": "subtopic",
+      "data": {
+        "label": "Prefix Query"
+      }
+    },
+    {
+      "id": "KtRZM5xTa4rHE7JnTAwAD",
+      "type": "subtopic",
+      "data": {
+        "label": "Wildcard Query"
+      }
+    },
+    {
+      "id": "cwLhbXFLKFxezlT35aMZk",
+      "type": "label",
+      "data": {
+        "label": "Bool Queries (Compound Queries)"
+      }
+    },
+    {
+      "id": "xpxl2b_9DUXCT4bpyGete",
+      "type": "topic",
+      "data": {
+        "label": "Leaf vs Compound Queries"
+      }
+    },
+    {
+      "id": "T_ELnBmuQL4IDqOEfgJmD",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QzkAFCH4nGZbVudp_bSh_",
+      "type": "topic",
+      "data": {
+        "label": "Controlling Search Results"
+      }
+    },
+    {
+      "id": "-GcXnJzacIDHkoZFzmoq0",
+      "type": "subtopic",
+      "data": {
+        "label": "Pagination"
+      }
+    },
+    {
+      "id": "b9XUvx-4qAMwghgy-LVat",
+      "type": "subtopic",
+      "data": {
+        "label": "Source Filtering"
+      }
+    },
+    {
+      "id": "lSYyRKgtY7PEk4ESy3uRK",
+      "type": "subtopic",
+      "data": {
+        "label": "Sorting"
+      }
+    },
+    {
+      "id": "vaah2ESUA7oJW4-hHaWrm",
+      "type": "subtopic",
+      "data": {
+        "label": "Highlighting"
+      }
+    },
+    {
+      "id": "s0x7t0DX_gV6Xt0PUnECd",
+      "type": "paragraph",
+      "data": {
+        "label": "Text Analysis"
+      }
+    },
+    {
+      "id": "bNnGloEN5OED8M-WyChK6",
+      "type": "subtopic",
+      "data": {
+        "label": "fielddata"
+      }
+    },
+    {
+      "id": "s2Egde765C5w0Yj7opnpU",
+      "type": "paragraph",
+      "data": {
+        "label": "Aggregations"
+      }
+    },
+    {
+      "id": "ELDOo4mz_-TH44NLEn5Do",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "q8SWm-tJ9c7uIY6wxzQdI",
+      "type": "subtopic",
+      "data": {
+        "label": "Value Count"
+      }
+    },
+    {
+      "id": "vrj87U2jNHEQhUlUKvm0z",
+      "type": "subtopic",
+      "data": {
+        "label": "Cardinality"
+      }
+    },
+    {
+      "id": "Avit-NGMkIA9JwJ7OUiNZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Avg / Sum / Min / Max"
+      }
+    },
+    {
+      "id": "qCdD7orsutXfMeLSbyyWd",
+      "type": "subtopic",
+      "data": {
+        "label": "Stats / Extended Stats"
+      }
+    },
+    {
+      "id": "p89hujR97c1Ie3acQBhkf",
+      "type": "label",
+      "data": {
+        "label": "Metric Aggregations"
+      }
+    },
+    {
+      "id": "yx5BiPNalUkKBH7bhwbEi",
+      "type": "subtopic",
+      "data": {
+        "label": "Terms"
+      }
+    },
+    {
+      "id": "yVjpNuTx5StM7g0Jojmc2",
+      "type": "subtopic",
+      "data": {
+        "label": "Range / Date Range"
+      }
+    },
+    {
+      "id": "JoJfEPKe9lwAzql7z1uwO",
+      "type": "label",
+      "data": {
+        "label": "Bulk Aggregations"
+      }
+    },
+    {
+      "id": "NRMC5M3ZFHwHZLpPPPo5v",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested Aggregations"
+      }
+    },
+    {
+      "id": "ngYPDkTwj1e4HTFYJZ8ru",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipeline Aggregations"
+      }
+    },
+    {
+      "id": "RF53nJe09toQ6QY43o0J3",
+      "type": "label",
+      "data": {
+        "label": "Advanced Aggregations"
+      }
+    },
+    {
+      "id": "RDygFr1w9yR6mU3hSG8Vj",
+      "type": "subtopic",
+      "data": {
+        "label": "Histogram"
+      }
+    },
+    {
+      "id": "BzIj7Cc9oC4WsUeU9b4Ae",
+      "type": "subtopic",
+      "data": {
+        "label": "Filter Aggregations"
+      }
+    },
+    {
+      "id": "9D9foEt3f62BOCRaMkuO5",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NNqDkmsE8JfqtiZiVfwIO",
+      "type": "paragraph",
+      "data": {
+        "label": "Transformations"
+      }
+    },
+    {
+      "id": "MSPIbD2eaqpgjbdXRh3Tg",
+      "type": "subtopic",
+      "data": {
+        "label": "Pivot"
+      }
+    },
+    {
+      "id": "C3JSN-6jRikQjxifLu9Vk",
+      "type": "subtopic",
+      "data": {
+        "label": "Transform API"
+      }
+    },
+    {
+      "id": "aX6S8p760HI7U9POwTJ1e",
+      "type": "subtopic",
+      "data": {
+        "label": "Latest"
+      }
+    },
+    {
+      "id": "0P3ldX6NfLFLQyo1OsHm4",
+      "type": "paragraph",
+      "data": {
+        "label": "Relevance \u0026 Tuning"
+      }
+    },
+    {
+      "id": "228bHUXDcAQGeds45ysUu",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "c9rILhjxosufXg4-_ffVi",
+      "type": "subtopic",
+      "data": {
+        "label": "Understanding Similarity "
+      }
+    },
+    {
+      "id": "MqoJJv_aZCdCLHLpebrPA",
+      "type": "subtopic",
+      "data": {
+        "label": "BM25 algorithm"
+      }
+    },
+    {
+      "id": "qiS7szXhXVBTRf3y9wRdA",
+      "type": "label",
+      "data": {
+        "label": "Document Scoring"
+      }
+    },
+    {
+      "id": "ASxPenbe__jHhEUlnWbwQ",
+      "type": "label",
+      "data": {
+        "label": "Improve Query Precision"
+      }
+    },
+    {
+      "id": "ggADRxDqGMC1mfDROdzwc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3dwxVQRu0tzY2EiTCmmcl",
+      "type": "paragraph",
+      "data": {
+        "label": "Production"
+      }
+    },
+    {
+      "id": "mWqDcpoNPWfsNLZWRBhOO",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IbkvRfpVm1iNSU9jH0MLO",
+      "type": "subtopic",
+      "data": {
+        "label": "CAT API"
+      }
+    },
+    {
+      "id": "TqamknoJp5OQnvqpQpJHx",
+      "type": "subtopic",
+      "data": {
+        "label": "Cluster Monitoring"
+      }
+    },
+    {
+      "id": "v2h-DzgtEFgE5Bu4dpOTE",
+      "type": "subtopic",
+      "data": {
+        "label": "Segment Merging"
+      }
+    },
+    {
+      "id": "LBsfxSssn6i72ubU1oE7Y",
+      "type": "label",
+      "data": {
+        "label": "Cluster Management"
+      }
+    },
+    {
+      "id": "DMXH8GoYf2qVDbLg7b2hm",
+      "type": "subtopic",
+      "data": {
+        "label": "ILM"
+      }
+    },
+    {
+      "id": "-jlIcMsKptM9AoST6mCOh",
+      "type": "subtopic",
+      "data": {
+        "label": "Rollover Policies"
+      }
+    },
+    {
+      "id": "H-3LVeARg1ulLFSN7bxdj",
+      "type": "label",
+      "data": {
+        "label": "Data Life Cycle"
+      }
+    },
+    {
+      "id": "mw08QuJPgFHssk5Ur8PRY",
+      "type": "subtopic",
+      "data": {
+        "label": "Snapshots \u0026 restore"
+      }
+    },
+    {
+      "id": "ghPkYADvzyvPZbzt5Fnmz",
+      "type": "subtopic",
+      "data": {
+        "label": "SLM"
+      }
+    },
+    {
+      "id": "-janu9TcPKQNf8kWKAyIu",
+      "type": "label",
+      "data": {
+        "label": "Data Safety"
+      }
+    },
+    {
+      "id": "e7jEDWLZ6q6S0csClOD27",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Tiers"
+      }
+    },
+    {
+      "id": "NFUpYASxryl5ne1jHfj-E",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-cluster Replication"
+      }
+    },
+    {
+      "id": "zCnfv7W6-Ft4e-YWnD49h",
+      "type": "label",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "LhvRwqvPxhXm65tC1Z6dS",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "MH1AKsuv654fdXX6hVhtv",
+      "type": "subtopic",
+      "data": {
+        "label": "Vector Search"
+      }
+    },
+    {
+      "id": "ZEM809HNlJtNQCfFmoFdi",
+      "type": "subtopic",
+      "data": {
+        "label": "Semantic Search"
+      }
+    },
+    {
+      "id": "cWzmbSIsiw7809rmFA4DV",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid Search"
+      }
+    },
+    {
+      "id": "CbDkLGU37YLsFNSHlAyIj",
+      "type": "label",
+      "data": {
+        "label": "AI-Powered Search"
+      }
+    },
+    {
+      "id": "U2NT_DNSji1aEDdZLnyqu",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Features"
+      }
+    },
+    {
+      "id": "pBQsOfU5JlCMTSdKVU0C2",
+      "type": "subtopic",
+      "data": {
+        "label": "Autoscaling"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Data Engineer"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "sfaOwwjxkzq-vchTHTUAD",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "txSx-r5A7erBVXOI18R4f",
+      "type": "topic",
+      "data": {
+        "label": "Search Analyzer"
+      }
+    },
+    {
+      "id": "59-tr4ff4QmFFJCN_Vcfh",
+      "type": "subtopic",
+      "data": {
+        "label": "The Analyze API"
+      }
+    },
+    {
+      "id": "XDzjBGYxgiGOiNB_JBTRd",
+      "type": "subtopic",
+      "data": {
+        "label": "Standard Analyzer"
+      }
+    },
+    {
+      "id": "Y-4FlvsZPCP1WISOvcPMW",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Analyzers"
+      }
+    },
+    {
+      "id": "ebU65cyHH2TVGrQOHjILk",
+      "type": "subtopic",
+      "data": {
+        "label": "Boosting Queries"
+      }
+    },
+    {
+      "id": "pzRBfcevVXXWf6QfvGIvs",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Score Query"
+      }
+    },
+    {
+      "id": "OBSm1fxTj1HhuqN2FACQb",
+      "type": "subtopic",
+      "data": {
+        "label": "Match Phrase Query"
+      }
+    },
+    {
+      "id": "8FtfvlvLXXlOX-D6EDvFj",
+      "type": "subtopic",
+      "data": {
+        "label": "Synonyms Graph"
+      }
+    },
+    {
+      "id": "hiU41pPKWCvUonJr_mTjg",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "xv_a_A4QJuM3Af_My0VXj",
+      "type": "subtopic",
+      "data": {
+        "label": "Roles \u0026 Users"
+      }
+    },
+    {
+      "id": "6LJ8UCBA9jj4ENk1iLwC6",
+      "type": "subtopic",
+      "data": {
+        "label": "API Keys"
+      }
+    },
+    {
+      "id": "b4PSjo2xVnkih7e9XlnQs",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__iq76EQXUQ4WwqEM_vOSjvx2-rWriosjh7LzGZbj8k_wihw2",
+      "source": "iq76EQXUQ4WwqEM_vOSjv",
+      "target": "rWriosjh7LzGZbj8k_wih",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rWriosjh7LzGZbj8k_wihz2-Yj1vaSKIBbDU8GFaWaq8Iy1",
+      "source": "rWriosjh7LzGZbj8k_wih",
+      "target": "Yj1vaSKIBbDU8GFaWaq8I",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rWriosjh7LzGZbj8k_wihx2-WBLMWa9Gnj8dHVa7p5N_bw2",
+      "source": "rWriosjh7LzGZbj8k_wih",
+      "target": "MVn7RMj1fg12TkMnJxe2K",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MVn7RMj1fg12TkMnJxe2Kx2-WBLMWa9Gnj8dHVa7p5N_bw1",
+      "source": "MVn7RMj1fg12TkMnJxe2K",
+      "target": "WBLMWa9Gnj8dHVa7p5N_b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WBLMWa9Gnj8dHVa7p5N_bx2-QzkAFCH4nGZbVudp_bSh_w2",
+      "source": "WBLMWa9Gnj8dHVa7p5N_b",
+      "target": "2ZJCuKPy1VnJzTI0CkgeI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_z2-4f09QKfGI-GaxYw0ngdiSy1",
+      "source": "2ZJCuKPy1VnJzTI0CkgeI",
+      "target": "4f09QKfGI-GaxYw0ngdiS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__X_6Cyj7QIls5FK1gmvi4ey2-QzkAFCH4nGZbVudp_bSh_z1",
+      "source": "X_6Cyj7QIls5FK1gmvi4e",
+      "target": "2ZJCuKPy1VnJzTI0CkgeI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__2ZJCuKPy1VnJzTI0CkgeIx2-QzkAFCH4nGZbVudp_bSh_w2",
+      "source": "2ZJCuKPy1VnJzTI0CkgeI",
+      "target": "OfsRHpwJClzwPPRe9hai2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_x2-s2Egde765C5w0Yj7opnpUw1",
+      "source": "OfsRHpwJClzwPPRe9hai2",
+      "target": "zcoyicuNMQdTUeTv6MG3Z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zcoyicuNMQdTUeTv6MG3Zx2-s2Egde765C5w0Yj7opnpUw1",
+      "source": "zcoyicuNMQdTUeTv6MG3Z",
+      "target": "vkZK5cN6-W5qd-7GxM9Cl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__s2Egde765C5w0Yj7opnpUx2-QzkAFCH4nGZbVudp_bSh_w2",
+      "source": "vkZK5cN6-W5qd-7GxM9Cl",
+      "target": "xpxl2b_9DUXCT4bpyGete",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__s2Egde765C5w0Yj7opnpUz2-NT7YuiYuLF80AWMsaZzzWy1",
+      "source": "vkZK5cN6-W5qd-7GxM9Cl",
+      "target": "NT7YuiYuLF80AWMsaZzzW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xpxl2b_9DUXCT4bpyGetex2-QzkAFCH4nGZbVudp_bSh_w1",
+      "source": "xpxl2b_9DUXCT4bpyGete",
+      "target": "QzkAFCH4nGZbVudp_bSh_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_y2--GcXnJzacIDHkoZFzmoq0z1",
+      "source": "QzkAFCH4nGZbVudp_bSh_",
+      "target": "-GcXnJzacIDHkoZFzmoq0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_y2-lSYyRKgtY7PEk4ESy3uRKz1",
+      "source": "QzkAFCH4nGZbVudp_bSh_",
+      "target": "lSYyRKgtY7PEk4ESy3uRK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_y2-b9XUvx-4qAMwghgy-LVatz1",
+      "source": "QzkAFCH4nGZbVudp_bSh_",
+      "target": "b9XUvx-4qAMwghgy-LVat",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_y2-vaah2ESUA7oJW4-hHaWrmz1",
+      "source": "QzkAFCH4nGZbVudp_bSh_",
+      "target": "vaah2ESUA7oJW4-hHaWrm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QzkAFCH4nGZbVudp_bSh_x2-s2Egde765C5w0Yj7opnpUw2",
+      "source": "QzkAFCH4nGZbVudp_bSh_",
+      "target": "s0x7t0DX_gV6Xt0PUnECd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NNqDkmsE8JfqtiZiVfwIOx2-U2NT_DNSji1aEDdZLnyquw2",
+      "source": "NNqDkmsE8JfqtiZiVfwIO",
+      "target": "0P3ldX6NfLFLQyo1OsHm4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NNqDkmsE8JfqtiZiVfwIOz2-MSPIbD2eaqpgjbdXRh3Tgy1",
+      "source": "NNqDkmsE8JfqtiZiVfwIO",
+      "target": "MSPIbD2eaqpgjbdXRh3Tg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NNqDkmsE8JfqtiZiVfwIOz2-C3JSN-6jRikQjxifLu9Vky1",
+      "source": "NNqDkmsE8JfqtiZiVfwIO",
+      "target": "C3JSN-6jRikQjxifLu9Vk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__s2Egde765C5w0Yj7opnpUx2-NNqDkmsE8JfqtiZiVfwIOw2",
+      "source": "s2Egde765C5w0Yj7opnpU",
+      "target": "NNqDkmsE8JfqtiZiVfwIO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0P3ldX6NfLFLQyo1OsHm4x2-U2NT_DNSji1aEDdZLnyquw1",
+      "source": "0P3ldX6NfLFLQyo1OsHm4",
+      "target": "3dwxVQRu0tzY2EiTCmmcl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3dwxVQRu0tzY2EiTCmmclx2-U2NT_DNSji1aEDdZLnyquw2",
+      "source": "3dwxVQRu0tzY2EiTCmmcl",
+      "target": "U2NT_DNSji1aEDdZLnyqu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__s0x7t0DX_gV6Xt0PUnECdx2-fuQ4okG1z02lMx8Gkw43Mw1",
+      "source": "s0x7t0DX_gV6Xt0PUnECd",
+      "target": "fuQ4okG1z02lMx8Gkw43M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fuQ4okG1z02lMx8Gkw43Mz2-jx0CS3mRr5MB95cTRQMtvy1",
+      "source": "fuQ4okG1z02lMx8Gkw43M",
+      "target": "jx0CS3mRr5MB95cTRQMtv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fuQ4okG1z02lMx8Gkw43Mz2-rkL_k2nxymtgPW8xf_04ky1",
+      "source": "fuQ4okG1z02lMx8Gkw43M",
+      "target": "rkL_k2nxymtgPW8xf_04k",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__txSx-r5A7erBVXOI18R4fz2-59-tr4ff4QmFFJCN_Vcfhy2",
+      "source": "txSx-r5A7erBVXOI18R4f",
+      "target": "59-tr4ff4QmFFJCN_Vcfh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__txSx-r5A7erBVXOI18R4fz2-XDzjBGYxgiGOiNB_JBTRdy1",
+      "source": "txSx-r5A7erBVXOI18R4f",
+      "target": "XDzjBGYxgiGOiNB_JBTRd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__txSx-r5A7erBVXOI18R4fz2-Y-4FlvsZPCP1WISOvcPMWy1",
+      "source": "txSx-r5A7erBVXOI18R4f",
+      "target": "Y-4FlvsZPCP1WISOvcPMW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__txSx-r5A7erBVXOI18R4fx2-s2Egde765C5w0Yj7opnpUw2",
+      "source": "txSx-r5A7erBVXOI18R4f",
+      "target": "s2Egde765C5w0Yj7opnpU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__U2NT_DNSji1aEDdZLnyquz2-LhvRwqvPxhXm65tC1Z6dSy1",
+      "source": "U2NT_DNSji1aEDdZLnyqu",
+      "target": "LhvRwqvPxhXm65tC1Z6dS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

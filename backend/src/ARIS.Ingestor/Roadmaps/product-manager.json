@@ -1,0 +1,2464 @@
+{
+  "title": {
+    "card": "Product Manager",
+    "page": "Product Manager"
+  },
+  "description": "Everything you need to know to become a Product Manager in @currentYear@",
+  "nodes": [
+    {
+      "id": "dHtY_ibI0uJBL2Jknbczr",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "a9Q5Dbr58rhyVublQ1a58",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "i288W9vF02QOKgPxjDqQh",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "X-Done4_JD3ZuwWr6nCVY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "NG6ks4yOlokMVJ38DyaUP",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "MeiyH5JgagSgP24QNKmbK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "l6NjkNch2LH4BDhxXUoDK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jIsN1OBs039cLtxTqyptd",
+      "type": "title",
+      "data": {
+        "label": "Product Manager"
+      }
+    },
+    {
+      "id": "luk1vnpy0duneVjen8WzO",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Product Management?"
+      }
+    },
+    {
+      "id": "V-IeFB9S2tToxANHIzpMs",
+      "type": "subtopic",
+      "data": {
+        "label": "Product vs Project Management"
+      }
+    },
+    {
+      "id": "Dx6ee8P_Agpw1MLKlAPGI",
+      "type": "subtopic",
+      "data": {
+        "label": "Roles and Responsibilities"
+      }
+    },
+    {
+      "id": "5W-3jh1-4qSU5kagrWv9z",
+      "type": "subtopic",
+      "data": {
+        "label": "Key Skills"
+      }
+    },
+    {
+      "id": "Bukgs2nDydajjwj7WwzIT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "kB8e26BUm8BpTY1_O3N3_",
+      "type": "subtopic",
+      "data": {
+        "label": "Product Development Lifecycle"
+      }
+    },
+    {
+      "id": "5okUFVMuG6mjRki4fyCcF",
+      "type": "subtopic",
+      "data": {
+        "label": "Development"
+      }
+    },
+    {
+      "id": "GoYEAU_lZ186M3IJY48O6",
+      "type": "subtopic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "ke5vl9p3ouupjVmgU5IKw",
+      "type": "subtopic",
+      "data": {
+        "label": "Growth"
+      }
+    },
+    {
+      "id": "aUJTPvO9Eb1UOD0MIY4Mf",
+      "type": "subtopic",
+      "data": {
+        "label": "Maturity"
+      }
+    },
+    {
+      "id": "yOve7g_05UMpXHcGpdZcW",
+      "type": "subtopic",
+      "data": {
+        "label": "Decline"
+      }
+    },
+    {
+      "id": "Hk61DnFkfaeuxO2LSupMS",
+      "type": "paragraph",
+      "data": {
+        "label": "Idea Generation"
+      }
+    },
+    {
+      "id": "beca7sTxYY06RwNn5jpZM",
+      "type": "subtopic",
+      "data": {
+        "label": "Mind Mapping"
+      }
+    },
+    {
+      "id": "0emyqhl028_M6tdilfFC3",
+      "type": "subtopic",
+      "data": {
+        "label": "Brainwriting"
+      }
+    },
+    {
+      "id": "uLSPKcypF06AhzoeNVtDk",
+      "type": "subtopic",
+      "data": {
+        "label": "SCAMPER"
+      }
+    },
+    {
+      "id": "69IgqluiW9cVfezSIKInD",
+      "type": "subtopic",
+      "data": {
+        "label": "Brainstorming Techniques"
+      }
+    },
+    {
+      "id": "8epVLkRSIDKt3_NxK0sZ7",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "vP4tfzP-hOiAsv4K4RsQy",
+      "type": "subtopic",
+      "data": {
+        "label": "Discovery"
+      }
+    },
+    {
+      "id": "toc34xxsB_tnHtekk1UmN",
+      "type": "subtopic",
+      "data": {
+        "label": "Selection"
+      }
+    },
+    {
+      "id": "fK3ZaX7Amna1oa_T5axVk",
+      "type": "subtopic",
+      "data": {
+        "label": "Validation"
+      }
+    },
+    {
+      "id": "1HytzY1KRYIQWoQa5FMwY",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterative Process"
+      }
+    },
+    {
+      "id": "LhNgyNDeqCAD--dAzf6u8",
+      "type": "subtopic",
+      "data": {
+        "label": "Execution"
+      }
+    },
+    {
+      "id": "gjdCSm_jZmG_q6YjG_8Qu",
+      "type": "subtopic",
+      "data": {
+        "label": "Blue Ocean Strategy"
+      }
+    },
+    {
+      "id": "DEwte-c-jxAFpiaBXAPSO",
+      "type": "subtopic",
+      "data": {
+        "label": "TRIZ (Theory of Inventive Problem Solving)"
+      }
+    },
+    {
+      "id": "aBJUQvgXmvpLPOhpDTn7l",
+      "type": "subtopic",
+      "data": {
+        "label": "Problem Framing"
+      }
+    },
+    {
+      "id": "fmpJB_14CYn7PVuoGZdoz",
+      "type": "topic",
+      "data": {
+        "label": "Product Identification"
+      }
+    },
+    {
+      "id": "Eusp5p6gNIxtU_yVvOkmu",
+      "type": "topic",
+      "data": {
+        "label": "Market Analysis"
+      }
+    },
+    {
+      "id": "8LAy6uBfrdtrjF8ygAGoo",
+      "type": "topic",
+      "data": {
+        "label": "User Research"
+      }
+    },
+    {
+      "id": "YPqdrZguH0ArEFSe-VwKS",
+      "type": "topic",
+      "data": {
+        "label": "Positioning"
+      }
+    },
+    {
+      "id": "LkDLk6DsEvbFXZPGOhD0C",
+      "type": "subtopic",
+      "data": {
+        "label": "Identifying Market Needs"
+      }
+    },
+    {
+      "id": "PBDlYIyS8LAyPE6tV-kU7",
+      "type": "subtopic",
+      "data": {
+        "label": "Competitive Analysis"
+      }
+    },
+    {
+      "id": "aDhSpLRZ6Sd8SnkcwtyLf",
+      "type": "subtopic",
+      "data": {
+        "label": "Emerging Market Trends"
+      }
+    },
+    {
+      "id": "0y8F9x6MhApQkS1VhS8Dx",
+      "type": "subtopic",
+      "data": {
+        "label": "User Personas"
+      }
+    },
+    {
+      "id": "5kt8AkCsdAdlBmsKOkKFH",
+      "type": "subtopic",
+      "data": {
+        "label": "User Interviews"
+      }
+    },
+    {
+      "id": "a_5AyOKAgcg0rArZfapA_",
+      "type": "subtopic",
+      "data": {
+        "label": "Surveys and Questionnaires"
+      }
+    },
+    {
+      "id": "VwI7plziVzwkp3KZd4466",
+      "type": "subtopic",
+      "data": {
+        "label": "Ethnographic Research"
+      }
+    },
+    {
+      "id": "tKDlfVvNym_OIqkommiJ8",
+      "type": "subtopic",
+      "data": {
+        "label": "USP (Unique Selling Point)"
+      }
+    },
+    {
+      "id": "5QiNA05z4vz42CjV-UpPX",
+      "type": "label",
+      "data": {
+        "label": "Defining \u0026 Communicating"
+      }
+    },
+    {
+      "id": "3MYjrnd6h2ZlcfaXjUbkC",
+      "type": "subtopic",
+      "data": {
+        "label": "Market Segmentation"
+      }
+    },
+    {
+      "id": "JhhjMPTNb646aQKlS_cji",
+      "type": "subtopic",
+      "data": {
+        "label": "Case Studies"
+      }
+    },
+    {
+      "id": "KnAlfSHDjLnQ7CMv5W-Ee",
+      "type": "paragraph",
+      "data": {
+        "label": "Market and User Research"
+      }
+    },
+    {
+      "id": "WbrOaEjm9pVz9U0sq1Sw0",
+      "type": "paragraph",
+      "data": {
+        "label": "Product Strategy"
+      }
+    },
+    {
+      "id": "l-KrmCOKEfpLHq4j-9SoY",
+      "type": "topic",
+      "data": {
+        "label": "Vision \u0026 Mission"
+      }
+    },
+    {
+      "id": "DnKHDm0TZ7QQUyrhPdqkV",
+      "type": "subtopic",
+      "data": {
+        "label": "Statement"
+      }
+    },
+    {
+      "id": "ZCTSbMHAMSaOxlqaJImzr",
+      "type": "subtopic",
+      "data": {
+        "label": "Proposition"
+      }
+    },
+    {
+      "id": "8srsCEv55zh1y4gsp-rCO",
+      "type": "subtopic",
+      "data": {
+        "label": "Capabilities"
+      }
+    },
+    {
+      "id": "eKJ2XfDxu0NAKA932tbzy",
+      "type": "subtopic",
+      "data": {
+        "label": "Solved Constraints"
+      }
+    },
+    {
+      "id": "wuqZntn1ivkr9AV_09zYX",
+      "type": "subtopic",
+      "data": {
+        "label": "Future Constraints"
+      }
+    },
+    {
+      "id": "uXseNTJlteD6Fgi1bzQB4",
+      "type": "subtopic",
+      "data": {
+        "label": "Reference Materials"
+      }
+    },
+    {
+      "id": "zS_CjYSTOIkJZn-oUEvgh",
+      "type": "subtopic",
+      "data": {
+        "label": "Narrative"
+      }
+    },
+    {
+      "id": "n2AYdM2dlJfuZ97jXY49U",
+      "type": "topic",
+      "data": {
+        "label": "Defining Goals"
+      }
+    },
+    {
+      "id": "tmlFCmEuYpcUnt8VvVP9R",
+      "type": "subtopic",
+      "data": {
+        "label": "Target"
+      }
+    },
+    {
+      "id": "GPRqshiha8Pi4a4ImW8-5",
+      "type": "subtopic",
+      "data": {
+        "label": "Baseline"
+      }
+    },
+    {
+      "id": "s8mK1llA32B69_rzOwcwN",
+      "type": "subtopic",
+      "data": {
+        "label": "Trend"
+      }
+    },
+    {
+      "id": "E1yPzEhssJWMDLeSiL4cj",
+      "type": "subtopic",
+      "data": {
+        "label": "Timeframe"
+      }
+    },
+    {
+      "id": "3ySjcqHVSNctc5KsdwYWm",
+      "type": "label",
+      "data": {
+        "label": "Goal Types"
+      }
+    },
+    {
+      "id": "6OjKcLbUZVJdUDC7if0Uy",
+      "type": "topic",
+      "data": {
+        "label": "Value Proposition"
+      }
+    },
+    {
+      "id": "1j2ZSo7UGnBgoLpYzsA5t",
+      "type": "subtopic",
+      "data": {
+        "label": "Defining Value Proposition"
+      }
+    },
+    {
+      "id": "kjKUrKdtCM95VinlluKDS",
+      "type": "subtopic",
+      "data": {
+        "label": "Value Proposition Canvas"
+      }
+    },
+    {
+      "id": "0AQj2F1n8VKHBwuF4ywrp",
+      "type": "topic",
+      "data": {
+        "label": "Value vs Features"
+      }
+    },
+    {
+      "id": "xu8A_QKs6lXzKPMiifNF_",
+      "type": "subtopic",
+      "data": {
+        "label": "Finding Balance"
+      }
+    },
+    {
+      "id": "GbFbURxIRD76kyR9vKfdg",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Creep"
+      }
+    },
+    {
+      "id": "m46lX4dUHik_BSHQwaU2l",
+      "type": "topic",
+      "data": {
+        "label": "Strategic Thinking"
+      }
+    },
+    {
+      "id": "qy_IXzenBOEVBMvVlXPaY",
+      "type": "subtopic",
+      "data": {
+        "label": "Competitive Strategy"
+      }
+    },
+    {
+      "id": "8CW_clQsc6SC4piQ3__0I",
+      "type": "subtopic",
+      "data": {
+        "label": "Five Forces Analysis"
+      }
+    },
+    {
+      "id": "tTUp4GQHvjLZYkySasQFE",
+      "type": "subtopic",
+      "data": {
+        "label": "Competetive Advantage"
+      }
+    },
+    {
+      "id": "0MnqK2-pI7EkwsGy1j1sh",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jWU_odHoQYk3GKCPoRV2n",
+      "type": "subtopic",
+      "data": {
+        "label": "Strategic Partners"
+      }
+    },
+    {
+      "id": "1M6WpW1wbJcXMb3nf10U2",
+      "type": "subtopic",
+      "data": {
+        "label": "Identify Partners"
+      }
+    },
+    {
+      "id": "vXnf1AcMidLww5EypChWk",
+      "type": "subtopic",
+      "data": {
+        "label": "Managing Partnerships"
+      }
+    },
+    {
+      "id": "DoJCeL_vEXv3aVrLt7P_R",
+      "type": "paragraph",
+      "data": {
+        "label": "Product Planning"
+      }
+    },
+    {
+      "id": "0tJ7zlgOIaioCMmVavfqz",
+      "type": "topic",
+      "data": {
+        "label": "Product Requirements"
+      }
+    },
+    {
+      "id": "0FqpBfvnkGN_oE2KSC-_8",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing PRDs"
+      }
+    },
+    {
+      "id": "kN-UfAbQ8j7g0jDdqWK55",
+      "type": "subtopic",
+      "data": {
+        "label": "User Stories"
+      }
+    },
+    {
+      "id": "B9fgJmzVViaq7dvSuEglb",
+      "type": "subtopic",
+      "data": {
+        "label": "Job Stories"
+      }
+    },
+    {
+      "id": "gS3ofDrqDRKbecIskIyGi",
+      "type": "topic",
+      "data": {
+        "label": "Product Roadmap"
+      }
+    },
+    {
+      "id": "eiqV86PWizZPWsyqoBU5k",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating a Roadmap"
+      }
+    },
+    {
+      "id": "k7Zv7IS9y-jkI_zGrBQG3",
+      "type": "subtopic",
+      "data": {
+        "label": "Prioritising Features"
+      }
+    },
+    {
+      "id": "qGvHqOSTPyVKll4mMVk7i",
+      "type": "subtopic",
+      "data": {
+        "label": "Continuous Roadmapping"
+      }
+    },
+    {
+      "id": "1uAfy3ISLKGmLirvIfzfE",
+      "type": "subtopic",
+      "data": {
+        "label": "Outcome-Based Roadmaps"
+      }
+    },
+    {
+      "id": "NjLt_B_kV7FdnkOomqayx",
+      "type": "subtopic",
+      "data": {
+        "label": "Communicating the Roadmap"
+      }
+    },
+    {
+      "id": "lq5Hl1ZXBQRRI_4ywn7yA",
+      "type": "topic",
+      "data": {
+        "label": "Backlog Management"
+      }
+    },
+    {
+      "id": "Slb0P_LVdl7-GzUqbO33c",
+      "type": "subtopic",
+      "data": {
+        "label": "Prioritization Techniques"
+      }
+    },
+    {
+      "id": "sqxgqfxWMluhWtCWN8spG",
+      "type": "subtopic",
+      "data": {
+        "label": "Grooming Sessions"
+      }
+    },
+    {
+      "id": "3JY85Tu40ABy9XfoliaqE",
+      "type": "subtopic",
+      "data": {
+        "label": "User Story Mapping"
+      }
+    },
+    {
+      "id": "74FApE4fYNihBkOfl3w3p",
+      "type": "paragraph",
+      "data": {
+        "label": "Product Design"
+      }
+    },
+    {
+      "id": "-lFYy5W1YqWuTiM3QRF4k",
+      "type": "topic",
+      "data": {
+        "label": "UX / UI Design"
+      }
+    },
+    {
+      "id": "TwL-EqDorSgUpBYr4O4rf",
+      "type": "subtopic",
+      "data": {
+        "label": "Principles of UX Design"
+      }
+    },
+    {
+      "id": "zwrmh-djneZ8HIqbaBOkN",
+      "type": "subtopic",
+      "data": {
+        "label": "Wireframing and Prototyping"
+      }
+    },
+    {
+      "id": "yPtxGBDEJkFBhF8ZgQUVH",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Thinking"
+      }
+    },
+    {
+      "id": "lxU25qxxgxnNF3c3kdZxz",
+      "type": "topic",
+      "data": {
+        "label": "Service Design"
+      }
+    },
+    {
+      "id": "S_-9msr3vGZgOQ36zErnf",
+      "type": "topic",
+      "data": {
+        "label": "Interaction Design"
+      }
+    },
+    {
+      "id": "v3hKowLMBVq9eCXkUhrDZ",
+      "type": "topic",
+      "data": {
+        "label": "User Testing"
+      }
+    },
+    {
+      "id": "1uXjKKvOKqpO50m1pM627",
+      "type": "subtopic",
+      "data": {
+        "label": "Usability Testing"
+      }
+    },
+    {
+      "id": "Ws7IFrHQNoBjLE2Td2xIZ",
+      "type": "subtopic",
+      "data": {
+        "label": "A/B Testing"
+      }
+    },
+    {
+      "id": "5fze1aw1in3Gp3K31bvin",
+      "type": "subtopic",
+      "data": {
+        "label": "Remote User Testing"
+      }
+    },
+    {
+      "id": "hLy9kA3yEyDQ32XTq6I8b",
+      "type": "paragraph",
+      "data": {
+        "label": "Development and Launch"
+      }
+    },
+    {
+      "id": "sAu4Gr1hg8S4jAV0bOSdY",
+      "type": "topic",
+      "data": {
+        "label": "Agile Methodology"
+      }
+    },
+    {
+      "id": "2r-NPGcROFmw-pd4rvsAJ",
+      "type": "topic",
+      "data": {
+        "label": "Working with Engineering Teams"
+      }
+    },
+    {
+      "id": "WNCVmFrpHW7rMaIzlLaXl",
+      "type": "subtopic",
+      "data": {
+        "label": "Scrum Basics"
+      }
+    },
+    {
+      "id": "kJ2HQFEsnc5yISU8d9Lla",
+      "type": "subtopic",
+      "data": {
+        "label": "Kanban Basics"
+      }
+    },
+    {
+      "id": "bu-xm-L1XJgIPAFs2PieE",
+      "type": "subtopic",
+      "data": {
+        "label": "Sprint Planning"
+      }
+    },
+    {
+      "id": "BzgGJbXIwQb0yR2ZMCmul",
+      "type": "subtopic",
+      "data": {
+        "label": "Daily Standups"
+      }
+    },
+    {
+      "id": "AkKl7PrIPrIqXnss88v18",
+      "type": "subtopic",
+      "data": {
+        "label": "Retrospectives"
+      }
+    },
+    {
+      "id": "mm5yvAaROsbwDgQUfnqyl",
+      "type": "subtopic",
+      "data": {
+        "label": "Minimum Viable Product (MVP)"
+      }
+    },
+    {
+      "id": "Y5p9Vi4tGPw4aDEJy8xXM",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "53XS2zKdK6IDdOP07yiT7",
+      "type": "topic",
+      "data": {
+        "label": "Go-to-Market Strategy"
+      }
+    },
+    {
+      "id": "PbhuFKsVNO6xGJHqXCwFl",
+      "type": "subtopic",
+      "data": {
+        "label": "Launch Planning"
+      }
+    },
+    {
+      "id": "YYo_7lmTw7h74Y4J5pp-_",
+      "type": "subtopic",
+      "data": {
+        "label": "Marketing Strategies"
+      }
+    },
+    {
+      "id": "wWWcIfPDGB92ed-1kV-uj",
+      "type": "subtopic",
+      "data": {
+        "label": "Growth Hacking"
+      }
+    },
+    {
+      "id": "JrcZ404QjGsPn-VW1ktrh",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "VqNK1rNAnr_yvi_a0YZEs",
+      "type": "topic",
+      "data": {
+        "label": "Release Strategies"
+      }
+    },
+    {
+      "id": "7BCnM9A9PwYqsLmcNVfvt",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Toggles"
+      }
+    },
+    {
+      "id": "8_VCWpSZkRWmsD1_thMYS",
+      "type": "subtopic",
+      "data": {
+        "label": "Phased Rollouts"
+      }
+    },
+    {
+      "id": "aCoVHIAZllwKckkkwExR7",
+      "type": "subtopic",
+      "data": {
+        "label": "Dark Launches"
+      }
+    },
+    {
+      "id": "h10DphS6mi7ZwbyHppPsb",
+      "type": "paragraph",
+      "data": {
+        "label": "Product Metrics"
+      }
+    },
+    {
+      "id": "RfllpwFxWBeHF29oUwGo_",
+      "type": "topic",
+      "data": {
+        "label": "Key Product Metrics"
+      }
+    },
+    {
+      "id": "g2EgVtqwQxLfjBjomUqcU",
+      "type": "subtopic",
+      "data": {
+        "label": "DAU (Daily Active Users)"
+      }
+    },
+    {
+      "id": "Sbi5Y72nU_B1Jk6xNp17u",
+      "type": "subtopic",
+      "data": {
+        "label": "MAU (Monthly Active Users)"
+      }
+    },
+    {
+      "id": "avkgeNNVQOCE7dvEKFVZv",
+      "type": "subtopic",
+      "data": {
+        "label": "Conversion Rate"
+      }
+    },
+    {
+      "id": "mfG1UheUwzO8dbS4oglgo",
+      "type": "subtopic",
+      "data": {
+        "label": "Retention Rate"
+      }
+    },
+    {
+      "id": "jRWVaNpTfBXVjpi4WNT7H",
+      "type": "subtopic",
+      "data": {
+        "label": "Churn Rate"
+      }
+    },
+    {
+      "id": "DB-dN0bfG29Xv_a8iV8Yg",
+      "type": "subtopic",
+      "data": {
+        "label": "LTV (Lifetime Value)"
+      }
+    },
+    {
+      "id": "kVd36zDyjLvVG2Nw9gsXi",
+      "type": "subtopic",
+      "data": {
+        "label": "CAC (Customer Acquisition Cost)"
+      }
+    },
+    {
+      "id": "MYKZIDHSIXr-69BdtFcNR",
+      "type": "subtopic",
+      "data": {
+        "label": "North Star Metric"
+      }
+    },
+    {
+      "id": "eO7glnL0HixQYnoF3uvSW",
+      "type": "topic",
+      "data": {
+        "label": "Data-Driven Decision Making"
+      }
+    },
+    {
+      "id": "V3yGVN7z_ihLkScO0_92_",
+      "type": "subtopic",
+      "data": {
+        "label": "A/B Testing"
+      }
+    },
+    {
+      "id": "APdoU9kzHEqpUgKGKfyp9",
+      "type": "subtopic",
+      "data": {
+        "label": "Cohort Analysis"
+      }
+    },
+    {
+      "id": "YsDt5I0prvYeaFfn4_lpx",
+      "type": "subtopic",
+      "data": {
+        "label": "Predictive Analytics"
+      }
+    },
+    {
+      "id": "kirIe5QsxruRUbWGfQtbD",
+      "type": "topic",
+      "data": {
+        "label": "Feedback Loops"
+      }
+    },
+    {
+      "id": "q-D_wIIv24wQyX1wqYi2R",
+      "type": "paragraph",
+      "data": {
+        "label": "Stakeholder Management"
+      }
+    },
+    {
+      "id": "5-4MXlRjH-4PlF2giZpVL",
+      "type": "topic",
+      "data": {
+        "label": "Communication Skills"
+      }
+    },
+    {
+      "id": "O5Ipa7PHeXUNEjQ6Mla7Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Interpersonal"
+      }
+    },
+    {
+      "id": "LPiCtvd00hWsCAefTIUxy",
+      "type": "subtopic",
+      "data": {
+        "label": "Business"
+      }
+    },
+    {
+      "id": "XGnJUxZu7_WnPkklvROon",
+      "type": "subtopic",
+      "data": {
+        "label": "Communication Techniques"
+      }
+    },
+    {
+      "id": "iWCcvEEllfACoaXm5Ul5D",
+      "type": "subtopic",
+      "data": {
+        "label": "Difficult Conversations"
+      }
+    },
+    {
+      "id": "FwYc1942Z0_KYih0BQ1CL",
+      "type": "subtopic",
+      "data": {
+        "label": "Active Listening"
+      }
+    },
+    {
+      "id": "sQvkXvluZHgTIGS7W3Fj4",
+      "type": "subtopic",
+      "data": {
+        "label": "Conflict Resolution"
+      }
+    },
+    {
+      "id": "D5GXDeApGwjmLG2-KF2pr",
+      "type": "subtopic",
+      "data": {
+        "label": "Alignment \u0026 Buy-In"
+      }
+    },
+    {
+      "id": "XxeB3t8MjTbUzZj2hdKF3",
+      "type": "subtopic",
+      "data": {
+        "label": "Showing Impact"
+      }
+    },
+    {
+      "id": "X-2mVBut_pn4o_fEGVrib",
+      "type": "topic",
+      "data": {
+        "label": "Managing Stakeholders"
+      }
+    },
+    {
+      "id": "Cryuk9pCI3y78HDGv6TMK",
+      "type": "subtopic",
+      "data": {
+        "label": "Identifying Stakeholders"
+      }
+    },
+    {
+      "id": "bHA-9gQhvjh40Cy8jbI9u",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder Mapping"
+      }
+    },
+    {
+      "id": "rvqZRvbt73BY5X98dA3Sq",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder Engagement"
+      }
+    },
+    {
+      "id": "QGAb7dQM052XPA0Ll-R1P",
+      "type": "subtopic",
+      "data": {
+        "label": "Remote Stakeholders"
+      }
+    },
+    {
+      "id": "xbtAfWUo8V5JqW7f3103x",
+      "type": "paragraph",
+      "data": {
+        "label": "Product Management Tools"
+      }
+    },
+    {
+      "id": "XG-QBb--HXL-1r-jInYDN",
+      "type": "topic",
+      "data": {
+        "label": "Roadmapping Tools"
+      }
+    },
+    {
+      "id": "Yjxk2gUi5jQONeLzBaeJz",
+      "type": "topic",
+      "data": {
+        "label": "Project Management Tools"
+      }
+    },
+    {
+      "id": "lJ_7-oYaFWST8aBd5lIgM",
+      "type": "topic",
+      "data": {
+        "label": "Analytics Tools"
+      }
+    },
+    {
+      "id": "IAta7OX7pAxUzkFdHibY9",
+      "type": "topic",
+      "data": {
+        "label": "Communication Tools"
+      }
+    },
+    {
+      "id": "70yvt_oKcadnjZgg8FtAh",
+      "type": "subtopic",
+      "data": {
+        "label": "Product Board"
+      }
+    },
+    {
+      "id": "dr5BLjsZXk50R7vp3cMsu",
+      "type": "subtopic",
+      "data": {
+        "label": "Aha"
+      }
+    },
+    {
+      "id": "dk1YzX84UUe_es1x-dfp2",
+      "type": "subtopic",
+      "data": {
+        "label": "Notion"
+      }
+    },
+    {
+      "id": "EPQ4-cKr-RqJ457XniP6w",
+      "type": "subtopic",
+      "data": {
+        "label": "Jira"
+      }
+    },
+    {
+      "id": "PIIGfDN6t8H6tXZuKuE04",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear"
+      }
+    },
+    {
+      "id": "SD98_s1ET_j2eIIKmcKRc",
+      "type": "subtopic",
+      "data": {
+        "label": "Trello"
+      }
+    },
+    {
+      "id": "Z5oorppEJ0ydvwMXSlk1J",
+      "type": "subtopic",
+      "data": {
+        "label": "Amplitude"
+      }
+    },
+    {
+      "id": "xas-t2sAKmJNfb0-Zcpwy",
+      "type": "subtopic",
+      "data": {
+        "label": "Heap"
+      }
+    },
+    {
+      "id": "y8Ys_WfPXLVfJngOLryGR",
+      "type": "subtopic",
+      "data": {
+        "label": "Looker"
+      }
+    },
+    {
+      "id": "UdOJDzkDP_R3E5f_IltYh",
+      "type": "subtopic",
+      "data": {
+        "label": "Slack"
+      }
+    },
+    {
+      "id": "z72akk5E5XjEuLraS9Gug",
+      "type": "subtopic",
+      "data": {
+        "label": "Teams"
+      }
+    },
+    {
+      "id": "e6gO1twjter9xWm14g9S9",
+      "type": "subtopic",
+      "data": {
+        "label": "Discord"
+      }
+    },
+    {
+      "id": "5KH5gd8l8ZcXb3hrbXVGv",
+      "type": "paragraph",
+      "data": {
+        "label": "Risk Management"
+      }
+    },
+    {
+      "id": "oO-ujKApmpoQdkPEkOQG7",
+      "type": "topic",
+      "data": {
+        "label": "Identifying Risks"
+      }
+    },
+    {
+      "id": "0zRGIArMUe9xVDSKfnoHZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Identification Techniques"
+      }
+    },
+    {
+      "id": "WBnLicFo9p2zm57pyXciI",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Register"
+      }
+    },
+    {
+      "id": "0uRTNYMwTU9JzvIWSvDSm",
+      "type": "topic",
+      "data": {
+        "label": "Risk Assessment"
+      }
+    },
+    {
+      "id": "KXadmIkKJM0XLV4Qz0Stj",
+      "type": "subtopic",
+      "data": {
+        "label": "Qualitative Risk Assessment"
+      }
+    },
+    {
+      "id": "g0sBLcG8kEfeHHtsJSb4i",
+      "type": "subtopic",
+      "data": {
+        "label": "Quantitative Risk Assessment"
+      }
+    },
+    {
+      "id": "A-srndVB0olGq0qkApnwi",
+      "type": "topic",
+      "data": {
+        "label": "Risk Mitigation"
+      }
+    },
+    {
+      "id": "4gV80Qrd08_Y8oZB_hahV",
+      "type": "subtopic",
+      "data": {
+        "label": "Mitigation Strategies"
+      }
+    },
+    {
+      "id": "ybq-zRDLvtTTl8X8GnRNf",
+      "type": "subtopic",
+      "data": {
+        "label": "Contingency Planning"
+      }
+    },
+    {
+      "id": "zJGg20NPStLPkeL5LKoGm",
+      "type": "topic",
+      "data": {
+        "label": "Monitoring and Controlling Risks"
+      }
+    },
+    {
+      "id": "S2w72SRx-9QvRO7RNBlKZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Monitoring Tools"
+      }
+    },
+    {
+      "id": "ao2uUq_UZWtB-LRKH1x40",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Audits"
+      }
+    },
+    {
+      "id": "nrGUiI55jBUgegvRGGe7P",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "4i_kX9oZunMBFYevu7lyi",
+      "type": "topic",
+      "data": {
+        "label": "Scaling Products"
+      }
+    },
+    {
+      "id": "4-w4BpDh4dpmnU9qfjqbU",
+      "type": "subtopic",
+      "data": {
+        "label": "Growth Strategies"
+      }
+    },
+    {
+      "id": "lIdogd1DAzCo1ct7cdvYD",
+      "type": "subtopic",
+      "data": {
+        "label": "Internationalization"
+      }
+    },
+    {
+      "id": "EEi56Ww04QbuF2I7B7xW8",
+      "type": "subtopic",
+      "data": {
+        "label": "Platform Thinking"
+      }
+    },
+    {
+      "id": "BGtxI9CHtJfhRMdUEIfWa",
+      "type": "topic",
+      "data": {
+        "label": "Portfolio Management"
+      }
+    },
+    {
+      "id": "9y_I41kJhkmyBJjiTw8Xd",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Analysis"
+      }
+    },
+    {
+      "id": "h5N51_YgjaTHhPUHxkqQR",
+      "type": "subtopic",
+      "data": {
+        "label": "Predictive Analytics"
+      }
+    },
+    {
+      "id": "rzrxYqFENQ3d0WpZv9-0Q",
+      "type": "subtopic",
+      "data": {
+        "label": "ML in Product Mgmt."
+      }
+    },
+    {
+      "id": "H7sf23kwv73XjnFCdKHPi",
+      "type": "subtopic",
+      "data": {
+        "label": "AI in Product Mgmt."
+      }
+    },
+    {
+      "id": "WyKJxhfnbz6jx-Tvg40_j",
+      "type": "topic",
+      "data": {
+        "label": "Leadership and Influence"
+      }
+    },
+    {
+      "id": "MP-jZtofXCufnvtSldxqU",
+      "type": "subtopic",
+      "data": {
+        "label": "Building and Leading Teams"
+      }
+    },
+    {
+      "id": "CMge123Tm9DrZ31LvipLD",
+      "type": "subtopic",
+      "data": {
+        "label": "Influencing without Authority"
+      }
+    },
+    {
+      "id": "gyNOziqf1VsfI2j-FaNZ_",
+      "type": "subtopic",
+      "data": {
+        "label": "Emotional Intelligence"
+      }
+    },
+    {
+      "id": "kYr7vgV-9US2x5HFYZGwq",
+      "type": "paragraph",
+      "data": {
+        "label": "Keep Learning"
+      }
+    },
+    {
+      "id": "5080vx0T3tVIb-SYuyl13",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9vy4uIoykk2zSSyIok4_S",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "PstbOGqR_4C2WWV8CWXes",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSy2-69IgqluiW9cVfezSIKInDz1",
+      "source": "fmpJB_14CYn7PVuoGZdoz",
+      "target": "69IgqluiW9cVfezSIKInD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSy2-1HytzY1KRYIQWoQa5FMwYz1",
+      "source": "fmpJB_14CYn7PVuoGZdoz",
+      "target": "1HytzY1KRYIQWoQa5FMwY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSx2-gjdCSm_jZmG_q6YjG_8Quw1",
+      "source": "fmpJB_14CYn7PVuoGZdoz",
+      "target": "gjdCSm_jZmG_q6YjG_8Qu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Eusp5p6gNIxtU_yVvOkmuy2-LkDLk6DsEvbFXZPGOhD0Cz1",
+      "source": "Eusp5p6gNIxtU_yVvOkmu",
+      "target": "LkDLk6DsEvbFXZPGOhD0C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Eusp5p6gNIxtU_yVvOkmuy2-PBDlYIyS8LAyPE6tV-kU7z1",
+      "source": "Eusp5p6gNIxtU_yVvOkmu",
+      "target": "PBDlYIyS8LAyPE6tV-kU7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Eusp5p6gNIxtU_yVvOkmuy2-aDhSpLRZ6Sd8SnkcwtyLfz1",
+      "source": "Eusp5p6gNIxtU_yVvOkmu",
+      "target": "aDhSpLRZ6Sd8SnkcwtyLf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Eusp5p6gNIxtU_yVvOkmux2-8LAy6uBfrdtrjF8ygAGooz1",
+      "source": "Eusp5p6gNIxtU_yVvOkmu",
+      "target": "8LAy6uBfrdtrjF8ygAGoo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8LAy6uBfrdtrjF8ygAGooy2-0y8F9x6MhApQkS1VhS8Dxz2",
+      "source": "8LAy6uBfrdtrjF8ygAGoo",
+      "target": "0y8F9x6MhApQkS1VhS8Dx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8LAy6uBfrdtrjF8ygAGooy2-5kt8AkCsdAdlBmsKOkKFHz1",
+      "source": "8LAy6uBfrdtrjF8ygAGoo",
+      "target": "5kt8AkCsdAdlBmsKOkKFH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8LAy6uBfrdtrjF8ygAGooy2-a_5AyOKAgcg0rArZfapA_z1",
+      "source": "8LAy6uBfrdtrjF8ygAGoo",
+      "target": "a_5AyOKAgcg0rArZfapA_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8LAy6uBfrdtrjF8ygAGooy2-zS_CjYSTOIkJZn-oUEvghz1",
+      "source": "8LAy6uBfrdtrjF8ygAGoo",
+      "target": "VwI7plziVzwkp3KZd4466",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8LAy6uBfrdtrjF8ygAGoox2-YPqdrZguH0ArEFSe-VwKSw1",
+      "source": "8LAy6uBfrdtrjF8ygAGoo",
+      "target": "YPqdrZguH0ArEFSe-VwKS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSy2-tKDlfVvNym_OIqkommiJ8z2",
+      "source": "YPqdrZguH0ArEFSe-VwKS",
+      "target": "tKDlfVvNym_OIqkommiJ8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSy2-3MYjrnd6h2ZlcfaXjUbkCz1",
+      "source": "YPqdrZguH0ArEFSe-VwKS",
+      "target": "3MYjrnd6h2ZlcfaXjUbkC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSy2-GbFbURxIRD76kyR9vKfdgz1",
+      "source": "YPqdrZguH0ArEFSe-VwKS",
+      "target": "JhhjMPTNb646aQKlS_cji",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KnAlfSHDjLnQ7CMv5W-Eex2-Eusp5p6gNIxtU_yVvOkmuw1",
+      "source": "KnAlfSHDjLnQ7CMv5W-Ee",
+      "target": "Eusp5p6gNIxtU_yVvOkmu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Hk61DnFkfaeuxO2LSupMSz2-KnAlfSHDjLnQ7CMv5W-Eew1",
+      "source": "Hk61DnFkfaeuxO2LSupMS",
+      "target": "KnAlfSHDjLnQ7CMv5W-Ee",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-YPqdrZguH0ArEFSe-VwKSz2-WbrOaEjm9pVz9U0sq1Sw0y1",
+      "source": "YPqdrZguH0ArEFSe-VwKS",
+      "target": "WbrOaEjm9pVz9U0sq1Sw0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WbrOaEjm9pVz9U0sq1Sw0x2-m46lX4dUHik_BSHQwaU2lw1",
+      "source": "WbrOaEjm9pVz9U0sq1Sw0",
+      "target": "l-KrmCOKEfpLHq4j-9SoY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-DnKHDm0TZ7QQUyrhPdqkVz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "DnKHDm0TZ7QQUyrhPdqkV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-ZCTSbMHAMSaOxlqaJImzrz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "ZCTSbMHAMSaOxlqaJImzr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-8srsCEv55zh1y4gsp-rCOz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "8srsCEv55zh1y4gsp-rCO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-eKJ2XfDxu0NAKA932tbzyz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "eKJ2XfDxu0NAKA932tbzy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-wuqZntn1ivkr9AV_09zYXz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "wuqZntn1ivkr9AV_09zYX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-uXseNTJlteD6Fgi1bzQB4z1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "uXseNTJlteD6Fgi1bzQB4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2ly2-zS_CjYSTOIkJZn-oUEvghz1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "zS_CjYSTOIkJZn-oUEvgh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-l-KrmCOKEfpLHq4j-9SoYx2-m46lX4dUHik_BSHQwaU2lw1",
+      "source": "l-KrmCOKEfpLHq4j-9SoY",
+      "target": "n2AYdM2dlJfuZ97jXY49U",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2lx2-NG6ks4yOlokMVJ38DyaUPw2",
+      "source": "n2AYdM2dlJfuZ97jXY49U",
+      "target": "NG6ks4yOlokMVJ38DyaUP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-n2AYdM2dlJfuZ97jXY49Uy2-m46lX4dUHik_BSHQwaU2lz1",
+      "source": "n2AYdM2dlJfuZ97jXY49U",
+      "target": "6OjKcLbUZVJdUDC7if0Uy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2lx2-1j2ZSo7UGnBgoLpYzsA5tw2",
+      "source": "6OjKcLbUZVJdUDC7if0Uy",
+      "target": "1j2ZSo7UGnBgoLpYzsA5t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2lw2-xu8A_QKs6lXzKPMiifNF_x2",
+      "source": "0AQj2F1n8VKHBwuF4ywrp",
+      "target": "xu8A_QKs6lXzKPMiifNF_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0tJ7zlgOIaioCMmVavfqzy2-m46lX4dUHik_BSHQwaU2lz1",
+      "source": "6OjKcLbUZVJdUDC7if0Uy",
+      "target": "0AQj2F1n8VKHBwuF4ywrp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-0AQj2F1n8VKHBwuF4ywrpx2-m46lX4dUHik_BSHQwaU2lw2",
+      "source": "0AQj2F1n8VKHBwuF4ywrp",
+      "target": "m46lX4dUHik_BSHQwaU2l",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-m46lX4dUHik_BSHQwaU2lx2-qy_IXzenBOEVBMvVlXPaYw1",
+      "source": "m46lX4dUHik_BSHQwaU2l",
+      "target": "qy_IXzenBOEVBMvVlXPaY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0MnqK2-pI7EkwsGy1j1shz2-DoJCeL_vEXv3aVrLt7P_Ry1",
+      "source": "0MnqK2-pI7EkwsGy1j1sh",
+      "target": "DoJCeL_vEXv3aVrLt7P_R",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DoJCeL_vEXv3aVrLt7P_Rx2-0tJ7zlgOIaioCMmVavfqzw1",
+      "source": "DoJCeL_vEXv3aVrLt7P_R",
+      "target": "0tJ7zlgOIaioCMmVavfqz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-0tJ7zlgOIaioCMmVavfqzy2-3JY85Tu40ABy9XfoliaqEz1",
+      "source": "0tJ7zlgOIaioCMmVavfqz",
+      "target": "0FqpBfvnkGN_oE2KSC-_8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0tJ7zlgOIaioCMmVavfqzy2-kJ2HQFEsnc5yISU8d9Llaz1",
+      "source": "0tJ7zlgOIaioCMmVavfqz",
+      "target": "kN-UfAbQ8j7g0jDdqWK55",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0tJ7zlgOIaioCMmVavfqzy2-v3hKowLMBVq9eCXkUhrDZz1",
+      "source": "0tJ7zlgOIaioCMmVavfqz",
+      "target": "B9fgJmzVViaq7dvSuEglb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0tJ7zlgOIaioCMmVavfqzz2-zCYM4D6DWfxhb0FNjT2Lyy1",
+      "source": "0tJ7zlgOIaioCMmVavfqz",
+      "target": "gS3ofDrqDRKbecIskIyGi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zCYM4D6DWfxhb0FNjT2Lyw2-mm5yvAaROsbwDgQUfnqylx2",
+      "source": "gS3ofDrqDRKbecIskIyGi",
+      "target": "NjLt_B_kV7FdnkOomqayx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lq5Hl1ZXBQRRI_4ywn7yAw2-3JY85Tu40ABy9XfoliaqEx1",
+      "source": "lq5Hl1ZXBQRRI_4ywn7yA",
+      "target": "3JY85Tu40ABy9XfoliaqE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zCYM4D6DWfxhb0FNjT2Lyy2-lq5Hl1ZXBQRRI_4ywn7yAz1",
+      "source": "gS3ofDrqDRKbecIskIyGi",
+      "target": "lq5Hl1ZXBQRRI_4ywn7yA",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-lq5Hl1ZXBQRRI_4ywn7yAy2-74FApE4fYNihBkOfl3w3pz1",
+      "source": "lq5Hl1ZXBQRRI_4ywn7yA",
+      "target": "74FApE4fYNihBkOfl3w3p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-74FApE4fYNihBkOfl3w3px2-v3hKowLMBVq9eCXkUhrDZw2",
+      "source": "74FApE4fYNihBkOfl3w3p",
+      "target": "-lFYy5W1YqWuTiM3QRF4k",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-TwL-EqDorSgUpBYr4O4rfy1",
+      "source": "-lFYy5W1YqWuTiM3QRF4k",
+      "target": "TwL-EqDorSgUpBYr4O4rf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-zwrmh-djneZ8HIqbaBOkNy2",
+      "source": "-lFYy5W1YqWuTiM3QRF4k",
+      "target": "zwrmh-djneZ8HIqbaBOkN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-yPtxGBDEJkFBhF8ZgQUVHy1",
+      "source": "-lFYy5W1YqWuTiM3QRF4k",
+      "target": "yPtxGBDEJkFBhF8ZgQUVH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--lFYy5W1YqWuTiM3QRF4kx2-lxU25qxxgxnNF3c3kdZxzw2",
+      "source": "-lFYy5W1YqWuTiM3QRF4k",
+      "target": "lxU25qxxgxnNF3c3kdZxz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-lxU25qxxgxnNF3c3kdZxzx2-S_-9msr3vGZgOQ36zErnfw1",
+      "source": "lxU25qxxgxnNF3c3kdZxz",
+      "target": "S_-9msr3vGZgOQ36zErnf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-S_-9msr3vGZgOQ36zErnfx2-v3hKowLMBVq9eCXkUhrDZw1",
+      "source": "S_-9msr3vGZgOQ36zErnf",
+      "target": "v3hKowLMBVq9eCXkUhrDZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-5fze1aw1in3Gp3K31bviny1",
+      "source": "v3hKowLMBVq9eCXkUhrDZ",
+      "target": "5fze1aw1in3Gp3K31bvin",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-Ws7IFrHQNoBjLE2Td2xIZy1",
+      "source": "v3hKowLMBVq9eCXkUhrDZ",
+      "target": "Ws7IFrHQNoBjLE2Td2xIZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZz2-1uXjKKvOKqpO50m1pM627y1",
+      "source": "v3hKowLMBVq9eCXkUhrDZ",
+      "target": "1uXjKKvOKqpO50m1pM627",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hLy9kA3yEyDQ32XTq6I8bz2-sAu4Gr1hg8S4jAV0bOSdYy2",
+      "source": "hLy9kA3yEyDQ32XTq6I8b",
+      "target": "sAu4Gr1hg8S4jAV0bOSdY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-sAu4Gr1hg8S4jAV0bOSdYz2-2r-NPGcROFmw-pd4rvsAJy1",
+      "source": "sAu4Gr1hg8S4jAV0bOSdY",
+      "target": "2r-NPGcROFmw-pd4rvsAJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-v3hKowLMBVq9eCXkUhrDZx2-hLy9kA3yEyDQ32XTq6I8bw1",
+      "source": "v3hKowLMBVq9eCXkUhrDZ",
+      "target": "hLy9kA3yEyDQ32XTq6I8b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2r-NPGcROFmw-pd4rvsAJw2-Y5p9Vi4tGPw4aDEJy8xXMx1",
+      "source": "2r-NPGcROFmw-pd4rvsAJ",
+      "target": "Y5p9Vi4tGPw4aDEJy8xXM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-53XS2zKdK6IDdOP07yiT7w2-JrcZ404QjGsPn-VW1ktrhx1",
+      "source": "53XS2zKdK6IDdOP07yiT7",
+      "target": "JrcZ404QjGsPn-VW1ktrh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-sAu4Gr1hg8S4jAV0bOSdYw2-kJ2HQFEsnc5yISU8d9Llax2",
+      "source": "sAu4Gr1hg8S4jAV0bOSdY",
+      "target": "kJ2HQFEsnc5yISU8d9Lla",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-i288W9vF02QOKgPxjDqQhy2-h10DphS6mi7ZwbyHppPsbz1",
+      "source": "i288W9vF02QOKgPxjDqQh",
+      "target": "h10DphS6mi7ZwbyHppPsb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-g2EgVtqwQxLfjBjomUqcUz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "g2EgVtqwQxLfjBjomUqcU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-Sbi5Y72nU_B1Jk6xNp17uz2",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "Sbi5Y72nU_B1Jk6xNp17u",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-avkgeNNVQOCE7dvEKFVZvz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "avkgeNNVQOCE7dvEKFVZv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-mfG1UheUwzO8dbS4oglgoz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "mfG1UheUwzO8dbS4oglgo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-jRWVaNpTfBXVjpi4WNT7Hz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "jRWVaNpTfBXVjpi4WNT7H",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-DB-dN0bfG29Xv_a8iV8Ygz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "DB-dN0bfG29Xv_a8iV8Yg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-kVd36zDyjLvVG2Nw9gsXiz1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "kVd36zDyjLvVG2Nw9gsXi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDy2-sQvkXvluZHgTIGS7W3Fj4z1",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "MYKZIDHSIXr-69BdtFcNR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h10DphS6mi7ZwbyHppPsbx2-RfllpwFxWBeHF29oUwGo_w1",
+      "source": "h10DphS6mi7ZwbyHppPsb",
+      "target": "RfllpwFxWBeHF29oUwGo_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-RfllpwFxWBeHF29oUwGo_x2-kirIe5QsxruRUbWGfQtbDw2",
+      "source": "RfllpwFxWBeHF29oUwGo_",
+      "target": "eO7glnL0HixQYnoF3uvSW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDz2-V3yGVN7z_ihLkScO0_92_y2",
+      "source": "eO7glnL0HixQYnoF3uvSW",
+      "target": "V3yGVN7z_ihLkScO0_92_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDz2-APdoU9kzHEqpUgKGKfyp9y1",
+      "source": "eO7glnL0HixQYnoF3uvSW",
+      "target": "APdoU9kzHEqpUgKGKfyp9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDz2-YsDt5I0prvYeaFfn4_lpxy2",
+      "source": "eO7glnL0HixQYnoF3uvSW",
+      "target": "YsDt5I0prvYeaFfn4_lpx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-eO7glnL0HixQYnoF3uvSWx2-kirIe5QsxruRUbWGfQtbDw1",
+      "source": "eO7glnL0HixQYnoF3uvSW",
+      "target": "kirIe5QsxruRUbWGfQtbD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kirIe5QsxruRUbWGfQtbDx2-q-D_wIIv24wQyX1wqYi2Rw2",
+      "source": "kirIe5QsxruRUbWGfQtbD",
+      "target": "q-D_wIIv24wQyX1wqYi2R",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-q-D_wIIv24wQyX1wqYi2Rx2-5-4MXlRjH-4PlF2giZpVLw2",
+      "source": "q-D_wIIv24wQyX1wqYi2R",
+      "target": "5-4MXlRjH-4PlF2giZpVL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5-4MXlRjH-4PlF2giZpVLy2-a9Q5Dbr58rhyVublQ1a58z1",
+      "source": "5-4MXlRjH-4PlF2giZpVL",
+      "target": "a9Q5Dbr58rhyVublQ1a58",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5-4MXlRjH-4PlF2giZpVLz2-dHtY_ibI0uJBL2Jknbczry1",
+      "source": "5-4MXlRjH-4PlF2giZpVL",
+      "target": "dHtY_ibI0uJBL2Jknbczr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-X-2mVBut_pn4o_fEGVribx2-Cryuk9pCI3y78HDGv6TMKw2",
+      "source": "X-2mVBut_pn4o_fEGVrib",
+      "target": "Cryuk9pCI3y78HDGv6TMK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5-4MXlRjH-4PlF2giZpVLx2-X-2mVBut_pn4o_fEGVriby1",
+      "source": "5-4MXlRjH-4PlF2giZpVL",
+      "target": "X-2mVBut_pn4o_fEGVrib",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-X-2mVBut_pn4o_fEGVriby2-xbtAfWUo8V5JqW7f3103xz1",
+      "source": "X-2mVBut_pn4o_fEGVrib",
+      "target": "xbtAfWUo8V5JqW7f3103x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-xbtAfWUo8V5JqW7f3103xx2-XG-QBb--HXL-1r-jInYDNw1",
+      "source": "xbtAfWUo8V5JqW7f3103x",
+      "target": "XG-QBb--HXL-1r-jInYDN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-XG-QBb--HXL-1r-jInYDNy2-dk1YzX84UUe_es1x-dfp2z1",
+      "source": "XG-QBb--HXL-1r-jInYDN",
+      "target": "dk1YzX84UUe_es1x-dfp2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XG-QBb--HXL-1r-jInYDNy2-dr5BLjsZXk50R7vp3cMsuz1",
+      "source": "XG-QBb--HXL-1r-jInYDN",
+      "target": "dr5BLjsZXk50R7vp3cMsu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XG-QBb--HXL-1r-jInYDNy2-ybq-zRDLvtTTl8X8GnRNfz1",
+      "source": "XG-QBb--HXL-1r-jInYDN",
+      "target": "70yvt_oKcadnjZgg8FtAh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XG-QBb--HXL-1r-jInYDNx2-Yjxk2gUi5jQONeLzBaeJzw1",
+      "source": "XG-QBb--HXL-1r-jInYDN",
+      "target": "Yjxk2gUi5jQONeLzBaeJz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yjxk2gUi5jQONeLzBaeJzy2-EPQ4-cKr-RqJ457XniP6wz1",
+      "source": "Yjxk2gUi5jQONeLzBaeJz",
+      "target": "EPQ4-cKr-RqJ457XniP6w",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yjxk2gUi5jQONeLzBaeJzy2-PIIGfDN6t8H6tXZuKuE04z1",
+      "source": "Yjxk2gUi5jQONeLzBaeJz",
+      "target": "PIIGfDN6t8H6tXZuKuE04",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yjxk2gUi5jQONeLzBaeJzy2-ybq-zRDLvtTTl8X8GnRNfz1",
+      "source": "Yjxk2gUi5jQONeLzBaeJz",
+      "target": "SD98_s1ET_j2eIIKmcKRc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yjxk2gUi5jQONeLzBaeJzx2-lJ_7-oYaFWST8aBd5lIgMw1",
+      "source": "Yjxk2gUi5jQONeLzBaeJz",
+      "target": "lJ_7-oYaFWST8aBd5lIgM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-lJ_7-oYaFWST8aBd5lIgMz2-WBnLicFo9p2zm57pyXciIy1",
+      "source": "lJ_7-oYaFWST8aBd5lIgM",
+      "target": "Z5oorppEJ0ydvwMXSlk1J",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lJ_7-oYaFWST8aBd5lIgMz2-xas-t2sAKmJNfb0-Zcpwyy1",
+      "source": "lJ_7-oYaFWST8aBd5lIgM",
+      "target": "xas-t2sAKmJNfb0-Zcpwy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lJ_7-oYaFWST8aBd5lIgMz2-y8Ys_WfPXLVfJngOLryGRy1",
+      "source": "lJ_7-oYaFWST8aBd5lIgM",
+      "target": "y8Ys_WfPXLVfJngOLryGR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lJ_7-oYaFWST8aBd5lIgMx2-oO-ujKApmpoQdkPEkOQG7w1",
+      "source": "lJ_7-oYaFWST8aBd5lIgM",
+      "target": "IAta7OX7pAxUzkFdHibY9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7y2-ybq-zRDLvtTTl8X8GnRNfz1",
+      "source": "IAta7OX7pAxUzkFdHibY9",
+      "target": "e6gO1twjter9xWm14g9S9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7y2-4gV80Qrd08_Y8oZB_hahVz2",
+      "source": "IAta7OX7pAxUzkFdHibY9",
+      "target": "z72akk5E5XjEuLraS9Gug",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7y2-UdOJDzkDP_R3E5f_IltYhz1",
+      "source": "IAta7OX7pAxUzkFdHibY9",
+      "target": "UdOJDzkDP_R3E5f_IltYh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7z2-5KH5gd8l8ZcXb3hrbXVGvy1",
+      "source": "IAta7OX7pAxUzkFdHibY9",
+      "target": "5KH5gd8l8ZcXb3hrbXVGv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5KH5gd8l8ZcXb3hrbXVGvx2-oO-ujKApmpoQdkPEkOQG7w2",
+      "source": "5KH5gd8l8ZcXb3hrbXVGv",
+      "target": "oO-ujKApmpoQdkPEkOQG7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7y2-WBnLicFo9p2zm57pyXciIz2",
+      "source": "oO-ujKApmpoQdkPEkOQG7",
+      "target": "WBnLicFo9p2zm57pyXciI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7y2-EEi56Ww04QbuF2I7B7xW8z1",
+      "source": "oO-ujKApmpoQdkPEkOQG7",
+      "target": "0zRGIArMUe9xVDSKfnoHZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oO-ujKApmpoQdkPEkOQG7x2-WyKJxhfnbz6jx-Tvg40_jz1",
+      "source": "oO-ujKApmpoQdkPEkOQG7",
+      "target": "0uRTNYMwTU9JzvIWSvDSm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jx2-KXadmIkKJM0XLV4Qz0Stjw1",
+      "source": "0uRTNYMwTU9JzvIWSvDSm",
+      "target": "KXadmIkKJM0XLV4Qz0Stj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jw2-ybq-zRDLvtTTl8X8GnRNfx1",
+      "source": "A-srndVB0olGq0qkApnwi",
+      "target": "ybq-zRDLvtTTl8X8GnRNf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0uRTNYMwTU9JzvIWSvDSmy2-WyKJxhfnbz6jx-Tvg40_jz2",
+      "source": "0uRTNYMwTU9JzvIWSvDSm",
+      "target": "A-srndVB0olGq0qkApnwi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-A-srndVB0olGq0qkApnwix2-WyKJxhfnbz6jx-Tvg40_jw1",
+      "source": "A-srndVB0olGq0qkApnwi",
+      "target": "zJGg20NPStLPkeL5LKoGm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jx2-S2w72SRx-9QvRO7RNBlKZw1",
+      "source": "zJGg20NPStLPkeL5LKoGm",
+      "target": "S2w72SRx-9QvRO7RNBlKZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jz2-nrGUiI55jBUgegvRGGe7Py1",
+      "source": "zJGg20NPStLPkeL5LKoGm",
+      "target": "nrGUiI55jBUgegvRGGe7P",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nrGUiI55jBUgegvRGGe7Pz2-WyKJxhfnbz6jx-Tvg40_jy1",
+      "source": "nrGUiI55jBUgegvRGGe7P",
+      "target": "4i_kX9oZunMBFYevu7lyi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jw2-EEi56Ww04QbuF2I7B7xW8x2",
+      "source": "4i_kX9oZunMBFYevu7lyi",
+      "target": "EEi56Ww04QbuF2I7B7xW8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4i_kX9oZunMBFYevu7lyix2-WyKJxhfnbz6jx-Tvg40_jz1",
+      "source": "4i_kX9oZunMBFYevu7lyi",
+      "target": "BGtxI9CHtJfhRMdUEIfWa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-BGtxI9CHtJfhRMdUEIfWay2-WyKJxhfnbz6jx-Tvg40_jz1",
+      "source": "BGtxI9CHtJfhRMdUEIfWa",
+      "target": "9y_I41kJhkmyBJjiTw8Xd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jy2-h5N51_YgjaTHhPUHxkqQRz1",
+      "source": "9y_I41kJhkmyBJjiTw8Xd",
+      "target": "h5N51_YgjaTHhPUHxkqQR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jy2-rzrxYqFENQ3d0WpZv9-0Qz1",
+      "source": "9y_I41kJhkmyBJjiTw8Xd",
+      "target": "rzrxYqFENQ3d0WpZv9-0Q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jy2-H7sf23kwv73XjnFCdKHPiz1",
+      "source": "9y_I41kJhkmyBJjiTw8Xd",
+      "target": "H7sf23kwv73XjnFCdKHPi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9y_I41kJhkmyBJjiTw8Xdx2-WyKJxhfnbz6jx-Tvg40_jy2",
+      "source": "9y_I41kJhkmyBJjiTw8Xd",
+      "target": "WyKJxhfnbz6jx-Tvg40_j",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jz2-MP-jZtofXCufnvtSldxqUy1",
+      "source": "WyKJxhfnbz6jx-Tvg40_j",
+      "target": "MP-jZtofXCufnvtSldxqU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jz2-CMge123Tm9DrZ31LvipLDy1",
+      "source": "WyKJxhfnbz6jx-Tvg40_j",
+      "target": "CMge123Tm9DrZ31LvipLD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jz2-gyNOziqf1VsfI2j-FaNZ_y1",
+      "source": "WyKJxhfnbz6jx-Tvg40_j",
+      "target": "gyNOziqf1VsfI2j-FaNZ_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WyKJxhfnbz6jx-Tvg40_jx2-kYr7vgV-9US2x5HFYZGwqw1",
+      "source": "WyKJxhfnbz6jx-Tvg40_j",
+      "target": "kYr7vgV-9US2x5HFYZGwq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jIsN1OBs039cLtxTqyptdx2-9vy4uIoykk2zSSyIok4_Sw1",
+      "source": "jIsN1OBs039cLtxTqyptd",
+      "target": "9vy4uIoykk2zSSyIok4_S",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sx2-Hk61DnFkfaeuxO2LSupMSw1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "Hk61DnFkfaeuxO2LSupMS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Hk61DnFkfaeuxO2LSupMSx2-fmpJB_14CYn7PVuoGZdozw1",
+      "source": "Hk61DnFkfaeuxO2LSupMS",
+      "target": "fmpJB_14CYn7PVuoGZdoz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sz2-l6NjkNch2LH4BDhxXUoDKy1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "l6NjkNch2LH4BDhxXUoDK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sy2-luk1vnpy0duneVjen8WzOz1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "luk1vnpy0duneVjen8WzO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sy2-V-IeFB9S2tToxANHIzpMsz1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "V-IeFB9S2tToxANHIzpMs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sy2-Dx6ee8P_Agpw1MLKlAPGIz1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "Dx6ee8P_Agpw1MLKlAPGI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9vy4uIoykk2zSSyIok4_Sy2-5W-3jh1-4qSU5kagrWv9zz1",
+      "source": "9vy4uIoykk2zSSyIok4_S",
+      "target": "5W-3jh1-4qSU5kagrWv9z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

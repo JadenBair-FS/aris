@@ -1,0 +1,1735 @@
+{
+  "title": {
+    "card": "ASP.NET Core",
+    "page": "ASP.NET Core Developer"
+  },
+  "description": "Step by step guide to becoming an ASP.NET core developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "yWM-Hgse9GqGipTO1pXVK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ocJ-ND5jn9s-ACTAPZKZb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wvA5Bi-SaA61FAso8NPj8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fSm0vh6u_Lk7esx8BSte8",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "yasP_jzx1hhGoZZnR0mXU",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "_y6A_pwr-8jDIOoLx9QHC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "c8c-AWby5x5_eEF4QLEgX",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "BM8AtRoLAVTmjucTfCoVG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "UwJdUMdYf1qAlMHOdcLPK",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WYon24IKmo8fX_nAQh7YS",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "yMcSPPCMSvCYoh8i3x3d1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Aic1j37JF27iDpCwYWeA6",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bm3XEtLCUU23rU2HhHnSY",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "LK_owhdD3K5uAYG5fD92w",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UK9l45WqokS_YM1P8-v3A",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "XSavYIlcsJ3APyYQypnBc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ZTsi2oL00lox_bz27-hDO",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "h2z_qviXhvmdnwk5eiA05",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "qGXjjY3jOUKsBdXqFJVnv",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ieJjbRAxSGYLPkmaWFJus",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_JbWIWlgwaMHYYi8W48oO",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "_-k1suoaD64ZOMLrS2OeH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uT9PXHnbTWga5vLIfBr50",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "fUyJsuZx-zLIz_nQ8HZRl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "coNWBnrx1oAfS9UgILkSJ",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "DVPKdE0w11vA197x__RXo",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qw0r959sbdXLP0-GYBf5w",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "ASP.NET Core"
+      }
+    },
+    {
+      "id": "g4hjyQF8-SpjPi8mYtIsk",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit Backend path and see what you missed"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "NEnna_8DstfYH4T9qrP3-",
+      "type": "topic",
+      "data": {
+        "label": "General Development Skills"
+      }
+    },
+    {
+      "id": "fxANnSiTb2VzA9u-YeBL1",
+      "type": "subtopic",
+      "data": {
+        "label": "C#"
+      }
+    },
+    {
+      "id": "3GGvuxdfuDwLpNX_gtjCK",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET"
+      }
+    },
+    {
+      "id": "6HJQ1Evgah0Pki04Z2hQt",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET CLI"
+      }
+    },
+    {
+      "id": "NvODRFR0DLINB0RlPSsvt",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics of C#"
+      }
+    },
+    {
+      "id": "OtdCmkj0SvrGwCUSfm96C",
+      "type": "subtopic",
+      "data": {
+        "label": "Git - Version Control"
+      }
+    },
+    {
+      "id": "KAZF-mIg-FlfMonfdOLhb",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub, GitLab, BitBucket"
+      }
+    },
+    {
+      "id": "YI3cAezupWNntFw4B6elY",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP / HTTPs Protocol"
+      }
+    },
+    {
+      "id": "RAX2xN37taw9cqA3pnORh",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Structures and Algorithms"
+      }
+    },
+    {
+      "id": "tnKUdsgp6bnFtQTexEmfy",
+      "type": "topic",
+      "data": {
+        "label": "Database Fundamentals"
+      }
+    },
+    {
+      "id": "aOJMVrTcA_I2y_QHzj7aM",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Basics"
+      }
+    },
+    {
+      "id": "zlAcgLKxGF_TyrcJIk4X7",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Design Basics"
+      }
+    },
+    {
+      "id": "ZiK-c9zNbi5RZkKUi44wP",
+      "type": "subtopic",
+      "data": {
+        "label": "Stored Procedures"
+      }
+    },
+    {
+      "id": "1-XdtrGPbUoxpu9ZcQlBA",
+      "type": "subtopic",
+      "data": {
+        "label": "Constraints"
+      }
+    },
+    {
+      "id": "2f_CJMnXwPxjMEwm5P_QJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Triggers"
+      }
+    },
+    {
+      "id": "v2ZTCQQFQPoJNhOVGMG2g",
+      "type": "topic",
+      "data": {
+        "label": "ASP.NET Core Basics"
+      }
+    },
+    {
+      "id": "D3aQw0-pk3ycO-n10HBaA",
+      "type": "subtopic",
+      "data": {
+        "label": "MVC"
+      }
+    },
+    {
+      "id": "dZ9fYWMBa1OemTmLOI8_q",
+      "type": "subtopic",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "qpVxwuyA2oE06MZLtEdP1",
+      "type": "subtopic",
+      "data": {
+        "label": "Razor Pages"
+      }
+    },
+    {
+      "id": "vePinRjDfSGULKw0LE9K-",
+      "type": "subtopic",
+      "data": {
+        "label": "Razor Components"
+      }
+    },
+    {
+      "id": "dG--AAcZZdltYCeg6zCz2",
+      "type": "subtopic",
+      "data": {
+        "label": "Middlewares"
+      }
+    },
+    {
+      "id": "U3HXmNq6x2YA3BwZsOTbe",
+      "type": "subtopic",
+      "data": {
+        "label": "Filters and Attributes"
+      }
+    },
+    {
+      "id": "EJxliq-HPVp00CVsFc6kf",
+      "type": "subtopic",
+      "data": {
+        "label": "App Settings and Configs"
+      }
+    },
+    {
+      "id": "R7Qk5hsEIl9dspQXdaJAJ",
+      "type": "subtopic",
+      "data": {
+        "label": "StyleCop Rules"
+      }
+    },
+    {
+      "id": "ipABerBcM9zCte9pYaIse",
+      "type": "subtopic",
+      "data": {
+        "label": "Minimal APIs"
+      }
+    },
+    {
+      "id": "POQPoN98eqOH2873ZI6Hm",
+      "type": "topic",
+      "data": {
+        "label": "Object Relational Mapping"
+      }
+    },
+    {
+      "id": "ET74_7ieahNaGdPT11_NI",
+      "type": "subtopic",
+      "data": {
+        "label": "Entity Framework Core"
+      }
+    },
+    {
+      "id": "eGVaAz3VhGu3cXBNxTAWd",
+      "type": "subtopic",
+      "data": {
+        "label": "Framework Basics"
+      }
+    },
+    {
+      "id": "ZPeebwJ3OBuywEgLLgQTG",
+      "type": "subtopic",
+      "data": {
+        "label": "Code First \u002B Migrations"
+      }
+    },
+    {
+      "id": "9AMotSwdEbB8uOg80SykE",
+      "type": "subtopic",
+      "data": {
+        "label": "Lazy, Eager, Explicit Loading"
+      }
+    },
+    {
+      "id": "wfEOvAkGXkTZGdGX341D4",
+      "type": "subtopic",
+      "data": {
+        "label": "Change Tracker API"
+      }
+    },
+    {
+      "id": "UkWc41r0bZ1lptjse3As6",
+      "type": "subtopic",
+      "data": {
+        "label": "Dapper"
+      }
+    },
+    {
+      "id": "tYDVcnG0oUF3R8DwASvAh",
+      "type": "subtopic",
+      "data": {
+        "label": "RepoDB"
+      }
+    },
+    {
+      "id": "z24IJndpQYTl1PhiUI2mx",
+      "type": "subtopic",
+      "data": {
+        "label": "NHibernate"
+      }
+    },
+    {
+      "id": "IejHMMVKwA0sIInla4FjX",
+      "type": "topic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "f212ztDU_kb7gO71Nn76L",
+      "type": "subtopic",
+      "data": {
+        "label": "Scrutor"
+      }
+    },
+    {
+      "id": "Tjaczp2E-cCn0qSv89xgo",
+      "type": "topic",
+      "data": {
+        "label": "Life Cycles"
+      }
+    },
+    {
+      "id": "iM760f8Ys66-VSkMiZfIX",
+      "type": "topic",
+      "data": {
+        "label": "DI Containers"
+      }
+    },
+    {
+      "id": "J9XdYLo7qJiBoL8p3c68P",
+      "type": "subtopic",
+      "data": {
+        "label": "Microsoft.Extensions"
+      }
+    },
+    {
+      "id": "gbpSbjF12dBE1Tb3PX8Bz",
+      "type": "subtopic",
+      "data": {
+        "label": "AutoFac"
+      }
+    },
+    {
+      "id": "M3BW_63MFQyD8NE68dazD",
+      "type": "subtopic",
+      "data": {
+        "label": "Scoped"
+      }
+    },
+    {
+      "id": "-N0XM0-VtCZ6QMo2YyMD-",
+      "type": "subtopic",
+      "data": {
+        "label": "Transient"
+      }
+    },
+    {
+      "id": "y9bDrCjkDbxSIrEEtu_Mi",
+      "type": "subtopic",
+      "data": {
+        "label": "Singleton"
+      }
+    },
+    {
+      "id": "7Nth4LOrM_KirhvjDGkgS",
+      "type": "topic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "8CRsr7UZszjc_fZ-4ZmIx",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Cache"
+      }
+    },
+    {
+      "id": "FV4GsPjUyAc99DnIwkkCC",
+      "type": "subtopic",
+      "data": {
+        "label": "Entity Framework 2nd Level Cache"
+      }
+    },
+    {
+      "id": "SiG0FWWznjDg-2mIWlchy",
+      "type": "subtopic",
+      "data": {
+        "label": "Distributed Cache"
+      }
+    },
+    {
+      "id": "u2pc3ZkL0EumAsbM12D5y",
+      "type": "subtopic",
+      "data": {
+        "label": "Memcached"
+      }
+    },
+    {
+      "id": "Ts0gJ4DdwFp48LGr4YSvM",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "Ujzn_dILCA7xoupnz398l",
+      "type": "topic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "6p5atMYw3b3bXkQuXZsDV",
+      "type": "topic",
+      "data": {
+        "label": "Search Engines"
+      }
+    },
+    {
+      "id": "mK9OAwjReZoQZr1WSLRKJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Elastic Search"
+      }
+    },
+    {
+      "id": "2sY_p_8cOOBmZtDHO2Cmy",
+      "type": "subtopic",
+      "data": {
+        "label": "Solr"
+      }
+    },
+    {
+      "id": "Ye9WHfwZa-Fc2YDaTCmU1",
+      "type": "subtopic",
+      "data": {
+        "label": "Sphinx"
+      }
+    },
+    {
+      "id": "LrjmJs6_rXUkc2A7fEq24",
+      "type": "topic",
+      "data": {
+        "label": "Cloud"
+      }
+    },
+    {
+      "id": "KrkV1w9b_Nwm6pe9diDRS",
+      "type": "subtopic",
+      "data": {
+        "label": "Cosmos DB"
+      }
+    },
+    {
+      "id": "1Om9aQDZmnj_DN10ogwDL",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamo DB"
+      }
+    },
+    {
+      "id": "FnRxRY3uDZdTve1w-nBfc",
+      "type": "topic",
+      "data": {
+        "label": "Relational"
+      }
+    },
+    {
+      "id": "HQHSzsqBGSVYNLQ9o5EI-",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Server"
+      }
+    },
+    {
+      "id": "An9TLvo-I6NtC8wFU3bh4",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "Gs8XcsTo11MeCsiSGpjkU",
+      "type": "subtopic",
+      "data": {
+        "label": "MariaDB"
+      }
+    },
+    {
+      "id": "WsGwg4qdlu_vBsFEpmBvU",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL"
+      }
+    },
+    {
+      "id": "WUis4K9vduriYdVkKvM9r",
+      "type": "topic",
+      "data": {
+        "label": "NoSQL"
+      }
+    },
+    {
+      "id": "-wYRa8qSuKVKo_yOTKV67",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "U_-Gt5csu_hihl7ybFY-B",
+      "type": "subtopic",
+      "data": {
+        "label": "Cassandra"
+      }
+    },
+    {
+      "id": "3gcXaOnHL4v5OoStrTWNV",
+      "type": "subtopic",
+      "data": {
+        "label": "LiteDB"
+      }
+    },
+    {
+      "id": "vHcwt6ARi5YR3v-eDDjfl",
+      "type": "subtopic",
+      "data": {
+        "label": "CouchDB"
+      }
+    },
+    {
+      "id": "fQ3w8REYWzQfeJ0nPyq6W",
+      "type": "topic",
+      "data": {
+        "label": "Log Frameworks"
+      }
+    },
+    {
+      "id": "xL0s4-HfRxNy2ru0jiIWR",
+      "type": "subtopic",
+      "data": {
+        "label": "Serilog"
+      }
+    },
+    {
+      "id": "ykF2bB_68AhCOzeQ_QSW1",
+      "type": "subtopic",
+      "data": {
+        "label": "NLog"
+      }
+    },
+    {
+      "id": "GLkDH0X0uy8_1DIdCzbUD",
+      "type": "topic",
+      "data": {
+        "label": "API Clients and Communication"
+      }
+    },
+    {
+      "id": "KJCtxH3mYsZq3hfBZ6cJF",
+      "type": "topic",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "w5RnrhsP4p-AdSOLYVAY9",
+      "type": "subtopic",
+      "data": {
+        "label": "Gridlify"
+      }
+    },
+    {
+      "id": "YojZ5fpzw-5WgoqqkO6wl",
+      "type": "subtopic",
+      "data": {
+        "label": "Odata"
+      }
+    },
+    {
+      "id": "BdTQ5ZMNDNZvkAUoCfL5H",
+      "type": "topic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "Efxu9gDodODMTKJbWcXzB",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL .NET"
+      }
+    },
+    {
+      "id": "XMrQx9JH0eSQJpMzhvy0F",
+      "type": "subtopic",
+      "data": {
+        "label": "HotChocolate"
+      }
+    },
+    {
+      "id": "x3SJlLc19DNJ-PyDOOj_G",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC"
+      }
+    },
+    {
+      "id": "9Vv3OxafB6BlHhi1ZkeVO",
+      "type": "topic",
+      "data": {
+        "label": "Real-Time Communication"
+      }
+    },
+    {
+      "id": "tBl8neu3tJd5GPwGfJbjZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Sockets"
+      }
+    },
+    {
+      "id": "8dvd4M0TKNyQR8dEolGNT",
+      "type": "subtopic",
+      "data": {
+        "label": "SignalR Core"
+      }
+    },
+    {
+      "id": "9ECykIIvXlDblbFbRVcJS",
+      "type": "topic",
+      "data": {
+        "label": "Object Mapping"
+      }
+    },
+    {
+      "id": "GPmlueMnuLCUW_t4jvGhc",
+      "type": "subtopic",
+      "data": {
+        "label": "AutoMapper"
+      }
+    },
+    {
+      "id": "x0OopRTwIvoWgT8qi0CE9",
+      "type": "subtopic",
+      "data": {
+        "label": "Mapperly"
+      }
+    },
+    {
+      "id": "oMMBzRrHkUymxAR4oqr75",
+      "type": "subtopic",
+      "data": {
+        "label": "Manual Mapping"
+      }
+    },
+    {
+      "id": "s57tKy1rajlJbKFDVXLqs",
+      "type": "topic",
+      "data": {
+        "label": "Task Scheduling"
+      }
+    },
+    {
+      "id": "uP1nqbmFmZL_wA2DoqP8C",
+      "type": "subtopic",
+      "data": {
+        "label": "Native Background Service"
+      }
+    },
+    {
+      "id": "QiQsx1udyKcPJ-lZjRQVy",
+      "type": "subtopic",
+      "data": {
+        "label": "Hangfire"
+      }
+    },
+    {
+      "id": "zOWlPXIl4XPs_0pA8-yi5",
+      "type": "subtopic",
+      "data": {
+        "label": "Quartz"
+      }
+    },
+    {
+      "id": "p3bZnKIyRgLmB764Kkhju",
+      "type": "subtopic",
+      "data": {
+        "label": "Coravel"
+      }
+    },
+    {
+      "id": "XofWWhlU_vWCG5oXVMZze",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "AtyL0ij8FeJCBmqG2YvTO",
+      "type": "subtopic",
+      "data": {
+        "label": "Playwright"
+      }
+    },
+    {
+      "id": "UCpoLiQJ4LeniI9x3uGcY",
+      "type": "subtopic",
+      "data": {
+        "label": "Puppeteer"
+      }
+    },
+    {
+      "id": "f2UP2jDnDr7XEFIdAtBhH",
+      "type": "subtopic",
+      "data": {
+        "label": "Cypress"
+      }
+    },
+    {
+      "id": "Xx5G09n4WWnnydCgxnL0A",
+      "type": "subtopic",
+      "data": {
+        "label": "WebApplicationFactory"
+      }
+    },
+    {
+      "id": "8eW5BaOjJbnQ7uk4zMOiU",
+      "type": "subtopic",
+      "data": {
+        "label": "Test Containers"
+      }
+    },
+    {
+      "id": "Ohc0xzI6qX4hOFVNfRj1F",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET Aspire"
+      }
+    },
+    {
+      "id": "TCswZHviRiu6SIOwUisu8",
+      "type": "subtopic",
+      "data": {
+        "label": "Respawn"
+      }
+    },
+    {
+      "id": "9WZmjiFowydYrkHQ2xeNm",
+      "type": "subtopic",
+      "data": {
+        "label": "Specflow"
+      }
+    },
+    {
+      "id": "aWRv5sU9dksgcpE9RGJb1",
+      "type": "subtopic",
+      "data": {
+        "label": "Light BDD"
+      }
+    },
+    {
+      "id": "rcr1V3vhuilYbvgaQm7IE",
+      "type": "label",
+      "data": {
+        "label": "Unit Testing Frameworks"
+      }
+    },
+    {
+      "id": "R8C6s53RYjkRVma0nCJpy",
+      "type": "subtopic",
+      "data": {
+        "label": "XUnit"
+      }
+    },
+    {
+      "id": "qHYBlBCvCGUZGh6gyEI63",
+      "type": "subtopic",
+      "data": {
+        "label": "NUnit"
+      }
+    },
+    {
+      "id": "TAKxVS6DfIhmSJ6oOQxOM",
+      "type": "label",
+      "data": {
+        "label": "Assertions"
+      }
+    },
+    {
+      "id": "zhn-VLGPfV6FZT2OMl6zf",
+      "type": "subtopic",
+      "data": {
+        "label": "Shouldly"
+      }
+    },
+    {
+      "id": "nYOf8Q0lWnzBdGRHbdwwq",
+      "type": "label",
+      "data": {
+        "label": "Mocking"
+      }
+    },
+    {
+      "id": "iZCxinqlVefBk5-ICqt4v",
+      "type": "subtopic",
+      "data": {
+        "label": "NSubstitute"
+      }
+    },
+    {
+      "id": "eyOXWb1kL80Wqiwc2WHd_",
+      "type": "subtopic",
+      "data": {
+        "label": "Moq"
+      }
+    },
+    {
+      "id": "diRJ_F6kx42Ucs0fxidtZ",
+      "type": "subtopic",
+      "data": {
+        "label": "FakeItEasy"
+      }
+    },
+    {
+      "id": "K49M_7gSpfJuZaE6WaHxQ",
+      "type": "subtopic",
+      "data": {
+        "label": "AutoFixture"
+      }
+    },
+    {
+      "id": "QERTjawqCCCkHfR44Ca0s",
+      "type": "subtopic",
+      "data": {
+        "label": "Bogus"
+      }
+    },
+    {
+      "id": "37c2eCvRdebztkbc5AjYp",
+      "type": "topic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "_cHDH4bo1Q_Ru9iuKaPQa",
+      "type": "label",
+      "data": {
+        "label": "E2E Testing"
+      }
+    },
+    {
+      "id": "FjpBEi77yGh9oSsHdh7mf",
+      "type": "label",
+      "data": {
+        "label": "Integration Testing"
+      }
+    },
+    {
+      "id": "8sr7NcSsrn67x75-vYLNQ",
+      "type": "label",
+      "data": {
+        "label": "Behavior Testing"
+      }
+    },
+    {
+      "id": "GbK3uwt1x7Bp_rSXCHYwL",
+      "type": "label",
+      "data": {
+        "label": "Fake Data Generation"
+      }
+    },
+    {
+      "id": "eMolc0UKdEgLDFJ2FximV",
+      "type": "label",
+      "data": {
+        "label": "Message Brokers"
+      }
+    },
+    {
+      "id": "sNYYEBMHV_NO_NToP51VY",
+      "type": "subtopic",
+      "data": {
+        "label": "ActiveMQ"
+      }
+    },
+    {
+      "id": "L8RkeMYm0WGNeLLcHKF1R",
+      "type": "subtopic",
+      "data": {
+        "label": "Kafka"
+      }
+    },
+    {
+      "id": "KqvBn2_wvYhFdv0dBZMC9",
+      "type": "subtopic",
+      "data": {
+        "label": "RabbitMQ"
+      }
+    },
+    {
+      "id": "8d4f7_3VO03vy7YDWwPI9",
+      "type": "subtopic",
+      "data": {
+        "label": "NetMQ"
+      }
+    },
+    {
+      "id": "gBuaVZfqJ0-g21sKohQtx",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure Service Bus"
+      }
+    },
+    {
+      "id": "X0hmqW8LAkhBGprxP8iBo",
+      "type": "label",
+      "data": {
+        "label": "Message Bus"
+      }
+    },
+    {
+      "id": "SQKIUa_UsJ4cls-Vs9yHU",
+      "type": "subtopic",
+      "data": {
+        "label": "Mass Transit"
+      }
+    },
+    {
+      "id": "vf8W1FLhcb3awx4JBaY5r",
+      "type": "subtopic",
+      "data": {
+        "label": "NServiceBus"
+      }
+    },
+    {
+      "id": "X6iSHoHnFFMaGb6YPQFhl",
+      "type": "subtopic",
+      "data": {
+        "label": "EasyNetQ"
+      }
+    },
+    {
+      "id": "TY3iovpKLvTqPQmbQFTRW",
+      "type": "label",
+      "data": {
+        "label": "API Gateway"
+      }
+    },
+    {
+      "id": "2k-rGuhYTTAR9XN3aDAnW",
+      "type": "subtopic",
+      "data": {
+        "label": "Ocelot"
+      }
+    },
+    {
+      "id": "2axfolu26P8XwxMxgMaS3",
+      "type": "subtopic",
+      "data": {
+        "label": "YARP"
+      }
+    },
+    {
+      "id": "4ObSoVqiiYzV_Ph0UdSr-",
+      "type": "label",
+      "data": {
+        "label": "Containerization"
+      }
+    },
+    {
+      "id": "rmRESzLiZNWdBFXLrwQFJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "02rtFStTeIm8prNskxaUN",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "Kq2TQn9DN1bIy9fWSSCkP",
+      "type": "label",
+      "data": {
+        "label": "Other"
+      }
+    },
+    {
+      "id": "HqhqqiA5X00Xl1RnZgrNJ",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET Aspire"
+      }
+    },
+    {
+      "id": "XKsLqDDco5OXKURCcWAmv",
+      "type": "subtopic",
+      "data": {
+        "label": "Orleans"
+      }
+    },
+    {
+      "id": "s8evqe2MireS1UhxoXrd1",
+      "type": "subtopic",
+      "data": {
+        "label": "SteelToe"
+      }
+    },
+    {
+      "id": "IHY9uL3dzYmf2D2wWgIh-",
+      "type": "subtopic",
+      "data": {
+        "label": "Dapr"
+      }
+    },
+    {
+      "id": "KIFmahcNiSo2NGoLtAyRR",
+      "type": "topic",
+      "data": {
+        "label": "CI / CD"
+      }
+    },
+    {
+      "id": "0-PLMXGlRyRzTk-EjXMs2",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "_-GQNpsb7KZw76hNNOq3h",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure Pipelines"
+      }
+    },
+    {
+      "id": "8Y73Ae32eo6_ye7dw5QRQ",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab CI/CD"
+      }
+    },
+    {
+      "id": "KyGjXgG6JFo42qOV0wqfB",
+      "type": "subtopic",
+      "data": {
+        "label": "Circle CI"
+      }
+    },
+    {
+      "id": "RX_6yD1QGLEGwV4j6z_g-",
+      "type": "button",
+      "data": {
+        "label": "Software Design and Architecture"
+      }
+    },
+    {
+      "id": "C85aJvrzj6rP2Hmfj9uPB",
+      "type": "topic",
+      "data": {
+        "label": "Template Engines"
+      }
+    },
+    {
+      "id": "nUE2-egUMNFQoPVrVRFPl",
+      "type": "subtopic",
+      "data": {
+        "label": "Razor"
+      }
+    },
+    {
+      "id": "dWB5OCvWVYkD30Op_dMwy",
+      "type": "subtopic",
+      "data": {
+        "label": "Scriban"
+      }
+    },
+    {
+      "id": "ZaOhWWDgVxrn0hbesJ7xT",
+      "type": "subtopic",
+      "data": {
+        "label": "Fluid"
+      }
+    },
+    {
+      "id": "1YL7aXluINOO15W3waaiD",
+      "type": "topic",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "o2oks1bG_-8InCKVol_s3",
+      "type": "label",
+      "data": {
+        "label": "Client-Side .NET"
+      }
+    },
+    {
+      "id": "4iD_hDtgJ15IlJGxiO-E8",
+      "type": "subtopic",
+      "data": {
+        "label": "Blazor"
+      }
+    },
+    {
+      "id": "olqSPUU3RoxhQ6exfMzeN",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET MAUI"
+      }
+    },
+    {
+      "id": "ao7YnoJ31qQxcItMY8XJU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nw-pE4itvz1D7BWtyx5cm",
+      "type": "label",
+      "data": {
+        "label": "Good-to-Know Libraries"
+      }
+    },
+    {
+      "id": "Zb4Gugxf7d6MoeEcfngrV",
+      "type": "subtopic",
+      "data": {
+        "label": "Scalar"
+      }
+    },
+    {
+      "id": "cc0UNQwbDlySue-CvpChR",
+      "type": "subtopic",
+      "data": {
+        "label": "MediatR"
+      }
+    },
+    {
+      "id": "sa0zXd8lpNs_SFQ2y-PY4",
+      "type": "subtopic",
+      "data": {
+        "label": "FluentValidation"
+      }
+    },
+    {
+      "id": "gQhiEpvx__70N1WbEHGYJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Polly"
+      }
+    },
+    {
+      "id": "ipb6proIZKG-_vCOMAiBu",
+      "type": "subtopic",
+      "data": {
+        "label": "Marten"
+      }
+    },
+    {
+      "id": "EsC1JwFOMOlQVelpmxISh",
+      "type": "subtopic",
+      "data": {
+        "label": "Nuke"
+      }
+    },
+    {
+      "id": "9LEVN-uVEwxJooEiB9ApK",
+      "type": "subtopic",
+      "data": {
+        "label": "Benchmark.NET"
+      }
+    },
+    {
+      "id": "T2FsSndxzSuKTFdjoyPi-",
+      "type": "subtopic",
+      "data": {
+        "label": "Distributed Lock"
+      }
+    },
+    {
+      "id": "Gc82P2ClaRuPMM1N6k2bN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "wyzDVcQ87PRh0y2LIfvSU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "q2z_1wnPUnWM7MYIIUyBg",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "Moien Tajik"
+      }
+    },
+    {
+      "id": "azsxJoFI1qHGwcNGw8c28",
+      "type": "label",
+      "data": {
+        "label": "Special thanks for the roadmap contribution"
+      }
+    },
+    {
+      "id": "236VJJjMvqHfSj-MHSDPV",
+      "type": "subtopic",
+      "data": {
+        "label": "MSTest"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-fxANnSiTb2VzA9u-YeBL1y2",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "fxANnSiTb2VzA9u-YeBL1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-3GGvuxdfuDwLpNX_gtjCKy2",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "3GGvuxdfuDwLpNX_gtjCK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NEnna_8DstfYH4T9qrP3-y2-OtdCmkj0SvrGwCUSfm96Cz1",
+      "source": "NEnna_8DstfYH4T9qrP3-",
+      "target": "OtdCmkj0SvrGwCUSfm96C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NEnna_8DstfYH4T9qrP3-y2-KAZF-mIg-FlfMonfdOLhbz1",
+      "source": "NEnna_8DstfYH4T9qrP3-",
+      "target": "KAZF-mIg-FlfMonfdOLhb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NEnna_8DstfYH4T9qrP3-y2-YI3cAezupWNntFw4B6elYz1",
+      "source": "NEnna_8DstfYH4T9qrP3-",
+      "target": "YI3cAezupWNntFw4B6elY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NEnna_8DstfYH4T9qrP3-y2-RAX2xN37taw9cqA3pnORhz1",
+      "source": "NEnna_8DstfYH4T9qrP3-",
+      "target": "RAX2xN37taw9cqA3pnORh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NEnna_8DstfYH4T9qrP3-x2-tnKUdsgp6bnFtQTexEmfyw1",
+      "source": "NEnna_8DstfYH4T9qrP3-",
+      "target": "tnKUdsgp6bnFtQTexEmfy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyz2-aOJMVrTcA_I2y_QHzj7aMy1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "aOJMVrTcA_I2y_QHzj7aM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyz2-zlAcgLKxGF_TyrcJIk4X7y1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "zlAcgLKxGF_TyrcJIk4X7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyz2-ZiK-c9zNbi5RZkKUi44wPy1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "ZiK-c9zNbi5RZkKUi44wP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyz2-1-XdtrGPbUoxpu9ZcQlBAy1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "1-XdtrGPbUoxpu9ZcQlBA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyz2-2f_CJMnXwPxjMEwm5P_QJy1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "2f_CJMnXwPxjMEwm5P_QJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tnKUdsgp6bnFtQTexEmfyy2-v2ZTCQQFQPoJNhOVGMG2gz1",
+      "source": "tnKUdsgp6bnFtQTexEmfy",
+      "target": "v2ZTCQQFQPoJNhOVGMG2g",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-R7Qk5hsEIl9dspQXdaJAJy1",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "R7Qk5hsEIl9dspQXdaJAJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v2ZTCQQFQPoJNhOVGMG2gz2-POQPoN98eqOH2873ZI6Hmy1",
+      "source": "v2ZTCQQFQPoJNhOVGMG2g",
+      "target": "POQPoN98eqOH2873ZI6Hm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7Nth4LOrM_KirhvjDGkgSz2-Tjaczp2E-cCn0qSv89xgoy1",
+      "source": "IejHMMVKwA0sIInla4FjX",
+      "target": "Tjaczp2E-cCn0qSv89xgo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7Nth4LOrM_KirhvjDGkgSy2-FV4GsPjUyAc99DnIwkkCCz1",
+      "source": "7Nth4LOrM_KirhvjDGkgS",
+      "target": "FV4GsPjUyAc99DnIwkkCC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7Nth4LOrM_KirhvjDGkgSw2-8CRsr7UZszjc_fZ-4ZmIxx1",
+      "source": "7Nth4LOrM_KirhvjDGkgS",
+      "target": "8CRsr7UZszjc_fZ-4ZmIx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Ujzn_dILCA7xoupnz398lx2-fQ3w8REYWzQfeJ0nPyq6Ww1",
+      "source": "Ujzn_dILCA7xoupnz398l",
+      "target": "fQ3w8REYWzQfeJ0nPyq6W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-9Vv3OxafB6BlHhi1ZkeVOy2-tBl8neu3tJd5GPwGfJbjZz2",
+      "source": "9Vv3OxafB6BlHhi1ZkeVO",
+      "target": "tBl8neu3tJd5GPwGfJbjZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9Vv3OxafB6BlHhi1ZkeVOy2-8dvd4M0TKNyQR8dEolGNTz1",
+      "source": "9Vv3OxafB6BlHhi1ZkeVO",
+      "target": "8dvd4M0TKNyQR8dEolGNT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9Vv3OxafB6BlHhi1ZkeVOx2-s57tKy1rajlJbKFDVXLqsw1",
+      "source": "9Vv3OxafB6BlHhi1ZkeVO",
+      "target": "9ECykIIvXlDblbFbRVcJS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsz2-GPmlueMnuLCUW_t4jvGhcy1",
+      "source": "9ECykIIvXlDblbFbRVcJS",
+      "target": "GPmlueMnuLCUW_t4jvGhc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsz2-x0OopRTwIvoWgT8qi0CE9y2",
+      "source": "9ECykIIvXlDblbFbRVcJS",
+      "target": "x0OopRTwIvoWgT8qi0CE9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsz2-oMMBzRrHkUymxAR4oqr75y1",
+      "source": "9ECykIIvXlDblbFbRVcJS",
+      "target": "oMMBzRrHkUymxAR4oqr75",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9ECykIIvXlDblbFbRVcJSx2-s57tKy1rajlJbKFDVXLqsw1",
+      "source": "9ECykIIvXlDblbFbRVcJS",
+      "target": "s57tKy1rajlJbKFDVXLqs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsy2-QiQsx1udyKcPJ-lZjRQVyz2",
+      "source": "s57tKy1rajlJbKFDVXLqs",
+      "target": "QiQsx1udyKcPJ-lZjRQVy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsy2-p3bZnKIyRgLmB764Kkhjuz1",
+      "source": "s57tKy1rajlJbKFDVXLqs",
+      "target": "p3bZnKIyRgLmB764Kkhju",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsy2-zOWlPXIl4XPs_0pA8-yi5z1",
+      "source": "s57tKy1rajlJbKFDVXLqs",
+      "target": "zOWlPXIl4XPs_0pA8-yi5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s57tKy1rajlJbKFDVXLqsx2-KIFmahcNiSo2NGoLtAyRRw1",
+      "source": "s57tKy1rajlJbKFDVXLqs",
+      "target": "XofWWhlU_vWCG5oXVMZze",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-XofWWhlU_vWCG5oXVMZzex2-KIFmahcNiSo2NGoLtAyRRw2",
+      "source": "XofWWhlU_vWCG5oXVMZze",
+      "target": "37c2eCvRdebztkbc5AjYp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-37c2eCvRdebztkbc5AjYpx2-KIFmahcNiSo2NGoLtAyRRw1",
+      "source": "37c2eCvRdebztkbc5AjYp",
+      "target": "KIFmahcNiSo2NGoLtAyRR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-KIFmahcNiSo2NGoLtAyRRz2-RX_6yD1QGLEGwV4j6z_g-y2",
+      "source": "KIFmahcNiSo2NGoLtAyRR",
+      "target": "RX_6yD1QGLEGwV4j6z_g-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-1YL7aXluINOO15W3waaiDy2-nUE2-egUMNFQoPVrVRFPlz1",
+      "source": "C85aJvrzj6rP2Hmfj9uPB",
+      "target": "nUE2-egUMNFQoPVrVRFPl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-1YL7aXluINOO15W3waaiDy2-dWB5OCvWVYkD30Op_dMwyz1",
+      "source": "C85aJvrzj6rP2Hmfj9uPB",
+      "target": "dWB5OCvWVYkD30Op_dMwy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-1YL7aXluINOO15W3waaiDy2-ZaOhWWDgVxrn0hbesJ7xTz2",
+      "source": "C85aJvrzj6rP2Hmfj9uPB",
+      "target": "ZaOhWWDgVxrn0hbesJ7xT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-1YL7aXluINOO15W3waaiDz2-4iD_hDtgJ15IlJGxiO-E8y1",
+      "source": "1YL7aXluINOO15W3waaiD",
+      "target": "4iD_hDtgJ15IlJGxiO-E8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-1YL7aXluINOO15W3waaiDz2-olqSPUU3RoxhQ6exfMzeNy1",
+      "source": "1YL7aXluINOO15W3waaiD",
+      "target": "olqSPUU3RoxhQ6exfMzeN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtx2-NEnna_8DstfYH4T9qrP3-w1",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "NEnna_8DstfYH4T9qrP3-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

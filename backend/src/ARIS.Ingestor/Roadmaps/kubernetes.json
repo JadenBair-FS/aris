@@ -1,0 +1,837 @@
+{
+  "title": {
+    "card": "Kubernetes",
+    "page": "Kubernetes Roadmap"
+  },
+  "description": "Step by step guide to learning Kubernetes in @currentYear@",
+  "nodes": [
+    {
+      "id": "ef-jFKMs8jw3Ti94jem96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "k_AR2YBSv077a6RwpCpZT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "p9_mj6m2RpT7Uqa1I1YjI",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FtrR19NFsdQoYcZzWtj5k",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nnN56cWEfaCaQNN_dD6tE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ta1gWy3SFfNu_oM2FplxU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3r36j_pf19jd_cr4oFE5m",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "y7KjVfSI6CAduyHd4mBFT",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "qLeEEwBvlGt1fP5Qcreah",
+      "type": "subtopic",
+      "data": {
+        "label": "Overview of Kubernetes"
+      }
+    },
+    {
+      "id": "q-Ky0ietZGpyUcBQfh-BJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use Kubernetes?"
+      }
+    },
+    {
+      "id": "9oo2fxTM2_p0VYPBroqxa",
+      "type": "subtopic",
+      "data": {
+        "label": "Key Concepts and Terminologies"
+      }
+    },
+    {
+      "id": "3fzuXKH7az_LVnmnoXB1p",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes Alternatives"
+      }
+    },
+    {
+      "id": "HGmeYvRf7_XusZl_K4x9k",
+      "type": "topic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "3OpGaQhyNtk1n1MLp-tlb",
+      "type": "topic",
+      "data": {
+        "label": "Setting up Kubernetes"
+      }
+    },
+    {
+      "id": "zrbSJa3k7a3TE0aYbWi9c",
+      "type": "subtopic",
+      "data": {
+        "label": "Deploying your First Application"
+      }
+    },
+    {
+      "id": "qSatCdBTDXPu-IFWzUI99",
+      "type": "subtopic",
+      "data": {
+        "label": "Choosing a Managed Provider"
+      }
+    },
+    {
+      "id": "YaIs8lquWIe1D7RCUBZmC",
+      "type": "subtopic",
+      "data": {
+        "label": "Installing a Local Cluster"
+      }
+    },
+    {
+      "id": "1MdrzhktCWjpmxiYYBdz7",
+      "type": "topic",
+      "data": {
+        "label": "Running Applications"
+      }
+    },
+    {
+      "id": "-d2PIXm0V_Iehe8cws8zK",
+      "type": "subtopic",
+      "data": {
+        "label": "Pods"
+      }
+    },
+    {
+      "id": "IF09l0-pryGpMbDt__ocr",
+      "type": "subtopic",
+      "data": {
+        "label": "ReplicaSets"
+      }
+    },
+    {
+      "id": "TUGQX7y1gs-aKPge2F1NU",
+      "type": "subtopic",
+      "data": {
+        "label": "Deployments"
+      }
+    },
+    {
+      "id": "AJiRBEaKU8qYEm0fqN389",
+      "type": "subtopic",
+      "data": {
+        "label": "StatefulSets"
+      }
+    },
+    {
+      "id": "r3fzAN5DzratAKnnT8hzb",
+      "type": "subtopic",
+      "data": {
+        "label": "Jobs"
+      }
+    },
+    {
+      "id": "aUJ_w2L8nxNq3DfAW97Gd",
+      "type": "topic",
+      "data": {
+        "label": "Services and Networking"
+      }
+    },
+    {
+      "id": "jUOlITLqnIvSu97I_3nBz",
+      "type": "subtopic",
+      "data": {
+        "label": "External Access to Services"
+      }
+    },
+    {
+      "id": "Qelo1YvAcUoX5PA-RYbNp",
+      "type": "subtopic",
+      "data": {
+        "label": "Load Balancing"
+      }
+    },
+    {
+      "id": "44rhdieUCWsGFC_1__9kk",
+      "type": "subtopic",
+      "data": {
+        "label": "Networking \u0026 Pod-to-Pod Communication"
+      }
+    },
+    {
+      "id": "dj7Tb2XTX4kxRUYiTjlhM",
+      "type": "topic",
+      "data": {
+        "label": "Configuration Management"
+      }
+    },
+    {
+      "id": "u24UlZKI86vaguj_VpMv1",
+      "type": "subtopic",
+      "data": {
+        "label": "Injecting Pod Config with ConfigMaps"
+      }
+    },
+    {
+      "id": "S0CwGC2gMG-SqnLNldqBD",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Secrets for Sensitive Data"
+      }
+    },
+    {
+      "id": "eWKkdiBhD5x2sGYajmHEs",
+      "type": "topic",
+      "data": {
+        "label": "Resource Management"
+      }
+    },
+    {
+      "id": "8RLR6gRjIyTn6GCugEfgk",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting Resource Requests and Limits"
+      }
+    },
+    {
+      "id": "OHz4QMmA3lqL_C7aWL8Ga",
+      "type": "subtopic",
+      "data": {
+        "label": "Assigning Quotas to Namespaces"
+      }
+    },
+    {
+      "id": "PP4ld_vvjpY3QltBBsXKD",
+      "type": "subtopic",
+      "data": {
+        "label": "Monitoring \u0026 Optimizing Resource Usage"
+      }
+    },
+    {
+      "id": "SG3wtV2rt9nmLEkgrp_zP",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "jOq0WwLrq8tlmOgo64QDc",
+      "type": "subtopic",
+      "data": {
+        "label": "Role Based Access Control (RBAC)"
+      }
+    },
+    {
+      "id": "s0gHg8CqwrSylpSPu8arA",
+      "type": "subtopic",
+      "data": {
+        "label": "Network Security"
+      }
+    },
+    {
+      "id": "Nja7IFWcFTLsPcqbvRNm9",
+      "type": "subtopic",
+      "data": {
+        "label": "Container and Pod Security"
+      }
+    },
+    {
+      "id": "i7qxaFhFHPfe3fGEgsbcE",
+      "type": "subtopic",
+      "data": {
+        "label": "Container and Pod Security"
+      }
+    },
+    {
+      "id": "AgsQnQjyTLUFhFpRdcE13",
+      "type": "topic",
+      "data": {
+        "label": "Monitoring and Logging"
+      }
+    },
+    {
+      "id": "-XxQtiLDAkXs7IFM_Ddw6",
+      "type": "subtopic",
+      "data": {
+        "label": "Logs"
+      }
+    },
+    {
+      "id": "nqUBHBFUYFdYqCKZvfXBR",
+      "type": "subtopic",
+      "data": {
+        "label": "Metrics"
+      }
+    },
+    {
+      "id": "ldYTEPt_hI4PXxr3tgJi5",
+      "type": "subtopic",
+      "data": {
+        "label": "Traces"
+      }
+    },
+    {
+      "id": "pDjNsK5vI9FmKZbQm0lDP",
+      "type": "subtopic",
+      "data": {
+        "label": "Resource Health"
+      }
+    },
+    {
+      "id": "FANswgUhUb5Iuah2fni3L",
+      "type": "subtopic",
+      "data": {
+        "label": "Observability Engines"
+      }
+    },
+    {
+      "id": "03mGA5AyL7mpF6y3EMW7A",
+      "type": "topic",
+      "data": {
+        "label": "Autoscaling"
+      }
+    },
+    {
+      "id": "044IUUCgZP4oQ9UxUG2iy",
+      "type": "subtopic",
+      "data": {
+        "label": "Horizontal Pod Autoscaler (HPA)"
+      }
+    },
+    {
+      "id": "c1KVczGRjh9bhMpbPP6sA",
+      "type": "subtopic",
+      "data": {
+        "label": "Vertical Pod Autoscaler (VPA)"
+      }
+    },
+    {
+      "id": "RC5MoYtG2rom-d4FW5qD2",
+      "type": "subtopic",
+      "data": {
+        "label": "Cluster Autoscaling"
+      }
+    },
+    {
+      "id": "xZDXM_8qb4VL15tNGG0ws",
+      "type": "topic",
+      "data": {
+        "label": "Scheduling"
+      }
+    },
+    {
+      "id": "70lTSIVh0AD6M8fMMuWzY",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics"
+      }
+    },
+    {
+      "id": "zXUsHAI1HFhcY2BFAcypv",
+      "type": "subtopic",
+      "data": {
+        "label": "Taints and Tolerations"
+      }
+    },
+    {
+      "id": "CL0hKTcml40InmyVUXpY2",
+      "type": "subtopic",
+      "data": {
+        "label": "Topology Spread Constraints"
+      }
+    },
+    {
+      "id": "_Gva1eGcYqpmZNPyV03lt",
+      "type": "subtopic",
+      "data": {
+        "label": "Pod Priorities"
+      }
+    },
+    {
+      "id": "TRKzlDW2PQN9bWTyz3NWL",
+      "type": "subtopic",
+      "data": {
+        "label": "Evictions"
+      }
+    },
+    {
+      "id": "URnYf9jMprFz-o26fbU2P",
+      "type": "topic",
+      "data": {
+        "label": "Storage and Volumes"
+      }
+    },
+    {
+      "id": "55RV9psPCmcg8G_P_zQo9",
+      "type": "subtopic",
+      "data": {
+        "label": "CSI Drivers"
+      }
+    },
+    {
+      "id": "LJUJ1NIUsajb1AUdvJjqW",
+      "type": "subtopic",
+      "data": {
+        "label": "Stateful Applications"
+      }
+    },
+    {
+      "id": "0l0xpsabglvs_t6oAP-XG",
+      "type": "topic",
+      "data": {
+        "label": "Deployment Patterns"
+      }
+    },
+    {
+      "id": "Pymc9H-lRHVPy7M9eSaPD",
+      "type": "subtopic",
+      "data": {
+        "label": "CI / CD Integration"
+      }
+    },
+    {
+      "id": "dATdEyNWlpDNKjedCXLyb",
+      "type": "subtopic",
+      "data": {
+        "label": "GitOps"
+      }
+    },
+    {
+      "id": "FAEFOhLdp7xrmctHFxiOM",
+      "type": "subtopic",
+      "data": {
+        "label": "Helm Charts"
+      }
+    },
+    {
+      "id": "88IGeC3dAopHLGtLozxdY",
+      "type": "subtopic",
+      "data": {
+        "label": "Canary Deployments"
+      }
+    },
+    {
+      "id": "yMSXdwDO36CLtp2TBC7aB",
+      "type": "subtopic",
+      "data": {
+        "label": "Rolling Updates / Rollbacks"
+      }
+    },
+    {
+      "id": "vdbcHzRz-_WnvhOemTw3R",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "t8SJbGVXsUDECxePLDk_w",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "L9rVPEEXFwisQOwT_LQ4v",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Custom Controllers"
+      }
+    },
+    {
+      "id": "1-Nb8rCMJEZrYm20sEcRJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Schedulers and Extenders"
+      }
+    },
+    {
+      "id": "9P7l-RBOkUxs3Z_UpKQO-",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Resource Definitions (CRDs)"
+      }
+    },
+    {
+      "id": "UeJcKv3jhenjNzHM-0R86",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes Extensions and APIs"
+      }
+    },
+    {
+      "id": "ZrVhYTw63aVVIFAEJDG5r",
+      "type": "subtopic",
+      "data": {
+        "label": "Should you manage your own Cluster?"
+      }
+    },
+    {
+      "id": "M-iTb_7EWZIJ3JpdViICx",
+      "type": "subtopic",
+      "data": {
+        "label": "Installing the Control Plane"
+      }
+    },
+    {
+      "id": "2cQKTxln3dIk5IjX2UZdM",
+      "type": "subtopic",
+      "data": {
+        "label": "Adding and Managing Worker Nodes"
+      }
+    },
+    {
+      "id": "auZgEQ6FC3nUjuyx0zANh",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi-Cluster Management"
+      }
+    },
+    {
+      "id": "-M6ZVzI35DVZwl9hGpYFQ",
+      "type": "label",
+      "data": {
+        "label": "Cluster Operations"
+      }
+    },
+    {
+      "id": "A3PLMcJN35yJJUuZJbRMx",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "UloavCkIvZnD1XMFohYVT",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "StxLh1r3qXqyRSqfJGird",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "wx-CpX3NJtKrdr_dQHZi9",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "9-oaTlzKmcxTfaRycz1w3",
+      "type": "subtopic",
+      "data": {
+        "label": "Blue-Green Deployments"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "y7KjVfSI6CAduyHd4mBFT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-qLeEEwBvlGt1fP5Qcreahy2",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "qLeEEwBvlGt1fP5Qcreah",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-q-Ky0ietZGpyUcBQfh-BJy1",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "q-Ky0ietZGpyUcBQfh-BJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-9oo2fxTM2_p0VYPBroqxay2",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "9oo2fxTM2_p0VYPBroqxa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-3fzuXKH7az_LVnmnoXB1py1",
+      "source": "y7KjVfSI6CAduyHd4mBFT",
+      "target": "3fzuXKH7az_LVnmnoXB1p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-zrbSJa3k7a3TE0aYbWi9cz2",
+      "source": "3OpGaQhyNtk1n1MLp-tlb",
+      "target": "zrbSJa3k7a3TE0aYbWi9c",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-qSatCdBTDXPu-IFWzUI99z1",
+      "source": "3OpGaQhyNtk1n1MLp-tlb",
+      "target": "qSatCdBTDXPu-IFWzUI99",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-YaIs8lquWIe1D7RCUBZmCz2",
+      "source": "3OpGaQhyNtk1n1MLp-tlb",
+      "target": "YaIs8lquWIe1D7RCUBZmC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3OpGaQhyNtk1n1MLp-tlbx2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "3OpGaQhyNtk1n1MLp-tlb",
+      "target": "1MdrzhktCWjpmxiYYBdz7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-TUGQX7y1gs-aKPge2F1NUy1",
+      "source": "1MdrzhktCWjpmxiYYBdz7",
+      "target": "TUGQX7y1gs-aKPge2F1NU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2--d2PIXm0V_Iehe8cws8zKy1",
+      "source": "1MdrzhktCWjpmxiYYBdz7",
+      "target": "-d2PIXm0V_Iehe8cws8zK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wz2-r3fzAN5DzratAKnnT8hzby1",
+      "source": "1MdrzhktCWjpmxiYYBdz7",
+      "target": "r3fzAN5DzratAKnnT8hzb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__1MdrzhktCWjpmxiYYBdz7x2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "1MdrzhktCWjpmxiYYBdz7",
+      "target": "aUJ_w2L8nxNq3DfAW97Gd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wx2-jUOlITLqnIvSu97I_3nBzw1",
+      "source": "aUJ_w2L8nxNq3DfAW97Gd",
+      "target": "jUOlITLqnIvSu97I_3nBz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aUJ_w2L8nxNq3DfAW97Gdy2-t8SJbGVXsUDECxePLDk_wz2",
+      "source": "aUJ_w2L8nxNq3DfAW97Gd",
+      "target": "dj7Tb2XTX4kxRUYiTjlhM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_ww2-S0CwGC2gMG-SqnLNldqBDx2",
+      "source": "dj7Tb2XTX4kxRUYiTjlhM",
+      "target": "S0CwGC2gMG-SqnLNldqBD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dj7Tb2XTX4kxRUYiTjlhMx2-t8SJbGVXsUDECxePLDk_ww2",
+      "source": "dj7Tb2XTX4kxRUYiTjlhM",
+      "target": "eWKkdiBhD5x2sGYajmHEs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eWKkdiBhD5x2sGYajmHEsz2-t8SJbGVXsUDECxePLDk_wy2",
+      "source": "eWKkdiBhD5x2sGYajmHEs",
+      "target": "SG3wtV2rt9nmLEkgrp_zP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_ww2-i7qxaFhFHPfe3fGEgsbcEx1",
+      "source": "SG3wtV2rt9nmLEkgrp_zP",
+      "target": "i7qxaFhFHPfe3fGEgsbcE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__SG3wtV2rt9nmLEkgrp_zPx2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "SG3wtV2rt9nmLEkgrp_zP",
+      "target": "AgsQnQjyTLUFhFpRdcE13",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-pDjNsK5vI9FmKZbQm0lDPz1",
+      "source": "AgsQnQjyTLUFhFpRdcE13",
+      "target": "pDjNsK5vI9FmKZbQm0lDP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-ldYTEPt_hI4PXxr3tgJi5z1",
+      "source": "AgsQnQjyTLUFhFpRdcE13",
+      "target": "ldYTEPt_hI4PXxr3tgJi5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wy2-FANswgUhUb5Iuah2fni3Lz1",
+      "source": "AgsQnQjyTLUFhFpRdcE13",
+      "target": "FANswgUhUb5Iuah2fni3L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AgsQnQjyTLUFhFpRdcE13x2-t8SJbGVXsUDECxePLDk_ww1",
+      "source": "AgsQnQjyTLUFhFpRdcE13",
+      "target": "03mGA5AyL7mpF6y3EMW7A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wx2-RC5MoYtG2rom-d4FW5qD2w2",
+      "source": "03mGA5AyL7mpF6y3EMW7A",
+      "target": "044IUUCgZP4oQ9UxUG2iy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__03mGA5AyL7mpF6y3EMW7Ay2-t8SJbGVXsUDECxePLDk_wz2",
+      "source": "03mGA5AyL7mpF6y3EMW7A",
+      "target": "xZDXM_8qb4VL15tNGG0ws",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t8SJbGVXsUDECxePLDk_wx2-70lTSIVh0AD6M8fMMuWzYw1",
+      "source": "xZDXM_8qb4VL15tNGG0ws",
+      "target": "70lTSIVh0AD6M8fMMuWzY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xZDXM_8qb4VL15tNGG0wsy2-t8SJbGVXsUDECxePLDk_wz1",
+      "source": "xZDXM_8qb4VL15tNGG0ws",
+      "target": "URnYf9jMprFz-o26fbU2P",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

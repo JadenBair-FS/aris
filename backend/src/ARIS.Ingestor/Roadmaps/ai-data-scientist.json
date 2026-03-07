@@ -1,0 +1,971 @@
+{
+  "title": {
+    "card": "AI and Data Scientist",
+    "page": "AI and Data Scientist Roadmap"
+  },
+  "description": "Step by step roadmap guide to becoming an AI and Data Scientist in @currentYear@",
+  "nodes": [
+    {
+      "id": "28Iu61OKR6_3BBmO8M5lg",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "0dVq5C16sFyWglWitQQdD",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Vdw0GAnxhDCj_C3XDxNDF",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Z4MOOqNXpHkxWe0PJ7hjt",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JHqi_gjATUrPtewn-cdGo",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "I7PI9n8QfW9_tCWOdw7yY",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3_CBtQLv0X6GzUEtq7jyp",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "aq0gNWINbAQFG28HLJgCF",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "AI and Data Scientist"
+      }
+    },
+    {
+      "id": "aStaDENn5PhEa-cFvNzXa",
+      "type": "topic",
+      "data": {
+        "label": "Mathematics"
+      }
+    },
+    {
+      "id": "4WZL_fzJ3cZdWLLDoWN8D",
+      "type": "topic",
+      "data": {
+        "label": "Statistics"
+      }
+    },
+    {
+      "id": "gWMvD83hVXeTmCuHGIiOL",
+      "type": "todo",
+      "data": {
+        "label": "Linear Algebra, Calculus, Mathematical Analysis"
+      }
+    },
+    {
+      "id": "HclEU3v8OdC_Oq7ONvApt",
+      "type": "resourceButton",
+      "data": {
+        "label": "Mathematics for Machine Learning"
+      }
+    },
+    {
+      "id": "mwPJh33MEUQ4Co_LiVEOb",
+      "type": "todo",
+      "data": {
+        "label": "Differential Calculus "
+      }
+    },
+    {
+      "id": "Py2ZgxmPRQ620cuOj_Cig",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Algebra and Differential Calculus"
+      }
+    },
+    {
+      "id": "Y9YJdARIRqqCBCy3GVYdA",
+      "type": "todo",
+      "data": {
+        "label": "Statistics, CLT"
+      }
+    },
+    {
+      "id": "O-9EsoKrMpfkcGIBKnSty",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Introduction to Statistics"
+      }
+    },
+    {
+      "id": "XJXIkWVDIrPJ-bVIvX0ZO",
+      "type": "todo",
+      "data": {
+        "label": "Hypothesis Testing"
+      }
+    },
+    {
+      "id": "5_wxpYdzweUkSMugiKV94",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Hypothesis Testing"
+      }
+    },
+    {
+      "id": "jxJtwbiCvxHqmkWkE7zdx",
+      "type": "todo",
+      "data": {
+        "label": "Probability and Sampling"
+      }
+    },
+    {
+      "id": "jIeLbbE0KYjoQo0t0CVXm",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Probability and Statistics"
+      }
+    },
+    {
+      "id": "mJq9b50MJM9o9dLhx40iN",
+      "type": "todo",
+      "data": {
+        "label": "AB Testing"
+      }
+    },
+    {
+      "id": "lrDei3AUInJZ1ISDxOxdT",
+      "type": "resourceButton",
+      "data": {
+        "label": "Practitioner\u0027s Guide to Statistical Tests"
+      }
+    },
+    {
+      "id": "R0lIHKW2JmXQp79hoGU6x",
+      "type": "resourceButton",
+      "data": {
+        "label": "Experiment Design Article"
+      }
+    },
+    {
+      "id": "v68nwX914qCwHDSwY_ZhG",
+      "type": "todo",
+      "data": {
+        "label": "Increasing Test Sensitivity"
+      }
+    },
+    {
+      "id": "G6wxStgN1ShtD6RR2xVc-",
+      "type": "resourceButton",
+      "data": {
+        "label": "Minimum Detectable Effect"
+      }
+    },
+    {
+      "id": "Pu6kiJ0YOvtD6AypKWkfJ",
+      "type": "resourceButton",
+      "data": {
+        "label": "Paper: Improving Test Sensitivity"
+      }
+    },
+    {
+      "id": "usXkw57ukCuc9gAw6E5Td",
+      "type": "resourceButton",
+      "data": {
+        "label": "Paper: Improving Sensitivity (CUPED)"
+      }
+    },
+    {
+      "id": "T0suD_0uw6nSq7NOFBoNQ",
+      "type": "resourceButton",
+      "data": {
+        "label": "CUPED at Booking.com"
+      }
+    },
+    {
+      "id": "Vx5zD4Y-6yLxorD8kNvop",
+      "type": "resourceButton",
+      "data": {
+        "label": "Doordash: CUPAC"
+      }
+    },
+    {
+      "id": "bdAl2ne0fsE1R02wWdIK9",
+      "type": "resourceButton",
+      "data": {
+        "label": "Netflix: Stratification"
+      }
+    },
+    {
+      "id": "n2JFGwFxTuOviW6kHO1Uv",
+      "type": "todo",
+      "data": {
+        "label": "Ratio Metrics"
+      }
+    },
+    {
+      "id": "nW_wSh-PoSlmOONP48UDD",
+      "type": "resourceButton",
+      "data": {
+        "label": "Microsoft: Delta Method in Metric Analytics"
+      }
+    },
+    {
+      "id": "KiaiatCPngkVem7Bw3s0T",
+      "type": "resourceButton",
+      "data": {
+        "label": "Paper: Ratio Metrics"
+      }
+    },
+    {
+      "id": "o_Ddc5iv9y4ZLUjmUTvP-",
+      "type": "label",
+      "data": {
+        "label": "1"
+      }
+    },
+    {
+      "id": "B3ZzcZspEctJ2kX6At0tb",
+      "type": "label",
+      "data": {
+        "label": "2"
+      }
+    },
+    {
+      "id": "Io-XP7K1_siYDrlwFmbEx",
+      "type": "label",
+      "data": {
+        "label": "3"
+      }
+    },
+    {
+      "id": "Gd2egqKZPnbPW1W2jw4j8",
+      "type": "topic",
+      "data": {
+        "label": "Econometrics"
+      }
+    },
+    {
+      "id": "EqgwFsJqejdABpTBoxOix",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GFlPWkEVwPlxPhOitG1xH",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "h9_7FHMPipHVN7C4ErKHU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_uOgVh3d8lAlbTgYNJFpt",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "qRxvTDjpoW1GuQ771syXb",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "TAN0BhW1tm0t3eNHOmOZ8",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "5wqI-L_vEpqtvXZEAbfqE",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "hvFSTxMfMXPysDinI0oH8",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "YT5_iofe0kQ-wVjd54RT8",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "ct0yUXFnbSXCw4HGIh3hh",
+      "type": "label",
+      "data": {
+        "label": "^"
+      }
+    },
+    {
+      "id": "_-qXa7MhA16X2BBdaWw4f",
+      "type": "label",
+      "data": {
+        "label": "^"
+      }
+    },
+    {
+      "id": "EyjiTmb9kck4OoNtbde1x",
+      "type": "label",
+      "data": {
+        "label": "^"
+      }
+    },
+    {
+      "id": "WmbvaP_zRGs_WhYK30YqM",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "y6xXsc-uSAmRDnNuyhqH2",
+      "type": "todo",
+      "data": {
+        "label": "Pre-requisites of Econometrics"
+      }
+    },
+    {
+      "id": "2rt4WE9cE93K6vDM-c-IL",
+      "type": "resourceButton",
+      "data": {
+        "label": "Fundamentals of Econometrics"
+      }
+    },
+    {
+      "id": "h19k9Fn5XPh3_pKEC8Ftp",
+      "type": "todo",
+      "data": {
+        "label": "Regression, Timeseries, Fitting Distributions"
+      }
+    },
+    {
+      "id": "Eu7OT0Q7mtrMseUVumGXA",
+      "type": "resourceButton",
+      "data": {
+        "label": "Intro to Econometrics"
+      }
+    },
+    {
+      "id": "hVOt_Ya86r_SIXJBkLXBj",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Econometrics"
+      }
+    },
+    {
+      "id": "YU_5XufdA-zfhM0fXxGYs",
+      "type": "resourceButton",
+      "data": {
+        "label": "Kaggle: Learn Time Series"
+      }
+    },
+    {
+      "id": "9mB3u8st5yhM7HfVWWqFZ",
+      "type": "resourceButton",
+      "data": {
+        "label": "Kaggle: Time Series Basics"
+      }
+    },
+    {
+      "id": "FwuC8d9ocHeDxi8MSIPH6",
+      "type": "resourceButton",
+      "data": {
+        "label": "ARIMA model for Time Series"
+      }
+    },
+    {
+      "id": "53Z3qm-zP4u7_KqSD_XlB",
+      "type": "resourceButton",
+      "data": {
+        "label": "Time Series Models"
+      }
+    },
+    {
+      "id": "LVLv69h57rnKPKpa0Cj4h",
+      "type": "resourceButton",
+      "data": {
+        "label": "Forecasting Task with Solution"
+      }
+    },
+    {
+      "id": "FrY1Yl6yvLYA5zjBNKRVx",
+      "type": "resourceButton",
+      "data": {
+        "label": "Coursera: Linear Regression"
+      }
+    },
+    {
+      "id": "XLDWuSt4tI4gnmqMFdpmy",
+      "type": "topic",
+      "data": {
+        "label": "Coding"
+      }
+    },
+    {
+      "id": "HVHYJ8gWHCZMACuvKP7gK",
+      "type": "label",
+      "data": {
+        "label": "4"
+      }
+    },
+    {
+      "id": "27CsPu77wfCw4uI0Tu45e",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "z9R4_7UWeLz66RptYvcEI",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "AIFkyjgGB7AXmCG6D1bzs",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "Jsyv0X1BPlP0Vi_oklxHA",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "MVrAqizgkoAs2aghN8TgV",
+      "type": "todo",
+      "data": {
+        "label": "Learn Python Programming Language"
+      }
+    },
+    {
+      "id": "aRYOzyqvWmarRmNaPKqxI",
+      "type": "resourceButton",
+      "data": {
+        "label": "Learn Python: Kaggle"
+      }
+    },
+    {
+      "id": "eUQRHOSQq0hjwH0LuGDqY",
+      "type": "resourceButton",
+      "data": {
+        "label": "Google\u0027s Python Class"
+      }
+    },
+    {
+      "id": "R2WD0NKP7oM27aHr9SpO6",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "36wmSfRpWOnprqPo4C7QA",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "StBCykpzpM4g9PRFeSNXa",
+      "type": "todo",
+      "data": {
+        "label": "Data Structures and Algorithms (Python)"
+      }
+    },
+    {
+      "id": "lhLL1ycUWgeX_d5gd-g8g",
+      "type": "resourceButton",
+      "data": {
+        "label": "Study Plans - Leetcode"
+      }
+    },
+    {
+      "id": "4_5Q9PesKAtnLlT-NAm3z",
+      "type": "resourceButton",
+      "data": {
+        "label": "Algorithmic Excercises"
+      }
+    },
+    {
+      "id": "Bh3vUHjY9So8vWli_464_",
+      "type": "resourceButton",
+      "data": {
+        "label": "Algorithms Specialization"
+      }
+    },
+    {
+      "id": "Im0tXXn3GC-FUq2aMHgwm",
+      "type": "todo",
+      "data": {
+        "label": "Learn SQL"
+      }
+    },
+    {
+      "id": "22XRxoVJX-hIdinkFICPU",
+      "type": "resourceButton",
+      "data": {
+        "label": "SQL Tutorial"
+      }
+    },
+    {
+      "id": "Sx6HhmEozlX7CEXQoVkTf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "l1027SBZxTHKzqWw98Ee-",
+      "type": "topic",
+      "data": {
+        "label": "Exploratory Data Analysis"
+      }
+    },
+    {
+      "id": "YJ2fIGILZJjobx5CAD6QW",
+      "type": "label",
+      "data": {
+        "label": "5"
+      }
+    },
+    {
+      "id": "JaN8YhMeN3whAe2TCXvw9",
+      "type": "todo",
+      "data": {
+        "label": "Data understanding, Data Analysis and Visualization"
+      }
+    },
+    {
+      "id": "wG3LU8181BGihDVYJVI09",
+      "type": "resourceButton",
+      "data": {
+        "label": "Exploratory Data Analysis with Python and Pandas"
+      }
+    },
+    {
+      "id": "R4MhS5WFGaGOLNq6SRpy0",
+      "type": "resourceButton",
+      "data": {
+        "label": "Exploratory Data Analysis for Machine Learning"
+      }
+    },
+    {
+      "id": "mpPs2k7oT7EWrhQwaoPXr",
+      "type": "resourceButton",
+      "data": {
+        "label": "Exploratory Data Analysis with Seaborn"
+      }
+    },
+    {
+      "id": "FsU7_B1LCULtlVQg7gEPR",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ofcYD3hTVEMeRptkHsVer",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kBdt_t2SvVsY3blfubWIz",
+      "type": "topic",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "wOqfPAZ24GxUrkxVRRyT5",
+      "type": "label",
+      "data": {
+        "label": "6"
+      }
+    },
+    {
+      "id": "oeNjgke33Daibit1E6Rqr",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "FdBih8tlGPPy97YWq463y",
+      "type": "todo",
+      "data": {
+        "label": "Classic ML (Sup., Unsup.), Advanced ML (Ensembles, NNs)"
+      }
+    },
+    {
+      "id": "MyBAdtFSNVOnpw1BPQNky",
+      "type": "resourceButton",
+      "data": {
+        "label": "Open Machine Learning Course - Open Data Science"
+      }
+    },
+    {
+      "id": "qCjcQWK1RGUU6K3dljow2",
+      "type": "resourceButton",
+      "data": {
+        "label": "Machine Learning Specialization"
+      }
+    },
+    {
+      "id": "erDpbh0iRTfoUQrU4uEMs",
+      "type": "resourceButton",
+      "data": {
+        "label": "Pattern Recognition \u0026 ML by Christopher m. Bishop"
+      }
+    },
+    {
+      "id": "9yKXxruT8s9KBEFf_Twd0",
+      "type": "resourceButton",
+      "data": {
+        "label": "GitHub repository with notes \u0026 code from the eBook above"
+      }
+    },
+    {
+      "id": "uCZ6_FKeaY0lCkrNttNhz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "41yv5UhFw3kHIrAMQb6qy",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "cjvVLN0XjrKPn6o20oMmc",
+      "type": "topic",
+      "data": {
+        "label": "Deep Learning"
+      }
+    },
+    {
+      "id": "rarV0SS26NyqAHkYeqsfa",
+      "type": "label",
+      "data": {
+        "label": "7"
+      }
+    },
+    {
+      "id": "iJv3Ii5B5TK8i5mN2mLs2",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kBQV71KwuVxpUi0nFj17X",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "eOFoGKveaHaBm_6ppJUtA",
+      "type": "todo",
+      "data": {
+        "label": "Fully Connected, CNN, RNN, LSTM, Transformers, TL"
+      }
+    },
+    {
+      "id": "4TyV6lDCVCOIOhmY9bgPC",
+      "type": "resourceButton",
+      "data": {
+        "label": "Deep Learning Specialization"
+      }
+    },
+    {
+      "id": "-rl87TRJZTWqbQmW95NAi",
+      "type": "resourceButton",
+      "data": {
+        "label": "Deep Learning Book"
+      }
+    },
+    {
+      "id": "54pd0lYYLvuNYmuaOZbrT",
+      "type": "resourceButton",
+      "data": {
+        "label": "Attention is all you need"
+      }
+    },
+    {
+      "id": "lm3BCmHTcd-_cOIc_dDmU",
+      "type": "resourceButton",
+      "data": {
+        "label": "The Illustrated Transformer"
+      }
+    },
+    {
+      "id": "deHK6yEdytCu2ACvVC0bs",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Nn5ZjuUG_uEbCxcIcYY9U",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "C85MXDnb-d0eVur0DLGr-",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Sehg_WX_mnMCRlKrvwWzc",
+      "type": "label",
+      "data": {
+        "label": "8"
+      }
+    },
+    {
+      "id": "Qa85hEVe2kz62k9Pj4QCA",
+      "type": "topic",
+      "data": {
+        "label": "MLOps"
+      }
+    },
+    {
+      "id": "bsj2IHFXur-qqDSI4B1wg",
+      "type": "resourceButton",
+      "data": {
+        "label": "MLOps Specialization"
+      }
+    },
+    {
+      "id": "uPzzUpI0--7OWDfNeBIjt",
+      "type": "todo",
+      "data": {
+        "label": "Deployment Models, CI/CD"
+      }
+    },
+    {
+      "id": "rKb8lqYH0GC_6R5qybzzM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "q_oYxEPUvEylwjAyDA5FL",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "jVVrvW1PCXEKz5IfJMXKo",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qnjDifLlSYoxWd5GmuQXd",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "0bn7U-9YoeOqPXTnrMpfz",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "13tRO2lYWb0m8LwjAcdIY",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "uBSNhZB4PuEKY1bkzoZGG",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "-5YUJmODVX62RchBu-G0y",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "wt-ifu9mv7Ydc_-Gaqv-V",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "93tag4KlRPagkbdpY4lVT",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "DEW_GsNVEf75P63SvEQwB",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "nAi-ndQiOiYCuAMqtDZ1I",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "ftUWZ9y0YFc4geCEaCEAq",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "SG6DkcQM4NdgTSu2MR8Q5",
+      "type": "label",
+      "data": {
+        "label": "\u003C"
+      }
+    },
+    {
+      "id": "FGJcnSeI5Fgn2bxfY9DEd",
+      "type": "label",
+      "data": {
+        "label": "V"
+      }
+    },
+    {
+      "id": "PV5ACkfJLhJOUZ2qnobhZ",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "Xd_mdvQdbCWcucpSTcDz1",
+      "type": "label",
+      "data": {
+        "label": "\u003E"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "IDGTOlC_h3rt_3ZF4x8bG",
+      "type": "label",
+      "data": {
+        "label": "Keep Learning"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-wOqfPAZ24GxUrkxVRRyT5z2-wOqfPAZ24GxUrkxVRRyT5z1",
+      "source": "HVHYJ8gWHCZMACuvKP7gK",
+      "target": "HVHYJ8gWHCZMACuvKP7gK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

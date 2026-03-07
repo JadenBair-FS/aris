@@ -1,0 +1,1471 @@
+{
+  "title": {
+    "card": "C\u002B\u002B",
+    "page": "C\u002B\u002B Developer Roadmap"
+  },
+  "description": "Step by step guide to becoming a C\u002B\u002B developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "b5EyLVAnEsPBiwy2dMr6F",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "I1aDakZmYpe7pKczou0qC",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "goX6oPqweGg7J9yXJjDsR",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "iisl6B61awdQDJVGaBqtI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "SNEm8ibYyywxb0prHdlMA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "REVHzbbcSWfylibdGZG5A",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Tm2kjpCnwZhAw0vwqn_PK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "_sUz-qKSggnUjAO281ROC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wGg3UBe3OqaXWxPxYiBQz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3SsQBuq6ie73yAMvRcqtR",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ra0ZEvbILayGotRDlRwjF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "XUHjmFhEsTjGRLlmDgl_w",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "mnUWOqBFgcuNsXUr18fJI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "l5xm8tzFqMKwGdK3MYaXm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fG1lGRwUDPc-aiETFyEE7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ofwdZm05AUqCIWmfgGHk8",
+      "type": "subtopic",
+      "data": {
+        "label": "Diamond Inheritance"
+      }
+    },
+    {
+      "id": "ZHjU60uzJTezADRhDTESG",
+      "type": "subtopic",
+      "data": {
+        "label": "Forward Declaration"
+      }
+    },
+    {
+      "id": "J7Jwh6hrrEyni5eGmuCqc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Qk3hqX1Wj68FD8jXHS5NU",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "zybofouGIVxcKvr47F3Yy",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "C\u002B\u002B"
+      }
+    },
+    {
+      "id": "g4hjyQF8-SpjPi8mYtIsk",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Keep learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "NvODRFR0DLINB0RlPSsvt",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to Language"
+      }
+    },
+    {
+      "id": "q2z_1wnPUnWM7MYIIUyBg",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "x_28LiDVshqWns_aIBsdx",
+      "type": "subtopic",
+      "data": {
+        "label": "What is C\u002B\u002B?"
+      }
+    },
+    {
+      "id": "tl6VCQ5IEGDVyFcgj7jDm",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use C\u002B\u002B"
+      }
+    },
+    {
+      "id": "2Ag0t3LPryTF8khHLRfy-",
+      "type": "subtopic",
+      "data": {
+        "label": "C vs C\u002B\u002B"
+      }
+    },
+    {
+      "id": "Zc_TTzmM36yWsu3GvOy9x",
+      "type": "topic",
+      "data": {
+        "label": "Setting up your Environment"
+      }
+    },
+    {
+      "id": "0J_ltQEJh2g28OE2ZEYJj",
+      "type": "subtopic",
+      "data": {
+        "label": "Installing C\u002B\u002B"
+      }
+    },
+    {
+      "id": "ew0AfyadpXPRO0ZY3Z19k",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Editors / IDEs"
+      }
+    },
+    {
+      "id": "SEq0D2Zg5WTsIDtd1hW9f",
+      "type": "subtopic",
+      "data": {
+        "label": "Running your First Program"
+      }
+    },
+    {
+      "id": "kl2JI_Wl47c5r8SYzxvCq",
+      "type": "topic",
+      "data": {
+        "label": "Basic Operations"
+      }
+    },
+    {
+      "id": "8aOSpZLWwZv_BEYiurhyR",
+      "type": "subtopic",
+      "data": {
+        "label": "Arithmetic Operators"
+      }
+    },
+    {
+      "id": "Y9gq8WkDA_XGe68JkY2UZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Logical Operators"
+      }
+    },
+    {
+      "id": "zE4iPSq2KsrDSByQ0sGK_",
+      "type": "subtopic",
+      "data": {
+        "label": "Bitwise Operators"
+      }
+    },
+    {
+      "id": "s5Gs4yF9TPh-psYmtPzks",
+      "type": "topic",
+      "data": {
+        "label": "Control Flow \u0026 Statements"
+      }
+    },
+    {
+      "id": "_IP_e1K9LhNHilYTDh7L5",
+      "type": "subtopic",
+      "data": {
+        "label": "for / while / do while loops"
+      }
+    },
+    {
+      "id": "bjpFWxiCKGz28E-ukhZBp",
+      "type": "subtopic",
+      "data": {
+        "label": "if else / switch / goto"
+      }
+    },
+    {
+      "id": "oYi3YOc1GC2Nfp71VOkJt",
+      "type": "topic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "obZIxRp0eMWdG7gplNIBc",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Polymorphism"
+      }
+    },
+    {
+      "id": "sgfqb22sdN4VRJYkhAVaf",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Overloading"
+      }
+    },
+    {
+      "id": "llCBeut_uc9IAe2oi4KZ9",
+      "type": "subtopic",
+      "data": {
+        "label": "Operator Overloading"
+      }
+    },
+    {
+      "id": "xjiFBVe-VGqCqWfkPVGKf",
+      "type": "subtopic",
+      "data": {
+        "label": "Lambdas"
+      }
+    },
+    {
+      "id": "MwznA4qfpNlv6sqSNjPZi",
+      "type": "topic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "f1djN0GxoeVPr_0cl6vMq",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Typing"
+      }
+    },
+    {
+      "id": "i0EAFEUB-F0wBJWOtrl1A",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic Typing"
+      }
+    },
+    {
+      "id": "r0yD1gfn03wTpEBi6zNsu",
+      "type": "subtopic",
+      "data": {
+        "label": "RTTI"
+      }
+    },
+    {
+      "id": "DWw8NxkLpIpiOSUaZZ1oA",
+      "type": "topic",
+      "data": {
+        "label": "Pointers and References"
+      }
+    },
+    {
+      "id": "uUzRKa9wGzdUwwmAg3FWr",
+      "type": "subtopic",
+      "data": {
+        "label": "References"
+      }
+    },
+    {
+      "id": "mSFwsTYvmg-GwG4_DEIEf",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Model"
+      }
+    },
+    {
+      "id": "9aA_-IfQ9WmbPgwic0mFN",
+      "type": "subtopic",
+      "data": {
+        "label": "Lifetime of Objects"
+      }
+    },
+    {
+      "id": "ulvwm4rRPgkpgaqGgyH5a",
+      "type": "subtopic",
+      "data": {
+        "label": "Smart Pointers"
+      }
+    },
+    {
+      "id": "vUwSS-uX36OWZouO0wOcy",
+      "type": "subtopic",
+      "data": {
+        "label": "weak_ptr"
+      }
+    },
+    {
+      "id": "b5jZIZD_U_CPg-_bdndjz",
+      "type": "subtopic",
+      "data": {
+        "label": "shared_ptr"
+      }
+    },
+    {
+      "id": "k9c5seRkhgm_yHPpiz2X0",
+      "type": "subtopic",
+      "data": {
+        "label": "unique_ptr"
+      }
+    },
+    {
+      "id": "uEGEmbxegATIrvGfobJb9",
+      "type": "subtopic",
+      "data": {
+        "label": "Raw Pointers"
+      }
+    },
+    {
+      "id": "Gld0nRs0sM8kRe8XmYolu",
+      "type": "subtopic",
+      "data": {
+        "label": "New/Delete Operators"
+      }
+    },
+    {
+      "id": "6w0WExQ4lGIGgok6Thq0s",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Leakage"
+      }
+    },
+    {
+      "id": "Zw2AOTK5uc9BoKEpY7W1C",
+      "type": "topic",
+      "data": {
+        "label": "Structuring Codebase"
+      }
+    },
+    {
+      "id": "dKCYmxDNZubCVcR5rf8b-",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope"
+      }
+    },
+    {
+      "id": "iIdC7V8sojwyEqK1xMuHn",
+      "type": "subtopic",
+      "data": {
+        "label": "Namespaces"
+      }
+    },
+    {
+      "id": "CK7yf8Bo7kfbV6x2tZTrh",
+      "type": "subtopic",
+      "data": {
+        "label": "Headers / CPP Files"
+      }
+    },
+    {
+      "id": "CMlWNQwpywNhO9B6Yj6Me",
+      "type": "topic",
+      "data": {
+        "label": "Structures and Classes"
+      }
+    },
+    {
+      "id": "7sdEzZCIoarzznwO4XcCv",
+      "type": "subtopic",
+      "data": {
+        "label": "Rule of Zero, Five, Three"
+      }
+    },
+    {
+      "id": "WjHpueZDK-d3oDNMVZi9w",
+      "type": "subtopic",
+      "data": {
+        "label": "Multiple Inheritance"
+      }
+    },
+    {
+      "id": "b3-QYKNcW3LYCNOza3Olf",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "hNBErGNiegLsUJn_vgcOR",
+      "type": "subtopic",
+      "data": {
+        "label": "Virtual Methods"
+      }
+    },
+    {
+      "id": "s99ImazcwCgAESxZd8ksa",
+      "type": "subtopic",
+      "data": {
+        "label": "Virtual Tables"
+      }
+    },
+    {
+      "id": "7h1VivjCPDwriL7FirtFv",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic Polymorphism"
+      }
+    },
+    {
+      "id": "B2SGBENzUMl0SAjG4j91V",
+      "type": "topic",
+      "data": {
+        "label": "Exception Handling"
+      }
+    },
+    {
+      "id": "oWygnpwHq2poXQMTTSCpl",
+      "type": "subtopic",
+      "data": {
+        "label": "Exit Codes"
+      }
+    },
+    {
+      "id": "NJud5SXBAUZ6Sr78kZ7jx",
+      "type": "subtopic",
+      "data": {
+        "label": "Exceptions"
+      }
+    },
+    {
+      "id": "y4-P4UNC--rE1vni8HdTn",
+      "type": "subtopic",
+      "data": {
+        "label": "Access Violations"
+      }
+    },
+    {
+      "id": "-6fwJQOfsorgHkoQGp4T3",
+      "type": "topic",
+      "data": {
+        "label": "Language Concepts"
+      }
+    },
+    {
+      "id": "CG01PTVgHtjfKvsJkJLGl",
+      "type": "subtopic",
+      "data": {
+        "label": "auto (Automatic Type Deduction)"
+      }
+    },
+    {
+      "id": "PiMhw1oP9-NZEa6I9u4lX",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Casting"
+      }
+    },
+    {
+      "id": "_XB2Imyf23-6AOeoNLhYQ",
+      "type": "subtopic",
+      "data": {
+        "label": "static_cast"
+      }
+    },
+    {
+      "id": "5g22glc97siQOcTkHbwan",
+      "type": "subtopic",
+      "data": {
+        "label": "const_cast"
+      }
+    },
+    {
+      "id": "4BdFcuQ5KNW94cu2jz-vE",
+      "type": "subtopic",
+      "data": {
+        "label": "dynamic_cast"
+      }
+    },
+    {
+      "id": "ZMyFDJrpCauGrY5NZkOwg",
+      "type": "subtopic",
+      "data": {
+        "label": "reinterpret_cast"
+      }
+    },
+    {
+      "id": "IDOlquv6jlfecwQoBwkGZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Undefined Behavior (UB)"
+      }
+    },
+    {
+      "id": "YSWN7nS8vA9nMldSUrZRT",
+      "type": "subtopic",
+      "data": {
+        "label": "Argument Dependent Lookup (ADL)"
+      }
+    },
+    {
+      "id": "Lt7ss59KZw9Jwqj234jm2",
+      "type": "subtopic",
+      "data": {
+        "label": "Name Mangling"
+      }
+    },
+    {
+      "id": "zKdlfZTRHwjtmRUGW9z9-",
+      "type": "subtopic",
+      "data": {
+        "label": "Macros"
+      }
+    },
+    {
+      "id": "V2SeVMoQJXI2btIHr8e-u",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "DHdNBP7_ixjr6h-dIQ7g6",
+      "type": "topic",
+      "data": {
+        "label": "Standard Library \u002B STL"
+      }
+    },
+    {
+      "id": "Ebu8gzbyyXEeJryeE0SpG",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterators"
+      }
+    },
+    {
+      "id": "VeVxZ230xkesQsIDig8zQ",
+      "type": "subtopic",
+      "data": {
+        "label": "iostream"
+      }
+    },
+    {
+      "id": "whyj6Z4RXFsVQYRfYYn7B",
+      "type": "subtopic",
+      "data": {
+        "label": "Algorithms"
+      }
+    },
+    {
+      "id": "yGvE6eHKlPMBB6rde0llR",
+      "type": "subtopic",
+      "data": {
+        "label": "Date / Time"
+      }
+    },
+    {
+      "id": "OXQUPqxzs1-giAACwl3X1",
+      "type": "subtopic",
+      "data": {
+        "label": "Multithreading"
+      }
+    },
+    {
+      "id": "1pydf-SR0QUfVNuBEyvzc",
+      "type": "subtopic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "-6AOrbuOE7DJCmxlcgCay",
+      "type": "topic",
+      "data": {
+        "label": "Templates"
+      }
+    },
+    {
+      "id": "w4EIf58KP-Pq-yc0HlGxc",
+      "type": "subtopic",
+      "data": {
+        "label": "Variadic Templates"
+      }
+    },
+    {
+      "id": "sObOuccY0PDeGG-9GrFDF",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Specialization"
+      }
+    },
+    {
+      "id": "WptReUOwVth3C9-AVmMHF",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Traits"
+      }
+    },
+    {
+      "id": "3C5UfejDX-1Z8ZF6C53xD",
+      "type": "subtopic",
+      "data": {
+        "label": "SFINAE"
+      }
+    },
+    {
+      "id": "6hTcmJwNnQstbWWzNCfTe",
+      "type": "subtopic",
+      "data": {
+        "label": "Full Template Specialization"
+      }
+    },
+    {
+      "id": "1NYJtbdcdOB4-vIrnq4yX",
+      "type": "subtopic",
+      "data": {
+        "label": "Partial Template Specialization"
+      }
+    },
+    {
+      "id": "fb3bnfKXjSIjPAk4b95lg",
+      "type": "topic",
+      "data": {
+        "label": "Idioms"
+      }
+    },
+    {
+      "id": "xjUaIp8gGxkN-cp8emJ2M",
+      "type": "subtopic",
+      "data": {
+        "label": "Non-Copyable / Non-Moveable"
+      }
+    },
+    {
+      "id": "YvmjrZSAOmjhVPo05MJqN",
+      "type": "subtopic",
+      "data": {
+        "label": "Erase-Remove"
+      }
+    },
+    {
+      "id": "lxAzI42jQdaofzQ5MXebG",
+      "type": "subtopic",
+      "data": {
+        "label": "Copy and Swap"
+      }
+    },
+    {
+      "id": "O2Du5gHHxFxAI2u5uO8wu",
+      "type": "subtopic",
+      "data": {
+        "label": "Copy on Write"
+      }
+    },
+    {
+      "id": "OmHDlLxCnH8RDdu5vx9fl",
+      "type": "subtopic",
+      "data": {
+        "label": "RAII"
+      }
+    },
+    {
+      "id": "MEoWt8NKjPLVTeGgYf3cR",
+      "type": "subtopic",
+      "data": {
+        "label": "Pimpl"
+      }
+    },
+    {
+      "id": "ttt-yeIi4BPWrgvW324W7",
+      "type": "subtopic",
+      "data": {
+        "label": "CRTP"
+      }
+    },
+    {
+      "id": "vvE1aUsWbF1OFcmMUHbJa",
+      "type": "topic",
+      "data": {
+        "label": "Standards"
+      }
+    },
+    {
+      "id": "T6rCTv9Dxkm-tEA-l9XEv",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B 11 / 14"
+      }
+    },
+    {
+      "id": "R2-qWGUxsTOeSHRuUzhd2",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B 17"
+      }
+    },
+    {
+      "id": "o3no4a5_iMFzEAGs56-BJ",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B 20"
+      }
+    },
+    {
+      "id": "sxbbKtg7kMNbkx7fXhjR9",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B 23"
+      }
+    },
+    {
+      "id": "PPg0V5EzGBeJsysg1215V",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B 0x"
+      }
+    },
+    {
+      "id": "qmHs6_BzND_xpMmls5YUH",
+      "type": "topic",
+      "data": {
+        "label": "Debuggers"
+      }
+    },
+    {
+      "id": "Kb2Pbz0Sq7YlO1vCwYxnX",
+      "type": "paragraph",
+      "data": {
+        "label": "Language Tools"
+      }
+    },
+    {
+      "id": "VtPb8-AJKzhTB0QbMtoU4",
+      "type": "subtopic",
+      "data": {
+        "label": "Understanding Debugger Messages"
+      }
+    },
+    {
+      "id": "sR_FxGZHoMCV9Iv7z2_SX",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Symbols"
+      }
+    },
+    {
+      "id": "y8VCbGDUco9bzGRfIBD8R",
+      "type": "subtopic",
+      "data": {
+        "label": "WinDBg"
+      }
+    },
+    {
+      "id": "BmWsoL9c_Aag5nVlMsKm2",
+      "type": "subtopic",
+      "data": {
+        "label": "GDB"
+      }
+    },
+    {
+      "id": "FTMHsUiE8isD_OVZr62Xc",
+      "type": "topic",
+      "data": {
+        "label": "Compilers"
+      }
+    },
+    {
+      "id": "DVckzBUMgk_lWThVkLyAT",
+      "type": "subtopic",
+      "data": {
+        "label": "Compiler Stages"
+      }
+    },
+    {
+      "id": "hSG6Aux39X0cXi6ADy2al",
+      "type": "subtopic",
+      "data": {
+        "label": "Compilers and Features"
+      }
+    },
+    {
+      "id": "hurj4ktZD6sDbMg7lz3Dn",
+      "type": "label",
+      "data": {
+        "label": "C/lang\u002B\u002B / LLVM"
+      }
+    },
+    {
+      "id": "hVi9vzLaVfcXhhd7m8-ei",
+      "type": "label",
+      "data": {
+        "label": "Intel C\u002B\u002B"
+      }
+    },
+    {
+      "id": "7byy5GiTl4SPpVN39UFbC",
+      "type": "label",
+      "data": {
+        "label": "MSVS C\u002B\u002B"
+      }
+    },
+    {
+      "id": "2oTFuzQ6j0AmdAc9U_UwQ",
+      "type": "label",
+      "data": {
+        "label": "GCC"
+      }
+    },
+    {
+      "id": "9DDS861RQhuFgpaR2_KeO",
+      "type": "label",
+      "data": {
+        "label": "MinGW"
+      }
+    },
+    {
+      "id": "jVXFCo6puMxJ_ifn_uwim",
+      "type": "topic",
+      "data": {
+        "label": "Build Systems"
+      }
+    },
+    {
+      "id": "ysnXvSHGBMMozBJyXpHl5",
+      "type": "subtopic",
+      "data": {
+        "label": "CMAKE"
+      }
+    },
+    {
+      "id": "t6rZLH7l8JQm99ax_fEJ9",
+      "type": "subtopic",
+      "data": {
+        "label": "Makefile"
+      }
+    },
+    {
+      "id": "HkUCD5A_M9bJxJRElkK0x",
+      "type": "subtopic",
+      "data": {
+        "label": "Ninja"
+      }
+    },
+    {
+      "id": "h29eJG1hWHa7vMhSqtfV2",
+      "type": "topic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "PKG5pACLfRS2ogfzBX47_",
+      "type": "subtopic",
+      "data": {
+        "label": "vcpkg"
+      }
+    },
+    {
+      "id": "g0s0F4mLV16eNvMBflN2e",
+      "type": "subtopic",
+      "data": {
+        "label": "NuGet"
+      }
+    },
+    {
+      "id": "ky_UqizToTZHC_b77qFi2",
+      "type": "subtopic",
+      "data": {
+        "label": "Conan"
+      }
+    },
+    {
+      "id": "3ehBc2sKVlPj7dn4RVZCH",
+      "type": "subtopic",
+      "data": {
+        "label": "Spack"
+      }
+    },
+    {
+      "id": "4kkX5g_-plX9zVqr0ZoiR",
+      "type": "topic",
+      "data": {
+        "label": "Working with Libraries"
+      }
+    },
+    {
+      "id": "5mNqH_AEiLxUmgurNW1Fq",
+      "type": "subtopic",
+      "data": {
+        "label": "Library Inclusion"
+      }
+    },
+    {
+      "id": "sLVs95EOeHZldoKY0L_dH",
+      "type": "subtopic",
+      "data": {
+        "label": "Licensing"
+      }
+    },
+    {
+      "id": "1d7h5P1Q0RVHryKPVogQy",
+      "type": "subtopic",
+      "data": {
+        "label": "Boost"
+      }
+    },
+    {
+      "id": "Eq3TKSFJ2F2mrTHAaU2J4",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenCV"
+      }
+    },
+    {
+      "id": "nOkniNXfXwPPlOEJHJoGl",
+      "type": "subtopic",
+      "data": {
+        "label": "POCO"
+      }
+    },
+    {
+      "id": "jpMCIWQko7p3ndezYHL4D",
+      "type": "subtopic",
+      "data": {
+        "label": "protobuf"
+      }
+    },
+    {
+      "id": "621J9W4xCofumNZGo4TZT",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC"
+      }
+    },
+    {
+      "id": "j_eNHhs0J08Dt7HVbo4Q2",
+      "type": "subtopic",
+      "data": {
+        "label": "Tensorflow"
+      }
+    },
+    {
+      "id": "tEkvlJPAkD5fji-MMODL7",
+      "type": "subtopic",
+      "data": {
+        "label": "pybind11"
+      }
+    },
+    {
+      "id": "q64qFxoCrR38RPsN2lC8x",
+      "type": "subtopic",
+      "data": {
+        "label": "spdlog"
+      }
+    },
+    {
+      "id": "GGZJaYpRENaqloJzt0VtY",
+      "type": "subtopic",
+      "data": {
+        "label": "opencl"
+      }
+    },
+    {
+      "id": "1CqQgmHDeo1HlPdpUJS7H",
+      "type": "subtopic",
+      "data": {
+        "label": "fmt"
+      }
+    },
+    {
+      "id": "et-dXKPYuyVW6eV2K3CM8",
+      "type": "subtopic",
+      "data": {
+        "label": "ranges_v3"
+      }
+    },
+    {
+      "id": "YkaqIkt2bGBsrRwOFQpV4",
+      "type": "label",
+      "data": {
+        "label": "Libraries"
+      }
+    },
+    {
+      "id": "MrAM-viRaF8DSxB6sVdD9",
+      "type": "subtopic",
+      "data": {
+        "label": "gtest / gmock"
+      }
+    },
+    {
+      "id": "gAZ9Dqgj1_UkaLzVgzx1t",
+      "type": "subtopic",
+      "data": {
+        "label": "Qt"
+      }
+    },
+    {
+      "id": "s13jQuaC6gw0Lab3Cbyy6",
+      "type": "subtopic",
+      "data": {
+        "label": "Catch2"
+      }
+    },
+    {
+      "id": "O0lVEMTAV1pq9sYCKQvh_",
+      "type": "subtopic",
+      "data": {
+        "label": "Orbit Profiler"
+      }
+    },
+    {
+      "id": "88pr5aN7cctZfDVVo-2ns",
+      "type": "subtopic",
+      "data": {
+        "label": "PyTorch C\u002B\u002B"
+      }
+    },
+    {
+      "id": "1Bm9i2IdUeDkWg4ZGEylB",
+      "type": "label",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "Wm2VPi1Tn_Y7dqPowny69",
+      "type": "linksgroup",
+      "data": {
+        "label": "References"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-x_28LiDVshqWns_aIBsdxy1",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "x_28LiDVshqWns_aIBsdx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-tl6VCQ5IEGDVyFcgj7jDmy1",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "tl6VCQ5IEGDVyFcgj7jDm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvtz2-2Ag0t3LPryTF8khHLRfy-y2",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "2Ag0t3LPryTF8khHLRfy-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NvODRFR0DLINB0RlPSsvty2-Zc_TTzmM36yWsu3GvOy9xw2",
+      "source": "NvODRFR0DLINB0RlPSsvt",
+      "target": "Zc_TTzmM36yWsu3GvOy9x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Zc_TTzmM36yWsu3GvOy9xx2-0J_ltQEJh2g28OE2ZEYJjw2",
+      "source": "Zc_TTzmM36yWsu3GvOy9x",
+      "target": "0J_ltQEJh2g28OE2ZEYJj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Zc_TTzmM36yWsu3GvOy9xz2-MwznA4qfpNlv6sqSNjPZiy1",
+      "source": "Zc_TTzmM36yWsu3GvOy9x",
+      "target": "kl2JI_Wl47c5r8SYzxvCq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-MwznA4qfpNlv6sqSNjPZix2-8aOSpZLWwZv_BEYiurhyRw2",
+      "source": "kl2JI_Wl47c5r8SYzxvCq",
+      "target": "8aOSpZLWwZv_BEYiurhyR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kl2JI_Wl47c5r8SYzxvCqz2-MwznA4qfpNlv6sqSNjPZiy1",
+      "source": "kl2JI_Wl47c5r8SYzxvCq",
+      "target": "s5Gs4yF9TPh-psYmtPzks",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-MwznA4qfpNlv6sqSNjPZiw2-_IP_e1K9LhNHilYTDh7L5x1",
+      "source": "s5Gs4yF9TPh-psYmtPzks",
+      "target": "_IP_e1K9LhNHilYTDh7L5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-s5Gs4yF9TPh-psYmtPzksx2-MwznA4qfpNlv6sqSNjPZiw1",
+      "source": "s5Gs4yF9TPh-psYmtPzks",
+      "target": "oYi3YOc1GC2Nfp71VOkJt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-MwznA4qfpNlv6sqSNjPZix2-llCBeut_uc9IAe2oi4KZ9w2",
+      "source": "oYi3YOc1GC2Nfp71VOkJt",
+      "target": "llCBeut_uc9IAe2oi4KZ9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-oYi3YOc1GC2Nfp71VOkJty2-MwznA4qfpNlv6sqSNjPZiz1",
+      "source": "oYi3YOc1GC2Nfp71VOkJt",
+      "target": "MwznA4qfpNlv6sqSNjPZi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-i0EAFEUB-F0wBJWOtrl1Ax2-r0yD1gfn03wTpEBi6zNsuw2",
+      "source": "i0EAFEUB-F0wBJWOtrl1A",
+      "target": "r0yD1gfn03wTpEBi6zNsu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MwznA4qfpNlv6sqSNjPZiy2-DWw8NxkLpIpiOSUaZZ1oAz1",
+      "source": "MwznA4qfpNlv6sqSNjPZi",
+      "target": "DWw8NxkLpIpiOSUaZZ1oA",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-MwznA4qfpNlv6sqSNjPZix2-f1djN0GxoeVPr_0cl6vMqw1",
+      "source": "MwznA4qfpNlv6sqSNjPZi",
+      "target": "f1djN0GxoeVPr_0cl6vMq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DWw8NxkLpIpiOSUaZZ1oAx2-uUzRKa9wGzdUwwmAg3FWrw1",
+      "source": "DWw8NxkLpIpiOSUaZZ1oA",
+      "target": "uUzRKa9wGzdUwwmAg3FWr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Zw2AOTK5uc9BoKEpY7W1Cw2-dKCYmxDNZubCVcR5rf8b-x1",
+      "source": "Zw2AOTK5uc9BoKEpY7W1C",
+      "target": "dKCYmxDNZubCVcR5rf8b-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Zw2AOTK5uc9BoKEpY7W1Cz2-CMlWNQwpywNhO9B6Yj6Mey2",
+      "source": "Zw2AOTK5uc9BoKEpY7W1C",
+      "target": "CMlWNQwpywNhO9B6Yj6Me",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-CMlWNQwpywNhO9B6Yj6Mey2--6fwJQOfsorgHkoQGp4T3w2",
+      "source": "CMlWNQwpywNhO9B6Yj6Me",
+      "target": "B2SGBENzUMl0SAjG4j91V",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--6fwJQOfsorgHkoQGp4T3x2-oWygnpwHq2poXQMTTSCplw1",
+      "source": "B2SGBENzUMl0SAjG4j91V",
+      "target": "oWygnpwHq2poXQMTTSCpl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-B2SGBENzUMl0SAjG4j91Vy2--6fwJQOfsorgHkoQGp4T3z1",
+      "source": "B2SGBENzUMl0SAjG4j91V",
+      "target": "-6fwJQOfsorgHkoQGp4T3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--6fwJQOfsorgHkoQGp4T3x2-CG01PTVgHtjfKvsJkJLGlw1",
+      "source": "-6fwJQOfsorgHkoQGp4T3",
+      "target": "CG01PTVgHtjfKvsJkJLGl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-DHdNBP7_ixjr6h-dIQ7g6z2--6AOrbuOE7DJCmxlcgCayy2",
+      "source": "DHdNBP7_ixjr6h-dIQ7g6",
+      "target": "-6AOrbuOE7DJCmxlcgCay",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--6AOrbuOE7DJCmxlcgCayx2-qmHs6_BzND_xpMmls5YUHw2",
+      "source": "-6AOrbuOE7DJCmxlcgCay",
+      "target": "fb3bnfKXjSIjPAk4b95lg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qmHs6_BzND_xpMmls5YUHx2-xjUaIp8gGxkN-cp8emJ2Mw1",
+      "source": "fb3bnfKXjSIjPAk4b95lg",
+      "target": "xjUaIp8gGxkN-cp8emJ2M",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fb3bnfKXjSIjPAk4b95lgy2-qmHs6_BzND_xpMmls5YUHz1",
+      "source": "fb3bnfKXjSIjPAk4b95lg",
+      "target": "vvE1aUsWbF1OFcmMUHbJa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vvE1aUsWbF1OFcmMUHbJay2-Kb2Pbz0Sq7YlO1vCwYxnXz2",
+      "source": "vvE1aUsWbF1OFcmMUHbJa",
+      "target": "Kb2Pbz0Sq7YlO1vCwYxnX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Kb2Pbz0Sq7YlO1vCwYxnXy2-qmHs6_BzND_xpMmls5YUHz2",
+      "source": "Kb2Pbz0Sq7YlO1vCwYxnX",
+      "target": "qmHs6_BzND_xpMmls5YUH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vvE1aUsWbF1OFcmMUHbJaw2-T6rCTv9Dxkm-tEA-l9XEvx1",
+      "source": "vvE1aUsWbF1OFcmMUHbJa",
+      "target": "T6rCTv9Dxkm-tEA-l9XEv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-qmHs6_BzND_xpMmls5YUHx2-h29eJG1hWHa7vMhSqtfV2w1",
+      "source": "qmHs6_BzND_xpMmls5YUH",
+      "target": "FTMHsUiE8isD_OVZr62Xc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-h29eJG1hWHa7vMhSqtfV2z2-DVckzBUMgk_lWThVkLyATy1",
+      "source": "FTMHsUiE8isD_OVZr62Xc",
+      "target": "DVckzBUMgk_lWThVkLyAT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h29eJG1hWHa7vMhSqtfV2z2-hSG6Aux39X0cXi6ADy2aly1",
+      "source": "FTMHsUiE8isD_OVZr62Xc",
+      "target": "hSG6Aux39X0cXi6ADy2al",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-FTMHsUiE8isD_OVZr62Xcx2-h29eJG1hWHa7vMhSqtfV2w1",
+      "source": "FTMHsUiE8isD_OVZr62Xc",
+      "target": "jVXFCo6puMxJ_ifn_uwim",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-h29eJG1hWHa7vMhSqtfV2x2-ysnXvSHGBMMozBJyXpHl5w2",
+      "source": "jVXFCo6puMxJ_ifn_uwim",
+      "target": "ysnXvSHGBMMozBJyXpHl5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-jVXFCo6puMxJ_ifn_uwimz2-h29eJG1hWHa7vMhSqtfV2y1",
+      "source": "jVXFCo6puMxJ_ifn_uwim",
+      "target": "h29eJG1hWHa7vMhSqtfV2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-h29eJG1hWHa7vMhSqtfV2z2-4kkX5g_-plX9zVqr0ZoiRy2",
+      "source": "h29eJG1hWHa7vMhSqtfV2",
+      "target": "4kkX5g_-plX9zVqr0ZoiR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-4kkX5g_-plX9zVqr0ZoiRw2-5mNqH_AEiLxUmgurNW1Fqx2",
+      "source": "4kkX5g_-plX9zVqr0ZoiR",
+      "target": "5mNqH_AEiLxUmgurNW1Fq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4kkX5g_-plX9zVqr0ZoiRx2-I1aDakZmYpe7pKczou0qCw1",
+      "source": "4kkX5g_-plX9zVqr0ZoiR",
+      "target": "I1aDakZmYpe7pKczou0qC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vvE1aUsWbF1OFcmMUHbJax2-sxbbKtg7kMNbkx7fXhjR9w2",
+      "source": "vvE1aUsWbF1OFcmMUHbJa",
+      "target": "sxbbKtg7kMNbkx7fXhjR9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

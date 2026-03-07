@@ -1,0 +1,1272 @@
+{
+  "title": {
+    "card": "Data Structures \u0026 Algorithms",
+    "page": "Data Structures \u0026 Algorithms"
+  },
+  "description": "Step by step guide to learn Data Structures and Algorithms in @currentYear@",
+  "nodes": [
+    {
+      "id": "Adh6y93w3eE11SlvPXlcL",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "LgULG5TqiDk5b0yvg8DDK",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "G1Z11sOSf6LagVI-B6km7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wGQDKIEu-q3Xa9QDjoVbw",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "3EDlCW_qIgvDcnBZSmVNI",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "_1nO8vYWRbEMhR5XNGSLl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ASVby3HvidfWQE0mYRZv5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "KySPNk-SJntN5A8Tzg9gf",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "OQv5yn-SsqkJuTZyCSfMm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7dB8kHEIyNqES2oYiNHFT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "YgaMB-Qp40-_ruI58lpsT",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5KDw-OrEYfaUPGyuE00IC",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "wX2--f8Tqcj-MIrMC32yD",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "5jNTeoLONIHWlT68poo7b",
+      "type": "title",
+      "data": {
+        "label": "Data Structures \u0026 Algorithms"
+      }
+    },
+    {
+      "id": "axi0SOAM1z4ZXqojfqphC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Z4uVzAoNzcAkyjd-lp3_M",
+      "type": "topic",
+      "data": {
+        "label": "Pick a Language"
+      }
+    },
+    {
+      "id": "HVD9G3JlLBsAg111vQILj",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "gjZZOwmYkXQHPfg9Ynz80",
+      "type": "subtopic",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "OkdM_PJge70j5tsjT2Esl",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "BZvNEZjCNuHPg5SkX90bt",
+      "type": "subtopic",
+      "data": {
+        "label": "C#"
+      }
+    },
+    {
+      "id": "IWmq4UFB5j6O3UJfarh1u",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B"
+      }
+    },
+    {
+      "id": "XyRCXhZjQFcDNaUSNNQV-",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "acgRMEuL4ZGGRHpZ7kXSo",
+      "type": "subtopic",
+      "data": {
+        "label": "Rust"
+      }
+    },
+    {
+      "id": "9h1mz0xAUvPrnRm9VndJF",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "ebQdTOAOV54WBToHmFtBk",
+      "type": "topic",
+      "data": {
+        "label": "Programming Fundamentals"
+      }
+    },
+    {
+      "id": "kE6qddRhO8C5ur3JbeuhF",
+      "type": "subtopic",
+      "data": {
+        "label": "Language Syntax"
+      }
+    },
+    {
+      "id": "G74Xp8_EMZO2oEzNTRAli",
+      "type": "subtopic",
+      "data": {
+        "label": "Control Structures"
+      }
+    },
+    {
+      "id": "Cu08m5JOfvrPUDGony144",
+      "type": "subtopic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "QFR1FMOf2OV3n3jcDnOCP",
+      "type": "subtopic",
+      "data": {
+        "label": "OOP Basics"
+      }
+    },
+    {
+      "id": "tvy3Vic8Vp-Ie2x_OyZ5b",
+      "type": "subtopic",
+      "data": {
+        "label": "Pseudo Code"
+      }
+    },
+    {
+      "id": "jvWuYXWRtt_ePawc4q1Tg",
+      "type": "topic",
+      "data": {
+        "label": "What are Data Structures?"
+      }
+    },
+    {
+      "id": "8_GkF9zhRL8tvT2qu-bGj",
+      "type": "topic",
+      "data": {
+        "label": "Why are Data Structures Important?"
+      }
+    },
+    {
+      "id": "iTlpa9A7h33FkUAv0UaVZ",
+      "type": "topic",
+      "data": {
+        "label": "Basic Data Structures"
+      }
+    },
+    {
+      "id": "lxY3ErxJ_D3zkSAXIBUpv",
+      "type": "subtopic",
+      "data": {
+        "label": "Array"
+      }
+    },
+    {
+      "id": "bRu9u8pEAQ1TmKygjIjyI",
+      "type": "subtopic",
+      "data": {
+        "label": "Linked Lists"
+      }
+    },
+    {
+      "id": "jvKRykGNy140FlquF2fcK",
+      "type": "subtopic",
+      "data": {
+        "label": "Stacks"
+      }
+    },
+    {
+      "id": "v0phjC75jhmE1z-f9ZMck",
+      "type": "subtopic",
+      "data": {
+        "label": "Queues"
+      }
+    },
+    {
+      "id": "kSy-8ubESdmIX4Fyl8TSu",
+      "type": "subtopic",
+      "data": {
+        "label": "Hash Tables"
+      }
+    },
+    {
+      "id": "VotdHk0_bI3CeoIf-KoKu",
+      "type": "topic",
+      "data": {
+        "label": "Algorithmic Complexity"
+      }
+    },
+    {
+      "id": "unaYmPzK761Eh_iZMLeRC",
+      "type": "subtopic",
+      "data": {
+        "label": "Time vs Space Complexity"
+      }
+    },
+    {
+      "id": "HosRc0hczubBHrWxCzEJj",
+      "type": "subtopic",
+      "data": {
+        "label": "How to Calculate Complexity?"
+      }
+    },
+    {
+      "id": "nqnO1Wz3gYIMR98_BnF2V",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Runtimes"
+      }
+    },
+    {
+      "id": "_bpV8MkVOY8ZatTXYaEE4",
+      "type": "subtopic",
+      "data": {
+        "label": "Constant"
+      }
+    },
+    {
+      "id": "Cnceet0yroFHzn8npAir8",
+      "type": "subtopic",
+      "data": {
+        "label": "Logarithmic"
+      }
+    },
+    {
+      "id": "HOpL-4jYhOe0LNrrkPrET",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear"
+      }
+    },
+    {
+      "id": "QKhmM_IG1FkBudfdrf1aT",
+      "type": "subtopic",
+      "data": {
+        "label": "Polynomial"
+      }
+    },
+    {
+      "id": "xqzaYJBvlsNtT6qZ59ktv",
+      "type": "subtopic",
+      "data": {
+        "label": "Exponential"
+      }
+    },
+    {
+      "id": "wclY3cmt1fBNYjLsmijdW",
+      "type": "subtopic",
+      "data": {
+        "label": "Factorial"
+      }
+    },
+    {
+      "id": "v0LrabYYOKzV4oCXOK2Rs",
+      "type": "subtopic",
+      "data": {
+        "label": "Asymptotic Notation"
+      }
+    },
+    {
+      "id": "oylTfop_JDPHJ3jYuA2Nq",
+      "type": "subtopic",
+      "data": {
+        "label": "Big-O Notation"
+      }
+    },
+    {
+      "id": "Ex6tzu6gwrarWm1CNFufO",
+      "type": "subtopic",
+      "data": {
+        "label": "Big-\u03B8 Notation"
+      }
+    },
+    {
+      "id": "CkUi93TvTkEm2_isHNvqr",
+      "type": "subtopic",
+      "data": {
+        "label": "Big-\u03A9 Notation"
+      }
+    },
+    {
+      "id": "WzFkdkcbL8ea9DBkjfSwa",
+      "type": "topic",
+      "data": {
+        "label": "Sorting Algorithms"
+      }
+    },
+    {
+      "id": "zUDKCJCQHLW4c_6A349R3",
+      "type": "subtopic",
+      "data": {
+        "label": "Bubble Sort"
+      }
+    },
+    {
+      "id": "k0UBAj3hOYab4mUziOYyW",
+      "type": "subtopic",
+      "data": {
+        "label": "Merge Sort"
+      }
+    },
+    {
+      "id": "liJfTV5ajAFZcfwBdVGpU",
+      "type": "subtopic",
+      "data": {
+        "label": "Insertion Sort"
+      }
+    },
+    {
+      "id": "LgEV0Wm4avrOqR8bV5GXW",
+      "type": "subtopic",
+      "data": {
+        "label": "Quick Sort"
+      }
+    },
+    {
+      "id": "SMgBHvqXLD6Cgr2nix4wR",
+      "type": "subtopic",
+      "data": {
+        "label": "Selection Sort"
+      }
+    },
+    {
+      "id": "yMv9Oa3hsgT8Adx6m_rdL",
+      "type": "subtopic",
+      "data": {
+        "label": "Heap Sort"
+      }
+    },
+    {
+      "id": "z_Cf_alLAYSCyYtNviRcO",
+      "type": "topic",
+      "data": {
+        "label": "Search Algorithms"
+      }
+    },
+    {
+      "id": "AtX-PeI8nY4-5bA-xLla0",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Search"
+      }
+    },
+    {
+      "id": "Wt74MRKaZcs8lYvfqjffT",
+      "type": "subtopic",
+      "data": {
+        "label": "Binary Search"
+      }
+    },
+    {
+      "id": "r2Jagzbx0qOG-VtxBY-mz",
+      "type": "topic",
+      "data": {
+        "label": "Tree Data Structures"
+      }
+    },
+    {
+      "id": "2Od5lNc6fCM6Gyj_axj4n",
+      "type": "subtopic",
+      "data": {
+        "label": "Tree Traversal"
+      }
+    },
+    {
+      "id": "YJsAQWJpLwVN6oCxNwNAn",
+      "type": "subtopic",
+      "data": {
+        "label": "Search Algorithms"
+      }
+    },
+    {
+      "id": "pfg-qclOpvlsGMdlZ1aoj",
+      "type": "subtopic",
+      "data": {
+        "label": "Breadth First Search"
+      }
+    },
+    {
+      "id": "gR8KcOIADUxS8hdiEaGZy",
+      "type": "subtopic",
+      "data": {
+        "label": "Depth First Search"
+      }
+    },
+    {
+      "id": "iCA7UKZih4ItDmDNEC8Q-",
+      "type": "subtopic",
+      "data": {
+        "label": "In-Order Traversal"
+      }
+    },
+    {
+      "id": "BMEoO65zsX51H4Js1gcWI",
+      "type": "subtopic",
+      "data": {
+        "label": "Pre-Order Traversal"
+      }
+    },
+    {
+      "id": "j6_DyKiyG1wBuygQkxWB7",
+      "type": "subtopic",
+      "data": {
+        "label": "Post-Order Traversal"
+      }
+    },
+    {
+      "id": "RPU5CGp2Li5lk0UB-zNHT",
+      "type": "subtopic",
+      "data": {
+        "label": "Binary Trees"
+      }
+    },
+    {
+      "id": "UYm7unZfXd9Ge5EYV4odb",
+      "type": "subtopic",
+      "data": {
+        "label": "Binary Search Trees"
+      }
+    },
+    {
+      "id": "5MCgKpylPzDZaGBEUU51r",
+      "type": "subtopic",
+      "data": {
+        "label": "AVL Trees"
+      }
+    },
+    {
+      "id": "2F6BcbAzICynOK3oEj-Is",
+      "type": "subtopic",
+      "data": {
+        "label": "B-Trees"
+      }
+    },
+    {
+      "id": "j_r1tB16bA7R3yDAWN7Oj",
+      "type": "topic",
+      "data": {
+        "label": "Graph Data Structures"
+      }
+    },
+    {
+      "id": "XVw2_dL3uN0SOWmjH1Uao",
+      "type": "subtopic",
+      "data": {
+        "label": "Directed Graph"
+      }
+    },
+    {
+      "id": "VnKm_j7McUW9Lo0iKyPUp",
+      "type": "subtopic",
+      "data": {
+        "label": "Undirected Graph"
+      }
+    },
+    {
+      "id": "A3lFT7bB2T_uM3EGlMnV4",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "LW5HZMca4lvhbbA8KYaOa",
+      "type": "subtopic",
+      "data": {
+        "label": "Search Algorithms"
+      }
+    },
+    {
+      "id": "c7LdXJPv-5M-NPKSCXYuB",
+      "type": "subtopic",
+      "data": {
+        "label": "Breadth First Search"
+      }
+    },
+    {
+      "id": "NrPO7vF8Z1WzmA9Ca3Y_E",
+      "type": "subtopic",
+      "data": {
+        "label": "Depth First Search"
+      }
+    },
+    {
+      "id": "ky_3Gu_ObKNs5dXhqWQMW",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "N-qvYirxpORcaTslvlOL0",
+      "type": "subtopic",
+      "data": {
+        "label": "Shortest Path Algorithms"
+      }
+    },
+    {
+      "id": "87UugvReiywF0E7Acos9U",
+      "type": "subtopic",
+      "data": {
+        "label": "Dijkstra\u0027s Algorithm"
+      }
+    },
+    {
+      "id": "7CgGwdwHnOmISmEPtJegN",
+      "type": "subtopic",
+      "data": {
+        "label": "Bellman-Ford Algoritm"
+      }
+    },
+    {
+      "id": "Kx52UjvvWUncCaGJezk54",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Ktqau1VkVrnnVYByqcacM",
+      "type": "subtopic",
+      "data": {
+        "label": "Minimum Spanning Tree"
+      }
+    },
+    {
+      "id": "yEWnYjW0ZLVhsLc9rH4ae",
+      "type": "subtopic",
+      "data": {
+        "label": "Prim\u0027s Algorithm"
+      }
+    },
+    {
+      "id": "F3bPbwIdCNMzL7QXEYJK3",
+      "type": "subtopic",
+      "data": {
+        "label": "Kruskal\u0027s Algorithm"
+      }
+    },
+    {
+      "id": "G4chkalXNt5RjJzNA1ev6",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "KnyUHDvpDTUO0EkAs9pT8",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Data Structures"
+      }
+    },
+    {
+      "id": "zy3wpb1MjizfUfx9_rZy2",
+      "type": "subtopic",
+      "data": {
+        "label": "Trie"
+      }
+    },
+    {
+      "id": "iFNS3x9wVRIjpixct6H7x",
+      "type": "subtopic",
+      "data": {
+        "label": "Segment Trees"
+      }
+    },
+    {
+      "id": "V9SWO58kaMsU1NT7q26WG",
+      "type": "subtopic",
+      "data": {
+        "label": "Fenwick Trees"
+      }
+    },
+    {
+      "id": "La8XAT0BWvqRCrvQxtZIp",
+      "type": "subtopic",
+      "data": {
+        "label": "Disjoint Set (Union-Find)"
+      }
+    },
+    {
+      "id": "zprVkxpojaxNo0LQar3Ex",
+      "type": "subtopic",
+      "data": {
+        "label": "Suffix Trees and Arrays"
+      }
+    },
+    {
+      "id": "kSpgFuAHyzySWlGBLOHZR",
+      "type": "topic",
+      "data": {
+        "label": "Complex Data Structures"
+      }
+    },
+    {
+      "id": "2G6vn7K11_mPQQ7_IXJ96",
+      "type": "subtopic",
+      "data": {
+        "label": "B/B\u002B Trees"
+      }
+    },
+    {
+      "id": "TQu-OBpvR-aQfMByUcwyM",
+      "type": "subtopic",
+      "data": {
+        "label": "Skip List"
+      }
+    },
+    {
+      "id": "uxErZ4gLeKqwhrUG88InQ",
+      "type": "subtopic",
+      "data": {
+        "label": "ISAM"
+      }
+    },
+    {
+      "id": "o0fNAhJ1LsCdmGzY2ni_x",
+      "type": "subtopic",
+      "data": {
+        "label": "2-3 Trees"
+      }
+    },
+    {
+      "id": "Ar7GEGfI9O_dLPbIEVhF_",
+      "type": "topic",
+      "data": {
+        "label": "Indexing"
+      }
+    },
+    {
+      "id": "4noav5w_8GrMTXN1Lxm5h",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear"
+      }
+    },
+    {
+      "id": "ZXUfeyfC5oSKkGktXuK8t",
+      "type": "subtopic",
+      "data": {
+        "label": "Tree-Based"
+      }
+    },
+    {
+      "id": "Y1Uz6XRbR1YqFtO4akiPA",
+      "type": "topic",
+      "data": {
+        "label": "Problem Solving Techniques"
+      }
+    },
+    {
+      "id": "5T2y6Iqi-I_zOtLkeSPzY",
+      "type": "subtopic",
+      "data": {
+        "label": "Brute Force"
+      }
+    },
+    {
+      "id": "mKoC5o__gLSTjAlq8iXkV",
+      "type": "subtopic",
+      "data": {
+        "label": "Backtracking"
+      }
+    },
+    {
+      "id": "qUlqyTjk3XKF9DEm6Lsgb",
+      "type": "subtopic",
+      "data": {
+        "label": "Greedy Algorithms"
+      }
+    },
+    {
+      "id": "RiS8KZs3YBE6mKWPHszMp",
+      "type": "subtopic",
+      "data": {
+        "label": "Randomised Algorithms"
+      }
+    },
+    {
+      "id": "xchWhsizaKgYuHPC4Tz9H",
+      "type": "subtopic",
+      "data": {
+        "label": "Divide and Conquer"
+      }
+    },
+    {
+      "id": "4ZAzcwP0oPGZ9Rw042V8-",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursion"
+      }
+    },
+    {
+      "id": "jKAZNybU9cxufNBdFsqsP",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic Programming"
+      }
+    },
+    {
+      "id": "itvhUXbe9dr9JN5ga2jYy",
+      "type": "subtopic",
+      "data": {
+        "label": "Two Pointer Technique"
+      }
+    },
+    {
+      "id": "gbHVR-ojRxv9I0E5eSlWy",
+      "type": "subtopic",
+      "data": {
+        "label": "Sliding Window Technique"
+      }
+    },
+    {
+      "id": "VMV4F-SPKWn9CtpHXEjeN",
+      "type": "topic",
+      "data": {
+        "label": "Platforms to Practice"
+      }
+    },
+    {
+      "id": "waM_j5mbe_XoA7h8u4vFN",
+      "type": "subtopic",
+      "data": {
+        "label": "Leetcode"
+      }
+    },
+    {
+      "id": "8-7phxPp1D1mv2yubpLBo",
+      "type": "subtopic",
+      "data": {
+        "label": "Edabit"
+      }
+    },
+    {
+      "id": "DYeA_bXEfy_C_eAioOUh2",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "UloavCkIvZnD1XMFohYVT",
+      "type": "button",
+      "data": {
+        "label": "Computer Science"
+      }
+    },
+    {
+      "id": "ef-jFKMs8jw3Ti94jem96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "J_No8GTa92DcwPtua30wL",
+      "type": "subtopic",
+      "data": {
+        "label": "Fast and Slow Pointers"
+      }
+    },
+    {
+      "id": "L1FIJAluyxG6CGaVLM20O",
+      "type": "subtopic",
+      "data": {
+        "label": "Cyclic Sort"
+      }
+    },
+    {
+      "id": "S2mBvlFTd673XcXxisD5P",
+      "type": "subtopic",
+      "data": {
+        "label": "Merge Intervals"
+      }
+    },
+    {
+      "id": "JcchUF_U99zkFpXp3VT2R",
+      "type": "subtopic",
+      "data": {
+        "label": "Kth Element"
+      }
+    },
+    {
+      "id": "MGb8ufztTK75aXAyEAuaf",
+      "type": "subtopic",
+      "data": {
+        "label": "Two Heaps"
+      }
+    },
+    {
+      "id": "gaaRAL3HR48Qj9rz1CkDU",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi-threaded"
+      }
+    },
+    {
+      "id": "q9qLI6HzOJ0vYaIVrZ5CU",
+      "type": "subtopic",
+      "data": {
+        "label": "Island traversal"
+      }
+    },
+    {
+      "id": "R3Coq0TG1_cSOXzXWgpuI",
+      "type": "subtopic",
+      "data": {
+        "label": "Heap"
+      }
+    },
+    {
+      "id": "AabJqPUwFVBVS02YPDPvL",
+      "type": "subtopic",
+      "data": {
+        "label": "A* Algorithm"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__5jNTeoLONIHWlT68poo7bx2-j_r1tB16bA7R3yDAWN7Ojw1",
+      "source": "5jNTeoLONIHWlT68poo7b",
+      "target": "Z4uVzAoNzcAkyjd-lp3_M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-HVD9G3JlLBsAg111vQILjz2",
+      "source": "Z4uVzAoNzcAkyjd-lp3_M",
+      "target": "HVD9G3JlLBsAg111vQILj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-gjZZOwmYkXQHPfg9Ynz80z1",
+      "source": "Z4uVzAoNzcAkyjd-lp3_M",
+      "target": "gjZZOwmYkXQHPfg9Ynz80",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-OkdM_PJge70j5tsjT2Eslz1",
+      "source": "Z4uVzAoNzcAkyjd-lp3_M",
+      "target": "OkdM_PJge70j5tsjT2Esl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-9h1mz0xAUvPrnRm9VndJFz1",
+      "source": "Z4uVzAoNzcAkyjd-lp3_M",
+      "target": "9h1mz0xAUvPrnRm9VndJF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojz2-tvy3Vic8Vp-Ie2x_OyZ5by2",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "tvy3Vic8Vp-Ie2x_OyZ5b",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojz2-kE6qddRhO8C5ur3JbeuhFy2",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "kE6qddRhO8C5ur3JbeuhF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojz2-G74Xp8_EMZO2oEzNTRAliy1",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "G74Xp8_EMZO2oEzNTRAli",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojz2-Cu08m5JOfvrPUDGony144y1",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "Cu08m5JOfvrPUDGony144",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojz2-QFR1FMOf2OV3n3jcDnOCPy2",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "QFR1FMOf2OV3n3jcDnOCP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ebQdTOAOV54WBToHmFtBkx2-j_r1tB16bA7R3yDAWN7Ojw2",
+      "source": "ebQdTOAOV54WBToHmFtBk",
+      "target": "jvWuYXWRtt_ePawc4q1Tg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-jvKRykGNy140FlquF2fcKz1",
+      "source": "iTlpa9A7h33FkUAv0UaVZ",
+      "target": "jvKRykGNy140FlquF2fcK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-kSy-8ubESdmIX4Fyl8TSuz1",
+      "source": "iTlpa9A7h33FkUAv0UaVZ",
+      "target": "kSy-8ubESdmIX4Fyl8TSu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-bRu9u8pEAQ1TmKygjIjyIz1",
+      "source": "iTlpa9A7h33FkUAv0UaVZ",
+      "target": "bRu9u8pEAQ1TmKygjIjyI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__iTlpa9A7h33FkUAv0UaVZx2-j_r1tB16bA7R3yDAWN7Ojw1",
+      "source": "iTlpa9A7h33FkUAv0UaVZ",
+      "target": "VotdHk0_bI3CeoIf-KoKu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-unaYmPzK761Eh_iZMLeRCz2",
+      "source": "VotdHk0_bI3CeoIf-KoKu",
+      "target": "unaYmPzK761Eh_iZMLeRC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-HosRc0hczubBHrWxCzEJjz2",
+      "source": "VotdHk0_bI3CeoIf-KoKu",
+      "target": "HosRc0hczubBHrWxCzEJj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojy2-v0LrabYYOKzV4oCXOK2Rsz1",
+      "source": "VotdHk0_bI3CeoIf-KoKu",
+      "target": "v0LrabYYOKzV4oCXOK2Rs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VotdHk0_bI3CeoIf-KoKux2-j_r1tB16bA7R3yDAWN7Ojw1",
+      "source": "VotdHk0_bI3CeoIf-KoKu",
+      "target": "WzFkdkcbL8ea9DBkjfSwa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__r2Jagzbx0qOG-VtxBY-mzy2-j_r1tB16bA7R3yDAWN7Ojz2",
+      "source": "r2Jagzbx0qOG-VtxBY-mz",
+      "target": "j_r1tB16bA7R3yDAWN7Oj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojw2-VnKm_j7McUW9Lo0iKyPUpx1",
+      "source": "j_r1tB16bA7R3yDAWN7Oj",
+      "target": "VnKm_j7McUW9Lo0iKyPUp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__j_r1tB16bA7R3yDAWN7Ojx2-A3lFT7bB2T_uM3EGlMnV4w1",
+      "source": "j_r1tB16bA7R3yDAWN7Oj",
+      "target": "A3lFT7bB2T_uM3EGlMnV4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KnyUHDvpDTUO0EkAs9pT8z2-iFNS3x9wVRIjpixct6H7xy1",
+      "source": "KnyUHDvpDTUO0EkAs9pT8",
+      "target": "iFNS3x9wVRIjpixct6H7x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KnyUHDvpDTUO0EkAs9pT8z2-zy3wpb1MjizfUfx9_rZy2y1",
+      "source": "KnyUHDvpDTUO0EkAs9pT8",
+      "target": "zy3wpb1MjizfUfx9_rZy2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KnyUHDvpDTUO0EkAs9pT8z2-V9SWO58kaMsU1NT7q26WGy2",
+      "source": "KnyUHDvpDTUO0EkAs9pT8",
+      "target": "V9SWO58kaMsU1NT7q26WG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KnyUHDvpDTUO0EkAs9pT8z2-La8XAT0BWvqRCrvQxtZIpy1",
+      "source": "KnyUHDvpDTUO0EkAs9pT8",
+      "target": "La8XAT0BWvqRCrvQxtZIp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KnyUHDvpDTUO0EkAs9pT8z2-zprVkxpojaxNo0LQar3Exy2",
+      "source": "KnyUHDvpDTUO0EkAs9pT8",
+      "target": "zprVkxpojaxNo0LQar3Ex",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-o0fNAhJ1LsCdmGzY2ni_xz1",
+      "source": "kSpgFuAHyzySWlGBLOHZR",
+      "target": "o0fNAhJ1LsCdmGzY2ni_x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-2G6vn7K11_mPQQ7_IXJ96z1",
+      "source": "kSpgFuAHyzySWlGBLOHZR",
+      "target": "2G6vn7K11_mPQQ7_IXJ96",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-TQu-OBpvR-aQfMByUcwyMz1",
+      "source": "kSpgFuAHyzySWlGBLOHZR",
+      "target": "TQu-OBpvR-aQfMByUcwyM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-uxErZ4gLeKqwhrUG88InQz1",
+      "source": "kSpgFuAHyzySWlGBLOHZR",
+      "target": "uxErZ4gLeKqwhrUG88InQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kSpgFuAHyzySWlGBLOHZRz2-VMV4F-SPKWn9CtpHXEjeNy1",
+      "source": "kSpgFuAHyzySWlGBLOHZR",
+      "target": "Ar7GEGfI9O_dLPbIEVhF_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNz2-4noav5w_8GrMTXN1Lxm5hy1",
+      "source": "Ar7GEGfI9O_dLPbIEVhF_",
+      "target": "4noav5w_8GrMTXN1Lxm5h",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNz2-ZXUfeyfC5oSKkGktXuK8ty1",
+      "source": "Ar7GEGfI9O_dLPbIEVhF_",
+      "target": "ZXUfeyfC5oSKkGktXuK8t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-mKoC5o__gLSTjAlq8iXkVz2",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "mKoC5o__gLSTjAlq8iXkV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-qUlqyTjk3XKF9DEm6Lsgbz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "qUlqyTjk3XKF9DEm6Lsgb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-RiS8KZs3YBE6mKWPHszMpz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "RiS8KZs3YBE6mKWPHszMp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-xchWhsizaKgYuHPC4Tz9Hz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "xchWhsizaKgYuHPC4Tz9H",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-PouN8aPuA0lDxqZibLMVTz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "4ZAzcwP0oPGZ9Rw042V8-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-jKAZNybU9cxufNBdFsqsPz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "jKAZNybU9cxufNBdFsqsP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-itvhUXbe9dr9JN5ga2jYyz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "itvhUXbe9dr9JN5ga2jYy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VMV4F-SPKWn9CtpHXEjeNy2-q9qLI6HzOJ0vYaIVrZ5CUz1",
+      "source": "Y1Uz6XRbR1YqFtO4akiPA",
+      "target": "gbHVR-ojRxv9I0E5eSlWy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

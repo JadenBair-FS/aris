@@ -1,0 +1,2479 @@
+{
+  "title": {
+    "card": "Data Engineer",
+    "page": "Data Engineer Roadmap"
+  },
+  "description": "Step by step guide to becoming a Data Engineer in @currentYear@",
+  "nodes": [
+    {
+      "id": "lMhCae46hJSaJ3xnkzr3t",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BCaFByttoQgLAQd7xGNN-",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sMhuDjih8ECp5aD8NgrHz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "SEpxm5INSkSQc07C4uyPt",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IMS65IJuub_Ff6ePVLMRT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "kDhIOb3DS8FWqYA11Ia1q",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "BTONQQaUaGU9IsPeqEJwf",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Lan3xGnc91AWNHPdWr4oZ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "WW9_OqWGOp7vymOpZy3yL",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "nQZXPggnB7SC1O7fHV9wq",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "feK5CpK7uJaCQU3Pg9snq",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sI6Xp7JGJiF18vtaK3be8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "gNweoH0_8JdZPT2H4vhTB",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "LYo_bUhIjWZD3i4dIzSsM",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "d5xaU63Vja_LM1-1wi6UY",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "7mK4gn7IQIyk43TPSni85",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "vglx550xcT2b10gmc4kvd",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_Yb67e4cO4z0j1r5Gcl_8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "qmoa4aVU7AjkVS7Fpht4l",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Xw3wTH7G8HOLrM8Xf90xw",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nLRsy0NIuNg0tEV2Ud3Wf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ZBKpvBibWKdMwM4LaL-ae",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "1DLvrKbcHi1M6LN9AXXks",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9CPcys38Ir077u37jFe02",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7aSscXd-UMNWOX7A_vxYh",
+      "type": "title",
+      "data": {
+        "label": "Data Engineer"
+      }
+    },
+    {
+      "id": "_LvWarjrzvIOi8StMezyM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JqcGwkk1cuTnXA8SHpTKr",
+      "type": "label",
+      "data": {
+        "label": "Pre-requisites"
+      }
+    },
+    {
+      "id": "PUVM4XqV7j5nXBAbIAKwG",
+      "type": "button",
+      "data": {
+        "label": "Python Roadmap"
+      }
+    },
+    {
+      "id": "Cj1uO2k_hO5eIQ77jxY6c",
+      "type": "button",
+      "data": {
+        "label": "SQL Roadmap"
+      }
+    },
+    {
+      "id": "iAWm99EoRnpzLlw6XDuaf",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "WSYIFni7G2C9Jr0pwuami",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "WB2PRVI9C6RIbJ6l9zdbd",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Data Engineering?"
+      }
+    },
+    {
+      "id": "jJukG4XxfFcID_VlQKqe-",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Engineering vs Data Science"
+      }
+    },
+    {
+      "id": "3BxbkrBp8veZj38zdwN8s",
+      "type": "subtopic",
+      "data": {
+        "label": "Skills and Responsibilities"
+      }
+    },
+    {
+      "id": "Ouph2bHeLQsrHl45ar4Cs",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Engineering Lifecycle"
+      }
+    },
+    {
+      "id": "_MpdVlvvkrsgzigYMZ_P8",
+      "type": "subtopic",
+      "data": {
+        "label": "Choosing the Right Technologies"
+      }
+    },
+    {
+      "id": "3RGGe_znOO7o1Bx0yHaJo",
+      "type": "paragraph",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "_2Ofq3Df-VRXDgKyveZ0U",
+      "type": "topic",
+      "data": {
+        "label": "Programming Skills"
+      }
+    },
+    {
+      "id": "ILs5azr4L_uLK0CDFKVaz",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "LZ4t8CoCjGWMzE0hScTGZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "WHJXJ5ukJd-tK_3LFLJBg",
+      "type": "subtopic",
+      "data": {
+        "label": "Scala"
+      }
+    },
+    {
+      "id": "4z2i5NXTo9h3YY0kJvRrz",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "LHYlJm76avsuHeDwY1vHe",
+      "type": "label",
+      "data": {
+        "label": "Python is recommended"
+      }
+    },
+    {
+      "id": "fqmn6DPOA5MH7UWYv6ayn",
+      "type": "topic",
+      "data": {
+        "label": "Data Structures and Algorithms"
+      }
+    },
+    {
+      "id": "02TADW_PPVtTU_rWV3jf1",
+      "type": "topic",
+      "data": {
+        "label": "Git and GitHub"
+      }
+    },
+    {
+      "id": "FXQ_QsljK59zDULLgTqCB",
+      "type": "topic",
+      "data": {
+        "label": "Linux Basics"
+      }
+    },
+    {
+      "id": "cgkzFMmQils2sYj4NW8VW",
+      "type": "topic",
+      "data": {
+        "label": "Networking Fundamentals"
+      }
+    },
+    {
+      "id": "c1dadtQgbqXwcsQhI6de0",
+      "type": "topic",
+      "data": {
+        "label": "Distributed Systems Basics"
+      }
+    },
+    {
+      "id": "AWf1y87pd1JFW71cZ_iE1",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Generation"
+      }
+    },
+    {
+      "id": "wydtifF3ZhMWCbVt8Hd2t",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Storage"
+      }
+    },
+    {
+      "id": "CvCOkyWcgzaUJec_v5F4L",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Ingestion"
+      }
+    },
+    {
+      "id": "RspQLpkICyHUmthLlxQ84",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Serving"
+      }
+    },
+    {
+      "id": "w3cfuNC-IdUKA7CEXs0fT",
+      "type": "topic",
+      "data": {
+        "label": "Data Engineering Lifecycle"
+      }
+    },
+    {
+      "id": "c-8xPm4Hcxk6bu-spZqtD",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MblX8vlhGUMnrbw6D9DTT",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "9SbpGyh3xssxC1DUD_2Ev",
+      "type": "label",
+      "data": {
+        "label": "1"
+      }
+    },
+    {
+      "id": "ItHNasECb8yVmnArHRyQg",
+      "type": "label",
+      "data": {
+        "label": "2"
+      }
+    },
+    {
+      "id": "m9QUgZeaadQgLvgtOxzHQ",
+      "type": "label",
+      "data": {
+        "label": "3"
+      }
+    },
+    {
+      "id": "mLsTeUdJluXU_3LgU5WwB",
+      "type": "label",
+      "data": {
+        "label": "4"
+      }
+    },
+    {
+      "id": "djtAd4xIRBwRgmSkdjASt",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Generation"
+      }
+    },
+    {
+      "id": "VFXaTzzgFWrbtk6aPygRn",
+      "type": "label",
+      "data": {
+        "label": "Understand Different Steps"
+      }
+    },
+    {
+      "id": "zGKTlMUzhrbVbqpLZBsMZ",
+      "type": "topic",
+      "data": {
+        "label": "Sources of Data"
+      }
+    },
+    {
+      "id": "qRHeaD2udDaItAxmiIiUg",
+      "type": "subtopic",
+      "data": {
+        "label": "Database"
+      }
+    },
+    {
+      "id": "cxTriSZvrmXP4axKynIZW",
+      "type": "subtopic",
+      "data": {
+        "label": "APIs"
+      }
+    },
+    {
+      "id": "s-wUPMaagyRupT2RdfHks",
+      "type": "subtopic",
+      "data": {
+        "label": "Logs"
+      }
+    },
+    {
+      "id": "dJZqe47kzRqYIG-4AZTlz",
+      "type": "subtopic",
+      "data": {
+        "label": "Mobile Apps"
+      }
+    },
+    {
+      "id": "KeGCHoJRHp-mBX-P5to4Y",
+      "type": "subtopic",
+      "data": {
+        "label": "IoT"
+      }
+    },
+    {
+      "id": "wDDWQgMVBYK4WcmHq_d6l",
+      "type": "topic",
+      "data": {
+        "label": "Data Collection Considerations"
+      }
+    },
+    {
+      "id": "JurdhDtrv44NaRhh2imqY",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Storage"
+      }
+    },
+    {
+      "id": "g4UC0go7OPCJYJlac9w-i",
+      "type": "topic",
+      "data": {
+        "label": "Database Fundamentals"
+      }
+    },
+    {
+      "id": "kVPEoUX-ZAGwstieD20Qa",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Normalization"
+      }
+    },
+    {
+      "id": "SlQHO8n97F7-_fc6EUXlj",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Modelling Techniques"
+      }
+    },
+    {
+      "id": "AslPFjoakcC44CmPB5nuw",
+      "type": "subtopic",
+      "data": {
+        "label": "CAP Theorem"
+      }
+    },
+    {
+      "id": "-VQQmIUGesnrT1N6kH5et",
+      "type": "subtopic",
+      "data": {
+        "label": "OLTP vs OLAP"
+      }
+    },
+    {
+      "id": "5KgPfywItqLFQRnIZldZH",
+      "type": "subtopic",
+      "data": {
+        "label": "Slowly Changing Dimension - SCD"
+      }
+    },
+    {
+      "id": "k_XSLLwb0Jk0Dd1sw-MpR",
+      "type": "subtopic",
+      "data": {
+        "label": "Horizontal vs Vertical Scaling"
+      }
+    },
+    {
+      "id": "OfH_UXnxvGQgwlNQwOEfS",
+      "type": "subtopic",
+      "data": {
+        "label": "Star vs Snowflake Schema"
+      }
+    },
+    {
+      "id": "cslVSSKBMO7I6CpO7vG1H",
+      "type": "topic",
+      "data": {
+        "label": "Relational Databases"
+      }
+    },
+    {
+      "id": "2rRVWPON-o3MvpgZmrU_A",
+      "type": "subtopic",
+      "data": {
+        "label": "Learn SQL"
+      }
+    },
+    {
+      "id": "ilbFKqhfYyykjJ7cOngwx",
+      "type": "subtopic",
+      "data": {
+        "label": "Indexing"
+      }
+    },
+    {
+      "id": "1BJGXWax6CONuFkaYR4Jm",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "tu-dnF9XRHsKfOSOdBOC7",
+      "type": "label",
+      "data": {
+        "label": "Relational Databases"
+      }
+    },
+    {
+      "id": "_bFj6rbLuqeQB5MjJZpd6",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL"
+      }
+    },
+    {
+      "id": "__JFgwxeDLvz8p7DAJnsc",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "p7S_6O9Qq722r-F4bl6G3",
+      "type": "subtopic",
+      "data": {
+        "label": "MariaDB"
+      }
+    },
+    {
+      "id": "YZ4G1-6VJ7VdsphdcBTf9",
+      "type": "subtopic",
+      "data": {
+        "label": "Aurora DB"
+      }
+    },
+    {
+      "id": "PJcxM60h85Po0AAkSj7nr",
+      "type": "subtopic",
+      "data": {
+        "label": "Oracle"
+      }
+    },
+    {
+      "id": "YxnIQh6Y5ic795-YsajB8",
+      "type": "subtopic",
+      "data": {
+        "label": "MS SQL"
+      }
+    },
+    {
+      "id": "FoExOGqUrU9QvKlz56xz2",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uZYQ8tqTriXt_JIOjcM9_",
+      "type": "topic",
+      "data": {
+        "label": "NoSQL Databases"
+      }
+    },
+    {
+      "id": "sGkAOVl3C-xIIAdtDH9jq",
+      "type": "topic",
+      "data": {
+        "label": "Document"
+      }
+    },
+    {
+      "id": "04V0Bcgjusfqdw0b-Aw4W",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "_F53cV3ln2yu0ics5BFfx",
+      "type": "subtopic",
+      "data": {
+        "label": "ElasticSearch"
+      }
+    },
+    {
+      "id": "goL_GqVVTVxXQMGBw992b",
+      "type": "subtopic",
+      "data": {
+        "label": "CosmosDB"
+      }
+    },
+    {
+      "id": "-IesOBWPSIlbgvTjBqHcb",
+      "type": "subtopic",
+      "data": {
+        "label": "CouchDB"
+      }
+    },
+    {
+      "id": "fBD6ZQoMac8w4kMJw_Jrd",
+      "type": "topic",
+      "data": {
+        "label": "Column"
+      }
+    },
+    {
+      "id": "QYR8ESN7xhi4ZxcoiZbgn",
+      "type": "subtopic",
+      "data": {
+        "label": "Cassandra"
+      }
+    },
+    {
+      "id": "ltZftFsiOo12AkQ-04N3B",
+      "type": "subtopic",
+      "data": {
+        "label": "BigTable"
+      }
+    },
+    {
+      "id": "Uho9OOWSG0bUpyH4P6hKk",
+      "type": "subtopic",
+      "data": {
+        "label": "HBase"
+      }
+    },
+    {
+      "id": "L6x750gKlyyu0uoNVEmvA",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "aZKsPtpDxVH3fkxTHycDN",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "W6RnhoD7fW2xzVwnyJEDr",
+      "type": "topic",
+      "data": {
+        "label": "Graph"
+      }
+    },
+    {
+      "id": "TG63YRbSKL1F9vlUVF1VY",
+      "type": "subtopic",
+      "data": {
+        "label": "Neo4j"
+      }
+    },
+    {
+      "id": "atAK4zGXIbxZvfBTzFEIe",
+      "type": "subtopic",
+      "data": {
+        "label": "Neptune"
+      }
+    },
+    {
+      "id": "fSlBjoNVKstJjWO7rS69V",
+      "type": "topic",
+      "data": {
+        "label": "Key-Value"
+      }
+    },
+    {
+      "id": "dW_eC4vR8BrvKG9wxmEBc",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "KYUh29Ok1aeOviboGDS_i",
+      "type": "subtopic",
+      "data": {
+        "label": "Memcached"
+      }
+    },
+    {
+      "id": "BDfpCDOxXZ-Tp0Abj_CVW",
+      "type": "subtopic",
+      "data": {
+        "label": "DynamoDB"
+      }
+    },
+    {
+      "id": "kyzJSTdysN2GHThy2JTxb",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Warehousing"
+      }
+    },
+    {
+      "id": "dc3lJI27hJ3zZ45UCVqM1",
+      "type": "topic",
+      "data": {
+        "label": "What is Data Warehouse?"
+      }
+    },
+    {
+      "id": "J854xPM1X0BWlhtJw7Hs_",
+      "type": "topic",
+      "data": {
+        "label": "Data Warehousing Architectures"
+      }
+    },
+    {
+      "id": "ArOoKuf9scAURs8NRjAru",
+      "type": "topic",
+      "data": {
+        "label": "Data Warehouse"
+      }
+    },
+    {
+      "id": "Je2in1n8bMaknyeH79Zbv",
+      "type": "subtopic",
+      "data": {
+        "label": "Google BigQuery"
+      }
+    },
+    {
+      "id": "W3l1_66fsIqR3MqgBJUmU",
+      "type": "subtopic",
+      "data": {
+        "label": "Snowflake"
+      }
+    },
+    {
+      "id": "omrg8QcYmTdQLBKV47b7o",
+      "type": "subtopic",
+      "data": {
+        "label": "Amazon Redshift"
+      }
+    },
+    {
+      "id": "c6Pf3kFcC4iV4a7mPc-WH",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Mart"
+      }
+    },
+    {
+      "id": "y0Lxz_wVyQ6lr1hvCsufa",
+      "type": "topic",
+      "data": {
+        "label": "Data Lake"
+      }
+    },
+    {
+      "id": "fhfyoWekmYvEs-jdP2mJo",
+      "type": "subtopic",
+      "data": {
+        "label": "Databricks Delta Lake"
+      }
+    },
+    {
+      "id": "Pf0_CBGkmSEfWDQ2_iFXr",
+      "type": "subtopic",
+      "data": {
+        "label": "Snowflake"
+      }
+    },
+    {
+      "id": "senZEYC9k-C_C4EAYDNeU",
+      "type": "subtopic",
+      "data": {
+        "label": "Onehouse"
+      }
+    },
+    {
+      "id": "D7qtosIbsQuIY3OWl_Hwc",
+      "type": "topic",
+      "data": {
+        "label": "Data Mesh"
+      }
+    },
+    {
+      "id": "Jm0e9elKDVbgPzUZrDF0C",
+      "type": "label",
+      "data": {
+        "label": "Other Data Architectures"
+      }
+    },
+    {
+      "id": "-x3QLMYhC67VJQ6EW6BrJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Fabric"
+      }
+    },
+    {
+      "id": "OiWleAdMbPtisrJpk2eSJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Hub"
+      }
+    },
+    {
+      "id": "14CycunRC1p2qTRn-ncoy",
+      "type": "subtopic",
+      "data": {
+        "label": "Metadata-first Architecture"
+      }
+    },
+    {
+      "id": "ZnGX8pg4GagdSalg_P0oq",
+      "type": "subtopic",
+      "data": {
+        "label": "Serverless Options"
+      }
+    },
+    {
+      "id": "lDeSL9qvgQgyAMcWXF7Fr",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Computing"
+      }
+    },
+    {
+      "id": "YLfyb_ycgz1hu0yW8SPNE",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Architectures"
+      }
+    },
+    {
+      "id": "eX4gnGnvptJ6JuR-fC5bf",
+      "type": "label",
+      "data": {
+        "label": "Cloud Providers"
+      }
+    },
+    {
+      "id": "8cdzuaPx2PEPI2dpKGcW-",
+      "type": "label",
+      "data": {
+        "label": "AWS"
+      }
+    },
+    {
+      "id": "AHLsBfPfBJOhLlJ-64GcK",
+      "type": "subtopic",
+      "data": {
+        "label": "Amazon EC2 ( Compute)"
+      }
+    },
+    {
+      "id": "tbut25IZI2aU7TkI9fFYV",
+      "type": "subtopic",
+      "data": {
+        "label": "S3 (Storage)"
+      }
+    },
+    {
+      "id": "GtFk7phYGfXUhxanicYNQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Amazon RDS (Database)"
+      }
+    },
+    {
+      "id": "nD36-PXHzOXePM7j9u_O_",
+      "type": "subtopic",
+      "data": {
+        "label": "Glue (ETL)"
+      }
+    },
+    {
+      "id": "-yi-xk-kv0njW9GdytiAQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure Virtual Machines"
+      }
+    },
+    {
+      "id": "gzbEGCUwMsD1gL4nW668g",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure Blob Storage"
+      }
+    },
+    {
+      "id": "iIZ3g70KRwEJCBNaONd2d",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure SQL Database"
+      }
+    },
+    {
+      "id": "BNGdJSmrNE90rwPa4JoWj",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Factory (ETL)"
+      }
+    },
+    {
+      "id": "3H-zXkKzbU7v2EOVQOym4",
+      "type": "label",
+      "data": {
+        "label": "Azure"
+      }
+    },
+    {
+      "id": "-cU86vJWJmlmPHXDCo31o",
+      "type": "subtopic",
+      "data": {
+        "label": "Compute Engine (Compute)"
+      }
+    },
+    {
+      "id": "2lqvArZdwRX0t3P3yovEH",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Cloud Storage"
+      }
+    },
+    {
+      "id": "9-wQWQIdAxQmMaJC9ojPg",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud SQL (Database)"
+      }
+    },
+    {
+      "id": "YWgVUyIvBRW8eTVR5y73P",
+      "type": "subtopic",
+      "data": {
+        "label": "Dataflow"
+      }
+    },
+    {
+      "id": "OL5nd9q0nF8alYjn6U8Qk",
+      "type": "label",
+      "data": {
+        "label": "Google Cloud"
+      }
+    },
+    {
+      "id": "3i8v8R7yBtBaWyYHGvlyX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "m10v6EdW_eDKAor3jo2Go",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Eb27y_lyYTsfxK5heaMDJ",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Ingestion"
+      }
+    },
+    {
+      "id": "GN1Xh3kA25ge-wTbdiSio",
+      "type": "topic",
+      "data": {
+        "label": "Types of Data Ingestion"
+      }
+    },
+    {
+      "id": "f-a3Hy1ldnvSv8W2mFiJK",
+      "type": "subtopic",
+      "data": {
+        "label": "Batch"
+      }
+    },
+    {
+      "id": "4fugNG5sEDl0kgmN3Mezk",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid"
+      }
+    },
+    {
+      "id": "oqxNr0Lj34mgRi5Z5wJt_",
+      "type": "subtopic",
+      "data": {
+        "label": "Realtime"
+      }
+    },
+    {
+      "id": "fqTPu70MJyXBmqYUgCJ_r",
+      "type": "topic",
+      "data": {
+        "label": "Data Pipelines"
+      }
+    },
+    {
+      "id": "BtYVoCyN8MjOf8W-5e7fl",
+      "type": "label",
+      "data": {
+        "label": "ETL Process"
+      }
+    },
+    {
+      "id": "nShDMih1HmubBczxu4cfU",
+      "type": "subtopic",
+      "data": {
+        "label": "Extract Data"
+      }
+    },
+    {
+      "id": "TjsxMNyWO3YGwg6zEIid4",
+      "type": "subtopic",
+      "data": {
+        "label": "Transform Data"
+      }
+    },
+    {
+      "id": "y5Aaxe-P68HC5kNsIi88q",
+      "type": "subtopic",
+      "data": {
+        "label": "Load Data"
+      }
+    },
+    {
+      "id": "jav5k15cLeJJpzKXNLMwA",
+      "type": "label",
+      "data": {
+        "label": "Data Pipeline Tools"
+      }
+    },
+    {
+      "id": "vfO5Dz6ppsNtbGiQwpUs7",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache Airflow"
+      }
+    },
+    {
+      "id": "SgYLIkMtLVPlw8Qo5j0Fb",
+      "type": "subtopic",
+      "data": {
+        "label": "dbt"
+      }
+    },
+    {
+      "id": "_IiKTZDF_b57l79X6lsq6",
+      "type": "subtopic",
+      "data": {
+        "label": "Luigi"
+      }
+    },
+    {
+      "id": "TAh4__7U58J7fduU9a1Ol",
+      "type": "subtopic",
+      "data": {
+        "label": "Prefect"
+      }
+    },
+    {
+      "id": "hB0y8A2U3owpAbTUb7LN5",
+      "type": "topic",
+      "data": {
+        "label": "Cluster Computing Basics"
+      }
+    },
+    {
+      "id": "Ad10evrGQuYRl5GaMhQwu",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Cluster Computing"
+      }
+    },
+    {
+      "id": "1LLF4466grFDlT9p_WLsi",
+      "type": "subtopic",
+      "data": {
+        "label": "Distributed File Systems"
+      }
+    },
+    {
+      "id": "ccc6_SzDwXpCL1WbFuPNA",
+      "type": "subtopic",
+      "data": {
+        "label": "Job Scheduling"
+      }
+    },
+    {
+      "id": "wpZfbIFtfiUSLMASk4t7f",
+      "type": "subtopic",
+      "data": {
+        "label": "Cluster Management Tools"
+      }
+    },
+    {
+      "id": "I_IueX1DFp-LmBwr1-suX",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "pjm_qShAiFk3JsX4Z2d8G",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache Hadoop YARN"
+      }
+    },
+    {
+      "id": "9lSjQBM2hWrkujxZjhQHE",
+      "type": "subtopic",
+      "data": {
+        "label": "HDFS"
+      }
+    },
+    {
+      "id": "OVkG0zXEXvFHTM9EautdY",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "03BHmPhYkZrJwRvQdmxxr",
+      "type": "topic",
+      "data": {
+        "label": "Big Data Tools"
+      }
+    },
+    {
+      "id": "jYqySUu-SEiH5wlJnucLO",
+      "type": "label",
+      "data": {
+        "label": "Hadoop Ecosystem"
+      }
+    },
+    {
+      "id": "0pH2U4GOj8zK3lgkh_r5M",
+      "type": "subtopic",
+      "data": {
+        "label": "HDFS"
+      }
+    },
+    {
+      "id": "__tWu5uZYnmnuR-qO9SOR",
+      "type": "subtopic",
+      "data": {
+        "label": "MapReduce"
+      }
+    },
+    {
+      "id": "KcW4z48pk2x6IjQhZs_Ub",
+      "type": "subtopic",
+      "data": {
+        "label": "YARN"
+      }
+    },
+    {
+      "id": "qHMtJFYcGmESiz_VwRwiI",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache Spark"
+      }
+    },
+    {
+      "id": "eTHitN2erd6z8-MZiXE9s",
+      "type": "topic",
+      "data": {
+        "label": "Containers \u0026 Orchestration"
+      }
+    },
+    {
+      "id": "OQ3RqVgWEMxpAtrrjOG5U",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "kcgDW6AFW7WXzXMTPE6J-",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "8qEgXYZEbDWC73SQSflDY",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Cloud GKE"
+      }
+    },
+    {
+      "id": "eVqcYI2Sy2Dldl3SfxB2C",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS EKS"
+      }
+    },
+    {
+      "id": "k2SJ4ELGa4B2ZERDAk1uj",
+      "type": "topic",
+      "data": {
+        "label": "CI/CD"
+      }
+    },
+    {
+      "id": "IYIO4S3DO5xkLD__XT5Dp",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab CI"
+      }
+    },
+    {
+      "id": "CewITBPtfVs32LD5Acb2E",
+      "type": "subtopic",
+      "data": {
+        "label": "Circle CI"
+      }
+    },
+    {
+      "id": "N8vpCfSdZCADwO_qceWBK",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "PUzHbjwntTSj1REL_dAov",
+      "type": "subtopic",
+      "data": {
+        "label": "ArgoCD"
+      }
+    },
+    {
+      "id": "dk5FQl7Pk3-O5eF7dKwmp",
+      "type": "topic",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "3QsgoKKxAoyj2LWJ8ad-7",
+      "type": "subtopic",
+      "data": {
+        "label": "Prometheus"
+      }
+    },
+    {
+      "id": "Zoa4JEGrSKjVwUNer4Go1",
+      "type": "subtopic",
+      "data": {
+        "label": "Datadog"
+      }
+    },
+    {
+      "id": "i54fx-NV6nWzQVCdi0aKL",
+      "type": "subtopic",
+      "data": {
+        "label": "Sentry"
+      }
+    },
+    {
+      "id": "r1KmASWAa_MOqQOC9gvvF",
+      "type": "subtopic",
+      "data": {
+        "label": "New Relic"
+      }
+    },
+    {
+      "id": "DZoxLu-j1vq5leoXLRZqt",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "NIG53tyoEiLtwf6LvBZId",
+      "type": "subtopic",
+      "data": {
+        "label": "Integration Testing"
+      }
+    },
+    {
+      "id": "8dXD4ddR_USEbAJhUMcB6",
+      "type": "subtopic",
+      "data": {
+        "label": "Unit Testing"
+      }
+    },
+    {
+      "id": "mC9sWeC_wYHeJJHJAvxpI",
+      "type": "subtopic",
+      "data": {
+        "label": "End-to-End Testing"
+      }
+    },
+    {
+      "id": "E4ND5XaMDGDLtlV7wTzi6",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Testing"
+      }
+    },
+    {
+      "id": "5qe0q_llTzzNVudbONMYo",
+      "type": "subtopic",
+      "data": {
+        "label": "A/B Testing"
+      }
+    },
+    {
+      "id": "qoMRpAITA7R_KOrwGDPAb",
+      "type": "subtopic",
+      "data": {
+        "label": "Load Testing"
+      }
+    },
+    {
+      "id": "woa5K4Dt9L6aBzlJMNS31",
+      "type": "subtopic",
+      "data": {
+        "label": "Smoke Testing"
+      }
+    },
+    {
+      "id": "dAvizeYvv92KMeAvSDmey",
+      "type": "topic",
+      "data": {
+        "label": "Messaging Systems"
+      }
+    },
+    {
+      "id": "1qju7UlcMo2Ebp4a3BGxH",
+      "type": "subtopic",
+      "data": {
+        "label": "What and why use them?"
+      }
+    },
+    {
+      "id": "VefHaP7rIOcZVFzglyn66",
+      "type": "subtopic",
+      "data": {
+        "label": "Async vs Sync Communication"
+      }
+    },
+    {
+      "id": "IZvL-1Xi0R9IuwJ30FDm4",
+      "type": "subtopic",
+      "data": {
+        "label": "Messages vs Streams"
+      }
+    },
+    {
+      "id": "yyJJGinOv3M21MFuqJs0j",
+      "type": "subtopic",
+      "data": {
+        "label": "Best Practices"
+      }
+    },
+    {
+      "id": "leKeGA9-3oHnCRyCkTa-7",
+      "type": "label",
+      "data": {
+        "label": "Common Tools"
+      }
+    },
+    {
+      "id": "fTpx6m8U0506ZLCdDU5OG",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache Kafka"
+      }
+    },
+    {
+      "id": "ERcgPTACqYo9BXoRdLjbd",
+      "type": "subtopic",
+      "data": {
+        "label": "RabbitMQ"
+      }
+    },
+    {
+      "id": "uIU5Yncp6hGDcNO1fpjUS",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS SQS"
+      }
+    },
+    {
+      "id": "uFeiTRobSymkvCinhwmZV",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS SNS"
+      }
+    },
+    {
+      "id": "jgz7L8OSuqRNcf9buuMTj",
+      "type": "topic",
+      "data": {
+        "label": "Infrastructure as Code - IaC"
+      }
+    },
+    {
+      "id": "GyC2JctG-Gi0R_qx1lTeg",
+      "type": "subtopic",
+      "data": {
+        "label": "Declarative vs Imperative"
+      }
+    },
+    {
+      "id": "9xoBZgKT9uAGsjc1soelY",
+      "type": "subtopic",
+      "data": {
+        "label": "Idempotency"
+      }
+    },
+    {
+      "id": "Rzk6HlMosx3FN_JD5kELZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Reusability"
+      }
+    },
+    {
+      "id": "WUfJCLTajyLNK19gAAvoW",
+      "type": "subtopic",
+      "data": {
+        "label": "Environmental Management"
+      }
+    },
+    {
+      "id": "ukUz0zhQbv9af5eNyXCji",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "70b270MiOx6rs8YPTO5WG",
+      "type": "label",
+      "data": {
+        "label": "Common Tools"
+      }
+    },
+    {
+      "id": "N-xRhdOTHijAymcTWPXPJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Terraform"
+      }
+    },
+    {
+      "id": "WdlC0HhJ5YESfjXmdMnLU",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenTofu"
+      }
+    },
+    {
+      "id": "OKJ3HTfreitk2JdrfeLIK",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS CDK"
+      }
+    },
+    {
+      "id": "1A98uTo8l_GQSrFxu5N2X",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Deployment  Mgr."
+      }
+    },
+    {
+      "id": "wboTVTh9nCTIqXUYEOrkp",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Serving"
+      }
+    },
+    {
+      "id": "V30v5RLQrWSMBUIsZQG1o",
+      "type": "topic",
+      "data": {
+        "label": "Data Analytics"
+      }
+    },
+    {
+      "id": "0kt0hgubGzsXr-TklJ0fp",
+      "type": "button",
+      "data": {
+        "label": "Visit the Data Analyst Roadmap"
+      }
+    },
+    {
+      "id": "zA5QqqBMsqymdiPGFdUnt",
+      "type": "topic",
+      "data": {
+        "label": "Business Intelligence"
+      }
+    },
+    {
+      "id": "t5MRham_vg6uI8VKxJT4u",
+      "type": "label",
+      "data": {
+        "label": "BI Tools"
+      }
+    },
+    {
+      "id": "6Nr5FAGT_oOPZwZWdv7hl",
+      "type": "subtopic",
+      "data": {
+        "label": "Microsoft Power BI"
+      }
+    },
+    {
+      "id": "FfU6Vwf0PXva91FoqxFgp",
+      "type": "subtopic",
+      "data": {
+        "label": "Streamlit"
+      }
+    },
+    {
+      "id": "gqEAOwHFrQiYSejNUdV7-",
+      "type": "subtopic",
+      "data": {
+        "label": "Tableu"
+      }
+    },
+    {
+      "id": "fY0eZzz0aTXm2lelk8l3g",
+      "type": "subtopic",
+      "data": {
+        "label": "Looker"
+      }
+    },
+    {
+      "id": "JpuiYsipNWBcrjmn2ji6b",
+      "type": "topic",
+      "data": {
+        "label": "Reverse ETL"
+      }
+    },
+    {
+      "id": "LMFREK9dH_7qzx_s2xCjI",
+      "type": "subtopic",
+      "data": {
+        "label": "ETL vs Reverse ETL"
+      }
+    },
+    {
+      "id": "mBOGrJIUaatBe2PnJM2NK",
+      "type": "subtopic",
+      "data": {
+        "label": "Reverse ETL Usecases"
+      }
+    },
+    {
+      "id": "p_J0YWx0VKTdCqtH-v9kL",
+      "type": "label",
+      "data": {
+        "label": "Tools"
+      }
+    },
+    {
+      "id": "vZGDtlyt_yj4szcPTw3cv",
+      "type": "subtopic",
+      "data": {
+        "label": "Census"
+      }
+    },
+    {
+      "id": "8vqjI-uFwJIr_TBEVyM_3",
+      "type": "subtopic",
+      "data": {
+        "label": "Segment"
+      }
+    },
+    {
+      "id": "8NTe5-XQ5tKAWUyg1rnzb",
+      "type": "subtopic",
+      "data": {
+        "label": "Hightouch"
+      }
+    },
+    {
+      "id": "j9mee1x94yu-qki7aLj21",
+      "type": "paragraph",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "HDVhttLNMLmIAVEOBCOQ3",
+      "type": "topic",
+      "data": {
+        "label": "Authentication vs Authorization"
+      }
+    },
+    {
+      "id": "2PqRgrYuJi_pPhOS0AkoP",
+      "type": "topic",
+      "data": {
+        "label": "Encryption"
+      }
+    },
+    {
+      "id": "ZAKo9Svb8TQ6KkmOnfB5x",
+      "type": "topic",
+      "data": {
+        "label": "Tokenization"
+      }
+    },
+    {
+      "id": "2Wu1Ufm2l1nrytz1mAxmJ",
+      "type": "topic",
+      "data": {
+        "label": "Data Masking"
+      }
+    },
+    {
+      "id": "rUiYUV4ps6NYYYRwUnjuM",
+      "type": "topic",
+      "data": {
+        "label": "Data Obfuscation"
+      }
+    },
+    {
+      "id": "IzILGY4xmKhs9gW90Hz2Z",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Governance"
+      }
+    },
+    {
+      "id": "cStrYgFZA2NuYq8TdWWP_",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Quality"
+      }
+    },
+    {
+      "id": "pKewO7Ef3GBXL4MDK62QG",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Lineage"
+      }
+    },
+    {
+      "id": "a5gzM8msXibxD58eVDkM-",
+      "type": "subtopic",
+      "data": {
+        "label": "Metadata Management"
+      }
+    },
+    {
+      "id": "ghAbtfB5KtbboNjijL1Zf",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Interoperability"
+      }
+    },
+    {
+      "id": "iuNP6W0A2GLTE2PK5y68u",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Quality"
+      }
+    },
+    {
+      "id": "46SzVj1sCFNbxxb002lYl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6B10MXBAdm9SQoYQCKz4t",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5jo-0U6f4iBagd1Lo4NAw",
+      "type": "paragraph",
+      "data": {
+        "label": "Privacy"
+      }
+    },
+    {
+      "id": "MuPHohc7mJzcH5QdJ-K46",
+      "type": "subtopic",
+      "data": {
+        "label": "GDPR"
+      }
+    },
+    {
+      "id": "g1VwuSupohuDAT2O4hTXx",
+      "type": "subtopic",
+      "data": {
+        "label": "ECPA"
+      }
+    },
+    {
+      "id": "tdqhFFvQ2dQVeQh1qTHjV",
+      "type": "subtopic",
+      "data": {
+        "label": "EU AI Act"
+      }
+    },
+    {
+      "id": "utyjkDcT0E1czb1qg7-Xz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gASVrTA40nPq5FSB-3spH",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Also visit the following related roadmaps"
+      }
+    },
+    {
+      "id": "gu0QppNXop66pFxKFKb4r",
+      "type": "button",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "hl06pnTWoMnzLmiOz9Sga",
+      "type": "button",
+      "data": {
+        "label": "AI \u0026 Data Scientist"
+      }
+    },
+    {
+      "id": "KGFYqDgOVSFXd2lbg8vGx",
+      "type": "button",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "I0p_-Urr8ZWXXH1JmFMWC",
+      "type": "label",
+      "data": {
+        "label": "Data and AI Regulations"
+      }
+    },
+    {
+      "id": "xcOlVnhYfnSCfzLpkcaRS",
+      "type": "button",
+      "data": {
+        "label": "Data Analyst"
+      }
+    },
+    {
+      "id": "UZq7Aq3nhidsXdsKeEnNF",
+      "type": "button",
+      "data": {
+        "label": "MLOps"
+      }
+    },
+    {
+      "id": "S8XMtFKWlnUqADElFp0Zw",
+      "type": "topic",
+      "data": {
+        "label": "Machine Learning"
+      }
+    },
+    {
+      "id": "VQv-c7buU2l-IDzRZBMRo",
+      "type": "topic",
+      "data": {
+        "label": "MLOps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__7aSscXd-UMNWOX7A_vxYhx2-fY8LEcCRTKUVEqLH1Qlc0w1",
+      "source": "7aSscXd-UMNWOX7A_vxYh",
+      "target": "WSYIFni7G2C9Jr0pwuami",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-3BxbkrBp8veZj38zdwN8sy2",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "3BxbkrBp8veZj38zdwN8s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-Ouph2bHeLQsrHl45ar4Csy1",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "Ouph2bHeLQsrHl45ar4Cs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-jJukG4XxfFcID_VlQKqe-y1",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "jJukG4XxfFcID_VlQKqe-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-WB2PRVI9C6RIbJ6l9zdbdy2",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "WB2PRVI9C6RIbJ6l9zdbd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fY8LEcCRTKUVEqLH1Qlc0z2-_MpdVlvvkrsgzigYMZ_P8y1",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "_MpdVlvvkrsgzigYMZ_P8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__WSYIFni7G2C9Jr0pwuamix2-tC6UX4itbzr5JLdMgon73w2",
+      "source": "WSYIFni7G2C9Jr0pwuami",
+      "target": "3RGGe_znOO7o1Bx0yHaJo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-RspQLpkICyHUmthLlxQ84y1",
+      "source": "w3cfuNC-IdUKA7CEXs0fT",
+      "target": "RspQLpkICyHUmthLlxQ84",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-CvCOkyWcgzaUJec_v5F4Ly1",
+      "source": "w3cfuNC-IdUKA7CEXs0fT",
+      "target": "CvCOkyWcgzaUJec_v5F4L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-wydtifF3ZhMWCbVt8Hd2ty2",
+      "source": "w3cfuNC-IdUKA7CEXs0fT",
+      "target": "wydtifF3ZhMWCbVt8Hd2t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-KeGCHoJRHp-mBX-P5to4Yy1",
+      "source": "w3cfuNC-IdUKA7CEXs0fT",
+      "target": "AWf1y87pd1JFW71cZ_iE1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-cxTriSZvrmXP4axKynIZWy2",
+      "source": "zGKTlMUzhrbVbqpLZBsMZ",
+      "target": "cxTriSZvrmXP4axKynIZW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-OfH_UXnxvGQgwlNQwOEfSy1",
+      "source": "zGKTlMUzhrbVbqpLZBsMZ",
+      "target": "qRHeaD2udDaItAxmiIiUg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-dJZqe47kzRqYIG-4AZTlzy2",
+      "source": "zGKTlMUzhrbVbqpLZBsMZ",
+      "target": "dJZqe47kzRqYIG-4AZTlz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Eb27y_lyYTsfxK5heaMDJy2-jzsScqhz8Z0DLlk2gjVElz1",
+      "source": "JurdhDtrv44NaRhh2imqY",
+      "target": "g4UC0go7OPCJYJlac9w-i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__-VQQmIUGesnrT1N6kH5etx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "-VQQmIUGesnrT1N6kH5et",
+      "target": "g4UC0go7OPCJYJlac9w-i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElx2-5KgPfywItqLFQRnIZldZHw2",
+      "source": "g4UC0go7OPCJYJlac9w-i",
+      "target": "5KgPfywItqLFQRnIZldZH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cslVSSKBMO7I6CpO7vG1Hx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "cslVSSKBMO7I6CpO7vG1H",
+      "target": "uZYQ8tqTriXt_JIOjcM9_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Eb27y_lyYTsfxK5heaMDJx2-cslVSSKBMO7I6CpO7vG1Hw1",
+      "source": "JurdhDtrv44NaRhh2imqY",
+      "target": "cslVSSKBMO7I6CpO7vG1H",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-fBD6ZQoMac8w4kMJw_Jrdz2",
+      "source": "uZYQ8tqTriXt_JIOjcM9_",
+      "target": "fBD6ZQoMac8w4kMJw_Jrd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-ArOoKuf9scAURs8NRjAruz1",
+      "source": "J854xPM1X0BWlhtJw7Hs_",
+      "target": "ArOoKuf9scAURs8NRjAru",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-c6Pf3kFcC4iV4a7mPc-WHy2",
+      "source": "J854xPM1X0BWlhtJw7Hs_",
+      "target": "c6Pf3kFcC4iV4a7mPc-WH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__J854xPM1X0BWlhtJw7Hs_x2-jzsScqhz8Z0DLlk2gjVElw2",
+      "source": "J854xPM1X0BWlhtJw7Hs_",
+      "target": "lDeSL9qvgQgyAMcWXF7Fr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__djtAd4xIRBwRgmSkdjAStx2-zGKTlMUzhrbVbqpLZBsMZw1",
+      "source": "djtAd4xIRBwRgmSkdjASt",
+      "target": "zGKTlMUzhrbVbqpLZBsMZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__djtAd4xIRBwRgmSkdjAStw2-w3cfuNC-IdUKA7CEXs0fTx2",
+      "source": "djtAd4xIRBwRgmSkdjASt",
+      "target": "w3cfuNC-IdUKA7CEXs0fT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Eb27y_lyYTsfxK5heaMDJx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "Eb27y_lyYTsfxK5heaMDJ",
+      "target": "GN1Xh3kA25ge-wTbdiSio",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-f-a3Hy1ldnvSv8W2mFiJKz1",
+      "source": "GN1Xh3kA25ge-wTbdiSio",
+      "target": "f-a3Hy1ldnvSv8W2mFiJK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-4fugNG5sEDl0kgmN3Mezkz1",
+      "source": "GN1Xh3kA25ge-wTbdiSio",
+      "target": "4fugNG5sEDl0kgmN3Mezk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-oqxNr0Lj34mgRi5Z5wJt_z2",
+      "source": "GN1Xh3kA25ge-wTbdiSio",
+      "target": "oqxNr0Lj34mgRi5Z5wJt_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GN1Xh3kA25ge-wTbdiSiox2-fqTPu70MJyXBmqYUgCJ_rw1",
+      "source": "GN1Xh3kA25ge-wTbdiSio",
+      "target": "fqTPu70MJyXBmqYUgCJ_r",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uZYQ8tqTriXt_JIOjcM9_z2-W6RnhoD7fW2xzVwnyJEDry1",
+      "source": "uZYQ8tqTriXt_JIOjcM9_",
+      "target": "W6RnhoD7fW2xzVwnyJEDr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lDeSL9qvgQgyAMcWXF7Frx2-Eb27y_lyYTsfxK5heaMDJw1",
+      "source": "lDeSL9qvgQgyAMcWXF7Fr",
+      "target": "Eb27y_lyYTsfxK5heaMDJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-qHMtJFYcGmESiz_VwRwiIy1",
+      "source": "03BHmPhYkZrJwRvQdmxxr",
+      "target": "qHMtJFYcGmESiz_VwRwiI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__03BHmPhYkZrJwRvQdmxxrx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "03BHmPhYkZrJwRvQdmxxr",
+      "target": "eTHitN2erd6z8-MZiXE9s",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-8qEgXYZEbDWC73SQSflDYz1",
+      "source": "eTHitN2erd6z8-MZiXE9s",
+      "target": "8qEgXYZEbDWC73SQSflDY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-i54fx-NV6nWzQVCdi0aKLz2",
+      "source": "eTHitN2erd6z8-MZiXE9s",
+      "target": "eVqcYI2Sy2Dldl3SfxB2C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-kcgDW6AFW7WXzXMTPE6J-z1",
+      "source": "eTHitN2erd6z8-MZiXE9s",
+      "target": "kcgDW6AFW7WXzXMTPE6J-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eTHitN2erd6z8-MZiXE9sx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "eTHitN2erd6z8-MZiXE9s",
+      "target": "k2SJ4ELGa4B2ZERDAk1uj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-N8vpCfSdZCADwO_qceWBKy1",
+      "source": "k2SJ4ELGa4B2ZERDAk1uj",
+      "target": "N8vpCfSdZCADwO_qceWBK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-8dXD4ddR_USEbAJhUMcB6y1",
+      "source": "k2SJ4ELGa4B2ZERDAk1uj",
+      "target": "IYIO4S3DO5xkLD__XT5Dp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-i54fx-NV6nWzQVCdi0aKLz1",
+      "source": "dk5FQl7Pk3-O5eF7dKwmp",
+      "target": "i54fx-NV6nWzQVCdi0aKL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-yyJJGinOv3M21MFuqJs0jz1",
+      "source": "dk5FQl7Pk3-O5eF7dKwmp",
+      "target": "r1KmASWAa_MOqQOC9gvvF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-3QsgoKKxAoyj2LWJ8ad-7z1",
+      "source": "dk5FQl7Pk3-O5eF7dKwmp",
+      "target": "3QsgoKKxAoyj2LWJ8ad-7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dk5FQl7Pk3-O5eF7dKwmpx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "dk5FQl7Pk3-O5eF7dKwmp",
+      "target": "DZoxLu-j1vq5leoXLRZqt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-8dXD4ddR_USEbAJhUMcB6y2",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "8dXD4ddR_USEbAJhUMcB6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-NIG53tyoEiLtwf6LvBZIdy1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "NIG53tyoEiLtwf6LvBZId",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-mC9sWeC_wYHeJJHJAvxpIy1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "mC9sWeC_wYHeJJHJAvxpI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-E4ND5XaMDGDLtlV7wTzi6y1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "E4ND5XaMDGDLtlV7wTzi6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-5qe0q_llTzzNVudbONMYoy1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "5qe0q_llTzzNVudbONMYo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-qoMRpAITA7R_KOrwGDPAby1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "qoMRpAITA7R_KOrwGDPAb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElz2-WUfJCLTajyLNK19gAAvoWy2",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "woa5K4Dt9L6aBzlJMNS31",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__DZoxLu-j1vq5leoXLRZqtx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "DZoxLu-j1vq5leoXLRZqt",
+      "target": "dAvizeYvv92KMeAvSDmey",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-1qju7UlcMo2Ebp4a3BGxHz1",
+      "source": "dAvizeYvv92KMeAvSDmey",
+      "target": "1qju7UlcMo2Ebp4a3BGxH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-VefHaP7rIOcZVFzglyn66z1",
+      "source": "dAvizeYvv92KMeAvSDmey",
+      "target": "VefHaP7rIOcZVFzglyn66",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-IZvL-1Xi0R9IuwJ30FDm4z1",
+      "source": "dAvizeYvv92KMeAvSDmey",
+      "target": "IZvL-1Xi0R9IuwJ30FDm4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVEly2-yyJJGinOv3M21MFuqJs0jz1",
+      "source": "dAvizeYvv92KMeAvSDmey",
+      "target": "yyJJGinOv3M21MFuqJs0j",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dc3lJI27hJ3zZ45UCVqM1w2-kyzJSTdysN2GHThy2JTxbx1",
+      "source": "dc3lJI27hJ3zZ45UCVqM1",
+      "target": "kyzJSTdysN2GHThy2JTxb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uZYQ8tqTriXt_JIOjcM9_x2-kyzJSTdysN2GHThy2JTxbw2",
+      "source": "uZYQ8tqTriXt_JIOjcM9_",
+      "target": "kyzJSTdysN2GHThy2JTxb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__dAvizeYvv92KMeAvSDmeyx2-jzsScqhz8Z0DLlk2gjVElw1",
+      "source": "dAvizeYvv92KMeAvSDmey",
+      "target": "jgz7L8OSuqRNcf9buuMTj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzsScqhz8Z0DLlk2gjVElx2-svOVvDERe3mmmA2qLjui3w1",
+      "source": "jgz7L8OSuqRNcf9buuMTj",
+      "target": "wboTVTh9nCTIqXUYEOrkp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__svOVvDERe3mmmA2qLjui3y2-jzsScqhz8Z0DLlk2gjVElz1",
+      "source": "wboTVTh9nCTIqXUYEOrkp",
+      "target": "V30v5RLQrWSMBUIsZQG1o",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__tdqhFFvQ2dQVeQh1qTHjVx2-LMFREK9dH_7qzx_s2xCjIw1",
+      "source": "JpuiYsipNWBcrjmn2ji6b",
+      "target": "LMFREK9dH_7qzx_s2xCjI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BCaFByttoQgLAQd7xGNN-x2-tdqhFFvQ2dQVeQh1qTHjVw1",
+      "source": "BCaFByttoQgLAQd7xGNN-",
+      "target": "JpuiYsipNWBcrjmn2ji6b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__tdqhFFvQ2dQVeQh1qTHjVz2-5jo-0U6f4iBagd1Lo4NAwy1",
+      "source": "JpuiYsipNWBcrjmn2ji6b",
+      "target": "j9mee1x94yu-qki7aLj21",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5jo-0U6f4iBagd1Lo4NAww2-tdqhFFvQ2dQVeQh1qTHjVx1",
+      "source": "j9mee1x94yu-qki7aLj21",
+      "target": "rUiYUV4ps6NYYYRwUnjuM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j9mee1x94yu-qki7aLj21x2-5jo-0U6f4iBagd1Lo4NAww1",
+      "source": "j9mee1x94yu-qki7aLj21",
+      "target": "IzILGY4xmKhs9gW90Hz2Z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__IzILGY4xmKhs9gW90Hz2Zx2-5jo-0U6f4iBagd1Lo4NAww1",
+      "source": "IzILGY4xmKhs9gW90Hz2Z",
+      "target": "5jo-0U6f4iBagd1Lo4NAw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5jo-0U6f4iBagd1Lo4NAwx2-S8XMtFKWlnUqADElFp0Zww1",
+      "source": "5jo-0U6f4iBagd1Lo4NAw",
+      "target": "S8XMtFKWlnUqADElFp0Zw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__VQv-c7buU2l-IDzRZBMRox2-O5dely89N5UCMBeUfh8udw1",
+      "source": "VQv-c7buU2l-IDzRZBMRo",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wDDWQgMVBYK4WcmHq_d6lx2-JurdhDtrv44NaRhh2imqYw1",
+      "source": "wDDWQgMVBYK4WcmHq_d6l",
+      "target": "JurdhDtrv44NaRhh2imqY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jgz7L8OSuqRNcf9buuMTjz2-GyC2JctG-Gi0R_qx1lTegy1",
+      "source": "jgz7L8OSuqRNcf9buuMTj",
+      "target": "GyC2JctG-Gi0R_qx1lTeg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jgz7L8OSuqRNcf9buuMTjz2-9xoBZgKT9uAGsjc1soelYy2",
+      "source": "jgz7L8OSuqRNcf9buuMTj",
+      "target": "9xoBZgKT9uAGsjc1soelY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jgz7L8OSuqRNcf9buuMTjz2-Rzk6HlMosx3FN_JD5kELZy1",
+      "source": "jgz7L8OSuqRNcf9buuMTj",
+      "target": "Rzk6HlMosx3FN_JD5kELZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jgz7L8OSuqRNcf9buuMTjz2-WUfJCLTajyLNK19gAAvoWy1",
+      "source": "jgz7L8OSuqRNcf9buuMTj",
+      "target": "WUfJCLTajyLNK19gAAvoW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

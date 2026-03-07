@@ -1,0 +1,1652 @@
+{
+  "title": {
+    "card": "DevOps",
+    "page": "DevOps Roadmap"
+  },
+  "description": "Step by step guide for DevOps, SRE or any other Operations Role in @currentYear@",
+  "nodes": [
+    {
+      "id": "iU2f2TbjbjrCSDoIQN75c",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fL1LKBwDDxnzuUaxMxfMz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bnHYl23RxloIt7dR5V7PF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JizyX8jse920gpWcmoSED",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "SPXgDee7rpQAX3FfTdA3J",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "45zz5L6lKJrF9JWgyj1Pz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7crPw2SKw-TlsSe9kpZFQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "78fdvOJN2xs2co5L8Ldvf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PsbYeHGMd9E1UNqcaFQOz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "2-SE-hXZHqrxxogHYfC9O",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Z9kbJS29EAsTKguLJlOiu",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OY4ipeYrizxKKv9Z72iLR",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "fqBgeJj5fan4TT7K2E6c7",
+      "type": "title",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "J4hDw1hZqw6pI4iykkXXQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "v5FGKQc-_7NYEsWjmTEuq",
+      "type": "topic",
+      "data": {
+        "label": "Learn a Programming Language"
+      }
+    },
+    {
+      "id": "TwVfCYMS9jSaJ6UyYmC-K",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "PuXAPYA0bsMgwcnlwJxQn",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "npnMwSDEK2aLGgnuZZ4dO",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "eL62bKAoJCMsu7zPlgyhy",
+      "type": "subtopic",
+      "data": {
+        "label": "Rust"
+      }
+    },
+    {
+      "id": "QCdemtWa2mE78poNXeqzr",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript / Node.js"
+      }
+    },
+    {
+      "id": "LFXvvH86fAyJBtQVd7acq",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "qe84v529VbCyydl0BKFk2",
+      "type": "topic",
+      "data": {
+        "label": "Operating System"
+      }
+    },
+    {
+      "id": "3A1SykJ5JxBFeVzSzDEWJ",
+      "type": "label",
+      "data": {
+        "label": "Linux"
+      }
+    },
+    {
+      "id": "8hSJLQBKu8ablW2Lwxknv",
+      "type": "label",
+      "data": {
+        "label": "Unix"
+      }
+    },
+    {
+      "id": "cTqVab0VbVcn3W7i0wBrX",
+      "type": "subtopic",
+      "data": {
+        "label": "Ubuntu / Debian"
+      }
+    },
+    {
+      "id": "zhNUK953p6tjREndk3yQZ",
+      "type": "subtopic",
+      "data": {
+        "label": "SUSE Linux"
+      }
+    },
+    {
+      "id": "7mS6Y_BOAHNgM3OjyFtZ9",
+      "type": "subtopic",
+      "data": {
+        "label": "RHEL / Derivatives"
+      }
+    },
+    {
+      "id": "PiPHFimToormOPl1EtEe8",
+      "type": "subtopic",
+      "data": {
+        "label": "FreeBSD"
+      }
+    },
+    {
+      "id": "97cJYKqv7CPPUXkKNwM4x",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenBSD"
+      }
+    },
+    {
+      "id": "haiYSwNt3rjiiwCDszPk1",
+      "type": "subtopic",
+      "data": {
+        "label": "NetBSD"
+      }
+    },
+    {
+      "id": "UOQimp7QkM3sxmFvk5d3i",
+      "type": "subtopic",
+      "data": {
+        "label": "Windows"
+      }
+    },
+    {
+      "id": "wjJPzrFJBNYOD3SJLzW2M",
+      "type": "topic",
+      "data": {
+        "label": "Terminal Knowledge"
+      }
+    },
+    {
+      "id": "x-JWvG1iw86ULL9KrQmRu",
+      "type": "subtopic",
+      "data": {
+        "label": "Process Monitoring"
+      }
+    },
+    {
+      "id": "gIEQDgKOsoEnSv8mpEzGH",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance Monitoring"
+      }
+    },
+    {
+      "id": "OaqKLZe-XnngcDhDzCtRt",
+      "type": "subtopic",
+      "data": {
+        "label": "Networking Tools"
+      }
+    },
+    {
+      "id": "cUifrP7v55psTb20IZndf",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Manipulation"
+      }
+    },
+    {
+      "id": "syBIAL1mHbJLnTBoSxXI7",
+      "type": "subtopic",
+      "data": {
+        "label": "Bash"
+      }
+    },
+    {
+      "id": "z6IBekR8Xl-6f8WEb05Nw",
+      "type": "subtopic",
+      "data": {
+        "label": "Power Shell"
+      }
+    },
+    {
+      "id": "Jt8BmtLUH6fHT2pGKoJs3",
+      "type": "subtopic",
+      "data": {
+        "label": "Vim / Nano /  Emacs"
+      }
+    },
+    {
+      "id": "ZusrlGqCntlKDPOaTiWqI",
+      "type": "label",
+      "data": {
+        "label": "Scripting"
+      }
+    },
+    {
+      "id": "LvhFmlxz5uIy7k_nzx2Bv",
+      "type": "topic",
+      "data": {
+        "label": "Version Control Systems"
+      }
+    },
+    {
+      "id": "uyDm1SpOQdpHjq9zBAdck",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "h10BH3OybHcIN2iDTSGkn",
+      "type": "topic",
+      "data": {
+        "label": "VCS Hosting"
+      }
+    },
+    {
+      "id": "ot9I_IHdnq2yAMffrSrbN",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "oQIB0KE0BibjIYmxrpPZS",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab"
+      }
+    },
+    {
+      "id": "Z7SsBWgluZWr9iWb2e9XO",
+      "type": "subtopic",
+      "data": {
+        "label": "Bitbucket"
+      }
+    },
+    {
+      "id": "jCWrnQNgjHKyhzd9dwOHz",
+      "type": "topic",
+      "data": {
+        "label": "What is and how to setup X ?"
+      }
+    },
+    {
+      "id": "F93XnRj0BLswJkzyRggLS",
+      "type": "subtopic",
+      "data": {
+        "label": "Forward Proxy"
+      }
+    },
+    {
+      "id": "f3tM2uo6LLSOmyeFfLc7h",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewall"
+      }
+    },
+    {
+      "id": "ukOrSeyK1ElOt9tTjCkfO",
+      "type": "subtopic",
+      "data": {
+        "label": "Nginx"
+      }
+    },
+    {
+      "id": "dF3otkMMN09tgCzci8Jyv",
+      "type": "subtopic",
+      "data": {
+        "label": "Tomcat"
+      }
+    },
+    {
+      "id": "0_GMTcMeZv3A8dYkHRoW7",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache"
+      }
+    },
+    {
+      "id": "54UZNO2q8M5FiA_XbcU_D",
+      "type": "subtopic",
+      "data": {
+        "label": "Caddy"
+      }
+    },
+    {
+      "id": "5iJOE1QxMvf8BQ_8ssiI8",
+      "type": "subtopic",
+      "data": {
+        "label": "IIS"
+      }
+    },
+    {
+      "id": "R4XSY4TSjU1M7cW66zUqJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching Server"
+      }
+    },
+    {
+      "id": "i8Sd9maB_BeFurULrHXNq",
+      "type": "subtopic",
+      "data": {
+        "label": "Load Balancer"
+      }
+    },
+    {
+      "id": "eGF7iyigl57myx2ejpmNC",
+      "type": "subtopic",
+      "data": {
+        "label": "Reverse Proxy"
+      }
+    },
+    {
+      "id": "CQhUflAcv1lhBnmDY0gaz",
+      "type": "topic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "P0acFNZ413MSKElHqCxr3",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "qYRJYIZsmf-inMqKECRkI",
+      "type": "subtopic",
+      "data": {
+        "label": "LXC"
+      }
+    },
+    {
+      "id": "2Wd9SlWGg6QtxgiUVLyZL",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Providers"
+      }
+    },
+    {
+      "id": "1ieK6B_oqW8qOC6bdmiJe",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS"
+      }
+    },
+    {
+      "id": "ctor79Vd7EXDMdrLyUcu_",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure"
+      }
+    },
+    {
+      "id": "zYrOxFQkl3KSe67fh3smD",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Cloud"
+      }
+    },
+    {
+      "id": "-h-kNVDNzZYnQAR_4lfXc",
+      "type": "subtopic",
+      "data": {
+        "label": "Digital Ocean"
+      }
+    },
+    {
+      "id": "YUJf-6ccHvYjL_RzufQ-G",
+      "type": "subtopic",
+      "data": {
+        "label": "Alibaba Cloud"
+      }
+    },
+    {
+      "id": "I327qPYGMcdayRR5WT0Ek",
+      "type": "subtopic",
+      "data": {
+        "label": "Hetzner"
+      }
+    },
+    {
+      "id": "FaPf567JGRAg1MBlFj9Tk",
+      "type": "subtopic",
+      "data": {
+        "label": "Heroku "
+      }
+    },
+    {
+      "id": "eJZdjheptmiwKsVokt7Io",
+      "type": "subtopic",
+      "data": {
+        "label": "Contabo"
+      }
+    },
+    {
+      "id": "RDLmML_HS2c8J4D_U_KYe",
+      "type": "subtopic",
+      "data": {
+        "label": "FTP / SFTP"
+      }
+    },
+    {
+      "id": "Vu955vdsYerCG8G6suqml",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS"
+      }
+    },
+    {
+      "id": "ke-8MeuLx7AS2XjSsPhxe",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP"
+      }
+    },
+    {
+      "id": "AJO3jtHvIICj8YKaSXl0U",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTPS"
+      }
+    },
+    {
+      "id": "0o6ejhfpmO4S8A6djVWva",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL / TLS"
+      }
+    },
+    {
+      "id": "wcIRMLVm3SdEJWF9RPfn7",
+      "type": "subtopic",
+      "data": {
+        "label": "SSH"
+      }
+    },
+    {
+      "id": "E-lSLGzgOPrz-25ER2Hk7",
+      "type": "subtopic",
+      "data": {
+        "label": "White / Grey Listing"
+      }
+    },
+    {
+      "id": "zJy9dOynWgLTDKI1iBluG",
+      "type": "subtopic",
+      "data": {
+        "label": "SMTP"
+      }
+    },
+    {
+      "id": "5vUKHuItQfkarp7LtACvX",
+      "type": "subtopic",
+      "data": {
+        "label": "DMARC"
+      }
+    },
+    {
+      "id": "WMuXqa4b5wyRuYAQKQJRj",
+      "type": "subtopic",
+      "data": {
+        "label": "IMAP"
+      }
+    },
+    {
+      "id": "ewcJfnDFKXN8I5TLpXEaB",
+      "type": "subtopic",
+      "data": {
+        "label": "SPF"
+      }
+    },
+    {
+      "id": "fzO6xVTBxliu24f3W5zaU",
+      "type": "subtopic",
+      "data": {
+        "label": "POP3S"
+      }
+    },
+    {
+      "id": "RYCD78msIR2BPJoIP71aj",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain Keys"
+      }
+    },
+    {
+      "id": "n-pIspYFAk0vpHNbLbbLz",
+      "type": "label",
+      "data": {
+        "label": "Email Protocols"
+      }
+    },
+    {
+      "id": "QZ7bkY-MaEgxYoPDP3nma",
+      "type": "subtopic",
+      "data": {
+        "label": "OSI Model"
+      }
+    },
+    {
+      "id": "w5d24Sf8GDkLDLGUPxzS9",
+      "type": "topic",
+      "data": {
+        "label": "Networking \u0026 Protocols"
+      }
+    },
+    {
+      "id": "9p_ufPj6QH9gHbWBQUmGw",
+      "type": "topic",
+      "data": {
+        "label": "Serverless"
+      }
+    },
+    {
+      "id": "LZDRgDxEZ3klp2PrrJFBX",
+      "type": "subtopic",
+      "data": {
+        "label": "Vercel"
+      }
+    },
+    {
+      "id": "l8VAewSEXzoyqYFhoplJj",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloudflare"
+      }
+    },
+    {
+      "id": "mlrlf2McMI7IBhyEdq0Nf",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure Functions"
+      }
+    },
+    {
+      "id": "UfQrIJ-uMNJt9H_VM_Q5q",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS Lambda"
+      }
+    },
+    {
+      "id": "hCKODV2b_l2uPit0YeP1M",
+      "type": "subtopic",
+      "data": {
+        "label": "Netlify"
+      }
+    },
+    {
+      "id": "1oYvpFG8LKT1JD6a_9J0m",
+      "type": "topic",
+      "data": {
+        "label": "Provisioning"
+      }
+    },
+    {
+      "id": "XA__697KgofsH28coQ-ma",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS CDK"
+      }
+    },
+    {
+      "id": "TgBb4aL_9UkyU36CN4qvS",
+      "type": "subtopic",
+      "data": {
+        "label": "CloudFormation"
+      }
+    },
+    {
+      "id": "O0xZ3dy2zIDbOetVrgna6",
+      "type": "subtopic",
+      "data": {
+        "label": "Pulumi"
+      }
+    },
+    {
+      "id": "nUBGf1rp9GK_pbagWCP9g",
+      "type": "subtopic",
+      "data": {
+        "label": "Terraform"
+      }
+    },
+    {
+      "id": "V9sOxlNOyRp0Mghl7zudv",
+      "type": "topic",
+      "data": {
+        "label": "Configuration Management"
+      }
+    },
+    {
+      "id": "h9vVPOmdUSeEGVQQaSTH5",
+      "type": "subtopic",
+      "data": {
+        "label": "Ansible"
+      }
+    },
+    {
+      "id": "kv508kxzUj_CjZRb-TeRv",
+      "type": "subtopic",
+      "data": {
+        "label": "Chef"
+      }
+    },
+    {
+      "id": "yP1y8U3eblpzbaLiCGliU",
+      "type": "subtopic",
+      "data": {
+        "label": "Puppet"
+      }
+    },
+    {
+      "id": "aQJaouIaxIJChM-40M3HQ",
+      "type": "topic",
+      "data": {
+        "label": "CI / CD Tools"
+      }
+    },
+    {
+      "id": "JnWVCS1HbAyfCJzGt-WOH",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Actions"
+      }
+    },
+    {
+      "id": "2KjSLLVTvl2G2KValw7S7",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab CI"
+      }
+    },
+    {
+      "id": "dUapFp3f0Rum-rf_Vk_b-",
+      "type": "subtopic",
+      "data": {
+        "label": "Jenkins"
+      }
+    },
+    {
+      "id": "1-JneOQeGhox-CKrdiquq",
+      "type": "subtopic",
+      "data": {
+        "label": "Circle CI"
+      }
+    },
+    {
+      "id": "TsXFx1wWikVBVoFUUDAMx",
+      "type": "subtopic",
+      "data": {
+        "label": "Octopus Deploy"
+      }
+    },
+    {
+      "id": "L000AbzF3oLcn4B1eUIYX",
+      "type": "subtopic",
+      "data": {
+        "label": "TeamCity"
+      }
+    },
+    {
+      "id": "hcrPpjFxPi_iLiMdLKJrO",
+      "type": "topic",
+      "data": {
+        "label": "Secret Management"
+      }
+    },
+    {
+      "id": "ZWq23Q9ZNxLNti68oltxA",
+      "type": "subtopic",
+      "data": {
+        "label": "Sealed Secrets"
+      }
+    },
+    {
+      "id": "yQ4d2uiROZYr950cjYnQE",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Specific Tools"
+      }
+    },
+    {
+      "id": "tZzvs80KzqT8aDvEyjack",
+      "type": "subtopic",
+      "data": {
+        "label": "Vault"
+      }
+    },
+    {
+      "id": "GHQWHLxsO40kJ6z_YCinJ",
+      "type": "subtopic",
+      "data": {
+        "label": "SOPs"
+      }
+    },
+    {
+      "id": "qqRLeTpuoW64H9LvY0U_w",
+      "type": "topic",
+      "data": {
+        "label": "Infrastructure Monitoring"
+      }
+    },
+    {
+      "id": "W9sKEoDlR8LzocQkqSv82",
+      "type": "subtopic",
+      "data": {
+        "label": "Zabbix"
+      }
+    },
+    {
+      "id": "NiVvRbCOCDpVvif48poCo",
+      "type": "subtopic",
+      "data": {
+        "label": "Prometheus"
+      }
+    },
+    {
+      "id": "bujq_C-ejtpmk-ICALByy",
+      "type": "subtopic",
+      "data": {
+        "label": "Datadog"
+      }
+    },
+    {
+      "id": "niA_96yR7uQ0sc6S_OStf",
+      "type": "subtopic",
+      "data": {
+        "label": "Grafana"
+      }
+    },
+    {
+      "id": "gaoZjOYmU0J5aM6vtLNvN",
+      "type": "topic",
+      "data": {
+        "label": "Logs Management"
+      }
+    },
+    {
+      "id": "K_qLhK2kKN_uCq7iVjqph",
+      "type": "subtopic",
+      "data": {
+        "label": "Elastic Stack"
+      }
+    },
+    {
+      "id": "s_kss4FJ2KyZRdcKNHK2v",
+      "type": "subtopic",
+      "data": {
+        "label": "Graylog"
+      }
+    },
+    {
+      "id": "dZID_Y_uRTF8JlfDCqeqs",
+      "type": "subtopic",
+      "data": {
+        "label": "Splunk"
+      }
+    },
+    {
+      "id": "cjjMZdyLgakyVkImVQTza",
+      "type": "subtopic",
+      "data": {
+        "label": "Papertrail"
+      }
+    },
+    {
+      "id": "Yq8kVoRf20aL_o4VZU5--",
+      "type": "topic",
+      "data": {
+        "label": "Container Orchestration"
+      }
+    },
+    {
+      "id": "XbrWlTyH4z8crSHkki2lp",
+      "type": "subtopic",
+      "data": {
+        "label": "GKE / EKS / AKS"
+      }
+    },
+    {
+      "id": "FE2h-uQy6qli3rKERci1j",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS ECS / Fargate"
+      }
+    },
+    {
+      "id": "VD24HC9qJOC42lbpJ-swC",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker Swarm"
+      }
+    },
+    {
+      "id": "zuBAjrqQPjj-0DHGjCaqT",
+      "type": "topic",
+      "data": {
+        "label": "Artifact Management"
+      }
+    },
+    {
+      "id": "C_sFyIsIIpriZlovvcbSE",
+      "type": "subtopic",
+      "data": {
+        "label": "Artifactory"
+      }
+    },
+    {
+      "id": "ootuLJfRXarVvm3J1Ir11",
+      "type": "subtopic",
+      "data": {
+        "label": "Nexus"
+      }
+    },
+    {
+      "id": "vsmE6EpCc2DFGk1YTbkHS",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Smith"
+      }
+    },
+    {
+      "id": "-INN1qTMLimrZgaSPCcHj",
+      "type": "topic",
+      "data": {
+        "label": "GitOps"
+      }
+    },
+    {
+      "id": "i-DLwNXdCUUug6lfjkPSy",
+      "type": "subtopic",
+      "data": {
+        "label": "ArgoCD"
+      }
+    },
+    {
+      "id": "6gVV_JUgKgwJb4C8tHZn7",
+      "type": "subtopic",
+      "data": {
+        "label": "FluxCD"
+      }
+    },
+    {
+      "id": "EeWsihH9ehbFKebYoB5i9",
+      "type": "topic",
+      "data": {
+        "label": "Service Mesh"
+      }
+    },
+    {
+      "id": "XsSnqW6k2IzvmrMmJeU6a",
+      "type": "subtopic",
+      "data": {
+        "label": "Istio"
+      }
+    },
+    {
+      "id": "OXOTm3nz6o44p50qd0brN",
+      "type": "subtopic",
+      "data": {
+        "label": "Consul"
+      }
+    },
+    {
+      "id": "hhoSe4q1u850PgK62Ubau",
+      "type": "subtopic",
+      "data": {
+        "label": "Linkerd"
+      }
+    },
+    {
+      "id": "epLLYArR16HlhAS4c33b4",
+      "type": "subtopic",
+      "data": {
+        "label": "Envoy"
+      }
+    },
+    {
+      "id": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Design Patterns"
+      }
+    },
+    {
+      "id": "JCe3fcOf-sokTJURyX1oI",
+      "type": "subtopic",
+      "data": {
+        "label": "Availability"
+      }
+    },
+    {
+      "id": "5FN7iva4DW_lv-r1tijd8",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Management"
+      }
+    },
+    {
+      "id": "1_NRXjckZ0F8EtEmgixqz",
+      "type": "subtopic",
+      "data": {
+        "label": "Design and Implementation"
+      }
+    },
+    {
+      "id": "8kby89epyullS9W7uKDrs",
+      "type": "subtopic",
+      "data": {
+        "label": "Management and Monitoring"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following relevant roadmaps"
+      }
+    },
+    {
+      "id": "wKYrZhmdNsv1Dw74-oAjR",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "IjRWRJtJqhSsf67kh5YE6",
+      "type": "button",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "0iBhYESSf5f6WHvs_QqC5",
+      "type": "button",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "Linux"
+      }
+    },
+    {
+      "id": "MfErpYwkJ0wiWJZEUVfrb",
+      "type": "button",
+      "data": {
+        "label": "Visit the Beginner Version"
+      }
+    },
+    {
+      "id": "w2eCgBC-ydMHSxh7LMti8",
+      "type": "subtopic",
+      "data": {
+        "label": "Loki"
+      }
+    },
+    {
+      "id": "hIBeTUiAI3zwUY6NgAO-A",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "z7rDVZZVr1C2ZoOHGxDQ_",
+      "type": "label",
+      "data": {
+        "label": "Web Server"
+      }
+    },
+    {
+      "id": "5zUf-LBQ0ByeP2hnAf9x1",
+      "type": "label",
+      "data": {
+        "label": "Editors"
+      }
+    },
+    {
+      "id": "JXsctlXUUS1ie8nNEgIk9",
+      "type": "subtopic",
+      "data": {
+        "label": "GCP Functions"
+      }
+    },
+    {
+      "id": "wNguM6-YEznduz3MgBCYo",
+      "type": "topic",
+      "data": {
+        "label": "Observability"
+      }
+    },
+    {
+      "id": "8rd7T5ahK2I_zh5co-IF-",
+      "type": "subtopic",
+      "data": {
+        "label": "Jaeger"
+      }
+    },
+    {
+      "id": "pk76Us6z8LoX3f0mhnCyR",
+      "type": "subtopic",
+      "data": {
+        "label": "New Relic"
+      }
+    },
+    {
+      "id": "BHny2Emf96suhAlltiEro",
+      "type": "subtopic",
+      "data": {
+        "label": "Datadog"
+      }
+    },
+    {
+      "id": "eOyu4wmKOrcMlhD8pUGGh",
+      "type": "subtopic",
+      "data": {
+        "label": "Prometheus"
+      }
+    },
+    {
+      "id": "K81bmtgnB1gfhYdi3TB5a",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenTelemetry"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "lUUJAEBrGJvL8dRs2n1GD",
+      "type": "subtopic",
+      "data": {
+        "label": "ESO"
+      }
+    },
+    {
+      "id": "4aJVaimsuvGIPXMZ_WjaA",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynatrace"
+      }
+    },
+    {
+      "id": "Kumwd6XOlEMeDohDH0q9P",
+      "type": "subtopic",
+      "data": {
+        "label": "Salt"
+      }
+    },
+    {
+      "id": "3GryoQuI67JTHg9r3xUHO",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenShift"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-fqBgeJj5fan4TT7K2E6c7x2-43OZ35TemharSqfrst0Pvw1",
+      "source": "fqBgeJj5fan4TT7K2E6c7",
+      "target": "v5FGKQc-_7NYEsWjmTEuq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-43OZ35TemharSqfrst0Pvz2-npnMwSDEK2aLGgnuZZ4dOy1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "npnMwSDEK2aLGgnuZZ4dO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-43OZ35TemharSqfrst0Pvz2-TwVfCYMS9jSaJ6UyYmC-Ky1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "TwVfCYMS9jSaJ6UyYmC-K",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-43OZ35TemharSqfrst0Pvz2-QCdemtWa2mE78poNXeqzry1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "QCdemtWa2mE78poNXeqzr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-v5FGKQc-_7NYEsWjmTEuqy2-qe84v529VbCyydl0BKFk2w1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "qe84v529VbCyydl0BKFk2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qe84v529VbCyydl0BKFk2y2--JGe6oHUuaAdakoOjTV5uz1",
+      "source": "qe84v529VbCyydl0BKFk2",
+      "target": "UOQimp7QkM3sxmFvk5d3i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMky2-uyDm1SpOQdpHjq9zBAdckz1",
+      "source": "LvhFmlxz5uIy7k_nzx2Bv",
+      "target": "uyDm1SpOQdpHjq9zBAdck",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMkx2-NiVvRbCOCDpVvif48poCow1",
+      "source": "qqRLeTpuoW64H9LvY0U_w",
+      "target": "NiVvRbCOCDpVvif48poCo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-qe84v529VbCyydl0BKFk2z2-wjJPzrFJBNYOD3SJLzW2My1",
+      "source": "qe84v529VbCyydl0BKFk2",
+      "target": "wjJPzrFJBNYOD3SJLzW2M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2My2-LvhFmlxz5uIy7k_nzx2Bvz1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "LvhFmlxz5uIy7k_nzx2Bv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mx2-Jt8BmtLUH6fHT2pGKoJs3w2",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "Jt8BmtLUH6fHT2pGKoJs3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mw2-z6IBekR8Xl-6f8WEb05Nwx2",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "z6IBekR8Xl-6f8WEb05Nw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mz2-x-JWvG1iw86ULL9KrQmRuy1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "x-JWvG1iw86ULL9KrQmRu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mz2-gIEQDgKOsoEnSv8mpEzGHy1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "gIEQDgKOsoEnSv8mpEzGH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mz2-OaqKLZe-XnngcDhDzCtRty1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "OaqKLZe-XnngcDhDzCtRt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wjJPzrFJBNYOD3SJLzW2Mz2-cUifrP7v55psTb20IZndfy1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "cUifrP7v55psTb20IZndf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h10BH3OybHcIN2iDTSGkny2-ot9I_IHdnq2yAMffrSrbNz2",
+      "source": "h10BH3OybHcIN2iDTSGkn",
+      "target": "ot9I_IHdnq2yAMffrSrbN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h10BH3OybHcIN2iDTSGkny2-oQIB0KE0BibjIYmxrpPZSz1",
+      "source": "h10BH3OybHcIN2iDTSGkn",
+      "target": "oQIB0KE0BibjIYmxrpPZS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h10BH3OybHcIN2iDTSGkny2-Z7SsBWgluZWr9iWb2e9XOz1",
+      "source": "h10BH3OybHcIN2iDTSGkn",
+      "target": "Z7SsBWgluZWr9iWb2e9XO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-h10BH3OybHcIN2iDTSGknz2-CQhUflAcv1lhBnmDY0gazy1",
+      "source": "h10BH3OybHcIN2iDTSGkn",
+      "target": "CQhUflAcv1lhBnmDY0gaz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-CQhUflAcv1lhBnmDY0gazw2-qYRJYIZsmf-inMqKECRkIx1",
+      "source": "CQhUflAcv1lhBnmDY0gaz",
+      "target": "qYRJYIZsmf-inMqKECRkI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CQhUflAcv1lhBnmDY0gazz2-jCWrnQNgjHKyhzd9dwOHzy1",
+      "source": "CQhUflAcv1lhBnmDY0gaz",
+      "target": "jCWrnQNgjHKyhzd9dwOHz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jCWrnQNgjHKyhzd9dwOHzx2-PsbYeHGMd9E1UNqcaFQOzw1",
+      "source": "jCWrnQNgjHKyhzd9dwOHz",
+      "target": "PsbYeHGMd9E1UNqcaFQOz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-jCWrnQNgjHKyhzd9dwOHzy2-w5d24Sf8GDkLDLGUPxzS9w1",
+      "source": "jCWrnQNgjHKyhzd9dwOHz",
+      "target": "w5d24Sf8GDkLDLGUPxzS9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-w5d24Sf8GDkLDLGUPxzS9y2-7crPw2SKw-TlsSe9kpZFQz1",
+      "source": "w5d24Sf8GDkLDLGUPxzS9",
+      "target": "7crPw2SKw-TlsSe9kpZFQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-w5d24Sf8GDkLDLGUPxzS9x2-2Wd9SlWGg6QtxgiUVLyZLw1",
+      "source": "w5d24Sf8GDkLDLGUPxzS9",
+      "target": "2Wd9SlWGg6QtxgiUVLyZL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2Wd9SlWGg6QtxgiUVLyZLz2-9p_ufPj6QH9gHbWBQUmGwy1",
+      "source": "2Wd9SlWGg6QtxgiUVLyZL",
+      "target": "9p_ufPj6QH9gHbWBQUmGw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-JizyX8jse920gpWcmoSEDx2-1oYvpFG8LKT1JD6a_9J0mw1",
+      "source": "JizyX8jse920gpWcmoSED",
+      "target": "1oYvpFG8LKT1JD6a_9J0m",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-1oYvpFG8LKT1JD6a_9J0mx2-XA__697KgofsH28coQ-maw1",
+      "source": "1oYvpFG8LKT1JD6a_9J0m",
+      "target": "XA__697KgofsH28coQ-ma",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-1oYvpFG8LKT1JD6a_9J0my2-V9sOxlNOyRp0Mghl7zudvz1",
+      "source": "1oYvpFG8LKT1JD6a_9J0m",
+      "target": "V9sOxlNOyRp0Mghl7zudv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-aQJaouIaxIJChM-40M3HQy2-dUapFp3f0Rum-rf_Vk_b-z1",
+      "source": "aQJaouIaxIJChM-40M3HQ",
+      "target": "dUapFp3f0Rum-rf_Vk_b-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aQJaouIaxIJChM-40M3HQy2-1-JneOQeGhox-CKrdiquqz1",
+      "source": "aQJaouIaxIJChM-40M3HQ",
+      "target": "1-JneOQeGhox-CKrdiquq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aQJaouIaxIJChM-40M3HQy2-TsXFx1wWikVBVoFUUDAMxz1",
+      "source": "aQJaouIaxIJChM-40M3HQ",
+      "target": "TsXFx1wWikVBVoFUUDAMx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aQJaouIaxIJChM-40M3HQy2-JnWVCS1HbAyfCJzGt-WOHz1",
+      "source": "aQJaouIaxIJChM-40M3HQ",
+      "target": "JnWVCS1HbAyfCJzGt-WOH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hcrPpjFxPi_iLiMdLKJrOz2-ZWq23Q9ZNxLNti68oltxAy1",
+      "source": "hcrPpjFxPi_iLiMdLKJrO",
+      "target": "ZWq23Q9ZNxLNti68oltxA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hcrPpjFxPi_iLiMdLKJrOz2-tZzvs80KzqT8aDvEyjacky1",
+      "source": "hcrPpjFxPi_iLiMdLKJrO",
+      "target": "tZzvs80KzqT8aDvEyjack",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hcrPpjFxPi_iLiMdLKJrOz2-yQ4d2uiROZYr950cjYnQEy1",
+      "source": "hcrPpjFxPi_iLiMdLKJrO",
+      "target": "yQ4d2uiROZYr950cjYnQE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hcrPpjFxPi_iLiMdLKJrOy2-qqRLeTpuoW64H9LvY0U_wz2",
+      "source": "hcrPpjFxPi_iLiMdLKJrO",
+      "target": "qqRLeTpuoW64H9LvY0U_w",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qqRLeTpuoW64H9LvY0U_wy2-gaoZjOYmU0J5aM6vtLNvNx2",
+      "source": "qqRLeTpuoW64H9LvY0U_w",
+      "target": "gaoZjOYmU0J5aM6vtLNvN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-gaoZjOYmU0J5aM6vtLNvNw2-s_kss4FJ2KyZRdcKNHK2vx1",
+      "source": "gaoZjOYmU0J5aM6vtLNvN",
+      "target": "s_kss4FJ2KyZRdcKNHK2v",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zuBAjrqQPjj-0DHGjCaqTw2-vsmE6EpCc2DFGk1YTbkHSx2",
+      "source": "zuBAjrqQPjj-0DHGjCaqT",
+      "target": "vsmE6EpCc2DFGk1YTbkHS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--INN1qTMLimrZgaSPCcHjw2-6gVV_JUgKgwJb4C8tHZn7x1",
+      "source": "-INN1qTMLimrZgaSPCcHj",
+      "target": "6gVV_JUgKgwJb4C8tHZn7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zuBAjrqQPjj-0DHGjCaqTz2--INN1qTMLimrZgaSPCcHjy1",
+      "source": "zuBAjrqQPjj-0DHGjCaqT",
+      "target": "-INN1qTMLimrZgaSPCcHj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--INN1qTMLimrZgaSPCcHjx2-EeWsihH9ehbFKebYoB5i9w1",
+      "source": "-INN1qTMLimrZgaSPCcHj",
+      "target": "EeWsihH9ehbFKebYoB5i9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-EeWsihH9ehbFKebYoB5i9y2-XsSnqW6k2IzvmrMmJeU6az2",
+      "source": "EeWsihH9ehbFKebYoB5i9",
+      "target": "XsSnqW6k2IzvmrMmJeU6a",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EeWsihH9ehbFKebYoB5i9y2-hhoSe4q1u850PgK62Ubauz1",
+      "source": "EeWsihH9ehbFKebYoB5i9",
+      "target": "hhoSe4q1u850PgK62Ubau",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EeWsihH9ehbFKebYoB5i9y2-epLLYArR16HlhAS4c33b4z1",
+      "source": "EeWsihH9ehbFKebYoB5i9",
+      "target": "epLLYArR16HlhAS4c33b4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EeWsihH9ehbFKebYoB5i9x2-Qc0MGR5bMG9eeM5Zb9PMkz2",
+      "source": "EeWsihH9ehbFKebYoB5i9",
+      "target": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-EeWsihH9ehbFKebYoB5i9y2-OXOTm3nz6o44p50qd0brNz2",
+      "source": "EeWsihH9ehbFKebYoB5i9",
+      "target": "OXOTm3nz6o44p50qd0brN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMkx2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMky2-JCe3fcOf-sokTJURyX1oIz1",
+      "source": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "target": "JCe3fcOf-sokTJURyX1oI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMky2-5FN7iva4DW_lv-r1tijd8z1",
+      "source": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "target": "5FN7iva4DW_lv-r1tijd8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMky2-1_NRXjckZ0F8EtEmgixqzz1",
+      "source": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "target": "1_NRXjckZ0F8EtEmgixqz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qc0MGR5bMG9eeM5Zb9PMky2-8kby89epyullS9W7uKDrsz1",
+      "source": "Qc0MGR5bMG9eeM5Zb9PMk",
+      "target": "8kby89epyullS9W7uKDrs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yq8kVoRf20aL_o4VZU5--z2-wNguM6-YEznduz3MgBCYoy1",
+      "source": "Yq8kVoRf20aL_o4VZU5--",
+      "target": "wNguM6-YEznduz3MgBCYo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wNguM6-YEznduz3MgBCYoz2-zuBAjrqQPjj-0DHGjCaqTy1",
+      "source": "wNguM6-YEznduz3MgBCYo",
+      "target": "zuBAjrqQPjj-0DHGjCaqT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wNguM6-YEznduz3MgBCYox2-8rd7T5ahK2I_zh5co-IF-w1",
+      "source": "wNguM6-YEznduz3MgBCYo",
+      "target": "8rd7T5ahK2I_zh5co-IF-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__V9sOxlNOyRp0Mghl7zudvy2-h9vVPOmdUSeEGVQQaSTH5z1",
+      "source": "V9sOxlNOyRp0Mghl7zudv",
+      "target": "h9vVPOmdUSeEGVQQaSTH5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__V9sOxlNOyRp0Mghl7zudvy2-yP1y8U3eblpzbaLiCGliUz1",
+      "source": "V9sOxlNOyRp0Mghl7zudv",
+      "target": "yP1y8U3eblpzbaLiCGliU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

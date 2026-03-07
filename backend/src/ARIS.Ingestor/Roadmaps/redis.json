@@ -1,0 +1,2101 @@
+{
+  "title": {
+    "card": "Redis",
+    "page": "Redis Roadmap"
+  },
+  "description": "Step by step guide to learn Redis in @currentYear@",
+  "nodes": [
+    {
+      "id": "H3njQtlasgGo0-IFiFZqL",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "jdF_BPDRWuFJpgXw7Rds0",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "7ETrwXaK2xR1AoS7tTyzW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "NLTXQpEiKE6rNo3tmN-EU",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7b0qKpLRQkkSzCA_x3bsP",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "dRhBLcgWnvsKEUIEeckVM",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "PXWvq1ezVBU5UJVN887Es",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Mpt_WSLngBqt131nAm3Ns",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "VJosvi5KwlePkGxBzmxSH",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4fIp9_ii_gYgEMFFk__BG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "S16vO5EHvxaylsnFzs4Kx",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ifAV_64bREZrJkxFnf7Cy",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "CxiHaw63xmItCGdhpcsiz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Kjkc8rNezN_LBD5WMrBbE",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Czv2TV_JqOuK7vumqw66I",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JBXkEOLntmMR49axOFbA0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "gY6DBpC01GyAr-e_7FBGK",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "xUioudlYG1bD0_eR0fNE3",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "u2TdoI7ILaxYgUUni9W_w",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "-NHxqJMM7SscP9pJ3bgD8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Ljjl_kSEevtaBALxRh2By",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "37hyOMnKf4H2qg27SK2rZ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "vfdrcpstewZ-lBAgCYhvs",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "80UujPXPhvKIJMSM67pwl",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "zxoi09oW1HbXNwvc14w9U",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Qy4AHQE22xHEsBddovVt4",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "L191VgfCbX3ibSIKySpsN",
+      "type": "title",
+      "data": {
+        "label": "Redis"
+      }
+    },
+    {
+      "id": "EskmevvtPn-NlUQf39-6X",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-3pADOHMDQ0H6ZKNjURyn",
+      "type": "topic",
+      "data": {
+        "label": "What is Redis?"
+      }
+    },
+    {
+      "id": "M-EXrTDeAEMz_IkEi-ab4",
+      "type": "subtopic",
+      "data": {
+        "label": "In-memory Data Structure Store"
+      }
+    },
+    {
+      "id": "l2aXyO3STnhbFjvUXPpm2",
+      "type": "subtopic",
+      "data": {
+        "label": "Key-value Database"
+      }
+    },
+    {
+      "id": "eHuBz_zSZK3rubn7nkd7g",
+      "type": "subtopic",
+      "data": {
+        "label": "Cache"
+      }
+    },
+    {
+      "id": "mgGJTBU8ofvOzl9gYWhnG",
+      "type": "subtopic",
+      "data": {
+        "label": "Message Broker"
+      }
+    },
+    {
+      "id": "Y1xDM_ZweG4IhlwvNK0bA",
+      "type": "label",
+      "data": {
+        "label": "Overview of Redis / What is it?"
+      }
+    },
+    {
+      "id": "pwGAa63okLFOBb1g7-fL5",
+      "type": "label",
+      "data": {
+        "label": "Core Use Cases"
+      }
+    },
+    {
+      "id": "-TjnSOY8txYrhhxRV1OIl",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "bVJASI7bfSYqYnNhX83ng",
+      "type": "subtopic",
+      "data": {
+        "label": "Real-time Analytics"
+      }
+    },
+    {
+      "id": "URxGmhZHr0Y8nyrYj0gJl",
+      "type": "subtopic",
+      "data": {
+        "label": "Session Management"
+      }
+    },
+    {
+      "id": "ZCyId3aIoLv3duxoJdk2P",
+      "type": "subtopic",
+      "data": {
+        "label": "Pub/Sub Messaging"
+      }
+    },
+    {
+      "id": "Fv1iGX22sApIEifM2IpJz",
+      "type": "subtopic",
+      "data": {
+        "label": "Leaderboards and Counters"
+      }
+    },
+    {
+      "id": "SQ0078nMNlCtgNgHIJsU1",
+      "type": "label",
+      "data": {
+        "label": "Key Features"
+      }
+    },
+    {
+      "id": "8uRpPJ0iD4XnQPKruQc8P",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Persistence Options"
+      }
+    },
+    {
+      "id": "uVewcyaFi1Pt2Gs0KrkfA",
+      "type": "subtopic",
+      "data": {
+        "label": "Rich Data Structures"
+      }
+    },
+    {
+      "id": "5-3pd4rLDqRzMzSRVLdXh",
+      "type": "subtopic",
+      "data": {
+        "label": "High Performance and Scalability"
+      }
+    },
+    {
+      "id": "leY33Yw_exuUP5_UX9gcP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "EvWiEx_AoxAht6sKxzW2l",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis vs SQL/NoSQL DBs"
+      }
+    },
+    {
+      "id": "1Af5H0BgdAsRdBCNdHz5v",
+      "type": "subtopic",
+      "data": {
+        "label": "When to choose Redis?"
+      }
+    },
+    {
+      "id": "SGtXqkHKfGO0nQdrVzjdg",
+      "type": "label",
+      "data": {
+        "label": "Installing Redis Locally"
+      }
+    },
+    {
+      "id": "Bf_kLfmy7_uflqC9N0-jt",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Package Managers"
+      }
+    },
+    {
+      "id": "yBZ79s6mzGdj5AnX2H_Hy",
+      "type": "subtopic",
+      "data": {
+        "label": "Pre-compiled Binaries"
+      }
+    },
+    {
+      "id": "TDxv0q7jlZ26uZYYlneem",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Docker"
+      }
+    },
+    {
+      "id": "gw04IG5uImCHxcFnOAAwy",
+      "type": "paragraph",
+      "data": {
+        "label": "Getting Started with Redis"
+      }
+    },
+    {
+      "id": "QXwoHEeisL4d6dpJOwYkU",
+      "type": "paragraph",
+      "data": {
+        "label": "Redis vs Other Databases"
+      }
+    },
+    {
+      "id": "nyVArH57QoeDASnYvEk3L",
+      "type": "label",
+      "data": {
+        "label": "Running Redis"
+      }
+    },
+    {
+      "id": "43LvShQhmoWQ8Nye7fLkz",
+      "type": "subtopic",
+      "data": {
+        "label": "Starting the Server"
+      }
+    },
+    {
+      "id": "BOGXTjmCLo6WI6mYDsqRu",
+      "type": "subtopic",
+      "data": {
+        "label": "Connecting using Redis CLI"
+      }
+    },
+    {
+      "id": "NhcZM4nUQoSBBf_1qXi6l",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Commands / SET, GET"
+      }
+    },
+    {
+      "id": "GjKw6hbNV57I2sxuLfkQw",
+      "type": "paragraph",
+      "data": {
+        "label": "First Steps"
+      }
+    },
+    {
+      "id": "WYVzXLmj_TmqnX3ANzKj7",
+      "type": "label",
+      "data": {
+        "label": "Basic Data Operations"
+      }
+    },
+    {
+      "id": "DOdNkTY1yIMipWA2CD9xH",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting and Getting Keys"
+      }
+    },
+    {
+      "id": "lV_MnUNTB2h925idX0YWk",
+      "type": "subtopic",
+      "data": {
+        "label": "DEL"
+      }
+    },
+    {
+      "id": "U84XgBFPyIbY0W5afH4cx",
+      "type": "subtopic",
+      "data": {
+        "label": "Overview of Data Types"
+      }
+    },
+    {
+      "id": "TpW3rvaZYV9D2cHycy2my",
+      "type": "label",
+      "data": {
+        "label": "Strings, Lists, Sets, Hashes, Sorted Sets"
+      }
+    },
+    {
+      "id": "geUnNlWeXEBUs1W3fysRO",
+      "type": "paragraph",
+      "data": {
+        "label": "Core Data Structures"
+      }
+    },
+    {
+      "id": "ltF4vCT9ZA2XuUuHnuGnN",
+      "type": "subtopic",
+      "data": {
+        "label": "SET"
+      }
+    },
+    {
+      "id": "mQc4H2ZMMSVjh33LJY8mK",
+      "type": "subtopic",
+      "data": {
+        "label": "GET"
+      }
+    },
+    {
+      "id": "5K9qyC4mrhXYWOC8WSq8C",
+      "type": "subtopic",
+      "data": {
+        "label": "INCR"
+      }
+    },
+    {
+      "id": "t4BXPofF8OCqH5KHwdYVh",
+      "type": "subtopic",
+      "data": {
+        "label": "DECR"
+      }
+    },
+    {
+      "id": "cPWd53BO6tm-uy4gqLdtZ",
+      "type": "subtopic",
+      "data": {
+        "label": "APPEND"
+      }
+    },
+    {
+      "id": "eJQW986HM4Wf1o1i2FnXs",
+      "type": "subtopic",
+      "data": {
+        "label": "STRLEN"
+      }
+    },
+    {
+      "id": "JpPwzuJ9dK6b4uWH5rWe6",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "0v8uLWRCbAqEmKKdYaRQW",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "2_E2VwbjTgk4xxTFWfHuV",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "i3Hnt66WKB47UILFmaOl_",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JboVpV-Oijm52vBYob9nj",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "nS0DHhfy4wxHItgOFhulA",
+      "type": "subtopic",
+      "data": {
+        "label": "expire"
+      }
+    },
+    {
+      "id": "Vll7VMmGWSI5XGZ9JpHyl",
+      "type": "subtopic",
+      "data": {
+        "label": "TTL"
+      }
+    },
+    {
+      "id": "Kq7G89KaZZMFkrH-9WZoS",
+      "type": "subtopic",
+      "data": {
+        "label": "LPUSH"
+      }
+    },
+    {
+      "id": "jC8G1o7yFj7D_PGmOIgcD",
+      "type": "subtopic",
+      "data": {
+        "label": "RPUSH"
+      }
+    },
+    {
+      "id": "voa61RTWMJD3Sk8DNJoVQ",
+      "type": "subtopic",
+      "data": {
+        "label": "LPOP"
+      }
+    },
+    {
+      "id": "brUGqWZ287EWtvl9uUbNt",
+      "type": "subtopic",
+      "data": {
+        "label": "RPOP"
+      }
+    },
+    {
+      "id": "8JTtBy6oD2wFYDizVkcVa",
+      "type": "subtopic",
+      "data": {
+        "label": "LRANGE"
+      }
+    },
+    {
+      "id": "hBFEUXtuzUTzWZKp2qWaZ",
+      "type": "subtopic",
+      "data": {
+        "label": "LINDEX"
+      }
+    },
+    {
+      "id": "4oCcP9FxDJSDMHCEVBCNa",
+      "type": "subtopic",
+      "data": {
+        "label": "LLEN"
+      }
+    },
+    {
+      "id": "9KvHcS5F4Jj5ZXgIAdOQY",
+      "type": "subtopic",
+      "data": {
+        "label": "LMOVE"
+      }
+    },
+    {
+      "id": "eBeEUYY-IL_CMkcm31lUL",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "Iour_R6xJ5PieRjX9t993",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "XTwNCCtzXvZMdaex4gZEh",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "Qgkpr9vf9d6-vUg1o8XFj",
+      "type": "topic",
+      "data": {
+        "label": "Sets"
+      }
+    },
+    {
+      "id": "xUKoQps69FFQrJeuhD1pz",
+      "type": "subtopic",
+      "data": {
+        "label": "SADD"
+      }
+    },
+    {
+      "id": "mQ0ILns53n1By0Tq6xSZI",
+      "type": "subtopic",
+      "data": {
+        "label": "SMEMBERS"
+      }
+    },
+    {
+      "id": "WQWVL5GT_scHdgfCtI7WT",
+      "type": "subtopic",
+      "data": {
+        "label": "SREM"
+      }
+    },
+    {
+      "id": "Ji5ghlcGJtlmErHFqVf3d",
+      "type": "subtopic",
+      "data": {
+        "label": "SISMEMBER"
+      }
+    },
+    {
+      "id": "5aLfNBewK4Dx017qVNO3T",
+      "type": "subtopic",
+      "data": {
+        "label": "SINTER"
+      }
+    },
+    {
+      "id": "2gZL4a9aWGKWLa89iyHTc",
+      "type": "subtopic",
+      "data": {
+        "label": "SCARD"
+      }
+    },
+    {
+      "id": "6QoYa-N2BKNBaRtvNeVNm",
+      "type": "subtopic",
+      "data": {
+        "label": "SUNION"
+      }
+    },
+    {
+      "id": "JX5ajmcUmkshTO-mLF8lH",
+      "type": "subtopic",
+      "data": {
+        "label": "SDIFF"
+      }
+    },
+    {
+      "id": "WMDsN_k9KKTMJoVxvqRe_",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "2SG4Hr9Tuv6cxmGkrKjYZ",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "3hayYoSZepw7pppBubotg",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "b48EUyFGUeSjtT5fOa_m6",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "MnC2RVZsbUXRWBHhoS3IG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Wl23Jh-ASJOQ850yjaTIU",
+      "type": "topic",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "LKpF1cUo7n_B8_7VYil8G",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "4-C4XqACUp4nvcMIj6djF",
+      "type": "topic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "wY46Qj5Inw_ClBNI9PB_2",
+      "type": "topic",
+      "data": {
+        "label": "Hashes"
+      }
+    },
+    {
+      "id": "BOJzn9SWad9oRRdY_ub01",
+      "type": "subtopic",
+      "data": {
+        "label": "HSET"
+      }
+    },
+    {
+      "id": "MsKg9m5jFwHM2Bzjf-vdu",
+      "type": "subtopic",
+      "data": {
+        "label": "HGET"
+      }
+    },
+    {
+      "id": "TpR33sJ-tAjeG3jpGTvYR",
+      "type": "subtopic",
+      "data": {
+        "label": "HGETALL"
+      }
+    },
+    {
+      "id": "E7xFZkqqbzokD5KGTn9zJ",
+      "type": "subtopic",
+      "data": {
+        "label": "HDEL"
+      }
+    },
+    {
+      "id": "adhLMuSmfYMRyWTwIgnyE",
+      "type": "subtopic",
+      "data": {
+        "label": "HEXISTS"
+      }
+    },
+    {
+      "id": "3JTlcdE0621Do-fF7rmvY",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "jtVnUD-na-WffMaS8qYfu",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "QTbkWZ7BpqYmBhUivccPu",
+      "type": "topic",
+      "data": {
+        "label": "Sorted Sets"
+      }
+    },
+    {
+      "id": "0swsBD0sOY-o5lzibT999",
+      "type": "subtopic",
+      "data": {
+        "label": "ZADD"
+      }
+    },
+    {
+      "id": "3pFChX6YIItrBz9lxu4XM",
+      "type": "subtopic",
+      "data": {
+        "label": "ZRANGE"
+      }
+    },
+    {
+      "id": "OlbixGa5RmdqEt7snY04j",
+      "type": "subtopic",
+      "data": {
+        "label": "ZRANGEBYSCORE"
+      }
+    },
+    {
+      "id": "m0FZDPwNE71zcwM_gUwz0",
+      "type": "subtopic",
+      "data": {
+        "label": "ZREM"
+      }
+    },
+    {
+      "id": "W4v7FIQr2k-Vbm-HdfKog",
+      "type": "subtopic",
+      "data": {
+        "label": "ZINCRBY"
+      }
+    },
+    {
+      "id": "AF_kWM4V8n5Ux06IgEVTl",
+      "type": "subtopic",
+      "data": {
+        "label": "ZRANK"
+      }
+    },
+    {
+      "id": "O-fZM_U-tW0pYtNzN_8Ax",
+      "type": "subtopic",
+      "data": {
+        "label": "ZCOUNT"
+      }
+    },
+    {
+      "id": "P6TDUCroLlEI7qePBFHIH",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "B2KNO28rJqoasbleVgXn7",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "lxevY15ZyP43s_JrEqMX7",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "o6e_CwxfPoU6qkfWkwKwj",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "8gyVwKg3Ctt2w15X7xZgC",
+      "type": "paragraph",
+      "data": {
+        "label": "Working with Redis"
+      }
+    },
+    {
+      "id": "5SgC-_4Be_XpFmbJH3wH2",
+      "type": "label",
+      "data": {
+        "label": "Key Management"
+      }
+    },
+    {
+      "id": "jCaVx5wvsvuyqtwh6m8si",
+      "type": "subtopic",
+      "data": {
+        "label": "Naming Conventions"
+      }
+    },
+    {
+      "id": "UlQHqw1dbxZnAKbsWsOgU",
+      "type": "subtopic",
+      "data": {
+        "label": "Retrieval by Pattern"
+      }
+    },
+    {
+      "id": "OSIYDYPGz8Vgo9SU9GGH9",
+      "type": "subtopic",
+      "data": {
+        "label": "Expiration"
+      }
+    },
+    {
+      "id": "jrgaoDnt_RxTu79hk4hCD",
+      "type": "topic",
+      "data": {
+        "label": "Atomicity in Redis"
+      }
+    },
+    {
+      "id": "LHlwjN3WHYUBUafzzwsWQ",
+      "type": "topic",
+      "data": {
+        "label": "Pipelining"
+      }
+    },
+    {
+      "id": "7JzeyTrkZ_1_yxMVrqvZU",
+      "type": "topic",
+      "data": {
+        "label": "Batch Operations"
+      }
+    },
+    {
+      "id": "osbKjF7VIAxtWokGjuYXq",
+      "type": "label",
+      "data": {
+        "label": "MSET / MGET"
+      }
+    },
+    {
+      "id": "45ihdIfRW-jI38h-s4Vdc",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Data Structures"
+      }
+    },
+    {
+      "id": "0Q3AkE8leWAyYsww3-BHX",
+      "type": "topic",
+      "data": {
+        "label": "Bitmaps"
+      }
+    },
+    {
+      "id": "B-YUFhPQNdr1KZNupmR5N",
+      "type": "subtopic",
+      "data": {
+        "label": "SETBIT"
+      }
+    },
+    {
+      "id": "0HFLJfcrcSnAVTecG3P8W",
+      "type": "subtopic",
+      "data": {
+        "label": "GETBIT"
+      }
+    },
+    {
+      "id": "jpcyXSSib7q4WBPmpgnXA",
+      "type": "subtopic",
+      "data": {
+        "label": "BITCOUNT"
+      }
+    },
+    {
+      "id": "tkrxArg_oYH0aQfM8NkD2",
+      "type": "subtopic",
+      "data": {
+        "label": "BITOP"
+      }
+    },
+    {
+      "id": "Df1Eu7CuA-ARYii9JVvnm",
+      "type": "subtopic",
+      "data": {
+        "label": "BITPOS"
+      }
+    },
+    {
+      "id": "i2qZKBU9LJ8c6z8wKt_Eb",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "s7PEr-5TAm5EGJm0RSjPJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "cszjT3YK8oyhGpqLTQzwX",
+      "type": "topic",
+      "data": {
+        "label": "HyperLogLog"
+      }
+    },
+    {
+      "id": "8a4DmPZrX2xGZ7zdWxS63",
+      "type": "subtopic",
+      "data": {
+        "label": "PFADD"
+      }
+    },
+    {
+      "id": "JWT30KIJQHVw0MXI5sGR6",
+      "type": "subtopic",
+      "data": {
+        "label": "PFCOUNT"
+      }
+    },
+    {
+      "id": "s50jr_XOUcxh65-tGCKf5",
+      "type": "subtopic",
+      "data": {
+        "label": "PFMERGE"
+      }
+    },
+    {
+      "id": "EiVMoU64Omo8DOV7h6nBr",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "XPeCvikPuu6EJ8UcOLGPh",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "zXs_9n2yEb_eVi0WuOQKH",
+      "type": "topic",
+      "data": {
+        "label": "Streams"
+      }
+    },
+    {
+      "id": "7isWhgrUA6M5IGM2U2tm4",
+      "type": "subtopic",
+      "data": {
+        "label": "XADD"
+      }
+    },
+    {
+      "id": "4sKiAtX5aIL4NDsQkilNC",
+      "type": "subtopic",
+      "data": {
+        "label": "XREAD"
+      }
+    },
+    {
+      "id": "CiYFuYE8XudZkR6AW2NQ7",
+      "type": "subtopic",
+      "data": {
+        "label": "XRANGE"
+      }
+    },
+    {
+      "id": "DQJCMEw13lELcw_AwLfrT",
+      "type": "subtopic",
+      "data": {
+        "label": "XLEN"
+      }
+    },
+    {
+      "id": "1eNIiXzA2XjiIDS_df1YR",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "zXlSBfa-Gi9_GhSYEzre3",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "4-z4hDKm86qQatYnmE21R",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "_NiUdVQ85qnvryI38k_vQ",
+      "type": "topic",
+      "data": {
+        "label": "Geospatial Indexes"
+      }
+    },
+    {
+      "id": "U3N1EgHFs1-YUaB_VrJfw",
+      "type": "subtopic",
+      "data": {
+        "label": "GEOADD"
+      }
+    },
+    {
+      "id": "OWWDLuGTbdNwME7v2jxVP",
+      "type": "subtopic",
+      "data": {
+        "label": "GEOSEARCH"
+      }
+    },
+    {
+      "id": "n7tMR48rdamdpGuCKKiJh",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "GNMjrLPkpTphneoQ0GoZF",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "FCbdKnkI1ZHGekT6yiGua",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "9W_jaK1DSEZHRKdPcUM7h",
+      "type": "topic",
+      "data": {
+        "label": "Pub/Sub"
+      }
+    },
+    {
+      "id": "55BCntuWlaQiLPqNtb-2i",
+      "type": "subtopic",
+      "data": {
+        "label": "SUBSCRIBE"
+      }
+    },
+    {
+      "id": "5gkZzm2F4vu6IxUoJLYbK",
+      "type": "subtopic",
+      "data": {
+        "label": "UNSUBSCRIBE"
+      }
+    },
+    {
+      "id": "gIPo-2CNqE1BsOaDzmkCU",
+      "type": "subtopic",
+      "data": {
+        "label": "PUBLISH"
+      }
+    },
+    {
+      "id": "fu9hfU-5qxDc2psK6-AEm",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "V-d6q-3Sf0dl5v8xiCQwl",
+      "type": "subtopic",
+      "data": {
+        "label": "More Commands"
+      }
+    },
+    {
+      "id": "MvyE_JUJej0UB9xe8Anfj",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "YHbWlKrQqptUDbaQVy0_A",
+      "type": "topic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "c-y5Eck8VtSyIf8RAW9p7",
+      "type": "subtopic",
+      "data": {
+        "label": "WATCH"
+      }
+    },
+    {
+      "id": "Ljy-Mc0EBBX4_vXfYZ5-4",
+      "type": "subtopic",
+      "data": {
+        "label": "EXEC"
+      }
+    },
+    {
+      "id": "U6hST1MkS16T2CHV3-Ise",
+      "type": "subtopic",
+      "data": {
+        "label": "MULTI"
+      }
+    },
+    {
+      "id": "bnqUb3pHb4KzH_vA0JO-o",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "msW0Wd2H-6FFNDnjC64t-",
+      "type": "subtopic",
+      "data": {
+        "label": "Optimistic Locking"
+      }
+    },
+    {
+      "id": "Veb30QrPYNjUn13dtGbUr",
+      "type": "topic",
+      "data": {
+        "label": "Lua Scripting"
+      }
+    },
+    {
+      "id": "rjeq3i9oX8IGyQzo--L3c",
+      "type": "subtopic",
+      "data": {
+        "label": "EVAL"
+      }
+    },
+    {
+      "id": "3X0x_PcJGWBVPL-LSVAln",
+      "type": "subtopic",
+      "data": {
+        "label": "EVALSHA"
+      }
+    },
+    {
+      "id": "ntFfk1RRA5g_dC5McYb9g",
+      "type": "label",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "kF_nGo845XDwLkwcQt008",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "bQaek7f3dAaZfSUhwovm1",
+      "type": "topic",
+      "data": {
+        "label": "Persistence Options"
+      }
+    },
+    {
+      "id": "D3pZdAjwPFMRxX1-iyu5-",
+      "type": "subtopic",
+      "data": {
+        "label": "How RDB Works?"
+      }
+    },
+    {
+      "id": "_pb2DPrFUUZabKxWsuFUo",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuring Save Interval"
+      }
+    },
+    {
+      "id": "Z6yJwUkcDX08HoMyf1LwX",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases / Best Practices"
+      }
+    },
+    {
+      "id": "cXcTz_u6RL3novZimRdg_",
+      "type": "label",
+      "data": {
+        "label": "Snapshotting (RDB)"
+      }
+    },
+    {
+      "id": "PTj6oxvpw8vP295WvAI80",
+      "type": "subtopic",
+      "data": {
+        "label": "How AOF Works?"
+      }
+    },
+    {
+      "id": "ibaZ34-laQtUyxAsERi7o",
+      "type": "subtopic",
+      "data": {
+        "label": "AOF rewrite \u0026 compaction"
+      }
+    },
+    {
+      "id": "9ToKTUqbi-NV5Wcwb21PT",
+      "type": "subtopic",
+      "data": {
+        "label": "Truncation / Corruption"
+      }
+    },
+    {
+      "id": "VvOQUO22ZF8VvDSqHENNU",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases"
+      }
+    },
+    {
+      "id": "Y__3QLU4PChySvPtqDtxT",
+      "type": "label",
+      "data": {
+        "label": "Append-Only File (AOF)"
+      }
+    },
+    {
+      "id": "vzp7DUpjklzIA0E9WxJQA",
+      "type": "subtopic",
+      "data": {
+        "label": "Usecases / Best Practices"
+      }
+    },
+    {
+      "id": "80035BzcB-fKCvD_3N8zE",
+      "type": "subtopic",
+      "data": {
+        "label": "No Persistence Option"
+      }
+    },
+    {
+      "id": "3S-qqOlfr60HR4VvDr4He",
+      "type": "subtopic",
+      "data": {
+        "label": "RDB vs AOF Tradeoffs"
+      }
+    },
+    {
+      "id": "S5Y26m1oHCQpB-oLCdtac",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid Persistence"
+      }
+    },
+    {
+      "id": "8zl_DwdRI2MGz6RadV4lE",
+      "type": "label",
+      "data": {
+        "label": "Choosing Right Strategy"
+      }
+    },
+    {
+      "id": "0zHluzD25vXl3AYcvbxhx",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uvwbpHaA6rH6YrHuEdBxh",
+      "type": "paragraph",
+      "data": {
+        "label": "Replication / HA"
+      }
+    },
+    {
+      "id": "rSD8nJ-uNpHJVe5Hn66h7",
+      "type": "topic",
+      "data": {
+        "label": "Replication Basics"
+      }
+    },
+    {
+      "id": "nci3OB1NE1zJHUPfZCOpT",
+      "type": "topic",
+      "data": {
+        "label": "Redis Sentinel"
+      }
+    },
+    {
+      "id": "AQiCcHS6dBAAAPloxiXub",
+      "type": "topic",
+      "data": {
+        "label": "Clustering"
+      }
+    },
+    {
+      "id": "zmVjMf9wNHARBS_mBY4lY",
+      "type": "paragraph",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "Qy42paiTUsO8HIwbWTMui",
+      "type": "topic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "wsuKH7YwGDV6GYQbdhA4o",
+      "type": "topic",
+      "data": {
+        "label": "Network Security"
+      }
+    },
+    {
+      "id": "gdiWwTQg6A-BFHdQBmgmH",
+      "type": "topic",
+      "data": {
+        "label": "SSL/TLS Encryption"
+      }
+    },
+    {
+      "id": "k9HeweEN4enuboEppbJiP",
+      "type": "paragraph",
+      "data": {
+        "label": "Monitoring / Optimization"
+      }
+    },
+    {
+      "id": "q2Jw49QUWCUGIfcEC1bZI",
+      "type": "subtopic",
+      "data": {
+        "label": "INFO"
+      }
+    },
+    {
+      "id": "jBtEiylcedtaE6E20Uk4V",
+      "type": "subtopic",
+      "data": {
+        "label": "MONITOR"
+      }
+    },
+    {
+      "id": "_Pc7nNLnVFca8Wn3DjOfL",
+      "type": "label",
+      "data": {
+        "label": "Built-in Tools"
+      }
+    },
+    {
+      "id": "XBPwHgIsXupMsyoOFkJZ0",
+      "type": "subtopic",
+      "data": {
+        "label": "RedisInsight"
+      }
+    },
+    {
+      "id": "y5FPSAi6T-5X9SUfR58_-",
+      "type": "subtopic",
+      "data": {
+        "label": "RedisCommander"
+      }
+    },
+    {
+      "id": "gEDpVuVAS0oZv7rlku8LH",
+      "type": "label",
+      "data": {
+        "label": "3rd Party Tools"
+      }
+    },
+    {
+      "id": "YFNh64DIbJJPQrm5fquvi",
+      "type": "label",
+      "data": {
+        "label": "Performance Optimization"
+      }
+    },
+    {
+      "id": "xF0wQYmtwXYkrzvWg5gOO",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Management"
+      }
+    },
+    {
+      "id": "Sd1ENOXSFCz1YqccXjr2A",
+      "type": "subtopic",
+      "data": {
+        "label": "Max Memory Policy"
+      }
+    },
+    {
+      "id": "yaCWw2KjX58SaPajUAb0d",
+      "type": "subtopic",
+      "data": {
+        "label": "Slow Log Analysis"
+      }
+    },
+    {
+      "id": "kgHwK4N-sfh6dHjd_D_me",
+      "type": "subtopic",
+      "data": {
+        "label": "redis-benchmark"
+      }
+    },
+    {
+      "id": "2p5RF4lVYfRvYTo1Ofm-a",
+      "type": "subtopic",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "L0t6e1P83aaoa3B9OUT-8",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "PSQ274asgr1EEnim7U-eh",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "hLIT00Iz7rV56ZBIUhWYn",
+      "type": "topic",
+      "data": {
+        "label": "Redis Modules"
+      }
+    },
+    {
+      "id": "jicsfYw56VrbRUt7M8c85",
+      "type": "subtopic",
+      "data": {
+        "label": "RedisJSON"
+      }
+    },
+    {
+      "id": "_GdTXcJO8uJlhPdfrmeXG",
+      "type": "subtopic",
+      "data": {
+        "label": "Search"
+      }
+    },
+    {
+      "id": "RBr8opWSh2TKXC8Fmdg0j",
+      "type": "subtopic",
+      "data": {
+        "label": "RedisTimeSeries"
+      }
+    },
+    {
+      "id": "GwVL5CvbnHsiWb1hVh7lK",
+      "type": "subtopic",
+      "data": {
+        "label": "RedisBloom"
+      }
+    },
+    {
+      "id": "vWOOOTjEx8Ycz1NA0xZad",
+      "type": "paragraph",
+      "data": {
+        "label": "Managing Redis in Production"
+      }
+    },
+    {
+      "id": "giyKPtQ-pziA064P8OQD-",
+      "type": "topic",
+      "data": {
+        "label": "redis.conf"
+      }
+    },
+    {
+      "id": "GPsf1hc9hXNKgutGCribk",
+      "type": "label",
+      "data": {
+        "label": "Important Configurations"
+      }
+    },
+    {
+      "id": "wXRDsNGFckXV_CSiit5sN",
+      "type": "topic",
+      "data": {
+        "label": "Backup and Recovery"
+      }
+    },
+    {
+      "id": "-gCy7Uj64KQJ39IYb_Vph",
+      "type": "label",
+      "data": {
+        "label": "RDB and AOF Files"
+      }
+    },
+    {
+      "id": "Cb-KazR4PuR86VX5oT0zi",
+      "type": "topic",
+      "data": {
+        "label": "Upgrading Redis"
+      }
+    },
+    {
+      "id": "VgqFVVf1rYiSbYLeUO6KL",
+      "type": "label",
+      "data": {
+        "label": "Minimizing Downtimes"
+      }
+    },
+    {
+      "id": "nUIfTkgm3PlSiqgun1BS7",
+      "type": "topic",
+      "data": {
+        "label": "Disaster Recovery"
+      }
+    },
+    {
+      "id": "8lyXDuZJ-KHl4v2_8Ew1h",
+      "type": "topic",
+      "data": {
+        "label": "Redis Enterprise"
+      }
+    },
+    {
+      "id": "RwGWF4dtvfhcORWz7lisg",
+      "type": "label",
+      "data": {
+        "label": "Enterprise Features"
+      }
+    },
+    {
+      "id": "cybF72wlJyJbHLUjitLvn",
+      "type": "subtopic",
+      "data": {
+        "label": "Active-Active geo Distribution"
+      }
+    },
+    {
+      "id": "sWOFnbh2EyaHRzquz1UeF",
+      "type": "subtopic",
+      "data": {
+        "label": "Redis on Flash"
+      }
+    },
+    {
+      "id": "ujs77bV8g8-FOm5hBtZFd",
+      "type": "subtopic",
+      "data": {
+        "label": "Security and Compliance"
+      }
+    },
+    {
+      "id": "JlLwy69eQ1bPHAOOJNqjo",
+      "type": "subtopic",
+      "data": {
+        "label": "When to consider enterprise?"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue Learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "qXKNK_IsGS8-JgLK-Q9oU",
+      "type": "button",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-L191VgfCbX3ibSIKySpsNx2--3pADOHMDQ0H6ZKNjURynw1",
+      "source": "L191VgfCbX3ibSIKySpsN",
+      "target": "-3pADOHMDQ0H6ZKNjURyn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--3pADOHMDQ0H6ZKNjURynx2-gw04IG5uImCHxcFnOAAwyw1",
+      "source": "-3pADOHMDQ0H6ZKNjURyn",
+      "target": "gw04IG5uImCHxcFnOAAwy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--3pADOHMDQ0H6ZKNjURynz2-QXwoHEeisL4d6dpJOwYkUy1",
+      "source": "-3pADOHMDQ0H6ZKNjURyn",
+      "target": "QXwoHEeisL4d6dpJOwYkU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gw04IG5uImCHxcFnOAAwyx2-zxoi09oW1HbXNwvc14w9Uw1",
+      "source": "gw04IG5uImCHxcFnOAAwy",
+      "target": "zxoi09oW1HbXNwvc14w9U",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-80UujPXPhvKIJMSM67pwlx2-GjKw6hbNV57I2sxuLfkQww1",
+      "source": "80UujPXPhvKIJMSM67pwl",
+      "target": "GjKw6hbNV57I2sxuLfkQw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Wl23Jh-ASJOQ850yjaTIUz2-Ljjl_kSEevtaBALxRh2Byy1",
+      "source": "Wl23Jh-ASJOQ850yjaTIU",
+      "target": "Ljjl_kSEevtaBALxRh2By",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4-C4XqACUp4nvcMIj6djFz2-wY46Qj5Inw_ClBNI9PB_2y2",
+      "source": "4-C4XqACUp4nvcMIj6djF",
+      "target": "Qgkpr9vf9d6-vUg1o8XFj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wY46Qj5Inw_ClBNI9PB_2x2-u2TdoI7ILaxYgUUni9W_ww1",
+      "source": "Qgkpr9vf9d6-vUg1o8XFj",
+      "target": "u2TdoI7ILaxYgUUni9W_w",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qgkpr9vf9d6-vUg1o8XFjw2-wY46Qj5Inw_ClBNI9PB_2y1",
+      "source": "Qgkpr9vf9d6-vUg1o8XFj",
+      "target": "wY46Qj5Inw_ClBNI9PB_2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wY46Qj5Inw_ClBNI9PB_2x2-QTbkWZ7BpqYmBhUivccPuw2",
+      "source": "wY46Qj5Inw_ClBNI9PB_2",
+      "target": "QTbkWZ7BpqYmBhUivccPu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-QTbkWZ7BpqYmBhUivccPux2-8gyVwKg3Ctt2w15X7xZgCw1",
+      "source": "QTbkWZ7BpqYmBhUivccPu",
+      "target": "8gyVwKg3Ctt2w15X7xZgC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8gyVwKg3Ctt2w15X7xZgCx2-Kjkc8rNezN_LBD5WMrBbEw1",
+      "source": "8gyVwKg3Ctt2w15X7xZgC",
+      "target": "Kjkc8rNezN_LBD5WMrBbE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Kjkc8rNezN_LBD5WMrBbEz2-jrgaoDnt_RxTu79hk4hCDy2",
+      "source": "Kjkc8rNezN_LBD5WMrBbE",
+      "target": "jrgaoDnt_RxTu79hk4hCD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jrgaoDnt_RxTu79hk4hCDx2-LHlwjN3WHYUBUafzzwsWQw1",
+      "source": "jrgaoDnt_RxTu79hk4hCD",
+      "target": "LHlwjN3WHYUBUafzzwsWQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-LHlwjN3WHYUBUafzzwsWQx2-7JzeyTrkZ_1_yxMVrqvZUw2",
+      "source": "LHlwjN3WHYUBUafzzwsWQ",
+      "target": "7JzeyTrkZ_1_yxMVrqvZU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7JzeyTrkZ_1_yxMVrqvZUy2-45ihdIfRW-jI38h-s4Vdcz1",
+      "source": "7JzeyTrkZ_1_yxMVrqvZU",
+      "target": "45ihdIfRW-jI38h-s4Vdc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-45ihdIfRW-jI38h-s4Vdcy2-cszjT3YK8oyhGpqLTQzwXz1",
+      "source": "45ihdIfRW-jI38h-s4Vdc",
+      "target": "0Q3AkE8leWAyYsww3-BHX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-cszjT3YK8oyhGpqLTQzwXy2-CxiHaw63xmItCGdhpcsizz1",
+      "source": "0Q3AkE8leWAyYsww3-BHX",
+      "target": "CxiHaw63xmItCGdhpcsiz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0Q3AkE8leWAyYsww3-BHXx2-cszjT3YK8oyhGpqLTQzwXw1",
+      "source": "0Q3AkE8leWAyYsww3-BHX",
+      "target": "cszjT3YK8oyhGpqLTQzwX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ifAV_64bREZrJkxFnf7Cyz2-cszjT3YK8oyhGpqLTQzwXy1",
+      "source": "ifAV_64bREZrJkxFnf7Cy",
+      "target": "cszjT3YK8oyhGpqLTQzwX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-cszjT3YK8oyhGpqLTQzwXx2-zXs_9n2yEb_eVi0WuOQKHy1",
+      "source": "cszjT3YK8oyhGpqLTQzwX",
+      "target": "zXs_9n2yEb_eVi0WuOQKH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zXs_9n2yEb_eVi0WuOQKHw2-S16vO5EHvxaylsnFzs4Kxx1",
+      "source": "zXs_9n2yEb_eVi0WuOQKH",
+      "target": "S16vO5EHvxaylsnFzs4Kx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zXs_9n2yEb_eVi0WuOQKHz2-9W_jaK1DSEZHRKdPcUM7hy1",
+      "source": "zXs_9n2yEb_eVi0WuOQKH",
+      "target": "_NiUdVQ85qnvryI38k_vQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-9W_jaK1DSEZHRKdPcUM7hw2-4fIp9_ii_gYgEMFFk__BGx1",
+      "source": "_NiUdVQ85qnvryI38k_vQ",
+      "target": "4fIp9_ii_gYgEMFFk__BG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_NiUdVQ85qnvryI38k_vQx2-9W_jaK1DSEZHRKdPcUM7hw2",
+      "source": "_NiUdVQ85qnvryI38k_vQ",
+      "target": "9W_jaK1DSEZHRKdPcUM7h",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-9W_jaK1DSEZHRKdPcUM7hx2-VJosvi5KwlePkGxBzmxSHw1",
+      "source": "9W_jaK1DSEZHRKdPcUM7h",
+      "target": "VJosvi5KwlePkGxBzmxSH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9W_jaK1DSEZHRKdPcUM7hy2-YHbWlKrQqptUDbaQVy0_Az1",
+      "source": "9W_jaK1DSEZHRKdPcUM7h",
+      "target": "YHbWlKrQqptUDbaQVy0_A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-YHbWlKrQqptUDbaQVy0_Ax2-Mpt_WSLngBqt131nAm3Nsw1",
+      "source": "YHbWlKrQqptUDbaQVy0_A",
+      "target": "Mpt_WSLngBqt131nAm3Ns",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YHbWlKrQqptUDbaQVy0_Ay2-Veb30QrPYNjUn13dtGbUrz2",
+      "source": "YHbWlKrQqptUDbaQVy0_A",
+      "target": "Veb30QrPYNjUn13dtGbUr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Veb30QrPYNjUn13dtGbUrx2-PXWvq1ezVBU5UJVN887Esw2",
+      "source": "Veb30QrPYNjUn13dtGbUr",
+      "target": "PXWvq1ezVBU5UJVN887Es",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Veb30QrPYNjUn13dtGbUry2-bQaek7f3dAaZfSUhwovm1w1",
+      "source": "Veb30QrPYNjUn13dtGbUr",
+      "target": "bQaek7f3dAaZfSUhwovm1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-bQaek7f3dAaZfSUhwovm1z2-uvwbpHaA6rH6YrHuEdBxhw1",
+      "source": "bQaek7f3dAaZfSUhwovm1",
+      "target": "uvwbpHaA6rH6YrHuEdBxh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-uvwbpHaA6rH6YrHuEdBxhx2-rSD8nJ-uNpHJVe5Hn66h7w1",
+      "source": "uvwbpHaA6rH6YrHuEdBxh",
+      "target": "rSD8nJ-uNpHJVe5Hn66h7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-AQiCcHS6dBAAAPloxiXubz2-zmVjMf9wNHARBS_mBY4lYy1",
+      "source": "AQiCcHS6dBAAAPloxiXub",
+      "target": "zmVjMf9wNHARBS_mBY4lY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zmVjMf9wNHARBS_mBY4lYw2-gdiWwTQg6A-BFHdQBmgmHx1",
+      "source": "zmVjMf9wNHARBS_mBY4lY",
+      "target": "gdiWwTQg6A-BFHdQBmgmH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Qy42paiTUsO8HIwbWTMuiz2-k9HeweEN4enuboEppbJiPw1",
+      "source": "Qy42paiTUsO8HIwbWTMui",
+      "target": "k9HeweEN4enuboEppbJiP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-k9HeweEN4enuboEppbJiPx2-7ETrwXaK2xR1AoS7tTyzWw2",
+      "source": "k9HeweEN4enuboEppbJiP",
+      "target": "7ETrwXaK2xR1AoS7tTyzW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hLIT00Iz7rV56ZBIUhWYnw2-jicsfYw56VrbRUt7M8c85x2",
+      "source": "hLIT00Iz7rV56ZBIUhWYn",
+      "target": "jicsfYw56VrbRUt7M8c85",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hLIT00Iz7rV56ZBIUhWYnx2-vWOOOTjEx8Ycz1NA0xZadw1",
+      "source": "hLIT00Iz7rV56ZBIUhWYn",
+      "target": "vWOOOTjEx8Ycz1NA0xZad",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vWOOOTjEx8Ycz1NA0xZadz2-giyKPtQ-pziA064P8OQD-y1",
+      "source": "vWOOOTjEx8Ycz1NA0xZad",
+      "target": "giyKPtQ-pziA064P8OQD-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--gCy7Uj64KQJ39IYb_Vphx2-8lyXDuZJ-KHl4v2_8Ew1hw2",
+      "source": "GPsf1hc9hXNKgutGCribk",
+      "target": "wXRDsNGFckXV_CSiit5sN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wXRDsNGFckXV_CSiit5sNy2-8lyXDuZJ-KHl4v2_8Ew1hz1",
+      "source": "wXRDsNGFckXV_CSiit5sN",
+      "target": "Cb-KazR4PuR86VX5oT0zi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Cb-KazR4PuR86VX5oT0ziy2-nUIfTkgm3PlSiqgun1BS7z2",
+      "source": "Cb-KazR4PuR86VX5oT0zi",
+      "target": "nUIfTkgm3PlSiqgun1BS7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nUIfTkgm3PlSiqgun1BS7x2-8lyXDuZJ-KHl4v2_8Ew1hw2",
+      "source": "nUIfTkgm3PlSiqgun1BS7",
+      "target": "8lyXDuZJ-KHl4v2_8Ew1h",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8lyXDuZJ-KHl4v2_8Ew1hx2-H3njQtlasgGo0-IFiFZqLw1",
+      "source": "8lyXDuZJ-KHl4v2_8Ew1h",
+      "target": "H3njQtlasgGo0-IFiFZqL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8lyXDuZJ-KHl4v2_8Ew1hz2-0vLaVNJaJSHZ_bHli6Qzsw1",
+      "source": "8lyXDuZJ-KHl4v2_8Ew1h",
+      "target": "0vLaVNJaJSHZ_bHli6Qzs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

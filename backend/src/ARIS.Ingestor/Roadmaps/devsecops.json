@@ -1,0 +1,1185 @@
+{
+  "title": {
+    "card": "DevSecOps",
+    "page": "DevSecOps"
+  },
+  "description": "Step by step guide to becoming a DevSecOps Expert in @currentYear@",
+  "nodes": [
+    {
+      "id": "R45JeWQuZBiKTuUxWrW5b",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "WQyCNUfcQRIlD_N_KRZxW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "_nrb-iUMjkeUiqJF4F3zV",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "vgVdMoqONLUkeBaXaudYH",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "YGBr0X46s0FizqyBx9RYL",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "pW4USLvRZ5bCD7EvHnSik",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "lGe6g8HA5bnrRTqiTR553",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "osAmhtqhLlztiE0c5Tyrw",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jGdRD8dBDIw5gn18DPv-h",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-uWVsIev4hqh7o7Xqi27P",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "YdV1GKN77xFcWIWBIfhcz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "fCGGEbOUBiMrs8cRDII_z",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "wG5_x2UgFvJO8UckbJQBP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-X3GTFpg3kzm0cELAngjb",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "k7AtVkkVavHjCVo1hqCc0",
+      "type": "topic",
+      "data": {
+        "label": "CIA Triad"
+      }
+    },
+    {
+      "id": "iiOWJ7KXyHp_ovVWNmDoc",
+      "type": "topic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "igGASa7AknApWtq57v2Qx",
+      "type": "topic",
+      "data": {
+        "label": "OWASP Top 10"
+      }
+    },
+    {
+      "id": "mT1cKWZcKXwvopW6BeX-A",
+      "type": "subtopic",
+      "data": {
+        "label": "Symmetric"
+      }
+    },
+    {
+      "id": "hz0WFG5ksaBFMpq7ypLgF",
+      "type": "subtopic",
+      "data": {
+        "label": "Asymmetric"
+      }
+    },
+    {
+      "id": "0ey7Spq4DoZ-AfXOsMtag",
+      "type": "topic",
+      "data": {
+        "label": "Encryption"
+      }
+    },
+    {
+      "id": "LV_uiNRdUi9OrmxQCdeGw",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewalls"
+      }
+    },
+    {
+      "id": "TnDsOr1iJX3hY7vJRpp7S",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS"
+      }
+    },
+    {
+      "id": "lLWQhvzXn3EpeCf9Mhgyj",
+      "type": "subtopic",
+      "data": {
+        "label": "ACLs"
+      }
+    },
+    {
+      "id": "WamX-UieM8NxhK6P_bDCB",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP"
+      }
+    },
+    {
+      "id": "GPVN-nDitsY1bF_3huqnh",
+      "type": "subtopic",
+      "data": {
+        "label": "VLANs"
+      }
+    },
+    {
+      "id": "FvU310TuexCsp8QkvxJib",
+      "type": "subtopic",
+      "data": {
+        "label": "TLS"
+      }
+    },
+    {
+      "id": "Cr0VAtdu0ZYPOkUU_7vjR",
+      "type": "subtopic",
+      "data": {
+        "label": "Network Segmentation"
+      }
+    },
+    {
+      "id": "84HlHz8bHCDtAPGpq7LpX",
+      "type": "topic",
+      "data": {
+        "label": "Networking Basics"
+      }
+    },
+    {
+      "id": "VPBQh3CSsNA-esuvEHT3X",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Injection Prevention"
+      }
+    },
+    {
+      "id": "lq4nTMBniaxxwPvH5M77Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Validation Patterns"
+      }
+    },
+    {
+      "id": "ph7rFQFJffi_di133vm3Z",
+      "type": "subtopic",
+      "data": {
+        "label": "XSS Prevention"
+      }
+    },
+    {
+      "id": "-RORxEsNvIPSlnM2TWB3j",
+      "type": "subtopic",
+      "data": {
+        "label": "IAM"
+      }
+    },
+    {
+      "id": "9Tea1ge_l1fls0fyPxMPG",
+      "type": "subtopic",
+      "data": {
+        "label": "Role Based Access"
+      }
+    },
+    {
+      "id": "rK-RToN5JRcclYl23TyYz",
+      "type": "subtopic",
+      "data": {
+        "label": "Least Privilege"
+      }
+    },
+    {
+      "id": "_Kr2_N8021tsZfa0wZ3Vu",
+      "type": "subtopic",
+      "data": {
+        "label": "Log Analysis"
+      }
+    },
+    {
+      "id": "-j1PH9_z-Eq3jxX6e8VmQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Alert Types"
+      }
+    },
+    {
+      "id": "hnroE_riXvw6BqYdirWBX",
+      "type": "subtopic",
+      "data": {
+        "label": "SIEM"
+      }
+    },
+    {
+      "id": "uAUg6mDDDq7ZyR0IEDxg5",
+      "type": "subtopic",
+      "data": {
+        "label": "Burp Suite"
+      }
+    },
+    {
+      "id": "iHhitN8zToXm4nK1m0OeR",
+      "type": "subtopic",
+      "data": {
+        "label": "Wireshark basics"
+      }
+    },
+    {
+      "id": "JyXv5vPHCjSBc0J-PpUEV",
+      "type": "subtopic",
+      "data": {
+        "label": "Nmap basics"
+      }
+    },
+    {
+      "id": "eTOjfNSzlvbWsyX5an_5w",
+      "type": "subtopic",
+      "data": {
+        "label": "CSPM"
+      }
+    },
+    {
+      "id": "l76yFl4lSXnxg5DBbnnID",
+      "type": "subtopic",
+      "data": {
+        "label": "Key Management Service"
+      }
+    },
+    {
+      "id": "JDglIowCyRjSoqCcNfkZr",
+      "type": "subtopic",
+      "data": {
+        "label": "IAM"
+      }
+    },
+    {
+      "id": "ou2-KKBNyOxH_IW9s3eE9",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Security"
+      }
+    },
+    {
+      "id": "a4dYHrx1KzhKRtarZT1iy",
+      "type": "subtopic",
+      "data": {
+        "label": "Defense in Depth Concepts"
+      }
+    },
+    {
+      "id": "aMu0e6xQ3Rak44F_I7Ish",
+      "type": "subtopic",
+      "data": {
+        "label": "Secure API Design"
+      }
+    },
+    {
+      "id": "3UAH70FkQlv5_VbYon4U9",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero Trust Concepts"
+      }
+    },
+    {
+      "id": "X-pvSQnfB2W4992_3eOEy",
+      "type": "subtopic",
+      "data": {
+        "label": "IR Lifecycle"
+      }
+    },
+    {
+      "id": "h_kjdN5uGNKLtJ3puQ9RH",
+      "type": "subtopic",
+      "data": {
+        "label": "Forensics"
+      }
+    },
+    {
+      "id": "CUjGVwPvQytVYqy2zEPuw",
+      "type": "subtopic",
+      "data": {
+        "label": "Containment"
+      }
+    },
+    {
+      "id": "VyzLkdcLgxfSSFuUS0xO_",
+      "type": "subtopic",
+      "data": {
+        "label": "Root Cause Analysis"
+      }
+    },
+    {
+      "id": "V5eQcby9FNcGv68KPj5rH",
+      "type": "topic",
+      "data": {
+        "label": "Incident Response"
+      }
+    },
+    {
+      "id": "eALB73XbtnFF3-PYcLcZq",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi Region Security Planning"
+      }
+    },
+    {
+      "id": "XRnxOPVChkGLQSXX-kUmi",
+      "type": "subtopic",
+      "data": {
+        "label": "Large Scale Identity Strategy"
+      }
+    },
+    {
+      "id": "quUzTCnBnmJoSmIPBGjxk",
+      "type": "subtopic",
+      "data": {
+        "label": "Certificate Lifecycle"
+      }
+    },
+    {
+      "id": "nEYMyTKfRDqA2Uc1tCwxv",
+      "type": "subtopic",
+      "data": {
+        "label": "PKI Design and Failover"
+      }
+    },
+    {
+      "id": "EqfPoveYajk61VH-ii_uE",
+      "type": "subtopic",
+      "data": {
+        "label": "Cryptographic Hashing"
+      }
+    },
+    {
+      "id": "L3Mu6rCIu58VyhtxeyLXq",
+      "type": "subtopic",
+      "data": {
+        "label": "IDS"
+      }
+    },
+    {
+      "id": "MF8AYjKun5SHtumTyuurJ",
+      "type": "subtopic",
+      "data": {
+        "label": "SBOMS"
+      }
+    },
+    {
+      "id": "ltpquwL_YEvbgMZ2OyNS4",
+      "type": "subtopic",
+      "data": {
+        "label": "DDoS Miligation Strategy"
+      }
+    },
+    {
+      "id": "nkPrYgpM5Mn6C_9u9yAyQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Pipeline Hardening"
+      }
+    },
+    {
+      "id": "ixiKWBp8m4tP55dBYFzRL",
+      "type": "subtopic",
+      "data": {
+        "label": "Secure Network Zoning"
+      }
+    },
+    {
+      "id": "AAd_X7gI-WA7Jh9FKsuE_",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency Risk Management"
+      }
+    },
+    {
+      "id": "qKHb2e9g_Xuo-nHepICTR",
+      "type": "subtopic",
+      "data": {
+        "label": "Supply Chain Security"
+      }
+    },
+    {
+      "id": "E2jGo4HeKaeuXYa9-f-vy",
+      "type": "subtopic",
+      "data": {
+        "label": "Endpoint Detection"
+      }
+    },
+    {
+      "id": "rXS1CIZHu7TA_o7L-vMtV",
+      "type": "subtopic",
+      "data": {
+        "label": "SOAR Automation"
+      }
+    },
+    {
+      "id": "6Q2VIdeSuBZzo7c1qnYLG",
+      "type": "subtopic",
+      "data": {
+        "label": "Response Strategy"
+      }
+    },
+    {
+      "id": "68qVLExPlVrKJweTjd_S5",
+      "type": "topic",
+      "data": {
+        "label": "Enterprise Operations"
+      }
+    },
+    {
+      "id": "04_UcLELHkqjBCwliCw7H",
+      "type": "subtopic",
+      "data": {
+        "label": "Audit \u0026 Compliance Mapping"
+      }
+    },
+    {
+      "id": "V97S_0PrVw3jjHnmcxDgJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Quantification"
+      }
+    },
+    {
+      "id": "KezQ_GFRImc9gZ-6GTCsA",
+      "type": "title",
+      "data": {
+        "label": "DevSecOps"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "94KazcF2-iOrowSwLe6Xi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "SJa6UcRcgT08lF8Phnh0X",
+      "type": "subtopic",
+      "data": {
+        "label": "DevSecOps vs DevOps"
+      }
+    },
+    {
+      "id": "v5FGKQc-_7NYEsWjmTEuq",
+      "type": "topic",
+      "data": {
+        "label": "Learn a Programming Language"
+      }
+    },
+    {
+      "id": "wjJPzrFJBNYOD3SJLzW2M",
+      "type": "topic",
+      "data": {
+        "label": "Scripting Knowledge"
+      }
+    },
+    {
+      "id": "txcfATz3k89CedFrSZMWj",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "nKthK-OsFO0TGwptD-Dme",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "V_-gY34XcyIqPcLKtDJZr",
+      "type": "subtopic",
+      "data": {
+        "label": "Rust"
+      }
+    },
+    {
+      "id": "UcBt4BsvLDlsnVy3KKJ1y",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "BeUiBY18JHqCKVNtYAHH3",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript / Node.js"
+      }
+    },
+    {
+      "id": "r3XBfcNtxSraF11YK_5d5",
+      "type": "subtopic",
+      "data": {
+        "label": "Bash"
+      }
+    },
+    {
+      "id": "91lxZEOZ6KF3tY9id2Au8",
+      "type": "subtopic",
+      "data": {
+        "label": "PowerShell"
+      }
+    },
+    {
+      "id": "7MavDAydyrt0tOJ6a6xRQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Vim / Nano / Emacs"
+      }
+    },
+    {
+      "id": "DYmh1MkmAuXUJOFqnFzWc",
+      "type": "topic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "iHd6XNAUGXn3_d-I_YtTM",
+      "type": "topic",
+      "data": {
+        "label": "Secure Coding"
+      }
+    },
+    {
+      "id": "ImC-8kcazHi3DF_mIUpx1",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "iONpD135a4kd3zR5ufoTx",
+      "type": "topic",
+      "data": {
+        "label": "Identity Basics"
+      }
+    },
+    {
+      "id": "MMTCo21ap15MrPV64vKka",
+      "type": "topic",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "6A_3p3CzwxFVjJaXahEVr",
+      "type": "subtopic",
+      "data": {
+        "label": "PASTA"
+      }
+    },
+    {
+      "id": "EZZsZHxu7__yM2l9tr95-",
+      "type": "subtopic",
+      "data": {
+        "label": "STRIDE"
+      }
+    },
+    {
+      "id": "qfhpMprVX562UuktYN9BZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Threat Modeling Workflows"
+      }
+    },
+    {
+      "id": "XA7JUF00B1locP0xY3T95",
+      "type": "topic",
+      "data": {
+        "label": "Threat Modeling"
+      }
+    },
+    {
+      "id": "IrBfgoGEjInX214hwpzkS",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "bPmjX9IPL9Da0XUApY5UF",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Scanning"
+      }
+    },
+    {
+      "id": "YveqgdX6eNRFC1zU_q7r1",
+      "type": "subtopic",
+      "data": {
+        "label": "Kubernetes"
+      }
+    },
+    {
+      "id": "-OWtiqx4YbcOVhtYU0D69",
+      "type": "subtopic",
+      "data": {
+        "label": "Docker"
+      }
+    },
+    {
+      "id": "EnDqfr07RzNZmPIth6wSq",
+      "type": "topic",
+      "data": {
+        "label": "Container Security"
+      }
+    },
+    {
+      "id": "O0aVW37VhZInw9Z9Mghcg",
+      "type": "subtopic",
+      "data": {
+        "label": "SOAR Concepts"
+      }
+    },
+    {
+      "id": "HahTEhITEAGaoys1psZqV",
+      "type": "subtopic",
+      "data": {
+        "label": "Automated Patching"
+      }
+    },
+    {
+      "id": "EqbzAy56Tu8asKNFzuti_",
+      "type": "subtopic",
+      "data": {
+        "label": "Nessus"
+      }
+    },
+    {
+      "id": "0Tci_Ks8jXisin90VqB_D",
+      "type": "subtopic",
+      "data": {
+        "label": "Nmap"
+      }
+    },
+    {
+      "id": "mIcs0fp3T9IwwAvgYyKnY",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenVAS"
+      }
+    },
+    {
+      "id": "Pkud7rAzdV5asF5aGAq7z",
+      "type": "subtopic",
+      "data": {
+        "label": "Qualys"
+      }
+    },
+    {
+      "id": "vSZkNVLfhEYesC8lJxaKZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "mpVIIY_8r_Mj5QjM2yFLk",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "aqKo9aDpa7nJD-HG73LFV",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "PYH_nc4bktIJoCJA6OC5E",
+      "type": "subtopic",
+      "data": {
+        "label": "IPS"
+      }
+    },
+    {
+      "id": "TqmbGC_Q_b3BkU7UkvE-S",
+      "type": "subtopic",
+      "data": {
+        "label": "bcrypt"
+      }
+    },
+    {
+      "id": "LKMBv-M9k71yrR2WzN4bK",
+      "type": "subtopic",
+      "data": {
+        "label": "SHA 256"
+      }
+    },
+    {
+      "id": "VceZrpszmMoKb4W8bRKpj",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Crypto."
+      }
+    },
+    {
+      "id": "VmDslOmZANHpHmAInFa_j",
+      "type": "subtopic",
+      "data": {
+        "label": "SOC 2"
+      }
+    },
+    {
+      "id": "JBNiSzYD8DSnKfHoKRjMg",
+      "type": "subtopic",
+      "data": {
+        "label": "ISO 27001"
+      }
+    },
+    {
+      "id": "yMb0-A55r1KEsLntOmp5F",
+      "type": "subtopic",
+      "data": {
+        "label": "NIST"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Cybersecurity"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "Rc4K5X6FRYFzR4bJcMz8O",
+      "type": "label",
+      "data": {
+        "label": "Learn the Foundations"
+      }
+    },
+    {
+      "id": "7PqpCoTeA0Xwd3JN-oNLk",
+      "type": "label",
+      "data": {
+        "label": "Managing Threats \u0026 Risks "
+      }
+    },
+    {
+      "id": "613sHG7vDJDfwnAeej54a",
+      "type": "label",
+      "data": {
+        "label": "Secure Architecture"
+      }
+    },
+    {
+      "id": "ut5vSmzC4jQkuUYfcLHa6",
+      "type": "label",
+      "data": {
+        "label": "Governance"
+      }
+    },
+    {
+      "id": "YjMtb-rtzz-d7LwBQZZFh",
+      "type": "label",
+      "data": {
+        "label": "Editors"
+      }
+    },
+    {
+      "id": "JztcgG94qZ5trdhfDcRa6",
+      "type": "subtopic",
+      "data": {
+        "label": "Attack Surface Mapping"
+      }
+    },
+    {
+      "id": "rfcUVsZ32Bfcd1IJTtv6c",
+      "type": "label",
+      "data": {
+        "label": "Cybersecurity Frameworks"
+      }
+    },
+    {
+      "id": "0RIh6tIlj_n6DWa9uDSdH",
+      "type": "label",
+      "data": {
+        "label": "DevSecOps Tools"
+      }
+    },
+    {
+      "id": "M88oqOsxMNlodxwDJzNTR",
+      "type": "label",
+      "data": {
+        "label": "Vulnerability Scanning Tools"
+      }
+    },
+    {
+      "id": "v1xm63XwfvjuifepIj02M",
+      "type": "label",
+      "data": {
+        "label": "Automating Security"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__KezQ_GFRImc9gZ-6GTCsAx2-7MavDAydyrt0tOJ6a6xRQw2",
+      "source": "KezQ_GFRImc9gZ-6GTCsA",
+      "target": "-X3GTFpg3kzm0cELAngjb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__-X3GTFpg3kzm0cELAngjbz2-7MavDAydyrt0tOJ6a6xRQy1",
+      "source": "-X3GTFpg3kzm0cELAngjb",
+      "target": "SJa6UcRcgT08lF8Phnh0X",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-X3GTFpg3kzm0cELAngjbx2-v5FGKQc-_7NYEsWjmTEuqw1",
+      "source": "-X3GTFpg3kzm0cELAngjb",
+      "target": "v5FGKQc-_7NYEsWjmTEuq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__v5FGKQc-_7NYEsWjmTEuqy2-txcfATz3k89CedFrSZMWjz1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "txcfATz3k89CedFrSZMWj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__v5FGKQc-_7NYEsWjmTEuqy2-UcBt4BsvLDlsnVy3KKJ1yz2",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "UcBt4BsvLDlsnVy3KKJ1y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__v5FGKQc-_7NYEsWjmTEuqy2-BeUiBY18JHqCKVNtYAHH3z1",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "BeUiBY18JHqCKVNtYAHH3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__v5FGKQc-_7NYEsWjmTEuqx2-wjJPzrFJBNYOD3SJLzW2Mw2",
+      "source": "v5FGKQc-_7NYEsWjmTEuq",
+      "target": "wjJPzrFJBNYOD3SJLzW2M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0ey7Spq4DoZ-AfXOsMtagz2-fcmVpQoRJaWxnhyb2UzTby1",
+      "source": "0ey7Spq4DoZ-AfXOsMtag",
+      "target": "84HlHz8bHCDtAPGpq7LpX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fcmVpQoRJaWxnhyb2UzTbw2-lq4nTMBniaxxwPvH5M77Zx1",
+      "source": "iHd6XNAUGXn3_d-I_YtTM",
+      "target": "lq4nTMBniaxxwPvH5M77Z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__84HlHz8bHCDtAPGpq7LpXz2-fcmVpQoRJaWxnhyb2UzTby1",
+      "source": "84HlHz8bHCDtAPGpq7LpX",
+      "target": "iHd6XNAUGXn3_d-I_YtTM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__iHd6XNAUGXn3_d-I_YtTMx2-fcmVpQoRJaWxnhyb2UzTbw1",
+      "source": "iHd6XNAUGXn3_d-I_YtTM",
+      "target": "iONpD135a4kd3zR5ufoTx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fcmVpQoRJaWxnhyb2UzTbx2--RORxEsNvIPSlnM2TWB3jw2",
+      "source": "iONpD135a4kd3zR5ufoTx",
+      "target": "-RORxEsNvIPSlnM2TWB3j",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__fcmVpQoRJaWxnhyb2UzTbw2-FD-gEzq8JZS9DgAQIRI7Fx1",
+      "source": "MMTCo21ap15MrPV64vKka",
+      "target": "_Kr2_N8021tsZfa0wZ3Vu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__iONpD135a4kd3zR5ufoTxy2-fcmVpQoRJaWxnhyb2UzTbz1",
+      "source": "iONpD135a4kd3zR5ufoTx",
+      "target": "MMTCo21ap15MrPV64vKka",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ou2-KKBNyOxH_IW9s3eE9z2-cwJAv_ywRKpD-dD9-bImYy1",
+      "source": "ou2-KKBNyOxH_IW9s3eE9",
+      "target": "EnDqfr07RzNZmPIth6wSq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__cwJAv_ywRKpD-dD9-bImYz2-vgVdMoqONLUkeBaXaudYHy1",
+      "source": "EnDqfr07RzNZmPIth6wSq",
+      "target": "vgVdMoqONLUkeBaXaudYH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__V5eQcby9FNcGv68KPj5rHx2-X-pvSQnfB2W4992_3eOEyw2",
+      "source": "V5eQcby9FNcGv68KPj5rH",
+      "target": "X-pvSQnfB2W4992_3eOEy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VceZrpszmMoKb4W8bRKpjx2-68qVLExPlVrKJweTjd_S5w1",
+      "source": "VceZrpszmMoKb4W8bRKpj",
+      "target": "68qVLExPlVrKJweTjd_S5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__68qVLExPlVrKJweTjd_S5z2-rXS1CIZHu7TA_o7L-vMtVy1",
+      "source": "68qVLExPlVrKJweTjd_S5",
+      "target": "rXS1CIZHu7TA_o7L-vMtV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__68qVLExPlVrKJweTjd_S5z2-E2jGo4HeKaeuXYa9-f-vyy1",
+      "source": "68qVLExPlVrKJweTjd_S5",
+      "target": "E2jGo4HeKaeuXYa9-f-vy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__68qVLExPlVrKJweTjd_S5z2-6Q2VIdeSuBZzo7c1qnYLGy1",
+      "source": "68qVLExPlVrKJweTjd_S5",
+      "target": "6Q2VIdeSuBZzo7c1qnYLG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wjJPzrFJBNYOD3SJLzW2My2-Rc4K5X6FRYFzR4bJcMz8Oz1",
+      "source": "wjJPzrFJBNYOD3SJLzW2M",
+      "target": "Rc4K5X6FRYFzR4bJcMz8O",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Rc4K5X6FRYFzR4bJcMz8Ox2-k7AtVkkVavHjCVo1hqCc0w1",
+      "source": "Rc4K5X6FRYFzR4bJcMz8O",
+      "target": "k7AtVkkVavHjCVo1hqCc0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7PqpCoTeA0Xwd3JN-oNLkx2-ou2-KKBNyOxH_IW9s3eE9w1",
+      "source": "7PqpCoTeA0Xwd3JN-oNLk",
+      "target": "ou2-KKBNyOxH_IW9s3eE9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ut5vSmzC4jQkuUYfcLHa6z2-V5eQcby9FNcGv68KPj5rHy1",
+      "source": "613sHG7vDJDfwnAeej54a",
+      "target": "V5eQcby9FNcGv68KPj5rH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__68qVLExPlVrKJweTjd_S5x2-ut5vSmzC4jQkuUYfcLHa6w2",
+      "source": "68qVLExPlVrKJweTjd_S5",
+      "target": "ut5vSmzC4jQkuUYfcLHa6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ut5vSmzC4jQkuUYfcLHa6z2-WQyCNUfcQRIlD_N_KRZxWy1",
+      "source": "ut5vSmzC4jQkuUYfcLHa6",
+      "target": "WQyCNUfcQRIlD_N_KRZxW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ut5vSmzC4jQkuUYfcLHa6y2-04_UcLELHkqjBCwliCw7Hz1",
+      "source": "ut5vSmzC4jQkuUYfcLHa6",
+      "target": "04_UcLELHkqjBCwliCw7H",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ut5vSmzC4jQkuUYfcLHa6y2-V97S_0PrVw3jjHnmcxDgJz1",
+      "source": "ut5vSmzC4jQkuUYfcLHa6",
+      "target": "V97S_0PrVw3jjHnmcxDgJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ut5vSmzC4jQkuUYfcLHa6x2-O5dely89N5UCMBeUfh8udw1",
+      "source": "ut5vSmzC4jQkuUYfcLHa6",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__XA7JUF00B1locP0xY3T95w2-JztcgG94qZ5trdhfDcRa6x1",
+      "source": "XA7JUF00B1locP0xY3T95",
+      "target": "JztcgG94qZ5trdhfDcRa6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YGBr0X46s0FizqyBx9RYLx2-7PqpCoTeA0Xwd3JN-oNLkw2",
+      "source": "YGBr0X46s0FizqyBx9RYL",
+      "target": "7PqpCoTeA0Xwd3JN-oNLk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vgVdMoqONLUkeBaXaudYHx2-V5eQcby9FNcGv68KPj5rHw1",
+      "source": "vgVdMoqONLUkeBaXaudYH",
+      "target": "V5eQcby9FNcGv68KPj5rH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

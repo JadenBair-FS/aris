@@ -1,0 +1,1212 @@
+{
+  "title": {
+    "card": "HTML",
+    "page": "HTML"
+  },
+  "description": "Step by step guide to learning HTML in @currentYear@",
+  "nodes": [
+    {
+      "id": "DMXMZPWZlKgJAfhL2yDck",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "a4f50XLbGV1_MSEZliclS",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "aUAiNsYjmlsdGmlfzL_rv",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "e5X1XwnKsTgfJG9o2Prdm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WDltGpnZCkJcNlipmPAKa",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "W3fyV8zyFf-lJkGqkogtl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "hZ3W43ceuUonvuG8M1NR9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-62DkJGOnzTK21RT48ojG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-oXkzllb88bN17OY5LQrP",
+      "type": "title",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "4gst44L8-ps9YFMHzucfN",
+      "type": "subtopic",
+      "data": {
+        "label": "What are markup languages?"
+      }
+    },
+    {
+      "id": "Xy15NSxlS0QXYNzEvgocK",
+      "type": "subtopic",
+      "data": {
+        "label": "Frontend Development"
+      }
+    },
+    {
+      "id": "JkLec2vSBMFAUc1Dzra-L",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "nXRjahYSDqfEqY26yfLEt",
+      "type": "subtopic",
+      "data": {
+        "label": "What is HTTP?"
+      }
+    },
+    {
+      "id": "0Q41Bm_TZqsC7X-MH8uFe",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS"
+      }
+    },
+    {
+      "id": "oRjacb1OqAlsP-YB16Nuy",
+      "type": "subtopic",
+      "data": {
+        "label": "Domain names"
+      }
+    },
+    {
+      "id": "4gvPprSH7hRS4gtXNMcCF",
+      "type": "subtopic",
+      "data": {
+        "label": "Browsers"
+      }
+    },
+    {
+      "id": "t9KmPbRh6pkfouPi1mBqJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Hosting"
+      }
+    },
+    {
+      "id": "6vGbvRsmQgOpRh8JJ3RF_",
+      "type": "subtopic",
+      "data": {
+        "label": "What is SEO?"
+      }
+    },
+    {
+      "id": "0CHn_ubTBRWgrYGy0moZh",
+      "type": "topic",
+      "data": {
+        "label": "How the web works"
+      }
+    },
+    {
+      "id": "nOIijMH-3TvcO1KL6qzwf",
+      "type": "subtopic",
+      "data": {
+        "label": "Tags and Attributes"
+      }
+    },
+    {
+      "id": "-ME4w8Bm5krSH14Yno4E5",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML Comments"
+      }
+    },
+    {
+      "id": "qXcn_AGcGWjT8GgjaW5WN",
+      "type": "subtopic",
+      "data": {
+        "label": "Case Insensitivity"
+      }
+    },
+    {
+      "id": "IUsaaRxiuOn3y9uYbpsJ0",
+      "type": "subtopic",
+      "data": {
+        "label": "Whitespaces"
+      }
+    },
+    {
+      "id": "VscH3rVqpX29vaKmdCMop",
+      "type": "subtopic",
+      "data": {
+        "label": "!DOCTYPE"
+      }
+    },
+    {
+      "id": "93tSk4RwWfkfOyaA7I9Gn",
+      "type": "subtopic",
+      "data": {
+        "label": "body"
+      }
+    },
+    {
+      "id": "fP2cPskF9KzppZUhfyB8U",
+      "type": "subtopic",
+      "data": {
+        "label": "html"
+      }
+    },
+    {
+      "id": "ceAHMWQeaqURKWy628QBH",
+      "type": "subtopic",
+      "data": {
+        "label": "meta"
+      }
+    },
+    {
+      "id": "Ufgy4-kC2drCov4MqEhjy",
+      "type": "subtopic",
+      "data": {
+        "label": "head"
+      }
+    },
+    {
+      "id": "MjGfRzhVZRxu545TbJ1AJ",
+      "type": "topic",
+      "data": {
+        "label": "Basic Tags"
+      }
+    },
+    {
+      "id": "AmIRWclu6IYViWHXnGA8U",
+      "type": "subtopic",
+      "data": {
+        "label": "h1 to h6"
+      }
+    },
+    {
+      "id": "efddQv5AZqvGmIyuYuCr7",
+      "type": "subtopic",
+      "data": {
+        "label": "b / strong"
+      }
+    },
+    {
+      "id": "SS7JmTrySRmRlzInvRJxw",
+      "type": "subtopic",
+      "data": {
+        "label": "title"
+      }
+    },
+    {
+      "id": "9EGwQalXfVGpVcMpTeD4V",
+      "type": "subtopic",
+      "data": {
+        "label": "i / em"
+      }
+    },
+    {
+      "id": "czmIvZYONFDxB2UNpT8U1",
+      "type": "subtopic",
+      "data": {
+        "label": "p"
+      }
+    },
+    {
+      "id": "9S2IUUWVv_Q7ZfD7VqfhH",
+      "type": "subtopic",
+      "data": {
+        "label": "mark"
+      }
+    },
+    {
+      "id": "Bdu0_AcAADs7YiCaHte1g",
+      "type": "subtopic",
+      "data": {
+        "label": "hr"
+      }
+    },
+    {
+      "id": "JU8Ff3DSCn_db0K7-P-Op",
+      "type": "subtopic",
+      "data": {
+        "label": "sub"
+      }
+    },
+    {
+      "id": "cBKw3jiAvdXVwUryV1aJl",
+      "type": "subtopic",
+      "data": {
+        "label": "br"
+      }
+    },
+    {
+      "id": "o1rSXBsjhD-sN0FdOK_dm",
+      "type": "subtopic",
+      "data": {
+        "label": "sup"
+      }
+    },
+    {
+      "id": "-2BvwJsqa5K8Tb8oSDUC8",
+      "type": "subtopic",
+      "data": {
+        "label": "pre"
+      }
+    },
+    {
+      "id": "wmAps9IeAvOxcqBqgUAXN",
+      "type": "subtopic",
+      "data": {
+        "label": "Links"
+      }
+    },
+    {
+      "id": "ksKI4TDz4_9IcmNORczWo",
+      "type": "topic",
+      "data": {
+        "label": "Textual Tags"
+      }
+    },
+    {
+      "id": "ihP3FIRMr8iQTdOja_CxV",
+      "type": "subtopic",
+      "data": {
+        "label": "div"
+      }
+    },
+    {
+      "id": "f7-umBvAzDZxHtHgJMCj6",
+      "type": "subtopic",
+      "data": {
+        "label": "span"
+      }
+    },
+    {
+      "id": "Wu3oW_gnjKTYV8QJHdNxi",
+      "type": "topic",
+      "data": {
+        "label": "Grouping text"
+      }
+    },
+    {
+      "id": "PikSDs0EZ93RauZc_GDEw",
+      "type": "subtopic",
+      "data": {
+        "label": "id"
+      }
+    },
+    {
+      "id": "GpaI2IDHDOZjyT3AZMbYD",
+      "type": "subtopic",
+      "data": {
+        "label": "style"
+      }
+    },
+    {
+      "id": "R0mDuO5V5NJI8Yupc_i8i",
+      "type": "subtopic",
+      "data": {
+        "label": "class"
+      }
+    },
+    {
+      "id": "7iDMmYQ-2Q6hrrFnUgRuP",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Attributes"
+      }
+    },
+    {
+      "id": "xgw2ux-2Poml1fjWxjFsu",
+      "type": "topic",
+      "data": {
+        "label": "Standard attributes"
+      }
+    },
+    {
+      "id": "ePOzN3Sh5tCYlAbsweWU0",
+      "type": "subtopic",
+      "data": {
+        "label": "Ordered lists"
+      }
+    },
+    {
+      "id": "pEcxDj3dSgAwxydwKWU7d",
+      "type": "subtopic",
+      "data": {
+        "label": "Definition lists"
+      }
+    },
+    {
+      "id": "LKn40uz56vYrPnLG3I-CY",
+      "type": "subtopic",
+      "data": {
+        "label": "Unordered lists"
+      }
+    },
+    {
+      "id": "wDBnbKni0SamOqNhnp87B",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested lists"
+      }
+    },
+    {
+      "id": "B-Bv4aY_tGgWakyT8TgEe",
+      "type": "subtopic",
+      "data": {
+        "label": "blockquote"
+      }
+    },
+    {
+      "id": "PE_WoH4nbGAJSJT14Qli0",
+      "type": "subtopic",
+      "data": {
+        "label": "cite"
+      }
+    },
+    {
+      "id": "Xprekf2SY1fevcR2P5gRw",
+      "type": "subtopic",
+      "data": {
+        "label": "q"
+      }
+    },
+    {
+      "id": "jfC0Og9340AK7b3Fhp4WI",
+      "type": "subtopic",
+      "data": {
+        "label": "dfn"
+      }
+    },
+    {
+      "id": "aeovzlUV4oWwZCMcAoRVC",
+      "type": "subtopic",
+      "data": {
+        "label": "abbr"
+      }
+    },
+    {
+      "id": "PGKWhfXEd3Iv0AIhL7y4_",
+      "type": "subtopic",
+      "data": {
+        "label": "address"
+      }
+    },
+    {
+      "id": "v3Uf4LTfCbyasNJ-2Vfj9",
+      "type": "subtopic",
+      "data": {
+        "label": "del"
+      }
+    },
+    {
+      "id": "Hx8mfbfkvRrBqLypE_NL3",
+      "type": "subtopic",
+      "data": {
+        "label": "s"
+      }
+    },
+    {
+      "id": "G_hZBbIGOLn1-sh1jROL3",
+      "type": "subtopic",
+      "data": {
+        "label": "ins"
+      }
+    },
+    {
+      "id": "0AF0Xs2nWVZav9t5Eh9NX",
+      "type": "subtopic",
+      "data": {
+        "label": "header"
+      }
+    },
+    {
+      "id": "99wo0cNHe0sU63_aDBrxY",
+      "type": "subtopic",
+      "data": {
+        "label": "article"
+      }
+    },
+    {
+      "id": "4uKQubirOgXz9ZvfR9cWa",
+      "type": "subtopic",
+      "data": {
+        "label": "nav"
+      }
+    },
+    {
+      "id": "VahoGEC6I3jX1916MsmUY",
+      "type": "subtopic",
+      "data": {
+        "label": "aside"
+      }
+    },
+    {
+      "id": "InNY2DPYlnZaeBG9X_sMI",
+      "type": "subtopic",
+      "data": {
+        "label": "main"
+      }
+    },
+    {
+      "id": "rjE1yjFZ6KBWXgXDRIZc1",
+      "type": "subtopic",
+      "data": {
+        "label": "footer"
+      }
+    },
+    {
+      "id": "1WvHjkclwT-LUGdeuygzV",
+      "type": "subtopic",
+      "data": {
+        "label": "section"
+      }
+    },
+    {
+      "id": "ievbuvgPKo261hM-9F117",
+      "type": "subtopic",
+      "data": {
+        "label": "Inline CSS"
+      }
+    },
+    {
+      "id": "PhC4amuHcgxujOJisNsIr",
+      "type": "subtopic",
+      "data": {
+        "label": "External CSS"
+      }
+    },
+    {
+      "id": "1uhThwxjHgXPu_i1__1eE",
+      "type": "subtopic",
+      "data": {
+        "label": "Internal CSS"
+      }
+    },
+    {
+      "id": "YHoag7UR40OeIVUjfhQg_",
+      "type": "topic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "yEl77JIN5-ixN5Ay247qp",
+      "type": "topic",
+      "data": {
+        "label": "Basics of SEO"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "b83npHc-R9M03hEGzA9Ha",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "fX71CXA26cUxY5WX_zABi",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "F-9uI39S9oYVGA8hi7aZI",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "LKNBSvhAfu655yOvr_fcm",
+      "type": "paragraph",
+      "data": {
+        "label": "Your First HTML FIle"
+      }
+    },
+    {
+      "id": "Ego3XwBDgqlXOj6jSNvpy",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML Entities"
+      }
+    },
+    {
+      "id": "94HB2gvHgcEIeFQTlbVDu",
+      "type": "subtopic",
+      "data": {
+        "label": "Images"
+      }
+    },
+    {
+      "id": "mWc4HuNQACXGpJjEPa79j",
+      "type": "subtopic",
+      "data": {
+        "label": "Video"
+      }
+    },
+    {
+      "id": "k8FZPxFcDPVnXBONWUhME",
+      "type": "subtopic",
+      "data": {
+        "label": "Audio"
+      }
+    },
+    {
+      "id": "W0pWVr4cdxSan9Ceu5t7i",
+      "type": "subtopic",
+      "data": {
+        "label": "iframe"
+      }
+    },
+    {
+      "id": "vfpUh0dcYCyRzsGfJynqn",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "eZp8Vlgy8Dyrcwszi2r_h",
+      "type": "button",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "oHbzYpFInyr5aKCe-NWkC",
+      "type": "topic",
+      "data": {
+        "label": "Lists and Types"
+      }
+    },
+    {
+      "id": "3P9p18a9EjbjjMtzpoVRN",
+      "type": "topic",
+      "data": {
+        "label": "Table Tag"
+      }
+    },
+    {
+      "id": "UevJNi2HHNzpCAx7Icd0k",
+      "type": "topic",
+      "data": {
+        "label": "Embedding Media"
+      }
+    },
+    {
+      "id": "f5O_U9dt0b73ZhLrWWz2L",
+      "type": "subtopic",
+      "data": {
+        "label": "img vs figure"
+      }
+    },
+    {
+      "id": "znqYy9Tgfpe-qakjRr7KU",
+      "type": "subtopic",
+      "data": {
+        "label": "Priority Hints"
+      }
+    },
+    {
+      "id": "P_wR4dwto2NKrvTRbdBIX",
+      "type": "topic",
+      "data": {
+        "label": "Using Forms"
+      }
+    },
+    {
+      "id": "9R5WYPxlChmz6bevJUwsT",
+      "type": "subtopic",
+      "data": {
+        "label": "Labels and Inputs"
+      }
+    },
+    {
+      "id": "6NvYDlYYLZzf4IHXu0dWs",
+      "type": "subtopic",
+      "data": {
+        "label": "Form Validation"
+      }
+    },
+    {
+      "id": "HxgDw9gh1vHiMIMyZW8H2",
+      "type": "subtopic",
+      "data": {
+        "label": "Limitations"
+      }
+    },
+    {
+      "id": "-UlDLjC8VsrKB9yexMtlr",
+      "type": "subtopic",
+      "data": {
+        "label": "File Uploads"
+      }
+    },
+    {
+      "id": "aJTXstcrsINdov7yrH8cE",
+      "type": "topic",
+      "data": {
+        "label": "Semantic Markup"
+      }
+    },
+    {
+      "id": "PMqaaII6I26AftVo-Vm5-",
+      "type": "label",
+      "data": {
+        "label": "Highlighting Changes"
+      }
+    },
+    {
+      "id": "6eMHNUld9NIpsy53o0ZQJ",
+      "type": "label",
+      "data": {
+        "label": "Qutotation / Citation"
+      }
+    },
+    {
+      "id": "wGtowDPBVHaCj7APCKYv0",
+      "type": "label",
+      "data": {
+        "label": "Layout tags"
+      }
+    },
+    {
+      "id": "9FAlTHlRj_DVjbpuiGRzD",
+      "type": "subtopic",
+      "data": {
+        "label": "CSP"
+      }
+    },
+    {
+      "id": "51NlCt5pvWNfa70WaE2M4",
+      "type": "topic",
+      "data": {
+        "label": "Styling Basics"
+      }
+    },
+    {
+      "id": "5Ze6iqSnZLpQWnhUSGQOE",
+      "type": "topic",
+      "data": {
+        "label": "Including JavaScript"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "tC13Xz7K5kOsxhU4asWny",
+      "source": "-oXkzllb88bN17OY5LQrP",
+      "target": "JkLec2vSBMFAUc1Dzra-L",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "IKsz9MdHPqscKWiVJo5wm",
+      "source": "JkLec2vSBMFAUc1Dzra-L",
+      "target": "0CHn_ubTBRWgrYGy0moZh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "hDl9yuOps8CRy44DKlf8O",
+      "source": "MjGfRzhVZRxu545TbJ1AJ",
+      "target": "ksKI4TDz4_9IcmNORczWo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JkLec2vSBMFAUc1Dzra-Ly2-4gst44L8-ps9YFMHzucfNz2",
+      "source": "JkLec2vSBMFAUc1Dzra-L",
+      "target": "4gst44L8-ps9YFMHzucfN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JkLec2vSBMFAUc1Dzra-Ly2-Xy15NSxlS0QXYNzEvgocKz1",
+      "source": "JkLec2vSBMFAUc1Dzra-L",
+      "target": "Xy15NSxlS0QXYNzEvgocK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-nXRjahYSDqfEqY26yfLEty1",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "nXRjahYSDqfEqY26yfLEt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-oRjacb1OqAlsP-YB16Nuyy2",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "oRjacb1OqAlsP-YB16Nuy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-t9KmPbRh6pkfouPi1mBqJy1",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "t9KmPbRh6pkfouPi1mBqJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-0Q41Bm_TZqsC7X-MH8uFey1",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "0Q41Bm_TZqsC7X-MH8uFe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-4gvPprSH7hRS4gtXNMcCFy2",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "4gvPprSH7hRS4gtXNMcCF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhz2-6vGbvRsmQgOpRh8JJ3RF_y1",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "6vGbvRsmQgOpRh8JJ3RF_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0CHn_ubTBRWgrYGy0moZhx2-YJTEeRG1CdhLrHaAcDqrlw1",
+      "source": "0CHn_ubTBRWgrYGy0moZh",
+      "target": "LKNBSvhAfu655yOvr_fcm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrly2-nOIijMH-3TvcO1KL6qzwfz2",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "nOIijMH-3TvcO1KL6qzwf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrly2-Ego3XwBDgqlXOj6jSNvpyz2",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "qXcn_AGcGWjT8GgjaW5WN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrly2--ME4w8Bm5krSH14Yno4E5z1",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "-ME4w8Bm5krSH14Yno4E5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrly2-IUsaaRxiuOn3y9uYbpsJ0z1",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "IUsaaRxiuOn3y9uYbpsJ0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrlx2-MjGfRzhVZRxu545TbJ1AJw2",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "MjGfRzhVZRxu545TbJ1AJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MjGfRzhVZRxu545TbJ1AJz2-VscH3rVqpX29vaKmdCMopy1",
+      "source": "MjGfRzhVZRxu545TbJ1AJ",
+      "target": "VscH3rVqpX29vaKmdCMop",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MjGfRzhVZRxu545TbJ1AJz2-fP2cPskF9KzppZUhfyB8Uy1",
+      "source": "MjGfRzhVZRxu545TbJ1AJ",
+      "target": "fP2cPskF9KzppZUhfyB8U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MjGfRzhVZRxu545TbJ1AJz2-Ufgy4-kC2drCov4MqEhjyy1",
+      "source": "MjGfRzhVZRxu545TbJ1AJ",
+      "target": "Ufgy4-kC2drCov4MqEhjy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-AmIRWclu6IYViWHXnGA8Uz1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "AmIRWclu6IYViWHXnGA8U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-czmIvZYONFDxB2UNpT8U1z1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "czmIvZYONFDxB2UNpT8U1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-cBKw3jiAvdXVwUryV1aJlz1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "cBKw3jiAvdXVwUryV1aJl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2--2BvwJsqa5K8Tb8oSDUC8z1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "-2BvwJsqa5K8Tb8oSDUC8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-9S2IUUWVv_Q7ZfD7VqfhHz1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "9S2IUUWVv_Q7ZfD7VqfhH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-o1rSXBsjhD-sN0FdOK_dmz1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "o1rSXBsjhD-sN0FdOK_dm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoy2-wmAps9IeAvOxcqBqgUAXNz1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "wmAps9IeAvOxcqBqgUAXN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ksKI4TDz4_9IcmNORczWoz2-Wu3oW_gnjKTYV8QJHdNxiy1",
+      "source": "ksKI4TDz4_9IcmNORczWo",
+      "target": "Wu3oW_gnjKTYV8QJHdNxi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__YJTEeRG1CdhLrHaAcDqrly2-Ego3XwBDgqlXOj6jSNvpyz1",
+      "source": "LKNBSvhAfu655yOvr_fcm",
+      "target": "Ego3XwBDgqlXOj6jSNvpy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Wu3oW_gnjKTYV8QJHdNxix2-izO7oHOn9soZTC241JjD6w1",
+      "source": "Wu3oW_gnjKTYV8QJHdNxi",
+      "target": "xgw2ux-2Poml1fjWxjFsu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-7iDMmYQ-2Q6hrrFnUgRuPz2",
+      "source": "xgw2ux-2Poml1fjWxjFsu",
+      "target": "7iDMmYQ-2Q6hrrFnUgRuP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-GpaI2IDHDOZjyT3AZMbYDz1",
+      "source": "xgw2ux-2Poml1fjWxjFsu",
+      "target": "GpaI2IDHDOZjyT3AZMbYD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-R0mDuO5V5NJI8Yupc_i8iz1",
+      "source": "xgw2ux-2Poml1fjWxjFsu",
+      "target": "R0mDuO5V5NJI8Yupc_i8i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xgw2ux-2Poml1fjWxjFsux2-5Ze6iqSnZLpQWnhUSGQOEw2",
+      "source": "xgw2ux-2Poml1fjWxjFsu",
+      "target": "oHbzYpFInyr5aKCe-NWkC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEx2-ePOzN3Sh5tCYlAbsweWU0w1",
+      "source": "oHbzYpFInyr5aKCe-NWkC",
+      "target": "ePOzN3Sh5tCYlAbsweWU0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__oHbzYpFInyr5aKCe-NWkCy2-5Ze6iqSnZLpQWnhUSGQOEz2",
+      "source": "oHbzYpFInyr5aKCe-NWkC",
+      "target": "3P9p18a9EjbjjMtzpoVRN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3P9p18a9EjbjjMtzpoVRNx2-5Ze6iqSnZLpQWnhUSGQOEw1",
+      "source": "3P9p18a9EjbjjMtzpoVRN",
+      "target": "UevJNi2HHNzpCAx7Icd0k",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-mWc4HuNQACXGpJjEPa79jz1",
+      "source": "UevJNi2HHNzpCAx7Icd0k",
+      "target": "mWc4HuNQACXGpJjEPa79j",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-znqYy9Tgfpe-qakjRr7KUz2",
+      "source": "UevJNi2HHNzpCAx7Icd0k",
+      "target": "94HB2gvHgcEIeFQTlbVDu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__94HB2gvHgcEIeFQTlbVDuw2-f5O_U9dt0b73ZhLrWWz2Lx1",
+      "source": "94HB2gvHgcEIeFQTlbVDu",
+      "target": "f5O_U9dt0b73ZhLrWWz2L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UevJNi2HHNzpCAx7Icd0kx2-5Ze6iqSnZLpQWnhUSGQOEw2",
+      "source": "UevJNi2HHNzpCAx7Icd0k",
+      "target": "P_wR4dwto2NKrvTRbdBIX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__UevJNi2HHNzpCAx7Icd0ky2-9FAlTHlRj_DVjbpuiGRzDz1",
+      "source": "UevJNi2HHNzpCAx7Icd0k",
+      "target": "W0pWVr4cdxSan9Ceu5t7i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wR4dwto2NKrvTRbdBIXz2-9R5WYPxlChmz6bevJUwsTy1",
+      "source": "P_wR4dwto2NKrvTRbdBIX",
+      "target": "9R5WYPxlChmz6bevJUwsT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wR4dwto2NKrvTRbdBIXz2--UlDLjC8VsrKB9yexMtlry1",
+      "source": "P_wR4dwto2NKrvTRbdBIX",
+      "target": "-UlDLjC8VsrKB9yexMtlr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wR4dwto2NKrvTRbdBIXz2-6NvYDlYYLZzf4IHXu0dWsy1",
+      "source": "P_wR4dwto2NKrvTRbdBIX",
+      "target": "6NvYDlYYLZzf4IHXu0dWs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wR4dwto2NKrvTRbdBIXz2-HxgDw9gh1vHiMIMyZW8H2y1",
+      "source": "P_wR4dwto2NKrvTRbdBIX",
+      "target": "HxgDw9gh1vHiMIMyZW8H2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__P_wR4dwto2NKrvTRbdBIXx2-5Ze6iqSnZLpQWnhUSGQOEw2",
+      "source": "P_wR4dwto2NKrvTRbdBIX",
+      "target": "aJTXstcrsINdov7yrH8cE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEy2-DMXMZPWZlKgJAfhL2yDckz1",
+      "source": "aJTXstcrsINdov7yrH8cE",
+      "target": "DMXMZPWZlKgJAfhL2yDck",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aJTXstcrsINdov7yrH8cEx2-5Ze6iqSnZLpQWnhUSGQOEw2",
+      "source": "aJTXstcrsINdov7yrH8cE",
+      "target": "51NlCt5pvWNfa70WaE2M4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEx2-ievbuvgPKo261hM-9F117w2",
+      "source": "51NlCt5pvWNfa70WaE2M4",
+      "target": "ievbuvgPKo261hM-9F117",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__51NlCt5pvWNfa70WaE2M4z2-5Ze6iqSnZLpQWnhUSGQOEy1",
+      "source": "51NlCt5pvWNfa70WaE2M4",
+      "target": "5Ze6iqSnZLpQWnhUSGQOE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5Ze6iqSnZLpQWnhUSGQOEx2-YHoag7UR40OeIVUjfhQg_w1",
+      "source": "5Ze6iqSnZLpQWnhUSGQOE",
+      "target": "YHoag7UR40OeIVUjfhQg_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__YHoag7UR40OeIVUjfhQg_x2-yEl77JIN5-ixN5Ay247qpw1",
+      "source": "YHoag7UR40OeIVUjfhQg_",
+      "target": "yEl77JIN5-ixN5Ay247qp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2806 @@
+{
+  "title": {
+    "card": "BI Analyst",
+    "page": "BI Analyst"
+  },
+  "description": "Learn to become a Business Intelligence Analyst in @currentYear@",
+  "nodes": [
+    {
+      "id": "bE67FH6IVaXzKzWhT53ok",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "XKOvCLcIXdCm9DeHczipK",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5md9FtR1mEkFlVG7GLtWp",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "QfguOnkDT7dz7olRH4gL0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "h2IqqjFToUNWtPobBhRzf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "W3wysOYi1vJhZDQI8DCLQ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "pRgBsKJmnuzoFflelDQrH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "u16U-TX821UXiCExiWdeU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JfW19pPN95dLRThulQuPM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "KoafQQ4Rjg3lI5kAJ3yLN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "2nUfVL5FKn6yaDoWKaYf8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BIixnmu1PdwGEPFle5l40",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Q9rLNKUnYH1rgwx7kLKeT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "32120Nk0SvLrctFiYk8eI",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Fs3npgg3zE-_PYFmSdEnY",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TdGrT1oO36F4LogUE0Na9",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "tDIMw-ewxlLcNC8_H4w14",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Qh5sLVSfs2-wUfMVBYZQG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "T1C7y3cbHhNiEAaAHsxYt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Z38LQ3ZV_Fn5MdmWQDSiz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ijgG8Iwix-jnQznnIDJ9r",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "AiTKcRtgVVzo2jkZA8g0N",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ouf8G8CMMGiuaW11iQdvO",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "kTMXaNS4W8X2g1qtMUEOO",
+      "type": "title",
+      "data": {
+        "label": "BI Analyst"
+      }
+    },
+    {
+      "id": "jVXwlHRGgVpcoWCYzSB5W",
+      "type": "subtopic",
+      "data": {
+        "label": "What is BI?"
+      }
+    },
+    {
+      "id": "iRgtog5A13CTNDxnbGN9x",
+      "type": "subtopic",
+      "data": {
+        "label": "Skills"
+      }
+    },
+    {
+      "id": "NX-YaB_FVjoHYsR6z9QIL",
+      "type": "subtopic",
+      "data": {
+        "label": "Why BI Matters?"
+      }
+    },
+    {
+      "id": "Q-GmBJiRdBS_xLeOjef2R",
+      "type": "subtopic",
+      "data": {
+        "label": "Responsibilities"
+      }
+    },
+    {
+      "id": "JFNCITtE1YtcYmLfGfF5T",
+      "type": "subtopic",
+      "data": {
+        "label": "BI Analyst vs Other Roles"
+      }
+    },
+    {
+      "id": "PxOEfMSQYA2jy3zrMZXjZ",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "c0ywBrs9u7MciWAXSgVVg",
+      "type": "topic",
+      "data": {
+        "label": "Metrics and KPIs"
+      }
+    },
+    {
+      "id": "LjeipkY01Hlkp22kmlAMh",
+      "type": "topic",
+      "data": {
+        "label": "Types of BI Operations"
+      }
+    },
+    {
+      "id": "e3SdmNpVcvy3k_-JIO6OK",
+      "type": "topic",
+      "data": {
+        "label": "Stakeholder Identification"
+      }
+    },
+    {
+      "id": "PkzUqwT21Owk_TfepFPDm",
+      "type": "topic",
+      "data": {
+        "label": "Key Business Functions"
+      }
+    },
+    {
+      "id": "vTW3jSZ1bvc0OrP_bl22t",
+      "type": "subtopic",
+      "data": {
+        "label": "Descriptive Analysis"
+      }
+    },
+    {
+      "id": "4zpVE3R0lLyWpHePdBVpl",
+      "type": "subtopic",
+      "data": {
+        "label": "Predictive Analysis"
+      }
+    },
+    {
+      "id": "m5aC9aNy9mwLXz0xXBp40",
+      "type": "subtopic",
+      "data": {
+        "label": "Diagnostic Analysis"
+      }
+    },
+    {
+      "id": "NnbtaO2MiqsHeJ-ds0Q5m",
+      "type": "subtopic",
+      "data": {
+        "label": "Prescriptive Analysis"
+      }
+    },
+    {
+      "id": "3DVF8zo-_WM_9GTuzQFO8",
+      "type": "topic",
+      "data": {
+        "label": "Types of Data Analysis"
+      }
+    },
+    {
+      "id": "yXz6MkU3-HnlkmRmYh-Ev",
+      "type": "subtopic",
+      "data": {
+        "label": "Categorical vs Numerical"
+      }
+    },
+    {
+      "id": "YSxvg2HrfGoGtpkwY0kGc",
+      "type": "subtopic",
+      "data": {
+        "label": "Discrete vs Continuous"
+      }
+    },
+    {
+      "id": "HM1w6JJquaV6Vq4mjxM7p",
+      "type": "topic",
+      "data": {
+        "label": "Variables and Data Types"
+      }
+    },
+    {
+      "id": "DQtznxvW5x4s-zGLpUpNY",
+      "type": "subtopic",
+      "data": {
+        "label": "Mode"
+      }
+    },
+    {
+      "id": "S4XEOd2-PHIHOiiGgKVLJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Mean"
+      }
+    },
+    {
+      "id": "mfLRVcxvAjqmSG-KBpJ4J",
+      "type": "subtopic",
+      "data": {
+        "label": "Median"
+      }
+    },
+    {
+      "id": "xc1hm_XTyiMUVtWiTKXWG",
+      "type": "topic",
+      "data": {
+        "label": "Descriptive Statistics"
+      }
+    },
+    {
+      "id": "JXYmXAYuA-zxrkl4PRLQd",
+      "type": "subtopic",
+      "data": {
+        "label": "Correlation vs Causation"
+      }
+    },
+    {
+      "id": "ASHk2LOjlhwpwpWSRs_Bi",
+      "type": "topic",
+      "data": {
+        "label": "Correlation Analysis"
+      }
+    },
+    {
+      "id": "xgP3zIiSEr9dtYcCQikPb",
+      "type": "subtopic",
+      "data": {
+        "label": "Confidence Intervals"
+      }
+    },
+    {
+      "id": "7DNtRMBZ_F0K1FQk-UCM4",
+      "type": "topic",
+      "data": {
+        "label": "Inferential Statistics"
+      }
+    },
+    {
+      "id": "kb216tShKrRPWv7mE9sVa",
+      "type": "topic",
+      "data": {
+        "label": "Analog vs Digital Data"
+      }
+    },
+    {
+      "id": "qHcRrxenhogymMQ6EPiMa",
+      "type": "subtopic",
+      "data": {
+        "label": "Semistructured"
+      }
+    },
+    {
+      "id": "H1s1PQj8CHQ_VBQIy1VtJ",
+      "type": "topic",
+      "data": {
+        "label": "Types of data"
+      }
+    },
+    {
+      "id": "DJKXgelIxuahxJiqvwP6I",
+      "type": "subtopic",
+      "data": {
+        "label": "Unstructured"
+      }
+    },
+    {
+      "id": "jnIn3_2fI2k97oALPZkt7",
+      "type": "subtopic",
+      "data": {
+        "label": "Structured"
+      }
+    },
+    {
+      "id": "g5j_mbjx2yZUIK5lfN3eT",
+      "type": "topic",
+      "data": {
+        "label": "What is Data?"
+      }
+    },
+    {
+      "id": "g44bQY90HOeI_dZ8gK2Uj",
+      "type": "subtopic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "xQLsuJ3uohVzOxGfFLyFw",
+      "type": "subtopic",
+      "data": {
+        "label": "Web"
+      }
+    },
+    {
+      "id": "1cC6LKxcncaKg4Jm53pUy",
+      "type": "subtopic",
+      "data": {
+        "label": "Mobile Apps"
+      }
+    },
+    {
+      "id": "WXk0-vebMUQC25he2lmbh",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud"
+      }
+    },
+    {
+      "id": "xQDGmVwUkrmGdviOdG8Hu",
+      "type": "subtopic",
+      "data": {
+        "label": "APIs"
+      }
+    },
+    {
+      "id": "GrwdQldCWu2zWAaNj6LFk",
+      "type": "subtopic",
+      "data": {
+        "label": "IoT"
+      }
+    },
+    {
+      "id": "VUgxDDkoxkOcLxqpTDXzt",
+      "type": "topic",
+      "data": {
+        "label": "Data Sources"
+      }
+    },
+    {
+      "id": "LcLfC6BiOxJAkk2p424wL",
+      "type": "subtopic",
+      "data": {
+        "label": "CSV"
+      }
+    },
+    {
+      "id": "ytgK7van84j5DsfD0JyZ3",
+      "type": "subtopic",
+      "data": {
+        "label": "XML"
+      }
+    },
+    {
+      "id": "Dh62zxyyUHh0galD472p8",
+      "type": "subtopic",
+      "data": {
+        "label": "Excel"
+      }
+    },
+    {
+      "id": "k80q5FPNiIUdxn5A8R3Hu",
+      "type": "subtopic",
+      "data": {
+        "label": "Other formats"
+      }
+    },
+    {
+      "id": "p21d2mEUnTQgWhKFTGS9F",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON"
+      }
+    },
+    {
+      "id": "GsZWvJPNzN6XLDp2G1db4",
+      "type": "topic",
+      "data": {
+        "label": "Data Formats"
+      }
+    },
+    {
+      "id": "s8LZgRwrlm1V4meGM7gj0",
+      "type": "topic",
+      "data": {
+        "label": "SQL Fundamentals"
+      }
+    },
+    {
+      "id": "gJBaVERU3prru-qRksxN4",
+      "type": "topic",
+      "data": {
+        "label": "Popular Databases"
+      }
+    },
+    {
+      "id": "ETT9eATuyLHQe2jPqaF5I",
+      "type": "topic",
+      "data": {
+        "label": "Exploratory Data Analysis (EDA)"
+      }
+    },
+    {
+      "id": "xjgqmJmetKpWXSWZHPwaL",
+      "type": "subtopic",
+      "data": {
+        "label": "Duplicates"
+      }
+    },
+    {
+      "id": "fhreEuoT8ZBRwJqbSGrEZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Missing Values"
+      }
+    },
+    {
+      "id": "OqolfBQRQvwg6PI_t8Mrt",
+      "type": "subtopic",
+      "data": {
+        "label": "Outliers"
+      }
+    },
+    {
+      "id": "hrkMVMYWCedRxhNd2N9wE",
+      "type": "topic",
+      "data": {
+        "label": "Data Transformation Techniques"
+      }
+    },
+    {
+      "id": "sltVKaKKjmzu17jDv9OFF",
+      "type": "topic",
+      "data": {
+        "label": "Visualization Fundamentals"
+      }
+    },
+    {
+      "id": "BUizLtQ7vpdyBRjS8KyIl",
+      "type": "subtopic",
+      "data": {
+        "label": "Barplot"
+      }
+    },
+    {
+      "id": "SNkYi2VZsCRG31v63v8_x",
+      "type": "subtopic",
+      "data": {
+        "label": "Heatmap"
+      }
+    },
+    {
+      "id": "BVDaFmDat48nN3hj5NE71",
+      "type": "subtopic",
+      "data": {
+        "label": "Lineplot"
+      }
+    },
+    {
+      "id": "hCSZo7jT9arBLUbtCVFfD",
+      "type": "subtopic",
+      "data": {
+        "label": "Scatterplot"
+      }
+    },
+    {
+      "id": "7_5PBCrsukv81mm7yTpDf",
+      "type": "subtopic",
+      "data": {
+        "label": "Map"
+      }
+    },
+    {
+      "id": "wqLcUFVsLa_l9yQIee9MG",
+      "type": "subtopic",
+      "data": {
+        "label": "Histogram"
+      }
+    },
+    {
+      "id": "SJGEkoTSPK2ck4IvaK6Gz",
+      "type": "subtopic",
+      "data": {
+        "label": "Color theory"
+      }
+    },
+    {
+      "id": "qGVDuU9RA9Y5g5vlPd-xq",
+      "type": "subtopic",
+      "data": {
+        "label": "Misleading charts"
+      }
+    },
+    {
+      "id": "wtEzdO_ZNu9jHJrFS3CrG",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "7t0WfLLqrD5VJQwIAmXMo",
+      "type": "subtopic",
+      "data": {
+        "label": "Mobile-responsiveness"
+      }
+    },
+    {
+      "id": "EDQjtoTd01ftwXxYkV9it",
+      "type": "subtopic",
+      "data": {
+        "label": "Design principles"
+      }
+    },
+    {
+      "id": "eqGsO6ZGk2jdG0z9-cHzz",
+      "type": "subtopic",
+      "data": {
+        "label": "Power BI"
+      }
+    },
+    {
+      "id": "GoMIAQwusbT7fqJ-VnCrq",
+      "type": "subtopic",
+      "data": {
+        "label": "Qlik"
+      }
+    },
+    {
+      "id": "WzPj94lYxQCjFx5YW4X9x",
+      "type": "subtopic",
+      "data": {
+        "label": "Tableau"
+      }
+    },
+    {
+      "id": "f4MDT1RUfaICAWzyG2E6T",
+      "type": "subtopic",
+      "data": {
+        "label": "Looker"
+      }
+    },
+    {
+      "id": "kpRqKLtAd3IO3nbs8Yxrh",
+      "type": "topic",
+      "data": {
+        "label": "BI Platforms"
+      }
+    },
+    {
+      "id": "vQQSYPpcGO7ri0RFSWi0h",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "0OTmTRHlR3ImNU0zyLt8G",
+      "type": "subtopic",
+      "data": {
+        "label": "R"
+      }
+    },
+    {
+      "id": "KSxjcWV6C325kZITzAhWs",
+      "type": "topic",
+      "data": {
+        "label": "Programming Languages"
+      }
+    },
+    {
+      "id": "JHGV0V78GXubiSY9P3nTw",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Analytics"
+      }
+    },
+    {
+      "id": "OqHNW0PzIRsw7IBgh5U5Q",
+      "type": "subtopic",
+      "data": {
+        "label": "CLV"
+      }
+    },
+    {
+      "id": "j-GXKpMnsVuUUUdRxAXLe",
+      "type": "subtopic",
+      "data": {
+        "label": "Compliance Reporting"
+      }
+    },
+    {
+      "id": "aJLGan5dkMefvkspFlcYo",
+      "type": "subtopic",
+      "data": {
+        "label": "Fraud Detection"
+      }
+    },
+    {
+      "id": "xftv5BiyoVrFjpSN0tjsw",
+      "type": "topic",
+      "data": {
+        "label": "Finance"
+      }
+    },
+    {
+      "id": "VPu8vn7-baZQ5ORJ6ViW0",
+      "type": "subtopic",
+      "data": {
+        "label": "Sales Performance"
+      }
+    },
+    {
+      "id": "0qRm81lJX_Eb6aJkJMjeL",
+      "type": "subtopic",
+      "data": {
+        "label": "Marketing Campaigns"
+      }
+    },
+    {
+      "id": "LkbB0rpS3Du2K7_ogoc34",
+      "type": "subtopic",
+      "data": {
+        "label": "Inventory Optimization"
+      }
+    },
+    {
+      "id": "7jrzQogTOc6lHXfpYLCsx",
+      "type": "subtopic",
+      "data": {
+        "label": "Supply Chain Analytics"
+      }
+    },
+    {
+      "id": "7LbhfkmS7oFoSF1k5ZR1U",
+      "type": "topic",
+      "data": {
+        "label": "Retail \u0026 E-commerce"
+      }
+    },
+    {
+      "id": "LI09SvvUUCQxLZZee_j0n",
+      "type": "subtopic",
+      "data": {
+        "label": "Patient management"
+      }
+    },
+    {
+      "id": "omvGuhou7_63k-Fwcc7Mu",
+      "type": "subtopic",
+      "data": {
+        "label": "Compliance Reporting"
+      }
+    },
+    {
+      "id": "ku3m0ZmNg23F0Z5CEb4JI",
+      "type": "subtopic",
+      "data": {
+        "label": "Hospital Efficiency"
+      }
+    },
+    {
+      "id": "VpGVezYr9O6puhAF12PN2",
+      "type": "topic",
+      "data": {
+        "label": "Healthcare"
+      }
+    },
+    {
+      "id": "L50rpcgGjsQU3S0zRn6xh",
+      "type": "subtopic",
+      "data": {
+        "label": "Production Efficiency"
+      }
+    },
+    {
+      "id": "yimCxOdNtyGcbd6ZxHsBQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Predictive Maintenance"
+      }
+    },
+    {
+      "id": "Xe9zK8xhkkr4fsh3HOzAY",
+      "type": "subtopic",
+      "data": {
+        "label": "Quality Control"
+      }
+    },
+    {
+      "id": "-hNguvT6SQCqAgVpoQByr",
+      "type": "subtopic",
+      "data": {
+        "label": "Supply chain optimization"
+      }
+    },
+    {
+      "id": "zEGmDHaFa-F81tWqa3i9E",
+      "type": "topic",
+      "data": {
+        "label": "Manufacturing"
+      }
+    },
+    {
+      "id": "qKlo90-Cy8t_off5Qv8-6",
+      "type": "topic",
+      "data": {
+        "label": "A/B Testing"
+      }
+    },
+    {
+      "id": "R2zg0Ql-RsnIkV5Gmc1vN",
+      "type": "topic",
+      "data": {
+        "label": "Cohort Analysis"
+      }
+    },
+    {
+      "id": "ExHCSUDxDBwsJtTelvxjP",
+      "type": "subtopic",
+      "data": {
+        "label": "Forecasting"
+      }
+    },
+    {
+      "id": "yseEaLsEzIcqJ0YIoGujl",
+      "type": "topic",
+      "data": {
+        "label": "Time Series Analysis"
+      }
+    },
+    {
+      "id": "ZGazuCNruu09bd7C-aSFC",
+      "type": "topic",
+      "data": {
+        "label": "Basic Machine Learning"
+      }
+    },
+    {
+      "id": "t_J0MZTMWMnrImGHjXYov",
+      "type": "subtopic",
+      "data": {
+        "label": "Storytelling Framework"
+      }
+    },
+    {
+      "id": "KXhNou5nlekbSTfLYPs_8",
+      "type": "subtopic",
+      "data": {
+        "label": "Dashboard Design"
+      }
+    },
+    {
+      "id": "9G-pI5NsRCq4p0FLfaMR_",
+      "type": "subtopic",
+      "data": {
+        "label": "Presentation Design"
+      }
+    },
+    {
+      "id": "Slg3fXGPTa-Z4sdZY86XK",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Executive Summaries"
+      }
+    },
+    {
+      "id": "r-m88g8xrUnuEpV2lHJfN",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder Management"
+      }
+    },
+    {
+      "id": "vDQF2oaybSewNu3EMs6zG",
+      "type": "subtopic",
+      "data": {
+        "label": "Change Management"
+      }
+    },
+    {
+      "id": "NFKiPXrkjRre1yUZc27gl",
+      "type": "subtopic",
+      "data": {
+        "label": "Critical Thinking"
+      }
+    },
+    {
+      "id": "OmhvVSTtzH5sxOIZRVYfQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Business Acumen"
+      }
+    },
+    {
+      "id": "r8NoX426-ngu6ZQZe06oK",
+      "type": "subtopic",
+      "data": {
+        "label": "Project Management"
+      }
+    },
+    {
+      "id": "UhcniUDKmi7KNuXlolf5O",
+      "type": "subtopic",
+      "data": {
+        "label": "Relevance"
+      }
+    },
+    {
+      "id": "5USjYdAVJs0gSXxE1j8Xu",
+      "type": "subtopic",
+      "data": {
+        "label": "Timeliness"
+      }
+    },
+    {
+      "id": "BiyrAHB34evej_0cnDzOa",
+      "type": "subtopic",
+      "data": {
+        "label": "Accesibility"
+      }
+    },
+    {
+      "id": "uP8MWZqM9Z0i3eDF4Ldxv",
+      "type": "subtopic",
+      "data": {
+        "label": "Interpretability"
+      }
+    },
+    {
+      "id": "M1H3Fh09v8udCJIPSJPic",
+      "type": "subtopic",
+      "data": {
+        "label": "Accuracy"
+      }
+    },
+    {
+      "id": "4U66ZrBZqg7-ckOTmxAQj",
+      "type": "subtopic",
+      "data": {
+        "label": "Coherence"
+      }
+    },
+    {
+      "id": "F21ypKzpziLCXkiKG1S5Z",
+      "type": "topic",
+      "data": {
+        "label": "Data Lineage"
+      }
+    },
+    {
+      "id": "fuxGZx3WGjP2TzzVV29ux",
+      "type": "topic",
+      "data": {
+        "label": "Privacy"
+      }
+    },
+    {
+      "id": "9aNVqEyygNGeicdce5X8b",
+      "type": "topic",
+      "data": {
+        "label": "Bias Recognition"
+      }
+    },
+    {
+      "id": "Vb06K0D2vWAlSe95QJrth",
+      "type": "topic",
+      "data": {
+        "label": "Ethical Data Use"
+      }
+    },
+    {
+      "id": "wJiKBbTMLhIzelUtKn7jl",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Warehouse"
+      }
+    },
+    {
+      "id": "iqpVtvoebAaoB_Dj9-gdw",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Lake"
+      }
+    },
+    {
+      "id": "5x4NfuP6dAgjISlB-esIW",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Mart"
+      }
+    },
+    {
+      "id": "zGU6DyEm6xEYf1_73cbjL",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud BI Ecosystem"
+      }
+    },
+    {
+      "id": "Zxuvc9F3bINLTdfbsx_S_",
+      "type": "topic",
+      "data": {
+        "label": "Data Architectures"
+      }
+    },
+    {
+      "id": "iYe42G31fhkAO0MBaHutF",
+      "type": "topic",
+      "data": {
+        "label": "Star vs Snowflake Schema"
+      }
+    },
+    {
+      "id": "Prfa0LUmgxcp52IEObFom",
+      "type": "topic",
+      "data": {
+        "label": "Normalization vs Denormalization"
+      }
+    },
+    {
+      "id": "hcbS18cpVxd55hVlUeLLT",
+      "type": "topic",
+      "data": {
+        "label": "Fact vs Dimension Tables"
+      }
+    },
+    {
+      "id": "fFzCnLfZ_vSbhQjdAKLlJ",
+      "type": "topic",
+      "data": {
+        "label": "Calculated Fields \u0026 Measures"
+      }
+    },
+    {
+      "id": "Dk31XtS7wWRzO31sdsEDo",
+      "type": "topic",
+      "data": {
+        "label": "Data Modeling for BI"
+      }
+    },
+    {
+      "id": "lAK9QVs97hL3ysjz2blp8",
+      "type": "topic",
+      "data": {
+        "label": "ETL Tools"
+      }
+    },
+    {
+      "id": "Du4GD-6pxbWYl4uSJRnOE",
+      "type": "topic",
+      "data": {
+        "label": "ETL basics"
+      }
+    },
+    {
+      "id": "3xDVJwdl3uu5EcjlZ1ytA",
+      "type": "subtopic",
+      "data": {
+        "label": "End-to-end Analytics Project"
+      }
+    },
+    {
+      "id": "yvSf7sGEd7QiaVoetalHc",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Pipeline Design"
+      }
+    },
+    {
+      "id": "qvPTiDbsY5ol_K-BNLmzk",
+      "type": "subtopic",
+      "data": {
+        "label": "Dashboard Design"
+      }
+    },
+    {
+      "id": "UIdwl_KLELI8xL2VxYJmX",
+      "type": "topic",
+      "data": {
+        "label": "Building Your Portfolio"
+      }
+    },
+    {
+      "id": "tUxwKTml2Go8zR9tR3cjn",
+      "type": "topic",
+      "data": {
+        "label": "Professional Development"
+      }
+    },
+    {
+      "id": "X8U-NQD0rYqFr_xgDWL2s",
+      "type": "subtopic",
+      "data": {
+        "label": "BI Communities"
+      }
+    },
+    {
+      "id": "YovS5Dbcr6g_8PMr8jp5t",
+      "type": "subtopic",
+      "data": {
+        "label": "Open-Source Projects"
+      }
+    },
+    {
+      "id": "aTGsJj7Ntv5BWIzjaqvu_",
+      "type": "subtopic",
+      "data": {
+        "label": "BI Competitions"
+      }
+    },
+    {
+      "id": "UDF8wyYT8127wfFHcq37P",
+      "type": "subtopic",
+      "data": {
+        "label": "Conferences \u0026 Webinars"
+      }
+    },
+    {
+      "id": "Q98GaitxocEha4zZ9d254",
+      "type": "topic",
+      "data": {
+        "label": "Networking"
+      }
+    },
+    {
+      "id": "m9EwcekZ_l0XHiKeQ8emr",
+      "type": "subtopic",
+      "data": {
+        "label": "Resume optimization"
+      }
+    },
+    {
+      "id": "4XM5ikPiHVehEtT4AB-Ea",
+      "type": "subtopic",
+      "data": {
+        "label": "Interview preparation"
+      }
+    },
+    {
+      "id": "qsCWo1CmR4mvy7E7qlPv5",
+      "type": "subtopic",
+      "data": {
+        "label": "Portfolio presentation"
+      }
+    },
+    {
+      "id": "k3F9Tdqo3XYgMLOKGjpxA",
+      "type": "subtopic",
+      "data": {
+        "label": "Salary negotiation strategies"
+      }
+    },
+    {
+      "id": "TojDB4o0i2rs7Qcb10k1r",
+      "type": "topic",
+      "data": {
+        "label": "Job Preparation"
+      }
+    },
+    {
+      "id": "iAWm99EoRnpzLlw6XDuaf",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "8QsQoUED1iJjXDRjGfiHm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jJukG4XxfFcID_VlQKqe-",
+      "type": "subtopic",
+      "data": {
+        "label": "Tactical BI"
+      }
+    },
+    {
+      "id": "3BxbkrBp8veZj38zdwN8s",
+      "type": "subtopic",
+      "data": {
+        "label": "Strategic BI"
+      }
+    },
+    {
+      "id": "GN6SnI7RXIeW8JeD-qORW",
+      "type": "subtopic",
+      "data": {
+        "label": "Operational BI"
+      }
+    },
+    {
+      "id": "cxTriSZvrmXP4axKynIZW",
+      "type": "subtopic",
+      "data": {
+        "label": "Finance"
+      }
+    },
+    {
+      "id": "s-wUPMaagyRupT2RdfHks",
+      "type": "subtopic",
+      "data": {
+        "label": "Marketing"
+      }
+    },
+    {
+      "id": "dJZqe47kzRqYIG-4AZTlz",
+      "type": "subtopic",
+      "data": {
+        "label": "Operations"
+      }
+    },
+    {
+      "id": "KeGCHoJRHp-mBX-P5to4Y",
+      "type": "subtopic",
+      "data": {
+        "label": "HR"
+      }
+    },
+    {
+      "id": "F-fC2JWOuEeDbOHH1O6EB",
+      "type": "topic",
+      "data": {
+        "label": "Central Tendency"
+      }
+    },
+    {
+      "id": "VxpH_z-_Soni24XOVBh8v",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "1D98k1HNCaaiaI20euVwA",
+      "type": "topic",
+      "data": {
+        "label": "Dispersion"
+      }
+    },
+    {
+      "id": "jll2iRbjdx7iiNwY13KYD",
+      "type": "subtopic",
+      "data": {
+        "label": "Range"
+      }
+    },
+    {
+      "id": "ZmSwDn0sP7HvLKYVzRwPJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Variance"
+      }
+    },
+    {
+      "id": "vqtzg9bydAqHMwZhPHo1a",
+      "type": "subtopic",
+      "data": {
+        "label": "STD"
+      }
+    },
+    {
+      "id": "LEHK7ohKIzKhlGebd0k_j",
+      "type": "subtopic",
+      "data": {
+        "label": "IQR"
+      }
+    },
+    {
+      "id": "JSqwWsfojjZTe8ynmA7fc",
+      "type": "topic",
+      "data": {
+        "label": "Distribution"
+      }
+    },
+    {
+      "id": "X0DBG0mEWk25PEbLHhs7v",
+      "type": "subtopic",
+      "data": {
+        "label": "Skewness"
+      }
+    },
+    {
+      "id": "jvU1iu2M_y1IH62oUpAeU",
+      "type": "subtopic",
+      "data": {
+        "label": "Kurtosis"
+      }
+    },
+    {
+      "id": "7VDxA9bQ1P1fym4eQVKkN",
+      "type": "subtopic",
+      "data": {
+        "label": "Population \u0026 Sample"
+      }
+    },
+    {
+      "id": "01k_mfsp0eW6TX9yp8PDE",
+      "type": "subtopic",
+      "data": {
+        "label": "Statistical tests"
+      }
+    },
+    {
+      "id": "rkEdx_mZBoDjMhiluJl7O",
+      "type": "subtopic",
+      "data": {
+        "label": "p-value"
+      }
+    },
+    {
+      "id": "SosOXxErMn0t2KCoHoxvS",
+      "type": "subtopic",
+      "data": {
+        "label": "Types of Errors"
+      }
+    },
+    {
+      "id": "6xfQic8dMwUsMQa7VtS8_",
+      "type": "topic",
+      "data": {
+        "label": "Hypothesis Testing"
+      }
+    },
+    {
+      "id": "m9ejACzRBJza0v-fpdfkn",
+      "type": "topic",
+      "data": {
+        "label": "Regression Analysis"
+      }
+    },
+    {
+      "id": "4-fpZx8p5iSNI3n4Qtacl",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Regression"
+      }
+    },
+    {
+      "id": "_QyIZ2_vH3e3yic5NTuak",
+      "type": "subtopic",
+      "data": {
+        "label": "Beyond Linear Regression"
+      }
+    },
+    {
+      "id": "nhl9FM79femgqENNR0HbE",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "uoQS4g-c6QndacUeiaWrq",
+      "type": "subtopic",
+      "data": {
+        "label": "Oracle"
+      }
+    },
+    {
+      "id": "eqnAEp2VT7FD2VDy5WVDP",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL"
+      }
+    },
+    {
+      "id": "lrksz861rE5m2XzOQPwgh",
+      "type": "subtopic",
+      "data": {
+        "label": "SQLite"
+      }
+    },
+    {
+      "id": "y9Fnjnbiqt7WkrhjPITpW",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "TuBJ2yUz1c5KMRGVHdvU5",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Queries"
+      }
+    },
+    {
+      "id": "-gbb16Wl--Rjx5aoM0krL",
+      "type": "subtopic",
+      "data": {
+        "label": "Advanced Queries"
+      }
+    },
+    {
+      "id": "1toMuRZResgse1AtwEck6",
+      "type": "subtopic",
+      "data": {
+        "label": "Window Functions"
+      }
+    },
+    {
+      "id": "Vo7LJ_W-DBvxvVrnz33BM",
+      "type": "topic",
+      "data": {
+        "label": "Data Cleaning"
+      }
+    },
+    {
+      "id": "_iV_5O5Rq07P9qRGrraTM",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "ZAhjB_ghHukD4RPAtNDxh",
+      "type": "subtopic",
+      "data": {
+        "label": "dplyr"
+      }
+    },
+    {
+      "id": "9BWyA0b4WrmQetSMph_mY",
+      "type": "subtopic",
+      "data": {
+        "label": "Excel"
+      }
+    },
+    {
+      "id": "25f76eB9-vy3Usta-Pbsi",
+      "type": "subtopic",
+      "data": {
+        "label": "Pandas"
+      }
+    },
+    {
+      "id": "GVgfPajmSqIgFZ6u2I1tK",
+      "type": "topic",
+      "data": {
+        "label": "Chart Categories"
+      }
+    },
+    {
+      "id": "eKBORkRU6HCH-D4GWHyKR",
+      "type": "topic",
+      "data": {
+        "label": "Visualization Best Practices"
+      }
+    },
+    {
+      "id": "TCYG6vmFqq1zAPNQWoOH8",
+      "type": "subtopic",
+      "data": {
+        "label": "Standardisation"
+      }
+    },
+    {
+      "id": "LLK3_hudKDX5d-fd98vlx",
+      "type": "topic",
+      "data": {
+        "label": "Excel"
+      }
+    },
+    {
+      "id": "1T2PyytlmndHreWgueD55",
+      "type": "subtopic",
+      "data": {
+        "label": "Financial Performance"
+      }
+    },
+    {
+      "id": "Cydlrtg_FClBUkjezqGie",
+      "type": "subtopic",
+      "data": {
+        "label": "Public Health"
+      }
+    },
+    {
+      "id": "On6kznZxLTCpBPskdZtgT",
+      "type": "subtopic",
+      "data": {
+        "label": "Trends"
+      }
+    },
+    {
+      "id": "moWrEfuKE06QwbznsH3V-",
+      "type": "subtopic",
+      "data": {
+        "label": "Seasonality"
+      }
+    },
+    {
+      "id": "eZN_ty8VDX9mi5KtCWTFL",
+      "type": "subtopic",
+      "data": {
+        "label": "Supervised Learning"
+      }
+    },
+    {
+      "id": "6l_tHC1R5zgABHMc_G6RD",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsupervised Learning"
+      }
+    },
+    {
+      "id": "KFONHuJNnCuSOH7-8Ndvm",
+      "type": "subtopic",
+      "data": {
+        "label": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "TBcLXYtKs7_j_h_m2pAyh",
+      "type": "topic",
+      "data": {
+        "label": "Communication \u0026 Storytelling"
+      }
+    },
+    {
+      "id": "mi88uLdJBXaxJ2yVOSqqo",
+      "type": "topic",
+      "data": {
+        "label": "Soft Skills"
+      }
+    },
+    {
+      "id": "Sy3AiIS9B845Ua4TTAFG7",
+      "type": "label",
+      "data": {
+        "label": "Data Governance \u0026 Ethics"
+      }
+    },
+    {
+      "id": "bGCMAgaenZ0t3WeO5joyP",
+      "type": "topic",
+      "data": {
+        "label": "Data Quality"
+      }
+    },
+    {
+      "id": "CWf_vL78f8-mSUQbPnU8e",
+      "type": "subtopic",
+      "data": {
+        "label": "GDPR"
+      }
+    },
+    {
+      "id": "IwnXDA-f3FHK4EEeFuToC",
+      "type": "subtopic",
+      "data": {
+        "label": "CCPA"
+      }
+    },
+    {
+      "id": "_uLtsnyNNNRcz5A29Zpjl",
+      "type": "subtopic",
+      "data": {
+        "label": "Algorithmic Bias"
+      }
+    },
+    {
+      "id": "5MUwKGfSTKlam8KCG0A1U",
+      "type": "subtopic",
+      "data": {
+        "label": "Mitigation Strategies"
+      }
+    },
+    {
+      "id": "qnUHw2f2VmTPU3-NMnoLl",
+      "type": "subtopic",
+      "data": {
+        "label": "Airflow"
+      }
+    },
+    {
+      "id": "-KzusmyDQ1NgqOADpqmEX",
+      "type": "subtopic",
+      "data": {
+        "label": "dbt"
+      }
+    },
+    {
+      "id": "hqpFbDhAvyT9_4hcoSLhC",
+      "type": "topic",
+      "data": {
+        "label": "Certifications"
+      }
+    },
+    {
+      "id": "9t4efXU3eSny7asaaeQnT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Also visit the following related roadmaps"
+      }
+    },
+    {
+      "id": "hl06pnTWoMnzLmiOz9Sga",
+      "type": "button",
+      "data": {
+        "label": "AI \u0026 Data Scientist"
+      }
+    },
+    {
+      "id": "KGFYqDgOVSFXd2lbg8vGx",
+      "type": "button",
+      "data": {
+        "label": "SQL"
+      }
+    },
+    {
+      "id": "xcOlVnhYfnSCfzLpkcaRS",
+      "type": "button",
+      "data": {
+        "label": "Data Analyst"
+      }
+    },
+    {
+      "id": "HzuJzjnJQga51df1WUn4t",
+      "type": "paragraph",
+      "data": {
+        "label": "Statistics Basics"
+      }
+    },
+    {
+      "id": "hXrtRBNlstSBzn1WkIr37",
+      "type": "paragraph",
+      "data": {
+        "label": "Business Fundamentals"
+      }
+    },
+    {
+      "id": "kK-Z2hA1B6bV4yXYFY34V",
+      "type": "paragraph",
+      "data": {
+        "label": "BI Core Skills"
+      }
+    },
+    {
+      "id": "MlUILykYMJ69TPBxkeejT",
+      "type": "button",
+      "data": {
+        "label": "Visit SQL Roadmap"
+      }
+    },
+    {
+      "id": "RpgUaTtS1k69NeSkW59gf",
+      "type": "label",
+      "data": {
+        "label": "Tools for Data Cleaning"
+      }
+    },
+    {
+      "id": "5iINHo32wQa0sehltzTGJ",
+      "type": "label",
+      "data": {
+        "label": "Popular Plots"
+      }
+    },
+    {
+      "id": "QPYfdTwOFTyEE-iPLMDrz",
+      "type": "paragraph",
+      "data": {
+        "label": "Visualizing Data"
+      }
+    },
+    {
+      "id": "GHr_rPB2cus3p3fgwGMdR",
+      "type": "paragraph",
+      "data": {
+        "label": "BI Tools"
+      }
+    },
+    {
+      "id": "dY-TBN_bsJdnKPcsNX67Q",
+      "type": "paragraph",
+      "data": {
+        "label": "Cloud Computing"
+      }
+    },
+    {
+      "id": "_KYKLd-RNhVy-Sn1A-G5j",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Computing Basics"
+      }
+    },
+    {
+      "id": "D94743lQ1fAerVSpJWXfP",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud data warehouses"
+      }
+    },
+    {
+      "id": "Z4pAe4FpnCkUJt8RuOhC6",
+      "type": "subtopic",
+      "data": {
+        "label": "Providers: AWS, GCP, Azure"
+      }
+    },
+    {
+      "id": "6vLHalrdOPZIVFUyCM8gc",
+      "type": "paragraph",
+      "data": {
+        "label": "Business Applications"
+      }
+    },
+    {
+      "id": "k8r0_6oOYgNyHfvZQvQVk",
+      "type": "paragraph",
+      "data": {
+        "label": "BI Techniques"
+      }
+    },
+    {
+      "id": "eoLdywVPgNoGTHBQpLWRh",
+      "type": "paragraph",
+      "data": {
+        "label": "Professional Excellence"
+      }
+    },
+    {
+      "id": "lAcFmIlGbrKeNRR9wWFau",
+      "type": "paragraph",
+      "data": {
+        "label": "Data Architectures"
+      }
+    },
+    {
+      "id": "6kzp12lpxM1owSqKDwL5k",
+      "type": "paragraph",
+      "data": {
+        "label": "Career Development"
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__kTMXaNS4W8X2g1qtMUEOOx2-PxOEfMSQYA2jy3zrMZXjZw2",
+      "source": "kTMXaNS4W8X2g1qtMUEOO",
+      "target": "PxOEfMSQYA2jy3zrMZXjZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__PxOEfMSQYA2jy3zrMZXjZz2-hXrtRBNlstSBzn1WkIr37y1",
+      "source": "PxOEfMSQYA2jy3zrMZXjZ",
+      "target": "hXrtRBNlstSBzn1WkIr37",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__hXrtRBNlstSBzn1WkIr37x2-c0ywBrs9u7MciWAXSgVVgw1",
+      "source": "hXrtRBNlstSBzn1WkIr37",
+      "target": "c0ywBrs9u7MciWAXSgVVg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LjeipkY01Hlkp22kmlAMhx2-GN6SnI7RXIeW8JeD-qORWw1",
+      "source": "LjeipkY01Hlkp22kmlAMh",
+      "target": "GN6SnI7RXIeW8JeD-qORW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LjeipkY01Hlkp22kmlAMhy2-PkzUqwT21Owk_TfepFPDmz1",
+      "source": "LjeipkY01Hlkp22kmlAMh",
+      "target": "PkzUqwT21Owk_TfepFPDm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__PkzUqwT21Owk_TfepFPDmx2-3DVF8zo-_WM_9GTuzQFO8w1",
+      "source": "PkzUqwT21Owk_TfepFPDm",
+      "target": "3DVF8zo-_WM_9GTuzQFO8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3DVF8zo-_WM_9GTuzQFO8x2-HzuJzjnJQga51df1WUn4tw2",
+      "source": "3DVF8zo-_WM_9GTuzQFO8",
+      "target": "HzuJzjnJQga51df1WUn4t",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__HzuJzjnJQga51df1WUn4ty2-HM1w6JJquaV6Vq4mjxM7pz1",
+      "source": "HzuJzjnJQga51df1WUn4t",
+      "target": "HM1w6JJquaV6Vq4mjxM7p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3DVF8zo-_WM_9GTuzQFO8y2-NnbtaO2MiqsHeJ-ds0Q5mz2",
+      "source": "3DVF8zo-_WM_9GTuzQFO8",
+      "target": "NnbtaO2MiqsHeJ-ds0Q5m",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3DVF8zo-_WM_9GTuzQFO8y2-4zpVE3R0lLyWpHePdBVplz1",
+      "source": "3DVF8zo-_WM_9GTuzQFO8",
+      "target": "4zpVE3R0lLyWpHePdBVpl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3DVF8zo-_WM_9GTuzQFO8y2-m5aC9aNy9mwLXz0xXBp40z1",
+      "source": "3DVF8zo-_WM_9GTuzQFO8",
+      "target": "m5aC9aNy9mwLXz0xXBp40",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__3DVF8zo-_WM_9GTuzQFO8y2-vTW3jSZ1bvc0OrP_bl22tz1",
+      "source": "3DVF8zo-_WM_9GTuzQFO8",
+      "target": "vTW3jSZ1bvc0OrP_bl22t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PxOEfMSQYA2jy3zrMZXjZy2-jVXwlHRGgVpcoWCYzSB5Wz1",
+      "source": "PxOEfMSQYA2jy3zrMZXjZ",
+      "target": "jVXwlHRGgVpcoWCYzSB5W",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PxOEfMSQYA2jy3zrMZXjZy2-NX-YaB_FVjoHYsR6z9QILz1",
+      "source": "PxOEfMSQYA2jy3zrMZXjZ",
+      "target": "NX-YaB_FVjoHYsR6z9QIL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PxOEfMSQYA2jy3zrMZXjZy2-JFNCITtE1YtcYmLfGfF5Tz1",
+      "source": "PxOEfMSQYA2jy3zrMZXjZ",
+      "target": "JFNCITtE1YtcYmLfGfF5T",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PxOEfMSQYA2jy3zrMZXjZy2-Q-GmBJiRdBS_xLeOjef2Rz1",
+      "source": "PxOEfMSQYA2jy3zrMZXjZ",
+      "target": "Q-GmBJiRdBS_xLeOjef2R",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HM1w6JJquaV6Vq4mjxM7pw2-YSxvg2HrfGoGtpkwY0kGcx1",
+      "source": "HM1w6JJquaV6Vq4mjxM7p",
+      "target": "YSxvg2HrfGoGtpkwY0kGc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HM1w6JJquaV6Vq4mjxM7px2-xc1hm_XTyiMUVtWiTKXWGw2",
+      "source": "HM1w6JJquaV6Vq4mjxM7p",
+      "target": "xc1hm_XTyiMUVtWiTKXWG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__xc1hm_XTyiMUVtWiTKXWGz2-F-fC2JWOuEeDbOHH1O6EBy1",
+      "source": "xc1hm_XTyiMUVtWiTKXWG",
+      "target": "F-fC2JWOuEeDbOHH1O6EB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__F-fC2JWOuEeDbOHH1O6EBz2-1D98k1HNCaaiaI20euVwAy1",
+      "source": "F-fC2JWOuEeDbOHH1O6EB",
+      "target": "1D98k1HNCaaiaI20euVwA",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__1D98k1HNCaaiaI20euVwAx2-JSqwWsfojjZTe8ynmA7fcw2",
+      "source": "1D98k1HNCaaiaI20euVwA",
+      "target": "JSqwWsfojjZTe8ynmA7fc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JSqwWsfojjZTe8ynmA7fcy2-7DNtRMBZ_F0K1FQk-UCM4z2",
+      "source": "JSqwWsfojjZTe8ynmA7fc",
+      "target": "7DNtRMBZ_F0K1FQk-UCM4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7DNtRMBZ_F0K1FQk-UCM4y2-ASHk2LOjlhwpwpWSRs_Biz2",
+      "source": "7DNtRMBZ_F0K1FQk-UCM4",
+      "target": "ASHk2LOjlhwpwpWSRs_Bi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ASHk2LOjlhwpwpWSRs_Biw2-JXYmXAYuA-zxrkl4PRLQdx1",
+      "source": "ASHk2LOjlhwpwpWSRs_Bi",
+      "target": "JXYmXAYuA-zxrkl4PRLQd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ASHk2LOjlhwpwpWSRs_Bix2-m9ejACzRBJza0v-fpdfknw1",
+      "source": "ASHk2LOjlhwpwpWSRs_Bi",
+      "target": "m9ejACzRBJza0v-fpdfkn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__m9ejACzRBJza0v-fpdfknz2-_QyIZ2_vH3e3yic5NTuaky1",
+      "source": "m9ejACzRBJza0v-fpdfkn",
+      "target": "_QyIZ2_vH3e3yic5NTuak",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__m9ejACzRBJza0v-fpdfknz2-4-fpZx8p5iSNI3n4Qtacly1",
+      "source": "m9ejACzRBJza0v-fpdfkn",
+      "target": "4-fpZx8p5iSNI3n4Qtacl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__m9ejACzRBJza0v-fpdfknx2-6xfQic8dMwUsMQa7VtS8_w1",
+      "source": "m9ejACzRBJza0v-fpdfkn",
+      "target": "6xfQic8dMwUsMQa7VtS8_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__g5j_mbjx2yZUIK5lfN3eTx2-kb216tShKrRPWv7mE9sVaw1",
+      "source": "g5j_mbjx2yZUIK5lfN3eT",
+      "target": "kb216tShKrRPWv7mE9sVa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kb216tShKrRPWv7mE9sVax2-H1s1PQj8CHQ_VBQIy1VtJw2",
+      "source": "kb216tShKrRPWv7mE9sVa",
+      "target": "H1s1PQj8CHQ_VBQIy1VtJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__H1s1PQj8CHQ_VBQIy1VtJy2-VUgxDDkoxkOcLxqpTDXztz1",
+      "source": "H1s1PQj8CHQ_VBQIy1VtJ",
+      "target": "VUgxDDkoxkOcLxqpTDXzt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__H1s1PQj8CHQ_VBQIy1VtJx2-jnIn3_2fI2k97oALPZkt7w1",
+      "source": "H1s1PQj8CHQ_VBQIy1VtJ",
+      "target": "jnIn3_2fI2k97oALPZkt7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GsZWvJPNzN6XLDp2G1db4y2-k80q5FPNiIUdxn5A8R3Huz1",
+      "source": "GsZWvJPNzN6XLDp2G1db4",
+      "target": "k80q5FPNiIUdxn5A8R3Hu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GsZWvJPNzN6XLDp2G1db4y2-ytgK7van84j5DsfD0JyZ3z2",
+      "source": "GsZWvJPNzN6XLDp2G1db4",
+      "target": "ytgK7van84j5DsfD0JyZ3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GsZWvJPNzN6XLDp2G1db4y2-LcLfC6BiOxJAkk2p424wLz1",
+      "source": "GsZWvJPNzN6XLDp2G1db4",
+      "target": "LcLfC6BiOxJAkk2p424wL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VUgxDDkoxkOcLxqpTDXztx2-GsZWvJPNzN6XLDp2G1db4w2",
+      "source": "VUgxDDkoxkOcLxqpTDXzt",
+      "target": "GsZWvJPNzN6XLDp2G1db4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__GsZWvJPNzN6XLDp2G1db4x2-s8LZgRwrlm1V4meGM7gj0w1",
+      "source": "GsZWvJPNzN6XLDp2G1db4",
+      "target": "s8LZgRwrlm1V4meGM7gj0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__s8LZgRwrlm1V4meGM7gj0z2-TuBJ2yUz1c5KMRGVHdvU5y1",
+      "source": "s8LZgRwrlm1V4meGM7gj0",
+      "target": "TuBJ2yUz1c5KMRGVHdvU5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__s8LZgRwrlm1V4meGM7gj0z2--gbb16Wl--Rjx5aoM0krLy1",
+      "source": "s8LZgRwrlm1V4meGM7gj0",
+      "target": "-gbb16Wl--Rjx5aoM0krL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__s8LZgRwrlm1V4meGM7gj0z2-1toMuRZResgse1AtwEck6y1",
+      "source": "s8LZgRwrlm1V4meGM7gj0",
+      "target": "1toMuRZResgse1AtwEck6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__s8LZgRwrlm1V4meGM7gj0z2-y9Fnjnbiqt7WkrhjPITpWy1",
+      "source": "s8LZgRwrlm1V4meGM7gj0",
+      "target": "y9Fnjnbiqt7WkrhjPITpW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6xfQic8dMwUsMQa7VtS8_z2-kK-Z2hA1B6bV4yXYFY34Vy1",
+      "source": "6xfQic8dMwUsMQa7VtS8_",
+      "target": "kK-Z2hA1B6bV4yXYFY34V",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kK-Z2hA1B6bV4yXYFY34Vz2-g5j_mbjx2yZUIK5lfN3eTy1",
+      "source": "kK-Z2hA1B6bV4yXYFY34V",
+      "target": "g5j_mbjx2yZUIK5lfN3eT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MlUILykYMJ69TPBxkeejTy2-gJBaVERU3prru-qRksxN4z1",
+      "source": "MlUILykYMJ69TPBxkeejT",
+      "target": "gJBaVERU3prru-qRksxN4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__gJBaVERU3prru-qRksxN4x2-Vo7LJ_W-DBvxvVrnz33BMw2",
+      "source": "gJBaVERU3prru-qRksxN4",
+      "target": "Vo7LJ_W-DBvxvVrnz33BM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Vo7LJ_W-DBvxvVrnz33BMx2-TCYG6vmFqq1zAPNQWoOH8w1",
+      "source": "Vo7LJ_W-DBvxvVrnz33BM",
+      "target": "TCYG6vmFqq1zAPNQWoOH8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Vo7LJ_W-DBvxvVrnz33BMz2-ETT9eATuyLHQe2jPqaF5Iy1",
+      "source": "Vo7LJ_W-DBvxvVrnz33BM",
+      "target": "ETT9eATuyLHQe2jPqaF5I",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__GVgfPajmSqIgFZ6u2I1tKz2-SNkYi2VZsCRG31v63v8_xy1",
+      "source": "GVgfPajmSqIgFZ6u2I1tK",
+      "target": "SNkYi2VZsCRG31v63v8_x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GVgfPajmSqIgFZ6u2I1tKz2-wqLcUFVsLa_l9yQIee9MGy1",
+      "source": "GVgfPajmSqIgFZ6u2I1tK",
+      "target": "wqLcUFVsLa_l9yQIee9MG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GVgfPajmSqIgFZ6u2I1tKz2-BUizLtQ7vpdyBRjS8KyIly1",
+      "source": "GVgfPajmSqIgFZ6u2I1tK",
+      "target": "BUizLtQ7vpdyBRjS8KyIl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hrkMVMYWCedRxhNd2N9wEx2-QPYfdTwOFTyEE-iPLMDrzw1",
+      "source": "hrkMVMYWCedRxhNd2N9wE",
+      "target": "QPYfdTwOFTyEE-iPLMDrz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QPYfdTwOFTyEE-iPLMDrzx2-sltVKaKKjmzu17jDv9OFFw1",
+      "source": "QPYfdTwOFTyEE-iPLMDrz",
+      "target": "sltVKaKKjmzu17jDv9OFF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRy2-wtEzdO_ZNu9jHJrFS3CrGz1",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "wtEzdO_ZNu9jHJrFS3CrG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRy2-EDQjtoTd01ftwXxYkV9itz1",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "EDQjtoTd01ftwXxYkV9it",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRy2-qGVDuU9RA9Y5g5vlPd-xqz1",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "qGVDuU9RA9Y5g5vlPd-xq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRy2-7t0WfLLqrD5VJQwIAmXMoz1",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "7t0WfLLqrD5VJQwIAmXMo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRy2-SJGEkoTSPK2ck4IvaK6Gzz1",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "SJGEkoTSPK2ck4IvaK6Gz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eKBORkRU6HCH-D4GWHyKRx2-eoLdywVPgNoGTHBQpLWRhw2",
+      "source": "eKBORkRU6HCH-D4GWHyKR",
+      "target": "GHr_rPB2cus3p3fgwGMdR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhx2-LLK3_hudKDX5d-fd98vlxw1",
+      "source": "GHr_rPB2cus3p3fgwGMdR",
+      "target": "LLK3_hudKDX5d-fd98vlx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LLK3_hudKDX5d-fd98vlxz2-kpRqKLtAd3IO3nbs8Yxrhy1",
+      "source": "LLK3_hudKDX5d-fd98vlx",
+      "target": "kpRqKLtAd3IO3nbs8Yxrh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kpRqKLtAd3IO3nbs8Yxrhx2-KSxjcWV6C325kZITzAhWsw1",
+      "source": "kpRqKLtAd3IO3nbs8Yxrh",
+      "target": "KSxjcWV6C325kZITzAhWs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__KSxjcWV6C325kZITzAhWsy2-eoLdywVPgNoGTHBQpLWRhz1",
+      "source": "KSxjcWV6C325kZITzAhWs",
+      "target": "dY-TBN_bsJdnKPcsNX67Q",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhy2-D94743lQ1fAerVSpJWXfPz1",
+      "source": "dY-TBN_bsJdnKPcsNX67Q",
+      "target": "D94743lQ1fAerVSpJWXfP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhy2-pNUJVoFV1oQJmTun5cwRvz1",
+      "source": "dY-TBN_bsJdnKPcsNX67Q",
+      "target": "Z4pAe4FpnCkUJt8RuOhC6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhy2-_KYKLd-RNhVy-Sn1A-G5jz1",
+      "source": "dY-TBN_bsJdnKPcsNX67Q",
+      "target": "_KYKLd-RNhVy-Sn1A-G5j",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dY-TBN_bsJdnKPcsNX67Qx2-eoLdywVPgNoGTHBQpLWRhw1",
+      "source": "dY-TBN_bsJdnKPcsNX67Q",
+      "target": "6vLHalrdOPZIVFUyCM8gc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhx2-xftv5BiyoVrFjpSN0tjsww1",
+      "source": "6vLHalrdOPZIVFUyCM8gc",
+      "target": "xftv5BiyoVrFjpSN0tjsw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__xftv5BiyoVrFjpSN0tjswz2-1T2PyytlmndHreWgueD55y1",
+      "source": "xftv5BiyoVrFjpSN0tjsw",
+      "target": "1T2PyytlmndHreWgueD55",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xftv5BiyoVrFjpSN0tjswz2-aJLGan5dkMefvkspFlcYoy1",
+      "source": "xftv5BiyoVrFjpSN0tjsw",
+      "target": "aJLGan5dkMefvkspFlcYo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xftv5BiyoVrFjpSN0tjswz2-j-GXKpMnsVuUUUdRxAXLey1",
+      "source": "xftv5BiyoVrFjpSN0tjsw",
+      "target": "j-GXKpMnsVuUUUdRxAXLe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xftv5BiyoVrFjpSN0tjswz2-JHGV0V78GXubiSY9P3nTwy1",
+      "source": "xftv5BiyoVrFjpSN0tjsw",
+      "target": "JHGV0V78GXubiSY9P3nTw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xftv5BiyoVrFjpSN0tjswx2-7LbhfkmS7oFoSF1k5ZR1Uw2",
+      "source": "xftv5BiyoVrFjpSN0tjsw",
+      "target": "7LbhfkmS7oFoSF1k5ZR1U",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7LbhfkmS7oFoSF1k5ZR1Uy2-7jrzQogTOc6lHXfpYLCsxz2",
+      "source": "7LbhfkmS7oFoSF1k5ZR1U",
+      "target": "7jrzQogTOc6lHXfpYLCsx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7LbhfkmS7oFoSF1k5ZR1Uy2-0qRm81lJX_Eb6aJkJMjeLz2",
+      "source": "7LbhfkmS7oFoSF1k5ZR1U",
+      "target": "0qRm81lJX_Eb6aJkJMjeL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7LbhfkmS7oFoSF1k5ZR1Uy2-LkbB0rpS3Du2K7_ogoc34z2",
+      "source": "7LbhfkmS7oFoSF1k5ZR1U",
+      "target": "LkbB0rpS3Du2K7_ogoc34",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7LbhfkmS7oFoSF1k5ZR1Uy2-VPu8vn7-baZQ5ORJ6ViW0z1",
+      "source": "7LbhfkmS7oFoSF1k5ZR1U",
+      "target": "VPu8vn7-baZQ5ORJ6ViW0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7LbhfkmS7oFoSF1k5ZR1Ux2-VpGVezYr9O6puhAF12PN2w1",
+      "source": "7LbhfkmS7oFoSF1k5ZR1U",
+      "target": "VpGVezYr9O6puhAF12PN2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__VpGVezYr9O6puhAF12PN2z2-ku3m0ZmNg23F0Z5CEb4JIy1",
+      "source": "VpGVezYr9O6puhAF12PN2",
+      "target": "ku3m0ZmNg23F0Z5CEb4JI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VpGVezYr9O6puhAF12PN2z2-omvGuhou7_63k-Fwcc7Muy1",
+      "source": "VpGVezYr9O6puhAF12PN2",
+      "target": "omvGuhou7_63k-Fwcc7Mu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VpGVezYr9O6puhAF12PN2z2-Cydlrtg_FClBUkjezqGiey2",
+      "source": "VpGVezYr9O6puhAF12PN2",
+      "target": "Cydlrtg_FClBUkjezqGie",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VpGVezYr9O6puhAF12PN2z2-LI09SvvUUCQxLZZee_j0ny1",
+      "source": "VpGVezYr9O6puhAF12PN2",
+      "target": "LI09SvvUUCQxLZZee_j0n",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VpGVezYr9O6puhAF12PN2x2-zEGmDHaFa-F81tWqa3i9Ew1",
+      "source": "VpGVezYr9O6puhAF12PN2",
+      "target": "zEGmDHaFa-F81tWqa3i9E",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zEGmDHaFa-F81tWqa3i9Ey2-L50rpcgGjsQU3S0zRn6xhz2",
+      "source": "zEGmDHaFa-F81tWqa3i9E",
+      "target": "L50rpcgGjsQU3S0zRn6xh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zEGmDHaFa-F81tWqa3i9Ey2-Xe9zK8xhkkr4fsh3HOzAYz1",
+      "source": "zEGmDHaFa-F81tWqa3i9E",
+      "target": "Xe9zK8xhkkr4fsh3HOzAY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zEGmDHaFa-F81tWqa3i9Ey2--hNguvT6SQCqAgVpoQByrz1",
+      "source": "zEGmDHaFa-F81tWqa3i9E",
+      "target": "-hNguvT6SQCqAgVpoQByr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zEGmDHaFa-F81tWqa3i9Ey2-yimCxOdNtyGcbd6ZxHsBQz1",
+      "source": "zEGmDHaFa-F81tWqa3i9E",
+      "target": "yimCxOdNtyGcbd6ZxHsBQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zEGmDHaFa-F81tWqa3i9Ex2-eoLdywVPgNoGTHBQpLWRhw2",
+      "source": "zEGmDHaFa-F81tWqa3i9E",
+      "target": "k8r0_6oOYgNyHfvZQvQVk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhz2-yseEaLsEzIcqJ0YIoGujly1",
+      "source": "k8r0_6oOYgNyHfvZQvQVk",
+      "target": "yseEaLsEzIcqJ0YIoGujl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ExHCSUDxDBwsJtTelvxjPx2-yseEaLsEzIcqJ0YIoGujlw2",
+      "source": "ExHCSUDxDBwsJtTelvxjP",
+      "target": "yseEaLsEzIcqJ0YIoGujl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__yseEaLsEzIcqJ0YIoGujlx2-qKlo90-Cy8t_off5Qv8-6w1",
+      "source": "yseEaLsEzIcqJ0YIoGujl",
+      "target": "qKlo90-Cy8t_off5Qv8-6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZGazuCNruu09bd7C-aSFCx2-eZN_ty8VDX9mi5KtCWTFLw2",
+      "source": "ZGazuCNruu09bd7C-aSFC",
+      "target": "eZN_ty8VDX9mi5KtCWTFL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ZGazuCNruu09bd7C-aSFCy2-eoLdywVPgNoGTHBQpLWRhz1",
+      "source": "ZGazuCNruu09bd7C-aSFC",
+      "target": "eoLdywVPgNoGTHBQpLWRh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eoLdywVPgNoGTHBQpLWRhy2-TBcLXYtKs7_j_h_m2pAyhz2",
+      "source": "eoLdywVPgNoGTHBQpLWRh",
+      "target": "TBcLXYtKs7_j_h_m2pAyh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__TBcLXYtKs7_j_h_m2pAyhw2-Slg3fXGPTa-Z4sdZY86XKx2",
+      "source": "TBcLXYtKs7_j_h_m2pAyh",
+      "target": "Slg3fXGPTa-Z4sdZY86XK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__TBcLXYtKs7_j_h_m2pAyhx2-mi88uLdJBXaxJ2yVOSqqow1",
+      "source": "TBcLXYtKs7_j_h_m2pAyh",
+      "target": "mi88uLdJBXaxJ2yVOSqqo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqoz2-r8NoX426-ngu6ZQZe06oKy1",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "r8NoX426-ngu6ZQZe06oK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqoz2-vDQF2oaybSewNu3EMs6zGy2",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "vDQF2oaybSewNu3EMs6zG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqoz2-r-m88g8xrUnuEpV2lHJfNy1",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "r-m88g8xrUnuEpV2lHJfN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqoz2-NFKiPXrkjRre1yUZc27gly1",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "NFKiPXrkjRre1yUZc27gl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqoz2-OmhvVSTtzH5sxOIZRVYfQy1",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "OmhvVSTtzH5sxOIZRVYfQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__mi88uLdJBXaxJ2yVOSqqox2-Sy3AiIS9B845Ua4TTAFG7w1",
+      "source": "mi88uLdJBXaxJ2yVOSqqo",
+      "target": "Sy3AiIS9B845Ua4TTAFG7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Sy3AiIS9B845Ua4TTAFG7x2-bGCMAgaenZ0t3WeO5joyPw1",
+      "source": "Sy3AiIS9B845Ua4TTAFG7",
+      "target": "bGCMAgaenZ0t3WeO5joyP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__bGCMAgaenZ0t3WeO5joyPz2-F21ypKzpziLCXkiKG1S5Zy1",
+      "source": "bGCMAgaenZ0t3WeO5joyP",
+      "target": "F21ypKzpziLCXkiKG1S5Z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__F21ypKzpziLCXkiKG1S5Zw2-Vb06K0D2vWAlSe95QJrthx1",
+      "source": "F21ypKzpziLCXkiKG1S5Z",
+      "target": "Vb06K0D2vWAlSe95QJrth",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Vb06K0D2vWAlSe95QJrthz2-9aNVqEyygNGeicdce5X8by2",
+      "source": "Vb06K0D2vWAlSe95QJrth",
+      "target": "9aNVqEyygNGeicdce5X8b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__9aNVqEyygNGeicdce5X8bw2-5MUwKGfSTKlam8KCG0A1Ux2",
+      "source": "9aNVqEyygNGeicdce5X8b",
+      "target": "5MUwKGfSTKlam8KCG0A1U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__9aNVqEyygNGeicdce5X8bx2-fuxGZx3WGjP2TzzVV29uxw1",
+      "source": "9aNVqEyygNGeicdce5X8b",
+      "target": "fuxGZx3WGjP2TzzVV29ux",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fuxGZx3WGjP2TzzVV29uxy2-lAcFmIlGbrKeNRR9wWFauz1",
+      "source": "fuxGZx3WGjP2TzzVV29ux",
+      "target": "lAcFmIlGbrKeNRR9wWFau",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lAcFmIlGbrKeNRR9wWFaux2-Zxuvc9F3bINLTdfbsx_S_w1",
+      "source": "lAcFmIlGbrKeNRR9wWFau",
+      "target": "Zxuvc9F3bINLTdfbsx_S_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Zxuvc9F3bINLTdfbsx_S_z2-iqpVtvoebAaoB_Dj9-gdwy2",
+      "source": "Zxuvc9F3bINLTdfbsx_S_",
+      "target": "iqpVtvoebAaoB_Dj9-gdw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Zxuvc9F3bINLTdfbsx_S_z2-wJiKBbTMLhIzelUtKn7jly2",
+      "source": "Zxuvc9F3bINLTdfbsx_S_",
+      "target": "wJiKBbTMLhIzelUtKn7jl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Zxuvc9F3bINLTdfbsx_S_z2-zGU6DyEm6xEYf1_73cbjLy1",
+      "source": "Zxuvc9F3bINLTdfbsx_S_",
+      "target": "zGU6DyEm6xEYf1_73cbjL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Zxuvc9F3bINLTdfbsx_S_y2-Dk31XtS7wWRzO31sdsEDoz1",
+      "source": "Zxuvc9F3bINLTdfbsx_S_",
+      "target": "Dk31XtS7wWRzO31sdsEDo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fFzCnLfZ_vSbhQjdAKLlJz2-Du4GD-6pxbWYl4uSJRnOEy2",
+      "source": "fFzCnLfZ_vSbhQjdAKLlJ",
+      "target": "Du4GD-6pxbWYl4uSJRnOE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lAK9QVs97hL3ysjz2blp8z2-qnUHw2f2VmTPU3-NMnoLly1",
+      "source": "lAK9QVs97hL3ysjz2blp8",
+      "target": "qnUHw2f2VmTPU3-NMnoLl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UIdwl_KLELI8xL2VxYJmXy2-qvPTiDbsY5ol_K-BNLmzkz2",
+      "source": "UIdwl_KLELI8xL2VxYJmX",
+      "target": "qvPTiDbsY5ol_K-BNLmzk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UIdwl_KLELI8xL2VxYJmXy2-yvSf7sGEd7QiaVoetalHcz1",
+      "source": "UIdwl_KLELI8xL2VxYJmX",
+      "target": "yvSf7sGEd7QiaVoetalHc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__UIdwl_KLELI8xL2VxYJmXy2-3xDVJwdl3uu5EcjlZ1ytAz1",
+      "source": "UIdwl_KLELI8xL2VxYJmX",
+      "target": "3xDVJwdl3uu5EcjlZ1ytA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6kzp12lpxM1owSqKDwL5ky2-UIdwl_KLELI8xL2VxYJmXz1",
+      "source": "6kzp12lpxM1owSqKDwL5k",
+      "target": "UIdwl_KLELI8xL2VxYJmX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__TojDB4o0i2rs7Qcb10k1ry2-4XM5ikPiHVehEtT4AB-Eaz1",
+      "source": "TojDB4o0i2rs7Qcb10k1r",
+      "target": "4XM5ikPiHVehEtT4AB-Ea",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__TojDB4o0i2rs7Qcb10k1ry2-qsCWo1CmR4mvy7E7qlPv5z2",
+      "source": "TojDB4o0i2rs7Qcb10k1r",
+      "target": "qsCWo1CmR4mvy7E7qlPv5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__TojDB4o0i2rs7Qcb10k1ry2-k3F9Tdqo3XYgMLOKGjpxAz1",
+      "source": "TojDB4o0i2rs7Qcb10k1r",
+      "target": "k3F9Tdqo3XYgMLOKGjpxA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__TojDB4o0i2rs7Qcb10k1ry2-m9EwcekZ_l0XHiKeQ8emrz1",
+      "source": "TojDB4o0i2rs7Qcb10k1r",
+      "target": "m9EwcekZ_l0XHiKeQ8emr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Q98GaitxocEha4zZ9d254z2-YovS5Dbcr6g_8PMr8jp5ty1",
+      "source": "Q98GaitxocEha4zZ9d254",
+      "target": "YovS5Dbcr6g_8PMr8jp5t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Q98GaitxocEha4zZ9d254z2-UDF8wyYT8127wfFHcq37Py2",
+      "source": "Q98GaitxocEha4zZ9d254",
+      "target": "UDF8wyYT8127wfFHcq37P",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Q98GaitxocEha4zZ9d254z2-aTGsJj7Ntv5BWIzjaqvu_y1",
+      "source": "Q98GaitxocEha4zZ9d254",
+      "target": "aTGsJj7Ntv5BWIzjaqvu_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Q98GaitxocEha4zZ9d254z2-X8U-NQD0rYqFr_xgDWL2sy1",
+      "source": "Q98GaitxocEha4zZ9d254",
+      "target": "X8U-NQD0rYqFr_xgDWL2s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Du4GD-6pxbWYl4uSJRnOEz2-6kzp12lpxM1owSqKDwL5ky1",
+      "source": "Du4GD-6pxbWYl4uSJRnOE",
+      "target": "6kzp12lpxM1owSqKDwL5k",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

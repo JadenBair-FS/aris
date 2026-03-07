@@ -1,0 +1,1340 @@
+{
+  "title": {
+    "card": "Cloudflare",
+    "page": "Cloudflare"
+  },
+  "description": "Learn to deploy your applications on  in @curentYear@",
+  "nodes": [
+    {
+      "id": "82oZ5FJok15X5aetL1UaA",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "8BW3ScLDYa_4DkBksLlJM",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "kJXPzUulKPhawgbEK7n9l",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "7kxbi3VJONZHcjRNhrnTH",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "Cloudflare"
+      }
+    },
+    {
+      "id": "qnjDifLlSYoxWd5GmuQXd",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "PcYnYAAkKMbzoiCnBfjqO",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript Fundamentals"
+      }
+    },
+    {
+      "id": "q9oQTt_NqhdWvJfA5XH1V",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Command-line Knowledge"
+      }
+    },
+    {
+      "id": "9iSdASlRxyod9YwZ2IUry",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP and Web Protocols"
+      }
+    },
+    {
+      "id": "C08pIguX1N45Iw0kh0Fvu",
+      "type": "subtopic",
+      "data": {
+        "label": "Git Basics"
+      }
+    },
+    {
+      "id": "dSBYTGGkol3MAXyg7G7_J",
+      "type": "subtopic",
+      "data": {
+        "label": "Node.js and NPM"
+      }
+    },
+    {
+      "id": "zR84MFLL6y0dygz9hXXPA",
+      "type": "subtopic",
+      "data": {
+        "label": "TypeScript Fundamentals"
+      }
+    },
+    {
+      "id": "Isl5anwDvb1MacA-JH4ej",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Serverless Architecture"
+      }
+    },
+    {
+      "id": "L3L2_HrESg8SuStKNID8l",
+      "type": "label",
+      "data": {
+        "label": "Prerequisites"
+      }
+    },
+    {
+      "id": "QifY92ONTomFx_FwRxPJI",
+      "type": "label",
+      "data": {
+        "label": "Core Development Skills"
+      }
+    },
+    {
+      "id": "7XrG-k9T12u84Pwp4YwaY",
+      "type": "paragraph",
+      "data": {
+        "label": "Workers Core Concepts"
+      }
+    },
+    {
+      "id": "TB6vGzDgGZ9yAd9MGR7vw",
+      "type": "subtopic",
+      "data": {
+        "label": "Workers Runtime Environment"
+      }
+    },
+    {
+      "id": "aGWLomYHGkIfn7GFc0_Yl",
+      "type": "subtopic",
+      "data": {
+        "label": "Edge Computing Fundamentals"
+      }
+    },
+    {
+      "id": "HNEXPU6r_T7UYvwLv2wnt",
+      "type": "subtopic",
+      "data": {
+        "label": "Request/Response Handling"
+      }
+    },
+    {
+      "id": "_2UnRlbUplHvs5-Stj4O4",
+      "type": "subtopic",
+      "data": {
+        "label": "Fetch API and Runtime APIs"
+      }
+    },
+    {
+      "id": "i6L9FI6fBDXr0XtMrc_uR",
+      "type": "subtopic",
+      "data": {
+        "label": "Workers Lifecycle"
+      }
+    },
+    {
+      "id": "WZSi9inWPhqZQvDN-C8BV",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Bindings"
+      }
+    },
+    {
+      "id": "uBjcQ9PJUfwzu5N_2CNjN",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching Strategies"
+      }
+    },
+    {
+      "id": "aStbAF4zraqhJ-N3RH4ha",
+      "type": "subtopic",
+      "data": {
+        "label": "Middleware Patterns"
+      }
+    },
+    {
+      "id": "9ef2VPCru8lCmRxxGe-Eo",
+      "type": "subtopic",
+      "data": {
+        "label": "Bindings"
+      }
+    },
+    {
+      "id": "g4hjyQF8-SpjPi8mYtIsk",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "imU-blmfZ__YCFynXZ8aI",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "IubwhdnyWtjpejkGOfnPy",
+      "type": "paragraph",
+      "data": {
+        "label": "Frameworks and Tools"
+      }
+    },
+    {
+      "id": "-8MsWNvuqwQCbLpOx_kov",
+      "type": "subtopic",
+      "data": {
+        "label": "Hono"
+      }
+    },
+    {
+      "id": "15jl6CSCkqnh_eFfysLDM",
+      "type": "subtopic",
+      "data": {
+        "label": "Itty Router"
+      }
+    },
+    {
+      "id": "Tzx93tvoGrc9_fKQqkorN",
+      "type": "subtopic",
+      "data": {
+        "label": "Wrangler"
+      }
+    },
+    {
+      "id": "uoaOrypiMkyoikXvTHeVS",
+      "type": "subtopic",
+      "data": {
+        "label": "DevTools Integration"
+      }
+    },
+    {
+      "id": "8Y6TIYoWIXrxtmzDVdS0b",
+      "type": "subtopic",
+      "data": {
+        "label": "CI/CD Pipelines"
+      }
+    },
+    {
+      "id": "ssvZh7zn9xUY2Wi-F_d4J",
+      "type": "label",
+      "data": {
+        "label": "API Routers"
+      }
+    },
+    {
+      "id": "LkvWKmUklK1-n8dQB4w2U",
+      "type": "label",
+      "data": {
+        "label": "Frontend Frameworks"
+      }
+    },
+    {
+      "id": "zSwio18XdBfqwSneAx_AP",
+      "type": "subtopic",
+      "data": {
+        "label": "Any Frontend Framework"
+      }
+    },
+    {
+      "id": "diIGB553YTGIw2qYRSj0X",
+      "type": "label",
+      "data": {
+        "label": "Building / Deploying"
+      }
+    },
+    {
+      "id": "o4sBgniPmLqwej6TlIPcl",
+      "type": "subtopic",
+      "data": {
+        "label": "Miniflare"
+      }
+    },
+    {
+      "id": "3BGY76hTLAE8PY7OXQtNR",
+      "type": "paragraph",
+      "data": {
+        "label": "Storage Solutions"
+      }
+    },
+    {
+      "id": "1dGFfQauOgHP7T4ReMpCU",
+      "type": "topic",
+      "data": {
+        "label": "Workers KV"
+      }
+    },
+    {
+      "id": "EBTHbXOOZiqrcYJvKhcWV",
+      "type": "subtopic",
+      "data": {
+        "label": "Key-value Operations"
+      }
+    },
+    {
+      "id": "sQlRIYLnZcugATgpogJmw",
+      "type": "subtopic",
+      "data": {
+        "label": "Metadata Handling"
+      }
+    },
+    {
+      "id": "i64-aCpZHygq76fBU6eXD",
+      "type": "subtopic",
+      "data": {
+        "label": "Bulk Operations"
+      }
+    },
+    {
+      "id": "OgW-iIrJZ5-sOWKnFpIZd",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching Patterns"
+      }
+    },
+    {
+      "id": "gxLUlXGuaY5Q-0xmBgQwz",
+      "type": "topic",
+      "data": {
+        "label": "R2 Storage"
+      }
+    },
+    {
+      "id": "K9iW2H6riKwddWmpWJFJw",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Storage"
+      }
+    },
+    {
+      "id": "BPahk1qH9Hk11tsE2hw3A",
+      "type": "subtopic",
+      "data": {
+        "label": "Large File Handling"
+      }
+    },
+    {
+      "id": "3jU5753Uza2aS-gZo7w4k",
+      "type": "subtopic",
+      "data": {
+        "label": "Asset Management"
+      }
+    },
+    {
+      "id": "UNE6XK4su5r2jcxhY7hOG",
+      "type": "subtopic",
+      "data": {
+        "label": "Bucket Operations"
+      }
+    },
+    {
+      "id": "YvgmmF9sWfURgijFV7E31",
+      "type": "subtopic",
+      "data": {
+        "label": "Bucket Lifecycle"
+      }
+    },
+    {
+      "id": "mKN0Ta3zSk7PCm_uHYKFN",
+      "type": "topic",
+      "data": {
+        "label": "D1"
+      }
+    },
+    {
+      "id": "PnhP47woPJb_JnLpMMiTw",
+      "type": "subtopic",
+      "data": {
+        "label": "Schema Management"
+      }
+    },
+    {
+      "id": "M8rSSVFUHixgWZRfaBPHb",
+      "type": "subtopic",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "65xDESm6jbHWkVO4NgHqx",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "MpWO1sroeF106SEMU1V1a",
+      "type": "subtopic",
+      "data": {
+        "label": "Drizzle"
+      }
+    },
+    {
+      "id": "h3MHLZZwkYqqb5PSfMhpB",
+      "type": "subtopic",
+      "data": {
+        "label": "Prisma"
+      }
+    },
+    {
+      "id": "brZctR1PMK6yErGIfRo_G",
+      "type": "label",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "QmxWfOTVNW6WTEbPtEqev",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9MlFtF1q0eis4YmCEmIir",
+      "type": "paragraph",
+      "data": {
+        "label": "Durable Execution"
+      }
+    },
+    {
+      "id": "zyRgTtlng6idboSgL9YTt",
+      "type": "topic",
+      "data": {
+        "label": "Queues"
+      }
+    },
+    {
+      "id": "EFA8m0EdhygxcBWzwmbnT",
+      "type": "subtopic",
+      "data": {
+        "label": "Message Processing"
+      }
+    },
+    {
+      "id": "qgvDGyLjc6lMmVPjHozFM",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Jobs"
+      }
+    },
+    {
+      "id": "MInAsLLJtIq6WQDSj5yGH",
+      "type": "subtopic",
+      "data": {
+        "label": "Rate Limiting"
+      }
+    },
+    {
+      "id": "Grl59SjY31Q3sgf9uX-xf",
+      "type": "subtopic",
+      "data": {
+        "label": "Dead Letter Queues"
+      }
+    },
+    {
+      "id": "G-xBbtaniYFRE9Dgs18px",
+      "type": "topic",
+      "data": {
+        "label": "Durable Objects"
+      }
+    },
+    {
+      "id": "EQjhRlM7zpANNWkypScIl",
+      "type": "subtopic",
+      "data": {
+        "label": "State Management"
+      }
+    },
+    {
+      "id": "RYm0oBFCxm-S-aCwZ21p6",
+      "type": "subtopic",
+      "data": {
+        "label": "Coordination"
+      }
+    },
+    {
+      "id": "36w4Q73XkCwo5Cva0XsF8",
+      "type": "subtopic",
+      "data": {
+        "label": "Persistence"
+      }
+    },
+    {
+      "id": "rxxibrJUo1rQ3XCuUIP59",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactional Operations"
+      }
+    },
+    {
+      "id": "rAl7zXcODiqIpS__3qf1A",
+      "type": "topic",
+      "data": {
+        "label": "Workflows"
+      }
+    },
+    {
+      "id": "yTtjbO_dji8ssSaOAKpCV",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Features"
+      }
+    },
+    {
+      "id": "a0S0_JLwLLNGLUAHrqG4P",
+      "type": "topic",
+      "data": {
+        "label": "Workers AI"
+      }
+    },
+    {
+      "id": "zMwmoCUp9429_aXU-Bz4H",
+      "type": "subtopic",
+      "data": {
+        "label": "Text Generation"
+      }
+    },
+    {
+      "id": "S7laV14zsx31O0Tsj2SRL",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Processing"
+      }
+    },
+    {
+      "id": "HJbJ8OxjJzznYwLlIOSO2",
+      "type": "subtopic",
+      "data": {
+        "label": "Speech Rcognition"
+      }
+    },
+    {
+      "id": "QxPoNHsL-Pj_z3aU6qEP4",
+      "type": "subtopic",
+      "data": {
+        "label": "AI Model Integration"
+      }
+    },
+    {
+      "id": "NWGVtH1vxQuO4lly0Omuy",
+      "type": "topic",
+      "data": {
+        "label": "Vectorize"
+      }
+    },
+    {
+      "id": "UIWaR1ZdjSm0UAS69Kz_5",
+      "type": "subtopic",
+      "data": {
+        "label": "Vector Embeddings"
+      }
+    },
+    {
+      "id": "pg3GtykCegK411DYDN8sN",
+      "type": "subtopic",
+      "data": {
+        "label": "Similarity Search"
+      }
+    },
+    {
+      "id": "Ep9_oV_YnkbH1gHM-n3gO",
+      "type": "subtopic",
+      "data": {
+        "label": "AI-powered Search"
+      }
+    },
+    {
+      "id": "LoT3NtpNj9uAgQRV-MD_E",
+      "type": "topic",
+      "data": {
+        "label": "Stream"
+      }
+    },
+    {
+      "id": "zQp7XfDKWJgMf2LexRJhN",
+      "type": "subtopic",
+      "data": {
+        "label": "Video Delivery"
+      }
+    },
+    {
+      "id": "RiQSPAV9uRFgwQFJckTFV",
+      "type": "subtopic",
+      "data": {
+        "label": "Live streaming"
+      }
+    },
+    {
+      "id": "3B6Z7F0D3Sf8ZBlV3kkGx",
+      "type": "subtopic",
+      "data": {
+        "label": "Video Processing"
+      }
+    },
+    {
+      "id": "8bOWuopxHtBWUSFaVT54P",
+      "type": "topic",
+      "data": {
+        "label": "Images"
+      }
+    },
+    {
+      "id": "vHQdMgaL2EEr2o_eJmOuV",
+      "type": "topic",
+      "data": {
+        "label": "Calls"
+      }
+    },
+    {
+      "id": "aKEH4ZxI6J1nwjp_AgH5r",
+      "type": "subtopic",
+      "data": {
+        "label": "Logging and Monitoring"
+      }
+    },
+    {
+      "id": "z-1Ye5hcNdr9r6Gwdw7mv",
+      "type": "topic",
+      "data": {
+        "label": "Email Workers"
+      }
+    },
+    {
+      "id": "-lsYPD6JueIV94RybGH_Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Routing"
+      }
+    },
+    {
+      "id": "6bNUqx5f_w5NuDL25BABN",
+      "type": "subtopic",
+      "data": {
+        "label": "Processing"
+      }
+    },
+    {
+      "id": "kdIfqTCcOSvV4KDpjr7nu",
+      "type": "subtopic",
+      "data": {
+        "label": "Filtering"
+      }
+    },
+    {
+      "id": "vu8yJsS1WccsdcEVUqwNd",
+      "type": "topic",
+      "data": {
+        "label": "AI Gateway"
+      }
+    },
+    {
+      "id": "qkFRW_tJB8_1IYpYskQ5M",
+      "type": "topic",
+      "data": {
+        "label": "Browser Rendering"
+      }
+    },
+    {
+      "id": "76xovsBrKOnlRBVjsqNq1",
+      "type": "topic",
+      "data": {
+        "label": "Security \u0026 Performance"
+      }
+    },
+    {
+      "id": "8IF7jftushwZrn7JXpC_v",
+      "type": "subtopic",
+      "data": {
+        "label": "Workers Security Model"
+      }
+    },
+    {
+      "id": "uNinrB9wm5ahjGXu5fc0g",
+      "type": "subtopic",
+      "data": {
+        "label": "Isolates Architecture"
+      }
+    },
+    {
+      "id": "KWix4jeNUKJ07Iu95Mqj_",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Security Headers"
+      }
+    },
+    {
+      "id": "JP5U6c2fZjtkU-Xzwtapx",
+      "type": "subtopic",
+      "data": {
+        "label": "Rate Limiting"
+      }
+    },
+    {
+      "id": "ui3pUfsGMxv4WRzHkgbF0",
+      "type": "subtopic",
+      "data": {
+        "label": "Cache API"
+      }
+    },
+    {
+      "id": "INiqdtppBmCthOEXuHb-V",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML Rewriting"
+      }
+    },
+    {
+      "id": "sXBxaQtwJ-luGVXdqVXk1",
+      "type": "subtopic",
+      "data": {
+        "label": "Edge SSL/TLS"
+      }
+    },
+    {
+      "id": "So-cKAVfbgsw2zzFREu7Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Bot Management"
+      }
+    },
+    {
+      "id": "wvurOKbemF4Tt2WZcmqDL",
+      "type": "topic",
+      "data": {
+        "label": "Integration \u0026 Workflows"
+      }
+    },
+    {
+      "id": "SaHqm7T4FFVrsgyfImo66",
+      "type": "subtopic",
+      "data": {
+        "label": "Pages Functions"
+      }
+    },
+    {
+      "id": "JfpVexcbuWCx_R3EjFmbo",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Bindings"
+      }
+    },
+    {
+      "id": "jYAUIKozuhsNK5LbkeAJ6",
+      "type": "subtopic",
+      "data": {
+        "label": "Inter Worker Communication"
+      }
+    },
+    {
+      "id": "4g5w6IAdzefdlRTxbRbdS",
+      "type": "subtopic",
+      "data": {
+        "label": "External API Integration"
+      }
+    },
+    {
+      "id": "uOUjI6CPrhZIlz6mRCtOW",
+      "type": "subtopic",
+      "data": {
+        "label": "Webhook Handling"
+      }
+    },
+    {
+      "id": "Z9Yywlf7rXFBtxTq5B2Y5",
+      "type": "subtopic",
+      "data": {
+        "label": "Event-driven Architectures"
+      }
+    },
+    {
+      "id": "gsCRhwwjXuyueaYHSPOVZ",
+      "type": "topic",
+      "data": {
+        "label": "Development Tools"
+      }
+    },
+    {
+      "id": "n0vIbHmUZHrF4WjEhYdb8",
+      "type": "subtopic",
+      "data": {
+        "label": "Wrangler"
+      }
+    },
+    {
+      "id": "vZHBp4S6WaS5sa5rfUOk-",
+      "type": "subtopic",
+      "data": {
+        "label": "Miniflare"
+      }
+    },
+    {
+      "id": "G6YQZUQh_x8Qxm1oBseLQ",
+      "type": "subtopic",
+      "data": {
+        "label": "DevTools"
+      }
+    },
+    {
+      "id": "jyWxaMx7_nojt5HsyAv7K",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Frameworks"
+      }
+    },
+    {
+      "id": "Cy2T8978yUAPGol-yzxv_",
+      "type": "subtopic",
+      "data": {
+        "label": "Monitoring Tools"
+      }
+    },
+    {
+      "id": "TmQC7fTL6b9EsBDYibv4g",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Techniques"
+      }
+    },
+    {
+      "id": "8WZpSKBHCeYfTEL9tBNKr",
+      "type": "topic",
+      "data": {
+        "label": "Tunnels"
+      }
+    },
+    {
+      "id": "HKEkt3803YCZEiuKAK03p",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant tracks to learn more"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "AWS"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CH_K6mmFX_GdSzi2n1ID7",
+      "type": "button",
+      "data": {
+        "label": "Node.js"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "WO8APVjZM_WD_ke5qLyOz",
+      "type": "linksgroup",
+      "data": {
+        "label": "Useful Links"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-TB6vGzDgGZ9yAd9MGR7vwz1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "TB6vGzDgGZ9yAd9MGR7vw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-aGWLomYHGkIfn7GFc0_Ylz1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "aGWLomYHGkIfn7GFc0_Yl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-HNEXPU6r_T7UYvwLv2wntz1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "HNEXPU6r_T7UYvwLv2wnt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-_2UnRlbUplHvs5-Stj4O4z1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "_2UnRlbUplHvs5-Stj4O4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-i6L9FI6fBDXr0XtMrc_uRz1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "i6L9FI6fBDXr0XtMrc_uR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-WZSi9inWPhqZQvDN-C8BVz1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "WZSi9inWPhqZQvDN-C8BV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-uBjcQ9PJUfwzu5N_2CNjNz2",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "uBjcQ9PJUfwzu5N_2CNjN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-aStbAF4zraqhJ-N3RH4haz2",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "aStbAF4zraqhJ-N3RH4ha",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-9ef2VPCru8lCmRxxGe-Eoz2",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "9ef2VPCru8lCmRxxGe-Eo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYx2-IubwhdnyWtjpejkGOfnPyw1",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "IubwhdnyWtjpejkGOfnPy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-IubwhdnyWtjpejkGOfnPyz2-kJXPzUulKPhawgbEK7n9ly1",
+      "source": "IubwhdnyWtjpejkGOfnPy",
+      "target": "kJXPzUulKPhawgbEK7n9l",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-IubwhdnyWtjpejkGOfnPyx2-3BGY76hTLAE8PY7OXQtNRw1",
+      "source": "IubwhdnyWtjpejkGOfnPy",
+      "target": "3BGY76hTLAE8PY7OXQtNR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-1dGFfQauOgHP7T4ReMpCUx2-EBTHbXOOZiqrcYJvKhcWVw2",
+      "source": "1dGFfQauOgHP7T4ReMpCU",
+      "target": "EBTHbXOOZiqrcYJvKhcWV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-3BGY76hTLAE8PY7OXQtNRy2-1dGFfQauOgHP7T4ReMpCUz1",
+      "source": "3BGY76hTLAE8PY7OXQtNR",
+      "target": "1dGFfQauOgHP7T4ReMpCU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-3BGY76hTLAE8PY7OXQtNRx2-gxLUlXGuaY5Q-0xmBgQwzw1",
+      "source": "3BGY76hTLAE8PY7OXQtNR",
+      "target": "gxLUlXGuaY5Q-0xmBgQwz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzz2-K9iW2H6riKwddWmpWJFJwy1",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "K9iW2H6riKwddWmpWJFJw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzz2-BPahk1qH9Hk11tsE2hw3Ay1",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "BPahk1qH9Hk11tsE2hw3A",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzz2-3jU5753Uza2aS-gZo7w4ky1",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "3jU5753Uza2aS-gZo7w4k",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzz2-UNE6XK4su5r2jcxhY7hOGy1",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "UNE6XK4su5r2jcxhY7hOG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzz2-YvgmmF9sWfURgijFV7E31y1",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "YvgmmF9sWfURgijFV7E31",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-gxLUlXGuaY5Q-0xmBgQwzx2-mKN0Ta3zSk7PCm_uHYKFNw2",
+      "source": "gxLUlXGuaY5Q-0xmBgQwz",
+      "target": "mKN0Ta3zSk7PCm_uHYKFN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mKN0Ta3zSk7PCm_uHYKFNz2-9MlFtF1q0eis4YmCEmIiry1",
+      "source": "mKN0Ta3zSk7PCm_uHYKFN",
+      "target": "9MlFtF1q0eis4YmCEmIir",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zyRgTtlng6idboSgL9YTtx2-EFA8m0EdhygxcBWzwmbnTw2",
+      "source": "zyRgTtlng6idboSgL9YTt",
+      "target": "EFA8m0EdhygxcBWzwmbnT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9MlFtF1q0eis4YmCEmIirx2-zyRgTtlng6idboSgL9YTtw1",
+      "source": "9MlFtF1q0eis4YmCEmIir",
+      "target": "zyRgTtlng6idboSgL9YTt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zyRgTtlng6idboSgL9YTty2-G-xBbtaniYFRE9Dgs18pxz1",
+      "source": "zyRgTtlng6idboSgL9YTt",
+      "target": "G-xBbtaniYFRE9Dgs18px",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-G-xBbtaniYFRE9Dgs18pxy2-rAl7zXcODiqIpS__3qf1Az1",
+      "source": "G-xBbtaniYFRE9Dgs18px",
+      "target": "rAl7zXcODiqIpS__3qf1A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-rAl7zXcODiqIpS__3qf1Ax2-yTtjbO_dji8ssSaOAKpCVw1",
+      "source": "rAl7zXcODiqIpS__3qf1A",
+      "target": "yTtjbO_dji8ssSaOAKpCV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTtjbO_dji8ssSaOAKpCVx2-a0S0_JLwLLNGLUAHrqG4Pw1",
+      "source": "yTtjbO_dji8ssSaOAKpCV",
+      "target": "a0S0_JLwLLNGLUAHrqG4P",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-a0S0_JLwLLNGLUAHrqG4Px2-zMwmoCUp9429_aXU-Bz4Hw2",
+      "source": "a0S0_JLwLLNGLUAHrqG4P",
+      "target": "zMwmoCUp9429_aXU-Bz4H",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-a0S0_JLwLLNGLUAHrqG4Pz2-vHQdMgaL2EEr2o_eJmOuVy2",
+      "source": "a0S0_JLwLLNGLUAHrqG4P",
+      "target": "NWGVtH1vxQuO4lly0Omuy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-G-xBbtaniYFRE9Dgs18pxx2-EQjhRlM7zpANNWkypScIlw1",
+      "source": "G-xBbtaniYFRE9Dgs18px",
+      "target": "EQjhRlM7zpANNWkypScIl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vHQdMgaL2EEr2o_eJmOuVx2-UIWaR1ZdjSm0UAS69Kz_5w2",
+      "source": "NWGVtH1vxQuO4lly0Omuy",
+      "target": "UIWaR1ZdjSm0UAS69Kz_5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NWGVtH1vxQuO4lly0Omuyz2-vHQdMgaL2EEr2o_eJmOuVy2",
+      "source": "NWGVtH1vxQuO4lly0Omuy",
+      "target": "LoT3NtpNj9uAgQRV-MD_E",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vHQdMgaL2EEr2o_eJmOuVx2-zQp7XfDKWJgMf2LexRJhNw2",
+      "source": "LoT3NtpNj9uAgQRV-MD_E",
+      "target": "zQp7XfDKWJgMf2LexRJhN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LoT3NtpNj9uAgQRV-MD_Ez2-8bOWuopxHtBWUSFaVT54Py1",
+      "source": "LoT3NtpNj9uAgQRV-MD_E",
+      "target": "8bOWuopxHtBWUSFaVT54P",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7XrG-k9T12u84Pwp4YwaYy2-aKEH4ZxI6J1nwjp_AgH5rz2",
+      "source": "7XrG-k9T12u84Pwp4YwaY",
+      "target": "aKEH4ZxI6J1nwjp_AgH5r",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8bOWuopxHtBWUSFaVT54Px2-vHQdMgaL2EEr2o_eJmOuVw2",
+      "source": "8bOWuopxHtBWUSFaVT54P",
+      "target": "vHQdMgaL2EEr2o_eJmOuV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-z-1Ye5hcNdr9r6Gwdw7mvx2--lsYPD6JueIV94RybGH_Yw1",
+      "source": "z-1Ye5hcNdr9r6Gwdw7mv",
+      "target": "-lsYPD6JueIV94RybGH_Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-z-1Ye5hcNdr9r6Gwdw7mvy2-vu8yJsS1WccsdcEVUqwNdz2",
+      "source": "z-1Ye5hcNdr9r6Gwdw7mv",
+      "target": "vu8yJsS1WccsdcEVUqwNd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vu8yJsS1WccsdcEVUqwNdy2-qkFRW_tJB8_1IYpYskQ5Mz2",
+      "source": "vu8yJsS1WccsdcEVUqwNd",
+      "target": "qkFRW_tJB8_1IYpYskQ5M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qkFRW_tJB8_1IYpYskQ5Mx2-76xovsBrKOnlRBVjsqNq1w1",
+      "source": "qkFRW_tJB8_1IYpYskQ5M",
+      "target": "76xovsBrKOnlRBVjsqNq1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-8IF7jftushwZrn7JXpC_vz1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "8IF7jftushwZrn7JXpC_v",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-uNinrB9wm5ahjGXu5fc0gz1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "uNinrB9wm5ahjGXu5fc0g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-KWix4jeNUKJ07Iu95Mqj_z1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "KWix4jeNUKJ07Iu95Mqj_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-JP5U6c2fZjtkU-Xzwtapxz1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "JP5U6c2fZjtkU-Xzwtapx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-ui3pUfsGMxv4WRzHkgbF0z1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "ui3pUfsGMxv4WRzHkgbF0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-INiqdtppBmCthOEXuHb-Vz1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "INiqdtppBmCthOEXuHb-V",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-sXBxaQtwJ-luGVXdqVXk1z1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "sXBxaQtwJ-luGVXdqVXk1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1y2-So-cKAVfbgsw2zzFREu7Qz1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "So-cKAVfbgsw2zzFREu7Q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-76xovsBrKOnlRBVjsqNq1x2-wvurOKbemF4Tt2WZcmqDLw1",
+      "source": "76xovsBrKOnlRBVjsqNq1",
+      "target": "wvurOKbemF4Tt2WZcmqDL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-wvurOKbemF4Tt2WZcmqDLx2-SaHqm7T4FFVrsgyfImo66w2",
+      "source": "wvurOKbemF4Tt2WZcmqDL",
+      "target": "SaHqm7T4FFVrsgyfImo66",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-wvurOKbemF4Tt2WZcmqDLz2-gsCRhwwjXuyueaYHSPOVZy2",
+      "source": "wvurOKbemF4Tt2WZcmqDL",
+      "target": "gsCRhwwjXuyueaYHSPOVZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-gsCRhwwjXuyueaYHSPOVZx2-n0vIbHmUZHrF4WjEhYdb8w1",
+      "source": "gsCRhwwjXuyueaYHSPOVZ",
+      "target": "n0vIbHmUZHrF4WjEhYdb8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vHQdMgaL2EEr2o_eJmOuVx2-8WZpSKBHCeYfTEL9tBNKrw1",
+      "source": "vHQdMgaL2EEr2o_eJmOuV",
+      "target": "8WZpSKBHCeYfTEL9tBNKr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8WZpSKBHCeYfTEL9tBNKrx2-z-1Ye5hcNdr9r6Gwdw7mvw2",
+      "source": "8WZpSKBHCeYfTEL9tBNKr",
+      "target": "z-1Ye5hcNdr9r6Gwdw7mv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

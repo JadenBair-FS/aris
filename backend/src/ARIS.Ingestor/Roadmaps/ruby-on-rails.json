@@ -1,0 +1,1334 @@
+{
+  "title": {
+    "card": "Ruby on Rails",
+    "page": "Ruby on Rails"
+  },
+  "description": "Step-by-step guide to become a Ruby on Rails Developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "pNnj_0cyTVYdxZre06DnP",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "HaKqNQU09m--8Jw6vBzbE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PwNun_AueDF46Qvn-n2lg",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7dLRyfPYUF4awZwEScIEd",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "TH6461VjZoojBADAPt8Pi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vM_MdGLREe2mSD2MbrRaK",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rbYJ3Fq4wd3gAACBapHtt",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "BRyYORIv8K5cWKY2LITkU",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ESSCmoDTT_juFaUiaSh4Q",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tik64Y-gVDcloIzShBq3K",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "7BxM3-fCYd9ZaLMYPFIgp",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5Y7pdJJTANt2tM282Vvfe",
+      "type": "vertical",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "bFLmHZdlQzx62pFJNF7uF",
+      "type": "title",
+      "data": {
+        "label": "Ruby on Rails"
+      }
+    },
+    {
+      "id": "BiVYxjVr2OhmnglHz_kVZ",
+      "type": "subtopic",
+      "data": {
+        "label": "app"
+      }
+    },
+    {
+      "id": "0MKuq69yhj8q6suTQ7fY7",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "Cm0tEnjeqQzQORowsdEjk",
+      "type": "subtopic",
+      "data": {
+        "label": "Controller Actions"
+      }
+    },
+    {
+      "id": "cUYKqkqvg2u3Z4KOtAE9m",
+      "type": "subtopic",
+      "data": {
+        "label": "(Strong) Parameters"
+      }
+    },
+    {
+      "id": "oHdgQvPSEs-l3EzNRd8q2",
+      "type": "subtopic",
+      "data": {
+        "label": "Controller Callbacks (filters)"
+      }
+    },
+    {
+      "id": "lWsJL135U-N5xIBnXqTYx",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Relationships"
+      }
+    },
+    {
+      "id": "UD5BpSz2CRK1_Sl2z67AL",
+      "type": "subtopic",
+      "data": {
+        "label": "Validations"
+      }
+    },
+    {
+      "id": "xgJCbwDNWPbYV2bCILRo0",
+      "type": "subtopic",
+      "data": {
+        "label": "Callbacks"
+      }
+    },
+    {
+      "id": "x4MkSkbLK7aHWUoKuq1j4",
+      "type": "subtopic",
+      "data": {
+        "label": "Scopes"
+      }
+    },
+    {
+      "id": "gJYuVgBvJeXL72NsRubLm",
+      "type": "subtopic",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "yrW99MwJNCBMinYUXm1B_",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "QdWCXUAfVXiP6RQ6VyDkX",
+      "type": "topic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "-bX4iPTO1dt3wLAcFI7nL",
+      "type": "subtopic",
+      "data": {
+        "label": "Layouts \u0026 yield"
+      }
+    },
+    {
+      "id": "9qNdqb_Y95_Hjm-7GYA-o",
+      "type": "subtopic",
+      "data": {
+        "label": "Partials"
+      }
+    },
+    {
+      "id": "lnr8HfS8mIcE4Ef-bXQbO",
+      "type": "subtopic",
+      "data": {
+        "label": "Helpers"
+      }
+    },
+    {
+      "id": "NyByCB4J4hk7rN7nrp1dv",
+      "type": "topic",
+      "data": {
+        "label": "Action Views"
+      }
+    },
+    {
+      "id": "8Jbs2XpIL-Nd-tr2f0AJ8",
+      "type": "subtopic",
+      "data": {
+        "label": "Advanced Asset Management"
+      }
+    },
+    {
+      "id": "EcGyLolDRJJra4PDWlQjJ",
+      "type": "topic",
+      "data": {
+        "label": "Assets Pipeline"
+      }
+    },
+    {
+      "id": "9evL0EqA6aBGczrfsRkV7",
+      "type": "subtopic",
+      "data": {
+        "label": "Minitest"
+      }
+    },
+    {
+      "id": "OLdWSGSwYnggN14BdH9nN",
+      "type": "subtopic",
+      "data": {
+        "label": "Factory Bot"
+      }
+    },
+    {
+      "id": "Mj4SxEsrQZz6zIKos1hyk",
+      "type": "topic",
+      "data": {
+        "label": "Background Jobs"
+      }
+    },
+    {
+      "id": "WqjcBTzbU4iFpYVp1-ptv",
+      "type": "topic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "xz-xEwqyvJgTKvjpmXeOH",
+      "type": "topic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "PDxKuQbWhbg0_AewOw9Mm",
+      "type": "subtopic",
+      "data": {
+        "label": "Rails Logger"
+      }
+    },
+    {
+      "id": "eyeSECF8-wu8EMr5gD7VJ",
+      "type": "subtopic",
+      "data": {
+        "label": "pry"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "4nyrB8-xmd35S6ZNjPX8d",
+      "type": "topic",
+      "data": {
+        "label": "Setting up Ruby on Rails"
+      }
+    },
+    {
+      "id": "wHKlT_wCIrpSvULvXCufr",
+      "type": "subtopic",
+      "data": {
+        "label": "MVC architecture"
+      }
+    },
+    {
+      "id": "4SiV-sW-zg_HtL2tPc90-",
+      "type": "subtopic",
+      "data": {
+        "label": "Create an App"
+      }
+    },
+    {
+      "id": "3qImaY9Hs3Cvatw1X96Ns",
+      "type": "subtopic",
+      "data": {
+        "label": "Non-RESTful Routes"
+      }
+    },
+    {
+      "id": "NB50RuNBT5Oja2Ry6p892",
+      "type": "subtopic",
+      "data": {
+        "label": "RESTful Routes"
+      }
+    },
+    {
+      "id": "3NTsftFbqkG5s4xoU_q6E",
+      "type": "subtopic",
+      "data": {
+        "label": "Customizing Routes"
+      }
+    },
+    {
+      "id": "eYaayU92hNbri3YTdSAbG",
+      "type": "topic",
+      "data": {
+        "label": "Request Reponse Flow"
+      }
+    },
+    {
+      "id": "DbJ1BIOoerkCH4P95Z7wD",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested Routes"
+      }
+    },
+    {
+      "id": "tSdMmh2SG1Qul5PWCaCKa",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Controllers"
+      }
+    },
+    {
+      "id": "HDt5AAg9H4n8wh3uACudP",
+      "type": "topic",
+      "data": {
+        "label": "Controllers"
+      }
+    },
+    {
+      "id": "6aukVg4KBYPW0FVtdAvS5",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "ca3Ik5pl-XmecZ3Ztx0YV",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Methods"
+      }
+    },
+    {
+      "id": "ig8gCcieQF923NKhNyaNA",
+      "type": "topic",
+      "data": {
+        "label": "Active Record"
+      }
+    },
+    {
+      "id": "Uz5WseVkPoDJfnKw1FH9a",
+      "type": "subtopic",
+      "data": {
+        "label": "Joins"
+      }
+    },
+    {
+      "id": "C8A-30h1xJBFLhD182H89",
+      "type": "subtopic",
+      "data": {
+        "label": "Aggregations"
+      }
+    },
+    {
+      "id": "Ddikj7KylZSoqsdAsd380",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic Queries"
+      }
+    },
+    {
+      "id": "q2nZpvhmWILaX9_2Rcy0a",
+      "type": "label",
+      "data": {
+        "label": "Supported DBs"
+      }
+    },
+    {
+      "id": "CX-9Ii3e9rrokUTF0_hI5",
+      "type": "subtopic",
+      "data": {
+        "label": "ERB Templates"
+      }
+    },
+    {
+      "id": "YyBmT5CzL-lspStC8aZ_t",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "IjEF4T0vuFNUlA9O0wOFw",
+      "type": "topic",
+      "data": {
+        "label": "Rails Internationalization "
+      }
+    },
+    {
+      "id": "Un4rFrxtto4WLG9YNaAMK",
+      "type": "topic",
+      "data": {
+        "label": "Logging"
+      }
+    },
+    {
+      "id": "SFGRkOuEMFxOJ4UU_Ti8L",
+      "type": "subtopic",
+      "data": {
+        "label": "debug"
+      }
+    },
+    {
+      "id": "HfxgxHLjc1BTbjk57MgZf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "gicTj-0_wXtgirYEqHDq_",
+      "type": "button",
+      "data": {
+        "label": "Django"
+      }
+    },
+    {
+      "id": "B5db8IexkXkLvoMMTCkS6",
+      "type": "button",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "N-GxGHMkLiWr8HbgqD4Er",
+      "type": "label",
+      "data": {
+        "label": "Routing"
+      }
+    },
+    {
+      "id": "DyrNnHUm4Ws5Ku7AlVnWg",
+      "type": "subtopic",
+      "data": {
+        "label": "Rails Command Line"
+      }
+    },
+    {
+      "id": "lLYISr_j0NsE7wkBVvnbM",
+      "type": "subtopic",
+      "data": {
+        "label": "Inspecting Routes"
+      }
+    },
+    {
+      "id": "ftFF3oFfqpKvjQhXk3bWw",
+      "type": "topic",
+      "data": {
+        "label": "Routing Fundamentals"
+      }
+    },
+    {
+      "id": "OPwVIe7EY84kY9W6uoh0g",
+      "type": "label",
+      "data": {
+        "label": "Controllers"
+      }
+    },
+    {
+      "id": "pUpwqvZ4F-xQhySNaA5yB",
+      "type": "label",
+      "data": {
+        "label": "Models \u0026 Active Record"
+      }
+    },
+    {
+      "id": "gtFqnWBkosuYhenYkaYUb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "pYksfLuNiTt2rl97VtQhE",
+      "type": "label",
+      "data": {
+        "label": "Views"
+      }
+    },
+    {
+      "id": "3YcOhdk9w24f5x0WattyB",
+      "type": "subtopic",
+      "data": {
+        "label": "How the web works"
+      }
+    },
+    {
+      "id": "VCufea-9vs4DfzB815IT5",
+      "type": "subtopic",
+      "data": {
+        "label": "Why Web Frameworks?"
+      }
+    },
+    {
+      "id": "jKADWbGXSL5yGzsLqSJG9",
+      "type": "subtopic",
+      "data": {
+        "label": "Rails \u0026 Frontend"
+      }
+    },
+    {
+      "id": "okQl2NFVACbZJPgh3sD5I",
+      "type": "subtopic",
+      "data": {
+        "label": "Rails Generators"
+      }
+    },
+    {
+      "id": "MGo6uNxQdPXjSOzBlcQPD",
+      "type": "label",
+      "data": {
+        "label": "Your First Project"
+      }
+    },
+    {
+      "id": "qN8VwE4mUyyja0ya0xO4c",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_AkGWi2697G3tUOdyvaCs",
+      "type": "label",
+      "data": {
+        "label": "Directory structure"
+      }
+    },
+    {
+      "id": "6HV1KoHTSeEE1-f6IeWB4",
+      "type": "subtopic",
+      "data": {
+        "label": "bin"
+      }
+    },
+    {
+      "id": "Vr0UKX1C3DSVxZjj-Ls6L",
+      "type": "subtopic",
+      "data": {
+        "label": "config"
+      }
+    },
+    {
+      "id": "N2pXb4eqXrBdR495zMqGY",
+      "type": "subtopic",
+      "data": {
+        "label": "db"
+      }
+    },
+    {
+      "id": "t8yTDpN4kNuW6ZhHnum2X",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemfile"
+      }
+    },
+    {
+      "id": "rHzhzrwsguJx3Hg5szucY",
+      "type": "subtopic",
+      "data": {
+        "label": "public"
+      }
+    },
+    {
+      "id": "pSdqdRPlLfmIl5X9XF76r",
+      "type": "subtopic",
+      "data": {
+        "label": "Redirects"
+      }
+    },
+    {
+      "id": "H2lhyWJ2aErIC6UsIag_p",
+      "type": "subtopic",
+      "data": {
+        "label": "Constraints"
+      }
+    },
+    {
+      "id": "KlEgfzfkPu0O43tJIsU3H",
+      "type": "subtopic",
+      "data": {
+        "label": "Named Routes"
+      }
+    },
+    {
+      "id": "Wq7IsuKSS-UW809a0dAc2",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nFt_ZaOaFBvetVu3RBnyp",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "q5D0RsH052UzBpmq4Z4f2",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JAfp4HnSEfxZ33qhVrNvk",
+      "type": "subtopic",
+      "data": {
+        "label": "Cookies"
+      }
+    },
+    {
+      "id": "mJ5wZPg770fDlJ-V9x75t",
+      "type": "subtopic",
+      "data": {
+        "label": "Sessions"
+      }
+    },
+    {
+      "id": "oxEooPuoRqxLreJSA4QIh",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Models"
+      }
+    },
+    {
+      "id": "NtiePD28NjaDtsC3oEbYf",
+      "type": "topic",
+      "data": {
+        "label": "Models"
+      }
+    },
+    {
+      "id": "XRhnJlWYP06AJZvPUbE9F",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "8EwNQFoZbzf5WtvP4OA4G",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "wszshSvhqtfN829f5InuL",
+      "type": "subtopic",
+      "data": {
+        "label": "Raw SQL"
+      }
+    },
+    {
+      "id": "NgMAdAtdJFd3Pha4nwiLE",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditions"
+      }
+    },
+    {
+      "id": "NwzKYGKVyLF_hiHSZ01Yq",
+      "type": "subtopic",
+      "data": {
+        "label": "Ordering"
+      }
+    },
+    {
+      "id": "J7eIUewbviWck-lVJ1hre",
+      "type": "subtopic",
+      "data": {
+        "label": "SQLite"
+      }
+    },
+    {
+      "id": "TRTR2JyyfqICTm3kbyIgu",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "vIOmb6qGA0ZbPyqEQ9Bb4",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL "
+      }
+    },
+    {
+      "id": "Jf7W0Sw5azZZ6VGb9oaYq",
+      "type": "subtopic",
+      "data": {
+        "label": "MariaDB"
+      }
+    },
+    {
+      "id": "WJmDAayQ6SMNuUWsMzhnJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Rendering Views"
+      }
+    },
+    {
+      "id": "wwIkuPeobnm7Zq_YUf2sw",
+      "type": "label",
+      "data": {
+        "label": "Forms"
+      }
+    },
+    {
+      "id": "7QMksMQfRkuLm9C_or5JU",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "EctqfKE5AAqByipGIv0Wa",
+      "type": "subtopic",
+      "data": {
+        "label": "form_for"
+      }
+    },
+    {
+      "id": "vqFoLd0IhL16YI1L6B8ng",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "deKkp0TGU3Dj0zxUn9VI4",
+      "type": "subtopic",
+      "data": {
+        "label": "Devise"
+      }
+    },
+    {
+      "id": "dTU2RPkJcZaPRuSHPod71",
+      "type": "subtopic",
+      "data": {
+        "label": "Pundit"
+      }
+    },
+    {
+      "id": "8suGzBH5LPT61YKVN_3Ta",
+      "type": "label",
+      "data": {
+        "label": "Logging, Testing \u0026 Debugging"
+      }
+    },
+    {
+      "id": "jTrvSb4eN9Hna0YooHapb",
+      "type": "topic",
+      "data": {
+        "label": "Pagination"
+      }
+    },
+    {
+      "id": "fjROKLDD5h6Vp0zXgJ5Y0",
+      "type": "topic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "ELvMdjJZGl_k_0Qsi_vtm",
+      "type": "topic",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "Xs9gIVdO9TuZabUapgubJ",
+      "type": "subtopic",
+      "data": {
+        "label": "RSpec"
+      }
+    },
+    {
+      "id": "JCQT_3B9hu8QkJaoDQK_V",
+      "type": "subtopic",
+      "data": {
+        "label": "Capybara"
+      }
+    },
+    {
+      "id": "qtzX0ZzmWjs-CkHQDhsD1",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "JyARA-iMMw2uEuB_ljFrs",
+      "type": "topic",
+      "data": {
+        "label": "Storage"
+      }
+    },
+    {
+      "id": "nh6d9XbtvwBUtVDmEk0i_",
+      "type": "topic",
+      "data": {
+        "label": "Plugins \u0026 Engines"
+      }
+    },
+    {
+      "id": "rhs6_Zg9PuY2Oost0vc_o",
+      "type": "topic",
+      "data": {
+        "label": "Mailbox \u0026 Mailer"
+      }
+    },
+    {
+      "id": "Ia5mN1j_lMCg0vt2z1_jI",
+      "type": "topic",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "h5n7KwQM8mmsN1dHHLEQY",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "M2zbDYBZVMxd6Q0OtPg3f",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ih8oOhO49tg1wUUiusIA-",
+      "type": "subtopic",
+      "data": {
+        "label": "Kamal"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "Laravel"
+      }
+    },
+    {
+      "id": "e7tcUrtjEcFvQNL6PCYE1",
+      "type": "subtopic",
+      "data": {
+        "label": "ViewComponent"
+      }
+    },
+    {
+      "id": "G3HHrElODg0Js0WY-VYkL",
+      "type": "subtopic",
+      "data": {
+        "label": "Phlex"
+      }
+    },
+    {
+      "id": "EWMC98NdSnblHBD0U3Ty2",
+      "type": "subtopic",
+      "data": {
+        "label": "form_with"
+      }
+    },
+    {
+      "id": "GGR8jAQNggJc92FcvtL4O",
+      "type": "subtopic",
+      "data": {
+        "label": "Form Elements"
+      }
+    },
+    {
+      "id": "p0JHL8iAcV5tRLX9DPhx6",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested Forms"
+      }
+    },
+    {
+      "id": "rg-48lLxIaKdjIb9icB72",
+      "type": "subtopic",
+      "data": {
+        "label": "Form Validation"
+      }
+    },
+    {
+      "id": "u3hd1tHQzc-XeJOoacOdH",
+      "type": "label",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "2IEdP3YjzCf150UpGao42",
+      "type": "subtopic",
+      "data": {
+        "label": "Hotwire"
+      }
+    },
+    {
+      "id": "6P7GM12isuv5A_SA3tqNA",
+      "type": "subtopic",
+      "data": {
+        "label": "Kaminari"
+      }
+    },
+    {
+      "id": "BFmYL2UyuCXdFCeMKtDZk",
+      "type": "subtopic",
+      "data": {
+        "label": "Pagy"
+      }
+    },
+    {
+      "id": "3fA4RoDm2NFUK0EWFy-eP",
+      "type": "subtopic",
+      "data": {
+        "label": "CanCanCan"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "O59fAwOnZ7PJ5R2rbMThJ",
+      "source": "EcGyLolDRJJra4PDWlQjJ",
+      "target": "8Jbs2XpIL-Nd-tr2f0AJ8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__bFLmHZdlQzx62pFJNF7uFx2-B5db8IexkXkLvoMMTCkS6w1",
+      "source": "bFLmHZdlQzx62pFJNF7uF",
+      "target": "B5db8IexkXkLvoMMTCkS6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__B5db8IexkXkLvoMMTCkS6x2-0MKuq69yhj8q6suTQ7fY7w1",
+      "source": "B5db8IexkXkLvoMMTCkS6",
+      "target": "0MKuq69yhj8q6suTQ7fY7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wwIkuPeobnm7Zq_YUf2swx2-ftFF3oFfqpKvjQhXk3bWww2",
+      "source": "N-GxGHMkLiWr8HbgqD4Er",
+      "target": "eYaayU92hNbri3YTdSAbG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NyByCB4J4hk7rN7nrp1dvw2-wwIkuPeobnm7Zq_YUf2swx1",
+      "source": "NyByCB4J4hk7rN7nrp1dv",
+      "target": "pYksfLuNiTt2rl97VtQhE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0MKuq69yhj8q6suTQ7fY7z2-3YcOhdk9w24f5x0WattyBy1",
+      "source": "0MKuq69yhj8q6suTQ7fY7",
+      "target": "3YcOhdk9w24f5x0WattyB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0MKuq69yhj8q6suTQ7fY7z2-VCufea-9vs4DfzB815IT5y2",
+      "source": "0MKuq69yhj8q6suTQ7fY7",
+      "target": "VCufea-9vs4DfzB815IT5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0MKuq69yhj8q6suTQ7fY7z2-wHKlT_wCIrpSvULvXCufry1",
+      "source": "0MKuq69yhj8q6suTQ7fY7",
+      "target": "wHKlT_wCIrpSvULvXCufr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0MKuq69yhj8q6suTQ7fY7z2-jKADWbGXSL5yGzsLqSJG9y1",
+      "source": "0MKuq69yhj8q6suTQ7fY7",
+      "target": "jKADWbGXSL5yGzsLqSJG9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfw2-OPwVIe7EY84kY9W6uoh0gx2",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "OPwVIe7EY84kY9W6uoh0g",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfy2-tSdMmh2SG1Qul5PWCaCKaz1",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "tSdMmh2SG1Qul5PWCaCKa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfy2-Cm0tEnjeqQzQORowsdEjkz2",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "Cm0tEnjeqQzQORowsdEjk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfy2-cUYKqkqvg2u3Z4KOtAE9mz1",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "cUYKqkqvg2u3Z4KOtAE9m",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfy2-oHdgQvPSEs-l3EzNRd8q2z1",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "oHdgQvPSEs-l3EzNRd8q2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfy2-mJ5wZPg770fDlJ-V9x75tz2",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "mJ5wZPg770fDlJ-V9x75t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NtiePD28NjaDtsC3oEbYfx2-pUpwqvZ4F-xQhySNaA5yBw1",
+      "source": "HDt5AAg9H4n8wh3uACudP",
+      "target": "pUpwqvZ4F-xQhySNaA5yB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ig8gCcieQF923NKhNyaNAx2-QdWCXUAfVXiP6RQ6VyDkXw2",
+      "source": "ig8gCcieQF923NKhNyaNA",
+      "target": "QdWCXUAfVXiP6RQ6VyDkX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QdWCXUAfVXiP6RQ6VyDkXz2-gJYuVgBvJeXL72NsRubLmy2",
+      "source": "QdWCXUAfVXiP6RQ6VyDkX",
+      "target": "gJYuVgBvJeXL72NsRubLm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QdWCXUAfVXiP6RQ6VyDkXz2-yrW99MwJNCBMinYUXm1B_y1",
+      "source": "QdWCXUAfVXiP6RQ6VyDkX",
+      "target": "yrW99MwJNCBMinYUXm1B_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QdWCXUAfVXiP6RQ6VyDkXx2-wwIkuPeobnm7Zq_YUf2sww1",
+      "source": "QdWCXUAfVXiP6RQ6VyDkX",
+      "target": "pYksfLuNiTt2rl97VtQhE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__CX-9Ii3e9rrokUTF0_hI5y2-NyByCB4J4hk7rN7nrp1dvz1",
+      "source": "CX-9Ii3e9rrokUTF0_hI5",
+      "target": "NyByCB4J4hk7rN7nrp1dv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NyByCB4J4hk7rN7nrp1dvz2-WJmDAayQ6SMNuUWsMzhnJy1",
+      "source": "NyByCB4J4hk7rN7nrp1dv",
+      "target": "WJmDAayQ6SMNuUWsMzhnJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-bX4iPTO1dt3wLAcFI7nLy2-NyByCB4J4hk7rN7nrp1dvz1",
+      "source": "-bX4iPTO1dt3wLAcFI7nL",
+      "target": "NyByCB4J4hk7rN7nrp1dv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dTU2RPkJcZaPRuSHPod71y2-NyByCB4J4hk7rN7nrp1dvz1",
+      "source": "9qNdqb_Y95_Hjm-7GYA-o",
+      "target": "NyByCB4J4hk7rN7nrp1dv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QdWCXUAfVXiP6RQ6VyDkXy2-TRTR2JyyfqICTm3kbyIguz1",
+      "source": "QdWCXUAfVXiP6RQ6VyDkX",
+      "target": "TRTR2JyyfqICTm3kbyIgu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QdWCXUAfVXiP6RQ6VyDkXy2-Jf7W0Sw5azZZ6VGb9oaYqz1",
+      "source": "QdWCXUAfVXiP6RQ6VyDkX",
+      "target": "Jf7W0Sw5azZZ6VGb9oaYq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ss-n6KFlIKZhgW3ezZZ0pz2-dTU2RPkJcZaPRuSHPod71y1",
+      "source": "xz-xEwqyvJgTKvjpmXeOH",
+      "target": "dTU2RPkJcZaPRuSHPod71",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xz-xEwqyvJgTKvjpmXeOHx2-u3hd1tHQzc-XeJOoacOdHw2",
+      "source": "xz-xEwqyvJgTKvjpmXeOH",
+      "target": "8suGzBH5LPT61YKVN_3Ta",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__u3hd1tHQzc-XeJOoacOdHy2-Ia5mN1j_lMCg0vt2z1_jIz1",
+      "source": "8suGzBH5LPT61YKVN_3Ta",
+      "target": "Un4rFrxtto4WLG9YNaAMK",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Un4rFrxtto4WLG9YNaAMKx2-Ia5mN1j_lMCg0vt2z1_jIw2",
+      "source": "Un4rFrxtto4WLG9YNaAMK",
+      "target": "ELvMdjJZGl_k_0Qsi_vtm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__9evL0EqA6aBGczrfsRkV7y2-Ia5mN1j_lMCg0vt2z1_jIz1",
+      "source": "9evL0EqA6aBGczrfsRkV7",
+      "target": "qtzX0ZzmWjs-CkHQDhsD1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Xs9gIVdO9TuZabUapgubJy2-Ia5mN1j_lMCg0vt2z1_jIz1",
+      "source": "Xs9gIVdO9TuZabUapgubJ",
+      "target": "qtzX0ZzmWjs-CkHQDhsD1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OLdWSGSwYnggN14BdH9nNy2-Ia5mN1j_lMCg0vt2z1_jIz1",
+      "source": "OLdWSGSwYnggN14BdH9nN",
+      "target": "qtzX0ZzmWjs-CkHQDhsD1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JCQT_3B9hu8QkJaoDQK_Vy2-Ia5mN1j_lMCg0vt2z1_jIz1",
+      "source": "JCQT_3B9hu8QkJaoDQK_V",
+      "target": "qtzX0ZzmWjs-CkHQDhsD1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Ia5mN1j_lMCg0vt2z1_jIy2-ELvMdjJZGl_k_0Qsi_vtmz1",
+      "source": "qtzX0ZzmWjs-CkHQDhsD1",
+      "target": "ELvMdjJZGl_k_0Qsi_vtm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Ia5mN1j_lMCg0vt2z1_jIy2-ih8oOhO49tg1wUUiusIA-z2",
+      "source": "Ia5mN1j_lMCg0vt2z1_jI",
+      "target": "ih8oOhO49tg1wUUiusIA-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jKADWbGXSL5yGzsLqSJG9x2-2IEdP3YjzCf150UpGao42w2",
+      "source": "jKADWbGXSL5yGzsLqSJG9",
+      "target": "2IEdP3YjzCf150UpGao42",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jTrvSb4eN9Hna0YooHapbz2-BFmYL2UyuCXdFCeMKtDZky1",
+      "source": "jTrvSb4eN9Hna0YooHapb",
+      "target": "BFmYL2UyuCXdFCeMKtDZk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__WqjcBTzbU4iFpYVp1-ptvy2-deKkp0TGU3Dj0zxUn9VI4z1",
+      "source": "WqjcBTzbU4iFpYVp1-ptv",
+      "target": "deKkp0TGU3Dj0zxUn9VI4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PDxKuQbWhbg0_AewOw9Mmx2-Un4rFrxtto4WLG9YNaAMKw1",
+      "source": "PDxKuQbWhbg0_AewOw9Mm",
+      "target": "Un4rFrxtto4WLG9YNaAMK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qtzX0ZzmWjs-CkHQDhsD1x2-u3hd1tHQzc-XeJOoacOdHw2",
+      "source": "qtzX0ZzmWjs-CkHQDhsD1",
+      "target": "u3hd1tHQzc-XeJOoacOdH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Ia5mN1j_lMCg0vt2z1_jIx2-O5dely89N5UCMBeUfh8udw1",
+      "source": "Ia5mN1j_lMCg0vt2z1_jI",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

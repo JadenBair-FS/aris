@@ -1,0 +1,1736 @@
+{
+  "title": {
+    "card": "Engineering Manager",
+    "page": "Engineering Manager"
+  },
+  "description": "Everything you need to know to become an Engineering Manager in @currentYear@",
+  "nodes": [
+    {
+      "id": "UaA7mS2G18Wab_zHexpgb",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jSD7SyS99Rb7Mhv1uUFZA",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "MGkl-UZPEMJ7e7HzVfYyL",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "bLx0NI1XEqYnuLhGOyWai",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iAsUXmTDnwvZTlH1_TKv0",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "h1SFhjuzkkPzCK-rYnmnE",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "7vahmZfyKoHFz9Yq-Vb4C",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "WLpTOX_NI9r4JoSoqON1L",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "s5b9niOUvZbZq5KOMeN-e",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "fQbBVljA0ECDGOlxO0GmQ",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "ad29W87dmCPd4pATKchVk",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "JCjb-qZuoQqGWrHpTw4tD",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "kOOzXG97rv2heF-i6CudZ",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "t-NmzANfChExde1ljNwqJ",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "X8b4Mang8X69ZL54MUp_Y",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "RuGjm3c0Qa57WXOMH25jt",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "gjz97vjZ1mrnWNm5gO4pP",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "gxFEOMJTAKrcGn8yD_zYm",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Engineering Manager"
+      }
+    },
+    {
+      "id": "_hYN0gEi9BL24nptEtXWU",
+      "type": "topic",
+      "data": {
+        "label": "What is Engineering Management?"
+      }
+    },
+    {
+      "id": "5Irad96FtU3TkNZRK7x_8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant tracks about system design and architecture"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Software Architect"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CH_K6mmFX_GdSzi2n1ID7",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "oKbeLp4YB8rI1Q3vi0EnG",
+      "type": "subtopic",
+      "data": {
+        "label": "EM vs Tech Lead vs IC"
+      }
+    },
+    {
+      "id": "aSZ2uVCmpAdEPjJt6VKG4",
+      "type": "subtopic",
+      "data": {
+        "label": "People"
+      }
+    },
+    {
+      "id": "p9ecMvHCqjmvxf67di7pY",
+      "type": "subtopic",
+      "data": {
+        "label": "Product"
+      }
+    },
+    {
+      "id": "JzkDdCShl_Mytw9PcSRr1",
+      "type": "label",
+      "data": {
+        "label": "Key Focus Areas"
+      }
+    },
+    {
+      "id": "iZFn0FaRdrGv_-_8zii_-",
+      "type": "subtopic",
+      "data": {
+        "label": "Process"
+      }
+    },
+    {
+      "id": "yO6GoicRL8RD029DQO7YB",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_V1bNZwDOIKF_bskubGTG",
+      "type": "paragraph",
+      "data": {
+        "label": "Technical Leadership"
+      }
+    },
+    {
+      "id": "FtWNnOE3zObmjS-Og26M3",
+      "type": "subtopic",
+      "data": {
+        "label": "Architectural Decision-Making"
+      }
+    },
+    {
+      "id": "pduPcv2QPpVmVvDdK4CPi",
+      "type": "subtopic",
+      "data": {
+        "label": "System Monitoring \u0026 Performance"
+      }
+    },
+    {
+      "id": "EyoVFmqOJbH1sAPHLISFt",
+      "type": "subtopic",
+      "data": {
+        "label": "Scaling Infrastructure"
+      }
+    },
+    {
+      "id": "fBENrXdMhoGYgL_d96tgo",
+      "type": "subtopic",
+      "data": {
+        "label": "Software Engineering Background"
+      }
+    },
+    {
+      "id": "iX4HPgoiEbc_gze1A01n4",
+      "type": "subtopic",
+      "data": {
+        "label": "System Design and Architecture"
+      }
+    },
+    {
+      "id": "EY6Hk5wPd9Y_VA1UROk44",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical Debt and Management"
+      }
+    },
+    {
+      "id": "_2xnTKt5yi__jj_WgcLa7",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical Documentation"
+      }
+    },
+    {
+      "id": "40yK6XzI8lSxdiAXxtF75",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Review Best Practices"
+      }
+    },
+    {
+      "id": "XXTA13ZCHFPC_wiWBbEy5",
+      "type": "label",
+      "data": {
+        "label": "Foundational Knowledge"
+      }
+    },
+    {
+      "id": "ikCJ8Ybu2AD1w5VuPNVAO",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical Roadmapping"
+      }
+    },
+    {
+      "id": "H0aav5qKDNiNegJOGP2rx",
+      "type": "subtopic",
+      "data": {
+        "label": "Build vs Buy Evaluation"
+      }
+    },
+    {
+      "id": "d7zMBhMFgY9MwmKC9CVVh",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical Risk Assessment"
+      }
+    },
+    {
+      "id": "1k394g-bFMoU4LxbLrx1_",
+      "type": "label",
+      "data": {
+        "label": "Technical Strategy"
+      }
+    },
+    {
+      "id": "gAEmpSMvNyjmTa5q9oZSg",
+      "type": "subtopic",
+      "data": {
+        "label": "CI/CD Implementation"
+      }
+    },
+    {
+      "id": "bpJPDbifPwS4ScOoATlEI",
+      "type": "subtopic",
+      "data": {
+        "label": "Development / Release Workflow"
+      }
+    },
+    {
+      "id": "C2YsaZ32An_UXV8lB7opm",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical Standards Setting"
+      }
+    },
+    {
+      "id": "sQCLhk__jvbityuuLlxiW",
+      "type": "subtopic",
+      "data": {
+        "label": "Security  Best Practices"
+      }
+    },
+    {
+      "id": "q5SJyM1d8cQzzAcR-kotB",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Strategies"
+      }
+    },
+    {
+      "id": "_vFDIX5Uds46imA11zaLg",
+      "type": "label",
+      "data": {
+        "label": "Quality and Process"
+      }
+    },
+    {
+      "id": "o1xPrfg8iNWQpD12xsbQJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Incident Management"
+      }
+    },
+    {
+      "id": "3na5mBIPl5f6mjEzkgD_C",
+      "type": "subtopic",
+      "data": {
+        "label": "Hiring and Recruitment"
+      }
+    },
+    {
+      "id": "tPDmXXjvFI_8-MTo_dEUw",
+      "type": "subtopic",
+      "data": {
+        "label": "Team Structure and Design"
+      }
+    },
+    {
+      "id": "eJzYnoB6sArLjXRm51cM4",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance Evaluations"
+      }
+    },
+    {
+      "id": "0ULnfq0ZFJXgoLbKM1gxC",
+      "type": "subtopic",
+      "data": {
+        "label": "Mentoring and Coaching"
+      }
+    },
+    {
+      "id": "fhFSR_N4ZDTHINEinubHG",
+      "type": "subtopic",
+      "data": {
+        "label": "Career Development Planning"
+      }
+    },
+    {
+      "id": "ecHMSFNc5uCxbCqK_bnIA",
+      "type": "label",
+      "data": {
+        "label": "Team Development"
+      }
+    },
+    {
+      "id": "bx2SMhR58ud45se5dK7qS",
+      "type": "subtopic",
+      "data": {
+        "label": "Delegation"
+      }
+    },
+    {
+      "id": "QA5CR5f0geC_RQc_SOK-N",
+      "type": "subtopic",
+      "data": {
+        "label": "Conflict Resolution"
+      }
+    },
+    {
+      "id": "Az9GgkLFoat2t_sYRUBv5",
+      "type": "subtopic",
+      "data": {
+        "label": "Feedback Delivery"
+      }
+    },
+    {
+      "id": "U_oOnDXkCE387r9olvMZB",
+      "type": "subtopic",
+      "data": {
+        "label": "Team Motivation"
+      }
+    },
+    {
+      "id": "7PBmYoSmIgZT21a2Ip3_S",
+      "type": "subtopic",
+      "data": {
+        "label": "Trust / Influence Building"
+      }
+    },
+    {
+      "id": "C-FsZPf9FKDf_MQ55axNw",
+      "type": "label",
+      "data": {
+        "label": "Leadership Skills"
+      }
+    },
+    {
+      "id": "b3qoH_LuW-Gz4N8WdGnZs",
+      "type": "subtopic",
+      "data": {
+        "label": "One-on-One Meetings"
+      }
+    },
+    {
+      "id": "e0ZuiCoS8sJ0XB1lNiz7_",
+      "type": "subtopic",
+      "data": {
+        "label": "Team Meetings"
+      }
+    },
+    {
+      "id": "gqKEgKjEu5sOf5Gl-HS-j",
+      "type": "subtopic",
+      "data": {
+        "label": "Status Reporting"
+      }
+    },
+    {
+      "id": "TVqVlJqegLZRSkwNoHbBf",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder Management"
+      }
+    },
+    {
+      "id": "ZyNbSBd8plAZ5lt5OEUYu",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-functional Collaboration"
+      }
+    },
+    {
+      "id": "C2EQ8JMyK6b4PvgK5TpXb",
+      "type": "label",
+      "data": {
+        "label": "Communication"
+      }
+    },
+    {
+      "id": "4v5yLKYVcMh0s7SQuf__C",
+      "type": "subtopic",
+      "data": {
+        "label": "Resource Allocation"
+      }
+    },
+    {
+      "id": "7BcToTqL78QmG4qb43X5Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Sprint Planning"
+      }
+    },
+    {
+      "id": "-Qc6E3gkUUonfzifYqeJJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Release Management"
+      }
+    },
+    {
+      "id": "mgw6M8I9qy1EoJpJV-gy1",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Management"
+      }
+    },
+    {
+      "id": "hH-UDVFlgKoMJcI1ssDFv",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency management"
+      }
+    },
+    {
+      "id": "hL_GY3lMFe3R56DIuEhD1",
+      "type": "label",
+      "data": {
+        "label": "Project Planning"
+      }
+    },
+    {
+      "id": "n9gvPHn4c1U-l6v-W9v6r",
+      "type": "subtopic",
+      "data": {
+        "label": "Agile methodologies"
+      }
+    },
+    {
+      "id": "SuT6q5lMMSyVkadlQp7iU",
+      "type": "subtopic",
+      "data": {
+        "label": "Project Tracking"
+      }
+    },
+    {
+      "id": "PXobPGPgCX3_55w4UtxT9",
+      "type": "subtopic",
+      "data": {
+        "label": "Milestone Management"
+      }
+    },
+    {
+      "id": "C-lJJSjT8Cxw_UT3ocFsO",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope Management"
+      }
+    },
+    {
+      "id": "QWO5QFS7kXwfu3aa8IiRt",
+      "type": "subtopic",
+      "data": {
+        "label": "Timeline Estimation"
+      }
+    },
+    {
+      "id": "iYGRSUanuDxhc3A7jlRjr",
+      "type": "label",
+      "data": {
+        "label": "Execution"
+      }
+    },
+    {
+      "id": "Wd8FCEaGZBTvsD-k4t0r4",
+      "type": "subtopic",
+      "data": {
+        "label": "KPI Definition"
+      }
+    },
+    {
+      "id": "idd92ZTBVUzptBl5jRdc3",
+      "type": "subtopic",
+      "data": {
+        "label": "Velocity Tracking"
+      }
+    },
+    {
+      "id": "ZWWsuFm_G4kvvl_cv8l_t",
+      "type": "subtopic",
+      "data": {
+        "label": "Quality Metrics"
+      }
+    },
+    {
+      "id": "KPDHk7tl_BnIj_obnq3Kl",
+      "type": "subtopic",
+      "data": {
+        "label": "Team Health Metrics"
+      }
+    },
+    {
+      "id": "g9WWa50V8ZbhIJgBRx0Nd",
+      "type": "subtopic",
+      "data": {
+        "label": "Project Postmortems"
+      }
+    },
+    {
+      "id": "OJjTtLGSG7EkkJ5go1dX3",
+      "type": "label",
+      "data": {
+        "label": "Measurement"
+      }
+    },
+    {
+      "id": "vpfqQSOhBDHvhTGmDjYyi",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "8_68edYBsrJBC1RdUVsnu",
+      "type": "label",
+      "data": {
+        "label": "Strategic Thinking"
+      }
+    },
+    {
+      "id": "nC5dfGlxbLoXUAp2u-6Gl",
+      "type": "subtopic",
+      "data": {
+        "label": "Product strategy alignment"
+      }
+    },
+    {
+      "id": "vhOHvfF_lfQrrOK6sGLTY",
+      "type": "subtopic",
+      "data": {
+        "label": "Business Case Development"
+      }
+    },
+    {
+      "id": "XinUWPahOdufmLYcEwMj_",
+      "type": "subtopic",
+      "data": {
+        "label": "ROI analysis"
+      }
+    },
+    {
+      "id": "P2gIOt-i0sQEOMBo-XjZO",
+      "type": "subtopic",
+      "data": {
+        "label": "Market awareness"
+      }
+    },
+    {
+      "id": "76GjwwEYaEX_kh02OSpdr",
+      "type": "subtopic",
+      "data": {
+        "label": "Competitive Analysis"
+      }
+    },
+    {
+      "id": "AcOZyUJpDpHatDUCGhIrS",
+      "type": "label",
+      "data": {
+        "label": "Financial Management"
+      }
+    },
+    {
+      "id": "oqjr26B27SHSYVQ4IFnA1",
+      "type": "subtopic",
+      "data": {
+        "label": "Budget Planning"
+      }
+    },
+    {
+      "id": "iwwxnSVvCmZ57stXwzk8G",
+      "type": "subtopic",
+      "data": {
+        "label": "Resource forecasting"
+      }
+    },
+    {
+      "id": "rbhZJZtRV1ZZ5QaYW77ry",
+      "type": "subtopic",
+      "data": {
+        "label": "Cost Optimization"
+      }
+    },
+    {
+      "id": "Imgt669vbUT_Iec2o4Gvt",
+      "type": "subtopic",
+      "data": {
+        "label": "Vendor Management"
+      }
+    },
+    {
+      "id": "3GHnbaEa6iE9ixxAYyUa0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "8ogm2cmCLgzbyJxrVfUDC",
+      "type": "label",
+      "data": {
+        "label": "Organizational Awareness"
+      }
+    },
+    {
+      "id": "KA0y6KdVTjJFeX3frHUNo",
+      "type": "subtopic",
+      "data": {
+        "label": "Company Culture"
+      }
+    },
+    {
+      "id": "tt02qGHSn4fPbpboZ1Ni_",
+      "type": "subtopic",
+      "data": {
+        "label": "Change management"
+      }
+    },
+    {
+      "id": "mjMRNhPkeb4lEZXBb8Iot",
+      "type": "subtopic",
+      "data": {
+        "label": "Organization structure"
+      }
+    },
+    {
+      "id": "Zoz01JcNU69gr95IcWhYM",
+      "type": "subtopic",
+      "data": {
+        "label": "Politics navigation"
+      }
+    },
+    {
+      "id": "Hb_rZe4k37Rr0enSh7woV",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-department collaboration"
+      }
+    },
+    {
+      "id": "h7gEQNbGiabDA1q1Bk_IB",
+      "type": "subtopic",
+      "data": {
+        "label": "Emotional Intelligence"
+      }
+    },
+    {
+      "id": "UoHPKOKUHF2avXFUT5Vz4",
+      "type": "paragraph",
+      "data": {
+        "label": "Culture Building"
+      }
+    },
+    {
+      "id": "ZuZuzwy-Frsn_PFJZVuAQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Defining and Enforcing Values"
+      }
+    },
+    {
+      "id": "8Nro6PTkEkNugYBjQfJ6O",
+      "type": "subtopic",
+      "data": {
+        "label": "Team Traditions and Rituals"
+      }
+    },
+    {
+      "id": "Vb3A4a-UpGTAEs-dVI66s",
+      "type": "subtopic",
+      "data": {
+        "label": "Recognition programs"
+      }
+    },
+    {
+      "id": "LE3ykySYFL23KvuwxeBaR",
+      "type": "subtopic",
+      "data": {
+        "label": "Social connections"
+      }
+    },
+    {
+      "id": "6iM0n4faMNhk4mezS9AcG",
+      "type": "subtopic",
+      "data": {
+        "label": "Inclusive environment creation"
+      }
+    },
+    {
+      "id": "njqjYPMQK3nGYtqHzUylo",
+      "type": "subtopic",
+      "data": {
+        "label": "Innovation fostering"
+      }
+    },
+    {
+      "id": "aeD-kBZEr1NHFtAD8yHI_",
+      "type": "subtopic",
+      "data": {
+        "label": "Learning culture development"
+      }
+    },
+    {
+      "id": "74-7hDXaBVXYo6LJdgac_",
+      "type": "subtopic",
+      "data": {
+        "label": "Knowledge sharing practices"
+      }
+    },
+    {
+      "id": "Cq0OFaWqSRathZO-bxBrP",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical excellence mindset"
+      }
+    },
+    {
+      "id": "fYkKo8D35AHd8agr3YrIP",
+      "type": "subtopic",
+      "data": {
+        "label": "Blameless Post-mortems"
+      }
+    },
+    {
+      "id": "g9FvFKC715tZL2ZGlPl3N",
+      "type": "subtopic",
+      "data": {
+        "label": "Bias Recognition / Mitigation"
+      }
+    },
+    {
+      "id": "Xaeb67Nqdi0kwvehQUYeJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Emergency protocols"
+      }
+    },
+    {
+      "id": "LQ3YfAgJ4UaDgtnN-cMht",
+      "type": "subtopic",
+      "data": {
+        "label": "War Room Management"
+      }
+    },
+    {
+      "id": "irEwTIubCjORnlH27QpEo",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder Communication"
+      }
+    },
+    {
+      "id": "8zyK34SwHry2lrWchw0KZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Post-incident analysis"
+      }
+    },
+    {
+      "id": "2fHcb1dAnf34APCAAlwnR",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Recovery"
+      }
+    },
+    {
+      "id": "FfWUy7E38KoMmZ1PBCQfV",
+      "type": "label",
+      "data": {
+        "label": "Incident Response"
+      }
+    },
+    {
+      "id": "2RwpGPegD2GyiiV6SVbbM",
+      "type": "subtopic",
+      "data": {
+        "label": "Contingency planning"
+      }
+    },
+    {
+      "id": "KOTzJ8e7mc0wmF46vrj3I",
+      "type": "subtopic",
+      "data": {
+        "label": "Disaster recovery"
+      }
+    },
+    {
+      "id": "v6N7BH0B55gX0oNXb55D7",
+      "type": "subtopic",
+      "data": {
+        "label": "Business continuity"
+      }
+    },
+    {
+      "id": "FNp4-RgPvfC76pJKjX56a",
+      "type": "subtopic",
+      "data": {
+        "label": "Security incident handling"
+      }
+    },
+    {
+      "id": "kQG_wk66-51dA4Ly9ivjM",
+      "type": "subtopic",
+      "data": {
+        "label": "Production issues management"
+      }
+    },
+    {
+      "id": "9Dj-j03tywSGDU4yYKBMg",
+      "type": "label",
+      "data": {
+        "label": "Risk Mitigation"
+      }
+    },
+    {
+      "id": "bZ81ie09XsQw-YD17nBQ_",
+      "type": "paragraph",
+      "data": {
+        "label": "Crisis Management"
+      }
+    },
+    {
+      "id": "CpCjmOpNxHu0j08qz_YJ5",
+      "type": "label",
+      "data": {
+        "label": "Engineering Culture"
+      }
+    },
+    {
+      "id": "uMaNuJ9z5MFbWmyw8xENb",
+      "type": "label",
+      "data": {
+        "label": "Team Culture"
+      }
+    },
+    {
+      "id": "mIUx8zAHWyPWPGvxuTK4y",
+      "type": "subtopic",
+      "data": {
+        "label": "Burnout prevention"
+      }
+    },
+    {
+      "id": "nnoVA8W70hrNDxN3XQCVL",
+      "type": "subtopic",
+      "data": {
+        "label": "Critical situation leadership"
+      }
+    },
+    {
+      "id": "FwK-B7jRbBXVnuY9JxI1w",
+      "type": "subtopic",
+      "data": {
+        "label": "Emergency staffing"
+      }
+    },
+    {
+      "id": "QFhhOgwz_bgZgOfKFg5XA",
+      "type": "subtopic",
+      "data": {
+        "label": "Stress management"
+      }
+    },
+    {
+      "id": "tmY4Ktu6luFg5wKylJW76",
+      "type": "subtopic",
+      "data": {
+        "label": "Work-life balance during crises"
+      }
+    },
+    {
+      "id": "Vh1_v27lStdnRPwpY3ZPv",
+      "type": "label",
+      "data": {
+        "label": "Team Support"
+      }
+    },
+    {
+      "id": "xKFDpqkzQ6EvTDixM0_hi",
+      "type": "paragraph",
+      "data": {
+        "label": "Stakeholder Management"
+      }
+    },
+    {
+      "id": "7sz1w4O4pKfoTBgTwpm9P",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "5MM1ccB1pmQcd3Uyjmbr7",
+      "type": "subtopic",
+      "data": {
+        "label": "Board presentations"
+      }
+    },
+    {
+      "id": "CHothgVl8ulFthwS7uKqK",
+      "type": "subtopic",
+      "data": {
+        "label": "Executive summaries"
+      }
+    },
+    {
+      "id": "uBrsV_EocAkRWEqJYjoZn",
+      "type": "subtopic",
+      "data": {
+        "label": "Strategic proposals"
+      }
+    },
+    {
+      "id": "pLUOU2AmAJ9aJAmIlVD7D",
+      "type": "subtopic",
+      "data": {
+        "label": "Budget requests"
+      }
+    },
+    {
+      "id": "QssXmeifoI3dtu-eXp8PK",
+      "type": "subtopic",
+      "data": {
+        "label": "Vision alignment"
+      }
+    },
+    {
+      "id": "3aLBCZZKbSXTi52pz3NpZ",
+      "type": "label",
+      "data": {
+        "label": "Executive Communication"
+      }
+    },
+    {
+      "id": "BY5rqe9DC0iZoE2JpfCqz",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "QEViLNgG4Uv9Q9PWig0u3",
+      "type": "subtopic",
+      "data": {
+        "label": "Customer feedback integration"
+      }
+    },
+    {
+      "id": "V5s2i-L2tsZFNxMLN_e_U",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical customer support"
+      }
+    },
+    {
+      "id": "A-Aa7VdDAYfaMUZD_cWwP",
+      "type": "subtopic",
+      "data": {
+        "label": "Customer success alignment"
+      }
+    },
+    {
+      "id": "2QwMcO27H3ygtLlWVplxr",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature prioritization"
+      }
+    },
+    {
+      "id": "tCT2syTMyEHCspDLXxk6R",
+      "type": "subtopic",
+      "data": {
+        "label": "Technical partnerships"
+      }
+    },
+    {
+      "id": "ZHd8vK5HAh5iQaTJGzBPF",
+      "type": "label",
+      "data": {
+        "label": "Customer Relations"
+      }
+    },
+    {
+      "id": "X8eLF6i4Q2AdAG_1Yoh63",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "WYoqfmk5ejB2UOiYXh4Zi",
+      "type": "subtopic",
+      "data": {
+        "label": "Vendor relationships"
+      }
+    },
+    {
+      "id": "xMN575nnnQJeHe2oJYw17",
+      "type": "subtopic",
+      "data": {
+        "label": "Technology partnerships"
+      }
+    },
+    {
+      "id": "f3P0fF4UzgVQZuMVTVmP1",
+      "type": "subtopic",
+      "data": {
+        "label": "Integration management"
+      }
+    },
+    {
+      "id": "ukmMMWacekcejEiEKCLzh",
+      "type": "subtopic",
+      "data": {
+        "label": "API strategy"
+      }
+    },
+    {
+      "id": "Jctp5tPCK_vY35_bh7QFk",
+      "type": "subtopic",
+      "data": {
+        "label": "External collaboration"
+      }
+    },
+    {
+      "id": "olGtswpYmYp-s8hGgndKm",
+      "type": "label",
+      "data": {
+        "label": "Partner Management"
+      }
+    },
+    {
+      "id": "UOBNQkCgpWP0YvCdKG0VH",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "BLNmr4EyO_CXZosQa2CJ3",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "9rVGTGSRIqYOFx5oA4N2s",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "oppGa6HdEYDebb-77Y2iW",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "jt-LF5QbGVs0cwTuHFQF6",
+      "type": "paragraph",
+      "data": {
+        "label": "Project Management"
+      }
+    },
+    {
+      "id": "X_nhWY6Veipg2OWISeJEa",
+      "type": "paragraph",
+      "data": {
+        "label": "People Management"
+      }
+    },
+    {
+      "id": "EzZCoyZkub3Gnp4df9b8u",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "eqn4HWH18WH2Oz-UUi-T6",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "6shGmkSVDCch9z6rspSRC",
+      "type": "paragraph",
+      "data": {
+        "label": "Business Acumen"
+      }
+    },
+    {
+      "id": "J-e0qnil7W79ojjWoFHGX",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "RLn26-FGoYaM75fNI7ymt",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QbjiB9Ce9BwrCUsIZosdM",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "HS8ZF2OjT_pR4bAzQyqOt",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "_ab9jU3cwIiyrmTMQVpqV",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "HRdccQlx3CGEwazvguhYy",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "UFbewLKNzvIfYopqw08Jm",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QUxpEK8smXRBs2gMdDInB",
+      "type": "subtopic",
+      "data": {
+        "label": "Legacy System Retirement"
+      }
+    },
+    {
+      "id": "dfXKIXcRZDOT1NJczx_Jf",
+      "type": "paragraph",
+      "data": {
+        "label": "Knowledge Management"
+      }
+    },
+    {
+      "id": "A5gwcZ-VHYAqHDJtrSQ6B",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "gHhNi32MSBmqk-oKOy-uj",
+      "type": "subtopic",
+      "data": {
+        "label": "Architecture documentation"
+      }
+    },
+    {
+      "id": "Kwy9O1z2hpeE0Sb3qtxEg",
+      "type": "subtopic",
+      "data": {
+        "label": "Process documentation"
+      }
+    },
+    {
+      "id": "dTjp_rEl1ITZjvELqVtfv",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision records"
+      }
+    },
+    {
+      "id": "HUQ_-vU2pdBPyF0mBocHz",
+      "type": "subtopic",
+      "data": {
+        "label": "Lessons Learned"
+      }
+    },
+    {
+      "id": "4-MCXFOkMGcN369OPG-vw",
+      "type": "subtopic",
+      "data": {
+        "label": "Best Practices"
+      }
+    },
+    {
+      "id": "93Fladz2ZH8E9zdUW4oBY",
+      "type": "label",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "hwXurTdcHEOQ0jmT0tlRm",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "7XUJ5F7m1CvOTXvuIb2fP",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "GA9fSqq6ohC5nj8wOUW8B",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NGQOfGQWgTCrP9YxEwM9d",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "g6K9fxWdRQT5h_u4Y_bkq",
+      "type": "subtopic",
+      "data": {
+        "label": "Mentoring Programs"
+      }
+    },
+    {
+      "id": "7t9jmv3_lRCEG5y5DA8bF",
+      "type": "subtopic",
+      "data": {
+        "label": "Knowledge bases"
+      }
+    },
+    {
+      "id": "S8-nwYKlG7YHL2dWwR303",
+      "type": "subtopic",
+      "data": {
+        "label": "Brown Bags"
+      }
+    },
+    {
+      "id": "2LO0iWf-y3l4rA1n_oG1g",
+      "type": "subtopic",
+      "data": {
+        "label": "Tech Talks"
+      }
+    },
+    {
+      "id": "L_7jYzqtQT84v6pnSZduj",
+      "type": "label",
+      "data": {
+        "label": "Knowledge Transfer"
+      }
+    },
+    {
+      "id": "FjYOpZMruJ69z-N9RdJVl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_RF_sIeR2YhGf7g4htNV6",
+      "type": "paragraph",
+      "data": {
+        "label": "Change Management"
+      }
+    },
+    {
+      "id": "GlB1e75xTfReVT7HzhvnB",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QMAIEkVFHrrP6lUWvd0S8",
+      "type": "subtopic",
+      "data": {
+        "label": "Migration planning"
+      }
+    },
+    {
+      "id": "9mNLfntu1TPjcX3RoUeMq",
+      "type": "subtopic",
+      "data": {
+        "label": "Legacy system retirement"
+      }
+    },
+    {
+      "id": "jerPoyfCcwZbNuE_cl1hq",
+      "type": "subtopic",
+      "data": {
+        "label": "Technology adoption"
+      }
+    },
+    {
+      "id": "f-52wRfPRrA9iniOMYQB7",
+      "type": "subtopic",
+      "data": {
+        "label": "Tool transitions"
+      }
+    },
+    {
+      "id": "ev9ZKygqETctLMSt1GAFU",
+      "type": "subtopic",
+      "data": {
+        "label": "Process changes"
+      }
+    },
+    {
+      "id": "ztl8utibkeEYAZxCLskEC",
+      "type": "label",
+      "data": {
+        "label": "Technical Change"
+      }
+    },
+    {
+      "id": "1__zRE1iu1FDX9ynpWSBS",
+      "type": "subtopic",
+      "data": {
+        "label": "Change strategy"
+      }
+    },
+    {
+      "id": "oGmtkOGVgA4huGJqkBEfj",
+      "type": "subtopic",
+      "data": {
+        "label": "Impact assessment"
+      }
+    },
+    {
+      "id": "34uOnta7dKOyZL0et_RC8",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholder management"
+      }
+    },
+    {
+      "id": "Mxi4g_PzT0oYc3NgR0UVg",
+      "type": "subtopic",
+      "data": {
+        "label": "Communication planning"
+      }
+    },
+    {
+      "id": "vfp6VmWnhpre_eDORg7ht",
+      "type": "subtopic",
+      "data": {
+        "label": "Resistance management"
+      }
+    },
+    {
+      "id": "Pb6LwGylkswhcqOT1Wf5x",
+      "type": "label",
+      "data": {
+        "label": "Organizational Change"
+      }
+    },
+    {
+      "id": "oAFjp_PXki2LGf505qIgQ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "qylp71gPynDqjSvsSYe6I",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "wXHFzVuZbly4ozgorQyIS",
+      "type": "label",
+      "data": {
+        "label": "Team Change"
+      }
+    },
+    {
+      "id": "5_CE3p5jMA1uEqFNfp7Kh",
+      "type": "subtopic",
+      "data": {
+        "label": "Reorganizations"
+      }
+    },
+    {
+      "id": "ph0U4l2alVJ8lUJ96q7co",
+      "type": "subtopic",
+      "data": {
+        "label": "Team mergers"
+      }
+    },
+    {
+      "id": "FayHWdUHHYFFBwnXx37Gk",
+      "type": "subtopic",
+      "data": {
+        "label": "Role transitions"
+      }
+    },
+    {
+      "id": "eIlW4mZKNQfBsTDmZf7ex",
+      "type": "subtopic",
+      "data": {
+        "label": "Responsibility shifts"
+      }
+    },
+    {
+      "id": "y7YHIz7OI4sNfC_nhfLcu",
+      "type": "subtopic",
+      "data": {
+        "label": "Culture evolution"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Software Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "w5iEx-0HeFWgvrx8WrZ2r",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lGgcjbbv3WAMOEi_NUZYh",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "q6DVDXXLPJB7L77vokLIG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUy2-oKbeLp4YB8rI1Q3vi0EnGz2",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "oKbeLp4YB8rI1Q3vi0EnG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUz2-aSZ2uVCmpAdEPjJt6VKG4y1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "aSZ2uVCmpAdEPjJt6VKG4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-_hYN0gEi9BL24nptEtXWUw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "_hYN0gEi9BL24nptEtXWU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUx2-X_nhWY6Veipg2OWISeJEaw1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "_V1bNZwDOIKF_bskubGTG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-X_nhWY6Veipg2OWISeJEax2-kOOzXG97rv2heF-i6CudZw1",
+      "source": "X_nhWY6Veipg2OWISeJEa",
+      "target": "kOOzXG97rv2heF-i6CudZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-X8b4Mang8X69ZL54MUp_Yx2-6shGmkSVDCch9z6rspSRCw2",
+      "source": "X8b4Mang8X69ZL54MUp_Y",
+      "target": "jt-LF5QbGVs0cwTuHFQF6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-6shGmkSVDCch9z6rspSRCy2-fQbBVljA0ECDGOlxO0GmQz1",
+      "source": "jt-LF5QbGVs0cwTuHFQF6",
+      "target": "fQbBVljA0ECDGOlxO0GmQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-fQbBVljA0ECDGOlxO0GmQy2-ad29W87dmCPd4pATKchVkz1",
+      "source": "fQbBVljA0ECDGOlxO0GmQ",
+      "target": "ad29W87dmCPd4pATKchVk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ad29W87dmCPd4pATKchVkx2-JCjb-qZuoQqGWrHpTw4tDw1",
+      "source": "ad29W87dmCPd4pATKchVk",
+      "target": "JCjb-qZuoQqGWrHpTw4tD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-6shGmkSVDCch9z6rspSRCz2-vpfqQSOhBDHvhTGmDjYyiy1",
+      "source": "6shGmkSVDCch9z6rspSRC",
+      "target": "vpfqQSOhBDHvhTGmDjYyi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vpfqQSOhBDHvhTGmDjYyix2-3GHnbaEa6iE9ixxAYyUa0w1",
+      "source": "vpfqQSOhBDHvhTGmDjYyi",
+      "target": "3GHnbaEa6iE9ixxAYyUa0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-UoHPKOKUHF2avXFUT5Vz4x2-iAsUXmTDnwvZTlH1_TKv0w1",
+      "source": "UoHPKOKUHF2avXFUT5Vz4",
+      "target": "iAsUXmTDnwvZTlH1_TKv0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-bZ81ie09XsQw-YD17nBQ_x2-7vahmZfyKoHFz9Yq-Vb4Cw1",
+      "source": "bZ81ie09XsQw-YD17nBQ_",
+      "target": "7vahmZfyKoHFz9Yq-Vb4C",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-bLx0NI1XEqYnuLhGOyWaix2-xKFDpqkzQ6EvTDixM0_hiw1",
+      "source": "bLx0NI1XEqYnuLhGOyWai",
+      "target": "xKFDpqkzQ6EvTDixM0_hi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-BY5rqe9DC0iZoE2JpfCqzx2-7sz1w4O4pKfoTBgTwpm9Pw1",
+      "source": "BY5rqe9DC0iZoE2JpfCqz",
+      "target": "7sz1w4O4pKfoTBgTwpm9P",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RF_sIeR2YhGf7g4htNV6x2-MGkl-UZPEMJ7e7HzVfYyLw1",
+      "source": "_RF_sIeR2YhGf7g4htNV6",
+      "target": "MGkl-UZPEMJ7e7HzVfYyL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-gjz97vjZ1mrnWNm5gO4pPx2-X_nhWY6Veipg2OWISeJEaw2",
+      "source": "gjz97vjZ1mrnWNm5gO4pP",
+      "target": "X_nhWY6Veipg2OWISeJEa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

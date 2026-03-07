@@ -1,0 +1,1438 @@
+{
+  "title": {
+    "card": "Design System",
+    "page": "Design System"
+  },
+  "description": "Learn how to create a design system with this step by step guide",
+  "nodes": [
+    {
+      "id": "oHZ5JbApDEfh0_af8h1He",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "w5aUEG9HC-XmarfhsTNaV",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "9z_V6GT_k0CUpi_RNa91F",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "21pccUw8Y00FpFjxJXFsS",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "D-p4-EZLTiY15S078aSfD",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "IwYCGqNQKMDLJy11ozOA1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "C6u3MfTH06l-FQrF2Fl2L",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "wXJmQeb9VnDhWOPow0DQ_",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Iy-XknF5sqjWIYF1MWaat",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "dWZ4Tbbb1lsfHP1qy0Z9Z",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "OjpMq77qldn4SwOFCDXhd",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "rfg1MAPkP5mIXnvr0oTPl",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Design System"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uvnV1IjE8RV-FKDxHntUU",
+      "type": "topic",
+      "data": {
+        "label": "Understand the Basics"
+      }
+    },
+    {
+      "id": "4PrkkoZ5fY-oow0O-bVhu",
+      "type": "subtopic",
+      "data": {
+        "label": "What is a Design System?"
+      }
+    },
+    {
+      "id": "2rlmLn_yQQV-7DpX1qT98",
+      "type": "subtopic",
+      "data": {
+        "label": "Need of Design System"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "J5mU0v491qrm-mr1W3Msd",
+      "type": "subtopic",
+      "data": {
+        "label": "Design System vs Component Library"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "6AIUtChWC_gK8Ax0UuBjd",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "6r9XbwlBtHmJrhviG2cTD",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Atomic Design"
+      }
+    },
+    {
+      "id": "_3_tFOpQisx6DSP4Yc2E2",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholders Involved in Building"
+      }
+    },
+    {
+      "id": "UZq7Aq3nhidsXdsKeEnNF",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "hauTvrBOAHgrUnO_m_kDM",
+      "type": "subtopic",
+      "data": {
+        "label": "Design System Examples"
+      }
+    },
+    {
+      "id": "de0TKvmFTDmKGZc5X7iFq",
+      "type": "topic",
+      "data": {
+        "label": "Terminology"
+      }
+    },
+    {
+      "id": "97cpJyKBKNAq1P_pQZH-t",
+      "type": "subtopic",
+      "data": {
+        "label": "Component"
+      }
+    },
+    {
+      "id": "vJ4WytrzY7j10mo8S3O1u",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Library"
+      }
+    },
+    {
+      "id": "fPUuXrlchna3K00KcY4O6",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Language"
+      }
+    },
+    {
+      "id": "kifE3JE2immnU1O3-toZf",
+      "type": "subtopic",
+      "data": {
+        "label": "Governance"
+      }
+    },
+    {
+      "id": "mlBzJ2YvBr9QuOthKdj0p",
+      "type": "subtopic",
+      "data": {
+        "label": "Guidelines"
+      }
+    },
+    {
+      "id": "7xPT8rUX3hjSWbxH_FfQs",
+      "type": "subtopic",
+      "data": {
+        "label": "Pattern"
+      }
+    },
+    {
+      "id": "4dzoZmkNHPedgLqLy93t8",
+      "type": "subtopic",
+      "data": {
+        "label": "Pilot"
+      }
+    },
+    {
+      "id": "jETJVuS_EczJiQASLqaQr",
+      "type": "subtopic",
+      "data": {
+        "label": "Token"
+      }
+    },
+    {
+      "id": "lUObv2N7eH3Jdnwwd5vmI",
+      "type": "subtopic",
+      "data": {
+        "label": "UI Kit"
+      }
+    },
+    {
+      "id": "dUaoMARPabiD4DRqdkaer",
+      "type": "topic",
+      "data": {
+        "label": "Making a Design System"
+      }
+    },
+    {
+      "id": "-9I3fTpnQlmcZmIIuQiPe",
+      "type": "subtopic",
+      "data": {
+        "label": "Making it from Scratch"
+      }
+    },
+    {
+      "id": "z5gBy7BjlBKwbYbxXtoDA",
+      "type": "subtopic",
+      "data": {
+        "label": "Making it from Existing Design"
+      }
+    },
+    {
+      "id": "8eWhvW2zDIxMGHaXl0Y9i",
+      "type": "topic",
+      "data": {
+        "label": "Existing Design Analysis"
+      }
+    },
+    {
+      "id": "NKm-gXbt5Y7dDwKVkPHjX",
+      "type": "subtopic",
+      "data": {
+        "label": "Performing a Visual Audit"
+      }
+    },
+    {
+      "id": "CnsDoZ3gIaPeNbwHuZXYJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Identify Existing Design Process"
+      }
+    },
+    {
+      "id": "jtjlvmiYtYGZtWJITn92P",
+      "type": "label",
+      "data": {
+        "label": "Identify Design Elements"
+      }
+    },
+    {
+      "id": "aak3227IDDJMh0MquQX6m",
+      "type": "subtopic",
+      "data": {
+        "label": "Icons"
+      }
+    },
+    {
+      "id": "-MrrapoyFWKhSeE2PZ9mb",
+      "type": "subtopic",
+      "data": {
+        "label": "Visual Forms"
+      }
+    },
+    {
+      "id": "78RsPhsWpl00AbkwKXUxL",
+      "type": "subtopic",
+      "data": {
+        "label": "Sizing"
+      }
+    },
+    {
+      "id": "GtLYBPJjdZwG0qgA7erk7",
+      "type": "subtopic",
+      "data": {
+        "label": "Spaces"
+      }
+    },
+    {
+      "id": "2prUeRYbSJTYjo2quJIKs",
+      "type": "subtopic",
+      "data": {
+        "label": "Color"
+      }
+    },
+    {
+      "id": "ODQ8zrHc2rsc8PN-APKvz",
+      "type": "subtopic",
+      "data": {
+        "label": "Typography"
+      }
+    },
+    {
+      "id": "rwcJIAXH2ooXpDvkQqrEX",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "uMvaS418F2pxiJ4tYtLJ2",
+      "type": "label",
+      "data": {
+        "label": "Identify Components"
+      }
+    },
+    {
+      "id": "_dIMuXWI73ogboGjnLIpT",
+      "type": "subtopic",
+      "data": {
+        "label": "Avatar"
+      }
+    },
+    {
+      "id": "UG4AIgJBfZpuhia4Y1K5v",
+      "type": "subtopic",
+      "data": {
+        "label": "Badges"
+      }
+    },
+    {
+      "id": "5DUobzueMZbScyTZTHpCS",
+      "type": "subtopic",
+      "data": {
+        "label": "Banners"
+      }
+    },
+    {
+      "id": "s6oqvHgwK4Cwyx-JENBbY",
+      "type": "subtopic",
+      "data": {
+        "label": "Buttons"
+      }
+    },
+    {
+      "id": "yLLAUGbGUHBTEDkZNK0fm",
+      "type": "subtopic",
+      "data": {
+        "label": "Cards"
+      }
+    },
+    {
+      "id": "hzVwLVzAij6TgPTcNHyhv",
+      "type": "subtopic",
+      "data": {
+        "label": "Dropdowns"
+      }
+    },
+    {
+      "id": "5LCMzBnnS206t5EtgaUx8",
+      "type": "subtopic",
+      "data": {
+        "label": "Forms"
+      }
+    },
+    {
+      "id": "Ia1gYzepJOTvTro961eSj",
+      "type": "subtopic",
+      "data": {
+        "label": "...other"
+      }
+    },
+    {
+      "id": "C-lhmqOewid4_JSJfI51y",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ILRDAnpfGHCZq-FBlbfDO",
+      "type": "subtopic",
+      "data": {
+        "label": "A/B Tests \u0026 Experiments"
+      }
+    },
+    {
+      "id": "pRJ9wEPNfFx_6EYB501vk",
+      "type": "subtopic",
+      "data": {
+        "label": "Regional Requirements"
+      }
+    },
+    {
+      "id": "-b4GjLpL_ppDMJSiChTef",
+      "type": "subtopic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "JnaNZ9MfMrXQrjW2wABzB",
+      "type": "topic",
+      "data": {
+        "label": "Creating Design Language"
+      }
+    },
+    {
+      "id": "zSv63LkcNpHjAMB4eZewE",
+      "type": "paragraph",
+      "data": {
+        "label": "If building from existing design"
+      }
+    },
+    {
+      "id": "toyNbBB5tbyiJZkzuklIv",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Guidelines"
+      }
+    },
+    {
+      "id": "fnlVIgsmyxj2UVCCjM-8g",
+      "type": "subtopic",
+      "data": {
+        "label": "Tone of Voice"
+      }
+    },
+    {
+      "id": "Zspu1SsuTE34PVmYePcs4",
+      "type": "subtopic",
+      "data": {
+        "label": "Terminology"
+      }
+    },
+    {
+      "id": "1RJrMVJf_3clM7E5OML-f",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Principles"
+      }
+    },
+    {
+      "id": "cMfsRtvzvDZZJ0TqeUOxm",
+      "type": "subtopic",
+      "data": {
+        "label": "Vision"
+      }
+    },
+    {
+      "id": "03t80lsT2te9B0rYpIB9v",
+      "type": "label",
+      "data": {
+        "label": "Brand"
+      }
+    },
+    {
+      "id": "SY-FCki-0MaUv7zvw6keW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Wn8CylBz-hyl9-iXcUVTO",
+      "type": "subtopic",
+      "data": {
+        "label": "Monochrome Version"
+      }
+    },
+    {
+      "id": "FA3JsZgNhKrgNHVtVreol",
+      "type": "subtopic",
+      "data": {
+        "label": "Small Use Guidance"
+      }
+    },
+    {
+      "id": "7n61402xwhIgJ7dPHg8q7",
+      "type": "subtopic",
+      "data": {
+        "label": "Placement Guidance"
+      }
+    },
+    {
+      "id": "RmSFwKqL9yXXxGKZusKWX",
+      "type": "subtopic",
+      "data": {
+        "label": "Usage Guidance"
+      }
+    },
+    {
+      "id": "-6LPUMRm-SqvRVEWPDFl8",
+      "type": "subtopic",
+      "data": {
+        "label": "File Formats"
+      }
+    },
+    {
+      "id": "82Due7XFcIKGY5I8cp9yr",
+      "type": "label",
+      "data": {
+        "label": "Logo"
+      }
+    },
+    {
+      "id": "C4-NjCgai_t7QWvfj_d6x",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "aLtOGjNFxaRzg0PI-ed99",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "PlW8mHnOTyYnbtl0zUSG9",
+      "type": "subtopic",
+      "data": {
+        "label": "User Onboarding"
+      }
+    },
+    {
+      "id": "bD-DjUbAA6l2eK1R9ITcK",
+      "type": "subtopic",
+      "data": {
+        "label": "Microcopy Guidelines"
+      }
+    },
+    {
+      "id": "6-o1viBIrvHaefbcMIJMW",
+      "type": "label",
+      "data": {
+        "label": "Guidelines"
+      }
+    },
+    {
+      "id": "nkf1WaXyBcBFknVlywsYu",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "a53cl6ZKvYXxG25Ii2_zu",
+      "type": "topic",
+      "data": {
+        "label": "Defining Design Tokens"
+      }
+    },
+    {
+      "id": "hdHZ8LjWJm_kVkwAanQtC",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "fW0cEy2SB0HDbiF7QA7Ev",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "__Pv19gRr2SFknVnfm0Mr",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Colors"
+      }
+    },
+    {
+      "id": "kxUnqpydDwB73IwrCPZM0",
+      "type": "subtopic",
+      "data": {
+        "label": "Dark Mode"
+      }
+    },
+    {
+      "id": "XDfxs5cgjSuTEprZi2Z5b",
+      "type": "subtopic",
+      "data": {
+        "label": "Guidelines"
+      }
+    },
+    {
+      "id": "sKui9mF1oCOZq5DJkAqyP",
+      "type": "label",
+      "data": {
+        "label": "Colors"
+      }
+    },
+    {
+      "id": "faA8T0Am-XVRCuS6veAIN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "wQbMhC7q3qdKYf_pX5qL4",
+      "type": "subtopic",
+      "data": {
+        "label": "Units"
+      }
+    },
+    {
+      "id": "8f2V-rM7soorTTvNo5Vcx",
+      "type": "subtopic",
+      "data": {
+        "label": "Grid"
+      }
+    },
+    {
+      "id": "djwnJq9Y_Hx1Ynw01wr_u",
+      "type": "subtopic",
+      "data": {
+        "label": "Breakpoints"
+      }
+    },
+    {
+      "id": "dXaYOwTAnYSlipNEBSV9l",
+      "type": "subtopic",
+      "data": {
+        "label": "Spacking"
+      }
+    },
+    {
+      "id": "z5RKq0GcdXMMTO4CZD4LP",
+      "type": "label",
+      "data": {
+        "label": "Layout"
+      }
+    },
+    {
+      "id": "_pRY0ZewNcKBrm4xnAvbQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "8YVCtgYRHR3VcpUJXMVwP",
+      "type": "subtopic",
+      "data": {
+        "label": "Responsiveness"
+      }
+    },
+    {
+      "id": "Zl7MVllzJgObruYtlibKf",
+      "type": "subtopic",
+      "data": {
+        "label": "Grid Relation"
+      }
+    },
+    {
+      "id": "L2NHddsv5RGR_BW0I3f4T",
+      "type": "subtopic",
+      "data": {
+        "label": "Readability"
+      }
+    },
+    {
+      "id": "wFL9axjaPcVvI8XWduxgz",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "lKmaeG9BWlaKFVrVEFuYQ",
+      "type": "label",
+      "data": {
+        "label": "Typography"
+      }
+    },
+    {
+      "id": "Jab5LO0mGhTy1cU61Catu",
+      "type": "subtopic",
+      "data": {
+        "label": "Guidelines"
+      }
+    },
+    {
+      "id": "ObM6oFLLQxiF6acWJA-tb",
+      "type": "label",
+      "data": {
+        "label": "Iconography"
+      }
+    },
+    {
+      "id": "DhrnZwQODG0P7D-27_3ec",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "SPK1i0XuHpNEWyi1iIxrV",
+      "type": "subtopic",
+      "data": {
+        "label": "Style"
+      }
+    },
+    {
+      "id": "wiclAEEYioRgLmXFcKQ4E",
+      "type": "subtopic",
+      "data": {
+        "label": "Naming"
+      }
+    },
+    {
+      "id": "6Hmj_TeQ563jshqAAl__I",
+      "type": "subtopic",
+      "data": {
+        "label": "Grid Relation"
+      }
+    },
+    {
+      "id": "w3LS85eFerscaxb2Xp-dP",
+      "type": "subtopic",
+      "data": {
+        "label": "Sizes"
+      }
+    },
+    {
+      "id": "HDf2L4F1f8uUGpVaf7Y7z",
+      "type": "subtopic",
+      "data": {
+        "label": "Keywords"
+      }
+    },
+    {
+      "id": "Y0KxHVrcNGHDao-38Oz3w",
+      "type": "subtopic",
+      "data": {
+        "label": "Reserved Icons"
+      }
+    },
+    {
+      "id": "eTxhpC3AQIMcUax6WFU9U",
+      "type": "subtopic",
+      "data": {
+        "label": "Guidelines"
+      }
+    },
+    {
+      "id": "BtRuLBspKTqF4nTSr127r",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Hw_LQInG6OtSwDXch3Lvg",
+      "type": "topic",
+      "data": {
+        "label": "Creating Core Components"
+      }
+    },
+    {
+      "id": "h3TZY1yBkzLYUK6W7K7xs",
+      "type": "subtopic",
+      "data": {
+        "label": "Avatar"
+      }
+    },
+    {
+      "id": "hjiJJg4KNr8lyktFQd868",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Text"
+      }
+    },
+    {
+      "id": "kkqRIgdXWaJbX9CjLpwha",
+      "type": "subtopic",
+      "data": {
+        "label": "Banner"
+      }
+    },
+    {
+      "id": "LNsXQI8sE_5kzSD_iMLJA",
+      "type": "subtopic",
+      "data": {
+        "label": "Badge"
+      }
+    },
+    {
+      "id": "LWihkf4q5UawjLd84KQxN",
+      "type": "subtopic",
+      "data": {
+        "label": "Button"
+      }
+    },
+    {
+      "id": "rZ7d1C9swiqlRTbdJLZ0R",
+      "type": "subtopic",
+      "data": {
+        "label": "Card"
+      }
+    },
+    {
+      "id": "yWEXfjzuzk99dxjZlG4Cq",
+      "type": "subtopic",
+      "data": {
+        "label": "Carousel"
+      }
+    },
+    {
+      "id": "MtBSvKoyjdLd6DIdolLRi",
+      "type": "subtopic",
+      "data": {
+        "label": "Dropdown"
+      }
+    },
+    {
+      "id": "bzY_iXRnotct_WnNRTlbd",
+      "type": "subtopic",
+      "data": {
+        "label": "Icon"
+      }
+    },
+    {
+      "id": "F5_sxUnnGEdgF6BkA5T5x",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Checkbox"
+      }
+    },
+    {
+      "id": "rN-_plAA5FkcQl03wsL18",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Radio"
+      }
+    },
+    {
+      "id": "NISeaJUlDtQ0kSuyxmrOT",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Switch"
+      }
+    },
+    {
+      "id": "n1nUkMqGtPobZPJHCvPsk",
+      "type": "subtopic",
+      "data": {
+        "label": "Select"
+      }
+    },
+    {
+      "id": "iusI39fxcu2rbMXiosaM6",
+      "type": "subtopic",
+      "data": {
+        "label": "Textarea"
+      }
+    },
+    {
+      "id": "2T7tiM3Ew3H1U5iJR2TDb",
+      "type": "subtopic",
+      "data": {
+        "label": "List"
+      }
+    },
+    {
+      "id": "JhnHOMIlU6mQcwvIpErUY",
+      "type": "subtopic",
+      "data": {
+        "label": "Loading Indicator"
+      }
+    },
+    {
+      "id": "IjNitkG25vNo30rB4ckNV",
+      "type": "subtopic",
+      "data": {
+        "label": "Modal"
+      }
+    },
+    {
+      "id": "1vYR1EMyZhJA-znxnFBBb",
+      "type": "subtopic",
+      "data": {
+        "label": "Tabs"
+      }
+    },
+    {
+      "id": "-T7uL6a3lJ5-IIcDaG6IN",
+      "type": "subtopic",
+      "data": {
+        "label": "Toast"
+      }
+    },
+    {
+      "id": "2oCAzsk_y2Y2oHUi467dp",
+      "type": "subtopic",
+      "data": {
+        "label": "Tooltip"
+      }
+    },
+    {
+      "id": "XzNwNomMj4gRw-CL3as4u",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jggrr5nZOe6FY3ZrZJTOw",
+      "type": "topic",
+      "data": {
+        "label": "Tooling"
+      }
+    },
+    {
+      "id": "NC75JWJMKXeQB2fTo0ZQJ",
+      "type": "label",
+      "data": {
+        "label": "Design"
+      }
+    },
+    {
+      "id": "ccpT9MPFbc3Ewjm1tFMsZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Design Editor"
+      }
+    },
+    {
+      "id": "uO-2O0Jwh_DxrMAB9wxp1",
+      "type": "subtopic",
+      "data": {
+        "label": "Plugins"
+      }
+    },
+    {
+      "id": "CYY6nbQiC2pu5ATWmO6wA",
+      "type": "subtopic",
+      "data": {
+        "label": "Version Control"
+      }
+    },
+    {
+      "id": "TiCNCRpMPgZUhn7JdaIZA",
+      "type": "subtopic",
+      "data": {
+        "label": "Contribution Guidelines"
+      }
+    },
+    {
+      "id": "L5re9KKWvMfS9f-uggNPN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sD6J4uY0G7YNLCVoQkxmg",
+      "type": "label",
+      "data": {
+        "label": "Development"
+      }
+    },
+    {
+      "id": "VeLiPzbGr22_Mh_8T2Gnf",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Catalog"
+      }
+    },
+    {
+      "id": "k1Lwk_b6cLIeyQwc4RUh1",
+      "type": "subtopic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "zEqFAuH9zmKTLwwgx54pW",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Style"
+      }
+    },
+    {
+      "id": "y8No8I0MltA91j4Q2toT0",
+      "type": "subtopic",
+      "data": {
+        "label": "Unit Testing"
+      }
+    },
+    {
+      "id": "yhP8EhyCWWRBLkYPyOFeg",
+      "type": "subtopic",
+      "data": {
+        "label": "Accessibility Testing"
+      }
+    },
+    {
+      "id": "ZLt1yJqinC8OSpqucC2dV",
+      "type": "subtopic",
+      "data": {
+        "label": "Semantic Versioning"
+      }
+    },
+    {
+      "id": "CfWCQNaCJGL-egRhFhc4B",
+      "type": "subtopic",
+      "data": {
+        "label": "Release Strategy"
+      }
+    },
+    {
+      "id": "IVYe8oh1IWbUbxMZRxVQA",
+      "type": "subtopic",
+      "data": {
+        "label": "Commit Guidelines"
+      }
+    },
+    {
+      "id": "wd9ZHZmqV7wbLN-9V4EQy",
+      "type": "subtopic",
+      "data": {
+        "label": "PR Templates"
+      }
+    },
+    {
+      "id": "xJ1LAAhiZvbZOLRVc1HZa",
+      "type": "subtopic",
+      "data": {
+        "label": "Contribution Guidelines"
+      }
+    },
+    {
+      "id": "JfXwzkN29UGz17FYHHE3A",
+      "type": "topic",
+      "data": {
+        "label": "Project Management"
+      }
+    },
+    {
+      "id": "TWx2jJqOyI3CXCOTQ106_",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "POeLL32wtfV3SmBcVWzy6",
+      "type": "label",
+      "data": {
+        "label": "Task Management"
+      }
+    },
+    {
+      "id": "gMrX5600JqFDplriq-eU3",
+      "type": "subtopic",
+      "data": {
+        "label": "Roadmap"
+      }
+    },
+    {
+      "id": "ruPXxVwmD9vSlS7rBZmA-",
+      "type": "subtopic",
+      "data": {
+        "label": "Milestones"
+      }
+    },
+    {
+      "id": "i39J0fk4DaPeNFIMbH0ap",
+      "type": "subtopic",
+      "data": {
+        "label": "Ticketing"
+      }
+    },
+    {
+      "id": "ZnwVo1kqK9awZCwFd2Vti",
+      "type": "label",
+      "data": {
+        "label": "Analytics"
+      }
+    },
+    {
+      "id": "G8dOkM_4hP7wPF3QJ8y4g",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Analytics"
+      }
+    },
+    {
+      "id": "xYqDmDpjwkShtL86nt-vY",
+      "type": "subtopic",
+      "data": {
+        "label": "Logging"
+      }
+    },
+    {
+      "id": "qiJGYYWL4naJX-MgZA9Ms",
+      "type": "subtopic",
+      "data": {
+        "label": "Tooling Analytics"
+      }
+    },
+    {
+      "id": "5znnOkpf9G9tdiMWB6Rut",
+      "type": "subtopic",
+      "data": {
+        "label": "Service and Health Metrics"
+      }
+    },
+    {
+      "id": "TM0coCBRbsUVXRNb--KnY",
+      "type": "label",
+      "data": {
+        "label": "Communications"
+      }
+    },
+    {
+      "id": "eG8ranXuINtcqWfeMH5GW",
+      "type": "subtopic",
+      "data": {
+        "label": "Community Meetings"
+      }
+    },
+    {
+      "id": "LWrrKrhwXfMDKgbFW5DuO",
+      "type": "subtopic",
+      "data": {
+        "label": "Communication Channel"
+      }
+    },
+    {
+      "id": "YWoPoO9IW3vLZyxLL2fnT",
+      "type": "subtopic",
+      "data": {
+        "label": "Open Hours"
+      }
+    },
+    {
+      "id": "cpAeotBxN8BCsU9RqTEue",
+      "type": "subtopic",
+      "data": {
+        "label": "FAQs"
+      }
+    },
+    {
+      "id": "f5WRewBlpeYMf71cPcXs-",
+      "type": "button",
+      "data": {
+        "label": "UX Design"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "uvnV1IjE8RV-FKDxHntUU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-2rlmLn_yQQV-7DpX1qT98y2",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "2rlmLn_yQQV-7DpX1qT98",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "4PrkkoZ5fY-oow0O-bVhu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-VhSEH_RoWFt1z2lial7xZy2",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "J5mU0v491qrm-mr1W3Msd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-6r9XbwlBtHmJrhviG2cTDy2",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "6r9XbwlBtHmJrhviG2cTD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-ODQ8zrHc2rsc8PN-APKvzy1",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "_3_tFOpQisx6DSP4Yc2E2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-ODQ8zrHc2rsc8PN-APKvzy1",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "hauTvrBOAHgrUnO_m_kDM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUx2-JfXwzkN29UGz17FYHHE3Aw2",
+      "source": "uvnV1IjE8RV-FKDxHntUU",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-97cpJyKBKNAq1P_pQZH-tz2",
+      "source": "de0TKvmFTDmKGZc5X7iFq",
+      "target": "97cpJyKBKNAq1P_pQZH-t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__vJ4WytrzY7j10mo8S3O1uz2-JfXwzkN29UGz17FYHHE3Ay1",
+      "source": "vJ4WytrzY7j10mo8S3O1u",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-fPUuXrlchna3K00KcY4O6z1",
+      "source": "de0TKvmFTDmKGZc5X7iFq",
+      "target": "fPUuXrlchna3K00KcY4O6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kifE3JE2immnU1O3-toZfz2-JfXwzkN29UGz17FYHHE3Ay1",
+      "source": "kifE3JE2immnU1O3-toZf",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-mlBzJ2YvBr9QuOthKdj0pz1",
+      "source": "de0TKvmFTDmKGZc5X7iFq",
+      "target": "mlBzJ2YvBr9QuOthKdj0p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-7xPT8rUX3hjSWbxH_FfQsz1",
+      "source": "de0TKvmFTDmKGZc5X7iFq",
+      "target": "7xPT8rUX3hjSWbxH_FfQs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4dzoZmkNHPedgLqLy93t8z2-JfXwzkN29UGz17FYHHE3Ay2",
+      "source": "4dzoZmkNHPedgLqLy93t8",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jETJVuS_EczJiQASLqaQrz2-JfXwzkN29UGz17FYHHE3Ay1",
+      "source": "jETJVuS_EczJiQASLqaQr",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cMfsRtvzvDZZJ0TqeUOxmz2-JfXwzkN29UGz17FYHHE3Ay1",
+      "source": "lUObv2N7eH3Jdnwwd5vmI",
+      "target": "de0TKvmFTDmKGZc5X7iFq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__de0TKvmFTDmKGZc5X7iFqx2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "de0TKvmFTDmKGZc5X7iFq",
+      "target": "dUaoMARPabiD4DRqdkaer",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2--9I3fTpnQlmcZmIIuQiPey1",
+      "source": "dUaoMARPabiD4DRqdkaer",
+      "target": "-9I3fTpnQlmcZmIIuQiPe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-ODQ8zrHc2rsc8PN-APKvzy2",
+      "source": "dUaoMARPabiD4DRqdkaer",
+      "target": "z5gBy7BjlBKwbYbxXtoDA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dUaoMARPabiD4DRqdkaerx2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "dUaoMARPabiD4DRqdkaer",
+      "target": "8eWhvW2zDIxMGHaXl0Y9i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-ILRDAnpfGHCZq-FBlbfDOz1",
+      "source": "8eWhvW2zDIxMGHaXl0Y9i",
+      "target": "ILRDAnpfGHCZq-FBlbfDO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-pRJ9wEPNfFx_6EYB501vkz1",
+      "source": "8eWhvW2zDIxMGHaXl0Y9i",
+      "target": "pRJ9wEPNfFx_6EYB501vk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ay2-cMfsRtvzvDZZJ0TqeUOxmz1",
+      "source": "8eWhvW2zDIxMGHaXl0Y9i",
+      "target": "-b4GjLpL_ppDMJSiChTef",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__zSv63LkcNpHjAMB4eZewEx2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "zSv63LkcNpHjAMB4eZewE",
+      "target": "JnaNZ9MfMrXQrjW2wABzB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JnaNZ9MfMrXQrjW2wABzBx2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "JnaNZ9MfMrXQrjW2wABzB",
+      "target": "a53cl6ZKvYXxG25Ii2_zu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__TWx2jJqOyI3CXCOTQ106_y2-JfXwzkN29UGz17FYHHE3Az2",
+      "source": "TWx2jJqOyI3CXCOTQ106_",
+      "target": "JfXwzkN29UGz17FYHHE3A",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

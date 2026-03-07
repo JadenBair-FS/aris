@@ -31,7 +31,21 @@ public class IngestionWorker : BackgroundService
         "learn ", "introduction to", "what is", "what are", "why ", "how to",
         "overview of", "getting started", "basics of", "fundamentals of",
         "understanding ", "working with ", "intro to", "history of",
-        "types of ", "when to use", "why use"
+        "types of ", "when to use", "why use",
+        // Navigation / advice / imperative headings
+        "pick a", "visit ", "click ", "explore ", "check ", "gain ",
+        "follow ", "find ", "see the", "at this point", "you may", "you should",
+        "you need", "continue learning",
+        // Roadmap step/phase/checkpoint labels
+        "step ", "phase ", "part ", "checkpoint ",
+        // "for X" language construct headings (for loop, for range, for android)
+        "for ",
+        // Advanced/General/Basic section headings
+        "advanced ", "general ", "basic ",
+        // "Understand X" instructional headings (understand is not caught by "understanding ")
+        "understand ",
+        // Motivational/imperative UX copy — not skills
+        "be ", "make ", "ways of", "clear ", "create a", "add a", "set up a",
     ];
 
     // Exact-match syntax noise — language keywords, primitive types, control flow
@@ -108,6 +122,29 @@ public class IngestionWorker : BackgroundService
 
         // Cloud design pattern categories (too abstract)
         "Cloud Specific Tools",
+
+        // Generic game-dev dimension descriptors — not standalone skills
+        "2D", "3D",
+
+        // Generic roadmap section headings
+        "Introduction", "Overview", "Basics", "Fundamentals", "Core Concepts",
+        "Advanced Topics", "Skills", "Applications", "Scripting", "Testing",
+        "Security", "Agents", "Realtime", "Streaming", "Telemetry",
+        "Observability", "Provisioning", "Containerization", "Scheduling",
+        "Networking", "Authentication", "Authorization",
+
+        // Generic container/infrastructure nouns (too broad as standalone skills)
+        "Containers", "Volumes", "Networks", "Databases", "Pods", "Images",
+        "Nodes", "Services", "Workloads", "Deployments", "Endpoints",
+
+        // Roadmap website UI nodes
+        "roadmap.sh", "Related Roadmaps", "Skills",
+
+        // Generic process/practice category labels
+        "Package Managers", "Programming Languages", "Application Architecture",
+        "Command Line Utilities", "Debuggers", "Terminal Knowledge",
+        "Text Manipulation", "Process Monitoring", "Performance Monitoring",
+        "Resource Management", "Secret Management",
     };
 
     // Regex patterns for noise that cannot be caught by exact match.
@@ -157,6 +194,87 @@ public class IngestionWorker : BackgroundService
         // Variable/Method/Instance sub-property fragments
         (new System.Text.RegularExpressions.Regex(@"^(instance|class|method|object)\s+(variables?|parameters?|accessors?|attributes?|lookup)$"),
             "OOP sub-property"),
+
+        // Shell variable tokens and MongoDB/query operators: $#, $*, $0, $eq, $gt, etc.
+        (new System.Text.RegularExpressions.Regex(@"^\$"),
+            "shell/query operator token"),
+
+        // @ template directives: @if, @each, etc.
+        (new System.Text.RegularExpressions.Regex(@"^@"),
+            "template directive"),
+
+        // Bare operator symbols: *, +, -, etc.
+        (new System.Text.RegularExpressions.Regex(@"^[\*\+\-\/\|\\]{1,3}$"),
+            "bare operator symbol"),
+
+        // "X vs Y" comparison headings: "Bare Metal vs VMs vs Containers", "AI vs Traditional Coding"
+        (new System.Text.RegularExpressions.Regex(@"\bvs\.?\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase),
+            "comparison heading"),
+
+        // "X Best Practices" prescription headings
+        (new System.Text.RegularExpressions.Regex(@"[Bb]est [Pp]ractices?$"),
+            "best practices heading"),
+
+        // "Others (...)" catch-all category nodes
+        (new System.Text.RegularExpressions.Regex(@"^[Oo]thers?\s*[\(\[]"),
+            "catch-all category"),
+
+        // Ends with "Options" or "Providers" — generic category headers
+        (new System.Text.RegularExpressions.Regex(@"\s+[Oo]ptions?\s*$"),
+            "generic options category"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]roviders?\s*$"),
+            "generic providers category"),
+
+        // Ends with "Roadmap" — roadmap navigation cross-reference nodes
+        (new System.Text.RegularExpressions.Regex(@"\s+[Rr]oadmap\s*$"),
+            "roadmap navigation node"),
+
+        // Ends with "Ideas" — project idea suggestion nodes
+        (new System.Text.RegularExpressions.Regex(@"\s+[Ii]deas?\s*$"),
+            "project ideas node"),
+
+        // Ends with "Fundamentals" — section heading
+        (new System.Text.RegularExpressions.Regex(@"\s+[Ff]undamentals?\s*$"),
+            "fundamentals heading"),
+
+        // Ends with plural "Patterns", "Concepts", "Techniques", "Principles" — category headings
+        // (singular kept: "Builder Pattern", "CAP Theorem" etc. are real named skills)
+        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]atterns\s*$"),
+            "patterns category heading"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Cc]oncepts\s*$"),
+            "concepts category heading"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Tt]echniques\s*$"),
+            "techniques category heading"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Pp]rinciples\s*$"),
+            "principles category heading"),
+
+        // Numbered list items: "1) Predicting...", "2. Learn..."
+        (new System.Text.RegularExpressions.Regex(@"^[0-9]+[.)]\s"),
+            "numbered list item"),
+
+        // "X Strategies" and "X Usecases" — category section headings
+        (new System.Text.RegularExpressions.Regex(@"\s+[Ss]trategies\s*$"),
+            "strategies category heading"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Uu]se\s*[Cc]ases?\s*$"),
+            "use cases category heading"),
+        (new System.Text.RegularExpressions.Regex(@"\s+[Uu]secases?\s*$"),
+            "usecases category heading"),
+
+        // "Git Basics", "Python Basics" — ends with Basics (plural section heading)
+        (new System.Text.RegularExpressions.Regex(@"\s+[Bb]asics\s*$"),
+            "basics section heading"),
+
+        // CLI commands with flags: "bash -n", "kubectl apply -f", "docker run -d"
+        (new System.Text.RegularExpressions.Regex(@"[a-z] -[a-zA-Z]"),
+            "cli flag argument"),
+
+        // Parenthetical with 2+ commas = catch-all list: "(ghcr, ecr, gcr, acr, etc)"
+        (new System.Text.RegularExpressions.Regex(@"\([^)]*,[^)]*,[^)]*\)"),
+            "catch-all list"),
+
+        // Labels longer than 60 chars = prose description, not a skill name
+        (new System.Text.RegularExpressions.Regex(@".{61,}"),
+            "prose description"),
     ];
 
     private static readonly string[] RoleRoadmapSlugs =

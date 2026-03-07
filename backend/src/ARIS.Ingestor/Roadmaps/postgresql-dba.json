@@ -1,0 +1,1922 @@
+{
+  "title": {
+    "card": "PostgreSQL",
+    "page": "PostgreSQL DBA"
+  },
+  "description": "Step by step guide to becoming a modern PostgreSQL DB Administrator in @currentYear@",
+  "nodes": [
+    {
+      "id": "LyLFP5Kqx60f2ABDGTA-c",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "nqRjLCEL647UnNdBfNXY9",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "TJSsoD5U78tOydPhxuPzK",
+      "type": "paragraph",
+      "data": {
+        "label": "Fine-grained Tuning"
+      }
+    },
+    {
+      "id": "QfyHG6cVuKQ3iqdEtoFSU",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "PO-0otvLzR0IdSjr3qrHi",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "uhaumgDGlmTZxRGoZ_R0Z",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "1zofI1RXzy1el0L0Pjxtx",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "L4zzOZ0ZQnziJTXiOeMhP",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "xi5uZ_VOH4rVNu_0ZLAX9",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "eyeqQi-eX9foNzlSHGQJ1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WoNjhRXtGtxFsK_vR0ouB",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "cc_6hISv1nfvZb0UXierZ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "92MmgBQ4x0d2GeDCVtCNN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Ah3lQJ1nNiHmclKD3E25r",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "T83jSeQ6bB_lW1WIH3GWv",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lDIy56RyC1XM7IfORsSLD",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "soar-NBWCr4xVKj7ttfnc",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Relational Databases?"
+      }
+    },
+    {
+      "id": "p3AmRr_y_ZBKzAU5eh7OU",
+      "type": "subtopic",
+      "data": {
+        "label": "RDBMS Benefits and Limitations"
+      }
+    },
+    {
+      "id": "IAKERTzTpTds5kZLMCapM",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL vs Other RDBMS"
+      }
+    },
+    {
+      "id": "D0doJTtLu-1MmFOfavCXN",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL vs NoSQL Databases"
+      }
+    },
+    {
+      "id": "-M9EFgiDSSAzj9ISk-aeh",
+      "type": "topic",
+      "data": {
+        "label": "Basic RDBMS Concepts"
+      }
+    },
+    {
+      "id": "RoYP1tYw5dvhmkVTo1HS-",
+      "type": "topic",
+      "data": {
+        "label": "Object Model"
+      }
+    },
+    {
+      "id": "xVocG4LuFdtphwoOxiJTa",
+      "type": "subtopic",
+      "data": {
+        "label": "Queries"
+      }
+    },
+    {
+      "id": "4Pw7udOMIsiaKr7w9CRxc",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "Rd3RLpyLMGQZzrxQrxDGo",
+      "type": "subtopic",
+      "data": {
+        "label": "Rows"
+      }
+    },
+    {
+      "id": "cty2IjgS1BWltbYmuxxuV",
+      "type": "subtopic",
+      "data": {
+        "label": "Columns"
+      }
+    },
+    {
+      "id": "W8NhR4SqteMLfso8AD6H8",
+      "type": "subtopic",
+      "data": {
+        "label": "Tables"
+      }
+    },
+    {
+      "id": "mF6qAlo2ULJ3lECG2m0h7",
+      "type": "subtopic",
+      "data": {
+        "label": "Schemas"
+      }
+    },
+    {
+      "id": "DU-D3-j9h6i9Nj5ci8hlX",
+      "type": "subtopic",
+      "data": {
+        "label": "Databases"
+      }
+    },
+    {
+      "id": "mDVbjdVN0spY7dI_8k1YW",
+      "type": "topic",
+      "data": {
+        "label": "Relational Model"
+      }
+    },
+    {
+      "id": "-LuxJvI5IaOx6NqzK0d8S",
+      "type": "subtopic",
+      "data": {
+        "label": "Domains"
+      }
+    },
+    {
+      "id": "XvZMSveMWqmAlXOxwWzdk",
+      "type": "subtopic",
+      "data": {
+        "label": "Attributes"
+      }
+    },
+    {
+      "id": "vJhvgGwNV3JB-wWn_0gMb",
+      "type": "subtopic",
+      "data": {
+        "label": "Tuples"
+      }
+    },
+    {
+      "id": "2hM2IPAnNYq-LlEbcFp2Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Relations"
+      }
+    },
+    {
+      "id": "j9ikSpCD3yM5pTRFuJjZs",
+      "type": "subtopic",
+      "data": {
+        "label": "Constraints"
+      }
+    },
+    {
+      "id": "91eOGK8mtJulWRlhKyv0F",
+      "type": "subtopic",
+      "data": {
+        "label": "NULL"
+      }
+    },
+    {
+      "id": "_BSR2mo1lyXEFXbKYb1ZG",
+      "type": "topic",
+      "data": {
+        "label": "High Level Database Concepts"
+      }
+    },
+    {
+      "id": "9u7DPbfybqmldisiePq0m",
+      "type": "subtopic",
+      "data": {
+        "label": "ACID"
+      }
+    },
+    {
+      "id": "-_ADJsTVGAgXq7_-8bdIO",
+      "type": "subtopic",
+      "data": {
+        "label": "MVCC"
+      }
+    },
+    {
+      "id": "yFG_hVD3dB_qK8yphrRY5",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "9sadNsbHLqejbRPHWhx-w",
+      "type": "subtopic",
+      "data": {
+        "label": "Write-ahead Log"
+      }
+    },
+    {
+      "id": "Qk14b9WyeCp9RV9WAwojt",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Processing"
+      }
+    },
+    {
+      "id": "5MjJIAcn5zABCK6JsFf4k",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Docker"
+      }
+    },
+    {
+      "id": "pEtQy1nuW98YUwrbfs7Np",
+      "type": "subtopic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "mMf2Mq9atIKk37IMWuoJs",
+      "type": "subtopic",
+      "data": {
+        "label": "Connect using \u0060psql\u0060"
+      }
+    },
+    {
+      "id": "6SCcxpkpLmmRe0rS8WAPZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Deployment in Cloud"
+      }
+    },
+    {
+      "id": "7OIljP-vhWasB78rZPEGQ",
+      "type": "label",
+      "data": {
+        "label": "Managing Postgres"
+      }
+    },
+    {
+      "id": "P1Hm6ZlrhCRxbxOJkBHlL",
+      "type": "subtopic",
+      "data": {
+        "label": "Using \u0060systemd\u0060"
+      }
+    },
+    {
+      "id": "a4j0Rs8Tl6-k9WP5zjaep",
+      "type": "subtopic",
+      "data": {
+        "label": "Using \u0060pg_ctl\u0060"
+      }
+    },
+    {
+      "id": "v3SoKmeCh6uxKW5GAAMje",
+      "type": "subtopic",
+      "data": {
+        "label": "Using \u0060pg_ctlcluster\u0060"
+      }
+    },
+    {
+      "id": "hftk9puFrq1P-LSVAupLm",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kV8RIgCJT60d8gTI13Oay",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FtPiBWMFhjakyXsmSL_CI",
+      "type": "topic",
+      "data": {
+        "label": "Installation and Setup"
+      }
+    },
+    {
+      "id": "ANUgfkADLI_du7iRvnUdi",
+      "type": "topic",
+      "data": {
+        "label": "Learn SQL"
+      }
+    },
+    {
+      "id": "h0v46Glkt60lHmdq5B5mY",
+      "type": "label",
+      "data": {
+        "label": "DDL Queries"
+      }
+    },
+    {
+      "id": "KMdF9efNGULualk5o1W0_",
+      "type": "subtopic",
+      "data": {
+        "label": "For Schemas"
+      }
+    },
+    {
+      "id": "ga8ZiuPc42XvZ3-iVh8T1",
+      "type": "subtopic",
+      "data": {
+        "label": "ForTables"
+      }
+    },
+    {
+      "id": "fvEgtFP7xvkq_D4hYw3gz",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "FeqeChgV-XTMJD4slWfni",
+      "type": "label",
+      "data": {
+        "label": "DML Queries"
+      }
+    },
+    {
+      "id": "BEJyz0ohCglDucxfyuAy4",
+      "type": "subtopic",
+      "data": {
+        "label": "Querying Data"
+      }
+    },
+    {
+      "id": "dd2lTNsNzYdfB7rRFMNmC",
+      "type": "subtopic",
+      "data": {
+        "label": "Filtering Data"
+      }
+    },
+    {
+      "id": "G2NKhjlZqAY9l32H0LPNQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Modifying Data"
+      }
+    },
+    {
+      "id": "Hura0LImG9pyPxaEIDo3X",
+      "type": "subtopic",
+      "data": {
+        "label": "Joining Tables"
+      }
+    },
+    {
+      "id": "umNNMpJh4Al1dEpT6YkrA",
+      "type": "subtopic",
+      "data": {
+        "label": "Import / Export Using \u0060COPY\u0060"
+      }
+    },
+    {
+      "id": "ghgyAXJ72dZmF2JpDvu9U",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "_Y-omKcWZOxto-xJka7su",
+      "type": "subtopic",
+      "data": {
+        "label": "Subqueries"
+      }
+    },
+    {
+      "id": "uwd_CaeHQQ3ZWojbmtbPh",
+      "type": "subtopic",
+      "data": {
+        "label": "Grouping"
+      }
+    },
+    {
+      "id": "fsZvmH210bC_3dBD_X8-z",
+      "type": "subtopic",
+      "data": {
+        "label": "CTE"
+      }
+    },
+    {
+      "id": "fTsoMSLcXU1mgd5-vekbT",
+      "type": "subtopic",
+      "data": {
+        "label": "Lateral Join"
+      }
+    },
+    {
+      "id": "kOwhnSZBwIhIbIsoAXQ50",
+      "type": "subtopic",
+      "data": {
+        "label": "Set Operations"
+      }
+    },
+    {
+      "id": "JA4Ltc-6oE7kqbP5TvQGO",
+      "type": "label",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "T819BZ-CZgUX_BY7Gna0J",
+      "type": "topic",
+      "data": {
+        "label": "Configuring"
+      }
+    },
+    {
+      "id": "yl3gxfQs4nOE0N7uGqR0d",
+      "type": "subtopic",
+      "data": {
+        "label": "Resource Usage"
+      }
+    },
+    {
+      "id": "9VmQ-vN3nPyf1pTFIcj40",
+      "type": "subtopic",
+      "data": {
+        "label": "Write-ahead Log"
+      }
+    },
+    {
+      "id": "zoaqBP0Jbf0HpTH8Q3LkJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Vacuums"
+      }
+    },
+    {
+      "id": "A3YTrZSUxNBq77iIrNdZ4",
+      "type": "subtopic",
+      "data": {
+        "label": "Replication"
+      }
+    },
+    {
+      "id": "hOPwVdIzesselbsI_rRxt",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Planner"
+      }
+    },
+    {
+      "id": "3pLn1mhRnekG537ejHUYA",
+      "type": "subtopic",
+      "data": {
+        "label": "Checkpoints / Background Writer"
+      }
+    },
+    {
+      "id": "507TY35b8iExakbBMrHgZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Reporting Logging \u0026 Statistics"
+      }
+    },
+    {
+      "id": "VAf9VzPx70hUf4H6i3Z2t",
+      "type": "subtopic",
+      "data": {
+        "label": "Adding Extra Extensions"
+      }
+    },
+    {
+      "id": "wnD1QnUDoGLDiryETIsKR",
+      "type": "paragraph",
+      "data": {
+        "label": "Following postgres.conf configuration"
+      }
+    },
+    {
+      "id": "2Zg8R5gs9LMQOcOMZtoPk",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "S20aJB-VuSpXYyd0-0S8c",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Privileges"
+      }
+    },
+    {
+      "id": "o1WSsw-ZIaAb8JF3P0mfR",
+      "type": "subtopic",
+      "data": {
+        "label": "Grant / Revoke"
+      }
+    },
+    {
+      "id": "t18XjeHP4uRyERdqhHpl5",
+      "type": "subtopic",
+      "data": {
+        "label": "Default Privileges"
+      }
+    },
+    {
+      "id": "09QX_zjCUajxUqcNZKy0x",
+      "type": "subtopic",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "bokFf6VNrLcilI9Hid386",
+      "type": "subtopic",
+      "data": {
+        "label": "Row-Level Security"
+      }
+    },
+    {
+      "id": "GvpIJF-eaGELwcpWq5_3r",
+      "type": "subtopic",
+      "data": {
+        "label": "SELinux"
+      }
+    },
+    {
+      "id": "gb75xOcAr-q8TcA6_l1GZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication Models"
+      }
+    },
+    {
+      "id": "l0lpaPy12JFCJ-RRYVSqz",
+      "type": "subtopic",
+      "data": {
+        "label": "Roles"
+      }
+    },
+    {
+      "id": "Y2W29M4piaQsTn2cpyR7Q",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_hba.conf"
+      }
+    },
+    {
+      "id": "EKwO6edtFnUw8cPCcVwKJ",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL Settings"
+      }
+    },
+    {
+      "id": "zlqSX0tl7HD9C1yEGkvoM",
+      "type": "topic",
+      "data": {
+        "label": "Infrastructure Skills"
+      }
+    },
+    {
+      "id": "cJYlZJ9f3kdptNrTlpMNU",
+      "type": "subtopic",
+      "data": {
+        "label": "Using \u0060pg_upgrade\u0060"
+      }
+    },
+    {
+      "id": "MVVWAf9Hk3Fom-wBhO64R",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Logical Replication"
+      }
+    },
+    {
+      "id": "rNp3ZC6axkcKtAWYCPvdR",
+      "type": "subtopic",
+      "data": {
+        "label": "Simple Stateful Setup"
+      }
+    },
+    {
+      "id": "QHbdwiMQ8otxnVIUVV2NT",
+      "type": "subtopic",
+      "data": {
+        "label": "Helm"
+      }
+    },
+    {
+      "id": "nRJKfjW2UrmKmVUrGIfCC",
+      "type": "subtopic",
+      "data": {
+        "label": "Operators"
+      }
+    },
+    {
+      "id": "Z2PuOmgOqScGFbhvrvrA1",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL Anonymizer"
+      }
+    },
+    {
+      "id": "V8_zJRwOX9664bUvAGgff",
+      "type": "subtopic",
+      "data": {
+        "label": "HAProxy"
+      }
+    },
+    {
+      "id": "IkB28gO0LK1q1-KjdI9Oz",
+      "type": "subtopic",
+      "data": {
+        "label": "Consul"
+      }
+    },
+    {
+      "id": "xk2G-HUS-dviNW3BAMmJv",
+      "type": "subtopic",
+      "data": {
+        "label": "KeepAlived"
+      }
+    },
+    {
+      "id": "kCw6oEVGdKokCz4wYizIT",
+      "type": "subtopic",
+      "data": {
+        "label": "Etcd"
+      }
+    },
+    {
+      "id": "XmBeM01NAy-_nfyNdk9ZV",
+      "type": "subtopic",
+      "data": {
+        "label": "Prometheus"
+      }
+    },
+    {
+      "id": "z3VD68R2uyu1s-3giRxKr",
+      "type": "subtopic",
+      "data": {
+        "label": "Zabbix"
+      }
+    },
+    {
+      "id": "WiOgUt5teG9UVRa6zo4h3",
+      "type": "subtopic",
+      "data": {
+        "label": "check_pgactivity"
+      }
+    },
+    {
+      "id": "aXG68inOu3trBWOmg9Yqx",
+      "type": "subtopic",
+      "data": {
+        "label": "temBoard"
+      }
+    },
+    {
+      "id": "DDPuDDUFxubWZmWXCmF7L",
+      "type": "subtopic",
+      "data": {
+        "label": "check_pgbackrest"
+      }
+    },
+    {
+      "id": "-XhONB0FBA6UslbDWoTDv",
+      "type": "subtopic",
+      "data": {
+        "label": "barman"
+      }
+    },
+    {
+      "id": "4gQSzH-WKFAvmkwlX_oyR",
+      "type": "subtopic",
+      "data": {
+        "label": "WAL-G"
+      }
+    },
+    {
+      "id": "5LLYxCj22RE6Nf0fVm8GO",
+      "type": "subtopic",
+      "data": {
+        "label": "pgbackrest"
+      }
+    },
+    {
+      "id": "Id_17Ya-NUvoXxijAZvmW",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_probackup"
+      }
+    },
+    {
+      "id": "XZ922juBJ8Om0WyGtSYT5",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_dump"
+      }
+    },
+    {
+      "id": "QmV-J6fPYQ5CcdGUkBs7y",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_dumpall"
+      }
+    },
+    {
+      "id": "YSprRhPHkzV8SzDYpIVmp",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_restore"
+      }
+    },
+    {
+      "id": "XYaVsj5_48CSnoTSGXBbN",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_basebackup"
+      }
+    },
+    {
+      "id": "te4PZaqt6-5Qu8rU0w6a1",
+      "type": "subtopic",
+      "data": {
+        "label": "Backup Validation Procedures"
+      }
+    },
+    {
+      "id": "aKQI7aX4bT_39bZgjmfoW",
+      "type": "subtopic",
+      "data": {
+        "label": "PgBouncer"
+      }
+    },
+    {
+      "id": "3V1PPIeB0i9qNUsT8-4O-",
+      "type": "subtopic",
+      "data": {
+        "label": "PgBouncer Alternatives"
+      }
+    },
+    {
+      "id": "Bf2zDZzFifTcULQLTgo3P",
+      "type": "label",
+      "data": {
+        "label": "Connection Pooling"
+      }
+    },
+    {
+      "id": "rmsIw9CQa1qcQ_REw76NK",
+      "type": "subtopic",
+      "data": {
+        "label": "Logical Replication"
+      }
+    },
+    {
+      "id": "MwLlVbqceQ-GTgPJlgoQY",
+      "type": "subtopic",
+      "data": {
+        "label": "Streaming Replication"
+      }
+    },
+    {
+      "id": "oLEw-0OJNVb0NtJXwEvVA",
+      "type": "label",
+      "data": {
+        "label": "Replication"
+      }
+    },
+    {
+      "id": "MhvAej3EBOtNyugTxGRD6",
+      "type": "label",
+      "data": {
+        "label": "Anonymization"
+      }
+    },
+    {
+      "id": "Maec9Io8FTVVn3bu5uw79",
+      "type": "label",
+      "data": {
+        "label": "Upgrade Procedures"
+      }
+    },
+    {
+      "id": "AZ_6pNlCVU_bGkecvnLEy",
+      "type": "label",
+      "data": {
+        "label": "Cluster Management"
+      }
+    },
+    {
+      "id": "mm0K_8TFicrYdZQvWFkH4",
+      "type": "subtopic",
+      "data": {
+        "label": "Patroni"
+      }
+    },
+    {
+      "id": "TZvZ_jNjWnM535ZktyhQN",
+      "type": "subtopic",
+      "data": {
+        "label": "Patroni Alternatives"
+      }
+    },
+    {
+      "id": "h1PbeATiyrCni1ukpDbUo",
+      "type": "label",
+      "data": {
+        "label": "Kubernetes Deployment"
+      }
+    },
+    {
+      "id": "BEiM6o6lMRF_g9BKmfbrL",
+      "type": "label",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "4ESFSjY5k92rOjeFTIV2J",
+      "type": "label",
+      "data": {
+        "label": "Load Balancing / Discovery"
+      }
+    },
+    {
+      "id": "7RoBFFZ0V_9T-z2vYjX75",
+      "type": "paragraph",
+      "data": {
+        "label": "Backup \u0026 Recovery Tools"
+      }
+    },
+    {
+      "id": "ZqeSG0CHxGiCzoVkwee17",
+      "type": "label",
+      "data": {
+        "label": "3rd Party"
+      }
+    },
+    {
+      "id": "HiTZlR-asfVa80gY0ear1",
+      "type": "label",
+      "data": {
+        "label": "Builtin Tools"
+      }
+    },
+    {
+      "id": "SNnc8CIKuHUAEZaJ_qEar",
+      "type": "subtopic",
+      "data": {
+        "label": "Resource Usage / Provisioning / Capacity Planning"
+      }
+    },
+    {
+      "id": "e5s7-JRqNy-OhfnjTScZI",
+      "type": "topic",
+      "data": {
+        "label": "Learn to Automate"
+      }
+    },
+    {
+      "id": "-clI2RmfhK8F8beHULaIB",
+      "type": "subtopic",
+      "data": {
+        "label": "Shell Scripts"
+      }
+    },
+    {
+      "id": "j5YeixkCKRv0sfq_gFVr9",
+      "type": "subtopic",
+      "data": {
+        "label": "Any Programming Language"
+      }
+    },
+    {
+      "id": "OGRy7USAwdS-LY1ySoApZ",
+      "type": "label",
+      "data": {
+        "label": "Configuration Management"
+      }
+    },
+    {
+      "id": "RqSfBR_RuvHrwHfPn1jwZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Ansible"
+      }
+    },
+    {
+      "id": "Q_B9dlXNMXZIRYQC74uIf",
+      "type": "subtopic",
+      "data": {
+        "label": "Salt"
+      }
+    },
+    {
+      "id": "7EHZ9YsNjCyTAN-LDWYMS",
+      "type": "subtopic",
+      "data": {
+        "label": "Chef"
+      }
+    },
+    {
+      "id": "e39bceamU-lq3F2pmLz6v",
+      "type": "subtopic",
+      "data": {
+        "label": "Puppet"
+      }
+    },
+    {
+      "id": "dKQCVkcZtmiT3grOBax04",
+      "type": "label",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "AtZcMhy2Idmgonp5O8RSQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Practical Patterns / Antipatterns"
+      }
+    },
+    {
+      "id": "3Lcy7kBKeV6hx9Ctp_20M",
+      "type": "subtopic",
+      "data": {
+        "label": "Migration Related Tools"
+      }
+    },
+    {
+      "id": "cc4S7ugIphyBZr-f6X0qi",
+      "type": "subtopic",
+      "data": {
+        "label": "Bulk Loading / Processing Data"
+      }
+    },
+    {
+      "id": "OiGRtLsc28Tv35vIut6B6",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Partitioning"
+      }
+    },
+    {
+      "id": "r6Blr7Q4wOnvJ-m6NvPyP",
+      "type": "subtopic",
+      "data": {
+        "label": "Sharding Patterns"
+      }
+    },
+    {
+      "id": "Fcl7AD2M6WrMbxdvnl-ub",
+      "type": "subtopic",
+      "data": {
+        "label": "Normalization / Normal Forms"
+      }
+    },
+    {
+      "id": "x0wCPs7cFL6eYJtzwNR-B",
+      "type": "label",
+      "data": {
+        "label": "Queues"
+      }
+    },
+    {
+      "id": "rnXcM62rgq3p6FQ9AWW1R",
+      "type": "subtopic",
+      "data": {
+        "label": "Patterns / Antipatterns"
+      }
+    },
+    {
+      "id": "WCBWPubUS84r3tOXpnZT3",
+      "type": "subtopic",
+      "data": {
+        "label": "PgQ"
+      }
+    },
+    {
+      "id": "jsv3UNZuDaksU49g6Xjm0",
+      "type": "label",
+      "data": {
+        "label": "Data and Processing"
+      }
+    },
+    {
+      "id": "C0MAuAb1CfohTuTMkCjso",
+      "type": "paragraph",
+      "data": {
+        "label": "Application Skills"
+      }
+    },
+    {
+      "id": "ctKJI9oHts6Agrg4eFfjy",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "_WTzpL-AciqaT0QGudYGL",
+      "type": "label",
+      "data": {
+        "label": "Low Level Internals"
+      }
+    },
+    {
+      "id": "v2J6PZT0fHvqA7GwlqBU7",
+      "type": "subtopic",
+      "data": {
+        "label": "Processes \u0026 Memory Architecture"
+      }
+    },
+    {
+      "id": "dJzJP1uo4kVFThWgglPfk",
+      "type": "subtopic",
+      "data": {
+        "label": "Vacuum Processing"
+      }
+    },
+    {
+      "id": "KeBUzfrkorgFWpR8A-xmJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Buffer Management"
+      }
+    },
+    {
+      "id": "pOkafV7nDHme4jk-hA8Cn",
+      "type": "subtopic",
+      "data": {
+        "label": "Lock Management"
+      }
+    },
+    {
+      "id": "gweDHAB58gKswdwfpnRQT",
+      "type": "subtopic",
+      "data": {
+        "label": "Physical Storage and File Layout"
+      }
+    },
+    {
+      "id": "lDuBFA7cEMnd7Cl9MDgnf",
+      "type": "subtopic",
+      "data": {
+        "label": "System Catalog"
+      }
+    },
+    {
+      "id": "u0GTzhPjUoERqgIiTAVNR",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "msm4QCAA-MRVI1psf6tt3",
+      "type": "subtopic",
+      "data": {
+        "label": "Per-User, Per-Database Setting"
+      }
+    },
+    {
+      "id": "4VrT_K9cZZ0qE1EheSQy0",
+      "type": "subtopic",
+      "data": {
+        "label": "Storage Parameters"
+      }
+    },
+    {
+      "id": "FNiWebesMOSYuYeNHmfEA",
+      "type": "label",
+      "data": {
+        "label": "Workload-Dependant Tuning"
+      }
+    },
+    {
+      "id": "VekAMpcrugHGuvSbyPZVv",
+      "type": "subtopic",
+      "data": {
+        "label": "OLTP"
+      }
+    },
+    {
+      "id": "WI3-7hFAnJw5f7GIn-5kp",
+      "type": "subtopic",
+      "data": {
+        "label": "OLAP"
+      }
+    },
+    {
+      "id": "rHDlm78yroRrrAAcabEAl",
+      "type": "subtopic",
+      "data": {
+        "label": "HTAP"
+      }
+    },
+    {
+      "id": "Ur23UVs_nXaltytF1WJD8",
+      "type": "subtopic",
+      "data": {
+        "label": "PL/pgSQL"
+      }
+    },
+    {
+      "id": "LiF2Yh818D-zEF58v5Fgr",
+      "type": "subtopic",
+      "data": {
+        "label": "Procedures and Functions"
+      }
+    },
+    {
+      "id": "ps2KK88QA1n5udn2ochIn",
+      "type": "subtopic",
+      "data": {
+        "label": "Triggers"
+      }
+    },
+    {
+      "id": "A1LGOqqaka0ILcYwybclP",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursive CTE"
+      }
+    },
+    {
+      "id": "iQqEC1CnVAoM7x455jO_S",
+      "type": "subtopic",
+      "data": {
+        "label": "Aggregate and Window functions"
+      }
+    },
+    {
+      "id": "g007fG2EVP9RDAq7wKaP4",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced SQL"
+      }
+    },
+    {
+      "id": "yjCh_34KRPysCR_1-ham3",
+      "type": "paragraph",
+      "data": {
+        "label": "Troubleshooting Techniques"
+      }
+    },
+    {
+      "id": "wn4ccLOsN1n0fhUHnvid4",
+      "type": "label",
+      "data": {
+        "label": "Operating System Tools"
+      }
+    },
+    {
+      "id": "pvj33qDiG3sSjtiW6sUra",
+      "type": "subtopic",
+      "data": {
+        "label": "top"
+      }
+    },
+    {
+      "id": "0hRQtRsteGDnKO5XgLF1R",
+      "type": "subtopic",
+      "data": {
+        "label": "sysstat"
+      }
+    },
+    {
+      "id": "n8oHT7YwhHhFdU5_7DZ_F",
+      "type": "subtopic",
+      "data": {
+        "label": "iotop"
+      }
+    },
+    {
+      "id": "zexZ__L0kaSUxjRP-1Uhz",
+      "type": "label",
+      "data": {
+        "label": "Profiling Tools"
+      }
+    },
+    {
+      "id": "yIdUhfE2ZTQhDAdQsXrnH",
+      "type": "subtopic",
+      "data": {
+        "label": "gdb"
+      }
+    },
+    {
+      "id": "C_cUfEufYeUlAdVfdUvsK",
+      "type": "subtopic",
+      "data": {
+        "label": "strace"
+      }
+    },
+    {
+      "id": "QarPFu_wU6-F9P5YHo6CO",
+      "type": "subtopic",
+      "data": {
+        "label": "ebpf"
+      }
+    },
+    {
+      "id": "wH447bS-csqmGbk-jaGqp",
+      "type": "subtopic",
+      "data": {
+        "label": "perf-tools"
+      }
+    },
+    {
+      "id": "-CIezYPHTcXJF_p4T55-c",
+      "type": "subtopic",
+      "data": {
+        "label": "Core Dumps"
+      }
+    },
+    {
+      "id": "Uu08Kq8FE8k60XpenSW3q",
+      "type": "label",
+      "data": {
+        "label": "Log Analysis"
+      }
+    },
+    {
+      "id": "V2iW8tJQXwsRknnZXoHGd",
+      "type": "subtopic",
+      "data": {
+        "label": "pgBadger"
+      }
+    },
+    {
+      "id": "ISuU1lWH_zVDlCHnWXbf9",
+      "type": "subtopic",
+      "data": {
+        "label": "pgCluu"
+      }
+    },
+    {
+      "id": "HJCRntic0aGVvdmCN45aP",
+      "type": "subtopic",
+      "data": {
+        "label": "awk"
+      }
+    },
+    {
+      "id": "cFtrSgboZRJ3Q63eaqEBf",
+      "type": "subtopic",
+      "data": {
+        "label": "grep"
+      }
+    },
+    {
+      "id": "hVL6OtsXrE8BvjKpRjB-9",
+      "type": "subtopic",
+      "data": {
+        "label": "sed"
+      }
+    },
+    {
+      "id": "shk69Z5f0lxNWHP75T2OQ",
+      "type": "label",
+      "data": {
+        "label": "Posgres System Views"
+      }
+    },
+    {
+      "id": "_NL5pGGTLNxCFx4axOqfu",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_stat_activity"
+      }
+    },
+    {
+      "id": "wLMGOUaULW7ZALRr-shTz",
+      "type": "subtopic",
+      "data": {
+        "label": "pg_stat_statements"
+      }
+    },
+    {
+      "id": "7KjUtZMy9sNJMny47ybS1",
+      "type": "label",
+      "data": {
+        "label": "Posgres Tools"
+      }
+    },
+    {
+      "id": "TytU0IpWgwhr4w4W4H3Vx",
+      "type": "subtopic",
+      "data": {
+        "label": "pgcenter"
+      }
+    },
+    {
+      "id": "K2YbL7Gg1eUHokcxpqLcv",
+      "type": "label",
+      "data": {
+        "label": "Query Analysis"
+      }
+    },
+    {
+      "id": "n2OjwxzIHnATraRWi5Ddl",
+      "type": "subtopic",
+      "data": {
+        "label": "EXPLAIN"
+      }
+    },
+    {
+      "id": "rVlncpLO20WK6mjyqLerL",
+      "type": "subtopic",
+      "data": {
+        "label": "Depesz"
+      }
+    },
+    {
+      "id": "9RyMU36KEP__-RzTTz_eo",
+      "type": "subtopic",
+      "data": {
+        "label": "PEV2"
+      }
+    },
+    {
+      "id": "xEu5n6U9-WKVxjlT5YUgx",
+      "type": "subtopic",
+      "data": {
+        "label": "Tensor"
+      }
+    },
+    {
+      "id": "UZ1vRFRjiQAVu6BygqwEL",
+      "type": "subtopic",
+      "data": {
+        "label": "explain.dalibo.com"
+      }
+    },
+    {
+      "id": "fFsO0ayNwjSzeyl2LRjlg",
+      "type": "label",
+      "data": {
+        "label": "Techniques"
+      }
+    },
+    {
+      "id": "QWi84EjdHw5ChYsuwUhPC",
+      "type": "subtopic",
+      "data": {
+        "label": "USE"
+      }
+    },
+    {
+      "id": "qBkpTmfbyCv2L-OJW9pPI",
+      "type": "subtopic",
+      "data": {
+        "label": "RED"
+      }
+    },
+    {
+      "id": "oX-bdPPjaHJnQKgUhDSF2",
+      "type": "subtopic",
+      "data": {
+        "label": "Golden Signals"
+      }
+    },
+    {
+      "id": "xOLVCPum_oCJo00obtZfJ",
+      "type": "paragraph",
+      "data": {
+        "label": "SQL Optimization Techniques"
+      }
+    },
+    {
+      "id": "wnUa4XkpZGB9fkHH0rNXA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FDuiJyU1yWUQ9IsfS3CeZ",
+      "type": "topic",
+      "data": {
+        "label": "Schema Design Patterns / Anti-patterns"
+      }
+    },
+    {
+      "id": "G9DB1ZQjgXaHxJ4Lm6xGx",
+      "type": "topic",
+      "data": {
+        "label": "SQL Query Patterns / Anti-patterns"
+      }
+    },
+    {
+      "id": "Dhhyg23dBMyAKCFwZmu71",
+      "type": "topic",
+      "data": {
+        "label": "Indexes and their Usecases"
+      }
+    },
+    {
+      "id": "jihXOJq9zYlDOpvJvpFO-",
+      "type": "subtopic",
+      "data": {
+        "label": "B-Tree"
+      }
+    },
+    {
+      "id": "2yWYyXt1uLOdQg4YsgdVq",
+      "type": "subtopic",
+      "data": {
+        "label": "Hash"
+      }
+    },
+    {
+      "id": "2chGkn5Y_WTjYllpgL0LJ",
+      "type": "subtopic",
+      "data": {
+        "label": "GiST"
+      }
+    },
+    {
+      "id": "LT5qRETR3pAI8Tk6k5idg",
+      "type": "subtopic",
+      "data": {
+        "label": "SP-GiST"
+      }
+    },
+    {
+      "id": "FJhJyDWOj9w_Rd_uKcouT",
+      "type": "subtopic",
+      "data": {
+        "label": "GIN"
+      }
+    },
+    {
+      "id": "43oFhZuXjJd4QHbUoLtft",
+      "type": "subtopic",
+      "data": {
+        "label": "BRIN"
+      }
+    },
+    {
+      "id": "NhodBD8myUTljNdn3y40I",
+      "type": "topic",
+      "data": {
+        "label": "Get Involved in Development"
+      }
+    },
+    {
+      "id": "8H7hJhGKxr1nrjkHv9Xao",
+      "type": "subtopic",
+      "data": {
+        "label": "Mailing Lists"
+      }
+    },
+    {
+      "id": "Jy0G0ZnHPOM8hba_PbwuA",
+      "type": "subtopic",
+      "data": {
+        "label": "Reviewing Patches"
+      }
+    },
+    {
+      "id": "eQzMU_KyQmHJQ6gzyk0-1",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Patches"
+      }
+    },
+    {
+      "id": "X3IC3D4MqkxpS6s99vdj-",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant roadmaps"
+      }
+    },
+    {
+      "id": "gC8lsIdYLRzo3HzwVqtm1",
+      "type": "button",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "7RR4BlugrhJQpI0MeMj8V",
+      "type": "button",
+      "data": {
+        "label": "DevOps Roadmap"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-lDIy56RyC1XM7IfORsSLDz2-D0doJTtLu-1MmFOfavCXNy1",
+      "source": "lDIy56RyC1XM7IfORsSLD",
+      "target": "D0doJTtLu-1MmFOfavCXN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lDIy56RyC1XM7IfORsSLDz2-soar-NBWCr4xVKj7ttfncy1",
+      "source": "lDIy56RyC1XM7IfORsSLD",
+      "target": "soar-NBWCr4xVKj7ttfnc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lDIy56RyC1XM7IfORsSLDz2-p3AmRr_y_ZBKzAU5eh7OUy1",
+      "source": "lDIy56RyC1XM7IfORsSLD",
+      "target": "p3AmRr_y_ZBKzAU5eh7OU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lDIy56RyC1XM7IfORsSLDz2-IAKERTzTpTds5kZLMCapMy1",
+      "source": "lDIy56RyC1XM7IfORsSLD",
+      "target": "IAKERTzTpTds5kZLMCapM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-lDIy56RyC1XM7IfORsSLDw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "lDIy56RyC1XM7IfORsSLD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-lDIy56RyC1XM7IfORsSLDx2-VjQ71xorBoxxDn-wSmUjmw2",
+      "source": "lDIy56RyC1XM7IfORsSLD",
+      "target": "-M9EFgiDSSAzj9ISk-aeh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-VjQ71xorBoxxDn-wSmUjmy2-RoYP1tYw5dvhmkVTo1HS-z1",
+      "source": "-M9EFgiDSSAzj9ISk-aeh",
+      "target": "RoYP1tYw5dvhmkVTo1HS-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RoYP1tYw5dvhmkVTo1HS-x2-_BSR2mo1lyXEFXbKYb1ZGw2",
+      "source": "RoYP1tYw5dvhmkVTo1HS-",
+      "target": "mDVbjdVN0spY7dI_8k1YW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--M9EFgiDSSAzj9ISk-aehz2-_BSR2mo1lyXEFXbKYb1ZGy2",
+      "source": "-M9EFgiDSSAzj9ISk-aeh",
+      "target": "_BSR2mo1lyXEFXbKYb1ZG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--M9EFgiDSSAzj9ISk-aehx2-VjQ71xorBoxxDn-wSmUjmw2",
+      "source": "-M9EFgiDSSAzj9ISk-aeh",
+      "target": "FtPiBWMFhjakyXsmSL_CI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7RoBFFZ0V_9T-z2vYjX75x2-ZqeSG0CHxGiCzoVkwee17w1",
+      "source": "7RoBFFZ0V_9T-z2vYjX75",
+      "target": "ZqeSG0CHxGiCzoVkwee17",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-7RoBFFZ0V_9T-z2vYjX75x2-HiTZlR-asfVa80gY0ear1w1",
+      "source": "7RoBFFZ0V_9T-z2vYjX75",
+      "target": "HiTZlR-asfVa80gY0ear1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-FtPiBWMFhjakyXsmSL_CIz2-ANUgfkADLI_du7iRvnUdiw1",
+      "source": "FtPiBWMFhjakyXsmSL_CI",
+      "target": "ANUgfkADLI_du7iRvnUdi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ANUgfkADLI_du7iRvnUdix2-T819BZ-CZgUX_BY7Gna0Jz1",
+      "source": "ANUgfkADLI_du7iRvnUdi",
+      "target": "T819BZ-CZgUX_BY7Gna0J",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-T819BZ-CZgUX_BY7Gna0Jy2-507TY35b8iExakbBMrHgZz2",
+      "source": "T819BZ-CZgUX_BY7Gna0J",
+      "target": "507TY35b8iExakbBMrHgZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-T819BZ-CZgUX_BY7Gna0Jx2-2Zg8R5gs9LMQOcOMZtoPkw1",
+      "source": "T819BZ-CZgUX_BY7Gna0J",
+      "target": "2Zg8R5gs9LMQOcOMZtoPk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2Zg8R5gs9LMQOcOMZtoPkz2-gb75xOcAr-q8TcA6_l1GZy2",
+      "source": "2Zg8R5gs9LMQOcOMZtoPk",
+      "target": "gb75xOcAr-q8TcA6_l1GZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2Zg8R5gs9LMQOcOMZtoPkz2-l0lpaPy12JFCJ-RRYVSqzy2",
+      "source": "2Zg8R5gs9LMQOcOMZtoPk",
+      "target": "l0lpaPy12JFCJ-RRYVSqz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2Zg8R5gs9LMQOcOMZtoPkz2-EKwO6edtFnUw8cPCcVwKJy1",
+      "source": "2Zg8R5gs9LMQOcOMZtoPk",
+      "target": "EKwO6edtFnUw8cPCcVwKJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2Zg8R5gs9LMQOcOMZtoPkx2-VjQ71xorBoxxDn-wSmUjmw1",
+      "source": "2Zg8R5gs9LMQOcOMZtoPk",
+      "target": "zlqSX0tl7HD9C1yEGkvoM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zlqSX0tl7HD9C1yEGkvoMy2-VjQ71xorBoxxDn-wSmUjmw1",
+      "source": "zlqSX0tl7HD9C1yEGkvoM",
+      "target": "e5s7-JRqNy-OhfnjTScZI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-xi5uZ_VOH4rVNu_0ZLAX9x2-ctKJI9oHts6Agrg4eFfjyw2",
+      "source": "xi5uZ_VOH4rVNu_0ZLAX9",
+      "target": "C0MAuAb1CfohTuTMkCjso",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-C0MAuAb1CfohTuTMkCjsox2-ctKJI9oHts6Agrg4eFfjyw1",
+      "source": "C0MAuAb1CfohTuTMkCjso",
+      "target": "ctKJI9oHts6Agrg4eFfjy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-TJSsoD5U78tOydPhxuPzKz2-g007fG2EVP9RDAq7wKaP4y1",
+      "source": "TJSsoD5U78tOydPhxuPzK",
+      "target": "g007fG2EVP9RDAq7wKaP4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-QfyHG6cVuKQ3iqdEtoFSUx2-xOLVCPum_oCJo00obtZfJw1",
+      "source": "QfyHG6cVuKQ3iqdEtoFSU",
+      "target": "yjCh_34KRPysCR_1-ham3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-xOLVCPum_oCJo00obtZfJy2-G9DB1ZQjgXaHxJ4Lm6xGxz2",
+      "source": "xOLVCPum_oCJo00obtZfJ",
+      "target": "G9DB1ZQjgXaHxJ4Lm6xGx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-FDuiJyU1yWUQ9IsfS3CeZx2-NhodBD8myUTljNdn3y40Iw1",
+      "source": "FDuiJyU1yWUQ9IsfS3CeZ",
+      "target": "Dhhyg23dBMyAKCFwZmu71",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iz2-jihXOJq9zYlDOpvJvpFO-y2",
+      "source": "Dhhyg23dBMyAKCFwZmu71",
+      "target": "jihXOJq9zYlDOpvJvpFO-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iz2-2chGkn5Y_WTjYllpgL0LJy1",
+      "source": "Dhhyg23dBMyAKCFwZmu71",
+      "target": "2chGkn5Y_WTjYllpgL0LJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iz2-LT5qRETR3pAI8Tk6k5idgy1",
+      "source": "Dhhyg23dBMyAKCFwZmu71",
+      "target": "LT5qRETR3pAI8Tk6k5idg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Dhhyg23dBMyAKCFwZmu71x2-NhodBD8myUTljNdn3y40Iw2",
+      "source": "Dhhyg23dBMyAKCFwZmu71",
+      "target": "NhodBD8myUTljNdn3y40I",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iy2-8H7hJhGKxr1nrjkHv9Xaoz1",
+      "source": "NhodBD8myUTljNdn3y40I",
+      "target": "8H7hJhGKxr1nrjkHv9Xao",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iy2-Jy0G0ZnHPOM8hba_PbwuAz1",
+      "source": "NhodBD8myUTljNdn3y40I",
+      "target": "Jy0G0ZnHPOM8hba_PbwuA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Iy2-eQzMU_KyQmHJQ6gzyk0-1z1",
+      "source": "NhodBD8myUTljNdn3y40I",
+      "target": "eQzMU_KyQmHJQ6gzyk0-1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NhodBD8myUTljNdn3y40Ix2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "NhodBD8myUTljNdn3y40I",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}
