@@ -108,22 +108,6 @@ public class OnetService
             //    _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
             //}
 
-            // Get Knowledge areas (domain-specific, e.g. "Building and Construction", "Customer Service")
-            // end=8 limits to the most relevant domains for this occupation (items are sorted by relevance)
-            // Endpoint: /online/occupations/{code}/summary/knowledge
-            try
-            {
-                var knowledgeResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/knowledge?start=1&end=8", cancellationToken);
-                if (knowledgeResponse?.Element != null)
-                {
-                    details.Knowledge = knowledgeResponse.Element.Select(s => s.Name).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Could not fetch knowledge for {Code}", onetCode);
-            }
-
             // Get Technology Skills (specific software/tools used on the job)
             // Endpoint: /online/occupations/{code}/summary/technology_skills
             // Note: API returns "title" field on examples, not "name". Also includes "example_more".
@@ -132,13 +116,13 @@ public class OnetService
                 var techResponse = await _httpClient.GetFromJsonAsync<TechnologySkillsResponse>($"online/occupations/{onetCode}/summary/technology_skills", cancellationToken);
                 if (techResponse?.Category != null)
                 {
-                    var techNames = techResponse.Category
+                    details.TechSkillCategories = techResponse.Category;
+                    details.TechnologySkills = techResponse.Category
                         .SelectMany(c => (c.Example ?? []).Concat(c.ExampleMore ?? []))
                         .Where(e => !string.IsNullOrWhiteSpace(e.Title))
                         .Select(e => e.Title!)
                         .Distinct(StringComparer.OrdinalIgnoreCase)
                         .ToList();
-                    details.TechnologySkills = techNames;
                 }
             }
             catch (Exception ex)
@@ -152,6 +136,20 @@ public class OnetService
         {
             _logger.LogError(ex, "Error fetching details for {Code}", onetCode);
             return null;
+        }
+    }
+
+    public async Task<List<SkillTaxonomyNode>> GetSkillTaxonomyAsync(string endpoint, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var result = await _httpClient.GetFromJsonAsync<List<SkillTaxonomyNode>>(endpoint, cancellationToken);
+            return result ?? [];
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching skill taxonomy from {Endpoint}", endpoint);
+            return [];
         }
     }
 }

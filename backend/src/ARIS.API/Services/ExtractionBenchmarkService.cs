@@ -50,6 +50,7 @@ public class ExtractionBenchmarkService
 
         // Retrieve reference vocabulary once — not part of the timed section
         var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(request.Text);
+        var softSkills = await RetrieveSoftSkillsAsync();
 
         string userPrompt;
         try
@@ -60,6 +61,7 @@ public class ExtractionBenchmarkService
             userPrompt = template
                 .Replace("{reference_roles}", refRoles)
                 .Replace("{reference_skills}", refSkills)
+                .Replace("{soft_skills}", softSkills)
                 .Replace("{raw_text}", request.Text);
         }
         catch (Exception ex)
@@ -285,6 +287,24 @@ public class ExtractionBenchmarkService
         {
             _logger.LogWarning(ex, "Failed to retrieve reference vocabulary for benchmark. Proceeding without it.");
             return ("", "");
+        }
+    }
+
+    private async Task<string> RetrieveSoftSkillsAsync()
+    {
+        try
+        {
+            var names = await _context.Skills
+                .Where(s => s.Source == "ONET_Taxonomy")
+                .OrderBy(s => s.Name)
+                .Select(s => s.Name)
+                .ToListAsync();
+            return string.Join(", ", names);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Failed to retrieve soft skills vocabulary for benchmark. Proceeding without it.");
+            return "";
         }
     }
 

@@ -235,7 +235,29 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
         {
             var cursor = await tx.RunAsync(query);
             var records = await cursor.ToListAsync();
-            return records.Select(r => new SiblingCluster 
+            return records.Select(r => new SiblingCluster
+            {
+                Parent = r["Parent"].As<string>(),
+                Siblings = r["Siblings"].As<List<string>>()
+            }).ToList();
+        });
+
+        return result;
+    }
+
+    public async Task<List<SiblingCluster>> GetRoadmapSiblingClustersAsync()
+    {
+        const string query = @"
+            MATCH (c:Skill {source: 'Roadmap.sh'})-[:SUBSET_OF]->(p)
+            RETURN p.name AS Parent, collect(c.name) AS Siblings
+        ";
+
+        await using var session = _driver.AsyncSession();
+        var result = await session.ExecuteReadAsync(async tx =>
+        {
+            var cursor = await tx.RunAsync(query);
+            var records = await cursor.ToListAsync();
+            return records.Select(r => new SiblingCluster
             {
                 Parent = r["Parent"].As<string>(),
                 Siblings = r["Siblings"].As<List<string>>()

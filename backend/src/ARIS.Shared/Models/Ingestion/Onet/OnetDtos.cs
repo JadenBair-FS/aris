@@ -79,11 +79,23 @@ public class OccupationDetailsDto
     public required string Code { get; set; }
     public required string Title { get; set; }
     public string? Description { get; set; }
-    public List<string> Tasks { get; set; } = new();
-    public List<string> Skills { get; set; } = new();         // cognitive/psychomotor (35 O*NET skills)
-    public List<string> Knowledge { get; set; } = new();      // domain knowledge areas
-    public List<string> WorkActivities { get; set; } = new(); // on-the-job activities
-    public List<string> TechnologySkills { get; set; } = new(); // specific tools/software
+    public List<string> TechnologySkills { get; set; } = new();
+    public List<TechnologySkillCategory> TechSkillCategories { get; set; } = new();
+}
+
+public class SkillTaxonomyNode
+{
+    [JsonPropertyName("id")]
+    public string? Id { get; set; }
+
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+
+    [JsonPropertyName("child")]
+    public List<SkillTaxonomyNode>? Child { get; set; }
 }
 
 public class TechnologySkillsResponse
@@ -94,13 +106,15 @@ public class TechnologySkillsResponse
 
 public class TechnologySkillCategory
 {
+    [JsonPropertyName("code")]
+    public int Code { get; set; }
+
     [JsonPropertyName("title")]
     public string? Title { get; set; }
 
     [JsonPropertyName("example")]
     public List<TechnologySkillExample>? Example { get; set; }
 
-    // Additional examples beyond the primary list
     [JsonPropertyName("example_more")]
     public List<TechnologySkillExample>? ExampleMore { get; set; }
 }

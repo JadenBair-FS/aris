@@ -42,16 +42,19 @@ public class GraphService : IDisposable, IAsyncDisposable
                 // 1. Hierarchical UP: s -> parent (Foundations)
                 MATCH (s)-[:SUBSET_OF*1..2]->(parent:Skill)
                 WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
+                  AND parent.source <> 'ONET_Taxonomy'
                 RETURN parent.name as Name
                 UNION
                 // 2. Hierarchical DOWN: child -> s (s is a parent/foundation)
                 MATCH (child:Skill)-[:SUBSET_OF*1..2]->(s)
                 WHERE ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
+                  AND child.source <> 'ONET_Taxonomy'
                 RETURN child.name as Name
                 UNION
                 // 3. Peer/Bridge traversal (Lateral) - 1 hop only to prevent domain leakage
                 MATCH (s)-[:BRIDGE_TO]-(neighbor:Skill)
                 WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
+                  AND neighbor.source <> 'ONET_Taxonomy'
                 RETURN neighbor.name as Name
             }
             RETURN DISTINCT Name
@@ -95,6 +98,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (child:Skill)-[:SUBSET_OF*1..2]->(parent)
             WHERE toLower(child.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
+              AND child.source <> 'ONET_Taxonomy'
             RETURN DISTINCT child.name AS Name
 
             UNION
@@ -106,6 +110,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (foundation)-[:SUBSET_OF*1..2]->(target:Skill)
             WHERE toLower(target.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(target.is_tech, false) AND target.source = 'Roadmap.sh'))
+              AND target.source <> 'ONET_Taxonomy'
             RETURN DISTINCT target.name AS Name
         ";
 
@@ -154,6 +159,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             WHERE toLower(child.name) IN [s IN $expansionSeed | toLower(s)]
             MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
             WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
+              AND parent.source <> 'ONET_Taxonomy'
             RETURN DISTINCT parent.name AS Name
         ";
 
@@ -208,6 +214,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (u:Skill)-[:SUBSET_OF*1..3]-(missing:Skill)
             WHERE toLower(u.name) IN [s IN $userSkills | toLower(s)]
               AND toLower(missing.name) IN [s IN $missingSkills | toLower(s)]
+              AND NOT (u.source = 'ONET_Taxonomy' AND missing.source = 'ONET_Taxonomy')
             RETURN missing.name AS SkillName, u.name AS ViaSkill, 'SUBSET_OF' AS BridgeType, null AS BridgeSource
         ";
 

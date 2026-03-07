@@ -15,6 +15,10 @@ You are a high-fidelity data extraction engine. Your goal is to parse the provid
    - "is_current" must be a JSON boolean (`true` or `false`).
    - Use the provided Reference Vocabulary for values if a term in the text is a 90%+ match.
 
+### SOFT SKILLS VOCABULARY:
+When extracting soft skills, prefer exact names from this list. Only include a soft skill if it is explicitly stated or strongly implied by the text. Do not use soft skill names outside this list.
+{soft_skills}
+
 ### REFERENCE VOCABULARY:
 Roles: {reference_roles}
 Skills: {reference_skills}

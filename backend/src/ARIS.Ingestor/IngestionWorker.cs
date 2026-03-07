@@ -1,5 +1,6 @@
 using ARIS.Ingestor.Services;
 using ARIS.Shared.Entities;
+using ARIS.Shared.Models.Ingestion.Onet;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -104,26 +105,34 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        //Main Ingestion
-
         await dbContext.Database.EnsureCreatedAsync(stoppingToken);
         await neo4jService.EnsureIndicesAsync();
 
-        if (args.Contains("--fresh"))
+        var onetOnly = args.Contains("--onet-only");
+        var roadmapOnly = args.Contains("--roadmap-only");
+
+        if (!roadmapOnly)
         {
-            _logger.LogWarning(">>> FRESH MODE: Clearing all data <<<");
-            await EnsureCleanSlateAsync(dbContext, neo4jService, stoppingToken);
+            if (args.Contains("--fresh"))
+            {
+                _logger.LogWarning(">>> FRESH MODE: Clearing all data <<<");
+                await EnsureCleanSlateAsync(dbContext, neo4jService, stoppingToken);
+            }
+
+            _logger.LogInformation("=== Phase 1: O*NET Ingestion ===");
+            await IngestOnetAsync(dbContext, onetService, neo4jService, stoppingToken);
+
+            if (onetOnly)
+            {
+                _logger.LogInformation("O*NET-only run complete. Inspect the database before running --roadmap-only.");
+                _hostApplicationLifetime.StopApplication();
+                return;
+            }
         }
 
-        // Phase 1: O*NET — anchor taxonomy (roles + skills, IsTech from endpoint type)
-        _logger.LogInformation("=== Phase 1: O*NET Ingestion ===");
-        await IngestOnetAsync(dbContext, onetService, neo4jService, stoppingToken);
-
-        // Phase 2: Build slug → O*NET role map (cosine similarity, threshold 0.30, top-3)
         _logger.LogInformation("=== Phase 2: Building Slug-Role Map ===");
         var slugRoleMap = await BuildSlugRoleMapAsync(dbContext, roadmapService, RoleRoadmapSlugs, stoppingToken);
 
-        // Phase 3: Role roadmaps — tech skill enhancement + real edge hierarchy + REQUIRES links
         _logger.LogInformation("=== Phase 3: Role Roadmap Ingestion ===");
         foreach (var slug in RoleRoadmapSlugs)
         {
@@ -134,7 +143,6 @@ public class IngestionWorker : BackgroundService
                 isRoleRoadmap: true, matchedRoles, stoppingToken);
         }
 
-        // Phase 4: Skill roadmaps — standalone SUBSET_OF trees rooted at roadmap title
         _logger.LogInformation("=== Phase 4: Skill Roadmap Ingestion ===");
         foreach (var slug in SkillRoadmapSlugs)
         {
@@ -144,9 +152,6 @@ public class IngestionWorker : BackgroundService
                 isRoleRoadmap: false, [], stoppingToken);
         }
 
-        // Phase 5: Ontology Enrichment — BRIDGE_TO and SUBSET_OF edge generation via LLM
-        // Runs automatically after every full ingestion (not just --fresh) so the graph
-        // is always fully enriched without requiring a separate --optimize-graph pass.
         _logger.LogInformation("=== Phase 5: Ontology Enrichment ===");
         await RunOptimizeGraphAsync(args, neo4jService, ontologyService, stoppingToken);
 
@@ -162,6 +167,9 @@ public class IngestionWorker : BackgroundService
         Neo4jIngestionService neo4j,
         CancellationToken ct)
     {
+        _logger.LogInformation("=== Phase 1a: Soft Skill Taxonomy ===");
+        await IngestOnetSkillTaxonomiesAsync(dbContext, onetService, neo4j, ct);
+
         var occupations = await onetService.GetAllOccupationsAsync(ct);
         _logger.LogInformation("Found {Count} O*NET occupations.", occupations.Count);
 
@@ -195,22 +203,35 @@ public class IngestionWorker : BackgroundService
                 await dbContext.SaveChangesAsync(ct);
             }
 
-            // Domain knowledge areas (top 8 by relevance, e.g. "Building and Construction") → IsTech = false
-            foreach (var knowledgeName in details.Knowledge)
-            {
-                var canon = await DeduplicateOrCreateSkillAsync(
-                    dbContext, neo4j, knowledgeName, "ONET_Skill", isTech: false, ct);
-                await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
-                await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
-            }
-
             // Technology skills (specific software / tools) → IsTech = true
+            var rawToCanonical = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var techSkillName in details.TechnologySkills)
             {
                 var canon = await DeduplicateOrCreateSkillAsync(
                     dbContext, neo4j, techSkillName, "ONET_Skill", isTech: true, ct);
                 await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
                 await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
+                rawToCanonical[techSkillName] = canon;
+            }
+
+            // Category-based BRIDGE_TO: tools in the same O*NET category are deterministic peers
+            foreach (var category in details.TechSkillCategories)
+            {
+                var categoryCanonicals = (category.Example ?? []).Concat(category.ExampleMore ?? [])
+                    .Select(e => e.Title)
+                    .Where(t => !string.IsNullOrWhiteSpace(t))
+                    .Select(t => rawToCanonical.GetValueOrDefault(t!, t!))
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                for (var a = 0; a < categoryCanonicals.Count; a++)
+                {
+                    for (var b = a + 1; b < categoryCanonicals.Count; b++)
+                    {
+                        await neo4j.MergeBridgeRelationshipAsync(
+                            categoryCanonicals[a], categoryCanonicals[b], "ONET_Category");
+                    }
+                }
             }
 
             await dbContext.SaveChangesAsync(ct);
@@ -261,6 +282,52 @@ public class IngestionWorker : BackgroundService
         }
 
         return map;
+    }
+
+    // ── Phase 1a: O*NET Soft Skill Taxonomy ────────────────────────────────────
+
+    private async Task IngestOnetSkillTaxonomiesAsync(
+        ArisDbContext dbContext,
+        OnetService onetService,
+        Neo4jIngestionService neo4j,
+        CancellationToken ct)
+    {
+        var basicSkills = await onetService.GetSkillTaxonomyAsync("online/onet_data/skills_basic/", ct);
+        var cfSkills = await onetService.GetSkillTaxonomyAsync("online/onet_data/skills_cf/", ct);
+        var allRoots = basicSkills.Concat(cfSkills).ToList();
+
+        _logger.LogInformation("Fetched {Count} taxonomy root categories from O*NET.", allRoots.Count);
+
+        foreach (var root in allRoots)
+        {
+            if (ct.IsCancellationRequested) break;
+            await ProcessTaxonomyNodeAsync(dbContext, neo4j, root, parentName: null, ct);
+        }
+
+        _logger.LogInformation("Soft skill taxonomy ingestion complete.");
+    }
+
+    private async Task ProcessTaxonomyNodeAsync(
+        ArisDbContext dbContext,
+        Neo4jIngestionService neo4j,
+        SkillTaxonomyNode node,
+        string? parentName,
+        CancellationToken ct)
+    {
+        if (string.IsNullOrWhiteSpace(node.Name)) return;
+
+        await DeduplicateOrCreateSkillAsync(dbContext, neo4j, node.Name, "ONET_Taxonomy", isTech: false, ct);
+
+        if (parentName != null)
+            await neo4j.MergeSubsetRelationshipAsync(node.Name, parentName, "ONET_Taxonomy");
+
+        if (node.Child == null) return;
+
+        foreach (var child in node.Child)
+        {
+            if (ct.IsCancellationRequested) break;
+            await ProcessTaxonomyNodeAsync(dbContext, neo4j, child, node.Name, ct);
+        }
     }
 
     //Phases 3 + 4: Roadmap Ingestion
@@ -511,14 +578,11 @@ public class IngestionWorker : BackgroundService
     private static readonly string CheckpointPath =
         Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "aris_ingestor_checkpoint.json");
 
-    private sealed record IngestionCheckpoint(
-        int Step, int DepIndex, int SiblingsIndex, int BridgeIndex, int DomainIndex, string Timestamp);
+    private sealed record IngestionCheckpoint(int SiblingsIndex, string Timestamp);
 
-    private static async Task WriteCheckpointAsync(
-        int step, int depIdx, int siblIdx, int bridgeIdx, int domainIdx)
+    private static async Task WriteCheckpointAsync(int siblingsIdx)
     {
-        var cp = new IngestionCheckpoint(step, depIdx, siblIdx, bridgeIdx, domainIdx,
-            DateTimeOffset.UtcNow.ToString("O"));
+        var cp = new IngestionCheckpoint(siblingsIdx, DateTimeOffset.UtcNow.ToString("O"));
         await File.WriteAllTextAsync(CheckpointPath,
             JsonSerializer.Serialize(cp, new JsonSerializerOptions { WriteIndented = true }));
     }
@@ -552,17 +616,6 @@ public class IngestionWorker : BackgroundService
             limit = parsedLimit;
 
         var skipBridges = args.Contains("--skip-bridges");
-        var skipDeps = args.Contains("--skip-deps");
-        var skipPass1 = args.Contains("--skip-pass1");
-        var skipPass2 = args.Contains("--skip-pass2");
-
-        int resumeIndex = 0;
-        var resumeIdx = Array.IndexOf(args, "--resume");
-        if (resumeIdx >= 0 && resumeIdx + 1 < args.Length &&
-            int.TryParse(args[resumeIdx + 1], out var parsedResume))
-            resumeIndex = parsedResume;
-
-        if (resumeIndex > 0) _logger.LogInformation("Resuming from index: {ResumeIndex}", resumeIndex);
 
         int resumeSiblingsIndex = 0;
         var resumeSiblingsIdx = Array.IndexOf(args, "--resume-siblings");
@@ -570,27 +623,14 @@ public class IngestionWorker : BackgroundService
             int.TryParse(args[resumeSiblingsIdx + 1], out var parsedResumeSiblings))
             resumeSiblingsIndex = parsedResumeSiblings;
 
-        if (resumeSiblingsIndex > 0)
-            _logger.LogInformation("Step 2: Resuming from sibling cluster index: {ResumeIndex}", resumeSiblingsIndex);
-
         var checkpoint = await ReadCheckpointAsync();
         if (checkpoint != null)
         {
-            _logger.LogInformation("Auto-resuming from checkpoint (Step {Step}, {Timestamp})",
-                checkpoint.Step, checkpoint.Timestamp);
-            if (!args.Contains("--resume-deps") && checkpoint.DepIndex > 0)
-            {
-                _logger.LogInformation("  Checkpoint overriding dep index to {Index}", checkpoint.DepIndex);
-            }
-            if (!args.Contains("--resume-siblings") && checkpoint.SiblingsIndex > 0)
+            _logger.LogInformation("Auto-resuming from checkpoint ({Timestamp})", checkpoint.Timestamp);
+            if (checkpoint.SiblingsIndex > 0)
             {
                 resumeSiblingsIndex = checkpoint.SiblingsIndex;
                 _logger.LogInformation("  Checkpoint overriding siblings index to {Index}", checkpoint.SiblingsIndex);
-            }
-            if (!args.Contains("--resume") && checkpoint.BridgeIndex > 0)
-            {
-                resumeIndex = checkpoint.BridgeIndex;
-                _logger.LogInformation("  Checkpoint overriding bridge index to {Index}", checkpoint.BridgeIndex);
             }
         }
 
@@ -601,256 +641,71 @@ public class IngestionWorker : BackgroundService
             maxClusterSize = parsedMaxCluster;
 
         var processedBridges = new HashSet<string>();
-        var processedDeps = new HashSet<string>();
-
-        // Pre-populate processedBridges with edges already in the graph.
-        // This prevents re-logging Roadmap.sh native bridges as "New" and
-        // skips redundant MergeBridgeRelationshipAsync calls for existing pairs.
         _logger.LogInformation("Loading existing BRIDGE_TO edges into dedup set...");
         var existingBridgeKeys = await neo4jService.GetExistingBridgeKeysAsync();
         foreach (var key in existingBridgeKeys)
             processedBridges.Add(key);
-        _logger.LogInformation("Loaded {Count} existing bridge keys. Only new bridges will be logged.", existingBridgeKeys.Count);
+        _logger.LogInformation("Loaded {Count} existing bridge keys.", existingBridgeKeys.Count);
 
-        // Dependency Detection (runs first so SUBSET_OF is established before
-        // bridge passes — gives Pass 2 accurate pruning and avoids the
-        // create-bridge-then-delete-it roundtrip in MergeSubsetRelationshipAsync)
-        if (!skipDeps)
-        {
-            _logger.LogInformation("=== Step 1: Dependency Detection ===");
-            var roles3 = await neo4jService.GetRolesWithDirectSkillsAsync();
-            _logger.LogInformation("Found {Count} roles to analyze in Step 1.", roles3.Count);
-            var processedSkillHashes3 = new HashSet<string>();
-            var processedCount3 = 0;
-
-            var depsResumeIndex = args.Contains("--resume-deps")
-                ? int.Parse(args[Array.IndexOf(args, "--resume-deps") + 1]) : 0;
-            if (checkpoint != null && !args.Contains("--resume-deps") && checkpoint.DepIndex > 0)
-                depsResumeIndex = checkpoint.DepIndex;
-
-            foreach (var role in roles3)
-            {
-                if (stoppingToken.IsCancellationRequested) break;
-                if (limit.HasValue && processedCount3 >= limit.Value) break;
-
-                var techSkills = role.Skills.Where(s => s.Length < 60).OrderBy(s => s).ToList();
-                var skillHash = string.Join(",", techSkills);
-
-                if (techSkills.Count <= 1 || !processedSkillHashes3.Add(skillHash)) continue;
-
-                processedCount3++;
-
-                if (processedCount3 < depsResumeIndex)
-                {
-                    if (processedCount3 % 100 == 0 || processedCount3 == depsResumeIndex - 1)
-                        _logger.LogInformation("  [Step 1] Skipping {Current}/{ResumeIndex}...",
-                            processedCount3, depsResumeIndex);
-                    continue;
-                }
-
-                _logger.LogInformation("[Dependency {Current}/{Total}] '{Role}' ({Count} skills)",
-                    processedCount3, limit ?? roles3.Count, role.RoleTitle, techSkills.Count);
-
-                var deps = await ontologyService.FindDependenciesAsync(role.RoleTitle, techSkills, stoppingToken);
-                foreach (var dep in deps)
-                {
-                    var key = $"{dep.Child}|{dep.Parent}";
-                    if (processedDeps.Add(key))
-                    {
-                        _logger.LogInformation("  + New Dependency: {Child} -> {Parent}", dep.Child, dep.Parent);
-                        await neo4jService.MergeSubsetRelationshipAsync(dep.Child, dep.Parent,
-                            "OntologyEnrichment");
-                    }
-                }
-
-                await WriteCheckpointAsync(1, processedCount3 + 1, 0, 0, 0);
-            }
-        }
-
-        // Steps 2–4: Bridge Detection (runs after deps so sibling pruning is accurate)
         if (!skipBridges)
         {
-            if (!skipPass1)
-            {
-                _logger.LogInformation("=== Step 2: Sibling Bridge Detection ===");
-                var siblings = await neo4jService.GetSiblingClustersAsync();
-                var clusterCount = 0;
+            _logger.LogInformation("=== Phase 5: Roadmap.sh Sibling Bridge Detection ===");
+            var siblings = await neo4jService.GetRoadmapSiblingClustersAsync();
+            _logger.LogInformation("Found {Count} Roadmap.sh sibling clusters.", siblings.Count);
+            var clusterCount = 0;
 
-                foreach (var cluster in siblings)
-                {
-                    if (stoppingToken.IsCancellationRequested) break;
-                    if (cluster.Siblings.Count <= 1) continue;
-
-                    clusterCount++;
-
-                    if (clusterCount < resumeSiblingsIndex)
-                    {
-                        if (clusterCount % 100 == 0 || clusterCount == resumeSiblingsIndex - 1)
-                            _logger.LogInformation("  [Step 2] Skipping {Current}/{ResumeIndex}...",
-                                clusterCount, resumeSiblingsIndex);
-                        continue;
-                    }
-
-                    if (cluster.Siblings.Count > maxClusterSize)
-                    {
-                        _logger.LogInformation(
-                            "[Sibling Cluster {Current}/{Total}] Skipping '{Parent}' — {Count} siblings exceeds max cluster size ({Max}).",
-                            clusterCount, siblings.Count, cluster.Parent, cluster.Siblings.Count, maxClusterSize);
-                        continue;
-                    }
-
-                    _logger.LogInformation(
-                        "[Sibling Cluster {Current}/{Total}] Analyzing '{Parent}' with {Count} siblings",
-                        clusterCount, siblings.Count, cluster.Parent, cluster.Siblings.Count);
-
-                    var hierarchies = await neo4jService.GetInternalHierarchiesAsync(cluster.Siblings);
-                    var parentNames = hierarchies.Select(h => h.Parent).ToHashSet();
-                    var prunedSkills = cluster.Siblings.Where(s => !parentNames.Contains(s)).ToList();
-
-                    if (prunedSkills.Count < 2)
-                    {
-                        _logger.LogInformation("  - Skipping: Pruning left less than 2 skills.");
-                        continue;
-                    }
-
-                    var bridges = await ontologyService.FindBridgesAsync(
-                        cluster.Parent, prunedSkills, hierarchies, stoppingToken);
-                    foreach (var bridge in bridges)
-                    {
-                        var key = string.Join("|", new[] { bridge.Source, bridge.Target }.OrderBy(s => s));
-                        if (processedBridges.Add(key))
-                        {
-                            _logger.LogInformation("  + New Bridge: {Source} <-> {Target}", bridge.Source, bridge.Target);
-                            await neo4jService.MergeBridgeRelationshipAsync(bridge.Source, bridge.Target,
-                                "OntologyEnrichment");
-                        }
-                    }
-
-                    await WriteCheckpointAsync(2, 0, clusterCount + 1, 0, 0);
-                }
-            }
-
-            if (skipPass2)
-            {
-                _logger.LogInformation("=== Step 3: Role-Based Bridge Detection === SKIPPED (--skip-pass2)");
-            }
-            else
-            {
-                _logger.LogInformation("=== Step 3: Role-Based Bridge Detection ===");
-                var roles2 = await neo4jService.GetRolesWithDirectSkillsAsync();
-                _logger.LogInformation("Found {Count} roles to analyze in Step 3.", roles2.Count);
-                var processedSkillHashes2 = new HashSet<string>();
-                var processedCount2 = 0;
-
-                foreach (var role in roles2)
-                {
-                    if (stoppingToken.IsCancellationRequested) break;
-                    if (limit.HasValue && processedCount2 >= limit.Value) break;
-
-                    var techSkills = role.Skills.Where(s => s.Length < 60).OrderBy(s => s).ToList();
-                    var skillHash = string.Join(",", techSkills);
-
-                    if (techSkills.Count <= 1 || !processedSkillHashes2.Add(skillHash)) continue;
-
-                    processedCount2++;
-                    if (processedCount2 < resumeIndex)
-                    {
-                        if (processedCount2 % 100 == 0 || processedCount2 == resumeIndex - 1)
-                            _logger.LogInformation("  [Step 3] Skipping {Current}/{ResumeIndex}...",
-                                processedCount2, resumeIndex);
-                        continue;
-                    }
-
-                    _logger.LogInformation("[Role Bridge {Current}/{Total}] '{Role}' ({Count} skills)",
-                        processedCount2, limit ?? roles2.Count, role.RoleTitle, techSkills.Count);
-
-                    var hierarchies2 = await neo4jService.GetInternalHierarchiesAsync(techSkills);
-                    var parentNames2 = hierarchies2.Select(h => h.Parent).ToHashSet();
-                    var prunedSkills2 = techSkills.Where(s => !parentNames2.Contains(s)).ToList();
-
-                    if (prunedSkills2.Count < 2)
-                    {
-                        _logger.LogInformation("  - Skipping: Pruning left less than 2 skills.");
-                        continue;
-                    }
-
-                    var bridges2 = await ontologyService.FindBridgesAsync(
-                        role.RoleTitle, prunedSkills2, hierarchies2, stoppingToken);
-                    foreach (var bridge in bridges2)
-                    {
-                        var key = string.Join("|", new[] { bridge.Source, bridge.Target }.OrderBy(s => s));
-                        if (processedBridges.Add(key))
-                        {
-                            _logger.LogInformation("  + New Bridge: {Source} <-> {Target}", bridge.Source, bridge.Target);
-                            await neo4jService.MergeBridgeRelationshipAsync(bridge.Source, bridge.Target,
-                                "OntologyEnrichment");
-                        }
-                    }
-
-                    await WriteCheckpointAsync(3, 0, 0, processedCount2 + 1, 0);
-                }
-            }
-
-            _logger.LogInformation("=== Step 4: Domain-Tool Bridge Detection (Pure O*NET Roles) ===");
-            var domainRoles = await neo4jService.GetDomainToolRolesAsync();
-            _logger.LogInformation("Found {Count} eligible domain-tool roles for Step 4.", domainRoles.Count);
-
-            var domainPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                "Prompts", "OntologyEnrichmentDomainTools.md");
-
-            int domainResumeIndex = 0;
-            var domainResumeIdx = Array.IndexOf(args, "--resume-domain");
-            if (domainResumeIdx >= 0 && domainResumeIdx + 1 < args.Length &&
-                int.TryParse(args[domainResumeIdx + 1], out var parsedDomainResume))
-                domainResumeIndex = parsedDomainResume;
-            if (checkpoint != null && !args.Contains("--resume-domain") && checkpoint.DomainIndex > 0)
-                domainResumeIndex = checkpoint.DomainIndex;
-
-            if (domainResumeIndex > 0)
-                _logger.LogInformation("Step 4: Resuming from index: {ResumeIndex}", domainResumeIndex);
-
-            var processedDomainHashes = new HashSet<string>();
-            var processedDomainCount = 0;
-
-            foreach (var role in domainRoles)
+            foreach (var cluster in siblings)
             {
                 if (stoppingToken.IsCancellationRequested) break;
-                if (limit.HasValue && processedDomainCount >= limit.Value) break;
+                if (cluster.Siblings.Count <= 1) continue;
 
-                var toolList = role.Skills.OrderBy(s => s).ToList();
-                var skillHash = string.Join(",", toolList);
+                clusterCount++;
 
-                if (toolList.Count < 2 || !processedDomainHashes.Add(skillHash)) continue;
-
-                processedDomainCount++;
-
-                if (processedDomainCount < domainResumeIndex)
+                if (clusterCount < resumeSiblingsIndex)
                 {
-                    if (processedDomainCount % 100 == 0 || processedDomainCount == domainResumeIndex - 1)
-                        _logger.LogInformation("  [Step 4] Skipping {Current}/{ResumeIndex}...",
-                            processedDomainCount, domainResumeIndex);
+                    if (clusterCount % 100 == 0 || clusterCount == resumeSiblingsIndex - 1)
+                        _logger.LogInformation("  Skipping {Current}/{ResumeIndex}...",
+                            clusterCount, resumeSiblingsIndex);
                     continue;
                 }
 
-                _logger.LogInformation("[Domain Bridge {Current}/{Total}] '{Role}' ({Count} tools)",
-                    processedDomainCount, limit ?? domainRoles.Count, role.RoleTitle, toolList.Count);
+                if (cluster.Siblings.Count > maxClusterSize)
+                {
+                    _logger.LogInformation(
+                        "[Sibling Cluster {Current}/{Total}] Skipping '{Parent}' — {Count} siblings exceeds max ({Max}).",
+                        clusterCount, siblings.Count, cluster.Parent, cluster.Siblings.Count, maxClusterSize);
+                    continue;
+                }
 
-                var domainBridges = await ontologyService.FindBridgesAsync(
-                    role.RoleTitle, toolList, [], stoppingToken, domainPromptPath);
+                _logger.LogInformation(
+                    "[Sibling Cluster {Current}/{Total}] Analyzing '{Parent}' with {Count} siblings",
+                    clusterCount, siblings.Count, cluster.Parent, cluster.Siblings.Count);
 
-                foreach (var bridge in domainBridges)
+                var hierarchies = await neo4jService.GetInternalHierarchiesAsync(cluster.Siblings);
+                var parentNames = hierarchies.Select(h => h.Parent).ToHashSet();
+                var prunedSkills = cluster.Siblings.Where(s => !parentNames.Contains(s)).ToList();
+
+                if (prunedSkills.Count < 2)
+                {
+                    _logger.LogInformation("  - Skipping: Pruning left less than 2 skills.");
+                    continue;
+                }
+
+                var bridges = await ontologyService.FindBridgesAsync(
+                    cluster.Parent, prunedSkills, hierarchies, stoppingToken);
+
+                foreach (var bridge in bridges)
                 {
                     var key = string.Join("|", new[] { bridge.Source, bridge.Target }.OrderBy(s => s));
                     if (processedBridges.Add(key))
                     {
-                        _logger.LogInformation("  + New Domain Bridge: {Source} <-> {Target}",
-                            bridge.Source, bridge.Target);
+                        _logger.LogInformation("  + New Bridge: {Source} <-> {Target}", bridge.Source, bridge.Target);
                         await neo4jService.MergeBridgeRelationshipAsync(bridge.Source, bridge.Target,
                             "OntologyEnrichment");
                     }
                 }
 
-                await WriteCheckpointAsync(4, 0, 0, 0, processedDomainCount + 1);
+                await WriteCheckpointAsync(clusterCount + 1);
             }
         }
 

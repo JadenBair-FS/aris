@@ -265,6 +265,24 @@ namespace ARIS.API.Services
             }
         }
 
+        private async Task<string> RetrieveSoftSkillsAsync()
+        {
+            try
+            {
+                var names = await _context.Skills
+                    .Where(s => s.Source == "ONET_Taxonomy")
+                    .OrderBy(s => s.Name)
+                    .Select(s => s.Name)
+                    .ToListAsync();
+                return string.Join(", ", names);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to retrieve soft skills vocabulary. Proceeding without it.");
+                return "";
+            }
+        }
+
         private async Task<ResumeCleanSignal?> ExtractCleanSignalAsync(string rawText)
         {
             string userPrompt;
@@ -274,10 +292,12 @@ namespace ARIS.API.Services
                 var template = await File.ReadAllTextAsync(promptPath);
 
                 var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(rawText);
+                var softSkills = await RetrieveSoftSkillsAsync();
 
                 userPrompt = template
                     .Replace("{reference_roles}", refRoles)
                     .Replace("{reference_skills}", refSkills)
+                    .Replace("{soft_skills}", softSkills)
                     .Replace("{raw_text}", rawText);
 
                 _logger.LogInformation("Reference Roles Sent: {Roles}", refRoles);
