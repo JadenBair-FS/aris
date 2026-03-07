@@ -88,7 +88,8 @@ builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
         extractionModel,
         sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),
         groundingFirstPassThreshold,
-        groundingSecondPassThreshold));
+        groundingSecondPassThreshold,
+        numCtx));
 builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
     new ARIS.API.Services.JobService(
         sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
@@ -98,7 +99,8 @@ builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
         extractionModel,
         sp.GetRequiredService<ILogger<ARIS.API.Services.JobService>>(),
         groundingFirstPassThreshold,
-        groundingSecondPassThreshold));
+        groundingSecondPassThreshold,
+        numCtx));
 builder.Services.AddScoped<ARIS.API.Services.MatchService>();
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();

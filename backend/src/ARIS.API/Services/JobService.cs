@@ -21,6 +21,7 @@ namespace ARIS.API.Services
         private readonly IChatClient _chatClient;
         private readonly string _ollamaGenerateUrl;
         private readonly string _extractionModel;
+        private readonly int _extractionNumCtx;
         private readonly double _firstPassThreshold;
         private readonly double _secondPassThreshold;
         private readonly ILogger<JobService> _logger;
@@ -34,13 +35,14 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<JobService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35)
+        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<JobService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
             _ollamaGenerateUrl = ollamaGenerateUrl;
             _extractionModel = extractionModel;
+            _extractionNumCtx = extractionNumCtx;
             _firstPassThreshold = firstPassThreshold;
             _secondPassThreshold = secondPassThreshold;
             _logger = logger;
@@ -453,7 +455,7 @@ namespace ARIS.API.Services
 
             try
             {
-                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false, format = "json" };
+                var requestBody = new { model = _extractionModel, prompt = userPrompt, stream = false, format = "json", options = new { num_ctx = _extractionNumCtx } };
                 using var httpResponse = await _extractionHttp.PostAsJsonAsync(_ollamaGenerateUrl, requestBody);
                 httpResponse.EnsureSuccessStatusCode();
                 var result = await httpResponse.Content.ReadFromJsonAsync<JsonElement>();
