@@ -24,10 +24,8 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
     public async Task ClearDatabaseAsync()
     {
         await using var session = _driver.AsyncSession();
-        await session.ExecuteWriteAsync(async tx =>
-        {
-            await tx.RunAsync("MATCH (n) DETACH DELETE n");
-        });
+        await session.RunAsync(
+            "MATCH (n) CALL { WITH n DETACH DELETE n } IN TRANSACTIONS OF 1000 ROWS");
         _logger.LogInformation("Neo4j Database Cleared.");
     }
 
