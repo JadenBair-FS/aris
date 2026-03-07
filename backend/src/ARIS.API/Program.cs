@@ -52,7 +52,7 @@ var groundingSecondPassThreshold = builder.Configuration.GetValue<double>("Groun
 
 Log.Information("Ollama: {Uri} | Chat: {ChatModel} | Extraction: {ExtractionModel} | Embedding: {EmbeddingModel} | NumCtx: {NumCtx}",
     ollamaUriString, chatModel, extractionModel, embeddingModel, numCtx);
-Log.Information("Grounding thresholds — Pass 1: {First}, Pass 2: {Second}", groundingFirstPassThreshold, groundingSecondPassThreshold);
+Log.Information("Grounding thresholds — Pass 1 (all skills): {First}, Pass 2 (soft skills only): {Second}", groundingFirstPassThreshold, groundingSecondPassThreshold);
 
 builder.Services.AddSingleton<IEmbeddingGenerator<string, Embedding<float>>>(sp =>
 {

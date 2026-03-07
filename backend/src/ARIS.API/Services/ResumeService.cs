@@ -556,30 +556,33 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: wider search across all skills at the second pass threshold
-                    var secondPassMatch = await _context.Skills
-                        .Where(s => s.Embedding != null)
-                        .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
-                        .OrderBy(x => x.Distance)
-                        .FirstOrDefaultAsync();
-
-                    if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
+                    // Pass 2: wider search — soft skills only; technical skills must match tightly or stay ungrounded
+                    if (string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase))
                     {
-                        _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
-                            originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
-                        groundedSkills.Add(new ResumeSkill
+                        var secondPassMatch = await _context.Skills
+                            .Where(s => s.Embedding != null)
+                            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(vector) })
+                            .OrderBy(x => x.Distance)
+                            .FirstOrDefaultAsync();
+
+                        if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                         {
-                            Name = secondPassMatch.Name,
-                            OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
-                            Category = originalSkill.Category,
-                            Proficiency = originalSkill.Proficiency,
-                            YearsOfExperience = originalSkill.YearsOfExperience
-                        });
-                        continue;
+                            _logger.LogInformation("Soft skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                                originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
+                            groundedSkills.Add(new ResumeSkill
+                            {
+                                Name = secondPassMatch.Name,
+                                OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
+                                Category = originalSkill.Category,
+                                Proficiency = originalSkill.Proficiency,
+                                YearsOfExperience = originalSkill.YearsOfExperience
+                            });
+                            continue;
+                        }
                     }
 
-                    _logger.LogInformation("Skill '{Skill}' not on graph — pass 1 best: {P1:F3}, pass 2 best: {P2:F3}.",
-                        originalSkill.Name, generalMatch?.Distance ?? 1.0, secondPassMatch?.Distance ?? 1.0);
+                    _logger.LogInformation("Skill '{Skill}' not on graph — best distance: {Dist:F3}.",
+                        originalSkill.Name, generalMatch?.Distance ?? 1.0);
                     ungroundedSkills.Add(originalSkill);
                 }
 
