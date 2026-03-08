@@ -26,18 +26,26 @@ export default function Login() {
             if (result.status === 'complete') {
                 await setActive({ session: result.createdSessionId });
                 navigate('/home');
+                // keep isLoading true — overlay persists through navigation
             } else {
                 setErrorText('More verification needed.');
+                setIsLoading(false);
             }
         } catch (err: any) {
             setErrorText(err.errors?.[0]?.longMessage || err.message || 'Failed to sign in.');
-        } finally {
             setIsLoading(false);
         }
     };
 
     return (
         <div className="min-h-screen flex">
+            {isLoading && (
+                <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-3">
+                    <span className="text-2xl font-semibold text-slate-900 tracking-tight">ARIS</span>
+                    <Loader2 className="h-5 w-5 animate-spin text-slate-400" />
+                    <p className="text-sm text-slate-500">Logging in...</p>
+                </div>
+            )}
             {/* Left brand panel */}
             <div className="hidden lg:flex flex-col justify-center px-12 w-[420px] shrink-0 bg-slate-900 text-white">
                 <h1 className="text-3xl font-semibold tracking-tight mb-3">ARIS</h1>

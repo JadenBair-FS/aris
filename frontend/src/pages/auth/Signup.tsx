@@ -45,6 +45,7 @@ export default function Signup() {
 
             if (result.status !== 'complete' || !result.createdSessionId) {
                 setErrorText(`Sign-up incomplete (status: ${result.status}). Check your Clerk dashboard — email verification or bot protection may be blocking this.`);
+                setIsLoading(false);
                 return;
             }
 
@@ -63,6 +64,7 @@ export default function Signup() {
             if (!res.ok) {
                 const err = await res.json().catch(() => ({}));
                 setErrorText((err as any).message ?? 'Failed to configure account. Please try again.');
+                setIsLoading(false);
                 return;
             }
 
@@ -70,16 +72,23 @@ export default function Signup() {
             // Navigation is deferred via useEffect until AuthContext reflects the new role,
             // preventing a flash of the wrong role's dashboard.
             await clerkUser?.reload();
+            // keep isLoading true — pendingRole will keep the overlay visible until useEffect navigates
             setPendingRole(role);
         } catch (err: any) {
             setErrorText(err.errors?.[0]?.longMessage || err.message || 'Failed to sign up.');
-        } finally {
             setIsLoading(false);
         }
     };
 
     return (
         <div className="min-h-screen flex">
+            {(isLoading || pendingRole !== null) && (
+                <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-3">
+                    <span className="text-2xl font-semibold text-slate-900 tracking-tight">ARIS</span>
+                    <Loader2 className="h-5 w-5 animate-spin text-slate-400" />
+                    <p className="text-sm text-slate-500">Signing up...</p>
+                </div>
+            )}
             {/* Left brand panel */}
             <div className="hidden lg:flex flex-col justify-center px-12 w-[420px] shrink-0 bg-slate-900 text-white">
                 <h1 className="text-3xl font-semibold tracking-tight mb-3">ARIS</h1>
