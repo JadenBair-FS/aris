@@ -8,6 +8,7 @@ using Microsoft.Extensions.AI;
 using Pgvector.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace ARIS.API.Controllers;
 
@@ -418,6 +419,8 @@ public class EvalController : ControllerBase
             var cleaned = json.Trim();
             if (cleaned.StartsWith("```")) cleaned = cleaned.Split('\n', 2).Last();
             if (cleaned.EndsWith("```")) cleaned = cleaned[..^3].TrimEnd();
+            // Strip inline // comments that Mistral sometimes appends after JSON values
+            cleaned = Regex.Replace(cleaned, @"//[^\n\r]*", "");
 
             using var doc = JsonDocument.Parse(cleaned.Trim());
             var root = doc.RootElement;
