@@ -378,8 +378,12 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: wider search — soft skills only; technical skills must match tightly or stay ungrounded
-                    if (string.Equals(originalSkill.Category, "Soft", StringComparison.OrdinalIgnoreCase))
+                    // Pass 2: wider search — skip for short all-caps acronyms (e.g. ACLS, CCRN, IPC)
+                    // which find wrong canonical neighbors at the looser threshold.
+                    bool isAcronym = originalSkill.Name.Length <= 6
+                        && !originalSkill.Name.Contains(' ')
+                        && originalSkill.Name == originalSkill.Name.ToUpperInvariant();
+                    if (!isAcronym)
                     {
                         var secondPassMatch = await _context.Skills
                             .Where(s => s.Embedding != null)
@@ -389,7 +393,7 @@ namespace ARIS.API.Services
 
                         if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                         {
-                            _logger.LogInformation("Soft skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                            _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
                                 originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
                             groundedSkills.Add(new JobSkill
                             {
