@@ -417,10 +417,13 @@ public class EvalController : ControllerBase
         try
         {
             var cleaned = json.Trim();
-            if (cleaned.StartsWith("```")) cleaned = cleaned.Split('\n', 2).Last();
-            if (cleaned.EndsWith("```")) cleaned = cleaned[..^3].TrimEnd();
             // Strip inline // comments that Mistral sometimes appends after JSON values
             cleaned = Regex.Replace(cleaned, @"//[^\n\r]*", "");
+            // Extract just the JSON object — handles code fences and trailing prose/explanations
+            var start = cleaned.IndexOf('{');
+            var end   = cleaned.LastIndexOf('}');
+            if (start >= 0 && end > start)
+                cleaned = cleaned[start..(end + 1)];
 
             using var doc = JsonDocument.Parse(cleaned.Trim());
             var root = doc.RootElement;
