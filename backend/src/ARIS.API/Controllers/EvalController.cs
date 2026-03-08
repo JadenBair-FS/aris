@@ -166,24 +166,23 @@ public class EvalController : ControllerBase
         try
         {
             var prompt = $$"""
-                You are a talent matching assistant analyzing a candidate's fit for a job role.
+                You are a talent matching assistant. Classify each job-required skill into exactly one of five tiers based on the resume below.
 
-                RAW RESUME TEXT:
+                TIERS:
+                - direct_match: candidate explicitly has this skill
+                - implicit: candidate likely has this skill from adjacent knowledge, even if not stated
+                - prereq: candidate has foundational knowledge to learn this quickly
+                - bridgeable: candidate has adjacent skills making this reachable with effort
+                - hard_gaps: candidate clearly lacks this with no reasonable path from their background
+
+                RAW RESUME:
                 {{rawResumeText}}
 
-                RAW JOB DESCRIPTION:
+                JOB REQUIRED SKILLS:
                 {{rawJobText}}
 
-                Based on the resume and job description above, classify each skill required by the job into exactly one of these five tiers:
-
-                1. "direct_match" — candidate explicitly has this skill
-                2. "implicit" — candidate likely has this skill based on adjacent knowledge in their background, even if not stated
-                3. "prereq" — candidate has foundational knowledge that gives them prerequisites to learn this quickly
-                4. "bridgeable" — candidate has adjacent skills that make this reachable with some development effort
-                5. "hard_gaps" — candidate clearly lacks this skill with no reasonable path from their background
-
-                Respond with JSON only:
-                {"direct_match": ["skill1"], "implicit": ["skill2"], "prereq": ["skill3"], "bridgeable": ["skill4"], "hard_gaps": ["skill5"]}
+                Output a single JSON object with exactly these five keys. No comments. No explanation. No corrections. No additional text before or after the JSON.
+                {"direct_match": [], "implicit": [], "prereq": [], "bridgeable": [], "hard_gaps": []}
                 """;
 
             var response = await _chatClient.GetResponseAsync(prompt);
@@ -255,33 +254,32 @@ public class EvalController : ControllerBase
             var jobSkillContext = string.Join(", ", jobSkillLines);
 
             var prompt = $$"""
-                You are a talent matching assistant analyzing a candidate's fit for a job role.
+                You are a talent matching assistant. Classify each required job skill into exactly one of five tiers using the candidate profile and reference vocabulary below.
 
-                CANDIDATE SKILLS (extracted and grounded from resume):
+                TIERS:
+                - direct_match: candidate explicitly has this skill (listed in their profile)
+                - implicit: candidate likely has this skill from closely related skills, even if not listed
+                - prereq: candidate has a foundational skill giving them prerequisites to learn this quickly
+                - bridgeable: candidate has adjacent skills making this reachable with some effort
+                - hard_gaps: candidate clearly lacks this with no reasonable path from their background
+
+                CANDIDATE SKILLS:
                 {{candidateSkillContext}}
 
                 JOB REQUIRED SKILLS:
                 {{jobSkillContext}}
 
-                RETRIEVED REFERENCE SKILLS (from knowledge base, most relevant to this job via vector similarity):
+                REFERENCE VOCABULARY (canonical skill names from knowledge base):
                 {{refSkillContext}}
 
-                RAW RESUME TEXT (for additional context):
+                RAW RESUME (additional context):
                 {{rawResumeText}}
 
-                RAW JOB DESCRIPTION (for additional context):
+                RAW JOB DESCRIPTION (additional context):
                 {{rawJobText}}
 
-                Using ONLY the canonical skill names listed above, classify each required job skill into exactly one of these five tiers:
-
-                1. "direct_match" — candidate explicitly has this skill (listed in their profile)
-                2. "implicit" — candidate likely has this skill based on closely related skills in their profile, even if not listed
-                3. "prereq" — candidate has a foundational/parent skill that gives them prerequisites to learn this quickly
-                4. "bridgeable" — candidate has adjacent skills that make this reachable with some development effort
-                5. "hard_gaps" — candidate clearly lacks this skill with no reasonable path from their background
-
-                Respond with JSON only:
-                {"direct_match": ["skill1"], "implicit": ["skill2"], "prereq": ["skill3"], "bridgeable": ["skill4"], "hard_gaps": ["skill5"]}
+                Output a single JSON object with exactly these five keys. No comments. No explanation. No corrections. No additional text before or after the JSON.
+                {"direct_match": [], "implicit": [], "prereq": [], "bridgeable": [], "hard_gaps": []}
                 """;
 
             var response = await _chatClient.GetResponseAsync(prompt);
@@ -408,7 +406,7 @@ public class EvalController : ControllerBase
     /// <summary>
     /// Parses Pipeline A/B 5-tier JSON output into skill lists.
     /// Keys: direct_match, implicit, prereq, bridgeable, hard_gaps.
-    /// Handles partial/malformed JSON gracefully by returning empty lists for missing fields.
+    /// Strips inline // comments and extracts the first {…} block.
     /// </summary>
     private static (List<string> match, List<string> implicit_, List<string> prereq, List<string> bridgeable, List<string> gaps) ParsePipelineSkillsJsonFull(string json)
     {
@@ -416,16 +414,13 @@ public class EvalController : ControllerBase
         if (string.IsNullOrWhiteSpace(json)) return empty;
         try
         {
-            var cleaned = json.Trim();
-            // Strip inline // comments that Mistral sometimes appends after JSON values
-            cleaned = Regex.Replace(cleaned, @"//[^\n\r]*", "");
-            // Extract just the JSON object — handles code fences and trailing prose/explanations
+            var cleaned = Regex.Replace(json, @"//[^\n\r]*", "");
             var start = cleaned.IndexOf('{');
             var end   = cleaned.LastIndexOf('}');
             if (start >= 0 && end > start)
                 cleaned = cleaned[start..(end + 1)];
 
-            using var doc = JsonDocument.Parse(cleaned.Trim());
+            using var doc = JsonDocument.Parse(cleaned);
             var root = doc.RootElement;
 
             static List<string> GetList(JsonElement r, string key)
