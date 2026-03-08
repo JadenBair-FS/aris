@@ -155,8 +155,8 @@ public class EvalController : ControllerBase
     /// <summary>
     /// Pipeline A: LLM Direct baseline.
     /// Inputs: raw resume text + raw job description text only. No retrieval, no structured data.
-    /// Asks the LLM to identify matching, implicit/transferable, and gap skills using only
-    /// parametric knowledge. Simulates a naive recruiter feeding unprocessed documents to an LLM.
+    /// Asks the LLM to classify each job-required skill into five tiers using only parametric
+    /// knowledge. Simulates a naive recruiter feeding unprocessed documents to an LLM.
     /// </summary>
     private async Task<object> RunPipelineAAsync(string rawResumeText, string rawJobText, List<string> userSkills, int totalJobSkills)
     {
@@ -165,19 +165,24 @@ public class EvalController : ControllerBase
         try
         {
             var prompt = $$"""
-                You are a talent matching assistant. Read the resume and job description below.
-                Identify three categories:
-                1. "matching" — skills or qualifications the candidate explicitly has that the job requires.
-                2. "implicit" — skills the candidate likely has but did not explicitly state, inferred from their background, related experience, or adjacent knowledge (e.g., if they know Java, they likely understand OOP; if they have 5 years in sales, they likely understand CRM workflows).
-                3. "gaps" — skills the job requires that the candidate clearly does not have and cannot be reasonably inferred.
+                You are a talent matching assistant analyzing a candidate's fit for a job role.
 
-                RESUME:
+                RAW RESUME TEXT:
                 {{rawResumeText}}
 
-                JOB DESCRIPTION:
+                RAW JOB DESCRIPTION:
                 {{rawJobText}}
 
-                Respond with JSON only: {"matching": ["skill1"], "implicit": ["skill2"], "gaps": ["skill3"]}
+                Based on the resume and job description above, classify each skill required by the job into exactly one of these five tiers:
+
+                1. "direct_match" — candidate explicitly has this skill
+                2. "implicit" — candidate likely has this skill based on adjacent knowledge in their background, even if not stated
+                3. "prereq" — candidate has foundational knowledge that gives them prerequisites to learn this quickly
+                4. "bridgeable" — candidate has adjacent skills that make this reachable with some development effort
+                5. "hard_gaps" — candidate clearly lacks this skill with no reasonable path from their background
+
+                Respond with JSON only:
+                {"direct_match": ["skill1"], "implicit": ["skill2"], "prereq": ["skill3"], "bridgeable": ["skill4"], "hard_gaps": ["skill5"]}
                 """;
 
             var response = await _chatClient.GetResponseAsync(prompt);
@@ -190,17 +195,24 @@ public class EvalController : ControllerBase
         }
         sw.Stop();
 
-        var (matching, implicit_, gaps) = ParsePipelineSkillsJson(rawOutput);
+        var (matchSkills, implicitSkills, prereqSkills, bridgeableSkills, gapSkills) = ParsePipelineSkillsJsonFull(rawOutput);
         var groundingResult = await _groundingService.CalculateGroundingScoreAsync(rawOutput, userSkills);
-        var implicitDiscoveryRate = (double)(matching + implicit_) / Math.Max(totalJobSkills, 1);
+        var implicitDiscoveryRate = (double)(matchSkills.Count + implicitSkills.Count + prereqSkills.Count + bridgeableSkills.Count) / Math.Max(totalJobSkills, 1);
 
         return new
         {
             pipeline = "A_LLM_Direct",
             latencyMs = sw.ElapsedMilliseconds,
-            matchCount = matching,
-            implicitCount = implicit_,
-            gapCount = gaps,
+            matchCount = matchSkills.Count,
+            implicitCount = implicitSkills.Count,
+            prereqCount = prereqSkills.Count,
+            bridgeableCount = bridgeableSkills.Count,
+            gapCount = gapSkills.Count,
+            matchingSkills = matchSkills,
+            implicitSkills,
+            prereqSkills,
+            bridgeableSkills,
+            hardGaps = gapSkills,
             implicitDiscoveryRate,
             groundingScore = groundingResult.Score,
             rawOutput
@@ -209,10 +221,10 @@ public class EvalController : ControllerBase
 
     /// <summary>
     /// Pipeline B: Standard Vector-RAG baseline.
-    /// Inputs: raw resume text + raw job description text + top-20 reference skills
-    /// retrieved by cosine similarity to the job embedding. No graph traversal.
-    /// Asks the LLM to identify implicit skills using the retrieved reference vocabulary
-    /// as grounding context. Simulates the current industry standard RAG approach.
+    /// Inputs: Clean Signal skill vocabulary (same structured input as Pipeline C) +
+    /// top-20 reference skills retrieved by cosine similarity (the "retrieval" step) +
+    /// raw texts for additional context. No graph traversal.
+    /// Graph traversal is the only variable between B and C, making the comparison controlled.
     /// </summary>
     private async Task<object> RunPipelineBAsync(UserProfile user, JobPosting job, string rawResumeText, string rawJobText, List<string> userSkills, int totalJobSkills)
     {
@@ -230,24 +242,45 @@ public class EvalController : ControllerBase
 
             var refSkillContext = string.Join(", ", topRefSkills.Select(s => s.Name));
 
+            // Build clean signal skill vocabulary — same structured input as Pipeline C
+            var candidateSkillLines = user.CleanSignal!.Skills
+                .Select(s => $"{s.Name} ({s.YearsOfExperience:0.#} yrs)")
+                .ToList();
+            var candidateSkillContext = string.Join(", ", candidateSkillLines);
+
+            var jobSkillLines = job.CleanSignal!.RequiredSkills
+                .Select(s => $"{s.Name} [{s.Importance}] ({s.YearsOfExperience:0.#} yrs required)")
+                .ToList();
+            var jobSkillContext = string.Join(", ", jobSkillLines);
+
             var prompt = $$"""
-                You are a talent matching assistant. Read the resume and job description below.
-                Use the retrieved reference skills from the knowledge base to help identify specific skill names.
-                Identify three categories:
-                1. "matching" — skills or qualifications the candidate explicitly has that the job requires.
-                2. "implicit" — skills the candidate likely has but did not explicitly state, inferred from their background or adjacent knowledge. Use the reference skills list to identify specific transferable skill names where possible.
-                3. "gaps" — skills the job requires that the candidate clearly does not have and cannot be reasonably inferred.
+                You are a talent matching assistant analyzing a candidate's fit for a job role.
 
-                RESUME:
-                {{rawResumeText}}
+                CANDIDATE SKILLS (extracted and grounded from resume):
+                {{candidateSkillContext}}
 
-                JOB DESCRIPTION:
-                {{rawJobText}}
+                JOB REQUIRED SKILLS:
+                {{jobSkillContext}}
 
-                RETRIEVED REFERENCE SKILLS (from knowledge base, most relevant to this job):
+                RETRIEVED REFERENCE SKILLS (from knowledge base, most relevant to this job via vector similarity):
                 {{refSkillContext}}
 
-                Respond with JSON only: {"matching": ["skill1"], "implicit": ["skill2"], "gaps": ["skill3"]}
+                RAW RESUME TEXT (for additional context):
+                {{rawResumeText}}
+
+                RAW JOB DESCRIPTION (for additional context):
+                {{rawJobText}}
+
+                Using ONLY the canonical skill names listed above, classify each required job skill into exactly one of these five tiers:
+
+                1. "direct_match" — candidate explicitly has this skill (listed in their profile)
+                2. "implicit" — candidate likely has this skill based on closely related skills in their profile, even if not listed
+                3. "prereq" — candidate has a foundational/parent skill that gives them prerequisites to learn this quickly
+                4. "bridgeable" — candidate has adjacent skills that make this reachable with some development effort
+                5. "hard_gaps" — candidate clearly lacks this skill with no reasonable path from their background
+
+                Respond with JSON only:
+                {"direct_match": ["skill1"], "implicit": ["skill2"], "prereq": ["skill3"], "bridgeable": ["skill4"], "hard_gaps": ["skill5"]}
                 """;
 
             var response = await _chatClient.GetResponseAsync(prompt);
@@ -260,17 +293,27 @@ public class EvalController : ControllerBase
         }
         sw.Stop();
 
-        var (matching, implicit_, gaps) = ParsePipelineSkillsJson(rawOutput);
-        var groundingResult = await _groundingService.CalculateGroundingScoreAsync(rawOutput, userSkills);
-        var implicitDiscoveryRate = (double)(matching + implicit_) / Math.Max(totalJobSkills, 1);
+        var (matchSkills, implicitSkills, prereqSkills, bridgeableSkills, gapSkills) = ParsePipelineSkillsJsonFull(rawOutput);
+
+        // Grounding on canonical names — consistent with Pipeline C
+        var positiveSkills = matchSkills.Concat(implicitSkills).Concat(prereqSkills).Concat(bridgeableSkills).ToList();
+        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(positiveSkills, userSkills);
+        var implicitDiscoveryRate = (double)(matchSkills.Count + implicitSkills.Count + prereqSkills.Count + bridgeableSkills.Count) / Math.Max(totalJobSkills, 1);
 
         return new
         {
             pipeline = "B_Vector_RAG",
             latencyMs = sw.ElapsedMilliseconds,
-            matchCount = matching,
-            implicitCount = implicit_,
-            gapCount = gaps,
+            matchCount = matchSkills.Count,
+            implicitCount = implicitSkills.Count,
+            prereqCount = prereqSkills.Count,
+            bridgeableCount = bridgeableSkills.Count,
+            gapCount = gapSkills.Count,
+            matchingSkills = matchSkills,
+            implicitSkills,
+            prereqSkills,
+            bridgeableSkills,
+            hardGaps = gapSkills,
             implicitDiscoveryRate,
             groundingScore = groundingResult.Score,
             rawOutput
@@ -362,37 +405,44 @@ public class EvalController : ControllerBase
     }
 
     /// <summary>
-    /// Parses Pipeline A/B JSON output to extract matching, implicit, and gap skill counts.
-    /// Handles partial/malformed JSON gracefully by returning zeros for missing fields.
+    /// Parses Pipeline A/B 5-tier JSON output into skill lists.
+    /// Keys: direct_match, implicit, prereq, bridgeable, hard_gaps.
+    /// Handles partial/malformed JSON gracefully by returning empty lists for missing fields.
     /// </summary>
-    private static (int matching, int implicit_, int gaps) ParsePipelineSkillsJson(string json)
+    private static (List<string> match, List<string> implicit_, List<string> prereq, List<string> bridgeable, List<string> gaps) ParsePipelineSkillsJsonFull(string json)
     {
-        if (string.IsNullOrWhiteSpace(json)) return (0, 0, 0);
+        var empty = (new List<string>(), new List<string>(), new List<string>(), new List<string>(), new List<string>());
+        if (string.IsNullOrWhiteSpace(json)) return empty;
         try
         {
-            // Strip markdown code fences if the LLM wrapped the JSON
             var cleaned = json.Trim();
             if (cleaned.StartsWith("```")) cleaned = cleaned.Split('\n', 2).Last();
             if (cleaned.EndsWith("```")) cleaned = cleaned[..^3].TrimEnd();
 
             using var doc = JsonDocument.Parse(cleaned.Trim());
             var root = doc.RootElement;
-            int matching = 0, implicit_ = 0, gaps = 0;
 
-            if (root.TryGetProperty("matching", out var matchEl) && matchEl.ValueKind == JsonValueKind.Array)
-                matching = matchEl.GetArrayLength();
+            static List<string> GetList(JsonElement r, string key)
+            {
+                if (r.TryGetProperty(key, out var el) && el.ValueKind == JsonValueKind.Array)
+                    return el.EnumerateArray()
+                             .Where(x => x.ValueKind == JsonValueKind.String)
+                             .Select(x => x.GetString()!)
+                             .ToList();
+                return [];
+            }
 
-            if (root.TryGetProperty("implicit", out var implEl) && implEl.ValueKind == JsonValueKind.Array)
-                implicit_ = implEl.GetArrayLength();
-
-            if (root.TryGetProperty("gaps", out var gapsEl) && gapsEl.ValueKind == JsonValueKind.Array)
-                gaps = gapsEl.GetArrayLength();
-
-            return (matching, implicit_, gaps);
+            return (
+                GetList(root, "direct_match"),
+                GetList(root, "implicit"),
+                GetList(root, "prereq"),
+                GetList(root, "bridgeable"),
+                GetList(root, "hard_gaps")
+            );
         }
         catch
         {
-            return (0, 0, 0);
+            return empty;
         }
     }
 }
