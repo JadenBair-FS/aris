@@ -33,8 +33,6 @@ namespace ARIS.API.Controllers
             public required IFormFile File { get; set; }
         }
 
-        private const string LockedUserId = "user_3AeLuOmwnNdvjBKBFKnQHEU7PN8";
-
         [HttpPost("upload")]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> UploadResume([FromForm] ResumeUploadRequest request)
@@ -48,9 +46,6 @@ namespace ARIS.API.Controllers
             var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
-
-            if (clerkId == LockedUserId)
-                return StatusCode(403, "This account's resume is read-only.");
 
             var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkId);
             if (seekerUser == null)
@@ -88,9 +83,6 @@ namespace ARIS.API.Controllers
             var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub") ?? request.UserId;
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
-
-            if (clerkId == LockedUserId)
-                return StatusCode(403, "This account's resume is read-only.");
 
             var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkId);
 
@@ -154,9 +146,6 @@ namespace ARIS.API.Controllers
             var clerkId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
-
-            if (clerkId == LockedUserId)
-                return StatusCode(403, "This account's resume is read-only.");
 
             var profile = await _context.UserProfiles.FirstOrDefaultAsync(p => p.UserId == clerkId);
             if (profile == null)
