@@ -843,10 +843,7 @@ namespace ARIS.API.Services
                     if (startIdx >= 0 && endIdx > startIdx)
                         json = json[startIdx..(endIdx + 1)];
 
-                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, _jsonOptions);
 
                     if (parsed != null)
                     {
@@ -1041,10 +1038,7 @@ namespace ARIS.API.Services
                     if (startIdx >= 0 && endIdx > startIdx)
                         json = json[startIdx..(endIdx + 1)];
 
-                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, _jsonOptions);
 
                     if (parsed != null)
                     {
