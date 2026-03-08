@@ -18,22 +18,22 @@ namespace ARIS.API.Controllers
         private readonly ResumePdfService _resumePdfService;
         private readonly ArisDbContext _context;
         private readonly ILogger<ResumeController> _logger;
+        private readonly HashSet<string> _lockedUserIds;
 
-        public ResumeController(ResumeService service, MatchService matchService, ResumePdfService resumePdfService, ArisDbContext context, ILogger<ResumeController> logger)
+        public ResumeController(ResumeService service, MatchService matchService, ResumePdfService resumePdfService, ArisDbContext context, ILogger<ResumeController> logger, IConfiguration configuration)
         {
             _service = service;
             _matchService = matchService;
             _resumePdfService = resumePdfService;
             _context = context;
             _logger = logger;
+            _lockedUserIds = configuration.GetSection("Study:LockedUserIds").Get<List<string>>()?.ToHashSet() ?? [];
         }
 
         public class ResumeUploadRequest
         {
             public required IFormFile File { get; set; }
         }
-
-        private const string LockedUserId = "user_3AeLuOmwnNdvjBKBFKnQHEU7PN8";
 
         [HttpPost("upload")]
         [Consumes("multipart/form-data")]
@@ -49,7 +49,7 @@ namespace ARIS.API.Controllers
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
 
-            if (clerkId == LockedUserId)
+            if (_lockedUserIds.Contains(clerkId))
                 return StatusCode(403, "This account's resume is read-only.");
 
             var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkId);
@@ -89,7 +89,7 @@ namespace ARIS.API.Controllers
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
 
-            if (clerkId == LockedUserId)
+            if (_lockedUserIds.Contains(clerkId))
                 return StatusCode(403, "This account's resume is read-only.");
 
             var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkId);
@@ -155,7 +155,7 @@ namespace ARIS.API.Controllers
             if (string.IsNullOrEmpty(clerkId))
                 return Unauthorized("Could not determine user identity from token.");
 
-            if (clerkId == LockedUserId)
+            if (_lockedUserIds.Contains(clerkId))
                 return StatusCode(403, "This account's resume is read-only.");
 
             var profile = await _context.UserProfiles.FirstOrDefaultAsync(p => p.UserId == clerkId);
