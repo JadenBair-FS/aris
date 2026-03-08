@@ -1,5 +1,5 @@
 import { apiClient, fetchBlobWithAuth } from './client';
-import type { UserProfileDetail, TailoredBullet, MatchAnalysisResult, ResumeUploadResult, GroundingCorrection } from '../types/api';
+import type { UserProfileDetail, MatchAnalysisResult, ResumeUploadResult, GroundingCorrection } from '../types/api';
 
 function buildTierPayload(analysis: MatchAnalysisResult) {
     return {
@@ -37,30 +37,19 @@ export const resumeApi = {
     getProfile: (id: string) => {
         return apiClient<UserProfileDetail>(`/resume/${id}`);
     },
-    tailor: (userProfileId: string, jobId: string, analysis?: MatchAnalysisResult) => {
-        const tierPayload = analysis ? buildTierPayload(analysis) : {};
-        return apiClient<TailoredBullet[]>('/resume/tailor', {
-            method: 'POST',
-            body: JSON.stringify({ userProfileId, jobId, ...tierPayload }),
-        });
-    },
     deleteResume: () => {
         return apiClient<{ message: string }>('/resume', { method: 'DELETE' });
     },
     tailorPdf: async (userProfileId: string, jobId: string, analysis?: MatchAnalysisResult): Promise<Blob> => {
         const tierPayload = analysis ? buildTierPayload(analysis) : {};
-
-        // Uses fetchBlobWithAuth so the Clerk JWT is injected — avoids 401
         const response = await fetchBlobWithAuth('/resume/tailor-pdf', {
             method: 'POST',
             body: JSON.stringify({ userProfileId, jobId, ...tierPayload }),
         });
-
         if (!response.ok) {
             const text = await response.text();
             throw new Error(text || `PDF generation failed with status ${response.status}`);
         }
-
         return response.blob();
     },
 };

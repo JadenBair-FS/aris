@@ -10,9 +10,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
+import { toast } from 'sonner';
 import { ArrowLeft, Loader2, ScanSearch, Info, Wand2, ExternalLink } from 'lucide-react';
 import { formatArisScore } from '@/utils/score';
-import type { MatchAnalysisResult, TailoredBullet } from '@/types/api';
+import type { MatchAnalysisResult } from '@/types/api';
 
 function JobPanel({ jobId }: { jobId: string }) {
     const { data: job, isLoading, isError } = useQuery({
@@ -150,8 +151,6 @@ function AnalysisPanel({
     });
 
     const [analysis, setAnalysis] = useState<MatchAnalysisResult | null>(null);
-    const [tailoredBullets, setTailoredBullets] = useState<TailoredBullet[] | null>(null);
-    const [showBullets, setShowBullets] = useState(false);
 
     const analyzeMutation = useMutation({
         mutationFn: () => matchApi.analyze(profileId, jobId),
@@ -159,14 +158,8 @@ function AnalysisPanel({
     });
 
     const tailorMutation = useMutation({
-        mutationFn: async () => {
-            const bullets = await resumeApi.tailor(profileId, jobId, analysis ?? undefined);
-            const blob = await resumeApi.tailorPdf(profileId, jobId, analysis ?? undefined);
-            return { bullets, blob };
-        },
-        onSuccess: ({ bullets, blob }) => {
-            setTailoredBullets(bullets);
-            setShowBullets(true);
+        mutationFn: () => resumeApi.tailorPdf(profileId, jobId, analysis ?? undefined),
+        onSuccess: (blob) => {
             const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
             const userName = slugify(user?.name ?? 'resume');
             const jobTitle = slugify(job?.cleanSignal?.target_roles?.[0]?.title ?? jobId.slice(0, 8));
@@ -176,6 +169,10 @@ function AnalysisPanel({
             a.download = `${userName}-${jobTitle}.pdf`;
             a.click();
             URL.revokeObjectURL(url);
+            toast.success('Your tailored resume is downloading.');
+        },
+        onError: () => {
+            toast.error('Failed to generate resume. Please try again.');
         },
     });
 
@@ -263,37 +260,10 @@ function AnalysisPanel({
                 />
             </div>
 
-            {tailoredBullets && tailoredBullets.length > 0 && (
-                <div className="pt-2 border-t border-slate-100">
-                    <div className="flex items-center justify-between mb-3">
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tailored Bullets</p>
-                        <button
-                            className="text-xs text-slate-400 hover:text-slate-600"
-                            onClick={() => setShowBullets(v => !v)}
-                        >
-                            {showBullets ? 'Collapse' : 'Expand'}
-                        </button>
-                    </div>
-                    {showBullets && (
-                        <div className="space-y-3">
-                            <div className="grid grid-cols-[1fr_1fr_auto] gap-4 text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">
-                                <span>Original</span><span>Rewritten</span><span>Role</span>
-                            </div>
-                            {tailoredBullets.map((b, i) => (
-                                <Card key={i}>
-                                    <CardContent className="px-4 py-3 grid grid-cols-[1fr_1fr_auto] gap-4">
-                                        <p className="text-sm text-slate-400 line-through">{b.originalBullet}</p>
-                                        <p className="text-sm font-medium text-slate-800">{b.rewrittenBullet}</p>
-                                        <div className="flex flex-col gap-1">
-                                            <Badge className="w-fit text-xs">{b.role || b.targetSkill}</Badge>
-                                            {b.company && <span className="text-xs text-slate-400">{b.company}</span>}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    )}
-                </div>
+            {tailorMutation.isSuccess && (
+                <p className="text-xs text-slate-400 text-center pt-1">
+                    Resume downloaded. Run again anytime to regenerate.
+                </p>
             )}
         </div>
     );

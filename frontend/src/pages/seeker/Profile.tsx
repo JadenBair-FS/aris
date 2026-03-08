@@ -18,6 +18,14 @@ export default function Profile() {
         retry: false,
     });
 
+    const deleteResumeMutation = useMutation({
+        mutationFn: resumeApi.deleteResume,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['profileByUser'] });
+            navigate('/profile/upload');
+        },
+    });
+
     if (isLoading) {
         return (
             <div className="space-y-4">
@@ -30,14 +38,6 @@ export default function Profile() {
             </div>
         );
     }
-
-    const deleteResumeMutation = useMutation({
-        mutationFn: resumeApi.deleteResume,
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['profileByUser'] });
-            navigate('/profile/upload');
-        },
-    });
 
     if (isError || !profile || !profile.hasResume) {
         return <Navigate to="/profile/upload" replace />;

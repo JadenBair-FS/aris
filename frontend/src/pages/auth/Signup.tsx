@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useSignUp, useAuth, useClerk } from '@clerk/clerk-react';
+import { useAuth as useArisAuth } from '@/context/AuthContext';
 import type { UserRole } from '@/context/AuthContext';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -19,6 +20,14 @@ export default function Signup() {
     const { signUp, setActive, isLoaded } = useSignUp();
     const { getToken } = useAuth();
     const { user: clerkUser } = useClerk();
+    const { user: arisUser } = useArisAuth();
+    const [pendingRole, setPendingRole] = useState<UserRole | null>(null);
+
+    useEffect(() => {
+        if (pendingRole && arisUser?.role === pendingRole) {
+            navigate(pendingRole === 'seeker' ? '/profile/upload' : '/profile/jobs/upload');
+        }
+    }, [pendingRole, arisUser?.role, navigate]);
 
     const handleSignup = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -57,11 +66,11 @@ export default function Signup() {
                 return;
             }
 
-            // Force Clerk to re-fetch the user so publicMetadata.role is up to date
-            // before AuthContext reads it for routing decisions.
+            // Force Clerk to re-fetch the user so publicMetadata.role is up to date.
+            // Navigation is deferred via useEffect until AuthContext reflects the new role,
+            // preventing a flash of the wrong role's dashboard.
             await clerkUser?.reload();
-
-            navigate(role === 'seeker' ? '/profile/upload' : '/profile/jobs/upload');
+            setPendingRole(role);
         } catch (err: any) {
             setErrorText(err.errors?.[0]?.longMessage || err.message || 'Failed to sign up.');
         } finally {

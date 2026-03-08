@@ -86,6 +86,7 @@ namespace ARIS.API.Services
         private readonly int _extractionNumCtx;
         private readonly double _firstPassThreshold;
         private readonly double _secondPassThreshold;
+        private readonly PersonalInfoExtractor _personalInfoExtractor;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly HttpClient _http = new() { Timeout = TimeSpan.FromHours(1) };
@@ -97,11 +98,12 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, PersonalInfoExtractor personalInfoExtractor, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
+            _personalInfoExtractor = personalInfoExtractor;
             _ollamaGenerateUrl = ollamaGenerateUrl;
             _extractionModel = extractionModel;
             _extractionNumCtx = extractionNumCtx;
@@ -685,7 +687,6 @@ namespace ARIS.API.Services
 
             foreach (var correction in corrections)
             {
-                // Case 1: correction targets an ungrounded skill (move to grounded list)
                 var ungroundedMatch = cs.UngroundedSkills.FirstOrDefault(s =>
                     string.Equals(s.Name, correction.From, StringComparison.OrdinalIgnoreCase));
                 if (ungroundedMatch != null)
@@ -704,8 +705,6 @@ namespace ARIS.API.Services
                     }
                     continue;
                 }
-
-                // Case 2: correction overrides an already-grounded skill (matched by OriginalName)
                 var groundedMatch = cs.Skills.FirstOrDefault(s =>
                     s.OriginalName != null &&
                     string.Equals(s.OriginalName, correction.From, StringComparison.OrdinalIgnoreCase));
@@ -888,5 +887,202 @@ namespace ARIS.API.Services
         }
 
         private record BulletRewriteItem(string Original, string Rewritten);
+
+        //Resume Tailoring Engine 
+
+        public record TailoredResumeData(
+            ResumeCleanSignal CleanSignal,
+            PersonalInfo PersonalInfo,
+            string ProfessionalSummary,
+            List<TailoredBullet> TailoredBullets);
+
+        private static string? ExtractRawResumeText(string? rawResumeJson)
+        {
+            if (string.IsNullOrWhiteSpace(rawResumeJson)) return null;
+            try
+            {
+                using var doc = JsonDocument.Parse(rawResumeJson);
+                if (doc.RootElement.TryGetProperty("content", out var contentProp))
+                    return contentProp.GetString();
+            }
+            catch { }
+            return rawResumeJson;
+        }
+
+        private async Task<string> GenerateSummaryAsync(
+            string rawText,
+            string jobTitle,
+            List<string> matchingSkills,
+            List<string> implicitSkills,
+            List<string> bridgeableSkills,
+            List<string> hardGaps)
+        {
+            var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
+            var template = await File.ReadAllTextAsync(promptPath);
+            var snippet = rawText.Length > 3000 ? rawText[..3000] : rawText;
+
+            var prompt = template
+                .Replace("{rawResumeSnippet}", snippet)
+                .Replace("{jobTitle}", jobTitle)
+                .Replace("{matchingSkills}", matchingSkills.Count > 0 ? string.Join(", ", matchingSkills) : "(none)")
+                .Replace("{implicitSkills}", implicitSkills.Count > 0 ? string.Join(", ", implicitSkills) : "(none)")
+                .Replace("{bridgeableSkills}", bridgeableSkills.Count > 0 ? string.Join(", ", bridgeableSkills) : "(none)")
+                .Replace("{hardGaps}", hardGaps.Count > 0 ? string.Join(", ", hardGaps) : "(none)");
+
+            try
+            {
+                var response = await _chatClient.GetResponseAsync(prompt);
+                return response?.Text?.Trim() ?? "";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to generate professional summary for job {JobTitle}.", jobTitle);
+                return "";
+            }
+        }
+
+        public async Task<TailoredResumeData?> BuildTailoredResumeDataAsync(
+            Guid userProfileId,
+            Guid jobId,
+            List<string>? matchingSkills = null,
+            List<string>? implicitSkills = null,
+            List<string>? prereqMetSkills = null,
+            List<string>? bridgeableSkills = null,
+            List<string>? hardGaps = null)
+        {
+            var user = await _context.UserProfiles.FindAsync(userProfileId);
+            var job = await _context.JobPostings.FindAsync(jobId);
+
+            if (user?.CleanSignal == null || job?.CleanSignal == null)
+                return null;
+
+            var experienceEntries = user.CleanSignal.ExperienceSummary
+                .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
+                .ToList();
+
+            List<string> effectiveMatching, effectiveImplicit, effectivePrereqMet, effectiveBridgeable, effectiveHardGaps;
+            if (matchingSkills != null)
+            {
+                effectiveMatching = matchingSkills;
+                effectiveImplicit = implicitSkills ?? [];
+                effectivePrereqMet = prereqMetSkills ?? [];
+                effectiveBridgeable = bridgeableSkills ?? [];
+                effectiveHardGaps = hardGaps ?? [];
+            }
+            else
+            {
+                var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                effectiveMatching = [.. user.CleanSignal.Skills.Select(s => s.Name)];
+                effectiveImplicit = [];
+                effectivePrereqMet = [];
+                effectiveBridgeable = [];
+                effectiveHardGaps = [.. job.CleanSignal.RequiredSkills
+                    .Where(js => !userSkillNames.Contains(js.Name))
+                    .Select(js => js.Name)];
+            }
+
+            var jobTitle = job.CleanSignal.TargetRoles.FirstOrDefault()?.Title ?? "the role";
+            var rawText = ExtractRawResumeText(user.RawResume) ?? "";
+
+            // Start personal info extraction and summary generation in parallel
+            // while the serial bullet rewriting loop runs below.
+            var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawText);
+            var summaryTask = GenerateSummaryAsync(
+                rawText, jobTitle,
+                effectiveMatching, effectiveImplicit, effectiveBridgeable, effectiveHardGaps);
+
+            // Rewrite bullets for each experience entry (serial — LLM context sensitive)
+            var bulletResults = new List<TailoredBullet>();
+            foreach (var exp in experienceEntries)
+            {
+                var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
+
+                var prompt = $$"""
+                    You are an expert resume writer. Below is a candidate's experience entry and the full skill analysis for the job they are targeting.
+
+                    ORIGINAL EXPERIENCE:
+                    Role: {{exp.Role}}  |  Company: {{exp.Company}}
+                    {{bulletsText}}
+
+                    JOB TARGET: {{jobTitle}}
+
+                    JOB REQUIRES — MATCHING SKILLS (candidate already has):
+                    {{(effectiveMatching.Count > 0 ? string.Join(", ", effectiveMatching) : "(none)")}}
+
+                    JOB REQUIRES — CAN BE INFERRED FROM BACKGROUND (implicit):
+                    {{(effectiveImplicit.Count > 0 ? string.Join(", ", effectiveImplicit) : "(none)")}}
+
+                    JOB REQUIRES — CANDIDATE HAS FOUNDATIONS FOR (prerequisite-met):
+                    {{(effectivePrereqMet.Count > 0 ? string.Join(", ", effectivePrereqMet) : "(none)")}}
+
+                    JOB REQUIRES — REACHABLE WITH EXISTING EXPERIENCE (bridgeable):
+                    {{(effectiveBridgeable.Count > 0 ? string.Join(", ", effectiveBridgeable) : "(none)")}}
+
+                    JOB REQUIRES — GENUINE GAPS (do NOT force these in):
+                    {{(effectiveHardGaps.Count > 0 ? string.Join(", ", effectiveHardGaps) : "(none)")}}
+
+                    TASK:
+                    Rewrite each numbered bullet so it naturally incorporates relevant keywords from the matching, implicit, and bridgeable skill lists where they genuinely apply to what was done in this role.
+                    Keep the original facts, company context, and achievements — do not invent new responsibilities.
+                    Do not force bridgeable or gap skills into bullets where they do not fit.
+                    Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
+
+                    Return JSON array only, no other text:
+                    [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
+                    """;
+
+                try
+                {
+                    var response = await _chatClient.GetResponseAsync(prompt);
+                    var text = response?.Text?.Trim() ?? "";
+                    var json = System.Text.RegularExpressions.Regex.Replace(text, @"```(?:json)?", "").Trim();
+                    var startIdx = json.IndexOf('[');
+                    var endIdx = json.LastIndexOf(']');
+                    if (startIdx >= 0 && endIdx > startIdx)
+                        json = json[startIdx..(endIdx + 1)];
+
+                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    if (parsed != null)
+                    {
+                        foreach (var item in parsed)
+                        {
+                            if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
+                            {
+                                bulletResults.Add(new TailoredBullet
+                                {
+                                    OriginalBullet = item.Original,
+                                    RewrittenBullet = item.Rewritten,
+                                    TargetSkill = exp.Role,
+                                    Role = exp.Role,
+                                    Company = exp.Company,
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Failed to tailor bullets for role {Role}", exp.Role);
+                    foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                    {
+                        bulletResults.Add(new TailoredBullet
+                        {
+                            OriginalBullet = bullet,
+                            RewrittenBullet = bullet,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+                    }
+                }
+            }
+
+            await Task.WhenAll(personalInfoTask, summaryTask);
+            return new TailoredResumeData(user.CleanSignal, personalInfoTask.Result, summaryTask.Result, bulletResults);
+        }
     }
 }

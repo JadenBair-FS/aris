@@ -15,16 +15,14 @@ namespace ARIS.API.Controllers
     {
         private readonly ResumeService _service;
         private readonly MatchService _matchService;
-        private readonly PersonalInfoExtractor _personalInfoExtractor;
         private readonly ResumePdfService _resumePdfService;
         private readonly ArisDbContext _context;
         private readonly ILogger<ResumeController> _logger;
 
-        public ResumeController(ResumeService service, MatchService matchService, PersonalInfoExtractor personalInfoExtractor, ResumePdfService resumePdfService, ArisDbContext context, ILogger<ResumeController> logger)
+        public ResumeController(ResumeService service, MatchService matchService, ResumePdfService resumePdfService, ArisDbContext context, ILogger<ResumeController> logger)
         {
             _service = service;
             _matchService = matchService;
-            _personalInfoExtractor = personalInfoExtractor;
             _resumePdfService = resumePdfService;
             _context = context;
             _logger = logger;
@@ -177,45 +175,26 @@ namespace ARIS.API.Controllers
             return Ok(new { message = "Grounding corrections applied.", cleanSignal = updatedSignal });
         }
 
-        [HttpPost("tailor")]
-        public async Task<IActionResult> TailorResume([FromBody] TailorRequest request)
-        {
-            if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
-                return BadRequest("UserProfileId and JobId are required.");
-
-            var result = await _service.TailorResumeAsync(
-                request.UserProfileId, request.JobId,
-                request.MatchingSkills, request.ImplicitSkills,
-                request.PrereqMetSkills, request.BridgeableSkills,
-                request.HardGaps);
-
-            if (result == null)
-                return NotFound("Could not tailor resume. Ensure the profile and job exist and have been processed.");
-
-            return Ok(result);
-        }
-
         [HttpPost("tailor-pdf")]
         public async Task<IActionResult> TailorResumePdf([FromBody] TailorRequest request)
         {
             if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
                 return BadRequest("UserProfileId and JobId are required.");
 
-            var user = await _context.UserProfiles.FindAsync(request.UserProfileId);
-            if (user?.CleanSignal == null)
-                return NotFound("User profile not found or has no clean signal.");
-
-            var tailoredBullets = await _service.TailorResumeAsync(
+            var data = await _service.BuildTailoredResumeDataAsync(
                 request.UserProfileId, request.JobId,
                 request.MatchingSkills, request.ImplicitSkills,
                 request.PrereqMetSkills, request.BridgeableSkills,
                 request.HardGaps);
 
-            if (tailoredBullets == null)
+            if (data == null)
                 return NotFound("Could not tailor resume. Ensure the profile and job exist and have been processed.");
 
-            var personalInfo = await _personalInfoExtractor.ExtractAsync(user.RawResume);
-            var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, tailoredBullets);
+            var pdfBytes = _resumePdfService.GeneratePdf(
+                data.PersonalInfo,
+                data.CleanSignal,
+                data.ProfessionalSummary,
+                data.TailoredBullets);
 
             return File(pdfBytes, "application/pdf", "ARIS_Tailored_Resume.pdf");
         }

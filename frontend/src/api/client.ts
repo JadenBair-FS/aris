@@ -96,8 +96,18 @@ export async function apiClient<T>(
             throw new Error('Session expired. Please log in again.');
         }
 
+        if (response.status === 413) {
+            throw new Error('File is too large. Please upload a PDF under 25 MB.');
+        }
+
         if (!response.ok) {
-            throw new Error(data?.message || data || `Error HTTP ${response.status}`);
+            // Avoid leaking raw HTML from gateway errors (nginx 502/503/etc.)
+            const message = typeof data === 'object'
+                ? (data?.message ?? `Something went wrong (HTTP ${response.status})`)
+                : (typeof data === 'string' && !data.trimStart().startsWith('<')
+                    ? data
+                    : `Something went wrong (HTTP ${response.status})`);
+            throw new Error(message);
         }
 
         return data as T;
