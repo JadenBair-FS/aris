@@ -211,7 +211,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         ";
 
         const string subsetQuery = @"
-            MATCH (u:Skill)-[:SUBSET_OF*1..3]-(missing:Skill)
+            MATCH (u:Skill)-[:SUBSET_OF*1..2]-(missing:Skill)
             WHERE toLower(u.name) IN [s IN $userSkills | toLower(s)]
               AND toLower(missing.name) IN [s IN $missingSkills | toLower(s)]
               AND NOT (u.source = 'ONET_Taxonomy' AND missing.source = 'ONET_Taxonomy')
