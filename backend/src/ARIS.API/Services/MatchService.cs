@@ -170,12 +170,6 @@ public class MatchService
 
                 var (importance, years) = GetJobSkillData(job.CleanSignal!, skill);
 
-                if (importance.Equals("Preferred", StringComparison.OrdinalIgnoreCase))
-                {
-                    bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill));
-                    continue;
-                }
-
                 bool isCertification = skill.Contains("Certified", StringComparison.OrdinalIgnoreCase) ||
                                      skill.Contains("CST", StringComparison.OrdinalIgnoreCase) ||
                                      skill.Contains("License", StringComparison.OrdinalIgnoreCase) ||
