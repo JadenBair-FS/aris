@@ -328,93 +328,69 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (!hasT2 && !hasT3 && !hasT4)
             return string.Empty;
 
-        // Helper: format a source skill with documentation status and years
+        // Format a source skill entry: "SkillName (5 yr)" or "SkillName (inferred)"
         string SourceLabel(string canonicalSource)
         {
             var display = canonicalToDisplay.TryGetValue(canonicalSource, out var d) ? d : canonicalSource;
             if (documentedSkills.Contains(canonicalSource))
             {
                 var yr = canonicalToYears.TryGetValue(canonicalSource, out var y) && y > 0
-                    ? $"{y:0.#} yr documented"
-                    : "documented in your resume";
-                return $"{display}  ({yr})";
+                    ? $"{y:0.#} yr"
+                    : "documented";
+                return $"{display} ({yr})";
             }
-            return $"{display}  (inferred from your expertise — not a direct resume entry; choose a closely related documented skill as your anchor instead)";
+            return $"{display} (inferred)";
         }
 
+        // Graph context is pure data — no embedded rules.
+        // All instructions are in ResumeTailoring.md, which the LLM reads before this block.
         var sb = new System.Text.StringBuilder();
-        sb.AppendLine("═══════════════════════════════════════════════════════");
-        sb.AppendLine("KNOWLEDGE GRAPH — verified skill relationships");
-        sb.AppendLine("═══════════════════════════════════════════════════════");
+        sb.AppendLine("════════════════════════════════════════");
+        sb.AppendLine("KNOWLEDGE GRAPH");
+        sb.AppendLine("════════════════════════════════════════");
 
         if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION A — DIRECT COMPETENCIES");
-            sb.AppendLine("These are validated as direct competencies. Weave each into an");
-            sb.AppendLine("existing achievement bullet from the resume. Do not create a stub.");
+            sb.AppendLine("SECTION A — CLAIM DIRECTLY:");
             foreach (var skill in t2Skills)
             {
                 var display = canonicalToDisplay.TryGetValue(skill, out var d) ? d : skill;
-                var isDoc = documentedSkills.Contains(skill);
-                var note = isDoc
-                    ? (canonicalToYears.TryGetValue(skill, out var y) && y > 0 ? $"{y:0.#} yr documented" : "documented")
-                    : "inferred from your expertise";
-                sb.AppendLine($"  • {display}  ({note})");
+                var note = documentedSkills.Contains(skill)
+                    ? (canonicalToYears.TryGetValue(skill, out var y) && y > 0 ? $"{y:0.#} yr" : "documented")
+                    : "inferred";
+                sb.AppendLine($"  • {display} ({note})");
             }
         }
 
         if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("───────────────────────────────────────────────────────");
-            sb.AppendLine("SECTION B — DEVELOPING TOWARD  (you have the prerequisite; job needs the specialization)");
-            sb.AppendLine();
-            sb.AppendLine("Required bullet opening — use this exact structure:");
-            sb.AppendLine("  \"Applies [SOURCE] knowledge to develop [TARGET] proficiency, [specific fact from your resume].\"");
-            sb.AppendLine();
-            sb.AppendLine("Rules for Section B:");
-            sb.AppendLine("  - The phrase above MUST open the bullet.");
-            sb.AppendLine("  - [SOURCE] = the skill shown after the arrow below. Do not substitute.");
-            sb.AppendLine("  - [specific fact] = one verifiable detail from the RESUME TEXT — a project, metric,");
-            sb.AppendLine("    technology, or role context. Details from the job description are NOT permitted.");
-            sb.AppendLine();
+            sb.AppendLine("SECTION B — PREREQUISITE → SPECIALIZATION:");
             foreach (var skill in t3Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
                 var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your foundation";
-                sb.AppendLine($"  • {target}  ←  SOURCE: {SourceLabel(fromCanonical)}");
+                sb.AppendLine($"  • {target}  ←  {SourceLabel(fromCanonical)}");
             }
         }
 
         if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("───────────────────────────────────────────────────────");
-            sb.AppendLine("SECTION C — TRANSFERABLE EXPERIENCE  (adjacent tool; your experience bridges here)");
-            sb.AppendLine();
-            sb.AppendLine("Required bullet opening — use this exact structure:");
-            sb.AppendLine("  \"Draws on [SOURCE] experience to work effectively with [TARGET], [specific fact from your resume].\"");
-            sb.AppendLine();
-            sb.AppendLine("Rules for Section C:");
-            sb.AppendLine("  - The phrase above MUST open the bullet.");
-            sb.AppendLine("  - [SOURCE] = the skill shown after the arrow below. Do not substitute.");
-            sb.AppendLine("  - [specific fact] = one verifiable detail from the RESUME TEXT — a project, metric,");
-            sb.AppendLine("    technology, or role context. Details from the job description are NOT permitted.");
-            sb.AppendLine();
+            sb.AppendLine("SECTION C — ADJACENT → BRIDGE:");
             foreach (var skill in t4Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
                 var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your domain experience";
-                sb.AppendLine($"  • {target}  ←  SOURCE: {SourceLabel(fromCanonical)}");
+                sb.AppendLine($"  • {target}  ←  {SourceLabel(fromCanonical)}");
             }
         }
 
         if (hasT5)
         {
             sb.AppendLine();
-            sb.AppendLine("───────────────────────────────────────────────────────");
-            sb.AppendLine("OFF LIMITS — never mention, reference, or hint at these:");
+            sb.AppendLine("OFF LIMITS — never mention:");
             var hardGapNames = match.HardGaps
                 .Select(s => s.OriginalName ?? s.SkillName)
                 .ToList();
@@ -422,7 +398,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         }
 
         sb.AppendLine();
-        sb.AppendLine("═══════════════════════════════════════════════════════");
+        sb.AppendLine("════════════════════════════════════════");
 
         return sb.ToString();
     }
