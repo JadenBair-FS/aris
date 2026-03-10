@@ -116,6 +116,13 @@ namespace ARIS.API.Services
             _logger = logger;
         }
 
+        public async Task<float[]> GenerateEmbeddingAsync(string text)
+        {
+            var truncated = text.Length > 2000 ? text[..2000] : text;
+            var embeddings = await _embeddingGenerator.GenerateAsync([truncated]);
+            return embeddings[0].Vector.ToArray();
+        }
+
         public async Task<Guid?> ProcessResumeAsync(Stream fileStream, string userId, Guid? seekerUserId = null)
         {
             try

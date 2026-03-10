@@ -534,6 +534,9 @@ public class EvalController : ControllerBase
         double AtsBaselineScore,
         double AtsTailoredScore,
         double AtsDeltaPercent,
+        double AtsSemanticBaselineScore,
+        double AtsSemanticTailoredScore,
+        double AtsSemanticDeltaPercent,
         double ContentPreservation,
         int T5InVocabularyCount     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
     );
@@ -589,6 +592,9 @@ public class EvalController : ControllerBase
             atsBaselineScore    = r.AtsBaselineScore,
             atsTailoredScore    = r.AtsTailoredScore,
             atsDeltaPercent     = r.AtsDeltaPercent,
+            atsSemanticBaselineScore = r.AtsSemanticBaselineScore,
+            atsSemanticTailoredScore = r.AtsSemanticTailoredScore,
+            atsSemanticDeltaPercent  = r.AtsSemanticDeltaPercent,
             contentPreservation = r.ContentPreservation,
             t5InVocabularyCount = r.T5InVocabularyCount,
             pdfBase64 = Convert.ToBase64String(r.PdfBytes)
@@ -690,13 +696,20 @@ public class EvalController : ControllerBase
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
+
+        var semBaseline = await ComputeSemanticSimilarityAsync(rawResume, rawJob);
+        var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
+        var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
+
         var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
 
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
-            atsBaseline, atsTailored, atsDeltaPct, contentPres, t5InVocab);
+            atsBaseline, atsTailored, atsDeltaPct, 
+            semBaseline, semTailored, semDeltaPct,
+            contentPres, t5InVocab);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
@@ -742,13 +755,20 @@ public class EvalController : ControllerBase
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
+
+        var semBaseline = await ComputeSemanticSimilarityAsync(rawResume, rawJob);
+        var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
+        var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
+
         var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
 
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
-            atsBaseline, atsTailored, atsDeltaPct, contentPres, 0);
+            atsBaseline, atsTailored, atsDeltaPct, 
+            semBaseline, semTailored, semDeltaPct,
+            contentPres, 0);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
@@ -878,6 +898,24 @@ public class EvalController : ControllerBase
             sb.Append(' ');
         }
         return sb.ToString();
+    }
+
+    private async Task<double> ComputeSemanticSimilarityAsync(string resumeText, string jobText)
+    {
+        if (string.IsNullOrWhiteSpace(resumeText) || string.IsNullOrWhiteSpace(jobText))
+            return 0.0;
+
+        var resumeEmb = await _resumeService.GenerateEmbeddingAsync(resumeText);
+        var jobEmb = await _resumeService.GenerateEmbeddingAsync(jobText);
+
+        double dot = 0, normR = 0, normJ = 0;
+        for (int i = 0; i < resumeEmb.Length; i++)
+        {
+            dot += resumeEmb[i] * jobEmb[i];
+            normR += resumeEmb[i] * resumeEmb[i];
+            normJ += jobEmb[i] * jobEmb[i];
+        }
+        return (normR > 0 && normJ > 0) ? Math.Round(dot / (Math.Sqrt(normR) * Math.Sqrt(normJ)), 4) : 0.0;
     }
 
     /// <summary>
