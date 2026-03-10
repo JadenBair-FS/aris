@@ -100,11 +100,12 @@ public class MatchService
 
         var matchingSkillItems = matchingSkills.Select(skill =>
         {
-            var (importance, requiredYears) = GetJobSkillData(job.CleanSignal!, skill);
+            var (importance, requiredYears, originalName) = GetJobSkillData(job.CleanSignal!, skill);
             var candidateYears = GetCandidateSkillYears(skill, user.CleanSignal!);
             return new SkillGapItem
             {
                 SkillName = skill,
+                OriginalName = originalName,
                 Importance = importance,
                 YearsRequired = requiredYears,
                 CandidateYears = candidateYears
@@ -167,17 +168,18 @@ public class MatchService
             {
                 if (!isCandidateTech && roadmapTechSkillNames.Contains(skill))
                 {
-                    var jobSkillData = GetJobSkillData(job.CleanSignal!, skill);
+                    var (hImp, hYears, hOrigName) = GetJobSkillData(job.CleanSignal!, skill);
                     hardGaps.Add(new SkillGapItem
                     {
                         SkillName = skill,
-                        Importance = jobSkillData.importance,
-                        YearsRequired = jobSkillData.years
+                        OriginalName = hOrigName,
+                        Importance = hImp,
+                        YearsRequired = hYears
                     });
                     continue;
                 }
 
-                var (importance, years) = GetJobSkillData(job.CleanSignal!, skill);
+                var (importance, years, origName) = GetJobSkillData(job.CleanSignal!, skill);
 
                 bool isCertification = skill.Contains("Certified", StringComparison.OrdinalIgnoreCase) ||
                                      skill.Contains("CST", StringComparison.OrdinalIgnoreCase) ||
@@ -187,19 +189,19 @@ public class MatchService
 
                 if (isCertification)
                 {
-                    hardGaps.Add(new SkillGapItem { SkillName = skill, Importance = importance, YearsRequired = years });
+                    hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
                 }
                 else if (prerequisiteMetSet.Contains(skill))
                 {
-                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill));
+                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
                 }
                 else if (neighborhood.Contains(skill))
                 {
-                    bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill));
+                    bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
                 }
                 else
                 {
-                    hardGaps.Add(new SkillGapItem { SkillName = skill, Importance = importance, YearsRequired = years });
+                    hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
                 }
             }
         }
@@ -276,18 +278,19 @@ public class MatchService
         return Math.Max(0.5, candidateYears / requiredYears);
     }
 
-    private static (string importance, double years) GetJobSkillData(ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal signal, string skillName)
+    private static (string importance, double years, string? originalName) GetJobSkillData(ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal signal, string skillName)
     {
         var jobSkill = signal.RequiredSkills
             .FirstOrDefault(js => js.Name.Equals(skillName, StringComparison.OrdinalIgnoreCase));
-        return (jobSkill?.Importance ?? "Essential", jobSkill?.YearsOfExperience ?? 0);
+        return (jobSkill?.Importance ?? "Essential", jobSkill?.YearsOfExperience ?? 0, jobSkill?.OriginalName);
     }
 
     private static SkillGapItem BuildSkillGapItem(
         string skillName,
         string importance,
         double years,
-        Dictionary<string, (string ViaSkill, string BridgeType, string? BridgeSource)> bridgePathBySkill)
+        Dictionary<string, (string ViaSkill, string BridgeType, string? BridgeSource)> bridgePathBySkill,
+        string? originalName = null)
     {
         string? bridgePath = null;
         string? bridgeSource = null;
@@ -301,6 +304,7 @@ public class MatchService
         return new SkillGapItem
         {
             SkillName = skillName,
+            OriginalName = originalName,
             Importance = importance,
             YearsRequired = years,
             BridgePath = bridgePath,

@@ -573,17 +573,29 @@ namespace ARIS.API.Services
 
                         if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                         {
-                            _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
-                                originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
-                            groundedSkills.Add(new ResumeSkill
+                            var origNorm = originalSkill.Name.ToLowerInvariant().Replace(" ", "").Replace("-", "").Replace(".", "");
+                            var canonNorm = secondPassMatch.Name.ToLowerInvariant().Replace(" ", "").Replace("-", "").Replace(".", "");
+                            bool substringRelated = origNorm.Contains(canonNorm) || canonNorm.Contains(origNorm);
+
+                            if (substringRelated)
                             {
-                                Name = secondPassMatch.Name,
-                                OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
-                                Category = originalSkill.Category,
-                                Proficiency = originalSkill.Proficiency,
-                                YearsOfExperience = originalSkill.YearsOfExperience
-                            });
-                            continue;
+                                _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                                    originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
+                                groundedSkills.Add(new ResumeSkill
+                                {
+                                    Name = secondPassMatch.Name,
+                                    OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
+                                    Category = originalSkill.Category,
+                                    Proficiency = originalSkill.Proficiency,
+                                    YearsOfExperience = originalSkill.YearsOfExperience
+                                });
+                                continue;
+                            }
+                            else
+                            {
+                                _logger.LogInformation("Skill '{Skill}' second-pass candidate '{Canonical}' rejected (no substring relation).",
+                                    originalSkill.Name, secondPassMatch.Name);
+                            }
                         }
                     }
 
@@ -1010,7 +1022,7 @@ namespace ARIS.API.Services
                     Do not claim any hard gap skill under any circumstances.
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
 
-                    IMPORTANT — SKILL NAME PRECISION: When incorporating any skill from the Tier 1 list or knowledge graph, you MUST use the exact canonical skill name as it appears in the context above (e.g., write "Accounts Payable" not "AP", write "Microsoft Excel" not "Excel spreadsheets", write "General Ledger" not "GL", write "Python" not "Python scripting"). Exact canonical names are required for automated scoring.
+                    IMPORTANT — SKILL NAME PRECISION: Use skill names exactly as they appear in the FULL RESUME and FULL JOB DESCRIPTION text above. Always prefer the job description's exact wording when referencing a skill (e.g., if the job says "React" write "React", not "React.js"; if the job says "Postgres" write "Postgres", not "PostgreSQL"). The knowledge graph context above identifies which bridgeable skills to surface — use the job description's own terminology for them.
 
                     Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting in the rewritten bullets.
 

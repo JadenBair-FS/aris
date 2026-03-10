@@ -7,6 +7,7 @@ namespace ARIS.Shared.Models;
 public class SkillGapItem
 {
     public string SkillName { get; set; } = "";
+    public string? OriginalName { get; set; }         // job description's original wording, if different from canonical
     public string Importance { get; set; } = "";      // "Essential" | "Preferred"
     public double YearsRequired { get; set; }
     public double CandidateYears { get; set; }        // candidate's stated experience for this skill (Tier 1 only)

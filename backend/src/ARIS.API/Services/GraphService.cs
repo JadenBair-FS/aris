@@ -301,7 +301,10 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var skill in match.PrerequisiteMetSkills)
             {
                 var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [SUBSET_OF]";
-                sb.AppendLine($"  - {skill.SkillName}{path}");
+                var displayName = !string.IsNullOrWhiteSpace(skill.OriginalName) && !string.Equals(skill.OriginalName, skill.SkillName, StringComparison.OrdinalIgnoreCase)
+                    ? $"{skill.SkillName} (job calls this \"{skill.OriginalName}\")"
+                    : skill.SkillName;
+                sb.AppendLine($"  - {displayName}{path}");
             }
         }
 
@@ -313,7 +316,10 @@ public class GraphService : IDisposable, IAsyncDisposable
             {
                 var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [BRIDGE_TO]";
                 var source = !string.IsNullOrWhiteSpace(skill.BridgeSource) ? $", {skill.BridgeSource}" : "";
-                sb.AppendLine($"  - {skill.SkillName}{path}{source}");
+                var displayName = !string.IsNullOrWhiteSpace(skill.OriginalName) && !string.Equals(skill.OriginalName, skill.SkillName, StringComparison.OrdinalIgnoreCase)
+                    ? $"{skill.SkillName} (job calls this \"{skill.OriginalName}\")"
+                    : skill.SkillName;
+                sb.AppendLine($"  - {displayName}{path}{source}");
             }
         }
 
