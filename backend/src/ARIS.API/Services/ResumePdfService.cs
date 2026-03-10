@@ -22,15 +22,17 @@ public class ResumePdfService
         string professionalSummary,
         List<TailoredBullet> tailoredBullets)
     {
-        var bulletMap = tailoredBullets
-            .Where(b => !string.IsNullOrWhiteSpace(b.Role))
+        // Group all rewritten bullets by role; deduplicate by rewritten text.
+        // One original bullet may produce multiple rewrites (one per surfaced skill),
+        // so we render all distinct rewrites rather than doing a 1-to-1 lookup.
+        var tailoredByRole = tailoredBullets
+            .Where(b => !string.IsNullOrWhiteSpace(b.Role) && !string.IsNullOrWhiteSpace(b.RewrittenBullet))
             .GroupBy(b => b.Role, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
                 g => g.Key,
-                g => g.ToDictionary(
-                    b => b.OriginalBullet,
-                    b => b.RewrittenBullet,
-                    StringComparer.OrdinalIgnoreCase),
+                g => g.Select(b => b.RewrittenBullet)
+                      .Distinct(StringComparer.OrdinalIgnoreCase)
+                      .ToList(),
                 StringComparer.OrdinalIgnoreCase);
 
         var document = Document.Create(container =>
@@ -128,13 +130,15 @@ public class ResumePdfService
                             if (matchingRole != null && !string.IsNullOrEmpty(matchingRole.Duration))
                                 col.Item().Text(matchingRole.Duration).FontSize(9).FontColor(Gray777);
 
-                            var roleMap = bulletMap.TryGetValue(exp.Role, out var bm) ? bm : null;
-                            foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                            if (tailoredByRole.TryGetValue(exp.Role, out var rewrittenBullets) && rewrittenBullets.Count > 0)
                             {
-                                var display = roleMap != null && roleMap.TryGetValue(bullet, out var rewritten)
-                                    ? rewritten
-                                    : bullet;
-                                col.Item().PaddingLeft(14).PaddingTop(2).Text($"- {display}").FontSize(10).LineHeight(1.3f);
+                                foreach (var rb in rewrittenBullets)
+                                    col.Item().PaddingLeft(14).PaddingTop(2).Text($"- {rb}").FontSize(10).LineHeight(1.3f);
+                            }
+                            else
+                            {
+                                foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                                    col.Item().PaddingLeft(14).PaddingTop(2).Text($"- {bullet}").FontSize(10).LineHeight(1.3f);
                             }
                         }
 
