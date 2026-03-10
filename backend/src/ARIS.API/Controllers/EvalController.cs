@@ -534,13 +534,14 @@ public class EvalController : ControllerBase
         double AtsBaselineScore,
         double AtsTailoredScore,
         double AtsDeltaPercent,
-        double ContentPreservation
+        double ContentPreservation,
+        int T5InVocabularyCount     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
     );
 
     /// <summary>
-    /// Runs three tailoring pipelines (T-A: raw text only, T-B: raw text + ref skills, T-C: full GraphRAG)
+    /// Runs two tailoring pipelines (T-A: Vector-RAG, T-B: GraphRAG+KG)
     /// and returns side-by-side scoring + PDF artifacts for each.
-    /// All three share the same baselineMatch allowed set (computed once).
+    /// Both share the same baselineMatch allowed set (computed once).
     /// </summary>
     [HttpPost("tailor-compare")]
     public async Task<IActionResult> TailorCompare([FromBody] TailorCompareRequest request)
@@ -571,9 +572,8 @@ public class EvalController : ControllerBase
         if (baselineMatch == null)
             return NotFound("Match analysis failed.");
 
-        var pipelineA = await RunTailorPipelineAAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
-        var pipelineB = await RunTailorPipelineBAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
-        var pipelineC = await RunTailorPipelineCAsync(request.ResumeId, request.JobId, baselineMatch, job.CleanSignal, userSkills);
+        var pipelineA = await RunTailorPipelineAAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills, job);
+        var pipelineB = await RunTailorPipelineBAsync(request.ResumeId, request.JobId, baselineMatch, job.CleanSignal, userSkills);
 
         static object ToResult(TailorPipelineResult r) => new
         {
@@ -590,6 +590,7 @@ public class EvalController : ControllerBase
             atsTailoredScore    = r.AtsTailoredScore,
             atsDeltaPercent     = r.AtsDeltaPercent,
             contentPreservation = r.ContentPreservation,
+            t5InVocabularyCount = r.T5InVocabularyCount,
             pdfBase64 = Convert.ToBase64String(r.PdfBytes)
         };
 
@@ -598,8 +599,7 @@ public class EvalController : ControllerBase
             resumeId = request.ResumeId,
             jobId = request.JobId,
             pipelineA = ToResult(pipelineA),
-            pipelineB = ToResult(pipelineB),
-            pipelineC = ToResult(pipelineC)
+            pipelineB = ToResult(pipelineB)
         });
     }
 
@@ -608,11 +608,26 @@ public class EvalController : ControllerBase
         UserProfile user,
         MatchAnalysisResult baselineMatch,
         ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
-        List<string> userSkills)
+        List<string> userSkills,
+        JobPosting job)
     {
         var sw = Stopwatch.StartNew();
         var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
         var tailoredBullets = new List<TailoredBullet>();
+
+        // Vector-RAG: retrieve top-25 ref skills by cosine distance to job embedding
+        var topRefSkills = await _context.Skills
+            .Where(s => s.Embedding != null && job.Embedding != null)
+            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(job.Embedding!) })
+            .OrderBy(x => x.Distance)
+            .Take(25)
+            .ToListAsync();
+        var refSkillNames = topRefSkills.Select(s => s.Name).ToList();
+        var refSkillContext = string.Join(", ", refSkillNames);
+
+        // T5 contamination: how many of the top-25 retrieved skills are hard gaps
+        var hardGapNameSet = new HashSet<string>(baselineMatch.HardGaps.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase);
+        var t5InVocab = refSkillNames.Count(name => hardGapNameSet.Contains(name));
 
         var experienceEntries = user.CleanSignal!.ExperienceSummary
             .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
@@ -622,7 +637,7 @@ public class EvalController : ControllerBase
         {
             var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
             var prompt = $$"""
-                You are an expert resume writer. Rewrite the bullets below for the target job using only the raw resume and job description as context.
+                You are an expert resume writer. Rewrite the bullets below for the target job using the raw texts and reference skill vocabulary.
 
                 FULL RESUME:
                 {{rawResume}}
@@ -630,11 +645,15 @@ public class EvalController : ControllerBase
                 FULL JOB DESCRIPTION:
                 {{rawJob}}
 
+                REFERENCE SKILL VOCABULARY (canonical skill names from knowledge base):
+                {{refSkillContext}}
+
                 EXPERIENCE ENTRY TO REWRITE:
                 Role: {{exp.Role}} | Company: {{exp.Company}}
                 {{bulletsText}}
 
-                TASK: Rewrite each bullet to align with the job description. Do not invent responsibilities.
+                TASK: Rewrite each bullet to naturally surface skills from the reference vocabulary where they genuinely apply.
+                Do not invent responsibilities.
                 Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
                 Return JSON array only: [{"original": "...", "rewritten": "..."}]
                 """;
@@ -644,7 +663,7 @@ public class EvalController : ControllerBase
 
         var summaryPrompt = $$"""
             Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
-            Use only facts from the resume below. Do not invent skills.
+            Reference skill vocabulary: {{refSkillContext}}
             Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
             RESUME: {{rawResume}}
             JOB DESCRIPTION: {{rawJob}}
@@ -677,94 +696,10 @@ public class EvalController : ControllerBase
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
-            atsBaseline, atsTailored, atsDeltaPct, contentPres);
+            atsBaseline, atsTailored, atsDeltaPct, contentPres, t5InVocab);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
-        string rawResume, string rawJob,
-        UserProfile user,
-        MatchAnalysisResult baselineMatch,
-        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
-        List<string> userSkills)
-    {
-        var sw = Stopwatch.StartNew();
-        var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
-        var tailoredBullets = new List<TailoredBullet>();
-
-        // Vector-RAG: use the job's clean signal required skills — already grounded to canonical
-        // names via vector similarity during job ingestion. No additional DB query needed.
-        var refSkillContext = string.Join(", ", jobSignal.RequiredSkills.Select(s => s.Name));
-
-        var experienceEntries = user.CleanSignal!.ExperienceSummary
-            .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
-            .ToList();
-
-        foreach (var exp in experienceEntries)
-        {
-            var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
-            var prompt = $$"""
-                You are an expert resume writer. Rewrite the bullets below for the target job using the raw texts and reference skill vocabulary.
-
-                FULL RESUME:
-                {{rawResume}}
-
-                FULL JOB DESCRIPTION:
-                {{rawJob}}
-
-                REFERENCE SKILL VOCABULARY (canonical skill names from knowledge base):
-                {{refSkillContext}}
-
-                EXPERIENCE ENTRY TO REWRITE:
-                Role: {{exp.Role}} | Company: {{exp.Company}}
-                {{bulletsText}}
-
-                TASK: Rewrite each bullet to naturally surface skills from the reference vocabulary where they genuinely apply.
-                Do not invent responsibilities.
-                Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
-                Return JSON array only: [{"original": "...", "rewritten": "..."}]
-                """;
-
-            tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp, temperature: 0.15f));
-        }
-
-        var summaryPrompt = $$"""
-            Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
-            Reference skill vocabulary: {{refSkillContext}}
-            Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
-            RESUME: {{rawResume}}
-            Output only the summary paragraph.
-            """;
-        string summary;
-        var summaryOptionsB = new ChatOptions { Temperature = 0.15f };
-        try { summary = (await _chatClient.GetResponseAsync(summaryPrompt, summaryOptionsB))?.Text?.Trim() ?? ""; }
-        catch { summary = ""; }
-
-        var personalInfo = ExtractPersonalInfoFromRawText(rawResume);
-        var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
-
-        var originalMappingsB = BuildOriginalMappings(user.CleanSignal, jobSignal);
-        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary, originalMappingsB);
-        var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
-        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
-
-        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet))
-            + " " + summary
-            + " " + string.Join(" ", user.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
-            + " " + string.Join(" ", user.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
-            + " " + string.Join(" ", user.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
-        var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
-        var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
-        var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
-        var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
-
-        sw.Stop();
-        return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
-            scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
-            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
-            atsBaseline, atsTailored, atsDeltaPct, contentPres);
-    }
-
-    private async Task<TailorPipelineResult> RunTailorPipelineCAsync(
         Guid resumeId, Guid jobId,
         MatchAnalysisResult baselineMatch,
         ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
@@ -774,7 +709,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
@@ -792,9 +727,9 @@ public class EvalController : ControllerBase
             tailoredData.PersonalInfo, tailoredData.CleanSignal,
             tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
 
-        var originalMappingsC = BuildOriginalMappings(tailoredData.CleanSignal, jobSignal);
+        var originalMappingsB = BuildOriginalMappings(tailoredData.CleanSignal, jobSignal);
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary, originalMappingsC);
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary, originalMappingsB);
 
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
@@ -813,7 +748,7 @@ public class EvalController : ControllerBase
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
-            atsBaseline, atsTailored, atsDeltaPct, contentPres);
+            atsBaseline, atsTailored, atsDeltaPct, contentPres, 0);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
