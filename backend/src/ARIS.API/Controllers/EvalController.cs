@@ -722,7 +722,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
