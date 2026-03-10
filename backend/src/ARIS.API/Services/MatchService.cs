@@ -412,7 +412,10 @@ public class MatchService
 
     /// <summary>
     /// Extracts canonical skill names present in the tailored resume output (bullets + summary).
-    /// Uses GroundingService's substring matching against the full reference skill vocabulary.
+    /// Primary pass: word-boundary substring matching (same as GroundingService.ExtractSkillsFromText).
+    /// Secondary pass: for short skill names (length &lt;= 6, e.g. "GAAP", "SQL", "CPA", "R"),
+    /// also accepts a plain case-insensitive Contains match to handle punctuation-adjacent occurrences
+    /// that the boundary check would reject (e.g. "GAAP," or "(SQL)").
     /// </summary>
     public async Task<HashSet<string>> ExtractCanonicalSkillsFromTailoredTextAsync(
         IEnumerable<ARIS.Shared.Models.TailoredBullet> bullets,
@@ -422,7 +425,6 @@ public class MatchService
 
         var allSkillNames = await _context.Skills.Select(s => s.Name).ToListAsync();
 
-        // Reuse the same word-boundary substring matching as GroundingService.ExtractSkillsFromText
         var lowerText = fullText.ToLowerInvariant();
         var found = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -432,10 +434,26 @@ public class MatchService
             var lowerSkill = skillName.ToLowerInvariant();
             var idx = lowerText.IndexOf(lowerSkill, StringComparison.Ordinal);
             if (idx < 0) continue;
+
             var charBefore = idx > 0 ? lowerText[idx - 1] : ' ';
             var charAfter = idx + lowerSkill.Length < lowerText.Length ? lowerText[idx + lowerSkill.Length] : ' ';
-            if (!char.IsLetterOrDigit(charBefore) && !char.IsLetterOrDigit(charAfter))
+
+            bool startBoundary = !char.IsLetterOrDigit(charBefore);
+            bool endBoundary = !char.IsLetterOrDigit(charAfter);
+
+            if (startBoundary && endBoundary)
+            {
                 found.Add(skillName);
+            }
+            else if (lowerSkill.Length <= 6)
+            {
+                // Secondary pass for short abbreviations: accept if surrounded only by non-alpha chars
+                // (punctuation, whitespace, parens). Rejects false positives like "r" matching "report".
+                bool startOk = !char.IsLetter(charBefore);
+                bool endOk = !char.IsLetter(charAfter);
+                if (startOk && endOk)
+                    found.Add(skillName);
+            }
         }
 
         return found;

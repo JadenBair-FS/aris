@@ -478,6 +478,7 @@ public class EvalController : ControllerBase
             articulatedSkills = scoring.ArticulatedSkills,
             hallucinations = scoring.Hallucinations,
             hallucinationCount = scoring.HallucinationCount,
+            canonicalSkillsExtracted = canonicalSkills.ToList(),
             tierBreakdown = new
             {
                 t1 = baselineMatch.MatchingSkills.Count,

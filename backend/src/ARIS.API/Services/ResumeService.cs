@@ -989,6 +989,10 @@ namespace ARIS.API.Services
             {
                 var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
+                var matchingSkillsLine = effectiveMatching.Count > 0
+                    ? string.Join(", ", effectiveMatching)
+                    : "(none)";
+
                 var prompt = $$"""
                     You are an expert resume writer with access to a validated knowledge graph.
 
@@ -997,6 +1001,9 @@ namespace ARIS.API.Services
 
                     FULL JOB DESCRIPTION (raw text — use employer's own language):
                     {{rawJobText}}
+
+                    TIER 1 (Direct Match — candidate already has these skills; surface them explicitly):
+                    {{matchingSkillsLine}}
 
                     {{graphContext}}
 
@@ -1007,11 +1014,13 @@ namespace ARIS.API.Services
                     Role: {{exp.Role}} | Company: {{exp.Company}}
                     {{bulletsText}}
 
-                    TASK: Rewrite each bullet to naturally surface skills from the graph context above.
+                    TASK: Rewrite each bullet to naturally surface skills from the Tier 1 list and graph context above.
                     Use the employer's language from the job description where it fits naturally.
                     Every claim must be grounded in the original resume facts — do not invent responsibilities.
                     Do not claim any hard gap skill under any circumstances.
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
+
+                    IMPORTANT — SKILL NAME PRECISION: When incorporating any skill from the Tier 1 list or knowledge graph, you MUST use the exact canonical skill name as it appears in the context above (e.g., write "Accounts Payable" not "AP", write "Microsoft Excel" not "Excel spreadsheets", write "General Ledger" not "GL", write "Python" not "Python scripting"). Exact canonical names are required for automated scoring.
 
                     Return JSON array only: [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;
