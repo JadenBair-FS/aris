@@ -825,6 +825,8 @@ namespace ARIS.API.Services
                     Do not force bridgeable or gap skills into bullets where they do not fit.
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
 
+                    Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting in the rewritten bullets.
+
                     Return JSON array only, no other text:
                     [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;
@@ -1009,6 +1011,8 @@ namespace ARIS.API.Services
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
 
                     IMPORTANT — SKILL NAME PRECISION: When incorporating any skill from the Tier 1 list or knowledge graph, you MUST use the exact canonical skill name as it appears in the context above (e.g., write "Accounts Payable" not "AP", write "Microsoft Excel" not "Excel spreadsheets", write "General Ledger" not "GL", write "Python" not "Python scripting"). Exact canonical names are required for automated scoring.
+
+                    Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting in the rewritten bullets.
 
                     Return JSON array only: [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;
