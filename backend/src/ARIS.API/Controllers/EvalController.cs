@@ -538,7 +538,8 @@ public class EvalController : ControllerBase
         double AtsSemanticTailoredScore,
         double AtsSemanticDeltaPercent,
         double ContentPreservation,
-        int T5InVocabularyCount     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
+        int T5InVocabularyCount,     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
+        double ImplicitDiscoveryRate
     );
 
     /// <summary>
@@ -597,6 +598,7 @@ public class EvalController : ControllerBase
             atsSemanticDeltaPercent  = r.AtsSemanticDeltaPercent,
             contentPreservation = r.ContentPreservation,
             t5InVocabularyCount = r.T5InVocabularyCount,
+            implicitDiscoveryRate = r.ImplicitDiscoveryRate,
             pdfBase64 = Convert.ToBase64String(r.PdfBytes)
         };
 
@@ -709,7 +711,7 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
-            contentPres, t5InVocab);
+            contentPres, t5InVocab, 0.0);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
@@ -722,7 +724,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
@@ -762,13 +764,18 @@ public class EvalController : ControllerBase
 
         var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
 
+        var totalJobSkills = jobSignal.RequiredSkills.Count;
+        var implicitDiscoveryRate = (double)(baselineMatch.ImplicitlyDiscoveredSkills.Count + 
+                                            baselineMatch.PrerequisiteMetSkills.Count + 
+                                            baselineMatch.BridgeableSkills.Count) / Math.Max(totalJobSkills, 1);
+
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
-            contentPres, 0);
+            contentPres, 0, implicitDiscoveryRate);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
