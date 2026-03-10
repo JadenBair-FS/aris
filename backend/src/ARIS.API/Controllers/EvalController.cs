@@ -432,10 +432,30 @@ public class EvalController : ControllerBase
         var user = await _context.UserProfiles.FindAsync(request.ResumeId);
         var userSkills = user?.CleanSignal?.Skills.Select(s => s.Name).ToList() ?? [];
 
+        string rawResumeText;
+        try
+        {
+            using var doc = JsonDocument.Parse(user?.RawResume ?? "{}");
+            rawResumeText = doc.RootElement.TryGetProperty("content", out var c) ? c.GetString() ?? "" : user?.RawResume ?? "";
+        }
+        catch { rawResumeText = user?.RawResume ?? ""; }
+        var rawJobText = job.RawDescription ?? "";
+
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(
             request.ResumeId, request.JobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
             return StatusCode(500, "Tailoring pipeline failed.");
+
+        var tailoredFullText = string.Join(" ",
+            tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + (tailoredData.ProfessionalSummary ?? "");
+
+        var atsBaseline  = ComputeJobAlignmentToken(rawResumeText, rawJobText);
+        var atsTailored  = ComputeJobAlignmentToken(tailoredFullText, rawJobText);
+        var atsDeltaPct  = atsBaseline > 0
+            ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2)
+            : 0.0;
+        var contentPres  = ComputeJobAlignmentToken(tailoredFullText, rawResumeText);
 
         var pdfBytes = _resumePdfService.GeneratePdf(
             tailoredData.PersonalInfo,
@@ -474,6 +494,10 @@ public class EvalController : ControllerBase
                 t5 = baselineMatch.HardGaps.Count
             },
             groundingScore = groundingResult.Score,
+            atsBaselineScore    = atsBaseline,
+            atsTailoredScore    = atsTailored,
+            atsDeltaPercent     = atsDeltaPct,
+            contentPreservation = contentPres,
             pdfBase64 = Convert.ToBase64String(pdfBytes)
         });
     }
@@ -493,7 +517,11 @@ public class EvalController : ControllerBase
         int HallucinationCount,
         double GroundingScore,
         long LatencyMs,
-        byte[] PdfBytes
+        byte[] PdfBytes,
+        double AtsBaselineScore,
+        double AtsTailoredScore,
+        double AtsDeltaPercent,
+        double ContentPreservation
     );
 
     /// <summary>
@@ -545,6 +573,10 @@ public class EvalController : ControllerBase
             hallucinationCount = r.HallucinationCount,
             groundingScore = r.GroundingScore,
             latencyMs = r.LatencyMs,
+            atsBaselineScore    = r.AtsBaselineScore,
+            atsTailoredScore    = r.AtsTailoredScore,
+            atsDeltaPercent     = r.AtsDeltaPercent,
+            contentPreservation = r.ContentPreservation,
             pdfBase64 = Convert.ToBase64String(r.PdfBytes)
         };
 
@@ -620,10 +652,17 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
+        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet)) + " " + summary;
+        var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
+        var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
+        var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
+        var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
+
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
-            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
+            atsBaseline, atsTailored, atsDeltaPct, contentPres);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
@@ -699,10 +738,17 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
+        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet)) + " " + summary;
+        var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
+        var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
+        var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
+        var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
+
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
-            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
+            atsBaseline, atsTailored, atsDeltaPct, contentPres);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineCAsync(
@@ -715,7 +761,19 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, []);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0);
+
+        // Load raw texts for ATS computation
+        var userEntity = await _context.UserProfiles.FindAsync(resumeId);
+        var jobEntity  = await _context.JobPostings.FindAsync(jobId);
+        string rawResume;
+        try
+        {
+            using var doc = JsonDocument.Parse(userEntity?.RawResume ?? "{}");
+            rawResume = doc.RootElement.TryGetProperty("content", out var c) ? c.GetString() ?? "" : userEntity?.RawResume ?? "";
+        }
+        catch { rawResume = userEntity?.RawResume ?? ""; }
+        var rawJob = jobEntity?.RawDescription ?? "";
 
         var pdfBytes = _resumePdfService.GeneratePdf(
             tailoredData.PersonalInfo, tailoredData.CleanSignal,
@@ -727,10 +785,18 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
+        var tailoredFullText = string.Join(" ", tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + (tailoredData.ProfessionalSummary ?? "");
+        var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
+        var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
+        var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
+        var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
+
         sw.Stop();
         return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
             scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
-            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
+            atsBaseline, atsTailored, atsDeltaPct, contentPres);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
@@ -793,6 +859,27 @@ public class EvalController : ControllerBase
         var lines = rawResume.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         var name = lines.FirstOrDefault()?.Trim() ?? "Candidate";
         return new PersonalInfo { Name = name };
+    }
+
+    /// <summary>
+    /// Computes ResumeFlow's SIGIR 2024 job_alignment_token metric.
+    /// JAT = |W(text1) ∩ W(text2)| / min(|W(text1)|, |W(text2)|)
+    /// where W() is the set of unique lowercase words stripped of punctuation.
+    /// </summary>
+    private static double ComputeJobAlignmentToken(string text1, string text2)
+    {
+        static HashSet<string> Tokenize(string text) =>
+            new HashSet<string>(
+                text.ToLowerInvariant()
+                    .Split(new char[] { ' ', '\n', '\r', '\t', ',', '.', '!', '?', ';', ':', '"', '\'', '(', ')', '-', '/', '\\', '[', ']', '{', '}' },
+                        StringSplitOptions.RemoveEmptyEntries),
+                StringComparer.Ordinal);
+
+        var w1 = Tokenize(text1);
+        var w2 = Tokenize(text2);
+        int intersection = w1.Count(w => w2.Contains(w));
+        int minCount = Math.Min(w1.Count, w2.Count);
+        return minCount == 0 ? 0.0 : Math.Round((double)intersection / minCount, 4);
     }
 
     /// <summary>
