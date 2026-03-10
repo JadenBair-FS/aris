@@ -472,6 +472,11 @@ public class EvalController : ControllerBase
         var atsDeltaPct  = atsBaseline > 0
             ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2)
             : 0.0;
+
+        var semBaseline = await ComputeSemanticSimilarityAsync(rawResumeText, rawJobText);
+        var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJobText);
+        var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
+
         var contentPres  = ComputeJobAlignmentToken(tailoredFullText, rawResumeText);
 
         var originalMappingsDelta = BuildOriginalMappings(tailoredData.CleanSignal, job.CleanSignal);
@@ -481,6 +486,11 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
 
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
+
+        var totalJobSkills = job.CleanSignal.RequiredSkills.Count;
+        var implicitDiscoveryRate = (double)(baselineMatch.ImplicitlyDiscoveredSkills.Count + 
+                                            baselineMatch.PrerequisiteMetSkills.Count + 
+                                            baselineMatch.BridgeableSkills.Count) / Math.Max(totalJobSkills, 1);
 
         sw.Stop();
 
@@ -509,6 +519,10 @@ public class EvalController : ControllerBase
             atsBaselineScore    = atsBaseline,
             atsTailoredScore    = atsTailored,
             atsDeltaPercent     = atsDeltaPct,
+            atsSemanticBaselineScore = semBaseline,
+            atsSemanticTailoredScore = semTailored,
+            atsSemanticDeltaPercent  = semDeltaPct,
+            implicitDiscoveryRate    = implicitDiscoveryRate,
             contentPreservation = contentPres,
             atsDebug            = atsDebug,
             pdfBase64 = Convert.ToBase64String(pdfBytes)
