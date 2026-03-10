@@ -860,11 +860,13 @@ public class EvalController : ControllerBase
     }
 
     /// <summary>
-    /// Computes ResumeFlow's SIGIR 2024 job_alignment_token metric.
-    /// JAT = |W(text1) ∩ W(text2)| / min(|W(text1)|, |W(text2)|)
+    /// Computes job coverage recall: the fraction of the job description's unique words that appear in the resume.
+    /// job_coverage = |W(resume) ∩ W(job)| / |W(job)|
     /// where W() is the set of unique lowercase words stripped of punctuation.
+    /// Unlike the overlap coefficient, this metric never penalizes adding non-job words to the resume,
+    /// making it suitable for before/after delta measurement of resume tailoring.
     /// </summary>
-    private static double ComputeJobAlignmentToken(string text1, string text2)
+    private static double ComputeJobAlignmentToken(string resumeText, string jobText)
     {
         static HashSet<string> Tokenize(string text) =>
             new HashSet<string>(
@@ -873,11 +875,10 @@ public class EvalController : ControllerBase
                         StringSplitOptions.RemoveEmptyEntries),
                 StringComparer.Ordinal);
 
-        var w1 = Tokenize(text1);
-        var w2 = Tokenize(text2);
-        int intersection = w1.Count(w => w2.Contains(w));
-        int minCount = Math.Min(w1.Count, w2.Count);
-        return minCount == 0 ? 0.0 : Math.Round((double)intersection / minCount, 4);
+        var resumeWords = Tokenize(resumeText);
+        var jobWords = Tokenize(jobText);
+        int intersection = jobWords.Count(w => resumeWords.Contains(w));
+        return jobWords.Count == 0 ? 0.0 : Math.Round((double)intersection / jobWords.Count, 4);
     }
 
     /// <summary>
