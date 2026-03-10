@@ -988,15 +988,23 @@ namespace ARIS.API.Services
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);
 
+            // Track which graph skills have already been surfaced so each skill
+            // appears in exactly one experience entry, not duplicated across roles.
+            var usedGraphSkills = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
             var bulletResults = new List<TailoredBullet>();
             foreach (var exp in experienceEntries)
             {
                 var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
+                // Rebuild graph context for this entry, excluding skills already used
+                var entryGraphContext = _graphService.BuildTailoringGraphContext(
+                    match, user.CleanSignal?.Skills, alreadyUsedSkills: usedGraphSkills);
+
                 var prompt = tailoringTemplate
                     .Replace("{rawResumeText}", rawResumeText)
                     .Replace("{rawJobText}", rawJobText)
-                    .Replace("{graphContext}", graphContextBlock)
+                    .Replace("{graphContext}", entryGraphContext)
                     .Replace("{role}", exp.Role)
                     .Replace("{company}", exp.Company ?? "")
                     .Replace("{bullets}", bulletsText);
@@ -1015,6 +1023,14 @@ namespace ARIS.API.Services
 
                     if (parsed != null)
                     {
+                        // Collect all skills that were assigned to this entry and mark them used
+                        // so subsequent entries receive a reduced graph context (no duplicates).
+                        var entryT2 = new HashSet<string>(match.ImplicitlyDiscoveredSkills, StringComparer.OrdinalIgnoreCase);
+                        var entryT3 = new HashSet<string>(match.PrerequisiteMetSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
+                        var entryT4 = new HashSet<string>(match.BridgeableSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
+                        var allGraphSkillsThisEntry = entryT2.Concat(entryT3).Concat(entryT4)
+                            .Where(s => !usedGraphSkills.Contains(s));
+
                         foreach (var item in parsed)
                         {
                             if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
@@ -1027,6 +1043,13 @@ namespace ARIS.API.Services
                                     Role = exp.Role,
                                     Company = exp.Company,
                                 });
+
+                                // Mark any graph skill mentioned in this rewritten bullet as used
+                                foreach (var graphSkill in allGraphSkillsThisEntry)
+                                {
+                                    if (item.Rewritten.Contains(graphSkill, StringComparison.OrdinalIgnoreCase))
+                                        usedGraphSkills.Add(graphSkill);
+                                }
                             }
                         }
                     }

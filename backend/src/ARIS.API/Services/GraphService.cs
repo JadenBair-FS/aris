@@ -288,7 +288,10 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// When provided, FROM-skill names in bridge hints are resolved to their original
     /// (pre-grounding) names so the LLM can match them back to the resume text.
     /// </param>
-    public string BuildTailoringGraphContext(MatchAnalysisResult match, IEnumerable<ResumeSkill>? candidateSkills = null)
+    public string BuildTailoringGraphContext(
+        MatchAnalysisResult match,
+        IEnumerable<ResumeSkill>? candidateSkills = null,
+        IReadOnlySet<string>? alreadyUsedSkills = null)
     {
         // Build canonical-name → original-name lookup from the candidate's own skills.
         // Key: canonical Name (post-grounding); Value: OriginalName as typed in the resume.
@@ -298,9 +301,16 @@ public class GraphService : IDisposable, IAsyncDisposable
             .ToDictionary(g => g.Key, g => g.First().OriginalName!, StringComparer.OrdinalIgnoreCase)
             ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-        var hasT2 = match.ImplicitlyDiscoveredSkills.Any();
-        var hasT3 = match.PrerequisiteMetSkills.Any();
-        var hasT4 = match.BridgeableSkills.Any();
+        bool IsUsed(string skillName) =>
+            alreadyUsedSkills != null && alreadyUsedSkills.Contains(skillName, StringComparer.OrdinalIgnoreCase);
+
+        var t2Skills = match.ImplicitlyDiscoveredSkills.Where(s => !IsUsed(s)).ToList();
+        var t3Skills = match.PrerequisiteMetSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
+        var t4Skills = match.BridgeableSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
+
+        var hasT2 = t2Skills.Any();
+        var hasT3 = t3Skills.Any();
+        var hasT4 = t4Skills.Any();
         var hasT5 = match.HardGaps.Any();
 
         if (!hasT2 && !hasT3 && !hasT4)
@@ -313,7 +323,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         {
             sb.AppendLine();
             sb.AppendLine("OWNED SKILLS (your advanced specialization already proves these — write them as direct, confident competencies):");
-            foreach (var skill in match.ImplicitlyDiscoveredSkills)
+            foreach (var skill in t2Skills)
                 sb.AppendLine($"  - {skill}  [validated by your advanced specialization]");
         }
 
@@ -321,7 +331,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         {
             sb.AppendLine();
             sb.AppendLine("FOUNDATION SKILLS (you have the prerequisite; the job needs the specialization — frame as developing toward it):");
-            foreach (var skill in match.PrerequisiteMetSkills)
+            foreach (var skill in t3Skills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "foundational experience";
@@ -334,7 +344,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         {
             sb.AppendLine();
             sb.AppendLine("ADJACENT SKILLS (your experience in a related tool transfers here — frame as carrying that experience across):");
-            foreach (var skill in match.BridgeableSkills)
+            foreach (var skill in t4Skills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "domain experience";
