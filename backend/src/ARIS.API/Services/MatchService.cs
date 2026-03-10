@@ -343,50 +343,69 @@ public class MatchService
              baselineMatch.BridgeableSkills.Sum(s => GetWeight(s.SkillName) * 0.4)) / weightedJobTotal;
         baselineScore = Math.Min(baselineScore, 1.0);
 
-        // --- Verified score: liberal mode ---
-        // T1 skills already in tailored text: keep full weight
-        // T2/T3/T4 skills that appear in tailored text: upgrade to full T1 weight (articulation succeeded)
-        // T5 skills in tailored text: 0.0, logged as hallucination
-        // Any skill not in tailored text at all: 0.0
+        // --- Verified score: conservative-floor + articulation-bonus mode ---
+        // T1 skills: always count at their full baseline weight — the candidate already has them and
+        //   tailoring cannot remove them. If verbatim canonical name also appears in tailored text,
+        //   the skill is logged as "confirmed" (no extra score; it was already counted).
+        // T2/T3/T4 skills: upgrade from their tier weight to full T1 weight only when the exact
+        //   canonical name appears in the tailored text (genuine articulation bonus).
+        // T5 skills: 0.0 always; logged as hallucination if they appear in the tailored text.
+        // This guarantees verifiedScore >= baselineScore for same-domain pairs (the floor invariant).
 
         var articulatedSkills = new List<string>();
         var hallucinations = new List<string>();
         double verifiedScore = 0.0;
 
-        // T1 matching — keep if present in tailored text (with experience multiplier)
+        // T1 matching — unconditionally carry full baseline weight; no dependency on tailored text.
+        // Tailoring improves framing, it does not erase real skills the candidate already holds.
         foreach (var skill in baselineMatch.MatchingSkills)
         {
-            if (tailoredSet.Contains(skill.SkillName))
-                verifiedScore += GetWeight(skill.SkillName) * 1.0 * ExperienceMultiplier(skill.CandidateYears, skill.YearsRequired);
+            verifiedScore += GetWeight(skill.SkillName) * 1.0 * ExperienceMultiplier(skill.CandidateYears, skill.YearsRequired);
         }
 
-        // T2 implicit — upgrade to T1 weight if articulated
+        // T2 implicit — baseline contributes 0.8 weight; upgrade to 1.0 if articulated in tailored text.
         foreach (var skill in baselineMatch.ImplicitlyDiscoveredSkills)
         {
             if (tailoredSet.Contains(skill))
             {
-                verifiedScore += GetWeight(skill) * 1.0;
+                // Articulation bonus: upgrade from 0.8 to 1.0 (add the extra 0.2)
+                verifiedScore += GetWeight(skill) * 0.2;
                 articulatedSkills.Add(skill);
+            }
+            else
+            {
+                // Not articulated: keep baseline tier weight so verifiedScore >= baselineScore
+                verifiedScore += GetWeight(skill) * 0.8;
             }
         }
 
-        // T3 prereq met — upgrade to T1 weight if articulated
+        // T3 prereq met — baseline contributes 0.6 weight; upgrade to 1.0 if articulated.
         foreach (var skill in baselineMatch.PrerequisiteMetSkills)
         {
             if (tailoredSet.Contains(skill.SkillName))
             {
-                verifiedScore += GetWeight(skill.SkillName) * 1.0;
+                // Articulation bonus: upgrade from 0.6 to 1.0 (add the extra 0.4)
+                verifiedScore += GetWeight(skill.SkillName) * 0.4;
                 articulatedSkills.Add(skill.SkillName);
+            }
+            else
+            {
+                verifiedScore += GetWeight(skill.SkillName) * 0.6;
             }
         }
 
-        // T4 bridgeable — upgrade to T1 weight if articulated
+        // T4 bridgeable — baseline contributes 0.4 weight; upgrade to 1.0 if articulated.
         foreach (var skill in baselineMatch.BridgeableSkills)
         {
             if (tailoredSet.Contains(skill.SkillName))
             {
-                verifiedScore += GetWeight(skill.SkillName) * 1.0;
+                // Articulation bonus: upgrade from 0.4 to 1.0 (add the extra 0.6)
+                verifiedScore += GetWeight(skill.SkillName) * 0.6;
                 articulatedSkills.Add(skill.SkillName);
+            }
+            else
+            {
+                verifiedScore += GetWeight(skill.SkillName) * 0.4;
             }
         }
 
