@@ -8,6 +8,7 @@ INSTRUCTIONS:
 - Do NOT mention hard gaps or any skill the candidate does not have
 - Do NOT invent job titles, companies, metrics, or technologies not present in the resume text
 - Output only the summary paragraph — no labels, headers, or extra commentary
+- Plain text only — no markdown, asterisks, bold, italic, bullet symbols, or special formatting of any kind.
 
 CANDIDATE RESUME (use this for voice, facts, and context):
 {rawResumeSnippet}

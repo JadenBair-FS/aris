@@ -293,13 +293,25 @@ public class GraphService : IDisposable, IAsyncDisposable
         IEnumerable<ResumeSkill>? candidateSkills = null,
         IReadOnlySet<string>? alreadyUsedSkills = null)
     {
-        // Build canonical-name → original-name lookup from the candidate's own skills.
-        // Key: canonical Name (post-grounding); Value: OriginalName as typed in the resume.
-        var canonicalToOriginal = candidateSkills?
-            .Where(s => s.OriginalName != null)
+        var skills = candidateSkills?.ToList() ?? [];
+
+        // canonical name → display name (original pre-grounding name, or canonical if unchanged)
+        var canonicalToDisplay = skills
             .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
-            .ToDictionary(g => g.Key, g => g.First().OriginalName!, StringComparer.OrdinalIgnoreCase)
-            ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            .ToDictionary(g => g.Key, g =>
+            {
+                var s = g.First();
+                return s.OriginalName ?? s.Name;
+            }, StringComparer.OrdinalIgnoreCase);
+
+        // canonical name → documented years on resume
+        var canonicalToYears = skills
+            .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First().YearsOfExperience, StringComparer.OrdinalIgnoreCase);
+
+        // set of skills documented directly on the resume (for detecting fabricated bridge sources)
+        var documentedSkills = new HashSet<string>(
+            skills.Select(s => s.Name), StringComparer.OrdinalIgnoreCase);
 
         bool IsUsed(string skillName) =>
             alreadyUsedSkills != null && alreadyUsedSkills.Contains(skillName, StringComparer.OrdinalIgnoreCase);
@@ -316,53 +328,101 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (!hasT2 && !hasT3 && !hasT4)
             return string.Empty;
 
+        // Helper: format a source skill with documentation status and years
+        string SourceLabel(string canonicalSource)
+        {
+            var display = canonicalToDisplay.TryGetValue(canonicalSource, out var d) ? d : canonicalSource;
+            if (documentedSkills.Contains(canonicalSource))
+            {
+                var yr = canonicalToYears.TryGetValue(canonicalSource, out var y) && y > 0
+                    ? $"{y:0.#} yr documented"
+                    : "documented in your resume";
+                return $"{display}  ({yr})";
+            }
+            return $"{display}  (inferred from your expertise — not a direct resume entry; choose a closely related documented skill as your anchor instead)";
+        }
+
         var sb = new System.Text.StringBuilder();
-        sb.AppendLine("KNOWLEDGE GRAPH CONTEXT — surface each skill below into the rewritten bullets:");
+        sb.AppendLine("═══════════════════════════════════════════════════════");
+        sb.AppendLine("KNOWLEDGE GRAPH — verified skill relationships");
+        sb.AppendLine("═══════════════════════════════════════════════════════");
 
         if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("OWNED SKILLS (your advanced specialization already proves these — write them as direct, confident competencies):");
+            sb.AppendLine("SECTION A — DIRECT COMPETENCIES");
+            sb.AppendLine("These are validated as direct competencies. Weave each into an");
+            sb.AppendLine("existing achievement bullet from the resume. Do not create a stub.");
             foreach (var skill in t2Skills)
-                sb.AppendLine($"  - {skill}  [validated by your advanced specialization]");
+            {
+                var display = canonicalToDisplay.TryGetValue(skill, out var d) ? d : skill;
+                var isDoc = documentedSkills.Contains(skill);
+                var note = isDoc
+                    ? (canonicalToYears.TryGetValue(skill, out var y) && y > 0 ? $"{y:0.#} yr documented" : "documented")
+                    : "inferred from your expertise";
+                sb.AppendLine($"  • {display}  ({note})");
+            }
         }
 
         if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("FOUNDATION SKILLS (you have the prerequisite; the job needs the specialization — frame as developing toward it):");
+            sb.AppendLine("───────────────────────────────────────────────────────");
+            sb.AppendLine("SECTION B — DEVELOPING TOWARD  (you have the prerequisite; job needs the specialization)");
+            sb.AppendLine();
+            sb.AppendLine("Required bullet opening — use this exact structure:");
+            sb.AppendLine("  \"Applies [SOURCE] knowledge to develop [TARGET] proficiency, [specific fact from your resume].\"");
+            sb.AppendLine();
+            sb.AppendLine("Rules for Section B:");
+            sb.AppendLine("  - The phrase above MUST open the bullet.");
+            sb.AppendLine("  - [SOURCE] = the skill shown after the arrow below. Do not substitute.");
+            sb.AppendLine("  - [specific fact] = one verifiable detail from the RESUME TEXT — a project, metric,");
+            sb.AppendLine("    technology, or role context. Details from the job description are NOT permitted.");
+            sb.AppendLine();
             foreach (var skill in t3Skills)
             {
-                var displayName = skill.OriginalName ?? skill.SkillName;
-                var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "foundational experience";
-                var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT3) ? origT3 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [prerequisite: {fromSkill} — example framing: \"applies {fromSkill} knowledge to develop {displayName} proficiency\"]");
+                var target = skill.OriginalName ?? skill.SkillName;
+                var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your foundation";
+                sb.AppendLine($"  • {target}  ←  SOURCE: {SourceLabel(fromCanonical)}");
             }
         }
 
         if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("ADJACENT SKILLS (your experience in a related tool transfers here — frame as carrying that experience across):");
+            sb.AppendLine("───────────────────────────────────────────────────────");
+            sb.AppendLine("SECTION C — TRANSFERABLE EXPERIENCE  (adjacent tool; your experience bridges here)");
+            sb.AppendLine();
+            sb.AppendLine("Required bullet opening — use this exact structure:");
+            sb.AppendLine("  \"Draws on [SOURCE] experience to work effectively with [TARGET], [specific fact from your resume].\"");
+            sb.AppendLine();
+            sb.AppendLine("Rules for Section C:");
+            sb.AppendLine("  - The phrase above MUST open the bullet.");
+            sb.AppendLine("  - [SOURCE] = the skill shown after the arrow below. Do not substitute.");
+            sb.AppendLine("  - [specific fact] = one verifiable detail from the RESUME TEXT — a project, metric,");
+            sb.AppendLine("    technology, or role context. Details from the job description are NOT permitted.");
+            sb.AppendLine();
             foreach (var skill in t4Skills)
             {
-                var displayName = skill.OriginalName ?? skill.SkillName;
-                var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "domain experience";
-                var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT4) ? origT4 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [bridge from: {fromSkill} — example framing: \"draws on {fromSkill} experience to work effectively with {displayName}\"]");
+                var target = skill.OriginalName ?? skill.SkillName;
+                var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your domain experience";
+                sb.AppendLine($"  • {target}  ←  SOURCE: {SourceLabel(fromCanonical)}");
             }
         }
 
         if (hasT5)
         {
             sb.AppendLine();
-            sb.AppendLine("NOT IN SCOPE (no validated path — never mention these, not even with hedging):");
-            foreach (var skill in match.HardGaps)
-            {
-                var displayName = skill.OriginalName ?? skill.SkillName;
-                sb.AppendLine($"  - {displayName}");
-            }
+            sb.AppendLine("───────────────────────────────────────────────────────");
+            sb.AppendLine("OFF LIMITS — never mention, reference, or hint at these:");
+            var hardGapNames = match.HardGaps
+                .Select(s => s.OriginalName ?? s.SkillName)
+                .ToList();
+            sb.AppendLine("  " + string.Join(", ", hardGapNames));
         }
+
+        sb.AppendLine();
+        sb.AppendLine("═══════════════════════════════════════════════════════");
 
         return sb.ToString();
     }
