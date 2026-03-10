@@ -454,7 +454,19 @@ public class EvalController : ControllerBase
             tailoredData.ProfessionalSummary,
             tailoredData.TailoredBullets);
 
-        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
+        var tailoredFullText = string.Join(" ", tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + (tailoredData.ProfessionalSummary ?? "")
+            + " " + string.Join(" ", tailoredData.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", tailoredData.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", tailoredData.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
+        var atsDebug = new {
+            rawResumeWordCount = ComputeTokenSet(rawResumeText).Count,
+            tailoredPdfWordCount = ComputeTokenSet(tailoredFullText).Count,
+            jobWordCount = ComputeTokenSet(rawJobText).Count,
+            rawResumePreview = rawResumeText.Length > 400 ? rawResumeText[..400] : rawResumeText,
+            tailoredPdfPreview = tailoredFullText.Length > 400 ? tailoredFullText[..400] : tailoredFullText,
+            jobPreview = rawJobText.Length > 400 ? rawJobText[..400] : rawJobText,
+        };
         var atsBaseline  = ComputeJobAlignmentToken(rawResumeText, rawJobText);
         var atsTailored  = ComputeJobAlignmentToken(tailoredFullText, rawJobText);
         var atsDeltaPct  = atsBaseline > 0
@@ -497,6 +509,7 @@ public class EvalController : ControllerBase
             atsTailoredScore    = atsTailored,
             atsDeltaPercent     = atsDeltaPct,
             contentPreservation = contentPres,
+            atsDebug            = atsDebug,
             pdfBase64 = Convert.ToBase64String(pdfBytes)
         });
     }
@@ -651,7 +664,11 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
+        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + summary
+            + " " + string.Join(" ", user.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", user.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", user.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -737,7 +754,11 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
+        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + summary
+            + " " + string.Join(" ", user.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", user.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", user.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -784,7 +805,11 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
+        var tailoredFullText = string.Join(" ", tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
+            + " " + (tailoredData.ProfessionalSummary ?? "")
+            + " " + string.Join(" ", tailoredData.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", tailoredData.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
+            + " " + string.Join(" ", tailoredData.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -866,17 +891,17 @@ public class EvalController : ControllerBase
     /// Unlike the overlap coefficient, this metric never penalizes adding non-job words to the resume,
     /// making it suitable for before/after delta measurement of resume tailoring.
     /// </summary>
+    private static HashSet<string> ComputeTokenSet(string text) =>
+        new HashSet<string>(
+            text.ToLowerInvariant()
+                .Split(new char[] { ' ', '\n', '\r', '\t', ',', '.', '!', '?', ';', ':', '"', '\'', '(', ')', '-', '/', '\\', '[', ']', '{', '}' },
+                    StringSplitOptions.RemoveEmptyEntries),
+            StringComparer.Ordinal);
+
     private static double ComputeJobAlignmentToken(string resumeText, string jobText)
     {
-        static HashSet<string> Tokenize(string text) =>
-            new HashSet<string>(
-                text.ToLowerInvariant()
-                    .Split(new char[] { ' ', '\n', '\r', '\t', ',', '.', '!', '?', ';', ':', '"', '\'', '(', ')', '-', '/', '\\', '[', ']', '{', '}' },
-                        StringSplitOptions.RemoveEmptyEntries),
-                StringComparer.Ordinal);
-
-        var resumeWords = Tokenize(resumeText);
-        var jobWords = Tokenize(jobText);
+        var resumeWords = ComputeTokenSet(resumeText);
+        var jobWords = ComputeTokenSet(jobText);
         int intersection = jobWords.Count(w => resumeWords.Contains(w));
         return jobWords.Count == 0 ? 0.0 : Math.Round((double)intersection / jobWords.Count, 4);
     }

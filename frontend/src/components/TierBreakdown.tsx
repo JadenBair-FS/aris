@@ -2,7 +2,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './ui/collap
 import { Badge } from './ui/badge';
 import { ChevronDown, CheckCircle2, XCircle, MinusCircle } from 'lucide-react';
 import { useState } from 'react';
-import { SkillBadge } from './SkillBadge';
+import { ImportanceBadge } from './SkillBadge';
 import type { SkillGapItem, UngroundedSkillComparison } from '../types/api';
 
 const TierSection = ({
@@ -81,7 +81,7 @@ export function TierBreakdown({
                     <div key={i} className="flex justify-between items-center py-1.5 border-b border-slate-50 last:border-0">
                         <div className="flex items-center">
                             <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                            <SkillBadge importance={s.importance} />
+                            <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.yearsRequired > 0 && (
                             <span className="text-xs text-slate-400">{s.candidateYears}yr / {s.yearsRequired}yr req</span>
@@ -113,7 +113,7 @@ export function TierBreakdown({
                     <div key={i} className="flex flex-col py-1.5 border-b border-slate-50 last:border-0">
                         <div className="flex items-center">
                             <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                            <SkillBadge importance={s.importance} />
+                            <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.bridgePath && <span className="text-xs text-slate-400">{s.bridgePath}</span>}
                     </div>
@@ -130,7 +130,7 @@ export function TierBreakdown({
                     <div key={i} className="flex flex-col py-1.5 border-b border-slate-50 last:border-0">
                         <div className="flex items-center">
                             <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                            <SkillBadge importance={s.importance} />
+                            <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.bridgePath && <span className="text-xs text-slate-400">{s.bridgePath}</span>}
                     </div>
@@ -146,7 +146,7 @@ export function TierBreakdown({
                 {hardGaps.map((s, i) => (
                     <div key={i} className="flex items-center py-2 border-b border-slate-50 last:border-0">
                         <span className="font-medium text-red-700">{s.skillName}</span>
-                        <SkillBadge importance={s.importance} />
+                        <ImportanceBadge importance={s.importance} />
                     </div>
                 ))}
             </TierSection>

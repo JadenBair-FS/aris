@@ -6,6 +6,7 @@ import { matchApi } from '@/api/match';
 import { jobApi } from '@/api/job';
 import { resumeApi } from '@/api/resume';
 import { TierBreakdown } from '@/components/TierBreakdown';
+import { SkillBadge } from '@/components/SkillBadge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -96,10 +97,13 @@ function JobPanel({ jobId }: { jobId: string }) {
                                 <p className="text-xs text-slate-400 mb-1.5">Essential</p>
                                 <div className="flex flex-wrap gap-1.5">
                                     {essential.map(s => (
-                                        <Badge key={s.name} className="text-xs bg-slate-900 text-white hover:bg-slate-800">
-                                            {s.name}
-                                            {s.years_of_experience > 0 && <span className="ml-1 opacity-70">· {s.years_of_experience}yr</span>}
-                                        </Badge>
+                                        <SkillBadge
+                                            key={s.name}
+                                            name={s.name}
+                                            originalName={s.original_name}
+                                            yearsOfExperience={s.years_of_experience}
+                                            className="bg-slate-900 text-white text-xs"
+                                        />
                                     ))}
                                 </div>
                             </div>
@@ -109,10 +113,13 @@ function JobPanel({ jobId }: { jobId: string }) {
                                 <p className="text-xs text-slate-400 mb-1.5">Preferred</p>
                                 <div className="flex flex-wrap gap-1.5">
                                     {preferred.map(s => (
-                                        <Badge key={s.name} variant="secondary" className="text-xs">
-                                            {s.name}
-                                            {s.years_of_experience > 0 && <span className="ml-1 opacity-60">· {s.years_of_experience}yr</span>}
-                                        </Badge>
+                                        <SkillBadge
+                                            key={s.name}
+                                            name={s.name}
+                                            originalName={s.original_name}
+                                            yearsOfExperience={s.years_of_experience}
+                                            className="text-xs"
+                                        />
                                     ))}
                                 </div>
                             </div>
@@ -122,10 +129,13 @@ function JobPanel({ jobId }: { jobId: string }) {
                                 <p className="text-xs text-slate-400 mb-1.5">Not in Database</p>
                                 <div className="flex flex-wrap gap-1.5">
                                     {signal.ungrounded_skills.map(s => (
-                                        <Badge key={s.name} variant="outline" className="text-xs text-slate-500 border-dashed">
-                                            {s.name}
-                                            {s.years_of_experience > 0 && <span className="ml-1 opacity-60">· {s.years_of_experience}yr</span>}
-                                        </Badge>
+                                        <SkillBadge
+                                            key={s.name}
+                                            name={s.name}
+                                            originalName={s.original_name}
+                                            yearsOfExperience={s.years_of_experience}
+                                            className="text-xs border border-dashed border-slate-300 bg-transparent text-slate-500"
+                                        />
                                     ))}
                                 </div>
                             </div>

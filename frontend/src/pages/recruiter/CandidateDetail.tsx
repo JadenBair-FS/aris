@@ -5,6 +5,7 @@ import { matchApi } from '@/api/match';
 import { resumeApi } from '@/api/resume';
 import { jobApi } from '@/api/job';
 import { TierBreakdown } from '@/components/TierBreakdown';
+import { SkillBadge } from '@/components/SkillBadge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -175,12 +176,12 @@ export default function CandidateDetail() {
                                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{category}</p>
                                                     <div className="flex flex-wrap gap-1.5">
                                                         {skills.map((s, i) => (
-                                                            <span key={i} className="bg-slate-100 text-slate-700 rounded-full px-3 py-1 text-sm">
-                                                                {s.name}
-                                                                {s.years_of_experience > 0 && (
-                                                                    <span className="text-slate-400 ml-1">· {s.years_of_experience}yr</span>
-                                                                )}
-                                                            </span>
+                                                            <SkillBadge
+                                                                key={i}
+                                                                name={s.name}
+                                                                originalName={s.original_name}
+                                                                yearsOfExperience={s.years_of_experience}
+                                                            />
                                                         ))}
                                                     </div>
                                                 </div>
@@ -190,12 +191,13 @@ export default function CandidateDetail() {
                                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Not in Database</p>
                                                     <div className="flex flex-wrap gap-1.5">
                                                         {signal.ungrounded_skills.map((s, i) => (
-                                                            <span key={i} className="border border-dashed border-slate-300 text-slate-500 rounded-full px-3 py-1 text-sm">
-                                                                {s.name}
-                                                                {s.years_of_experience > 0 && (
-                                                                    <span className="text-slate-400 ml-1">· {s.years_of_experience}yr</span>
-                                                                )}
-                                                            </span>
+                                                            <SkillBadge
+                                                                key={i}
+                                                                name={s.name}
+                                                                originalName={s.original_name}
+                                                                yearsOfExperience={s.years_of_experience}
+                                                                className="border border-dashed border-slate-300 bg-transparent text-slate-500"
+                                                            />
                                                         ))}
                                                     </div>
                                                 </div>

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { MatchCard } from '@/components/MatchCard';
+import { SkillBadge } from '@/components/SkillBadge';
 import { ArrowLeft } from 'lucide-react';
 
 export default function JobDetail() {
@@ -121,12 +122,13 @@ export default function JobDetail() {
                                                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Essential</p>
                                                 <div className="flex flex-wrap gap-1.5">
                                                     {essential.map(s => (
-                                                        <span key={s.name} className="bg-slate-900 text-white rounded-full px-3 py-1 text-sm">
-                                                            {s.name}
-                                                            {s.years_of_experience > 0 && (
-                                                                <span className="opacity-60 ml-1">· {s.years_of_experience}yr</span>
-                                                            )}
-                                                        </span>
+                                                        <SkillBadge
+                                                            key={s.name}
+                                                            name={s.name}
+                                                            originalName={s.original_name}
+                                                            yearsOfExperience={s.years_of_experience}
+                                                            className="bg-slate-900 text-white"
+                                                        />
                                                     ))}
                                                 </div>
                                             </div>
@@ -136,12 +138,12 @@ export default function JobDetail() {
                                                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Preferred</p>
                                                 <div className="flex flex-wrap gap-1.5">
                                                     {preferred.map(s => (
-                                                        <span key={s.name} className="bg-slate-100 text-slate-700 rounded-full px-3 py-1 text-sm">
-                                                            {s.name}
-                                                            {s.years_of_experience > 0 && (
-                                                                <span className="text-slate-400 ml-1">· {s.years_of_experience}yr</span>
-                                                            )}
-                                                        </span>
+                                                        <SkillBadge
+                                                            key={s.name}
+                                                            name={s.name}
+                                                            originalName={s.original_name}
+                                                            yearsOfExperience={s.years_of_experience}
+                                                        />
                                                     ))}
                                                 </div>
                                             </div>

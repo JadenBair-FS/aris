@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { SkillBadge } from '@/components/SkillBadge';
 
 export default function Profile() {
     const { user } = useAuth();
@@ -142,15 +143,12 @@ export default function Profile() {
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{category}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {skills.map((skill, i) => (
-                                            <span
+                                            <SkillBadge
                                                 key={i}
-                                                className="bg-slate-100 text-slate-700 rounded-full px-3 py-1 text-sm"
-                                            >
-                                                {skill.name}
-                                                {skill.years_of_experience > 0 && (
-                                                    <span className="text-slate-400 ml-1">· {skill.years_of_experience}yr</span>
-                                                )}
-                                            </span>
+                                                name={skill.name}
+                                                originalName={skill.original_name}
+                                                yearsOfExperience={skill.years_of_experience}
+                                            />
                                         ))}
                                     </div>
                                 </div>
@@ -160,15 +158,13 @@ export default function Profile() {
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Not in Database</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {signal.ungrounded_skills.map((skill, i) => (
-                                            <span
+                                            <SkillBadge
                                                 key={i}
-                                                className="border border-dashed border-slate-300 text-slate-500 rounded-full px-3 py-1 text-sm"
-                                            >
-                                                {skill.name}
-                                                {skill.years_of_experience > 0 && (
-                                                    <span className="text-slate-400 ml-1">· {skill.years_of_experience}yr</span>
-                                                )}
-                                            </span>
+                                                name={skill.name}
+                                                originalName={skill.original_name}
+                                                yearsOfExperience={skill.years_of_experience}
+                                                className="border border-dashed border-slate-300 bg-transparent text-slate-500"
+                                            />
                                         ))}
                                     </div>
                                 </div>
