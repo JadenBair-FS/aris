@@ -431,7 +431,8 @@ public class MatchService
     /// </summary>
     public async Task<HashSet<string>> ExtractCanonicalSkillsFromTailoredTextAsync(
         IEnumerable<ARIS.Shared.Models.TailoredBullet> bullets,
-        string summary)
+        string summary,
+        IEnumerable<(string Original, string Canonical)>? originalMappings = null)
     {
         var fullText = string.Join(" ", bullets.Select(b => b.RewrittenBullet)) + " " + summary;
 
@@ -440,29 +441,49 @@ public class MatchService
         var lowerText = fullText.ToLowerInvariant();
         var found = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        foreach (var skillName in allSkillNames)
+        bool MatchesInText(string term)
         {
-            if (string.IsNullOrWhiteSpace(skillName)) continue;
-            var lowerSkill = skillName.ToLowerInvariant();
-            var idx = lowerText.IndexOf(lowerSkill, StringComparison.Ordinal);
-            if (idx < 0) continue;
+            if (string.IsNullOrWhiteSpace(term)) return false;
+            var lower = term.ToLowerInvariant();
+            var idx = lowerText.IndexOf(lower, StringComparison.Ordinal);
+            if (idx < 0) return false;
 
             var charBefore = idx > 0 ? lowerText[idx - 1] : ' ';
-            var charAfter = idx + lowerSkill.Length < lowerText.Length ? lowerText[idx + lowerSkill.Length] : ' ';
+            var charAfter = idx + lower.Length < lowerText.Length ? lowerText[idx + lower.Length] : ' ';
 
             bool startBoundary = !char.IsLetterOrDigit(charBefore);
             bool endBoundary = !char.IsLetterOrDigit(charAfter);
 
-            if (startBoundary && endBoundary)
-            {
+            if (startBoundary && endBoundary) return true;
+
+            // Short terms (e.g. "SQL", "GAAP", "R") — relax boundary to non-letter only
+            if (lower.Length <= 6)
+                return !char.IsLetter(charBefore) && !char.IsLetter(charAfter);
+
+            return false;
+        }
+
+        // Primary pass: match canonical names from ref_skills
+        foreach (var skillName in allSkillNames)
+        {
+            if (MatchesInText(skillName))
                 found.Add(skillName);
-            }
-            else if (lowerSkill.Length <= 6)
+        }
+
+        // Secondary pass: match original (pre-grounding) names from clean signal.
+        // When found, record the canonical name — not the original — so the result
+        // set is always canonical vocabulary.
+        if (originalMappings != null)
+        {
+            foreach (var (original, canonical) in originalMappings)
             {
-                bool startOk = !char.IsLetter(charBefore);
-                bool endOk = !char.IsLetter(charAfter);
-                if (startOk && endOk)
-                    found.Add(skillName);
+                if (!string.IsNullOrWhiteSpace(original)
+                    && !string.IsNullOrWhiteSpace(canonical)
+                    && !found.Contains(canonical)
+                    && MatchesInText(original))
+                {
+                    found.Add(canonical);
+                }
             }
         }
 

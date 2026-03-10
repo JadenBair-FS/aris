@@ -474,8 +474,9 @@ public class EvalController : ControllerBase
             : 0.0;
         var contentPres  = ComputeJobAlignmentToken(tailoredFullText, rawResumeText);
 
+        var originalMappingsDelta = BuildOriginalMappings(tailoredData.CleanSignal, job.CleanSignal);
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary, originalMappingsDelta);
 
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
 
@@ -571,7 +572,7 @@ public class EvalController : ControllerBase
             return NotFound("Match analysis failed.");
 
         var pipelineA = await RunTailorPipelineAAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
-        var pipelineB = await RunTailorPipelineBAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills, job);
+        var pipelineB = await RunTailorPipelineBAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
         var pipelineC = await RunTailorPipelineCAsync(request.ResumeId, request.JobId, baselineMatch, job.CleanSignal, userSkills);
 
         static object ToResult(TailorPipelineResult r) => new
@@ -611,7 +612,6 @@ public class EvalController : ControllerBase
     {
         var sw = Stopwatch.StartNew();
         var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
-        var hardGapNames = baselineMatch.HardGaps.Select(s => s.SkillName).ToList();
         var tailoredBullets = new List<TailoredBullet>();
 
         var experienceEntries = user.CleanSignal!.ExperienceSummary
@@ -630,14 +630,11 @@ public class EvalController : ControllerBase
                 FULL JOB DESCRIPTION:
                 {{rawJob}}
 
-                HARD GAPS — DO NOT claim these:
-                {{(hardGapNames.Count > 0 ? string.Join(", ", hardGapNames) : "(none)")}}
-
                 EXPERIENCE ENTRY TO REWRITE:
                 Role: {{exp.Role}} | Company: {{exp.Company}}
                 {{bulletsText}}
 
-                TASK: Rewrite each bullet to align with the job description. Do not invent responsibilities. Do not claim hard gap skills.
+                TASK: Rewrite each bullet to align with the job description. Do not invent responsibilities.
                 Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
                 Return JSON array only: [{"original": "...", "rewritten": "..."}]
                 """;
@@ -648,6 +645,7 @@ public class EvalController : ControllerBase
         var summaryPrompt = $$"""
             Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
             Use only facts from the resume below. Do not invent skills.
+            Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
             RESUME: {{rawResume}}
             JOB DESCRIPTION: {{rawJob}}
             Output only the summary paragraph.
@@ -660,7 +658,8 @@ public class EvalController : ControllerBase
 
         var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
 
-        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary);
+        var originalMappingsA = BuildOriginalMappings(user.CleanSignal, jobSignal);
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary, originalMappingsA);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
@@ -686,21 +685,15 @@ public class EvalController : ControllerBase
         UserProfile user,
         MatchAnalysisResult baselineMatch,
         ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
-        List<string> userSkills,
-        JobPosting job)
+        List<string> userSkills)
     {
         var sw = Stopwatch.StartNew();
         var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
-        var hardGapNames = baselineMatch.HardGaps.Select(s => s.SkillName).ToList();
         var tailoredBullets = new List<TailoredBullet>();
 
-        var topRefSkills = await _context.Skills
-            .Where(s => s.Embedding != null && job.Embedding != null)
-            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(job.Embedding!) })
-            .OrderBy(x => x.Distance)
-            .Take(20)
-            .ToListAsync();
-        var refSkillContext = string.Join(", ", topRefSkills.Select(s => s.Name));
+        // Vector-RAG: use the job's clean signal required skills — already grounded to canonical
+        // names via vector similarity during job ingestion. No additional DB query needed.
+        var refSkillContext = string.Join(", ", jobSignal.RequiredSkills.Select(s => s.Name));
 
         var experienceEntries = user.CleanSignal!.ExperienceSummary
             .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
@@ -721,36 +714,36 @@ public class EvalController : ControllerBase
                 REFERENCE SKILL VOCABULARY (canonical skill names from knowledge base):
                 {{refSkillContext}}
 
-                HARD GAPS — DO NOT claim these:
-                {{(hardGapNames.Count > 0 ? string.Join(", ", hardGapNames) : "(none)")}}
-
                 EXPERIENCE ENTRY TO REWRITE:
                 Role: {{exp.Role}} | Company: {{exp.Company}}
                 {{bulletsText}}
 
                 TASK: Rewrite each bullet to naturally surface skills from the reference vocabulary where they genuinely apply.
-                Do not invent responsibilities. Do not claim hard gap skills.
+                Do not invent responsibilities.
                 Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
                 Return JSON array only: [{"original": "...", "rewritten": "..."}]
                 """;
 
-            tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp));
+            tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp, temperature: 0.15f));
         }
 
         var summaryPrompt = $$"""
             Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
             Reference skill vocabulary: {{refSkillContext}}
+            Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
             RESUME: {{rawResume}}
             Output only the summary paragraph.
             """;
         string summary;
-        try { summary = (await _chatClient.GetResponseAsync(summaryPrompt))?.Text?.Trim() ?? ""; }
+        var summaryOptionsB = new ChatOptions { Temperature = 0.15f };
+        try { summary = (await _chatClient.GetResponseAsync(summaryPrompt, summaryOptionsB))?.Text?.Trim() ?? ""; }
         catch { summary = ""; }
 
         var personalInfo = ExtractPersonalInfoFromRawText(rawResume);
         var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
 
-        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary);
+        var originalMappingsB = BuildOriginalMappings(user.CleanSignal, jobSignal);
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary, originalMappingsB);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
@@ -799,8 +792,9 @@ public class EvalController : ControllerBase
             tailoredData.PersonalInfo, tailoredData.CleanSignal,
             tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
 
+        var originalMappingsC = BuildOriginalMappings(tailoredData.CleanSignal, jobSignal);
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary, originalMappingsC);
 
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
@@ -824,12 +818,14 @@ public class EvalController : ControllerBase
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
         string prompt,
-        ARIS.Shared.Models.CleanSignal.ExperienceSummary exp)
+        ARIS.Shared.Models.CleanSignal.ExperienceSummary exp,
+        float? temperature = null)
     {
         var results = new List<TailoredBullet>();
         try
         {
-            var response = await _chatClient.GetResponseAsync(prompt);
+            var llmOptions = temperature.HasValue ? new ChatOptions { Temperature = temperature.Value } : null;
+            var response = await _chatClient.GetResponseAsync(prompt, llmOptions);
             var text = response?.Text?.Trim() ?? "";
             var json = Regex.Replace(text, @"```(?:json)?", "").Trim();
             var startIdx = json.IndexOf('[');
@@ -876,6 +872,33 @@ public class EvalController : ControllerBase
     }
 
     private record BulletItem(string Original, string Rewritten);
+
+    /// <summary>
+    /// Builds original→canonical name mappings from both clean signals so that
+    /// ExtractCanonicalSkillsFromTailoredTextAsync can resolve pre-grounding names
+    /// (e.g. "Node.js" → "Node.js", "React.js" → "React") that the LLM may have
+    /// written into the tailored text.
+    /// </summary>
+    private static IEnumerable<(string Original, string Canonical)> BuildOriginalMappings(
+        ARIS.Shared.Models.CleanSignal.ResumeCleanSignal? resumeSignal,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal? jobSignal)
+    {
+        var mappings = new List<(string, string)>();
+
+        if (resumeSignal != null)
+        {
+            foreach (var s in resumeSignal.Skills.Where(s => s.OriginalName != null))
+                mappings.Add((s.OriginalName!, s.Name));
+        }
+
+        if (jobSignal != null)
+        {
+            foreach (var s in jobSignal.RequiredSkills.Where(s => s.OriginalName != null))
+                mappings.Add((s.OriginalName!, s.Name));
+        }
+
+        return mappings;
+    }
 
     private static PersonalInfo ExtractPersonalInfoFromRawText(string rawResume)
     {

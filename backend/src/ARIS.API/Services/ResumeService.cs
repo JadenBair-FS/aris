@@ -1011,7 +1011,8 @@ namespace ARIS.API.Services
 
                 try
                 {
-                    var response = await _chatClient.GetResponseAsync(prompt);
+                    var bulletOptions = new ChatOptions { Temperature = 0.15f };
+                    var response = await _chatClient.GetResponseAsync(prompt, bulletOptions);
                     var text = response?.Text?.Trim() ?? "";
                     var json = System.Text.RegularExpressions.Regex.Replace(text, @"```(?:json)?", "").Trim();
                     var startIdx = json.IndexOf('[');
@@ -1029,7 +1030,8 @@ namespace ARIS.API.Services
                         var entryT3 = new HashSet<string>(match.PrerequisiteMetSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
                         var entryT4 = new HashSet<string>(match.BridgeableSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
                         var allGraphSkillsThisEntry = entryT2.Concat(entryT3).Concat(entryT4)
-                            .Where(s => !usedGraphSkills.Contains(s));
+                            .Where(s => !usedGraphSkills.Contains(s))
+                            .ToList();
 
                         foreach (var item in parsed)
                         {
@@ -1049,6 +1051,80 @@ namespace ARIS.API.Services
                                 {
                                     if (item.Rewritten.Contains(graphSkill, StringComparison.OrdinalIgnoreCase))
                                         usedGraphSkills.Add(graphSkill);
+                                }
+                            }
+                        }
+
+                        // ── Missing-skill retry ──────────────────────────────────────────────────────
+                        // Check which graph skills from this entry's context were not surfaced.
+                        // If any are missing, issue one targeted follow-up call to generate bullets
+                        // for only those skills, using the same prompt template.
+                        var missedSkills = allGraphSkillsThisEntry
+                            .Where(s => !usedGraphSkills.Contains(s))
+                            .ToList();
+
+                        if (missedSkills.Count > 0)
+                        {
+                            // Build a targeted context block listing only the missed skills
+                            var missedContext = BuildMissedSkillsContext(missedSkills, match, user.CleanSignal?.Skills);
+                            if (!string.IsNullOrWhiteSpace(missedContext))
+                            {
+                                var retryPrompt = tailoringTemplate
+                                    .Replace("{rawResumeText}", rawResumeText)
+                                    .Replace("{rawJobText}", rawJobText)
+                                    .Replace("{graphContext}", missedContext)
+                                    .Replace("{role}", exp.Role)
+                                    .Replace("{company}", exp.Company ?? "")
+                                    .Replace("{bullets}", bulletsText);
+
+                                try
+                                {
+                                    var retryOptions = new ChatOptions { Temperature = 0.15f };
+                                    var retryResponse = await _chatClient.GetResponseAsync(retryPrompt, retryOptions);
+                                    var retryText = retryResponse?.Text?.Trim() ?? "";
+                                    var retryJson = System.Text.RegularExpressions.Regex.Replace(retryText, @"```(?:json)?", "").Trim();
+                                    var retryStart = retryJson.IndexOf('[');
+                                    var retryEnd   = retryJson.LastIndexOf(']');
+                                    if (retryStart >= 0 && retryEnd > retryStart)
+                                        retryJson = retryJson[retryStart..(retryEnd + 1)];
+
+                                    var retryParsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(retryJson, _jsonOptions);
+                                    if (retryParsed != null)
+                                    {
+                                        foreach (var item in retryParsed)
+                                        {
+                                            if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
+                                            {
+                                                // Only add the retry bullet if it actually contains a missed skill
+                                                // and is not a duplicate of an already-added rewrite.
+                                                bool containsMissed = missedSkills.Any(s =>
+                                                    item.Rewritten.Contains(s, StringComparison.OrdinalIgnoreCase));
+                                                bool isDuplicate = bulletResults.Any(b =>
+                                                    string.Equals(b.RewrittenBullet, item.Rewritten, StringComparison.OrdinalIgnoreCase));
+
+                                                if (containsMissed && !isDuplicate)
+                                                {
+                                                    bulletResults.Add(new TailoredBullet
+                                                    {
+                                                        OriginalBullet  = item.Original,
+                                                        RewrittenBullet = item.Rewritten,
+                                                        TargetSkill     = exp.Role,
+                                                        Role            = exp.Role,
+                                                        Company         = exp.Company,
+                                                    });
+                                                    foreach (var s in missedSkills)
+                                                    {
+                                                        if (item.Rewritten.Contains(s, StringComparison.OrdinalIgnoreCase))
+                                                            usedGraphSkills.Add(s);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                catch (Exception retryEx)
+                                {
+                                    _logger.LogWarning(retryEx, "Missing-skill retry failed for entry {Role}", exp.Role);
                                 }
                             }
                         }
@@ -1073,6 +1149,78 @@ namespace ARIS.API.Services
 
             await Task.WhenAll(personalInfoTask, summaryTask);
             return new TailoredResumeData(user.CleanSignal, personalInfoTask.Result, summaryTask.Result, bulletResults);
+        }
+
+        /// <summary>
+        /// Builds a minimal graph context block containing only the specified missed skills,
+        /// classified into their correct sections based on the match tiers.
+        /// </summary>
+        private string BuildMissedSkillsContext(
+            List<string> missedSkills,
+            MatchAnalysisResult match,
+            IEnumerable<ARIS.Shared.Models.CleanSignal.ResumeSkill>? candidateSkills)
+        {
+            var t2Set = new HashSet<string>(match.ImplicitlyDiscoveredSkills, StringComparer.OrdinalIgnoreCase);
+            var t3Map = match.PrerequisiteMetSkills.ToDictionary(
+                s => s.OriginalName ?? s.SkillName, s => s, StringComparer.OrdinalIgnoreCase);
+            var t4Map = match.BridgeableSkills.ToDictionary(
+                s => s.OriginalName ?? s.SkillName, s => s, StringComparer.OrdinalIgnoreCase);
+
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("════════════════════════════════════════");
+            sb.AppendLine("KNOWLEDGE GRAPH — MISSED SKILLS (retry)");
+            sb.AppendLine("These skills were not covered in the previous bullets. Write one bullet for each.");
+            sb.AppendLine("════════════════════════════════════════");
+            sb.AppendLine();
+
+            var sectionA = missedSkills.Where(s => t2Set.Contains(s)).ToList();
+            var sectionB = missedSkills.Where(s => t3Map.ContainsKey(s)).ToList();
+            var sectionC = missedSkills.Where(s => t4Map.ContainsKey(s) && !t3Map.ContainsKey(s)).ToList();
+
+            string SourceLabel(string skillName)
+            {
+                var resumeSkill = candidateSkills?.FirstOrDefault(rs =>
+                    string.Equals(rs.Name, skillName, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(rs.OriginalName, skillName, StringComparison.OrdinalIgnoreCase));
+                if (resumeSkill?.YearsOfExperience > 0)
+                    return $"{skillName} ({(int)resumeSkill.YearsOfExperience} yr)";
+                return $"{skillName} (inferred)";
+            }
+
+            if (sectionA.Count > 0)
+            {
+                sb.AppendLine("SECTION A — CLAIM DIRECTLY:");
+                foreach (var s in sectionA)
+                    sb.AppendLine($"  • {SourceLabel(s)}");
+                sb.AppendLine();
+            }
+
+            if (sectionB.Count > 0)
+            {
+                sb.AppendLine("SECTION B — PREREQUISITE → SPECIALIZATION:");
+                foreach (var s in sectionB)
+                {
+                    var item = t3Map[s];
+                    var sourceName = item.BridgePath?.Split("→").FirstOrDefault()?.Trim() ?? s;
+                    sb.AppendLine($"  • {s}  ←  {SourceLabel(sourceName)}");
+                }
+                sb.AppendLine();
+            }
+
+            if (sectionC.Count > 0)
+            {
+                sb.AppendLine("SECTION C — ADJACENT → BRIDGE:");
+                foreach (var s in sectionC)
+                {
+                    var item = t4Map[s];
+                    var sourceName = item.BridgePath?.Split("→").FirstOrDefault()?.Trim() ?? s;
+                    sb.AppendLine($"  • {s}  ←  {SourceLabel(sourceName)}");
+                }
+                sb.AppendLine();
+            }
+
+            sb.AppendLine("════════════════════════════════════════");
+            return (sectionA.Count + sectionB.Count + sectionC.Count) > 0 ? sb.ToString() : "";
         }
     }
 }
