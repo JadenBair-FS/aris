@@ -971,11 +971,10 @@ namespace ARIS.API.Services
 
             var effectiveMatching = match.MatchingSkills.Select(s => s.SkillName).ToList();
             var effectiveImplicit = match.ImplicitlyDiscoveredSkills.ToList();
-            var effectivePrereqMet = match.PrerequisiteMetSkills.Select(s => s.SkillName).ToList();
             var effectiveBridgeable = match.BridgeableSkills.Select(s => s.SkillName).ToList();
             var effectiveHardGaps = match.HardGaps.Select(s => s.SkillName).ToList();
 
-            var graphContext = _graphService.BuildTailoringGraphContext(match);
+            var graphContextBlock = _graphService.BuildTailoringGraphContext(match);
             var jobTitle = job.CleanSignal.TargetRoles.FirstOrDefault()?.Title ?? "the role";
             var rawResumeText = ExtractRawResumeText(user.RawResume) ?? "";
             var rawJobText = job.RawDescription ?? "";
@@ -991,10 +990,6 @@ namespace ARIS.API.Services
             {
                 var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
-                var matchingSkillsLine = effectiveMatching.Count > 0
-                    ? string.Join(", ", effectiveMatching)
-                    : "(none)";
-
                 var prompt = $$"""
                     You are an expert resume writer with access to a validated knowledge graph.
 
@@ -1004,34 +999,23 @@ namespace ARIS.API.Services
                     FULL JOB DESCRIPTION (raw text — use employer's own language):
                     {{rawJobText}}
 
-                    TIER 1 (Direct Match — candidate already has these skills; surface them explicitly):
-                    {{matchingSkillsLine}}
-
-                    {{graphContext}}
-
-                    HARD GAPS — DO NOT claim these (candidate has no validated path to them):
-                    {{(effectiveHardGaps.Count > 0 ? string.Join(", ", effectiveHardGaps) : "(none)")}}
+                    {{graphContextBlock}}
 
                     EXPERIENCE ENTRY TO REWRITE:
                     Role: {{exp.Role}} | Company: {{exp.Company}}
                     {{bulletsText}}
 
-                    TASK: Rewrite each bullet to naturally surface skills from the Tier 1 list and graph context above.
-                    Use the employer's language from the job description where it fits naturally.
-                    Every claim must be grounded in the original resume facts — do not invent responsibilities.
-                    Do not claim any hard gap skill under any circumstances.
-                    Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
-
-                    Apply the following rules for each knowledge graph tier:
-                    - Tier 1 (Direct Match): Surface these skills explicitly — the candidate already has them.
-                    - Tier 2 (Already Proven): Claim these DIRECTLY and CONFIDENTLY. The candidate's more advanced skill proves they have this foundation. Example: if the candidate has React and the job needs JavaScript, state JavaScript proficiency outright — no hedging.
-                    - Tier 3 (Foundation Ready): The candidate has the prerequisite; the job wants the specialization. Use honest hedging: "Familiar with X through extensive Y work", "Actively building X skills on a strong Y foundation", "Y expertise directly applicable to X workflows."
-                    - Tier 4 (Transferable): Adjacent tool or domain bridge. Use transfer language: "X experience transferable to Y environments", "Applying X expertise to Y context."
-                    - Tier 5 (Hard Gap): Never claim. Never hedge. Do not mention these skills.
-
-                    IMPORTANT — SKILL NAME PRECISION: Use skill names exactly as they appear in the FULL RESUME and FULL JOB DESCRIPTION text above. Always prefer the job description's exact wording when referencing a skill (e.g., if the job says "React" write "React", not "React.js"; if the job says "Postgres" write "Postgres", not "PostgreSQL"). The knowledge graph context above identifies which bridgeable skills to surface — use the job description's own terminology for them.
-
-                    Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind in the rewritten bullets.
+                    TASK:
+                    Rewrite each bullet to read as polished, professional resume content. Follow these rules:
+                    1. Every skill listed under CLAIM DIRECTLY, HEDGE NATURALLY, and TRANSFER NATURALLY above MUST appear by name in at least one rewritten bullet. Distribute them naturally across bullets — do not stack all into one.
+                    2. Use the exact skill name shown in the list above (the job description's own terminology). Never substitute a canonical variant (write "React" not "React.js", "Postgres" not "PostgreSQL").
+                    3. For CLAIM DIRECTLY skills: state proficiency outright. No hedging.
+                    4. For HEDGE NATURALLY skills: use natural framing like the example given — e.g., "building X skills through Y work". Never claim direct experience you do not have.
+                    5. For TRANSFER NATURALLY skills: use transfer framing like the example given — e.g., "Y expertise applicable to X workflows".
+                    6. Never mention any skill listed under DO NOT MENTION.
+                    7. Every claim must connect to a real fact in the original resume. Do not invent projects or responsibilities.
+                    8. Keep bullets concise (1-2 lines), action-verb-led, quantified where the original was quantified.
+                    9. Plain text only — no markdown, asterisks, bold, italic, bullet symbols, or any special formatting.
 
                     Return JSON array only: [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;

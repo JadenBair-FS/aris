@@ -283,51 +283,59 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// </summary>
     public string BuildTailoringGraphContext(MatchAnalysisResult match)
     {
-        var sb = new System.Text.StringBuilder();
-        sb.AppendLine("KNOWLEDGE GRAPH — VALIDATED SKILL RELATIONSHIPS:");
+        var hasT2 = match.ImplicitlyDiscoveredSkills.Any();
+        var hasT3 = match.PrerequisiteMetSkills.Any();
+        var hasT4 = match.BridgeableSkills.Any();
+        var hasT5 = match.HardGaps.Any();
 
-        if (match.ImplicitlyDiscoveredSkills.Any())
+        if (!hasT2 && !hasT3 && !hasT4)
+            return string.Empty;
+
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("REQUIRED SKILLS TO SURFACE — you MUST naturally work each of these into the rewritten bullets:");
+
+        if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 2 (Already Proven — the job requires these and your advanced skills prove you have them):");
-            sb.AppendLine("  ACTION: Claim these DIRECTLY and CONFIDENTLY. No hedging. The candidate demonstrably has these.");
+            sb.AppendLine("CLAIM DIRECTLY (your advanced skills prove you already have these — state them outright):");
             foreach (var skill in match.ImplicitlyDiscoveredSkills)
-                sb.AppendLine($"  - {skill} [you have a more advanced skill that requires this as a foundation]");
+                sb.AppendLine($"  - {skill}  [your advanced specialization demonstrates this]");
         }
 
-        if (match.PrerequisiteMetSkills.Any())
+        if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 3 (Foundation Ready — the job requires the specialization; candidate has the prerequisite foundation):");
-            sb.AppendLine("  ACTION: Disclose with honest hedging — candidate has the foundation, not yet the specialization.");
+            sb.AppendLine("HEDGE NATURALLY (you have the foundation; the job needs the specialization — frame as growing expertise):");
             foreach (var skill in match.PrerequisiteMetSkills)
             {
-                var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [SUBSET_OF]";
-                var displayName = !string.IsNullOrWhiteSpace(skill.OriginalName) && !string.Equals(skill.OriginalName, skill.SkillName, StringComparison.OrdinalIgnoreCase)
-                    ? $"{skill.SkillName} (job calls this \"{skill.OriginalName}\")"
-                    : skill.SkillName;
-                sb.AppendLine($"  - {displayName}{path}");
+                var displayName = skill.OriginalName ?? skill.SkillName;
+                var fromSkill = skill.BridgePath?.Split('→').FirstOrDefault()?.Trim() ?? "foundational experience";
+                sb.AppendLine($"  - {displayName}  [your {fromSkill} is the direct prerequisite — e.g., \"building {displayName} skills through {fromSkill} work\"]");
             }
         }
 
-        if (match.BridgeableSkills.Any())
+        if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 4 (Transferable — candidate has adjacent tool/domain experience that bridges here):");
-            sb.AppendLine("  ACTION: Disclose with transfer language — experience is adjacent and validated by the knowledge graph.");
+            sb.AppendLine("TRANSFER NATURALLY (adjacent tool — frame as transferable experience):");
             foreach (var skill in match.BridgeableSkills)
             {
-                var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [BRIDGE_TO]";
-                var source = !string.IsNullOrWhiteSpace(skill.BridgeSource) ? $", {skill.BridgeSource}" : "";
-                var displayName = !string.IsNullOrWhiteSpace(skill.OriginalName) && !string.Equals(skill.OriginalName, skill.SkillName, StringComparison.OrdinalIgnoreCase)
-                    ? $"{skill.SkillName} (job calls this \"{skill.OriginalName}\")"
-                    : skill.SkillName;
-                sb.AppendLine($"  - {displayName}{path}{source}");
+                var displayName = skill.OriginalName ?? skill.SkillName;
+                var fromSkill = skill.BridgePath?.Split('→').FirstOrDefault()?.Trim() ?? "domain experience";
+                sb.AppendLine($"  - {displayName}  [your {fromSkill} experience bridges here — e.g., \"{fromSkill} expertise directly applicable to {displayName}\"]");
             }
         }
 
-        if (!match.ImplicitlyDiscoveredSkills.Any() && !match.PrerequisiteMetSkills.Any() && !match.BridgeableSkills.Any())
-            sb.AppendLine("No graph-validated skill bridges found for this pairing.");
+        if (hasT5)
+        {
+            sb.AppendLine();
+            sb.AppendLine("DO NOT MENTION (no validated path exists — never claim, never hedge):");
+            foreach (var skill in match.HardGaps)
+            {
+                var displayName = skill.OriginalName ?? skill.SkillName;
+                sb.AppendLine($"  - {displayName}");
+            }
+        }
 
         return sb.ToString();
     }
