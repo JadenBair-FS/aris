@@ -289,15 +289,17 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (match.ImplicitlyDiscoveredSkills.Any())
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 2 (Implicit — your specialization implies these foundations):");
+            sb.AppendLine("TIER 2 (Already Proven — the job requires these and your advanced skills prove you have them):");
+            sb.AppendLine("  ACTION: Claim these DIRECTLY and CONFIDENTLY. No hedging. The candidate demonstrably has these.");
             foreach (var skill in match.ImplicitlyDiscoveredSkills)
-                sb.AppendLine($"  - {skill} [SUBSET_OF — inferred from your expertise]");
+                sb.AppendLine($"  - {skill} [you have a more advanced skill that requires this as a foundation]");
         }
 
         if (match.PrerequisiteMetSkills.Any())
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 3 (Prerequisite Met — your foundation supports these job requirements):");
+            sb.AppendLine("TIER 3 (Foundation Ready — the job requires the specialization; candidate has the prerequisite foundation):");
+            sb.AppendLine("  ACTION: Disclose with honest hedging — candidate has the foundation, not yet the specialization.");
             foreach (var skill in match.PrerequisiteMetSkills)
             {
                 var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [SUBSET_OF]";
@@ -311,7 +313,8 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (match.BridgeableSkills.Any())
         {
             sb.AppendLine();
-            sb.AppendLine("TIER 4 (Bridgeable — your experience transfers to these via domain bridge):");
+            sb.AppendLine("TIER 4 (Transferable — candidate has adjacent tool/domain experience that bridges here):");
+            sb.AppendLine("  ACTION: Disclose with transfer language — experience is adjacent and validated by the knowledge graph.");
             foreach (var skill in match.BridgeableSkills)
             {
                 var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [BRIDGE_TO]";

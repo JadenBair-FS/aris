@@ -638,7 +638,7 @@ public class EvalController : ControllerBase
                 {{bulletsText}}
 
                 TASK: Rewrite each bullet to align with the job description. Do not invent responsibilities. Do not claim hard gap skills.
-                Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting.
+                Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
                 Return JSON array only: [{"original": "...", "rewritten": "..."}]
                 """;
 
@@ -730,7 +730,7 @@ public class EvalController : ControllerBase
 
                 TASK: Rewrite each bullet to naturally surface skills from the reference vocabulary where they genuinely apply.
                 Do not invent responsibilities. Do not claim hard gap skills.
-                Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting.
+                Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind.
                 Return JSON array only: [{"original": "...", "rewritten": "..."}]
                 """;
 

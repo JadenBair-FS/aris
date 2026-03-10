@@ -1022,9 +1022,16 @@ namespace ARIS.API.Services
                     Do not claim any hard gap skill under any circumstances.
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
 
+                    Apply the following rules for each knowledge graph tier:
+                    - Tier 1 (Direct Match): Surface these skills explicitly — the candidate already has them.
+                    - Tier 2 (Already Proven): Claim these DIRECTLY and CONFIDENTLY. The candidate's more advanced skill proves they have this foundation. Example: if the candidate has React and the job needs JavaScript, state JavaScript proficiency outright — no hedging.
+                    - Tier 3 (Foundation Ready): The candidate has the prerequisite; the job wants the specialization. Use honest hedging: "Familiar with X through extensive Y work", "Actively building X skills on a strong Y foundation", "Y expertise directly applicable to X workflows."
+                    - Tier 4 (Transferable): Adjacent tool or domain bridge. Use transfer language: "X experience transferable to Y environments", "Applying X expertise to Y context."
+                    - Tier 5 (Hard Gap): Never claim. Never hedge. Do not mention these skills.
+
                     IMPORTANT — SKILL NAME PRECISION: Use skill names exactly as they appear in the FULL RESUME and FULL JOB DESCRIPTION text above. Always prefer the job description's exact wording when referencing a skill (e.g., if the job says "React" write "React", not "React.js"; if the job says "Postgres" write "Postgres", not "PostgreSQL"). The knowledge graph context above identifies which bridgeable skills to surface — use the job description's own terminology for them.
 
-                    Use plain text only — do not use markdown, asterisks, bold, italic, or any special formatting in the rewritten bullets.
+                    Use plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no special characters or formatting of any kind in the rewritten bullets.
 
                     Return JSON array only: [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;
