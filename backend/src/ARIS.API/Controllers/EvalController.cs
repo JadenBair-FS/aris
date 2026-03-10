@@ -22,6 +22,8 @@ public class EvalController : ControllerBase
     private readonly ArisDbContext _context;
     private readonly IChatClient _chatClient;
     private readonly ILogger<EvalController> _logger;
+    private readonly ResumeService _resumeService;
+    private readonly ResumePdfService _resumePdfService;
 
     public EvalController(
         MatchService matchService,
@@ -29,7 +31,9 @@ public class EvalController : ControllerBase
         ExtractionBenchmarkService benchmarkService,
         ArisDbContext context,
         IChatClient chatClient,
-        ILogger<EvalController> logger)
+        ILogger<EvalController> logger,
+        ResumeService resumeService,
+        ResumePdfService resumePdfService)
     {
         _matchService = matchService;
         _groundingService = groundingService;
@@ -37,6 +41,8 @@ public class EvalController : ControllerBase
         _context = context;
         _chatClient = chatClient;
         _logger = logger;
+        _resumeService = resumeService;
+        _resumePdfService = resumePdfService;
     }
 
     public class GroundingRequest
@@ -401,6 +407,417 @@ public class EvalController : ControllerBase
 
         var result = await _benchmarkService.RunBenchmarkAsync(request);
         return Ok(result);
+    }
+
+    public class TailorDeltaRequest
+    {
+        public Guid ResumeId { get; set; }
+        public Guid JobId { get; set; }
+    }
+
+    /// <summary>
+    /// Runs the full GraphRAG tailoring pipeline (T-C) once and returns both scoring metrics
+    /// and the tailored PDF. Single LLM execution — no double-compute.
+    /// Returns: baselineScore, verifiedScore, delta, articulatedSkills, hallucinations,
+    ///          tierBreakdown, groundingScore, pdfBase64.
+    /// </summary>
+    [HttpPost("tailor-delta")]
+    public async Task<IActionResult> TailorDelta([FromBody] TailorDeltaRequest request)
+    {
+        if (request.ResumeId == Guid.Empty || request.JobId == Guid.Empty)
+            return BadRequest("ResumeId and JobId are required.");
+
+        var sw = Stopwatch.StartNew();
+
+        // Step 1: baseline match (shared truth boundary)
+        var baselineMatch = await _matchService.AnalyzeMatchAsync(request.ResumeId, request.JobId);
+        if (baselineMatch == null)
+            return NotFound("Match analysis failed. Ensure both IDs are valid and fully processed.");
+
+        var job = await _context.JobPostings.FindAsync(request.JobId);
+        if (job?.CleanSignal == null)
+            return NotFound($"Job {request.JobId} not found or has no CleanSignal.");
+
+        var user = await _context.UserProfiles.FindAsync(request.ResumeId);
+        var userSkills = user?.CleanSignal?.Skills.Select(s => s.Name).ToList() ?? [];
+
+        // Step 2: run tailoring pipeline (single LLM execution)
+        var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(
+            request.ResumeId, request.JobId, precomputedMatch: baselineMatch);
+        if (tailoredData == null)
+            return StatusCode(500, "Tailoring pipeline failed.");
+
+        // Step 3: generate PDF
+        var pdfBytes = _resumePdfService.GeneratePdf(
+            tailoredData.PersonalInfo,
+            tailoredData.CleanSignal,
+            tailoredData.ProfessionalSummary,
+            tailoredData.TailoredBullets);
+
+        // Step 4: extract canonical skills from tailored output
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
+
+        // Step 5: score
+        var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
+
+        // Step 6: grounding score of tailored output
+        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
+
+        sw.Stop();
+
+        return Ok(new
+        {
+            resumeId = request.ResumeId,
+            jobId = request.JobId,
+            latencyMs = sw.ElapsedMilliseconds,
+            baselineScore = scoring.BaselineScore,
+            verifiedScore = scoring.VerifiedScore,
+            delta = scoring.Delta,
+            deltaPercent = Math.Round(scoring.Delta * 100, 2),
+            articulatedSkills = scoring.ArticulatedSkills,
+            hallucinations = scoring.Hallucinations,
+            hallucinationCount = scoring.HallucinationCount,
+            tierBreakdown = new
+            {
+                t1 = baselineMatch.MatchingSkills.Count,
+                t2 = baselineMatch.ImplicitlyDiscoveredSkills.Count,
+                t3 = baselineMatch.PrerequisiteMetSkills.Count,
+                t4 = baselineMatch.BridgeableSkills.Count,
+                t5 = baselineMatch.HardGaps.Count
+            },
+            groundingScore = groundingResult.Score,
+            pdfBase64 = Convert.ToBase64String(pdfBytes)
+        });
+    }
+
+    public class TailorCompareRequest
+    {
+        public Guid ResumeId { get; set; }
+        public Guid JobId { get; set; }
+    }
+
+    private record TailorPipelineResult(
+        double BaselineScore,
+        double VerifiedScore,
+        double Delta,
+        List<string> ArticulatedSkills,
+        List<string> Hallucinations,
+        int HallucinationCount,
+        double GroundingScore,
+        long LatencyMs,
+        byte[] PdfBytes
+    );
+
+    /// <summary>
+    /// Runs three tailoring pipelines (T-A: raw text only, T-B: raw text + ref skills, T-C: full GraphRAG)
+    /// and returns side-by-side scoring + PDF artifacts for each.
+    /// All three share the same baselineMatch allowed set (computed once).
+    /// </summary>
+    [HttpPost("tailor-compare")]
+    public async Task<IActionResult> TailorCompare([FromBody] TailorCompareRequest request)
+    {
+        if (request.ResumeId == Guid.Empty || request.JobId == Guid.Empty)
+            return BadRequest("ResumeId and JobId are required.");
+
+        var user = await _context.UserProfiles.FindAsync(request.ResumeId);
+        var job = await _context.JobPostings.FindAsync(request.JobId);
+
+        if (user?.CleanSignal == null)
+            return NotFound($"User profile {request.ResumeId} not found or has no CleanSignal.");
+        if (job?.CleanSignal == null)
+            return NotFound($"Job {request.JobId} not found or has no CleanSignal.");
+
+        // Extract raw texts
+        string rawResumeText;
+        try
+        {
+            using var doc = JsonDocument.Parse(user.RawResume ?? "{}");
+            rawResumeText = doc.RootElement.TryGetProperty("content", out var c) ? c.GetString() ?? "" : user.RawResume ?? "";
+        }
+        catch { rawResumeText = user.RawResume ?? ""; }
+        var rawJobText = job.RawDescription ?? "";
+
+        var userSkills = user.CleanSignal.Skills.Select(s => s.Name).ToList();
+
+        // Compute baseline match ONCE — shared truth boundary for all three pipelines
+        var baselineMatch = await _matchService.AnalyzeMatchAsync(request.ResumeId, request.JobId);
+        if (baselineMatch == null)
+            return NotFound("Match analysis failed.");
+
+        // Run pipelines sequentially (each makes LLM calls)
+        var pipelineA = await RunTailorPipelineAAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
+        var pipelineB = await RunTailorPipelineBAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills, job);
+        var pipelineC = await RunTailorPipelineCAsync(request.ResumeId, request.JobId, baselineMatch, job.CleanSignal, userSkills);
+
+        static object ToResult(TailorPipelineResult r) => new
+        {
+            baselineScore = r.BaselineScore,
+            verifiedScore = r.VerifiedScore,
+            delta = r.Delta,
+            deltaPercent = Math.Round(r.Delta * 100, 2),
+            articulatedSkills = r.ArticulatedSkills,
+            hallucinations = r.Hallucinations,
+            hallucinationCount = r.HallucinationCount,
+            groundingScore = r.GroundingScore,
+            latencyMs = r.LatencyMs,
+            pdfBase64 = Convert.ToBase64String(r.PdfBytes)
+        };
+
+        return Ok(new
+        {
+            resumeId = request.ResumeId,
+            jobId = request.JobId,
+            pipelineA = ToResult(pipelineA),
+            pipelineB = ToResult(pipelineB),
+            pipelineC = ToResult(pipelineC)
+        });
+    }
+
+    /// Pipeline T-A: raw resume + raw job text only — no graph context, no ref skills
+    private async Task<TailorPipelineResult> RunTailorPipelineAAsync(
+        string rawResume, string rawJob,
+        UserProfile user,
+        MatchAnalysisResult baselineMatch,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
+        List<string> userSkills)
+    {
+        var sw = Stopwatch.StartNew();
+        var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
+        var hardGapNames = baselineMatch.HardGaps.Select(s => s.SkillName).ToList();
+        var tailoredBullets = new List<TailoredBullet>();
+
+        var experienceEntries = user.CleanSignal!.ExperienceSummary
+            .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
+            .ToList();
+
+        foreach (var exp in experienceEntries)
+        {
+            var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
+            var prompt = $$"""
+                You are an expert resume writer. Rewrite the bullets below for the target job using only the raw resume and job description as context.
+
+                FULL RESUME:
+                {{rawResume}}
+
+                FULL JOB DESCRIPTION:
+                {{rawJob}}
+
+                HARD GAPS — DO NOT claim these:
+                {{(hardGapNames.Count > 0 ? string.Join(", ", hardGapNames) : "(none)")}}
+
+                EXPERIENCE ENTRY TO REWRITE:
+                Role: {{exp.Role}} | Company: {{exp.Company}}
+                {{bulletsText}}
+
+                TASK: Rewrite each bullet to align with the job description. Do not invent responsibilities. Do not claim hard gap skills.
+                Return JSON array only: [{"original": "...", "rewritten": "..."}]
+                """;
+
+            tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp));
+        }
+
+        // Generate summary
+        var summaryPrompt = $$"""
+            Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
+            Use only facts from the resume below. Do not invent skills.
+            RESUME: {{rawResume}}
+            JOB DESCRIPTION: {{rawJob}}
+            Output only the summary paragraph.
+            """;
+        string summary;
+        try { summary = (await _chatClient.GetResponseAsync(summaryPrompt))?.Text?.Trim() ?? ""; }
+        catch { summary = ""; }
+
+        // Personal info
+        var personalInfo = ExtractPersonalInfoFromRawText(rawResume);
+
+        // PDF
+        var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
+
+        // Score
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary);
+        var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
+        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
+
+        sw.Stop();
+        return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
+            scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+    }
+
+    /// Pipeline T-B: raw texts + top-20 reference skills — no graph traversal
+    private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
+        string rawResume, string rawJob,
+        UserProfile user,
+        MatchAnalysisResult baselineMatch,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
+        List<string> userSkills,
+        JobPosting job)
+    {
+        var sw = Stopwatch.StartNew();
+        var jobTitle = jobSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
+        var hardGapNames = baselineMatch.HardGaps.Select(s => s.SkillName).ToList();
+        var tailoredBullets = new List<TailoredBullet>();
+
+        // Retrieve top-20 reference skills closest to job embedding
+        var topRefSkills = await _context.Skills
+            .Where(s => s.Embedding != null && job.Embedding != null)
+            .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(job.Embedding!) })
+            .OrderBy(x => x.Distance)
+            .Take(20)
+            .ToListAsync();
+        var refSkillContext = string.Join(", ", topRefSkills.Select(s => s.Name));
+
+        var experienceEntries = user.CleanSignal!.ExperienceSummary
+            .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
+            .ToList();
+
+        foreach (var exp in experienceEntries)
+        {
+            var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
+            var prompt = $$"""
+                You are an expert resume writer. Rewrite the bullets below for the target job using the raw texts and reference skill vocabulary.
+
+                FULL RESUME:
+                {{rawResume}}
+
+                FULL JOB DESCRIPTION:
+                {{rawJob}}
+
+                REFERENCE SKILL VOCABULARY (canonical skill names from knowledge base):
+                {{refSkillContext}}
+
+                HARD GAPS — DO NOT claim these:
+                {{(hardGapNames.Count > 0 ? string.Join(", ", hardGapNames) : "(none)")}}
+
+                EXPERIENCE ENTRY TO REWRITE:
+                Role: {{exp.Role}} | Company: {{exp.Company}}
+                {{bulletsText}}
+
+                TASK: Rewrite each bullet to naturally surface skills from the reference vocabulary where they genuinely apply.
+                Do not invent responsibilities. Do not claim hard gap skills.
+                Return JSON array only: [{"original": "...", "rewritten": "..."}]
+                """;
+
+            tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp));
+        }
+
+        // Generate summary
+        var summaryPrompt = $$"""
+            Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
+            Reference skill vocabulary: {{refSkillContext}}
+            RESUME: {{rawResume}}
+            Output only the summary paragraph.
+            """;
+        string summary;
+        try { summary = (await _chatClient.GetResponseAsync(summaryPrompt))?.Text?.Trim() ?? ""; }
+        catch { summary = ""; }
+
+        var personalInfo = ExtractPersonalInfoFromRawText(rawResume);
+        var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
+
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary);
+        var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
+        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
+
+        sw.Stop();
+        return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
+            scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+    }
+
+    /// Pipeline T-C: full GraphRAG (reuses BuildTailoredResumeDataAsync with precomputed match)
+    private async Task<TailorPipelineResult> RunTailorPipelineCAsync(
+        Guid resumeId, Guid jobId,
+        MatchAnalysisResult baselineMatch,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
+        List<string> userSkills)
+    {
+        var sw = Stopwatch.StartNew();
+
+        var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
+        if (tailoredData == null)
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, []);
+
+        var pdfBytes = _resumePdfService.GeneratePdf(
+            tailoredData.PersonalInfo, tailoredData.CleanSignal,
+            tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
+
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
+
+        var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
+        var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
+
+        sw.Stop();
+        return new TailorPipelineResult(scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta,
+            scoring.ArticulatedSkills, scoring.Hallucinations, scoring.HallucinationCount,
+            groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
+    }
+
+    /// Shared helper: calls LLM with prompt and parses bullet rewrite JSON
+    private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
+        string prompt,
+        ARIS.Shared.Models.CleanSignal.ExperienceSummary exp)
+    {
+        var results = new List<TailoredBullet>();
+        try
+        {
+            var response = await _chatClient.GetResponseAsync(prompt);
+            var text = response?.Text?.Trim() ?? "";
+            var json = Regex.Replace(text, @"```(?:json)?", "").Trim();
+            var startIdx = json.IndexOf('[');
+            var endIdx = json.LastIndexOf(']');
+            if (startIdx >= 0 && endIdx > startIdx)
+                json = json[startIdx..(endIdx + 1)];
+
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var parsed = JsonSerializer.Deserialize<List<BulletItem>>(json, options);
+            if (parsed != null)
+            {
+                foreach (var item in parsed)
+                {
+                    if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
+                    {
+                        results.Add(new TailoredBullet
+                        {
+                            OriginalBullet = item.Original,
+                            RewrittenBullet = item.Rewritten,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Failed to parse bullets from LLM for role {Role}", exp.Role);
+            foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+            {
+                results.Add(new TailoredBullet
+                {
+                    OriginalBullet = bullet,
+                    RewrittenBullet = bullet,
+                    TargetSkill = exp.Role,
+                    Role = exp.Role,
+                    Company = exp.Company,
+                });
+            }
+        }
+        return results;
+    }
+
+    private record BulletItem(string Original, string Rewritten);
+
+    /// Shared helper: extracts personal info from raw resume text — uses first non-empty line as name.
+    private static PersonalInfo ExtractPersonalInfoFromRawText(string rawResume)
+    {
+        var lines = rawResume.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        var name = lines.FirstOrDefault()?.Trim() ?? "Candidate";
+        return new PersonalInfo { Name = name };
     }
 
     /// <summary>

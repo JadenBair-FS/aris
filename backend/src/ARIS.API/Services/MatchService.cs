@@ -12,6 +12,15 @@ namespace ARIS.API.Services;
 
 public record RecruiterSummaryResult(string Summary, double GroundingScore, string Verdict);
 
+public record TailorVerificationResult(
+    double BaselineScore,
+    double VerifiedScore,
+    double Delta,
+    List<string> ArticulatedSkills,
+    List<string> Hallucinations,
+    int HallucinationCount
+);
+
 public class MatchService
 {
     private readonly ArisDbContext _context;
@@ -297,6 +306,139 @@ public class MatchService
             BridgePath = bridgePath,
             BridgeSource = bridgeSource
         };
+    }
+
+    /// <summary>
+    /// Scores a tailored resume's canonical skill output against the baseline match tier classification.
+    /// Liberal scoring: T2/T3/T4 skills that appear explicitly in tailored text upgrade to full T1 weight.
+    /// T5 (hard gap) skills in tailored text score 0.0 and are logged as hallucinations.
+    /// </summary>
+    public TailorVerificationResult VerifiedMatchScore(
+        MatchAnalysisResult baselineMatch,
+        IEnumerable<string> tailoredCanonicalSkills,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal)
+    {
+        var tailoredSet = new HashSet<string>(tailoredCanonicalSkills, StringComparer.OrdinalIgnoreCase);
+        var hardGapSet = baselineMatch.HardGaps.Select(s => s.SkillName)
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        // Build importance weight map
+        var importanceWeights = jobSignal.RequiredSkills
+            .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(
+                g => g.Key,
+                g => g.Any(s => !s.Importance.Equals("Preferred", StringComparison.OrdinalIgnoreCase)) ? 1.0 : 0.6,
+                StringComparer.OrdinalIgnoreCase);
+
+        double GetWeight(string skillName) =>
+            importanceWeights.TryGetValue(skillName, out var w) ? w : 1.0;
+
+        var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
+
+        // --- Baseline score: recompute GraphCoverageScore from tier data ---
+        double baselineScore =
+            (baselineMatch.MatchingSkills.Sum(s => GetWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
+             baselineMatch.ImplicitlyDiscoveredSkills.Sum(s => GetWeight(s) * 0.8) +
+             baselineMatch.PrerequisiteMetSkills.Sum(s => GetWeight(s.SkillName) * 0.6) +
+             baselineMatch.BridgeableSkills.Sum(s => GetWeight(s.SkillName) * 0.4)) / weightedJobTotal;
+        baselineScore = Math.Min(baselineScore, 1.0);
+
+        // --- Verified score: liberal mode ---
+        // T1 skills already in tailored text: keep full weight
+        // T2/T3/T4 skills that appear in tailored text: upgrade to full T1 weight (articulation succeeded)
+        // T5 skills in tailored text: 0.0, logged as hallucination
+        // Any skill not in tailored text at all: 0.0
+
+        var articulatedSkills = new List<string>();
+        var hallucinations = new List<string>();
+        double verifiedScore = 0.0;
+
+        // T1 matching — keep if present in tailored text (with experience multiplier)
+        foreach (var skill in baselineMatch.MatchingSkills)
+        {
+            if (tailoredSet.Contains(skill.SkillName))
+                verifiedScore += GetWeight(skill.SkillName) * 1.0 * ExperienceMultiplier(skill.CandidateYears, skill.YearsRequired);
+        }
+
+        // T2 implicit — upgrade to T1 weight if articulated
+        foreach (var skill in baselineMatch.ImplicitlyDiscoveredSkills)
+        {
+            if (tailoredSet.Contains(skill))
+            {
+                verifiedScore += GetWeight(skill) * 1.0;
+                articulatedSkills.Add(skill);
+            }
+        }
+
+        // T3 prereq met — upgrade to T1 weight if articulated
+        foreach (var skill in baselineMatch.PrerequisiteMetSkills)
+        {
+            if (tailoredSet.Contains(skill.SkillName))
+            {
+                verifiedScore += GetWeight(skill.SkillName) * 1.0;
+                articulatedSkills.Add(skill.SkillName);
+            }
+        }
+
+        // T4 bridgeable — upgrade to T1 weight if articulated
+        foreach (var skill in baselineMatch.BridgeableSkills)
+        {
+            if (tailoredSet.Contains(skill.SkillName))
+            {
+                verifiedScore += GetWeight(skill.SkillName) * 1.0;
+                articulatedSkills.Add(skill.SkillName);
+            }
+        }
+
+        // T5 hard gaps — hallucination if present in tailored text
+        foreach (var skill in baselineMatch.HardGaps)
+        {
+            if (tailoredSet.Contains(skill.SkillName))
+                hallucinations.Add(skill.SkillName);
+        }
+
+        verifiedScore = Math.Min(verifiedScore / weightedJobTotal, 1.0);
+        double delta = baselineScore > 0 ? (verifiedScore - baselineScore) / baselineScore : 0.0;
+
+        return new TailorVerificationResult(
+            BaselineScore: Math.Round(baselineScore, 4),
+            VerifiedScore: Math.Round(verifiedScore, 4),
+            Delta: Math.Round(delta, 4),
+            ArticulatedSkills: articulatedSkills,
+            Hallucinations: hallucinations,
+            HallucinationCount: hallucinations.Count
+        );
+    }
+
+    /// <summary>
+    /// Extracts canonical skill names present in the tailored resume output (bullets + summary).
+    /// Uses GroundingService's substring matching against the full reference skill vocabulary.
+    /// </summary>
+    public async Task<HashSet<string>> ExtractCanonicalSkillsFromTailoredTextAsync(
+        IEnumerable<ARIS.Shared.Models.TailoredBullet> bullets,
+        string summary)
+    {
+        var fullText = string.Join(" ", bullets.Select(b => b.RewrittenBullet)) + " " + summary;
+
+        var allSkillNames = await _context.Skills.Select(s => s.Name).ToListAsync();
+
+        // Reuse the same word-boundary substring matching as GroundingService.ExtractSkillsFromText
+        var lowerText = fullText.ToLowerInvariant();
+        var found = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var skillName in allSkillNames)
+        {
+            if (string.IsNullOrWhiteSpace(skillName)) continue;
+            var lowerSkill = skillName.ToLowerInvariant();
+            var idx = lowerText.IndexOf(lowerSkill, StringComparison.Ordinal);
+            if (idx < 0) continue;
+            var charBefore = idx > 0 ? lowerText[idx - 1] : ' ';
+            var charAfter = idx + lowerSkill.Length < lowerText.Length ? lowerText[idx + lowerSkill.Length] : ' ';
+            if (!char.IsLetterOrDigit(charBefore) && !char.IsLetterOrDigit(charAfter))
+                found.Add(skillName);
+        }
+
+        return found;
     }
 
     public async Task<(string Summary, double GroundingScore)> GenerateGroundedSummaryAsync(Guid userProfileId, Guid jobId)

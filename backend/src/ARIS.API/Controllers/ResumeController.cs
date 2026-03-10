@@ -122,12 +122,6 @@ namespace ARIS.API.Controllers
         {
             public Guid UserProfileId { get; set; }
             public Guid JobId { get; set; }
-
-            public List<string>? MatchingSkills { get; set; }
-            public List<string>? ImplicitSkills { get; set; }
-            public List<string>? PrereqMetSkills { get; set; }
-            public List<string>? BridgeableSkills { get; set; }
-            public List<string>? HardGaps { get; set; }
         }
 
         [HttpGet("by-user/{userId}")]
@@ -193,10 +187,7 @@ namespace ARIS.API.Controllers
                 return BadRequest("UserProfileId and JobId are required.");
 
             var data = await _service.BuildTailoredResumeDataAsync(
-                request.UserProfileId, request.JobId,
-                request.MatchingSkills, request.ImplicitSkills,
-                request.PrereqMetSkills, request.BridgeableSkills,
-                request.HardGaps);
+                request.UserProfileId, request.JobId);
 
             if (data == null)
                 return NotFound("Could not tailor resume. Ensure the profile and job exist and have been processed.");

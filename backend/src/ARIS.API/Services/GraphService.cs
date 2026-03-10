@@ -1,3 +1,4 @@
+using ARIS.Shared.Models;
 using Neo4j.Driver;
 
 namespace ARIS.API.Services;
@@ -281,6 +282,56 @@ public class GraphService : IDisposable, IAsyncDisposable
             var sourceNote = bridgeSource != null ? $" [source: {bridgeSource}]" : "";
             sb.AppendLine($"  - {viaSkill} → {skillName} (via {bridgeType}{sourceNote})");
         }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// Builds a human-readable graph context block from a precomputed MatchAnalysisResult.
+    /// Pure in-memory — uses data already computed by AnalyzeMatchAsync. No Neo4j queries.
+    /// Used to inject validated skill relationships into the resume tailoring LLM prompt.
+    /// </summary>
+    public string BuildTailoringGraphContext(MatchAnalysisResult match)
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("KNOWLEDGE GRAPH — VALIDATED SKILL RELATIONSHIPS:");
+
+        // Tier 2: Implicit — candidate's specialization implies these foundations
+        if (match.ImplicitlyDiscoveredSkills.Any())
+        {
+            sb.AppendLine();
+            sb.AppendLine("TIER 2 (Implicit — your specialization implies these foundations):");
+            foreach (var skill in match.ImplicitlyDiscoveredSkills)
+                sb.AppendLine($"  - {skill} [SUBSET_OF — inferred from your expertise]");
+        }
+
+        // Tier 3: Prerequisite Met — candidate's foundation supports these job requirements
+        if (match.PrerequisiteMetSkills.Any())
+        {
+            sb.AppendLine();
+            sb.AppendLine("TIER 3 (Prerequisite Met — your foundation supports these job requirements):");
+            foreach (var skill in match.PrerequisiteMetSkills)
+            {
+                var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [SUBSET_OF]";
+                sb.AppendLine($"  - {skill.SkillName}{path}");
+            }
+        }
+
+        // Tier 4: Bridgeable — transferable via domain bridge
+        if (match.BridgeableSkills.Any())
+        {
+            sb.AppendLine();
+            sb.AppendLine("TIER 4 (Bridgeable — your experience transfers to these via domain bridge):");
+            foreach (var skill in match.BridgeableSkills)
+            {
+                var path = !string.IsNullOrWhiteSpace(skill.BridgePath) ? $" [{skill.BridgePath}]" : " [BRIDGE_TO]";
+                var source = !string.IsNullOrWhiteSpace(skill.BridgeSource) ? $", {skill.BridgeSource}" : "";
+                sb.AppendLine($"  - {skill.SkillName}{path}{source}");
+            }
+        }
+
+        if (!match.ImplicitlyDiscoveredSkills.Any() && !match.PrerequisiteMetSkills.Any() && !match.BridgeableSkills.Any())
+            sb.AppendLine("No graph-validated skill bridges found for this pairing.");
+
         return sb.ToString();
     }
 

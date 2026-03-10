@@ -87,6 +87,8 @@ namespace ARIS.API.Services
         private readonly double _firstPassThreshold;
         private readonly double _secondPassThreshold;
         private readonly PersonalInfoExtractor _personalInfoExtractor;
+        private readonly MatchService _matchService;
+        private readonly GraphService _graphService;
         private readonly ILogger<ResumeService> _logger;
 
         private static readonly HttpClient _http = new() { Timeout = TimeSpan.FromHours(1) };
@@ -98,12 +100,14 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, PersonalInfoExtractor personalInfoExtractor, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, PersonalInfoExtractor personalInfoExtractor, MatchService matchService, GraphService graphService, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
             _chatClient = chatClient;
             _personalInfoExtractor = personalInfoExtractor;
+            _matchService = matchService;
+            _graphService = graphService;
             _ollamaGenerateUrl = ollamaGenerateUrl;
             _extractionModel = extractionModel;
             _extractionNumCtx = extractionNumCtx;
@@ -912,14 +916,17 @@ namespace ARIS.API.Services
             List<string> matchingSkills,
             List<string> implicitSkills,
             List<string> bridgeableSkills,
-            List<string> hardGaps)
+            List<string> hardGaps,
+            string rawJobDescription = "")
         {
             var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
             var template = await File.ReadAllTextAsync(promptPath);
             var snippet = rawText.Length > 3000 ? rawText[..3000] : rawText;
+            var jobSnippet = rawJobDescription.Length > 1500 ? rawJobDescription[..1500] : rawJobDescription;
 
             var prompt = template
                 .Replace("{rawResumeSnippet}", snippet)
+                .Replace("{rawJobSnippet}", jobSnippet)
                 .Replace("{jobTitle}", jobTitle)
                 .Replace("{matchingSkills}", matchingSkills.Count > 0 ? string.Join(", ", matchingSkills) : "(none)")
                 .Replace("{implicitSkills}", implicitSkills.Count > 0 ? string.Join(", ", implicitSkills) : "(none)")
@@ -941,11 +948,7 @@ namespace ARIS.API.Services
         public async Task<TailoredResumeData?> BuildTailoredResumeDataAsync(
             Guid userProfileId,
             Guid jobId,
-            List<string>? matchingSkills = null,
-            List<string>? implicitSkills = null,
-            List<string>? prereqMetSkills = null,
-            List<string>? bridgeableSkills = null,
-            List<string>? hardGaps = null)
+            MatchAnalysisResult? precomputedMatch = null)
         {
             var user = await _context.UserProfiles.FindAsync(userProfileId);
             var job = await _context.JobPostings.FindAsync(jobId);
@@ -957,36 +960,28 @@ namespace ARIS.API.Services
                 .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
                 .ToList();
 
-            List<string> effectiveMatching, effectiveImplicit, effectivePrereqMet, effectiveBridgeable, effectiveHardGaps;
-            if (matchingSkills != null)
-            {
-                effectiveMatching = matchingSkills;
-                effectiveImplicit = implicitSkills ?? [];
-                effectivePrereqMet = prereqMetSkills ?? [];
-                effectiveBridgeable = bridgeableSkills ?? [];
-                effectiveHardGaps = hardGaps ?? [];
-            }
-            else
-            {
-                var userSkillNames = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
-                effectiveMatching = [.. user.CleanSignal.Skills.Select(s => s.Name)];
-                effectiveImplicit = [];
-                effectivePrereqMet = [];
-                effectiveBridgeable = [];
-                effectiveHardGaps = [.. job.CleanSignal.RequiredSkills
-                    .Where(js => !userSkillNames.Contains(js.Name))
-                    .Select(js => js.Name)];
-            }
+            // Use precomputed match if provided; otherwise compute now
+            var match = precomputedMatch ?? await _matchService.AnalyzeMatchAsync(userProfileId, jobId);
+            if (match == null)
+                return null;
 
+            var effectiveMatching = match.MatchingSkills.Select(s => s.SkillName).ToList();
+            var effectiveImplicit = match.ImplicitlyDiscoveredSkills.ToList();
+            var effectivePrereqMet = match.PrerequisiteMetSkills.Select(s => s.SkillName).ToList();
+            var effectiveBridgeable = match.BridgeableSkills.Select(s => s.SkillName).ToList();
+            var effectiveHardGaps = match.HardGaps.Select(s => s.SkillName).ToList();
+
+            var graphContext = _graphService.BuildTailoringGraphContext(match);
             var jobTitle = job.CleanSignal.TargetRoles.FirstOrDefault()?.Title ?? "the role";
-            var rawText = ExtractRawResumeText(user.RawResume) ?? "";
+            var rawResumeText = ExtractRawResumeText(user.RawResume) ?? "";
+            var rawJobText = job.RawDescription ?? "";
 
             // Start personal info extraction and summary generation in parallel
-            // while the serial bullet rewriting loop runs below.
-            var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawText);
+            var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText);
             var summaryTask = GenerateSummaryAsync(
-                rawText, jobTitle,
-                effectiveMatching, effectiveImplicit, effectiveBridgeable, effectiveHardGaps);
+                rawResumeText, jobTitle,
+                effectiveMatching, effectiveImplicit, effectiveBridgeable, effectiveHardGaps,
+                rawJobText);
 
             // Rewrite bullets for each experience entry (serial — LLM context sensitive)
             var bulletResults = new List<TailoredBullet>();
@@ -995,37 +990,30 @@ namespace ARIS.API.Services
                 var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
                 var prompt = $$"""
-                    You are an expert resume writer. Below is a candidate's experience entry and the full skill analysis for the job they are targeting.
+                    You are an expert resume writer with access to a validated knowledge graph.
 
-                    ORIGINAL EXPERIENCE:
-                    Role: {{exp.Role}}  |  Company: {{exp.Company}}
-                    {{bulletsText}}
+                    FULL RESUME (raw text — use for facts, voice, and context):
+                    {{rawResumeText}}
 
-                    JOB TARGET: {{jobTitle}}
+                    FULL JOB DESCRIPTION (raw text — use employer's own language):
+                    {{rawJobText}}
 
-                    JOB REQUIRES — MATCHING SKILLS (candidate already has):
-                    {{(effectiveMatching.Count > 0 ? string.Join(", ", effectiveMatching) : "(none)")}}
+                    {{graphContext}}
 
-                    JOB REQUIRES — CAN BE INFERRED FROM BACKGROUND (implicit):
-                    {{(effectiveImplicit.Count > 0 ? string.Join(", ", effectiveImplicit) : "(none)")}}
-
-                    JOB REQUIRES — CANDIDATE HAS FOUNDATIONS FOR (prerequisite-met):
-                    {{(effectivePrereqMet.Count > 0 ? string.Join(", ", effectivePrereqMet) : "(none)")}}
-
-                    JOB REQUIRES — REACHABLE WITH EXISTING EXPERIENCE (bridgeable):
-                    {{(effectiveBridgeable.Count > 0 ? string.Join(", ", effectiveBridgeable) : "(none)")}}
-
-                    JOB REQUIRES — GENUINE GAPS (do NOT force these in):
+                    HARD GAPS — DO NOT claim these (candidate has no validated path to them):
                     {{(effectiveHardGaps.Count > 0 ? string.Join(", ", effectiveHardGaps) : "(none)")}}
 
-                    TASK:
-                    Rewrite each numbered bullet so it naturally incorporates relevant keywords from the matching, implicit, and bridgeable skill lists where they genuinely apply to what was done in this role.
-                    Keep the original facts, company context, and achievements — do not invent new responsibilities.
-                    Do not force bridgeable or gap skills into bullets where they do not fit.
+                    EXPERIENCE ENTRY TO REWRITE:
+                    Role: {{exp.Role}} | Company: {{exp.Company}}
+                    {{bulletsText}}
+
+                    TASK: Rewrite each bullet to naturally surface skills from the graph context above.
+                    Use the employer's language from the job description where it fits naturally.
+                    Every claim must be grounded in the original resume facts — do not invent responsibilities.
+                    Do not claim any hard gap skill under any circumstances.
                     Keep bullets concise (1-2 lines), action-verb-led, and quantified where the original was quantified.
 
-                    Return JSON array only, no other text:
-                    [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
+                    Return JSON array only: [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
                     """;
 
                 try

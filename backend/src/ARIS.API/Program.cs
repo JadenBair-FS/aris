@@ -85,6 +85,8 @@ builder.Services.AddScoped<ARIS.API.Services.ResumeService>(sp =>
         sp.GetRequiredService<Microsoft.Extensions.AI.IEmbeddingGenerator<string, Microsoft.Extensions.AI.Embedding<float>>>(),
         sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
         sp.GetRequiredService<ARIS.API.Services.PersonalInfoExtractor>(),
+        sp.GetRequiredService<ARIS.API.Services.MatchService>(),
+        sp.GetRequiredService<ARIS.API.Services.GraphService>(),
         ollamaGenerateUrl,
         extractionModel,
         sp.GetRequiredService<ILogger<ARIS.API.Services.ResumeService>>(),

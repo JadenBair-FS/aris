@@ -14,6 +14,9 @@ CANDIDATE RESUME (use this for voice, facts, and context):
 
 TARGET JOB: {jobTitle}
 
+JOB DESCRIPTION (use employer's language where natural):
+{rawJobSnippet}
+
 MATCHING SKILLS (candidate already has these — prioritize in summary):
 {matchingSkills}
 
