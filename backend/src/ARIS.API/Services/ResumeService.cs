@@ -1007,11 +1007,11 @@ namespace ARIS.API.Services
 
                     TASK:
                     Rewrite each bullet to read as polished, professional resume content. Follow these rules:
-                    1. Every skill listed under CLAIM DIRECTLY, HEDGE NATURALLY, and TRANSFER NATURALLY above MUST appear by name in at least one rewritten bullet. Distribute them naturally across bullets — do not stack all into one.
+                    1. Every skill listed under CLAIM DIRECTLY, HEDGE NATURALLY, and TRANSFER NATURALLY above MUST appear by name in at least one rewritten bullet. Each skill MUST appear in a SEPARATE bullet — do not put multiple graph skills into the same bullet, and do not skip any.
                     2. Use the exact skill name shown in the list above (the job description's own terminology). Never substitute a canonical variant (write "React" not "React.js", "Postgres" not "PostgreSQL").
                     3. For CLAIM DIRECTLY skills: state proficiency outright. No hedging.
-                    4. For HEDGE NATURALLY skills: use natural framing like the example given — e.g., "building X skills through Y work". Never claim direct experience you do not have.
-                    5. For TRANSFER NATURALLY skills: use transfer framing like the example given — e.g., "Y expertise applicable to X workflows".
+                    4. For HEDGE NATURALLY skills: use natural framing like the example given — e.g., "applies X knowledge to develop Y proficiency". Never claim direct experience you do not have.
+                    5. For TRANSFER NATURALLY skills: use transfer framing like the example given — e.g., "draws on X experience to work effectively with Y".
                     6. Never mention any skill listed under DO NOT MENTION.
                     7. Every claim must connect to a real fact in the original resume. Do not invent projects or responsibilities.
                     8. Keep bullets concise (1-2 lines), action-verb-led, quantified where the original was quantified.

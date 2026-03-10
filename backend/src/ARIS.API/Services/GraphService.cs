@@ -326,7 +326,7 @@ public class GraphService : IDisposable, IAsyncDisposable
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "foundational experience";
                 var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT3) ? origT3 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [your {fromSkill} is the direct prerequisite — e.g., \"building {displayName} skills through {fromSkill} work\"]");
+                sb.AppendLine($"  - {displayName}  [your {fromSkill} is the direct prerequisite — e.g., \"applies {fromSkill} knowledge to develop {displayName} proficiency\"]");
             }
         }
 
@@ -339,7 +339,7 @@ public class GraphService : IDisposable, IAsyncDisposable
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "domain experience";
                 var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT4) ? origT4 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [your {fromSkill} experience bridges here — e.g., \"{fromSkill} expertise directly applicable to {displayName}\"]");
+                sb.AppendLine($"  - {displayName}  [your {fromSkill} experience transfers here — e.g., \"draws on {fromSkill} experience to work effectively with {displayName}\"]");
             }
         }
 
