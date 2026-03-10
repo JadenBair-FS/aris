@@ -7,8 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using Pgvector.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using UglyToad.PdfPig;
 
 namespace ARIS.API.Controllers;
 
@@ -446,22 +448,19 @@ public class EvalController : ControllerBase
         if (tailoredData == null)
             return StatusCode(500, "Tailoring pipeline failed.");
 
-        var tailoredFullText = string.Join(" ",
-            tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
-            + " " + (tailoredData.ProfessionalSummary ?? "");
+        var pdfBytes = _resumePdfService.GeneratePdf(
+            tailoredData.PersonalInfo,
+            tailoredData.CleanSignal,
+            tailoredData.ProfessionalSummary,
+            tailoredData.TailoredBullets);
 
+        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
         var atsBaseline  = ComputeJobAlignmentToken(rawResumeText, rawJobText);
         var atsTailored  = ComputeJobAlignmentToken(tailoredFullText, rawJobText);
         var atsDeltaPct  = atsBaseline > 0
             ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2)
             : 0.0;
         var contentPres  = ComputeJobAlignmentToken(tailoredFullText, rawResumeText);
-
-        var pdfBytes = _resumePdfService.GeneratePdf(
-            tailoredData.PersonalInfo,
-            tailoredData.CleanSignal,
-            tailoredData.ProfessionalSummary,
-            tailoredData.TailoredBullets);
 
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
             tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
@@ -652,7 +651,7 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet)) + " " + summary;
+        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -738,7 +737,7 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = string.Join(" ", tailoredBullets.Select(b => b.RewrittenBullet)) + " " + summary;
+        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -785,8 +784,7 @@ public class EvalController : ControllerBase
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
-        var tailoredFullText = string.Join(" ", tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
-            + " " + (tailoredData.ProfessionalSummary ?? "");
+        var tailoredFullText = ExtractTextFromPdfBytes(pdfBytes);
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
@@ -880,6 +878,22 @@ public class EvalController : ControllerBase
         int intersection = w1.Count(w => w2.Contains(w));
         int minCount = Math.Min(w1.Count, w2.Count);
         return minCount == 0 ? 0.0 : Math.Round((double)intersection / minCount, 4);
+    }
+
+    /// <summary>
+    /// Extracts all text from a PDF byte array using PdfPig.
+    /// Used to build the tailored full-text for ATS comparison on an equal footing with the raw resume PDF extraction.
+    /// </summary>
+    private static string ExtractTextFromPdfBytes(byte[] pdfBytes)
+    {
+        var sb = new StringBuilder();
+        using var doc = PdfDocument.Open(pdfBytes);
+        foreach (var page in doc.GetPages())
+        {
+            sb.Append(page.Text);
+            sb.Append(' ');
+        }
+        return sb.ToString();
     }
 
     /// <summary>
