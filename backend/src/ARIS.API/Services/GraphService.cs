@@ -307,46 +307,46 @@ public class GraphService : IDisposable, IAsyncDisposable
             return string.Empty;
 
         var sb = new System.Text.StringBuilder();
-        sb.AppendLine("REQUIRED SKILLS TO SURFACE — you MUST naturally work each of these into the rewritten bullets:");
+        sb.AppendLine("KNOWLEDGE GRAPH CONTEXT — surface each skill below into the rewritten bullets:");
 
         if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("CLAIM DIRECTLY (your advanced skills prove you already have these — state them outright):");
+            sb.AppendLine("OWNED SKILLS (your advanced specialization already proves these — write them as direct, confident competencies):");
             foreach (var skill in match.ImplicitlyDiscoveredSkills)
-                sb.AppendLine($"  - {skill}  [your advanced specialization demonstrates this]");
+                sb.AppendLine($"  - {skill}  [validated by your advanced specialization]");
         }
 
         if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("HEDGE NATURALLY (you have the foundation; the job needs the specialization — frame as growing expertise):");
+            sb.AppendLine("FOUNDATION SKILLS (you have the prerequisite; the job needs the specialization — frame as developing toward it):");
             foreach (var skill in match.PrerequisiteMetSkills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "foundational experience";
                 var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT3) ? origT3 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [your {fromSkill} is the direct prerequisite — e.g., \"applies {fromSkill} knowledge to develop {displayName} proficiency\"]");
+                sb.AppendLine($"  - {displayName}  [prerequisite: {fromSkill} — example framing: \"applies {fromSkill} knowledge to develop {displayName} proficiency\"]");
             }
         }
 
         if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("TRANSFER NATURALLY (adjacent tool — frame as transferable experience):");
+            sb.AppendLine("ADJACENT SKILLS (your experience in a related tool transfers here — frame as carrying that experience across):");
             foreach (var skill in match.BridgeableSkills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
                 var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "domain experience";
                 var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT4) ? origT4 : fromSkillCanonical;
-                sb.AppendLine($"  - {displayName}  [your {fromSkill} experience transfers here — e.g., \"draws on {fromSkill} experience to work effectively with {displayName}\"]");
+                sb.AppendLine($"  - {displayName}  [bridge from: {fromSkill} — example framing: \"draws on {fromSkill} experience to work effectively with {displayName}\"]");
             }
         }
 
         if (hasT5)
         {
             sb.AppendLine();
-            sb.AppendLine("DO NOT MENTION (no validated path exists — never claim, never hedge):");
+            sb.AppendLine("NOT IN SCOPE (no validated path — never mention these, not even with hedging):");
             foreach (var skill in match.HardGaps)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
