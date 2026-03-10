@@ -61,6 +61,8 @@ RULES:
 3. Use the skill name exactly as written in the graph. Do not substitute variants.
 4. Bullets are 1 to 2 lines, led by a strong action verb, quantified where the original was quantified.
 5. Plain text only — no markdown, asterisks, bold, italic, bullet symbols, or special formatting.
+6. Do not write a Section C bullet for any skill already covered in Section B. If a skill appears in Section B, it is fully addressed — do not add a second bullet for it in any other section.
+7. Each resume fact (project name, metric, or technology) may anchor at most one graph-skill bullet per entry. If a fact is already used in one graph bullet, choose a different fact for the next graph bullet.
 
 Return a JSON array only — no preamble, no explanation, no code fences:
 [{"original": "exact original bullet text", "rewritten": "rewritten bullet text"}]
