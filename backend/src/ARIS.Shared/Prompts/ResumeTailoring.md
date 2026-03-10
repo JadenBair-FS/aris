@@ -19,7 +19,7 @@ Every Section B bullet MUST open with this exact phrase:
   - Replace [TARGET] with the skill to the RIGHT of the arrow. Do not change it.
   - Replace [resume fact] with one specific, verifiable detail from the RESUME TEXT:
     a project name, a metric, a technology used, or a role context.
-  - If no specific fact fits naturally, use: "[N] years of [SOURCE] experience at [Company]."
+  - If no specific fact fits naturally, use: "[N] years of [SOURCE] knowledge at [Company]."
   - NEVER use details from the job description. NEVER invent a project, metric, or tool.
 Example: "Applies React knowledge to develop TypeScript proficiency, migrating 40,000 lines of class-based components to functional hooks at BrightPath."
 
@@ -28,10 +28,11 @@ The skill on the LEFT of the arrow is the candidate's documented experience.
 The skill on the RIGHT is an adjacent job requirement the candidate can transfer toward.
 Every Section C bullet MUST open with this exact phrase:
   Draws on [SOURCE] experience to work effectively with [TARGET], [resume fact].
+  - The word is EXPERIENCE — not "expertise", not "knowledge". Use "experience" exactly.
   - Replace [SOURCE] with the skill to the LEFT of the arrow. Do not change it.
   - Replace [TARGET] with the skill to the RIGHT of the arrow. Do not change it.
   - Replace [resume fact] with one specific, verifiable detail from the RESUME TEXT.
-  - If no specific fact fits naturally, use: "[N] years of [SOURCE] expertise at [Company]."
+  - If no specific fact fits naturally, use: "[N] years of [SOURCE] experience at [Company]."
   - NEVER use details from the job description. NEVER invent a project, metric, or tool.
 Example: "Draws on MySQL experience to work effectively with MongoDB, supporting the 14-pipeline ETL system ingesting data from 20+ vendor sources at CloudPeak."
 

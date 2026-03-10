@@ -320,6 +320,15 @@ public class GraphService : IDisposable, IAsyncDisposable
         var t3Skills = match.PrerequisiteMetSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
         var t4Skills = match.BridgeableSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
 
+        // Sec B takes priority: remove from Sec C any target already covered by Sec B
+        // to prevent within-entry duplication where the same skill gets both a B and C bullet.
+        var t3TargetNames = new HashSet<string>(
+            t3Skills.Select(s => s.OriginalName ?? s.SkillName),
+            StringComparer.OrdinalIgnoreCase);
+        t4Skills = t4Skills
+            .Where(s => !t3TargetNames.Contains(s.OriginalName ?? s.SkillName))
+            .ToList();
+
         var hasT2 = t2Skills.Any();
         var hasT3 = t3Skills.Any();
         var hasT4 = t4Skills.Any();
