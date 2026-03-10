@@ -142,7 +142,6 @@ public class EvalController : ControllerBase
         var userSkills = user.CleanSignal.Skills.Select(s => s.Name).ToList();
         var totalJobSkills = job.CleanSignal.RequiredSkills.Count;
 
-        // Raw text for Pipeline A and B — these baselines never see the Clean Signal
         var rawResumeText = string.Empty;
         try
         {
@@ -238,7 +237,6 @@ public class EvalController : ControllerBase
         string rawOutput;
         try
         {
-            // Retrieve top-20 reference skills closest to the job description embedding
             var topRefSkills = await _context.Skills
                 .Where(s => s.Embedding != null && job.Embedding != null)
                 .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(job.Embedding!) })
@@ -248,7 +246,6 @@ public class EvalController : ControllerBase
 
             var refSkillContext = string.Join(", ", topRefSkills.Select(s => s.Name));
 
-            // Build clean signal skill vocabulary — same structured input as Pipeline C
             var candidateSkillLines = user.CleanSignal!.Skills
                 .Select(s => $"{s.Name} ({s.YearsOfExperience:0.#} yrs)")
                 .ToList();
@@ -300,7 +297,6 @@ public class EvalController : ControllerBase
 
         var (matchSkills, implicitSkills, prereqSkills, bridgeableSkills, gapSkills) = ParsePipelineSkillsJsonFull(rawOutput);
 
-        // Grounding on canonical names — consistent with Pipeline C
         var positiveSkills = matchSkills.Concat(implicitSkills).Concat(prereqSkills).Concat(bridgeableSkills).ToList();
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(positiveSkills, userSkills);
         var implicitDiscoveryRate = (double)(matchSkills.Count + implicitSkills.Count + prereqSkills.Count + bridgeableSkills.Count) / Math.Max(totalJobSkills, 1);
@@ -344,10 +340,6 @@ public class EvalController : ControllerBase
 
             if (analysis != null)
             {
-                // Grounding computed on positive identifications only — hard gaps are job requirements
-                // the candidate lacks, not claims made about the candidate's knowledge.
-                // Use direct skill list validation (not text extraction) because Pipeline C skill names
-                // are already canonical — ExtractSkillsFromText would find spurious sub-skill matches.
                 var positiveSkills = new List<string>();
                 positiveSkills.AddRange(analysis.MatchingSkills.Select(s => s.SkillName));
                 positiveSkills.AddRange(analysis.ImplicitlyDiscoveredSkills);
@@ -429,7 +421,6 @@ public class EvalController : ControllerBase
 
         var sw = Stopwatch.StartNew();
 
-        // Step 1: baseline match (shared truth boundary)
         var baselineMatch = await _matchService.AnalyzeMatchAsync(request.ResumeId, request.JobId);
         if (baselineMatch == null)
             return NotFound("Match analysis failed. Ensure both IDs are valid and fully processed.");
@@ -441,27 +432,22 @@ public class EvalController : ControllerBase
         var user = await _context.UserProfiles.FindAsync(request.ResumeId);
         var userSkills = user?.CleanSignal?.Skills.Select(s => s.Name).ToList() ?? [];
 
-        // Step 2: run tailoring pipeline (single LLM execution)
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(
             request.ResumeId, request.JobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
             return StatusCode(500, "Tailoring pipeline failed.");
 
-        // Step 3: generate PDF
         var pdfBytes = _resumePdfService.GeneratePdf(
             tailoredData.PersonalInfo,
             tailoredData.CleanSignal,
             tailoredData.ProfessionalSummary,
             tailoredData.TailoredBullets);
 
-        // Step 4: extract canonical skills from tailored output
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
             tailoredData.TailoredBullets, tailoredData.ProfessionalSummary);
 
-        // Step 5: score
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
 
-        // Step 6: grounding score of tailored output
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
 
         sw.Stop();
@@ -529,7 +515,6 @@ public class EvalController : ControllerBase
         if (job?.CleanSignal == null)
             return NotFound($"Job {request.JobId} not found or has no CleanSignal.");
 
-        // Extract raw texts
         string rawResumeText;
         try
         {
@@ -541,12 +526,10 @@ public class EvalController : ControllerBase
 
         var userSkills = user.CleanSignal.Skills.Select(s => s.Name).ToList();
 
-        // Compute baseline match ONCE — shared truth boundary for all three pipelines
         var baselineMatch = await _matchService.AnalyzeMatchAsync(request.ResumeId, request.JobId);
         if (baselineMatch == null)
             return NotFound("Match analysis failed.");
 
-        // Run pipelines sequentially (each makes LLM calls)
         var pipelineA = await RunTailorPipelineAAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills);
         var pipelineB = await RunTailorPipelineBAsync(rawResumeText, rawJobText, user, baselineMatch, job.CleanSignal, userSkills, job);
         var pipelineC = await RunTailorPipelineCAsync(request.ResumeId, request.JobId, baselineMatch, job.CleanSignal, userSkills);
@@ -575,7 +558,6 @@ public class EvalController : ControllerBase
         });
     }
 
-    /// Pipeline T-A: raw resume + raw job text only — no graph context, no ref skills
     private async Task<TailorPipelineResult> RunTailorPipelineAAsync(
         string rawResume, string rawJob,
         UserProfile user,
@@ -618,7 +600,6 @@ public class EvalController : ControllerBase
             tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp));
         }
 
-        // Generate summary
         var summaryPrompt = $$"""
             Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
             Use only facts from the resume below. Do not invent skills.
@@ -630,13 +611,10 @@ public class EvalController : ControllerBase
         try { summary = (await _chatClient.GetResponseAsync(summaryPrompt))?.Text?.Trim() ?? ""; }
         catch { summary = ""; }
 
-        // Personal info
         var personalInfo = ExtractPersonalInfoFromRawText(rawResume);
 
-        // PDF
         var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
 
-        // Score
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
         var groundingResult = await _groundingService.CalculateGroundingScoreFromSkillsAsync(canonicalSkills, userSkills);
@@ -647,7 +625,6 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
     }
 
-    /// Pipeline T-B: raw texts + top-20 reference skills — no graph traversal
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
         string rawResume, string rawJob,
         UserProfile user,
@@ -661,7 +638,6 @@ public class EvalController : ControllerBase
         var hardGapNames = baselineMatch.HardGaps.Select(s => s.SkillName).ToList();
         var tailoredBullets = new List<TailoredBullet>();
 
-        // Retrieve top-20 reference skills closest to job embedding
         var topRefSkills = await _context.Skills
             .Where(s => s.Embedding != null && job.Embedding != null)
             .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(job.Embedding!) })
@@ -704,7 +680,6 @@ public class EvalController : ControllerBase
             tailoredBullets.AddRange(await ParseBulletsFromLlmAsync(prompt, exp));
         }
 
-        // Generate summary
         var summaryPrompt = $$"""
             Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
             Reference skill vocabulary: {{refSkillContext}}
@@ -728,7 +703,6 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
     }
 
-    /// Pipeline T-C: full GraphRAG (reuses BuildTailoredResumeDataAsync with precomputed match)
     private async Task<TailorPipelineResult> RunTailorPipelineCAsync(
         Guid resumeId, Guid jobId,
         MatchAnalysisResult baselineMatch,
@@ -757,7 +731,6 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes);
     }
 
-    /// Shared helper: calls LLM with prompt and parses bullet rewrite JSON
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
         string prompt,
         ARIS.Shared.Models.CleanSignal.ExperienceSummary exp)
@@ -813,7 +786,6 @@ public class EvalController : ControllerBase
 
     private record BulletItem(string Original, string Rewritten);
 
-    /// Shared helper: extracts personal info from raw resume text — uses first non-empty line as name.
     private static PersonalInfo ExtractPersonalInfoFromRawText(string rawResume)
     {
         var lines = rawResume.Split('\n', StringSplitOptions.RemoveEmptyEntries);

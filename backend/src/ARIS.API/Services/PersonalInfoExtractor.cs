@@ -31,10 +31,8 @@ public class PersonalInfoExtractor
         if (string.IsNullOrWhiteSpace(rawText))
             return new PersonalInfo();
 
-        // Limit input to first 2000 chars to keep prompt small and fast
         var snippet = rawText.Length > 2000 ? rawText[..2000] : rawText;
 
-        // $$""" — single { is literal; interpolations use {{...}}
         var prompt = $$"""
             Extract contact information from the resume text below.
             Return JSON only, no other text: {"name":"","email":"","phone":"","location":"","linkedin":"","github":"","website":""}
@@ -49,7 +47,6 @@ public class PersonalInfoExtractor
             var response = await _chatClient.GetResponseAsync(prompt);
             var text = response?.Text?.Trim() ?? "";
 
-            // Strip markdown code fences if present
             var json = Regex.Replace(text, @"```(?:json)?", "").Trim();
 
             var result = JsonSerializer.Deserialize<PersonalInfo>(json, new JsonSerializerOptions

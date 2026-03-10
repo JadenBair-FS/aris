@@ -115,8 +115,6 @@ public class GroundingService
         {
             if (string.IsNullOrWhiteSpace(skillName)) continue;
 
-            // Require word-boundary-like matching to avoid "SQL" matching "Visual"
-            // by checking the character before and after the match position.
             var lowerSkill = skillName.ToLowerInvariant();
             var idx = lowerText.IndexOf(lowerSkill, StringComparison.Ordinal);
             if (idx < 0) continue;

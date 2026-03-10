@@ -40,19 +40,16 @@ public class GraphService : IDisposable, IAsyncDisposable
             WHERE toLower(s.name) IN [term IN $expansionSeed | toLower(term)]
             CALL {
                 WITH s
-                // 1. Hierarchical UP: s -> parent (Foundations)
                 MATCH (s)-[:SUBSET_OF*1..2]->(parent:Skill)
                 WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
                   AND parent.source <> 'ONET_Taxonomy'
                 RETURN parent.name as Name
                 UNION
-                // 2. Hierarchical DOWN: child -> s (s is a parent/foundation)
                 MATCH (child:Skill)-[:SUBSET_OF*1..2]->(s)
                 WHERE ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
                   AND child.source <> 'ONET_Taxonomy'
                 RETURN child.name as Name
                 UNION
-                // 3. Peer/Bridge traversal (Lateral) - 1 hop only to prevent domain leakage
                 MATCH (s)-[:BRIDGE_TO]-(neighbor:Skill)
                 WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
                   AND neighbor.source <> 'ONET_Taxonomy'
@@ -92,8 +89,6 @@ public class GraphService : IDisposable, IAsyncDisposable
         var expansionSeed = userSkills.ToList();
 
         const string query = @"
-            // Direction 1: job skill -[:SUBSET_OF*1..2]-> user skill (user has the parent foundation)
-            // e.g., user has 'JavaScript', job needs 'React' (React SUBSET_OF JavaScript).
             MATCH (parent:Skill)
             WHERE toLower(parent.name) IN [s IN $expansionSeed | toLower(s)]
             MATCH (child:Skill)-[:SUBSET_OF*1..2]->(parent)
@@ -104,8 +99,6 @@ public class GraphService : IDisposable, IAsyncDisposable
 
             UNION
 
-            // Direction 2: user skill -[:SUBSET_OF*1..2]-> job skill (user's skill is a specialization of the requirement)
-            // e.g., user has 'React', job needs 'JavaScript'.
             MATCH (foundation:Skill)
             WHERE toLower(foundation.name) IN [s IN $expansionSeed | toLower(s)]
             MATCH (foundation)-[:SUBSET_OF*1..2]->(target:Skill)
@@ -154,8 +147,6 @@ public class GraphService : IDisposable, IAsyncDisposable
         var expansionSeed = userSkills.ToList();
 
         const string query = @"
-            // UP: child -> parent (user knows specialization → implicitly knows foundation)
-            // 2-hop limit: consistent with the thesis claim and GetValidNeighborhoodAsync.
             MATCH (child:Skill)
             WHERE toLower(child.name) IN [s IN $expansionSeed | toLower(s)]
             MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
@@ -295,7 +286,6 @@ public class GraphService : IDisposable, IAsyncDisposable
         var sb = new System.Text.StringBuilder();
         sb.AppendLine("KNOWLEDGE GRAPH — VALIDATED SKILL RELATIONSHIPS:");
 
-        // Tier 2: Implicit — candidate's specialization implies these foundations
         if (match.ImplicitlyDiscoveredSkills.Any())
         {
             sb.AppendLine();
@@ -304,7 +294,6 @@ public class GraphService : IDisposable, IAsyncDisposable
                 sb.AppendLine($"  - {skill} [SUBSET_OF — inferred from your expertise]");
         }
 
-        // Tier 3: Prerequisite Met — candidate's foundation supports these job requirements
         if (match.PrerequisiteMetSkills.Any())
         {
             sb.AppendLine();
@@ -316,7 +305,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             }
         }
 
-        // Tier 4: Bridgeable — transferable via domain bridge
         if (match.BridgeableSkills.Any())
         {
             sb.AppendLine();

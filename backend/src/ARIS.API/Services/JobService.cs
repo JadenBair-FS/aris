@@ -71,8 +71,6 @@ namespace ARIS.API.Services
                     }
                 }
 
-                // Pre-generate the ID so we can pass it as the sourceDocId for ontology expansion.
-                // Using recruiterId would cause all jobs from one recruiter to count as a single observation.
                 var jobPostingId = Guid.NewGuid();
                 await GroundCleanSignalAsync(cleanSignal, jobPostingId.ToString());
 
@@ -333,7 +331,6 @@ namespace ARIS.API.Services
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.RequiredSkills[i];
 
-                    // Pass 1: tight match — domain-specific skills first, then general
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -378,8 +375,6 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: wider search — skip for short all-caps acronyms (e.g. ACLS, CCRN, IPC)
-                    // which find wrong canonical neighbors at the looser threshold.
                     bool isAcronym = originalSkill.Name.Length <= 6
                         && !originalSkill.Name.Contains(' ')
                         && originalSkill.Name == originalSkill.Name.ToUpperInvariant();
@@ -453,7 +448,6 @@ namespace ARIS.API.Services
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "JobExtraction.md");
                 var template = await File.ReadAllTextAsync(promptPath);
 
-                // NuExtract: truncate to ~6000 chars (fits within 2000-token text limit)
                 var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
 
                 userPrompt = template.Replace("{raw_text}", truncatedText);
@@ -658,7 +652,6 @@ namespace ARIS.API.Services
 
             foreach (var correction in corrections)
             {
-                // Case 1: correction targets an ungrounded skill (move to grounded list)
                 var ungroundedMatch = cs.UngroundedSkills.FirstOrDefault(s =>
                     string.Equals(s.Name, correction.From, StringComparison.OrdinalIgnoreCase));
                 if (ungroundedMatch != null)
@@ -678,7 +671,6 @@ namespace ARIS.API.Services
                     continue;
                 }
 
-                // Case 2: correction overrides an already-grounded skill (matched by OriginalName)
                 var groundedMatch = cs.RequiredSkills.FirstOrDefault(s =>
                     s.OriginalName != null &&
                     string.Equals(s.OriginalName, correction.From, StringComparison.OrdinalIgnoreCase));
@@ -686,7 +678,6 @@ namespace ARIS.API.Services
                 {
                     if (string.IsNullOrEmpty(correction.To))
                     {
-                        // User marked as unlisted — move back to ungrounded with the original extracted name
                         cs.RequiredSkills.Remove(groundedMatch);
                         if (!cs.UngroundedSkills.Any(s => string.Equals(s.Name, groundedMatch.OriginalName, StringComparison.OrdinalIgnoreCase)))
                         {

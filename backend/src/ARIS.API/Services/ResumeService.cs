@@ -222,7 +222,6 @@ namespace ARIS.API.Services
                 var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeExtraction.md");
                 var template = await File.ReadAllTextAsync(promptPath);
 
-                // NuExtract: truncate to ~6000 chars (fits within 2000-token text limit)
                 var truncatedText = rawText.Length > 6000 ? rawText[..6000] : rawText;
 
                 userPrompt = template.Replace("{raw_text}", truncatedText);
@@ -517,7 +516,6 @@ namespace ARIS.API.Services
                     var vector = vectors[skillOffset + i];
                     var originalSkill = signal.Skills[i];
 
-                    // Pass 1: tight match — domain-specific skills first, then general
                     var domainMatch = await _context.RoleSkills
                         .Include(rs => rs.Skill)
                         .Include(rs => rs.Role)
@@ -562,8 +560,6 @@ namespace ARIS.API.Services
                         continue;
                     }
 
-                    // Pass 2: wider search — skip for short all-caps acronyms (e.g. ACLS, CCRN, IPC)
-                    // which find wrong canonical neighbors at the looser threshold.
                     bool isAcronym = originalSkill.Name.Length <= 6
                         && !originalSkill.Name.Contains(' ')
                         && originalSkill.Name == originalSkill.Name.ToUpperInvariant();
@@ -601,8 +597,6 @@ namespace ARIS.API.Services
                     .Select(g => new ResumeSkill
                     {
                         Name = g.First().Name,
-                        // Only preserve OriginalName when exactly one extracted skill mapped here;
-                        // if multiple collapsed to the same canonical it's ambiguous so omit it.
                         OriginalName = g.Count() == 1 ? g.First().OriginalName : null,
                         Category = g.First().Category,
                         Proficiency = g.First().Proficiency,
@@ -716,7 +710,6 @@ namespace ARIS.API.Services
                 {
                     if (string.IsNullOrEmpty(correction.To))
                     {
-                        // User marked as unlisted — move back to ungrounded with the original extracted name
                         cs.Skills.Remove(groundedMatch);
                         if (!cs.UngroundedSkills.Any(s => string.Equals(s.Name, groundedMatch.OriginalName, StringComparison.OrdinalIgnoreCase)))
                         {
@@ -889,8 +882,6 @@ namespace ARIS.API.Services
 
         private record BulletRewriteItem(string Original, string Rewritten);
 
-        //Resume Tailoring Engine 
-
         public record TailoredResumeData(
             ResumeCleanSignal CleanSignal,
             PersonalInfo PersonalInfo,
@@ -960,7 +951,6 @@ namespace ARIS.API.Services
                 .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
                 .ToList();
 
-            // Use precomputed match if provided; otherwise compute now
             var match = precomputedMatch ?? await _matchService.AnalyzeMatchAsync(userProfileId, jobId);
             if (match == null)
                 return null;
@@ -976,14 +966,12 @@ namespace ARIS.API.Services
             var rawResumeText = ExtractRawResumeText(user.RawResume) ?? "";
             var rawJobText = job.RawDescription ?? "";
 
-            // Start personal info extraction and summary generation in parallel
             var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText);
             var summaryTask = GenerateSummaryAsync(
                 rawResumeText, jobTitle,
                 effectiveMatching, effectiveImplicit, effectiveBridgeable, effectiveHardGaps,
                 rawJobText);
 
-            // Rewrite bullets for each experience entry (serial — LLM context sensitive)
             var bulletResults = new List<TailoredBullet>();
             foreach (var exp in experienceEntries)
             {

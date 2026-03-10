@@ -48,7 +48,6 @@ public class ExtractionBenchmarkService
             Runs = request.Runs
         };
 
-        // Retrieve reference vocabulary once — not part of the timed section
         var (refRoles, refSkills) = await RetrieveReferenceVocabularyAsync(request.Text);
         var softSkills = await RetrieveSoftSkillsAsync();
 
@@ -112,7 +111,6 @@ public class ExtractionBenchmarkService
                     ? result.LatencyMs.Average()
                     : 0;
 
-                // Parse last run's output for quality comparison
                 if (!string.IsNullOrWhiteSpace(lastJson))
                 {
                     if (request.Type == "resume")
@@ -215,7 +213,6 @@ public class ExtractionBenchmarkService
         };
     }
 
-    // Duplicated from JobService — kept here to isolate benchmark scope
     private async Task<(string roles, string skills)> RetrieveReferenceVocabularyAsync(string rawText)
     {
         try

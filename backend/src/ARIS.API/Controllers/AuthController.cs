@@ -44,7 +44,6 @@ public class AuthController : ControllerBase
         if (request.Role != "seeker" && request.Role != "recruiter")
             return BadRequest("Role must be 'seeker' or 'recruiter'.");
 
-        // Clerk JWT maps sub → NameIdentifier in ASP.NET Core by default
         var clerkUserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
                        ?? User.FindFirstValue("sub");
 
@@ -80,7 +79,6 @@ public class AuthController : ControllerBase
 
         _logger.LogInformation("Set role='{Role}' for Clerk user {UserId}", request.Role, clerkUserId);
 
-        // Create ownership and profile records so the user can act immediately after sign-up.
         if (request.Role == "seeker")
         {
             var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkUserId);
@@ -92,8 +90,6 @@ public class AuthController : ControllerBase
                 _logger.LogInformation("Created seeker_users record for {ClerkId}", clerkUserId);
             }
 
-            // Create an empty user_profiles row so GET /api/resume/by-user/{clerkId} returns
-            // a result immediately (CleanSignal will be null until a resume is uploaded).
             var profileExists = await _context.UserProfiles.AnyAsync(p => p.UserId == clerkUserId);
             if (!profileExists)
             {
@@ -134,7 +130,6 @@ public class AuthController : ControllerBase
         if (string.IsNullOrEmpty(clerkUserId))
             return Unauthorized("Could not determine user identity from token.");
 
-        // Seeker path: delete user_profiles then seeker_users
         var seekerUser = await _context.SeekerUsers.FirstOrDefaultAsync(s => s.ClerkId == clerkUserId);
         if (seekerUser != null)
         {
@@ -143,7 +138,6 @@ public class AuthController : ControllerBase
             _context.SeekerUsers.Remove(seekerUser);
         }
 
-        // Recruiter path: delete job_postings then recruiter_users
         var recruiterUser = await _context.RecruiterUsers.FirstOrDefaultAsync(r => r.ClerkId == clerkUserId);
         if (recruiterUser != null)
         {
@@ -154,7 +148,6 @@ public class AuthController : ControllerBase
 
         await _context.SaveChangesAsync();
 
-        // Delete from Clerk
         var secretKey = _config["Clerk:SecretKey"];
         if (!string.IsNullOrEmpty(secretKey) && secretKey != "YOUR_CLERK_SECRET_KEY_HERE")
         {

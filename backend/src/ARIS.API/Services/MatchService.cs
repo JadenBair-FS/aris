@@ -322,7 +322,6 @@ public class MatchService
         var hardGapSet = baselineMatch.HardGaps.Select(s => s.SkillName)
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-        // Build importance weight map
         var importanceWeights = jobSignal.RequiredSkills
             .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
@@ -335,7 +334,6 @@ public class MatchService
 
         var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
 
-        // --- Baseline score: recompute GraphCoverageScore from tier data ---
         double baselineScore =
             (baselineMatch.MatchingSkills.Sum(s => GetWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
              baselineMatch.ImplicitlyDiscoveredSkills.Sum(s => GetWeight(s) * 0.8) +
@@ -343,48 +341,32 @@ public class MatchService
              baselineMatch.BridgeableSkills.Sum(s => GetWeight(s.SkillName) * 0.4)) / weightedJobTotal;
         baselineScore = Math.Min(baselineScore, 1.0);
 
-        // --- Verified score: conservative-floor + articulation-bonus mode ---
-        // T1 skills: always count at their full baseline weight — the candidate already has them and
-        //   tailoring cannot remove them. If verbatim canonical name also appears in tailored text,
-        //   the skill is logged as "confirmed" (no extra score; it was already counted).
-        // T2/T3/T4 skills: upgrade from their tier weight to full T1 weight only when the exact
-        //   canonical name appears in the tailored text (genuine articulation bonus).
-        // T5 skills: 0.0 always; logged as hallucination if they appear in the tailored text.
-        // This guarantees verifiedScore >= baselineScore for same-domain pairs (the floor invariant).
-
         var articulatedSkills = new List<string>();
         var hallucinations = new List<string>();
         double verifiedScore = 0.0;
 
-        // T1 matching — unconditionally carry full baseline weight; no dependency on tailored text.
-        // Tailoring improves framing, it does not erase real skills the candidate already holds.
         foreach (var skill in baselineMatch.MatchingSkills)
         {
             verifiedScore += GetWeight(skill.SkillName) * 1.0 * ExperienceMultiplier(skill.CandidateYears, skill.YearsRequired);
         }
 
-        // T2 implicit — baseline contributes 0.8 weight; upgrade to 1.0 if articulated in tailored text.
         foreach (var skill in baselineMatch.ImplicitlyDiscoveredSkills)
         {
             if (tailoredSet.Contains(skill))
             {
-                // Articulation bonus: upgrade from 0.8 to 1.0 (add the extra 0.2)
                 verifiedScore += GetWeight(skill) * 0.2;
                 articulatedSkills.Add(skill);
             }
             else
             {
-                // Not articulated: keep baseline tier weight so verifiedScore >= baselineScore
                 verifiedScore += GetWeight(skill) * 0.8;
             }
         }
 
-        // T3 prereq met — baseline contributes 0.6 weight; upgrade to 1.0 if articulated.
         foreach (var skill in baselineMatch.PrerequisiteMetSkills)
         {
             if (tailoredSet.Contains(skill.SkillName))
             {
-                // Articulation bonus: upgrade from 0.6 to 1.0 (add the extra 0.4)
                 verifiedScore += GetWeight(skill.SkillName) * 0.4;
                 articulatedSkills.Add(skill.SkillName);
             }
@@ -394,12 +376,10 @@ public class MatchService
             }
         }
 
-        // T4 bridgeable — baseline contributes 0.4 weight; upgrade to 1.0 if articulated.
         foreach (var skill in baselineMatch.BridgeableSkills)
         {
             if (tailoredSet.Contains(skill.SkillName))
             {
-                // Articulation bonus: upgrade from 0.4 to 1.0 (add the extra 0.6)
                 verifiedScore += GetWeight(skill.SkillName) * 0.6;
                 articulatedSkills.Add(skill.SkillName);
             }
@@ -409,7 +389,6 @@ public class MatchService
             }
         }
 
-        // T5 hard gaps — hallucination if present in tailored text
         foreach (var skill in baselineMatch.HardGaps)
         {
             if (tailoredSet.Contains(skill.SkillName))
@@ -466,8 +445,6 @@ public class MatchService
             }
             else if (lowerSkill.Length <= 6)
             {
-                // Secondary pass for short abbreviations: accept if surrounded only by non-alpha chars
-                // (punctuation, whitespace, parens). Rejects false positives like "r" matching "report".
                 bool startOk = !char.IsLetter(charBefore);
                 bool endOk = !char.IsLetter(charAfter);
                 if (startOk && endOk)

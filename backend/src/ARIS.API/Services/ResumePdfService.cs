@@ -22,7 +22,6 @@ public class ResumePdfService
         string professionalSummary,
         List<TailoredBullet> tailoredBullets)
     {
-        // Build lookup: role → (original bullet → rewritten bullet)
         var bulletMap = tailoredBullets
             .Where(b => !string.IsNullOrWhiteSpace(b.Role))
             .GroupBy(b => b.Role, StringComparer.OrdinalIgnoreCase)
@@ -44,7 +43,6 @@ public class ResumePdfService
 
                 page.Content().Column(col =>
                 {
-                    // Header
                     if (!string.IsNullOrWhiteSpace(info.Name))
                         col.Item().Text(info.Name).FontSize(16).Bold();
 
@@ -64,7 +62,6 @@ public class ResumePdfService
 
                     col.Item().PaddingTop(10);
 
-                    //Summary 
                     if (!string.IsNullOrWhiteSpace(professionalSummary))
                     {
                         RenderSectionHeader(col, "SUMMARY");
@@ -75,7 +72,6 @@ public class ResumePdfService
                         col.Item().PaddingTop(14);
                     }
 
-                    // Skills
                     var groundedGroups = cleanSignal.Skills
                         .Where(s => !string.IsNullOrWhiteSpace(s.Name))
                         .GroupBy(s => string.IsNullOrWhiteSpace(s.Category) ? "Other" : s.Category)
@@ -111,7 +107,6 @@ public class ResumePdfService
                         col.Item().PaddingTop(14);
                     }
 
-                    // Experience
                     if (cleanSignal.ExperienceSummary.Count > 0)
                     {
                         RenderSectionHeader(col, "EXPERIENCE");
@@ -146,7 +141,6 @@ public class ResumePdfService
                         col.Item().PaddingTop(14);
                     }
 
-                    // Education
                     if (cleanSignal.Education.Count > 0)
                     {
                         RenderSectionHeader(col, "EDUCATION");
