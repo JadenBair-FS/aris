@@ -974,7 +974,7 @@ namespace ARIS.API.Services
             var effectiveBridgeable = match.BridgeableSkills.Select(s => s.SkillName).ToList();
             var effectiveHardGaps = match.HardGaps.Select(s => s.SkillName).ToList();
 
-            var graphContextBlock = _graphService.BuildTailoringGraphContext(match);
+            var graphContextBlock = _graphService.BuildTailoringGraphContext(match, user.CleanSignal?.Skills);
             var jobTitle = job.CleanSignal.TargetRoles.FirstOrDefault()?.Title ?? "the role";
             var rawResumeText = ExtractRawResumeText(user.RawResume) ?? "";
             var rawJobText = job.RawDescription ?? "";

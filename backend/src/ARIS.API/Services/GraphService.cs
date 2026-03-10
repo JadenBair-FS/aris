@@ -1,4 +1,5 @@
 using ARIS.Shared.Models;
+using ARIS.Shared.Models.CleanSignal;
 using Neo4j.Driver;
 
 namespace ARIS.API.Services;
@@ -281,8 +282,22 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// Pure in-memory — uses data already computed by AnalyzeMatchAsync. No Neo4j queries.
     /// Used to inject validated skill relationships into the resume tailoring LLM prompt.
     /// </summary>
-    public string BuildTailoringGraphContext(MatchAnalysisResult match)
+    /// <param name="match">Precomputed match analysis result.</param>
+    /// <param name="candidateSkills">
+    /// Optional candidate skill list (from ResumeCleanSignal.Skills).
+    /// When provided, FROM-skill names in bridge hints are resolved to their original
+    /// (pre-grounding) names so the LLM can match them back to the resume text.
+    /// </param>
+    public string BuildTailoringGraphContext(MatchAnalysisResult match, IEnumerable<ResumeSkill>? candidateSkills = null)
     {
+        // Build canonical-name → original-name lookup from the candidate's own skills.
+        // Key: canonical Name (post-grounding); Value: OriginalName as typed in the resume.
+        var canonicalToOriginal = candidateSkills?
+            .Where(s => s.OriginalName != null)
+            .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First().OriginalName!, StringComparer.OrdinalIgnoreCase)
+            ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
         var hasT2 = match.ImplicitlyDiscoveredSkills.Any();
         var hasT3 = match.PrerequisiteMetSkills.Any();
         var hasT4 = match.BridgeableSkills.Any();
@@ -309,7 +324,8 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var skill in match.PrerequisiteMetSkills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
-                var fromSkill = skill.BridgePath?.Split('→').FirstOrDefault()?.Trim() ?? "foundational experience";
+                var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "foundational experience";
+                var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT3) ? origT3 : fromSkillCanonical;
                 sb.AppendLine($"  - {displayName}  [your {fromSkill} is the direct prerequisite — e.g., \"building {displayName} skills through {fromSkill} work\"]");
             }
         }
@@ -321,7 +337,8 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var skill in match.BridgeableSkills)
             {
                 var displayName = skill.OriginalName ?? skill.SkillName;
-                var fromSkill = skill.BridgePath?.Split('→').FirstOrDefault()?.Trim() ?? "domain experience";
+                var fromSkillCanonical = ParseViaSkill(skill.BridgePath) ?? "domain experience";
+                var fromSkill = canonicalToOriginal.TryGetValue(fromSkillCanonical, out var origT4) ? origT4 : fromSkillCanonical;
                 sb.AppendLine($"  - {displayName}  [your {fromSkill} experience bridges here — e.g., \"{fromSkill} expertise directly applicable to {displayName}\"]");
             }
         }
@@ -338,6 +355,28 @@ public class GraphService : IDisposable, IAsyncDisposable
         }
 
         return sb.ToString();
+    }
+
+    /// <summary>
+    /// Extracts the ViaSkill name from a BridgePath string formatted as "via X (TYPE)".
+    /// Returns null if the path is null or cannot be parsed.
+    /// </summary>
+    private static string? ParseViaSkill(string? bridgePath)
+    {
+        if (string.IsNullOrWhiteSpace(bridgePath))
+            return null;
+
+        // Expected format: "via React.js (SUBSET_OF)"
+        // Strip leading "via " prefix, then strip trailing " (TYPE)" suffix.
+        var s = bridgePath.Trim();
+        if (s.StartsWith("via ", StringComparison.OrdinalIgnoreCase))
+            s = s.Substring(4).Trim();
+
+        var parenIdx = s.LastIndexOf(" (", StringComparison.Ordinal);
+        if (parenIdx > 0)
+            s = s.Substring(0, parenIdx).Trim();
+
+        return string.IsNullOrWhiteSpace(s) ? null : s;
     }
 
     /// <summary>
