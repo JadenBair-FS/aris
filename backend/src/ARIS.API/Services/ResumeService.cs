@@ -924,12 +924,8 @@ namespace ARIS.API.Services
 
         private async Task<string> GenerateSummaryAsync(
             string rawText,
-            string jobTitle,
-            List<string> matchingSkills,
-            List<string> implicitSkills,
-            List<string> bridgeableSkills,
-            List<string> hardGaps,
-            string rawJobDescription = "")
+            string rawJobDescription,
+            string graphContext)
         {
             var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
             var template = await File.ReadAllTextAsync(promptPath);
@@ -939,11 +935,7 @@ namespace ARIS.API.Services
             var prompt = template
                 .Replace("{rawResumeSnippet}", snippet)
                 .Replace("{rawJobSnippet}", jobSnippet)
-                .Replace("{jobTitle}", jobTitle)
-                .Replace("{matchingSkills}", matchingSkills.Count > 0 ? string.Join(", ", matchingSkills) : "(none)")
-                .Replace("{implicitSkills}", implicitSkills.Count > 0 ? string.Join(", ", implicitSkills) : "(none)")
-                .Replace("{bridgeableSkills}", bridgeableSkills.Count > 0 ? string.Join(", ", bridgeableSkills) : "(none)")
-                .Replace("{hardGaps}", hardGaps.Count > 0 ? string.Join(", ", hardGaps) : "(none)");
+                .Replace("{graphContext}", graphContext);
 
             try
             {
@@ -952,7 +944,7 @@ namespace ARIS.API.Services
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "Failed to generate professional summary for job {JobTitle}.", jobTitle);
+                _logger.LogWarning(ex, "Failed to generate professional summary.");
                 return "";
             }
         }
@@ -987,10 +979,7 @@ namespace ARIS.API.Services
             var rawJobText = job.RawDescription ?? "";
 
             var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText);
-            var summaryTask = GenerateSummaryAsync(
-                rawResumeText, jobTitle,
-                effectiveMatching, effectiveImplicit, effectiveBridgeable, effectiveHardGaps,
-                rawJobText);
+            var summaryTask = GenerateSummaryAsync(rawResumeText, rawJobText, graphContextBlock);
 
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);

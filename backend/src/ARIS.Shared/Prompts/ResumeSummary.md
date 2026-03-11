@@ -1,33 +1,24 @@
-You are a high-end executive resume writer. Your goal is to write a high-impact, 3-4 sentence professional summary that creates a powerful "Semantic Bridge" between the candidate's background and the target job.
+You are a professional resume writer. Write a 3 to 5 sentence professional summary for this candidate targeting the role described below.
 
-STRATEGY:
-1. THE CORE IDENTITY: Lead with the candidate's most senior role and total years of experience.
-2. THE STRUCTURAL BRIDGE: Use the "IMPLICIT SKILLS" and "BRIDGEABLE SKILLS" provided below. These are mathematically verified professional foundations identified via a Knowledge Graph. Weave them into the narrative to prove the candidate possesses the "underlying expertise" required for the job, even if not explicitly stated in their original resume.
-3. SEMANTIC ALIGNMENT: Use the vocabulary from the Job Description and the canonical skill names provided to maximize relevance.
+The knowledge graph has identified validated skill relationships for this candidate. Where the candidate has a foundation that supports developing a required skill (T3) or transferable experience that bridges to a required skill (T4), weave this naturally into the summary as genuine career narrative. Do not claim any skill listed under HARD GAPS.
 
-INSTRUCTIONS:
-- Third-person professional voice (no "I" or "my").
-- Use canonical skill names provided below to ensure the resume is "grounded."
-- Focus on synthesis: show how their experience in A naturally qualifies them for B (using the Implicit/Bridgeable insights).
-- Do NOT mention hard gaps. Do NOT invent specific metrics or companies.
-- Plain text only. NO markdown, NO asterisks, NO formatting.
-
-CANDIDATE RESUME:
+════════════════════════════════════════
+RESUME TEXT:
 {rawResumeSnippet}
 
-TARGET JOB: {jobTitle}
-
+════════════════════════════════════════
 JOB DESCRIPTION:
 {rawJobSnippet}
 
-MATCHING SKILLS (Explicitly present):
-{matchingSkills}
+════════════════════════════════════════
+{graphContext}
 
-IMPLICIT SKILLS (Verified foundations identified via Knowledge Graph):
-{implicitSkills}
-
-BRIDGEABLE SKILLS (Validated lateral transferability):
-{bridgeableSkills}
-
-HARD GAPS (DO NOT USE):
-{hardGaps}
+════════════════════════════════════════
+RULES:
+1. Write in first person or third person consistently — do not mix.
+2. Ground every factual claim in the RESUME TEXT. Do not invent roles, companies, or metrics.
+3. Where T3 skills exist, naturally state that the candidate's existing foundation prepares them to develop that capability. Use natural language — not formulaic phrases.
+4. Where T4 skills exist, naturally note that the candidate's experience in the source domain transfers to the target skill.
+5. Do not mention any skill listed under HARD GAPS.
+6. Plain text only — no markdown, no bullet points, no special formatting.
+7. Output only the summary paragraph. No preamble, no explanation.
