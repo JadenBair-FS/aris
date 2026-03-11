@@ -25,6 +25,118 @@ namespace ARIS.Shared.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "vector");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ARIS.Shared.Entities.RefAbility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text")
+                        .HasColumnName("description");
+
+                    b.Property<Vector>("Embedding")
+                        .HasColumnType("vector(1024)")
+                        .HasColumnName("embedding");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<string>("OnetId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("onet_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OnetId")
+                        .IsUnique();
+
+                    b.ToTable("ref_ability", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefKnowledge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text")
+                        .HasColumnName("description");
+
+                    b.Property<Vector>("Embedding")
+                        .HasColumnType("vector(1024)")
+                        .HasColumnName("embedding");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<string>("OnetId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("onet_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OnetId")
+                        .IsUnique();
+
+                    b.ToTable("ref_knowledge", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefRoleAbility", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("role_id");
+
+                    b.Property<int>("AbilityId")
+                        .HasColumnType("integer")
+                        .HasColumnName("ability_id");
+
+                    b.Property<int?>("Importance")
+                        .HasColumnType("integer")
+                        .HasColumnName("importance");
+
+                    b.HasKey("RoleId", "AbilityId");
+
+                    b.HasIndex("AbilityId");
+
+                    b.ToTable("ref_role_ability", (string)null);
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefRoleKnowledge", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("role_id");
+
+                    b.Property<int>("KnowledgeId")
+                        .HasColumnType("integer")
+                        .HasColumnName("knowledge_id");
+
+                    b.Property<int?>("Importance")
+                        .HasColumnType("integer")
+                        .HasColumnName("importance");
+
+                    b.HasKey("RoleId", "KnowledgeId");
+
+                    b.HasIndex("KnowledgeId");
+
+                    b.ToTable("ref_role_knowledge", (string)null);
+                });
+
             modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
                 {
                     b.Property<Guid>("Id")
@@ -112,6 +224,10 @@ namespace ARIS.Shared.Migrations
                     b.Property<Vector>("Embedding")
                         .HasColumnType("vector(1024)")
                         .HasColumnName("embedding");
+
+                    b.Property<int?>("JobZone")
+                        .HasColumnType("integer")
+                        .HasColumnName("job_zone");
 
                     b.Property<string>("OnetCode")
                         .HasColumnType("text")
@@ -260,6 +376,44 @@ namespace ARIS.Shared.Migrations
                     b.ToTable("user_profiles", (string)null);
                 });
 
+            modelBuilder.Entity("ARIS.Shared.Entities.RefRoleAbility", b =>
+                {
+                    b.HasOne("ARIS.Shared.Entities.RefRole", "Role")
+                        .WithMany("RoleAbilities")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ARIS.Shared.Entities.RefAbility", "Ability")
+                        .WithMany("RoleAbilities")
+                        .HasForeignKey("AbilityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("Ability");
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefRoleKnowledge", b =>
+                {
+                    b.HasOne("ARIS.Shared.Entities.RefRole", "Role")
+                        .WithMany("RoleKnowledge")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ARIS.Shared.Entities.RefKnowledge", "Knowledge")
+                        .WithMany("RoleKnowledge")
+                        .HasForeignKey("KnowledgeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("Knowledge");
+                });
+
             modelBuilder.Entity("ARIS.Shared.Entities.JobPosting", b =>
                 {
                     b.HasOne("ARIS.Shared.Entities.RecruiterUser", "RecruiterUser")
@@ -302,6 +456,18 @@ namespace ARIS.Shared.Migrations
             modelBuilder.Entity("ARIS.Shared.Entities.RefRole", b =>
                 {
                     b.Navigation("RoleSkills");
+                    b.Navigation("RoleKnowledge");
+                    b.Navigation("RoleAbilities");
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefKnowledge", b =>
+                {
+                    b.Navigation("RoleKnowledge");
+                });
+
+            modelBuilder.Entity("ARIS.Shared.Entities.RefAbility", b =>
+                {
+                    b.Navigation("RoleAbilities");
                 });
 #pragma warning restore 612, 618
         }
