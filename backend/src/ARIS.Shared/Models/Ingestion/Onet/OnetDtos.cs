@@ -80,7 +80,6 @@ public class OccupationDetailsDto
     public required string Title { get; set; }
     public string? Description { get; set; }
     public List<string> TechnologySkills { get; set; } = new();
-    public List<TechnologySkillCategory> TechSkillCategories { get; set; } = new();
 }
 
 public class SkillTaxonomyNode

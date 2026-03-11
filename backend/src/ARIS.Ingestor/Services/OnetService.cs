@@ -116,7 +116,6 @@ public class OnetService
                 var techResponse = await _httpClient.GetFromJsonAsync<TechnologySkillsResponse>($"online/occupations/{onetCode}/summary/technology_skills", cancellationToken);
                 if (techResponse?.Category != null)
                 {
-                    details.TechSkillCategories = techResponse.Category;
                     details.TechnologySkills = techResponse.Category
                         .SelectMany(c => (c.Example ?? []).Concat(c.ExampleMore ?? []))
                         .Where(e => !string.IsNullOrWhiteSpace(e.Title))

@@ -31,10 +31,6 @@ public class IngestionWorker : BackgroundService
     private static readonly HashSet<string> SkillNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "subtopic" };
 
-    // Directory where LLM-preprocessed skill allowlists are stored (one JSON file per slug).
-    private static readonly string PreprocessedDirectory =
-        Path.Combine(AppContext.BaseDirectory, "Roadmaps", "preprocessed");
-
     private static readonly string[] RoleRoadmapSlugs =
     [
         "frontend", "backend", "full-stack", "devops", "devsecops",
@@ -154,22 +150,6 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        if (args.Contains("--preprocess-roadmaps"))
-        {
-            _logger.LogInformation(">>> ROADMAP PREPROCESSING MODE <<<");
-            Directory.CreateDirectory(PreprocessedDirectory);
-            var allSlugs = RoleRoadmapSlugs.Concat(SkillRoadmapSlugs).ToArray();
-            _logger.LogInformation("Preprocessing {Count} roadmaps...", allSlugs.Length);
-            foreach (var slug in allSlugs)
-            {
-                if (stoppingToken.IsCancellationRequested) break;
-                await PreprocessRoadmapAsync(slug, roadmapService, ontologyService, stoppingToken);
-                await Task.Delay(300, stoppingToken);
-            }
-            _logger.LogInformation("Roadmap preprocessing complete. Run --roadmap-only to ingest.");
-            _hostApplicationLifetime.StopApplication();
-            return;
-        }
 
         await dbContext.Database.EnsureCreatedAsync(stoppingToken);
         await neo4jService.EnsureIndicesAsync();
@@ -199,6 +179,8 @@ public class IngestionWorker : BackgroundService
         _logger.LogInformation("=== Phase 2: Building Slug-Role Map ===");
         var slugRoleMap = await BuildSlugRoleMapAsync(dbContext, roadmapService, RoleRoadmapSlugs, stoppingToken);
 
+        var csvRows = new List<string[]>();
+
         _logger.LogInformation("=== Phase 3: Role Roadmap Ingestion ===");
         foreach (var slug in RoleRoadmapSlugs)
         {
@@ -206,7 +188,7 @@ public class IngestionWorker : BackgroundService
             _logger.LogInformation("Processing Role Roadmap: {Slug}", slug);
             var matchedRoles = slugRoleMap.GetValueOrDefault(slug) ?? [];
             await IngestRoadmapAsync(dbContext, roadmapService, neo4jService, slug,
-                isRoleRoadmap: true, matchedRoles, stoppingToken);
+                isRoleRoadmap: true, matchedRoles, csvRows, stoppingToken);
         }
 
         _logger.LogInformation("=== Phase 4: Skill Roadmap Ingestion ===");
@@ -215,17 +197,19 @@ public class IngestionWorker : BackgroundService
             if (stoppingToken.IsCancellationRequested) break;
             _logger.LogInformation("Processing Skill Roadmap: {Slug}", slug);
             await IngestRoadmapAsync(dbContext, roadmapService, neo4jService, slug,
-                isRoleRoadmap: false, [], stoppingToken);
+                isRoleRoadmap: false, [], csvRows, stoppingToken);
         }
 
-        _logger.LogInformation("=== Phase 5: Ontology Enrichment ===");
-        await RunOptimizeGraphAsync(args, neo4jService, ontologyService, stoppingToken);
+        await WriteRoadmapCsvAsync(csvRows);
+
+        _logger.LogInformation("=== Phase 5: BERT Bridge Generation ===");
+        _logger.LogInformation("  pip install -r Development/scripts/requirements_bert.txt");
+        _logger.LogInformation("  python Development/scripts/generate_bert_bridges.py");
 
         _logger.LogInformation("Ingestion Complete.");
         _hostApplicationLifetime.StopApplication();
     }
 
-    // ── Phase 1: O*NET ─────────────────────────────────────────────────────────
 
     private async Task IngestOnetAsync(
         ArisDbContext dbContext,
@@ -270,34 +254,17 @@ public class IngestionWorker : BackgroundService
             }
 
             // Technology skills (specific software / tools) → IsTech = true
-            var rawToCanonical = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            // Lateral similarity between tech skills is handled by the BERT post-ingestion script
+            // (generate_bert_bridges.py), which creates IS_SIMILAR_TO edges based on semantic
+            // similarity of skill names and descriptions. ONET_Category BRIDGE_TO was removed
+            // because O*NET category groupings are too coarse — tools like "Excel" co-appear
+            // with domain-specific software across dozens of categories, creating spurious hops.
             foreach (var techSkillName in details.TechnologySkills)
             {
                 var canon = await DeduplicateOrCreateSkillAsync(
                     dbContext, neo4j, techSkillName, "ONET_Skill", isTech: true, ct);
                 await neo4j.MergeRoleSkillRelationshipAsync(details.Code, canon);
                 await LinkSkillToRoleInPostgresAsync(dbContext, existingRole.Id, canon, ct);
-                rawToCanonical[techSkillName] = canon;
-            }
-
-            // Category-based BRIDGE_TO: tools in the same O*NET category are deterministic peers
-            foreach (var category in details.TechSkillCategories)
-            {
-                var categoryCanonicals = (category.Example ?? []).Concat(category.ExampleMore ?? [])
-                    .Select(e => e.Title)
-                    .Where(t => !string.IsNullOrWhiteSpace(t))
-                    .Select(t => rawToCanonical.GetValueOrDefault(t!, t!))
-                    .Distinct(StringComparer.OrdinalIgnoreCase)
-                    .ToList();
-
-                for (var a = 0; a < categoryCanonicals.Count; a++)
-                {
-                    for (var b = a + 1; b < categoryCanonicals.Count; b++)
-                    {
-                        await neo4j.MergeBridgeRelationshipAsync(
-                            categoryCanonicals[a], categoryCanonicals[b], "ONET_Category");
-                    }
-                }
             }
 
             // Job Zone
@@ -351,7 +318,7 @@ public class IngestionWorker : BackgroundService
         _logger.LogInformation("O*NET Ingestion Complete: {Count} occupations processed.", i);
     }
 
-    // Phase 2: Build Slug → Role Map
+    // Build Slug → Role Map
 
     private async Task<Dictionary<string, List<string>>> BuildSlugRoleMapAsync(
         ArisDbContext dbContext,
@@ -461,6 +428,7 @@ public class IngestionWorker : BackgroundService
         string slug,
         bool isRoleRoadmap,
         List<string> matchedRoleCodes,
+        List<string[]> csvRows,
         CancellationToken ct)
     {
         var roadmap = await roadmapService.GetRoadmapAsync(slug, ct);
@@ -470,33 +438,7 @@ public class IngestionWorker : BackgroundService
             return;
         }
 
-        // Load LLM-approved allowlist produced by --preprocess-roadmaps.
-        // If no file exists, all structurally valid nodes are processed (best-effort).
-        HashSet<string>? allowlist = null;
-        var preprocessedFile = Path.Combine(PreprocessedDirectory, $"{slug}.json");
-        if (File.Exists(preprocessedFile))
-        {
-            try
-            {
-                var json = await File.ReadAllTextAsync(preprocessedFile, ct);
-                var approved = JsonSerializer.Deserialize<List<string>>(json);
-                if (approved != null)
-                {
-                    allowlist = new HashSet<string>(approved, StringComparer.OrdinalIgnoreCase);
-                    _logger.LogInformation("Roadmap '{Slug}': using allowlist with {Count} approved skills.", slug, allowlist.Count);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to load preprocessed allowlist for '{Slug}' — proceeding without it.", slug);
-            }
-        }
-        else
-        {
-            _logger.LogWarning("No preprocessed allowlist found for '{Slug}'. Run --preprocess-roadmaps for best quality.", slug);
-        }
-
-        // Build nodeId → canonical skill name map (allowlist-filtered)
+        // Build nodeId → canonical skill name map
         var nodeIdToCanonical = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var node in roadmap.Nodes)
@@ -513,12 +455,9 @@ public class IngestionWorker : BackgroundService
                 continue;
             }
 
-            // Filter out question-style labels ("What is HTTP?") and overly long labels
-            // ("Be specific in what you want") — these are navigation aids, not skill names.
-            if (label.Contains('?') || label.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 6) continue;
-
-            // If allowlist exists, skip anything the LLM did not approve
-            if (allowlist != null && !allowlist.Contains(label)) continue;
+            // Deterministic filter — removes navigation labels, instructional text,
+            // framework hooks, and comparison phrases. No LLM required.
+            if (IsRoadmapJunkLabel(label)) continue;
 
             var canon = await DeduplicateOrCreateSkillAsync(
                 dbContext, neo4j, label, "Roadmap.sh", isTech: true, ct);
@@ -555,6 +494,7 @@ public class IngestionWorker : BackgroundService
 
                 // subtopic→subtopic edges are sub-variants → child SUBSET_OF parent
                 await neo4j.MergeSubsetRelationshipAsync(childCanon, parentCanon, "Roadmap.sh");
+                csvRows.Add([slug, "Skill", parentCanon, childCanon, "SUBSET_OF"]);
             }
         }
 
@@ -569,6 +509,7 @@ public class IngestionWorker : BackgroundService
                 if (!skillNodeIds.Contains(nodeId)) continue; // skip topic anchors
                 if (string.Equals(canonName, rootSkillName, StringComparison.OrdinalIgnoreCase)) continue;
                 await neo4j.MergeSubsetRelationshipAsync(canonName, rootSkillName, "Roadmap.sh");
+                csvRows.Add([slug, "Skill", rootSkillName, canonName, "SUBSET_OF"]);
             }
         }
         else
@@ -584,8 +525,10 @@ public class IngestionWorker : BackgroundService
                 .Where(r => r.OnetCode != null && matchedRoleCodes.Contains(r.OnetCode))
                 .ToListAsync(ct);
 
-            foreach (var (_, canonName) in nodeIdToCanonical)
+            foreach (var (nodeId, canonName) in nodeIdToCanonical)
             {
+                if (!skillNodeIds.Contains(nodeId)) continue; // skip topic anchors
+
                 foreach (var roleCode in matchedRoleCodes)
                 {
                     // Neo4j REQUIRES edge
@@ -595,6 +538,7 @@ public class IngestionWorker : BackgroundService
                 foreach (var pgRole in pgRoles)
                 {
                     await LinkSkillToRoleInPostgresAsync(dbContext, pgRole.Id, canonName, ct);
+                    csvRows.Add([slug, "Occupation", pgRole.Title, canonName, "REQUIRES"]);
                 }
             }
 
@@ -604,59 +548,67 @@ public class IngestionWorker : BackgroundService
         await Task.Delay(500, ct);
     }
 
-    // ── Roadmap Preprocessing ──────────────────────────────────────────────────
-
+    // Roadmap Preprocessing 
     /// <summary>
     /// Runs the LLM against a single roadmap's node labels and saves the approved
     /// skill list to Roadmaps/preprocessed/{slug}.json. Skips if file already exists.
     /// </summary>
-    private async Task PreprocessRoadmapAsync(
-        string slug,
-        RoadmapService roadmapService,
-        OntologyEnrichmentService ontologyService,
-        CancellationToken ct)
+    // CSV Export
+
+    private async Task WriteRoadmapCsvAsync(List<string[]> rows)
     {
-        var outputPath = Path.Combine(PreprocessedDirectory, $"{slug}.json");
-        if (File.Exists(outputPath))
-        {
-            _logger.LogInformation("Preprocessed file already exists for '{Slug}' — skipping.", slug);
-            return;
-        }
+        var outputPath = Path.Combine(AppContext.BaseDirectory, "roadmap_graph.csv");
+        await using var writer = new StreamWriter(outputPath, append: false, encoding: System.Text.Encoding.UTF8);
+        await writer.WriteLineAsync("Roadmap,RoadmapType,Parent,Child,Relationship");
+        foreach (var row in rows)
+            await writer.WriteLineAsync(string.Join(",", row.Select(CsvEscape)));
+        _logger.LogInformation("Roadmap graph CSV written: {Path} ({Count} rows)", outputPath, rows.Count);
+    }
 
-        var roadmap = await roadmapService.GetRoadmapAsync(slug, ct);
-        if (roadmap?.Nodes == null)
-        {
-            _logger.LogWarning("Roadmap '{Slug}' returned no nodes — skipping preprocessing.", slug);
-            return;
-        }
-
-        var labels = roadmap.Nodes
-            .Where(n => ValidRoadmapNodeTypes.Contains(n.Type ?? ""))
-            .Select(n => n.Data?.Label?.Trim())
-            .Where(l => !string.IsNullOrWhiteSpace(l))
-            .Distinct(StringComparer.OrdinalIgnoreCase)
-            .Cast<string>()
-            .ToList();
-
-        _logger.LogInformation("Roadmap '{Slug}': {Count} unique labels to classify.", slug, labels.Count);
-
-        var approved = await ontologyService.ExtractSkillsFromRoadmapAsync(slug, labels, ct);
-
-        _logger.LogInformation("Roadmap '{Slug}': {Approved}/{Total} labels approved as real skills.",
-            slug, approved.Count, labels.Count);
-
-        var json = JsonSerializer.Serialize(approved, new JsonSerializerOptions { WriteIndented = true });
-        await File.WriteAllTextAsync(outputPath, json, ct);
-        _logger.LogInformation("Saved: {Path}", outputPath);
+    private static string CsvEscape(string field)
+    {
+        if (field.Contains(',') || field.Contains('"') || field.Contains('\n'))
+            return $"\"{field.Replace("\"", "\"\"")}\"";
+        return field;
     }
 
     //Shared Helpers
 
     /// <summary>
-    /// Central deduplication + upsert helper. Cosine distance threshold = 0.10.
-    /// IsTech = true wins and is never downgraded.
-    /// Returns the canonical skill name to use for all graph relationships.
+    /// Returns true if a Roadmap.sh subtopic label should be excluded from ingestion.
+    /// Rules (all deterministic, no LLM):
+    ///   1. Contains '?'                    — question/navigation labels ("What is HTTP?")
+    ///   2. More than 6 words               — long instructional phrases
+    ///   3. Starts with "use" + uppercase   — framework hooks (useState, useEffect, useCallback…)
+    ///   4. Contains " vs "                 — comparison phrases ("Props vs State")
+    ///   5. Starts with a known gerund verb — instructional steps ("Installing Git", "Creating Modules")
     /// </summary>
+    private static bool IsRoadmapJunkLabel(string label)
+    {
+        if (label.Contains('?')) return true;
+        if (label.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 6) return true;
+
+        // Framework hooks: useState, useEffect, useCallback, useRef, useMemo, etc.
+        // Matches "use" followed immediately by an uppercase letter.
+        // Does NOT match: pytest, pyTorch, numpy, useragent (lowercase next char).
+        if (label.Length > 3 && label.StartsWith("use") &&
+            char.IsUpper(label[3])) return true;
+
+        if (label.Contains(" vs ", StringComparison.OrdinalIgnoreCase)) return true;
+
+        // Instructional gerund prefixes — covers "Installing X", "Creating Y", "Running Z", etc.
+        ReadOnlySpan<string> gerunds =
+        [
+            "Creating ", "Getting ", "Installing ", "Using ", "Building ", "Making ",
+            "Learning ", "Understanding ", "Setting ", "Running ", "Writing ", "Connecting ",
+            "Deploying ", "Configuring ", "Implementing ", "Working ", "Adding ", "Handling ",
+        ];
+        foreach (var g in gerunds)
+            if (label.StartsWith(g, StringComparison.OrdinalIgnoreCase)) return true;
+
+        return false;
+    }
+
     private async Task<string> DeduplicateOrCreateSkillAsync(
         ArisDbContext dbContext,
         Neo4jIngestionService neo4j,
