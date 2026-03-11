@@ -995,23 +995,14 @@ namespace ARIS.API.Services
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);
 
-            // Track which graph skills have already been surfaced so each skill
-            // appears in exactly one experience entry, not duplicated across roles.
-            var usedGraphSkills = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
             var bulletResults = new List<TailoredBullet>();
             foreach (var exp in experienceEntries)
             {
                 var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
 
-                // Rebuild graph context for this entry, excluding skills already used
-                var entryGraphContext = _graphService.BuildTailoringGraphContext(
-                    match, user.CleanSignal?.Skills, alreadyUsedSkills: usedGraphSkills);
-
                 var prompt = tailoringTemplate
                     .Replace("{rawResumeText}", rawResumeText)
                     .Replace("{rawJobText}", rawJobText)
-                    .Replace("{graphContext}", entryGraphContext)
                     .Replace("{role}", exp.Role)
                     .Replace("{company}", exp.Company ?? "")
                     .Replace("{bullets}", bulletsText);
@@ -1031,15 +1022,6 @@ namespace ARIS.API.Services
 
                     if (parsed != null)
                     {
-                        // Collect all skills that were assigned to this entry and mark them used
-                        // so subsequent entries receive a reduced graph context (no duplicates).
-                        var entryT2 = new HashSet<string>(match.ImplicitlyDiscoveredSkills, StringComparer.OrdinalIgnoreCase);
-                        var entryT3 = new HashSet<string>(match.PrerequisiteMetSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
-                        var entryT4 = new HashSet<string>(match.BridgeableSkills.Select(s => s.OriginalName ?? s.SkillName), StringComparer.OrdinalIgnoreCase);
-                        var allGraphSkillsThisEntry = entryT2.Concat(entryT3).Concat(entryT4)
-                            .Where(s => !usedGraphSkills.Contains(s))
-                            .ToList();
-
                         foreach (var item in parsed)
                         {
                             if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
@@ -1052,87 +1034,6 @@ namespace ARIS.API.Services
                                     Role = exp.Role,
                                     Company = exp.Company,
                                 });
-
-                                // Mark any graph skill mentioned in this rewritten bullet as used
-                                foreach (var graphSkill in allGraphSkillsThisEntry)
-                                {
-                                    if (item.Rewritten.Contains(graphSkill, StringComparison.OrdinalIgnoreCase))
-                                        usedGraphSkills.Add(graphSkill);
-                                }
-                            }
-                        }
-
-                        // ── Missing-skill retry ──────────────────────────────────────────────────────
-                        // Check which graph skills from this entry's context were not surfaced.
-                        // If any are missing, issue one targeted follow-up call to generate bullets
-                        // for only those skills, using the same prompt template.
-                        var missedSkills = allGraphSkillsThisEntry
-                            .Where(s => !usedGraphSkills.Contains(s))
-                            .ToList();
-
-                        if (missedSkills.Count > 0)
-                        {
-                            // Build a targeted context block listing only the missed skills
-                            var missedContext = BuildMissedSkillsContext(missedSkills, match, user.CleanSignal?.Skills);
-                            if (!string.IsNullOrWhiteSpace(missedContext))
-                            {
-                                var retryPrompt = tailoringTemplate
-                                    .Replace("{rawResumeText}", rawResumeText)
-                                    .Replace("{rawJobText}", rawJobText)
-                                    .Replace("{graphContext}", missedContext)
-                                    .Replace("{role}", exp.Role)
-                                    .Replace("{company}", exp.Company ?? "")
-                                    .Replace("{bullets}", bulletsText);
-
-                                try
-                                {
-                                    var retryOptions = new ChatOptions { Temperature = 0.15f };
-                                    var retryResponse = await _chatClient.GetResponseAsync(retryPrompt, retryOptions);
-                                    var retryText = retryResponse?.Text?.Trim() ?? "";
-                                    var retryJson = System.Text.RegularExpressions.Regex.Replace(retryText, @"```(?:json)?", "").Trim();
-                                    var retryStart = retryJson.IndexOf('[');
-                                    var retryEnd   = retryJson.LastIndexOf(']');
-                                    if (retryStart >= 0 && retryEnd > retryStart)
-                                        retryJson = retryJson[retryStart..(retryEnd + 1)];
-
-                                    var retryParsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(retryJson, _jsonOptions);
-                                    if (retryParsed != null)
-                                    {
-                                        foreach (var item in retryParsed)
-                                        {
-                                            if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
-                                            {
-                                                // Only add the retry bullet if it actually contains a missed skill
-                                                // and is not a duplicate of an already-added rewrite.
-                                                bool containsMissed = missedSkills.Any(s =>
-                                                    item.Rewritten.Contains(s, StringComparison.OrdinalIgnoreCase));
-                                                bool isDuplicate = bulletResults.Any(b =>
-                                                    string.Equals(b.RewrittenBullet, item.Rewritten, StringComparison.OrdinalIgnoreCase));
-
-                                                if (containsMissed && !isDuplicate)
-                                                {
-                                                    bulletResults.Add(new TailoredBullet
-                                                    {
-                                                        OriginalBullet  = item.Original,
-                                                        RewrittenBullet = item.Rewritten,
-                                                        TargetSkill     = exp.Role,
-                                                        Role            = exp.Role,
-                                                        Company         = exp.Company,
-                                                    });
-                                                    foreach (var s in missedSkills)
-                                                    {
-                                                        if (item.Rewritten.Contains(s, StringComparison.OrdinalIgnoreCase))
-                                                            usedGraphSkills.Add(s);
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                catch (Exception retryEx)
-                                {
-                                    _logger.LogWarning(retryEx, "Missing-skill retry failed for entry {Role}", exp.Role);
-                                }
                             }
                         }
                     }

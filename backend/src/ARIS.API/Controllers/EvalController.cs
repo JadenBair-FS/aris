@@ -551,6 +551,8 @@ public class EvalController : ControllerBase
         double AtsSemanticBaselineScore,
         double AtsSemanticTailoredScore,
         double AtsSemanticDeltaPercent,
+        double GroundedSemanticBaseline,
+        double GroundedSemanticTailored,
         double ContentPreservation,
         int T5InVocabularyCount,     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
         double ImplicitDiscoveryRate,
@@ -612,6 +614,8 @@ public class EvalController : ControllerBase
             atsSemanticBaselineScore = r.AtsSemanticBaselineScore,
             atsSemanticTailoredScore = r.AtsSemanticTailoredScore,
             atsSemanticDeltaPercent  = r.AtsSemanticDeltaPercent,
+            groundedSemanticBaseline = r.GroundedSemanticBaseline,
+            groundedSemanticTailored = r.GroundedSemanticTailored,
             contentPreservation = r.ContentPreservation,
             t5InVocabularyCount = r.T5InVocabularyCount,
             implicitDiscoveryRate = r.ImplicitDiscoveryRate,
@@ -721,6 +725,9 @@ public class EvalController : ControllerBase
         var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
         var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
 
+        var groundedBaseline = Math.Round(semBaseline * scoring.BaselineScore, 4);
+        var groundedTailored = Math.Round(semTailored * groundingResult.Score, 4);
+
         var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
 
         sw.Stop();
@@ -729,6 +736,7 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
+            groundedBaseline, groundedTailored,
             contentPres, t5InVocab, 0.0,
             summary, tailoredBullets);
     }
@@ -743,7 +751,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0, "", []);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", []);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
@@ -781,6 +789,9 @@ public class EvalController : ControllerBase
         var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
         var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
 
+        var groundedBaseline = Math.Round(semBaseline * scoring.BaselineScore, 4);
+        var groundedTailored = Math.Round(semTailored * groundingResult.Score, 4);
+
         var contentPres = ComputeJobAlignmentToken(tailoredFullText, rawResume);
 
         var totalJobSkills = jobSignal.RequiredSkills.Count;
@@ -794,6 +805,7 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
+            groundedBaseline, groundedTailored,
             contentPres, 0, implicitDiscoveryRate,
             tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
     }
