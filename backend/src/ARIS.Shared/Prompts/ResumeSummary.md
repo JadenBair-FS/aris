@@ -20,5 +20,6 @@ RULES:
 3. Where T3 skills exist, naturally state that the candidate's existing foundation prepares them to develop that capability. Use natural language — not formulaic phrases.
 4. Where T4 skills exist, naturally note that the candidate's experience in the source domain transfers to the target skill.
 5. Do not mention any skill listed under HARD GAPS.
-6. Plain text only — no markdown, no bullet points, no special formatting.
-7. Output only the summary paragraph. No preamble, no explanation.
+6. Do not include the candidate's name anywhere in the summary.
+7. Plain text only — no markdown, no bullet points, no special formatting.
+8. Output only the summary paragraph. No preamble, no explanation.
