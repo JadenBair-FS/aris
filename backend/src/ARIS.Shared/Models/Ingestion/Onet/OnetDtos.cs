@@ -131,3 +131,87 @@ public class TechnologySkillExample
     [JsonPropertyName("in_demand")]
     public bool InDemand { get; set; }
 }
+
+// Generic paginated element response — used by skills, abilities, knowledge, work_activities
+public class OnetElementResponse
+{
+    [JsonPropertyName("start")]
+    public int Start { get; set; }
+
+    [JsonPropertyName("end")]
+    public int End { get; set; }
+
+    [JsonPropertyName("total")]
+    public int Total { get; set; }
+
+    [JsonPropertyName("next")]
+    public string? Next { get; set; }
+
+    [JsonPropertyName("element")]
+    public List<OnetElement> Element { get; set; } = new();
+}
+
+public class OnetElement
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; } = string.Empty;
+
+    [JsonPropertyName("name")]
+    public string Name { get; set; } = string.Empty;
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+
+    [JsonPropertyName("importance")]
+    public int? Importance { get; set; }
+}
+
+// Tasks use a "task" array with "statement" field instead of "name"
+public class OnetTaskResponse
+{
+    [JsonPropertyName("start")]
+    public int Start { get; set; }
+
+    [JsonPropertyName("end")]
+    public int End { get; set; }
+
+    [JsonPropertyName("total")]
+    public int Total { get; set; }
+
+    [JsonPropertyName("next")]
+    public string? Next { get; set; }
+
+    [JsonPropertyName("task")]
+    public List<OnetDetailTask> Tasks { get; set; } = new();
+}
+
+public class OnetDetailTask
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; } = string.Empty;
+
+    [JsonPropertyName("statement")]
+    public string Statement { get; set; } = string.Empty;
+
+    [JsonPropertyName("importance")]
+    public int? Importance { get; set; }
+}
+
+// Job zone
+public class OnetJobZoneResponse
+{
+    [JsonPropertyName("job_zone")]
+    public OnetJobZoneDetail? JobZone { get; set; }
+}
+
+public class OnetJobZoneDetail
+{
+    [JsonPropertyName("value")]
+    public int Value { get; set; }
+
+    [JsonPropertyName("title")]
+    public string Title { get; set; } = string.Empty;
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+}

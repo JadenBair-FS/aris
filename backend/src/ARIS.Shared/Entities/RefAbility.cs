@@ -4,18 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ARIS.Shared.Entities;
 
-public class RefRole
+public class RefAbility
 {
     [Key]
     [Column("id")]
     public int Id { get; set; }
 
     [Required]
-    [Column("title")]
-    public required string Title { get; set; }
+    [Column("onet_id")]
+    public required string OnetId { get; set; }
 
-    [Column("onet_code")]
-    public string? OnetCode { get; set; }
+    [Required]
+    [Column("name")]
+    public required string Name { get; set; }
 
     [Column("description")]
     public string? Description { get; set; }
@@ -23,10 +24,5 @@ public class RefRole
     [Column("embedding", TypeName = "vector(1024)")]
     public Vector? Embedding { get; set; }
 
-    [Column("job_zone")]
-    public int? JobZone { get; set; }
-
-    public List<RefRoleSkill> RoleSkills { get; set; } = new();
-    public ICollection<RefRoleKnowledge> RoleKnowledge { get; set; } = new List<RefRoleKnowledge>();
     public ICollection<RefRoleAbility> RoleAbilities { get; set; } = new List<RefRoleAbility>();
 }

@@ -1,12 +1,12 @@
 using ARIS.Ingestor.Services;
 using ARIS.Shared.Entities;
 using ARIS.Shared.Models.Ingestion.Onet;
+using ARIS.Shared.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.AI;
-using ARIS.Shared.Data;
 using Pgvector.EntityFrameworkCore;
 using System.Text.Json;
 
@@ -21,10 +21,15 @@ public class IngestionWorker : BackgroundService
     private readonly IHostApplicationLifetime _hostApplicationLifetime;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingService;
 
-    // Structural node types in Roadmap.sh JSON — only these are candidates for skill extraction.
-    // Layout nodes (vertical, section, button, paragraph, etc.) are always skipped.
+    // Only "subtopic" nodes contain real tool/framework names (e.g. "Django", "pytest", "Docker").
+    // "topic" nodes are section headings ("Learn a Framework") — kept as hierarchy anchors only,
+    // not ingested as Skill nodes. All layout nodes (vertical, section, button, etc.) are ignored.
     private static readonly HashSet<string> ValidRoadmapNodeTypes =
-        new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic", "skill" };
+        new(StringComparer.OrdinalIgnoreCase) { "topic", "subtopic" };
+
+    // Only these node types produce an actual Skill node in the graph.
+    private static readonly HashSet<string> SkillNodeTypes =
+        new(StringComparer.OrdinalIgnoreCase) { "subtopic" };
 
     // Directory where LLM-preprocessed skill allowlists are stored (one JSON file per slug).
     private static readonly string PreprocessedDirectory =
@@ -295,6 +300,50 @@ public class IngestionWorker : BackgroundService
                 }
             }
 
+            // Job Zone
+            var jobZone = await onetService.GetOccupationJobZoneAsync(occ.Code, ct);
+            if (jobZone.HasValue)
+            {
+                var zoneTitle = $"Job Zone {jobZone.Value}";
+                await neo4j.UpsertJobZoneNodeAsync(jobZone.Value, zoneTitle);
+                await neo4j.LinkRoleToJobZoneAsync(details.Code, jobZone.Value);
+                existingRole.JobZone = jobZone.Value;
+            }
+
+            // Knowledge domains
+            var knowledgeItems = await onetService.GetOccupationKnowledgeAsync(occ.Code, ct);
+            foreach (var k in knowledgeItems)
+            {
+                await neo4j.UpsertKnowledgeNodeAsync(k.Id, k.Name, k.Description);
+                await neo4j.LinkRoleToKnowledgeAsync(details.Code, k.Id, k.Importance);
+                await UpsertKnowledgeInPostgresAsync(dbContext, existingRole.Id, k, ct);
+            }
+
+            // Abilities
+            var abilities = await onetService.GetOccupationAbilitiesAsync(occ.Code, ct);
+            foreach (var a in abilities)
+            {
+                await neo4j.UpsertAbilityNodeAsync(a.Id, a.Name, a.Description);
+                await neo4j.LinkRoleToAbilityAsync(details.Code, a.Id, a.Importance);
+                await UpsertAbilityInPostgresAsync(dbContext, existingRole.Id, a, ct);
+            }
+
+            // Tasks (Neo4j only — task descriptions are sentences, not searchable by name in Postgres)
+            var tasks = await onetService.GetOccupationTasksAsync(occ.Code, ct);
+            foreach (var t in tasks)
+            {
+                await neo4j.UpsertTaskNodeAsync(t.Id, t.Statement, t.Importance);
+                await neo4j.LinkRoleToTaskAsync(details.Code, t.Id, t.Importance);
+            }
+
+            // Work Activities (Neo4j only)
+            var workActivities = await onetService.GetOccupationWorkActivitiesAsync(occ.Code, ct);
+            foreach (var w in workActivities)
+            {
+                await neo4j.UpsertWorkActivityNodeAsync(w.Id, w.Name, w.Description);
+                await neo4j.LinkRoleToWorkActivityAsync(details.Code, w.Id, w.Importance);
+            }
+
             await dbContext.SaveChangesAsync(ct);
             await Task.Delay(200, ct);
         }
@@ -456,6 +505,18 @@ public class IngestionWorker : BackgroundService
             var label = node.Data?.Label?.Trim();
             if (string.IsNullOrWhiteSpace(label) || node.Id == null) continue;
 
+            // topic nodes are hierarchy anchors for edge processing — track their ID but
+            // do NOT create a Skill node (topic labels are section headings, not tool names).
+            if (!SkillNodeTypes.Contains(node.Type ?? ""))
+            {
+                nodeIdToCanonical[node.Id] = label; // used as edge anchor only
+                continue;
+            }
+
+            // Filter out question-style labels ("What is HTTP?") and overly long labels
+            // ("Be specific in what you want") — these are navigation aids, not skill names.
+            if (label.Contains('?') || label.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length > 6) continue;
+
             // If allowlist exists, skip anything the LLM did not approve
             if (allowlist != null && !allowlist.Contains(label)) continue;
 
@@ -467,46 +528,45 @@ public class IngestionWorker : BackgroundService
 
         _logger.LogInformation("Roadmap '{Slug}': {Count} valid skills processed.", slug, nodeIdToCanonical.Count);
 
-        //Process edges for hierarchy (solid → SUBSET_OF) and bridges (dashed → BRIDGE_TO)
-        var validNodeIds = nodeIdToCanonical.Keys.ToHashSet(StringComparer.OrdinalIgnoreCase);
-        var solidEdgeTargetIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        // Process edges — only subtopic→subtopic edges carry real skill graph semantics.
+        // topic→subtopic edges (the dominant pattern, 1,669 total) encode category membership
+        // and are handled below by linking all subtopics to the root skill or role.
+        // subtopic→subtopic dashed edges (80 total) encode sub-variants, e.g.
+        // "Policies → Resource-based" or "System Prompting → Role & Behavior" → SUBSET_OF.
+        var skillNodeIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var node in roadmap.Nodes ?? [])
+        {
+            if (SkillNodeTypes.Contains(node.Type ?? "") && node.Id != null
+                && nodeIdToCanonical.ContainsKey(node.Id))
+                skillNodeIds.Add(node.Id);
+        }
 
         if (roadmap.Edges != null)
         {
             foreach (var edge in roadmap.Edges)
             {
                 if (edge.Source == null || edge.Target == null) continue;
-                if (!validNodeIds.Contains(edge.Source) || !validNodeIds.Contains(edge.Target)) continue;
+                // Only process edges where BOTH endpoints are actual skill (subtopic) nodes
+                if (!skillNodeIds.Contains(edge.Source) || !skillNodeIds.Contains(edge.Target)) continue;
 
                 var parentCanon = nodeIdToCanonical[edge.Source];
                 var childCanon = nodeIdToCanonical[edge.Target];
-
                 if (string.Equals(parentCanon, childCanon, StringComparison.OrdinalIgnoreCase)) continue;
 
-                var edgeStyle = edge.Data?.EdgeStyle ?? "solid";
-                if (edgeStyle.Equals("dashed", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Dashed edge = alternative/optional → BRIDGE_TO
-                    await neo4j.MergeBridgeRelationshipAsync(parentCanon, childCanon, "Roadmap.sh");
-                }
-                else
-                {
-                    // Solid edge = parent → child dependency → child SUBSET_OF parent
-                    await neo4j.MergeSubsetRelationshipAsync(childCanon, parentCanon, "Roadmap.sh");
-                    solidEdgeTargetIds.Add(edge.Target);
-                }
+                // subtopic→subtopic edges are sub-variants → child SUBSET_OF parent
+                await neo4j.MergeSubsetRelationshipAsync(childCanon, parentCanon, "Roadmap.sh");
             }
         }
 
         if (!isRoleRoadmap)
         {
-            // Skill roadmap: top-level nodes (no solid edge parent in this roadmap) link to root skill
+            // Skill roadmap: all subtopics are SUBSET_OF the root skill (e.g. "React", "Python")
             var rootSkillName = roadmap.Title?.Card ?? slug.Replace("-", " ");
             await DeduplicateOrCreateSkillAsync(dbContext, neo4j, rootSkillName, "Roadmap.sh", isTech: true, ct);
 
             foreach (var (nodeId, canonName) in nodeIdToCanonical)
             {
-                if (solidEdgeTargetIds.Contains(nodeId)) continue;
+                if (!skillNodeIds.Contains(nodeId)) continue; // skip topic anchors
                 if (string.Equals(canonName, rootSkillName, StringComparison.OrdinalIgnoreCase)) continue;
                 await neo4j.MergeSubsetRelationshipAsync(canonName, rootSkillName, "Roadmap.sh");
             }
@@ -677,6 +737,82 @@ public class IngestionWorker : BackgroundService
         }
     }
 
+    private async Task UpsertKnowledgeInPostgresAsync(
+        ArisDbContext dbContext, int roleId, OnetElement element, CancellationToken ct)
+    {
+        if (string.IsNullOrWhiteSpace(element.Id) || string.IsNullOrWhiteSpace(element.Name)) return;
+
+        var existing = await dbContext.RefKnowledge
+            .FirstOrDefaultAsync(k => k.OnetId == element.Id, ct);
+
+        if (existing == null)
+        {
+            var embedding = await GenerateEmbeddingAsync($"{element.Name}: {element.Description}");
+            existing = new RefKnowledge
+            {
+                OnetId = element.Id,
+                Name = element.Name,
+                Description = element.Description,
+                Embedding = embedding
+            };
+            dbContext.RefKnowledge.Add(existing);
+            await dbContext.SaveChangesAsync(ct);
+        }
+
+        var alreadyLinked = dbContext.RefRoleKnowledge.Local
+            .Any(rk => rk.RoleId == roleId && rk.KnowledgeId == existing.Id)
+            || await dbContext.RefRoleKnowledge
+                .AnyAsync(rk => rk.RoleId == roleId && rk.KnowledgeId == existing.Id, ct);
+
+        if (!alreadyLinked)
+        {
+            dbContext.RefRoleKnowledge.Add(new RefRoleKnowledge
+            {
+                RoleId = roleId,
+                KnowledgeId = existing.Id,
+                Importance = element.Importance
+            });
+        }
+    }
+
+    private async Task UpsertAbilityInPostgresAsync(
+        ArisDbContext dbContext, int roleId, OnetElement element, CancellationToken ct)
+    {
+        if (string.IsNullOrWhiteSpace(element.Id) || string.IsNullOrWhiteSpace(element.Name)) return;
+
+        var existing = await dbContext.RefAbility
+            .FirstOrDefaultAsync(a => a.OnetId == element.Id, ct);
+
+        if (existing == null)
+        {
+            var embedding = await GenerateEmbeddingAsync($"{element.Name}: {element.Description}");
+            existing = new RefAbility
+            {
+                OnetId = element.Id,
+                Name = element.Name,
+                Description = element.Description,
+                Embedding = embedding
+            };
+            dbContext.RefAbility.Add(existing);
+            await dbContext.SaveChangesAsync(ct);
+        }
+
+        var alreadyLinked = dbContext.RefRoleAbility.Local
+            .Any(ra => ra.RoleId == roleId && ra.AbilityId == existing.Id)
+            || await dbContext.RefRoleAbility
+                .AnyAsync(ra => ra.RoleId == roleId && ra.AbilityId == existing.Id, ct);
+
+        if (!alreadyLinked)
+        {
+            dbContext.RefRoleAbility.Add(new RefRoleAbility
+            {
+                RoleId = roleId,
+                AbilityId = existing.Id,
+                Importance = element.Importance
+            });
+        }
+    }
+
     private async Task EnsureCleanSlateAsync(
         ArisDbContext dbContext,
         Neo4jIngestionService neo4j,
@@ -684,7 +820,8 @@ public class IngestionWorker : BackgroundService
     {
         _logger.LogWarning("!!! CLEARING ALL DICTIONARY DATA !!!");
         await dbContext.Database.ExecuteSqlRawAsync(
-            "TRUNCATE TABLE ref_role_skills, ref_skills, ref_roles RESTART IDENTITY CASCADE;", ct);
+            "TRUNCATE TABLE ref_role_knowledge, ref_role_ability, ref_role_skills, " +
+            "ref_knowledge, ref_ability, ref_skills, ref_roles RESTART IDENTITY CASCADE;", ct);
         _logger.LogInformation("PostgreSQL Dictionary Tables Truncated.");
         await neo4j.ClearDatabaseAsync();
     }

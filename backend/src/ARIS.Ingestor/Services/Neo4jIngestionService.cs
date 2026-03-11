@@ -34,12 +34,169 @@ public class Neo4jIngestionService : IDisposable, IAsyncDisposable
         await using var session = _driver.AsyncSession();
         await session.ExecuteWriteAsync(async tx =>
         {
+            // Existing
             await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (r:Role) REQUIRE r.onet_code IS UNIQUE");
             await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (s:Skill) REQUIRE s.name IS UNIQUE");
             await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (s:Skill) ON (s.name)");
             await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (s:Skill) ON (s.source)");
+            // New node labels
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (k:Knowledge) REQUIRE k.onet_id IS UNIQUE");
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (a:Ability) REQUIRE a.onet_id IS UNIQUE");
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (t:Task) REQUIRE t.onet_id IS UNIQUE");
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (w:WorkActivity) REQUIRE w.onet_id IS UNIQUE");
+            await tx.RunAsync("CREATE CONSTRAINT IF NOT EXISTS FOR (j:JobZone) REQUIRE j.code IS UNIQUE");
+            await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (k:Knowledge) ON (k.name)");
+            await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (a:Ability) ON (a.name)");
+            await tx.RunAsync("CREATE INDEX IF NOT EXISTS FOR (w:WorkActivity) ON (w.name)");
+            // IS_SIMILAR_TO edges are written by the BERT post-ingestion script — no constraint needed
         });
     }
+
+    // --- Knowledge ---
+
+    public async Task UpsertKnowledgeNodeAsync(string onetId, string name, string? description)
+    {
+        if (string.IsNullOrWhiteSpace(onetId) || string.IsNullOrWhiteSpace(name)) return;
+        const string query = @"
+            MERGE (k:Knowledge {onet_id: $onetId})
+            SET k.name = $name, k.description = $description, k.updated_at = datetime()
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { onetId, name, description }));
+    }
+
+    public async Task LinkRoleToKnowledgeAsync(string roleOnetCode, string knowledgeOnetId, int? importance)
+    {
+        if (string.IsNullOrWhiteSpace(roleOnetCode) || string.IsNullOrWhiteSpace(knowledgeOnetId)) return;
+        const string query = @"
+            MATCH (r:Role {onet_code: $code})
+            MATCH (k:Knowledge {onet_id: $kid})
+            MERGE (r)-[rel:REQUIRES_KNOWLEDGE]->(k)
+            SET rel.importance = $importance
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code = roleOnetCode, kid = knowledgeOnetId, importance }));
+    }
+
+    // --- Ability ---
+
+    public async Task UpsertAbilityNodeAsync(string onetId, string name, string? description)
+    {
+        if (string.IsNullOrWhiteSpace(onetId) || string.IsNullOrWhiteSpace(name)) return;
+        const string query = @"
+            MERGE (a:Ability {onet_id: $onetId})
+            SET a.name = $name, a.description = $description, a.updated_at = datetime()
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { onetId, name, description }));
+    }
+
+    public async Task LinkRoleToAbilityAsync(string roleOnetCode, string abilityOnetId, int? importance)
+    {
+        if (string.IsNullOrWhiteSpace(roleOnetCode) || string.IsNullOrWhiteSpace(abilityOnetId)) return;
+        const string query = @"
+            MATCH (r:Role {onet_code: $code})
+            MATCH (a:Ability {onet_id: $aid})
+            MERGE (r)-[rel:REQUIRES_ABILITY]->(a)
+            SET rel.importance = $importance
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code = roleOnetCode, aid = abilityOnetId, importance }));
+    }
+
+    // --- Task ---
+
+    public async Task UpsertTaskNodeAsync(string onetId, string statement, int? importance)
+    {
+        if (string.IsNullOrWhiteSpace(onetId) || string.IsNullOrWhiteSpace(statement)) return;
+        const string query = @"
+            MERGE (t:Task {onet_id: $onetId})
+            SET t.statement = $statement, t.importance = $importance, t.updated_at = datetime()
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { onetId, statement, importance }));
+    }
+
+    public async Task LinkRoleToTaskAsync(string roleOnetCode, string taskOnetId, int? importance)
+    {
+        if (string.IsNullOrWhiteSpace(roleOnetCode) || string.IsNullOrWhiteSpace(taskOnetId)) return;
+        const string query = @"
+            MATCH (r:Role {onet_code: $code})
+            MATCH (t:Task {onet_id: $tid})
+            MERGE (r)-[rel:INVOLVES_TASK]->(t)
+            SET rel.importance = $importance
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code = roleOnetCode, tid = taskOnetId, importance }));
+    }
+
+    // --- WorkActivity ---
+
+    public async Task UpsertWorkActivityNodeAsync(string onetId, string name, string? description)
+    {
+        if (string.IsNullOrWhiteSpace(onetId) || string.IsNullOrWhiteSpace(name)) return;
+        const string query = @"
+            MERGE (w:WorkActivity {onet_id: $onetId})
+            SET w.name = $name, w.description = $description, w.updated_at = datetime()
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { onetId, name, description }));
+    }
+
+    public async Task LinkRoleToWorkActivityAsync(string roleOnetCode, string workActivityOnetId, int? importance)
+    {
+        if (string.IsNullOrWhiteSpace(roleOnetCode) || string.IsNullOrWhiteSpace(workActivityOnetId)) return;
+        const string query = @"
+            MATCH (r:Role {onet_code: $code})
+            MATCH (w:WorkActivity {onet_id: $wid})
+            MERGE (r)-[rel:INVOLVES_ACTIVITY]->(w)
+            SET rel.importance = $importance
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code = roleOnetCode, wid = workActivityOnetId, importance }));
+    }
+
+    // --- JobZone ---
+
+    public async Task UpsertJobZoneNodeAsync(int code, string title)
+    {
+        const string query = @"
+            MERGE (j:JobZone {code: $code})
+            SET j.title = $title
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code, title }));
+    }
+
+    public async Task LinkRoleToJobZoneAsync(string roleOnetCode, int jobZoneCode)
+    {
+        if (string.IsNullOrWhiteSpace(roleOnetCode)) return;
+        const string query = @"
+            MATCH (r:Role {onet_code: $code})
+            MATCH (j:JobZone {code: $jzCode})
+            MERGE (r)-[:BELONGS_TO_ZONE]->(j)
+        ";
+        await using var session = _driver.AsyncSession();
+        await session.ExecuteWriteAsync(tx => tx.RunAsync(query, new { code = roleOnetCode, jzCode = jobZoneCode }));
+    }
+
+    // --- Roadmap.sh node type helpers ---
+
+    /// <summary>
+    /// Returns true if this roadmap node type represents an actual tool or framework name
+    /// that should be ingested as a Skill node. Only "subtopic" nodes contain real tool names.
+    /// </summary>
+    public static bool IsSkillNode(string nodeType) =>
+        string.Equals(nodeType, "subtopic", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// Returns true if this roadmap node type is a structural/layout node that should
+    /// be ignored entirely (no Skill node, no relationships).
+    /// </summary>
+    public static bool IsStructuralNode(string nodeType) =>
+        nodeType is "vertical" or "horizontal" or "section" or "label"
+                 or "button" or "paragraph" or "linksgroup" or "legend"
+                 or "title";
 
     public async Task MergeRoleAsync(string title, string code, string description)
     {

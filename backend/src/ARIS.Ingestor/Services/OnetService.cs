@@ -152,4 +152,101 @@ public class OnetService
             return [];
         }
     }
+
+    public async Task<List<OnetElement>> GetOccupationSkillsAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "skills", cancellationToken);
+
+    public async Task<List<OnetElement>> GetOccupationKnowledgeAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "knowledge", cancellationToken);
+
+    public async Task<List<OnetElement>> GetOccupationAbilitiesAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "abilities", cancellationToken);
+
+    public async Task<List<OnetElement>> GetOccupationWorkActivitiesAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "work_activities", cancellationToken);
+
+    public async Task<List<OnetDetailTask>> GetOccupationTasksAsync(string onetCode, CancellationToken cancellationToken = default)
+    {
+        const int pageSize = 100;
+        const int cap = 200;
+        var results = new List<OnetDetailTask>();
+        string? nextUrl = $"online/occupations/{onetCode}/details/tasks?start=1&end={pageSize}";
+
+        try
+        {
+            while (!string.IsNullOrEmpty(nextUrl) && results.Count < cap && !cancellationToken.IsCancellationRequested)
+            {
+                var response = await _httpClient.GetFromJsonAsync<OnetTaskResponse>(nextUrl, cancellationToken);
+                if (response?.Tasks != null)
+                    results.AddRange(response.Tasks);
+
+                if (!string.IsNullOrEmpty(response?.Next) && results.Count < cap)
+                {
+                    var nextUri = new Uri(response.Next);
+                    nextUrl = nextUri.PathAndQuery;
+                }
+                else
+                {
+                    nextUrl = null;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
+        }
+
+        return results.Count > cap ? results.Take(cap).ToList() : results;
+    }
+
+    public async Task<int?> GetOccupationJobZoneAsync(string onetCode, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var response = await _httpClient.GetFromJsonAsync<OnetJobZoneResponse>(
+                $"online/occupations/{onetCode}/details/job_zone", cancellationToken);
+            return response?.JobZone?.Value;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch job zone for {Code}", onetCode);
+            return null;
+        }
+    }
+
+    // Shared pagination helper for element-based endpoints (skills, knowledge, abilities, work_activities)
+    private async Task<List<OnetElement>> GetOccupationElementsAsync(
+        string onetCode, string detailType, CancellationToken cancellationToken)
+    {
+        const int pageSize = 100;
+        const int cap = 200;
+        var results = new List<OnetElement>();
+        string? nextUrl = $"online/occupations/{onetCode}/details/{detailType}?start=1&end={pageSize}";
+
+        try
+        {
+            while (!string.IsNullOrEmpty(nextUrl) && results.Count < cap && !cancellationToken.IsCancellationRequested)
+            {
+                var response = await _httpClient.GetFromJsonAsync<OnetElementResponse>(nextUrl, cancellationToken);
+                if (response?.Element != null)
+                    results.AddRange(response.Element);
+
+                if (!string.IsNullOrEmpty(response?.Next) && results.Count < cap)
+                {
+                    var nextUri = new Uri(response.Next);
+                    nextUrl = nextUri.PathAndQuery;
+                }
+                else
+                {
+                    nextUrl = null;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch {DetailType} for {Code}", detailType, onetCode);
+        }
+
+        return results.Count > cap ? results.Take(cap).ToList() : results;
+    }
 }
