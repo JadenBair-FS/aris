@@ -125,7 +125,7 @@ public class EvalController : ControllerBase
 
         var originalMappings = BuildOriginalMappings(tailoredData.CleanSignal, job.CleanSignal);
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-            tailoredData.TailoredBullets, "", originalMappings);
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary ?? "", originalMappings);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
 
         var summarySemanticScore = await ComputeSemanticSimilarityAsync(tailoredData.ProfessionalSummary ?? "", rawJobText);
@@ -290,7 +290,7 @@ public class EvalController : ControllerBase
         var pdfBytes = _resumePdfService.GeneratePdf(personalInfo, user.CleanSignal, summary, tailoredBullets);
 
         var originalMappings = BuildOriginalMappings(user.CleanSignal, jobSignal);
-        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, "", originalMappings);
+        var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(tailoredBullets, summary, originalMappings);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
 
         var summarySemanticScore    = await ComputeSemanticSimilarityAsync(summary, rawJob);
@@ -322,7 +322,7 @@ public class EvalController : ControllerBase
 
         var originalMappings = BuildOriginalMappings(tailoredData.CleanSignal, jobSignal);
         var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-            tailoredData.TailoredBullets, "", originalMappings);
+            tailoredData.TailoredBullets, tailoredData.ProfessionalSummary ?? "", originalMappings);
         var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, jobSignal);
 
         var summarySemanticScore    = await ComputeSemanticSimilarityAsync(tailoredData.ProfessionalSummary, rawJob);
