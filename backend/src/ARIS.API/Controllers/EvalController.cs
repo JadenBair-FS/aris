@@ -553,7 +553,9 @@ public class EvalController : ControllerBase
         double AtsSemanticDeltaPercent,
         double ContentPreservation,
         int T5InVocabularyCount,     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
-        double ImplicitDiscoveryRate
+        double ImplicitDiscoveryRate,
+        string ProfessionalSummary,
+        List<TailoredBullet> TailoredBullets
     );
 
     /// <summary>
@@ -613,6 +615,8 @@ public class EvalController : ControllerBase
             contentPreservation = r.ContentPreservation,
             t5InVocabularyCount = r.T5InVocabularyCount,
             implicitDiscoveryRate = r.ImplicitDiscoveryRate,
+            professionalSummary = r.ProfessionalSummary,
+            tailoredBullets = r.TailoredBullets.Select(b => new { b.Role, b.Company, b.OriginalBullet, b.RewrittenBullet }),
             pdfBase64 = Convert.ToBase64String(r.PdfBytes)
         };
 
@@ -725,7 +729,8 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
-            contentPres, t5InVocab, 0.0);
+            contentPres, t5InVocab, 0.0,
+            summary, tailoredBullets);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
@@ -738,7 +743,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0, "", []);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
@@ -789,7 +794,8 @@ public class EvalController : ControllerBase
             groundingResult.Score, sw.ElapsedMilliseconds, pdfBytes,
             atsBaseline, atsTailored, atsDeltaPct, 
             semBaseline, semTailored, semDeltaPct,
-            contentPres, 0, implicitDiscoveryRate);
+            contentPres, 0, implicitDiscoveryRate,
+            tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(

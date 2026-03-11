@@ -110,12 +110,9 @@ export function TierBreakdown({
                 emptyLabel="No prerequisite paths found"
             >
                 {prerequisiteMetSkills.map((s, i) => (
-                    <div key={i} className="flex flex-col py-1.5 border-b border-slate-50 last:border-0">
-                        <div className="flex items-center">
-                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                            <ImportanceBadge importance={s.importance} />
-                        </div>
-                        {s.bridgePath && <span className="text-xs text-slate-400">{s.bridgePath}</span>}
+                    <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
+                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <ImportanceBadge importance={s.importance} />
                     </div>
                 ))}
             </TierSection>
@@ -127,12 +124,9 @@ export function TierBreakdown({
                 emptyLabel="No bridgeable skills found"
             >
                 {bridgeableSkills.map((s, i) => (
-                    <div key={i} className="flex flex-col py-1.5 border-b border-slate-50 last:border-0">
-                        <div className="flex items-center">
-                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                            <ImportanceBadge importance={s.importance} />
-                        </div>
-                        {s.bridgePath && <span className="text-xs text-slate-400">{s.bridgePath}</span>}
+                    <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
+                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <ImportanceBadge importance={s.importance} />
                     </div>
                 ))}
             </TierSection>
