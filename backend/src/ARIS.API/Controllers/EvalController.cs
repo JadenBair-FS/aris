@@ -23,6 +23,7 @@ public class EvalController : ControllerBase
     private readonly ILogger<EvalController> _logger;
     private readonly ResumeService _resumeService;
     private readonly ResumePdfService _resumePdfService;
+    private readonly GraphService _graphService;
 
     public EvalController(
         MatchService matchService,
@@ -32,7 +33,8 @@ public class EvalController : ControllerBase
         IChatClient chatClient,
         ILogger<EvalController> logger,
         ResumeService resumeService,
-        ResumePdfService resumePdfService)
+        ResumePdfService resumePdfService,
+        GraphService graphService)
     {
         _matchService = matchService;
         _groundingService = groundingService;
@@ -42,6 +44,7 @@ public class EvalController : ControllerBase
         _logger = logger;
         _resumeService = resumeService;
         _resumePdfService = resumePdfService;
+        _graphService = graphService;
     }
 
     public class GroundingRequest
