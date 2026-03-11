@@ -174,6 +174,13 @@ public class EvalController : ControllerBase
         double GraphScoreDelta
     );
 
+    [HttpGet("debug/graph/{skillName}")]
+    public async Task<IActionResult> DebugGraphSkill(string skillName)
+    {
+        var neighborhood = await _graphService.GetValidNeighborhoodAsync(new[] { skillName });
+        return Ok(new { skill = skillName, neighborhood });
+    }
+
     [HttpPost("tailor-compare")]
     public async Task<IActionResult> TailorCompare([FromBody] TailorCompareRequest request)
     {
