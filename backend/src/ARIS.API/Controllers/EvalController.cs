@@ -147,6 +147,9 @@ public class EvalController : ControllerBase
                 : 0.0,
             hallucinationCount          = scoring.HallucinationCount,
             hallucinations              = scoring.Hallucinations,
+            baselineGraphScore          = scoring.BaselineScore,
+            tailoredGraphScore          = scoring.VerifiedScore,
+            graphScoreDeltaPercent      = Math.Round(scoring.Delta * 100.0, 2),
             summaryText                 = tailoredData.ProfessionalSummary,
             pdfBase64                   = Convert.ToBase64String(pdfBytes)
         });
@@ -165,7 +168,10 @@ public class EvalController : ControllerBase
         int HallucinationCount,
         long LatencyMs,
         byte[] PdfBytes,
-        string SummaryText
+        string SummaryText,
+        double BaselineGraphScore,
+        double TailoredGraphScore,
+        double GraphScoreDelta
     );
 
     [HttpPost("tailor-compare")]
@@ -206,6 +212,9 @@ public class EvalController : ControllerBase
             hallucinationCount      = r.HallucinationCount,
             latencyMs               = r.LatencyMs,
             summaryText             = r.SummaryText,
+            baselineGraphScore      = r.BaselineGraphScore,
+            tailoredGraphScore      = r.TailoredGraphScore,
+            graphScoreDeltaPercent  = Math.Round(r.GraphScoreDelta * 100.0, 2),
             pdfBase64               = Convert.ToBase64String(r.PdfBytes)
         };
 
@@ -266,12 +275,12 @@ public class EvalController : ControllerBase
         }
 
         var summaryPrompt = $$"""
-            Write a concise 3-4 sentence professional summary for this candidate targeting: {{jobTitle}}.
-            Do not include the candidate's name.
-            Use plain text only — no markdown, no bullet points, no special formatting.
+            Write a tight 2 to 3 sentence professional summary for this candidate targeting: {{jobTitle}}.
+            Write in third person. Do not include the candidate's name.
+            No em-dashes, no hyphens used as dashes, no semicolons, no parentheses.
+            Plain text only. Output only the summary paragraph.
             RESUME: {{rawResume}}
             JOB DESCRIPTION: {{rawJob}}
-            Output only the summary paragraph.
             """;
         string summary;
         try { summary = (await _chatClient.GetResponseAsync(summaryPrompt))?.Text?.Trim() ?? ""; }
@@ -291,7 +300,8 @@ public class EvalController : ControllerBase
         sw.Stop();
         return new TailorPipelineResult(
             summaryBridgeRate, summarySemanticScore, summarySemanticBaseline,
-            scoring.HallucinationCount, sw.ElapsedMilliseconds, pdfBytes, summary);
+            scoring.HallucinationCount, sw.ElapsedMilliseconds, pdfBytes, summary,
+            scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta);
     }
 
     private async Task<TailorPipelineResult> RunGraphRagPipelineAsync(
@@ -304,7 +314,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, 0, sw.ElapsedMilliseconds, [], "");
+            return new TailorPipelineResult(0, 0, 0, 0, sw.ElapsedMilliseconds, [], "", 0, 0, 0);
 
         var pdfBytes = _resumePdfService.GeneratePdf(
             tailoredData.PersonalInfo, tailoredData.CleanSignal,
@@ -323,7 +333,8 @@ public class EvalController : ControllerBase
         return new TailorPipelineResult(
             summaryBridgeRate, summarySemanticScore, summarySemanticBaseline,
             scoring.HallucinationCount, sw.ElapsedMilliseconds, pdfBytes,
-            tailoredData.ProfessionalSummary ?? "");
+            tailoredData.ProfessionalSummary ?? "",
+            scoring.BaselineScore, scoring.VerifiedScore, scoring.Delta);
     }
 
     private async Task<double> ComputeSummaryBridgeRate(
