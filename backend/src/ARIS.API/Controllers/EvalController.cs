@@ -557,7 +557,8 @@ public class EvalController : ControllerBase
         int T5InVocabularyCount,     // T5 skills in Vector-RAG's retrieved vocabulary (0 for GraphRAG)
         double ImplicitDiscoveryRate,
         string ProfessionalSummary,
-        List<TailoredBullet> TailoredBullets
+        List<TailoredBullet> TailoredBullets,
+        double AtsSemanticSummaryScore
     );
 
     /// <summary>
@@ -723,6 +724,7 @@ public class EvalController : ControllerBase
 
         var semBaseline = await ComputeSemanticSimilarityAsync(rawResume, rawJob);
         var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
+        var semSummary  = await ComputeSemanticSimilarityAsync(summary, rawJob);
         var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
 
         var groundedBaseline = Math.Round(semBaseline * scoring.BaselineScore, 4);
@@ -738,7 +740,7 @@ public class EvalController : ControllerBase
             semBaseline, semTailored, semDeltaPct,
             groundedBaseline, groundedTailored,
             contentPres, t5InVocab, 0.0,
-            summary, tailoredBullets);
+            summary, tailoredBullets, semSummary);
     }
 
     private async Task<TailorPipelineResult> RunTailorPipelineBAsync(
@@ -751,7 +753,7 @@ public class EvalController : ControllerBase
 
         var tailoredData = await _resumeService.BuildTailoredResumeDataAsync(resumeId, jobId, precomputedMatch: baselineMatch);
         if (tailoredData == null)
-            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", []);
+            return new TailorPipelineResult(0, 0, 0, [], [], 0, 0, sw.ElapsedMilliseconds, [], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", [], 0);
 
         // Load raw texts for ATS computation
         var userEntity = await _context.UserProfiles.FindAsync(resumeId);
@@ -779,14 +781,15 @@ public class EvalController : ControllerBase
         var tailoredFullText = string.Join(" ", tailoredData.TailoredBullets.Select(b => b.RewrittenBullet))
             + " " + (tailoredData.ProfessionalSummary ?? "")
             + " " + string.Join(" ", tailoredData.CleanSignal?.Skills.Select(s => s.OriginalName ?? s.Name) ?? [])
-            + " " + string.Join(" ", tailoredData.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? [])
-            + " " + string.Join(" ", tailoredData.CleanSignal?.ExperienceSummary.SelectMany(e => e.Bullets) ?? []);
+            + " " + string.Join(" ", tailoredData.CleanSignal?.UngroundedSkills.Select(s => s.OriginalName ?? s.Name) ?? []);
+
         var atsBaseline = ComputeJobAlignmentToken(rawResume, rawJob);
         var atsTailored = ComputeJobAlignmentToken(tailoredFullText, rawJob);
         var atsDeltaPct = atsBaseline > 0 ? Math.Round((atsTailored - atsBaseline) / atsBaseline * 100.0, 2) : 0.0;
 
         var semBaseline = await ComputeSemanticSimilarityAsync(rawResume, rawJob);
         var semTailored = await ComputeSemanticSimilarityAsync(tailoredFullText, rawJob);
+        var semSummary  = await ComputeSemanticSimilarityAsync(tailoredData.ProfessionalSummary, rawJob);
         var semDeltaPct = semBaseline > 0 ? Math.Round((semTailored - semBaseline) / semBaseline * 100.0, 2) : 0.0;
 
         var groundedBaseline = Math.Round(semBaseline * scoring.BaselineScore, 4);
@@ -807,7 +810,7 @@ public class EvalController : ControllerBase
             semBaseline, semTailored, semDeltaPct,
             groundedBaseline, groundedTailored,
             contentPres, 0, implicitDiscoveryRate,
-            tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
+            tailoredData.ProfessionalSummary, tailoredData.TailoredBullets, semSummary);
     }
 
     private async Task<List<TailoredBullet>> ParseBulletsFromLlmAsync(
