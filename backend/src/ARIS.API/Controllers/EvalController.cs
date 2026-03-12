@@ -179,6 +179,11 @@ public class EvalController : ControllerBase
         if (baselineMatch == null)
             return NotFound("Match analysis failed. Ensure both IDs are valid and fully processed.");
 
+        // Hard-gap skill names used by BOTH ARIS and ChatGPT hallucination checks.
+        // Definition: a T5 (HardGap) skill name appears verbatim (case-insensitive) in the tailored text.
+        var hardGapNames = new HashSet<string>(
+            baselineMatch.HardGaps.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase);
+
         var swA = Stopwatch.StartNew();
         var origKeywords = ComputeKeywordMatch(rawResumeText, jobSkillNames);
         var origSemScore = await ComputeSemanticSimilarityAsync(rawResumeText, rawJobText);
@@ -244,10 +249,10 @@ public class EvalController : ControllerBase
                 ? bulletsText
                 : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
-            var originalMappings = BuildOriginalMappings(tailoredData.CleanSignal, job.CleanSignal);
-            var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
-                tailoredData.TailoredBullets, tailoredData.ProfessionalSummary ?? "", originalMappings);
-            var scoring = _matchService.VerifiedMatchScore(baselineMatch, canonicalSkills, job.CleanSignal);
+            // Hallucination count for ARIS: same method as ChatGPT —
+            // count T5 hard-gap skill names that appear verbatim in the assembled text.
+            var arisHallucinationCount = hardGapNames.Count(name =>
+                arisFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
 
             var arisKeywords = ComputeKeywordMatch(arisFullText, jobSkillNames);
             var arisSemScore = await ComputeSemanticSimilarityAsync(arisFullText, rawJobText);
@@ -268,7 +273,7 @@ public class EvalController : ControllerBase
                 MatchingTermsCount      = arisKeywords.Matched.Count,
                 MissingTermsCount       = arisKeywords.Missing.Count,
                 NewTermsAdded           = arisNewTerms,
-                HallucinationCount      = scoring.HallucinationCount,
+                HallucinationCount      = arisHallucinationCount,
                 SummaryText             = tailoredData.ProfessionalSummary ?? "",
                 TailoredFullText        = arisFullText,
                 LatencyMs               = swB.ElapsedMilliseconds,
@@ -285,8 +290,6 @@ public class EvalController : ControllerBase
         var gptNewTerms = gptKeywords.Matched
             .Except(origKeywords.Matched, StringComparer.OrdinalIgnoreCase)
             .ToList();
-        var hardGapNames = new HashSet<string>(
-            baselineMatch.HardGaps.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase);
         var gptHallucinationCount = hardGapNames.Count(name =>
             gptFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
         swC.Stop();
