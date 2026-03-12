@@ -98,7 +98,10 @@ export function TierBreakdown({
             >
                 <div className="flex flex-wrap gap-2 py-1">
                     {implicitlyDiscoveredSkills.map((s, i) => (
-                        <Badge key={i} variant="outline">{s}</Badge>
+                        <div key={i} className="flex items-center gap-1">
+                            <Badge variant="outline">{s}</Badge>
+                            <span className="text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono">SUBSET_OF</span>
+                        </div>
                     ))}
                 </div>
             </TierSection>
@@ -110,9 +113,16 @@ export function TierBreakdown({
                 emptyLabel="No transferable skills found"
             >
                 {prerequisiteMetSkills.map((s, i) => (
-                    <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
-                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                        <ImportanceBadge importance={s.importance} />
+                    <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                            <ImportanceBadge importance={s.importance} />
+                        </div>
+                        {s.bridgePath && (
+                            <span className="text-xs text-yellow-700 bg-yellow-50 border border-yellow-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">
+                                {s.bridgePath}
+                            </span>
+                        )}
                     </div>
                 ))}
             </TierSection>
@@ -124,9 +134,16 @@ export function TierBreakdown({
                 emptyLabel="No adjacent skills found"
             >
                 {bridgeableSkills.map((s, i) => (
-                    <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
-                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
-                        <ImportanceBadge importance={s.importance} />
+                    <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                            <ImportanceBadge importance={s.importance} />
+                        </div>
+                        {s.bridgePath && (
+                            <span className="text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">
+                                {s.bridgePath}
+                            </span>
+                        )}
                     </div>
                 ))}
             </TierSection>

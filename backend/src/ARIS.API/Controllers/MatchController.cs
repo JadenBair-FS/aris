@@ -3,7 +3,6 @@ using ARIS.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.AI;
-using System.Text;
 
 namespace ARIS.API.Controllers;
 
@@ -135,16 +134,17 @@ public class MatchController : ControllerBase
 
         var graphContext = _graphService.BuildTailoringGraphContext(analysisResult);
 
-        var prompt = new StringBuilder();
-        prompt.AppendLine("You are a career advisor. Based on the following knowledge graph analysis, explain in 3-4 paragraphs why this candidate is a good match for the role. Be honest, constructive, and highlight the most valuable transferable skills and adjacent experience. Do not mention \"Tier\" labels or internal system details — write naturally as if advising the candidate directly.");
-        prompt.AppendLine();
-        prompt.AppendLine("Candidate skills analysis:");
-        prompt.AppendLine(graphContext);
-        prompt.AppendLine();
-        prompt.AppendLine("Write your explanation now:");
+        var scorePercent = (int)Math.Round(analysisResult.ArisScore * 100);
+        var scoreLabel = analysisResult.ArisScore >= 0.65 ? "strong" : analysisResult.ArisScore >= 0.40 ? "moderate" : "weak";
+
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "MatchExplain.md");
+        var prompt = (await System.IO.File.ReadAllTextAsync(promptPath))
+            .Replace("{scorePercent}", scorePercent.ToString())
+            .Replace("{scoreLabel}", scoreLabel)
+            .Replace("{graphContext}", graphContext);
 
         _logger.LogInformation("MatchController.ExplainMatch: calling LLM for user {UserId} / job {JobId}.", request.UserProfileId, request.JobId);
-        var response = await _chatClient.GetResponseAsync(prompt.ToString());
+        var response = await _chatClient.GetResponseAsync(prompt);
         var explanation = response.Text?.Trim() ?? "Explanation could not be generated.";
 
         return Ok(new { explanation });
