@@ -73,6 +73,38 @@ export async function tailorResume(
   return res.json();
 }
 
+export interface StudyMatchPreviewItem {
+  jobTitle: string;
+  companyName?: string;
+  arisScore: number;
+  vectorSimilarity: number;
+  t1Count: number;
+  t2Count: number;
+  t3Count: number;
+  t4Count: number;
+  t5Count: number;
+  topMatchingSkills: string[];
+  topMissingSkills: string[];
+}
+
+export interface StudyMatchPreviewResponse {
+  matches: StudyMatchPreviewItem[];
+  totalJobsSearched: number;
+}
+
+export async function getMatchPreview(
+  resumeKey?: string,
+  resumeText?: string
+): Promise<StudyMatchPreviewResponse> {
+  const res = await fetch('/api/study/match-preview', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ resumeKey, resumeText }),
+  });
+  if (!res.ok) throw new Error('Failed to generate match preview.');
+  return res.json();
+}
+
 // Legacy single-call compare (kept for compatibility)
 export async function compareResponses(
   resumeText: string,

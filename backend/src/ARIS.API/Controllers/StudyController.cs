@@ -303,9 +303,123 @@ public class StudyController : ControllerBase
         return Ok(new StudyTailorResponse { TailoredText = tailoredText });
     }
 
-    // =========================================================================
-    // Private helpers
-    // =========================================================================
+    /// <summary>
+    /// Given a cached resume session key (or raw resume text as fallback), queries the database
+    /// for job postings with embeddings, runs ARIS tier analysis against the top 10 nearest jobs,
+    /// and returns the top 5 results by ArisScore. No data is written to the database.
+    /// </summary>
+    [HttpPost("match-preview")]
+    public async Task<IActionResult> MatchPreview([FromBody] StudyMatchPreviewRequest request)
+    {
+        ResumeCleanSignal? resumeSignal;
+        Pgvector.Vector? resumeEmbedding;
+
+        // Resolve resume signal — prefer cached, fall back to live extraction
+        bool fromCache = !string.IsNullOrWhiteSpace(request.ResumeKey)
+            && _cache.TryGetValue(
+                $"study:resume:{request.ResumeKey}",
+                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume);
+
+        if (fromCache)
+        {
+            _cache.TryGetValue(
+                $"study:resume:{request.ResumeKey}",
+                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) resumeTuple);
+            resumeSignal    = resumeTuple.Signal;
+            resumeEmbedding = resumeTuple.Embedding;
+            _logger.LogInformation("StudyController.MatchPreview: using cached resume signal (key={Key}).", request.ResumeKey);
+        }
+        else if (!string.IsNullOrWhiteSpace(request.ResumeText))
+        {
+            _logger.LogInformation("StudyController.MatchPreview: extracting resume signal from text.");
+            (resumeSignal, resumeEmbedding) = await _resumeService.QuickExtractResumeSignalAsync(request.ResumeText);
+        }
+        else
+        {
+            return BadRequest("Either ResumeKey or ResumeText is required.");
+        }
+
+        if (resumeSignal == null || resumeEmbedding == null)
+            return StatusCode(500, "Resume signal extraction failed. Please check your input and try again.");
+
+        // Fetch top-10 job postings by cosine distance to the resume embedding
+        var candidates = await _context.JobPostings
+            .Where(j => j.Embedding != null && j.CleanSignal != null)
+            .Select(j => new
+            {
+                j.Id,
+                j.CleanSignal,
+                j.Embedding,
+                Distance = j.Embedding!.CosineDistance(resumeEmbedding)
+            })
+            .OrderBy(j => j.Distance)
+            .Take(10)
+            .ToListAsync();
+
+        int totalSearched = candidates.Count;
+
+        if (totalSearched == 0)
+        {
+            return Ok(new StudyMatchPreviewResponse
+            {
+                Matches          = [],
+                TotalJobsSearched = 0
+            });
+        }
+
+        // Run full ARIS tier analysis for each candidate in parallel
+        var analysisTask = candidates.Select(async c =>
+        {
+            try
+            {
+                var matchResult = await _matchService.AnalyzeMatchFromSignalsAsync(
+                    resumeSignal, resumeEmbedding,
+                    c.CleanSignal!, c.Embedding!);
+
+                if (matchResult == null) return null;
+
+                var jobTitle = c.CleanSignal!.TargetRoles.FirstOrDefault()?.Title ?? "Unknown Role";
+
+                return new StudyMatchPreviewItem
+                {
+                    JobTitle            = jobTitle,
+                    CompanyName         = null, // not stored on JobPosting entity
+                    ArisScore           = Math.Round(matchResult.ArisScore, 4),
+                    VectorSimilarity    = Math.Round(matchResult.VectorSimilarity, 4),
+                    T1Count             = matchResult.MatchingSkills.Count,
+                    T2Count             = matchResult.ImplicitlyDiscoveredSkills.Count,
+                    T3Count             = matchResult.PrerequisiteMetSkills.Count,
+                    T4Count             = matchResult.BridgeableSkills.Count,
+                    T5Count             = matchResult.HardGaps.Count,
+                    TopMatchingSkills   = matchResult.MatchingSkills.Take(3).Select(s => s.SkillName).ToList(),
+                    TopMissingSkills    = matchResult.HardGaps.Take(3).Select(s => s.SkillName).ToList()
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "StudyController.MatchPreview: analysis failed for one job posting — skipping.");
+                return null;
+            }
+        });
+
+        var allResults = await Task.WhenAll(analysisTask);
+
+        var top5 = allResults
+            .Where(r => r != null)
+            .OrderByDescending(r => r!.ArisScore)
+            .Take(5)
+            .ToList();
+
+        _logger.LogInformation("StudyController.MatchPreview: returning {Count} match(es) from {Total} candidates.", top5.Count, totalSearched);
+
+        return Ok(new StudyMatchPreviewResponse
+        {
+            Matches           = top5!,
+            TotalJobsSearched = totalSearched
+        });
+    }
+
+
 
     // RAG path: embed resume text, find top-20 skills from ref_skills, call Mistral.
     private async Task<(string Response, object Unused)> GenerateRagResponseAsync(

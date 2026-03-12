@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { prepareResume, prepareJob, generateComparison, tailorResume } from '@/api/study';
-import type { StudyCompareResponse } from '@/api/study';
+import { prepareResume, prepareJob, generateComparison, tailorResume, getMatchPreview } from '@/api/study';
+import type { StudyCompareResponse, StudyMatchPreviewResponse, StudyMatchPreviewItem } from '@/api/study';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -48,6 +48,140 @@ function Spinner({ label }: { label: string }) {
     );
 }
 
+//Match Preview helpers
+
+function ArisScoreBadge({ score }: { score: number }) {
+    const isGood = score >= 0.65;
+    const isMid  = score >= 0.40 && score < 0.65;
+    const label  = isGood ? 'Well Qualified' : isMid ? 'Partial Match' : 'Significant Gaps';
+    const cls    = isGood
+        ? 'bg-green-100 text-green-800 border border-green-200'
+        : isMid
+        ? 'bg-orange-100 text-orange-800 border border-orange-200'
+        : 'bg-red-100 text-red-800 border border-red-200';
+
+    return (
+        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${cls}`}>
+            <span className="font-mono">{(score * 100).toFixed(0)}%</span>
+            <span>{label}</span>
+        </span>
+    );
+}
+
+type TierPill = { label: string; count: number; color: string };
+
+function TierBar({ item }: { item: StudyMatchPreviewItem }) {
+    const tiers: TierPill[] = [
+        { label: 'T1', count: item.t1Count, color: 'bg-green-500 text-white' },
+        { label: 'T2', count: item.t2Count, color: 'bg-blue-500 text-white' },
+        { label: 'T3', count: item.t3Count, color: 'bg-teal-500 text-white' },
+        { label: 'T4', count: item.t4Count, color: 'bg-purple-500 text-white' },
+        { label: 'T5', count: item.t5Count, color: 'bg-red-400 text-white' },
+    ];
+    return (
+        <div className="flex items-center gap-1.5 flex-wrap">
+            {tiers.map(t => (
+                <span
+                    key={t.label}
+                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${t.color}`}
+                >
+                    <span className="opacity-75">{t.label}</span>
+                    <span>{t.count}</span>
+                </span>
+            ))}
+        </div>
+    );
+}
+
+function SkillChip({ name, variant }: { name: string; variant: 'match' | 'gap' }) {
+    const cls = variant === 'match'
+        ? 'bg-green-50 text-green-800 border border-green-200'
+        : 'bg-red-50 text-red-800 border border-red-200';
+    return (
+        <span className={`inline-block px-2 py-0.5 rounded text-xs ${cls}`}>{name}</span>
+    );
+}
+
+function MatchCard({ item }: { item: StudyMatchPreviewItem }) {
+    return (
+        <Card className="border-slate-200">
+            <CardContent className="pt-4 space-y-3">
+                {/* Title row */}
+                <div className="flex items-start justify-between gap-3">
+                    <div>
+                        <p className="font-semibold text-slate-900 text-sm leading-tight">{item.jobTitle}</p>
+                        {item.companyName && (
+                            <p className="text-xs text-slate-500 mt-0.5">{item.companyName}</p>
+                        )}
+                    </div>
+                    <ArisScoreBadge score={item.arisScore} />
+                </div>
+
+                {/* Tier bar */}
+                <TierBar item={item} />
+
+                {/* Matching skills */}
+                {item.topMatchingSkills.length > 0 && (
+                    <div className="space-y-1">
+                        <p className="text-xs text-slate-500 font-medium">Matching skills:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                            {item.topMatchingSkills.map(s => (
+                                <SkillChip key={s} name={s} variant="match" />
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Gap skills */}
+                {item.topMissingSkills.length > 0 && (
+                    <div className="space-y-1">
+                        <p className="text-xs text-slate-500 font-medium">Gaps:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                            {item.topMissingSkills.map(s => (
+                                <SkillChip key={s} name={s} variant="gap" />
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </CardContent>
+        </Card>
+    );
+}
+
+function MatchPreviewSection({ result }: { result: StudyMatchPreviewResponse }) {
+    return (
+        <div className="space-y-4">
+            <div className="text-center space-y-1">
+                <h2 className="text-base font-semibold text-slate-900">Your Top Matches</h2>
+                <p className="text-sm text-slate-500 max-w-md mx-auto">
+                    Here is how your resume ranks against real job postings in our database. No account required.
+                </p>
+                {result.totalJobsSearched > 0 && (
+                    <p className="text-xs text-slate-400">
+                        Searched {result.totalJobsSearched} job posting{result.totalJobsSearched !== 1 ? 's' : ''}
+                    </p>
+                )}
+            </div>
+
+            {result.matches.length === 0 ? (
+                <p className="text-sm text-slate-500 text-center">No job postings are currently available in the database.</p>
+            ) : (
+                <div className="space-y-3">
+                    {result.matches.map((item, idx) => (
+                        <MatchCard key={idx} item={item} />
+                    ))}
+                </div>
+            )}
+
+            <p className="text-xs text-slate-400 text-center pt-1">
+                Create a free account to see full match reports, tailored resumes, and apply directly.
+            </p>
+        </div>
+    );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export default function StudyPage() {
     const [step, setStep] = useState<Step>(1);
 
@@ -72,6 +206,11 @@ export default function StudyPage() {
     const [tailoredText, setTailoredText] = useState<string | null>(null);
     const [tailorLoading, setTailorLoading] = useState(false);
     const [tailorError, setTailorError] = useState<string | null>(null);
+
+    // Match preview state
+    const [previewResult, setPreviewResult] = useState<StudyMatchPreviewResponse | null>(null);
+    const [previewLoading, setPreviewLoading] = useState(false);
+    const [previewError, setPreviewError] = useState<string | null>(null);
 
     const handleResumeNext = async () => {
         setResumeLoading(true);
@@ -135,12 +274,26 @@ export default function StudyPage() {
         }
     };
 
+    const handleMatchPreview = async () => {
+        setPreviewLoading(true);
+        setPreviewError(null);
+        try {
+            const data = await getMatchPreview(resumeKey ?? undefined, resumeText);
+            setPreviewResult(data);
+        } catch (err) {
+            setPreviewError(err instanceof Error ? err.message : 'Failed to load matches.');
+        } finally {
+            setPreviewLoading(false);
+        }
+    };
+
     const handleReset = () => {
         setStep(1);
         setResumeText(''); setResumeKey(null); setResumeError(null);
         setJobText(''); setJobKey(null); setJobError(null);
         setResult(null); setGenerateError(null);
         setTailoredText(null); setTailorError(null);
+        setPreviewResult(null); setPreviewLoading(false); setPreviewError(null);
     };
 
     return (
@@ -336,6 +489,38 @@ export default function StudyPage() {
                                                 </div>
                                             </CardContent>
                                         </Card>
+                                    )}
+                                </div>
+
+                                {/* Match Preview section */}
+                                <div className="pt-2 border-t border-slate-200 space-y-3">
+                                    {!previewResult && !previewLoading && (
+                                        <div className="flex flex-col items-center gap-2 text-center">
+                                            <p className="text-sm text-slate-500 max-w-md">
+                                                See how your resume compares against real job postings in the ARIS database.
+                                            </p>
+                                            <Button
+                                                onClick={handleMatchPreview}
+                                                variant="outline"
+                                                className="px-8 text-sm"
+                                            >
+                                                See How You Match
+                                            </Button>
+                                        </div>
+                                    )}
+
+                                    {previewLoading && (
+                                        <Spinner label="Finding your best matches... this may take 30–60 seconds" />
+                                    )}
+
+                                    {previewError && (
+                                        <p className="text-sm text-red-600 text-center">{previewError}</p>
+                                    )}
+
+                                    {previewResult && !previewLoading && (
+                                        <MatchPreviewSection
+                                            result={previewResult}
+                                        />
                                     )}
                                 </div>
 

@@ -304,37 +304,35 @@ public class EvalController : ControllerBase
         // Tier 1 — direct matches
         foreach (var s in match.MatchingSkills)
         {
-            var yearsClause = s.YearsRequired > 0
-                ? $"candidate: {s.CandidateYears:0.#}y, required: {s.YearsRequired:0.#}y"
-                : $"candidate: {s.CandidateYears:0.#}y";
-            contexts.Add($"DIRECT MATCH: {s.SkillName} ({yearsClause}, {s.Importance})");
+            var yearsNote = s.YearsRequired > 0
+                ? $" The candidate has {s.CandidateYears:0.#} years of experience; the job requires {s.YearsRequired:0.#} years."
+                : "";
+            contexts.Add($"The candidate directly satisfies the {s.SkillName} job requirement.{yearsNote}");
         }
 
         // Tier 2 — implicitly discovered via SUBSET_OF traversal
         foreach (var s in match.ImplicitlyDiscoveredSkills)
-            contexts.Add($"FOUNDATION: {s} covered via SUBSET_OF graph traversal");
+            contexts.Add($"The candidate's skills cover the {s} requirement via a SUBSET_OF relationship in the knowledge graph.");
 
         // Tier 3 — prerequisite met (candidate has parent/foundation skill)
         foreach (var s in match.PrerequisiteMetSkills)
         {
             var bridgeNote = !string.IsNullOrWhiteSpace(s.BridgePath)
-                ? $" ({s.BridgePath})" : "";
-            var src = !string.IsNullOrWhiteSpace(s.BridgeSource) ? $", source={s.BridgeSource}" : "";
-            contexts.Add($"TRANSFERABLE: {s.SkillName}{bridgeNote}{src}");
+                ? $" via {s.BridgePath}" : " via a prerequisite relationship";
+            contexts.Add($"The candidate's experience is transferable to {s.SkillName}{bridgeNote}.");
         }
 
-        // Tier 4 — bridgeable via IS_SIMILAR_TO or graph bridge
+        // Tier 4 — bridgeable via IS_SIMILAR_TO
         foreach (var s in match.BridgeableSkills)
         {
             var bridgeNote = !string.IsNullOrWhiteSpace(s.BridgePath)
-                ? $" {s.BridgePath}" : "";
-            var src = !string.IsNullOrWhiteSpace(s.BridgeSource) ? $", source={s.BridgeSource}" : "";
-            contexts.Add($"ADJACENT: {s.SkillName}{bridgeNote}{src}");
+                ? $" via {s.BridgePath}" : " via an IS_SIMILAR_TO relationship";
+            contexts.Add($"The candidate has an adjacent skill that maps to {s.SkillName}{bridgeNote}.");
         }
 
         // Tier 5 — hard gaps (no graph path; informational)
         foreach (var s in match.HardGaps)
-            contexts.Add($"HARD GAP: {s.SkillName} — no graph-provable path from candidate skills");
+            contexts.Add($"The candidate does not have {s.SkillName} and no graph path exists to satisfy this requirement.");
 
         return contexts;
     }

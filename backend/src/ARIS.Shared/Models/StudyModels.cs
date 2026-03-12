@@ -52,3 +52,30 @@ public class StudyTailorResponse
 {
     public string TailoredText { get; set; } = string.Empty;
 }
+
+public class StudyMatchPreviewRequest
+{
+    public string? ResumeKey { get; set; }
+    public string? ResumeText { get; set; }
+}
+
+public class StudyMatchPreviewItem
+{
+    public string JobTitle { get; set; } = "";
+    public string? CompanyName { get; set; }
+    public double ArisScore { get; set; }
+    public double VectorSimilarity { get; set; }
+    public int T1Count { get; set; }
+    public int T2Count { get; set; }
+    public int T3Count { get; set; }
+    public int T4Count { get; set; }
+    public int T5Count { get; set; }
+    public List<string> TopMatchingSkills { get; set; } = [];
+    public List<string> TopMissingSkills { get; set; } = [];
+}
+
+public class StudyMatchPreviewResponse
+{
+    public List<StudyMatchPreviewItem> Matches { get; set; } = [];
+    public int TotalJobsSearched { get; set; }
+}
