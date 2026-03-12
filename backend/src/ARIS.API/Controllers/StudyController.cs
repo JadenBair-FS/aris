@@ -387,6 +387,135 @@ public class StudyController : ControllerBase
 
 
 
+    [HttpPost("analyze")]
+    public async Task<IActionResult> Analyze([FromBody] StudyAnalyzeRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.ResumeText))
+            return BadRequest("ResumeText is required.");
+        if (string.IsNullOrWhiteSpace(request.JobDescriptionText))
+            return BadRequest("JobDescriptionText is required.");
+
+        _logger.LogInformation("StudyController.Analyze: extracting signals in parallel.");
+
+        var resumeTask = _resumeService.QuickExtractResumeSignalAsync(request.ResumeText);
+        var jobTask    = _jobService.QuickExtractAndGroundAsync(request.JobDescriptionText);
+
+        await Task.WhenAll(resumeTask, jobTask);
+
+        var (resumeSignal, resumeEmbedding) = resumeTask.Result;
+        var (jobSignal, jobEmbedding)        = jobTask.Result;
+
+        if (resumeSignal == null || resumeEmbedding == null)
+            return BadRequest("Resume signal extraction failed. Please check your input and try again.");
+        if (jobSignal == null || jobEmbedding == null)
+            return BadRequest("Job signal extraction failed. Please check your input and try again.");
+
+        var matchResult = await _matchService.AnalyzeMatchFromSignalsAsync(
+            resumeSignal, resumeEmbedding, jobSignal, jobEmbedding);
+
+        if (matchResult == null)
+            return StatusCode(500, "Tier classification failed.");
+
+        var resumeKey = Guid.NewGuid().ToString("N");
+        var jobKey    = Guid.NewGuid().ToString("N");
+        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding),
+            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
+        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding),
+            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
+
+        _logger.LogInformation("StudyController.Analyze: running ChatGPT + ARIS tailoring in parallel.");
+
+        var chatGptTask = GenerateChatGptTailoredResumeAsync(request.ResumeText, request.JobDescriptionText);
+        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
+            resumeSignal, resumeEmbedding,
+            jobSignal, jobEmbedding,
+            request.ResumeText, request.JobDescriptionText);
+
+        await Task.WhenAll(chatGptTask, arisTask);
+        var (arisResume, _) = arisTask.Result;
+
+        return Ok(new StudyAnalyzeResponse
+        {
+            ArisScore                   = Math.Round(matchResult.ArisScore, 4),
+            VectorSimilarity            = Math.Round(matchResult.VectorSimilarity, 4),
+            MatchingSkills              = matchResult.MatchingSkills,
+            ImplicitlyDiscoveredSkills  = matchResult.ImplicitlyDiscoveredSkills,
+            PrerequisiteMetSkills       = matchResult.PrerequisiteMetSkills,
+            BridgeableSkills            = matchResult.BridgeableSkills,
+            HardGaps                    = matchResult.HardGaps,
+            ArisResume                  = arisResume,
+            ChatGptResume               = chatGptTask.Result,
+            SessionResumeKey            = resumeKey,
+            SessionJobKey               = jobKey,
+        });
+    }
+
+    [HttpPost("explain")]
+    public async Task<IActionResult> Explain([FromBody] StudyExplainRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.ResumeText))
+            return BadRequest("ResumeText is required.");
+        if (string.IsNullOrWhiteSpace(request.JobDescriptionText))
+            return BadRequest("JobDescriptionText is required.");
+
+        ResumeCleanSignal? resumeSignal;
+        Pgvector.Vector? resumeEmbedding;
+        JobPostingCleanSignal? jobSignal;
+        Pgvector.Vector? jobEmbedding;
+
+        (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume = default;
+        (JobPostingCleanSignal Signal, Pgvector.Vector Embedding) cachedJob = default;
+
+        bool resumeFromCache = !string.IsNullOrWhiteSpace(request.ResumeKey)
+            && _cache.TryGetValue($"study:resume:{request.ResumeKey}", out cachedResume);
+        bool jobFromCache = !string.IsNullOrWhiteSpace(request.JobKey)
+            && _cache.TryGetValue($"study:job:{request.JobKey}", out cachedJob);
+
+        if (resumeFromCache && jobFromCache)
+        {
+            resumeSignal    = cachedResume.Signal;
+            resumeEmbedding = cachedResume.Embedding;
+            jobSignal       = cachedJob.Signal;
+            jobEmbedding    = cachedJob.Embedding;
+        }
+        else
+        {
+            _logger.LogInformation("StudyController.Explain: re-extracting signals (no valid cache keys).");
+            var resumeTask = _resumeService.QuickExtractResumeSignalAsync(request.ResumeText);
+            var jobTask    = _jobService.QuickExtractAndGroundAsync(request.JobDescriptionText);
+            await Task.WhenAll(resumeTask, jobTask);
+            (resumeSignal, resumeEmbedding) = resumeTask.Result;
+            (jobSignal, jobEmbedding)        = jobTask.Result;
+        }
+
+        if (resumeSignal == null || resumeEmbedding == null)
+            return StatusCode(500, "Resume signal extraction failed.");
+        if (jobSignal == null || jobEmbedding == null)
+            return StatusCode(500, "Job signal extraction failed.");
+
+        var matchResult = await _matchService.AnalyzeMatchFromSignalsAsync(
+            resumeSignal, resumeEmbedding, jobSignal, jobEmbedding);
+
+        if (matchResult == null)
+            return StatusCode(500, "Tier classification failed.");
+
+        var graphContext  = _graphService.BuildTailoringGraphContext(matchResult, resumeSignal.Skills);
+        var scorePercent  = (int)Math.Round(matchResult.ArisScore * 100);
+        var scoreLabel    = matchResult.ArisScore >= 0.65 ? "strong" : matchResult.ArisScore >= 0.40 ? "moderate" : "weak";
+
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "MatchExplain.md");
+        var prompt = (await System.IO.File.ReadAllTextAsync(promptPath))
+            .Replace("{scorePercent}", scorePercent.ToString())
+            .Replace("{scoreLabel}", scoreLabel)
+            .Replace("{graphContext}", graphContext);
+
+        _logger.LogInformation("StudyController.Explain: calling LLM for explanation.");
+        var response = await _chatClient.GetResponseAsync(prompt);
+        var explanation = response.Text?.Trim() ?? "Explanation could not be generated.";
+
+        return Ok(new StudyExplainResponse { Explanation = explanation });
+    }
+
     private async Task<string> GenerateChatGptTailoredResumeAsync(string resumeText, string jobText)
     {
         if (_openAiClient == null)

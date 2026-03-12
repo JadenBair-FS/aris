@@ -79,3 +79,37 @@ public class StudyMatchPreviewResponse
     public List<StudyMatchPreviewItem> Matches { get; set; } = [];
     public int TotalJobsSearched { get; set; }
 }
+
+public class StudyAnalyzeRequest
+{
+    public required string ResumeText { get; set; }
+    public required string JobDescriptionText { get; set; }
+}
+
+public class StudyAnalyzeResponse
+{
+    public double ArisScore { get; set; }
+    public double VectorSimilarity { get; set; }
+    public List<SkillGapItem> MatchingSkills { get; set; } = [];
+    public List<string> ImplicitlyDiscoveredSkills { get; set; } = [];
+    public List<SkillGapItem> PrerequisiteMetSkills { get; set; } = [];
+    public List<SkillGapItem> BridgeableSkills { get; set; } = [];
+    public List<SkillGapItem> HardGaps { get; set; } = [];
+    public string ArisResume { get; set; } = string.Empty;
+    public string ChatGptResume { get; set; } = string.Empty;
+    public string SessionResumeKey { get; set; } = string.Empty;
+    public string SessionJobKey { get; set; } = string.Empty;
+}
+
+public class StudyExplainRequest
+{
+    public string? ResumeKey { get; set; }
+    public string? JobKey { get; set; }
+    public required string ResumeText { get; set; }
+    public required string JobDescriptionText { get; set; }
+}
+
+public class StudyExplainResponse
+{
+    public string Explanation { get; set; } = string.Empty;
+}

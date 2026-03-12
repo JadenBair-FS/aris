@@ -29,7 +29,8 @@ GRAPH CONTEXT TIER RULES — you must follow these exactly:
 ════════════════════════════════════════
 RULES:
 1. Every bullet must be grounded in a real fact from the RESUME TEXT. Do not invent projects, metrics, companies, or tools.
-2. Do not claim or imply any skill listed under HARD GAPS (T5). This is an absolute prohibition.
+2. Preserve every T1 (Direct Match) skill name exactly as it appears in the graph context. If a T1 skill appears in the original bullet, it must appear by that exact name in the rewritten bullet.
+3. Do not claim or imply any skill listed under HARD GAPS (T5). This is an absolute prohibition.
 3. Bullets are 1 to 2 lines, led by a strong action verb, quantified where the original was quantified.
 4. Write in third person only. Do not use first-person pronouns (I, my, me, we, our). Use direct statements: "Developed...", "Led...", "Delivered..." — never "I developed...", "My work...".
 5. Plain text only — no markdown, no asterisks, no bold, no italic, no bullet symbols, no headers, no special characters used for formatting.

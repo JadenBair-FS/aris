@@ -267,10 +267,8 @@ public class EvalController : ControllerBase
                 ? bulletsText
                 : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
-            // Hallucination count for ARIS: same method as ChatGPT —
-            // count T5 hard-gap skill names that appear verbatim in the assembled text.
             var arisHallucinationCount = hardGapNames.Count(name =>
-                arisFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
+                ContainsWholeWord(arisFullText, name));
 
             var arisKeywords = ComputeKeywordMatch(arisFullText, jobSkills);
             var arisSemScore = await ComputeSemanticSimilarityAsync(arisFullText, rawJobText);
@@ -313,7 +311,7 @@ public class EvalController : ControllerBase
             .Where(m => !origMatchedCanonicalC.Contains(m.CanonicalName))
             .ToList();
         var gptHallucinationCount = hardGapNames.Count(name =>
-            gptFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
+            ContainsWholeWord(gptFullText, name));
         swC.Stop();
 
         var condC = new ThreeWayResult
@@ -539,5 +537,12 @@ public class EvalController : ControllerBase
             normJ += jobEmb[i]  * jobEmb[i];
         }
         return (normT > 0 && normJ > 0) ? Math.Round(dot / (Math.Sqrt(normT) * Math.Sqrt(normJ)), 4) : 0.0;
+    }
+
+    private static bool ContainsWholeWord(string text, string word)
+    {
+        var pattern = $@"(?<![a-zA-Z0-9]){System.Text.RegularExpressions.Regex.Escape(word)}(?![a-zA-Z0-9])";
+        return System.Text.RegularExpressions.Regex.IsMatch(text, pattern,
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
     }
 }
