@@ -22,7 +22,7 @@ public class GraphService : IDisposable, IAsyncDisposable
 
     /// <summary>
     /// Returns the valid skill neighborhood: the user's known skills plus all reachable neighbors
-    /// within 2 hops via SUBSET_OF (up and down) and BRIDGE_TO edges.
+    /// within 2 hops via SUBSET_OF (up and down) and IS_SIMILAR_TO edges.
     /// When includeTechSkills is false, only Roadmap.sh-sourced tech skills are excluded —
     /// domain tool bridges (CRM, EHR, etc.) that carry is_tech=true but source='ONET_Skill' are still allowed.
     /// </summary>
@@ -51,7 +51,7 @@ public class GraphService : IDisposable, IAsyncDisposable
                   AND child.source <> 'ONET_Taxonomy'
                 RETURN child.name as Name
                 UNION
-                MATCH (s)-[:BRIDGE_TO]-(neighbor:Skill)
+                MATCH (s)-[:IS_SIMILAR_TO]-(neighbor:Skill)
                 WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
                   AND neighbor.source <> 'ONET_Taxonomy'
                 RETURN neighbor.name as Name
@@ -139,7 +139,7 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// Returns skills implicitly granted because the user knows a child specialization
     /// (UP traversal only: child → parent via SUBSET_OF, max 2 hops).
     /// Thesis Tier 2: "the candidate knows a specialization, so the foundation is implicitly known."
-    /// BRIDGE_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
+    /// IS_SIMILAR_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
     /// DOWN traversal (parent → children) belongs in GetPrerequisiteMetSkillsAsync.
     /// </summary>
     public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
@@ -183,7 +183,7 @@ public class GraphService : IDisposable, IAsyncDisposable
     }
 
     /// <summary>
-    /// Returns bridge path data for missing skills reachable from user skills via BRIDGE_TO or SUBSET_OF edges.
+    /// Returns bridge path data for missing skills reachable from user skills via IS_SIMILAR_TO or SUBSET_OF edges.
     /// Used by MatchService to enrich SkillGapItem objects with BridgePath and BridgeSource context.
     /// </summary>
     public async Task<List<(string SkillName, string ViaSkill, string BridgeType, string? BridgeSource)>> GetBridgeablePathsAsync(
@@ -197,10 +197,10 @@ public class GraphService : IDisposable, IAsyncDisposable
             return result;
 
         const string bridgeQuery = @"
-            MATCH (u:Skill)-[r:BRIDGE_TO]-(missing:Skill)
+            MATCH (u:Skill)-[r:IS_SIMILAR_TO]-(missing:Skill)
             WHERE toLower(u.name) IN [s IN $userSkills | toLower(s)]
               AND toLower(missing.name) IN [s IN $missingSkills | toLower(s)]
-            RETURN missing.name AS SkillName, u.name AS ViaSkill, 'BRIDGE_TO' AS BridgeType, r.source AS BridgeSource
+            RETURN missing.name AS SkillName, u.name AS ViaSkill, 'IS_SIMILAR_TO' AS BridgeType, r.source AS BridgeSource
         ";
 
         const string subsetQuery = @"
@@ -449,7 +449,7 @@ public class GraphService : IDisposable, IAsyncDisposable
     }
 
     /// <summary>
-    /// Writes SUBSET_OF and BRIDGE_TO edges for a newly promoted skill.
+    /// Writes SUBSET_OF and IS_SIMILAR_TO edges for a newly promoted skill.
     /// Only creates edges where both endpoint nodes already exist in the graph.
     /// </summary>
     public async Task CreateSkillEdgesAsync(string skillName, IEnumerable<string> subsetOf, IEnumerable<string> bridgeTo)
@@ -469,7 +469,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             {
                 await tx.RunAsync(
                     @"MATCH (a:Skill {name: $a}), (b:Skill {name: $b})
-                      MERGE (a)-[:BRIDGE_TO]->(b)",
+                      MERGE (a)-[:IS_SIMILAR_TO]->(b)",
                     new { a = skillName, b = peer });
             }
         });

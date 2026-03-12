@@ -2,6 +2,8 @@ using ARIS.API.Services;
 using ARIS.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.AI;
+using System.Text;
 
 namespace ARIS.API.Controllers;
 
@@ -11,10 +13,20 @@ namespace ARIS.API.Controllers;
 public class MatchController : ControllerBase
 {
     private readonly MatchService _matchService;
+    private readonly GraphService _graphService;
+    private readonly IChatClient _chatClient;
+    private readonly ILogger<MatchController> _logger;
 
-    public MatchController(MatchService matchService)
+    public MatchController(
+        MatchService matchService,
+        GraphService graphService,
+        IChatClient chatClient,
+        ILogger<MatchController> logger)
     {
         _matchService = matchService;
+        _graphService = graphService;
+        _chatClient = chatClient;
+        _logger = logger;
     }
 
     [HttpPost("analyze")]
@@ -31,6 +43,19 @@ public class MatchController : ControllerBase
         if (result == null)
             return NotFound("Analysis failed. Ensure UserProfileId and JobId are correct, and that both have been processed (have CleanSignal and Embeddings). Check server logs for specific missing fields.");
 
+        return Ok(result);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("analyze-quick")]
+    public async Task<IActionResult> AnalyzeMatchQuick([FromBody] QuickMatchRequest request)
+    {
+        if (request.UserProfileId == Guid.Empty || string.IsNullOrWhiteSpace(request.JobDescriptionText))
+            return BadRequest("UserProfileId and JobDescriptionText are required.");
+
+        var result = await _matchService.AnalyzeMatchQuickAsync(request.UserProfileId, request.JobDescriptionText);
+        if (result == null)
+            return NotFound("Analysis failed. Ensure UserProfileId is valid and has a processed resume.");
         return Ok(result);
     }
 
@@ -96,5 +121,32 @@ public class MatchController : ControllerBase
     public async Task<IActionResult> DebugGetJob(Guid id)
     {
         return Ok(await _matchService.DebugGetJobDetailAsync(id));
+    }
+
+    [HttpPost("explain")]
+    public async Task<IActionResult> ExplainMatch([FromBody] ExplainMatchRequest request)
+    {
+        if (request.UserProfileId == Guid.Empty || request.JobId == Guid.Empty)
+            return BadRequest("UserProfileId and JobId are required.");
+
+        var analysisResult = await _matchService.AnalyzeMatchAsync(request.UserProfileId, request.JobId);
+        if (analysisResult == null)
+            return NotFound("Analysis failed. Ensure UserProfileId and JobId are correct, and that both have been processed.");
+
+        var graphContext = _graphService.BuildTailoringGraphContext(analysisResult);
+
+        var prompt = new StringBuilder();
+        prompt.AppendLine("You are a career advisor. Based on the following knowledge graph analysis, explain in 3-4 paragraphs why this candidate is a good match for the role. Be honest, constructive, and highlight the most valuable transferable skills and adjacent experience. Do not mention \"Tier\" labels or internal system details — write naturally as if advising the candidate directly.");
+        prompt.AppendLine();
+        prompt.AppendLine("Candidate skills analysis:");
+        prompt.AppendLine(graphContext);
+        prompt.AppendLine();
+        prompt.AppendLine("Write your explanation now:");
+
+        _logger.LogInformation("MatchController.ExplainMatch: calling LLM for user {UserId} / job {JobId}.", request.UserProfileId, request.JobId);
+        var response = await _chatClient.GetResponseAsync(prompt.ToString());
+        var explanation = response.Text?.Trim() ?? "Explanation could not be generated.";
+
+        return Ok(new { explanation });
     }
 }

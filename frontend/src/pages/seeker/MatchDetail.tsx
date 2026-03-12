@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { ArrowLeft, Loader2, ScanSearch, Info, Wand2, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Loader2, ScanSearch, Info, Wand2, ExternalLink, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { formatArisScore } from '@/utils/score';
 import type { MatchAnalysisResult } from '@/types/api';
 
@@ -161,10 +161,21 @@ function AnalysisPanel({
     });
 
     const [analysis, setAnalysis] = useState<MatchAnalysisResult | null>(null);
+    const [explanation, setExplanation] = useState<string | null>(null);
+    const [explanationOpen, setExplanationOpen] = useState(false);
 
     const analyzeMutation = useMutation({
         mutationFn: () => matchApi.analyze(profileId, jobId),
         onSuccess: (data) => setAnalysis(data),
+    });
+
+    const explainMutation = useMutation({
+        mutationFn: () => matchApi.explain(profileId, jobId),
+        onSuccess: (data) => {
+            setExplanation(data.explanation);
+            setExplanationOpen(true);
+        },
+        onError: () => toast.error('Could not generate explanation. Please try again.'),
     });
 
     const tailorMutation = useMutation({
@@ -212,10 +223,18 @@ function AnalysisPanel({
     }
 
     const arisScore = analysis.arisScore;
+    const scoreColorClass =
+        arisScore >= 0.65 ? 'text-green-600' :
+        arisScore >= 0.40 ? 'text-orange-500' :
+        'text-red-600';
     const scoreBadgeClass =
-        arisScore >= 0.75 ? 'bg-green-50 text-green-700 border-green-200' :
-        arisScore >= 0.60 ? 'bg-yellow-50 text-yellow-700 border-yellow-200' :
-        'bg-slate-100 text-slate-600 border-slate-200';
+        arisScore >= 0.65 ? 'bg-green-50 text-green-700 border-green-200' :
+        arisScore >= 0.40 ? 'bg-orange-50 text-orange-700 border-orange-200' :
+        'bg-red-50 text-red-700 border-red-200';
+    const scoreBadgeLabel =
+        arisScore >= 0.65 ? 'Well Qualified' :
+        arisScore >= 0.40 ? 'Partial Match' :
+        'Significant Gaps';
 
     return (
         <div className="space-y-5">
@@ -225,9 +244,9 @@ function AnalysisPanel({
                         <div>
                             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">ARIS Score</p>
                             <div className="flex items-center gap-2">
-                                <span className="text-4xl font-bold text-slate-900">{formatArisScore(arisScore)}</span>
+                                <span className={`text-4xl font-bold ${scoreColorClass}`}>{formatArisScore(arisScore)}</span>
                                 <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${scoreBadgeClass}`}>
-                                    {arisScore >= 0.75 ? 'Strong fit' : arisScore >= 0.60 ? 'Moderate fit' : 'Partial fit'}
+                                    {scoreBadgeLabel}
                                 </span>
                             </div>
                             <div className="flex items-center gap-1 mt-1">
@@ -255,8 +274,43 @@ function AnalysisPanel({
                             </Button>
                         </div>
                     </div>
+
+                    <div className="mt-3 pt-3 border-t border-slate-100">
+                        <Button
+                            size="sm"
+                            variant="ghost"
+                            className="w-full text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-xs gap-1.5"
+                            onClick={() => explainMutation.mutate()}
+                            disabled={explainMutation.isPending}
+                        >
+                            {explainMutation.isPending
+                                ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Generating explanation...</>
+                                : explanation
+                                    ? <><ChevronUp className="h-3.5 w-3.5" />{explanationOpen ? 'Hide' : 'Show'} AI Explanation</>
+                                    : <><Sparkles className="h-3.5 w-3.5" /> Explain this score</>
+                            }
+                        </Button>
+                        {explanation && !explainMutation.isPending && (
+                            <button
+                                className="w-full text-left text-xs text-slate-400 flex items-center justify-end gap-1 mt-1 hover:text-slate-600"
+                                onClick={() => setExplanationOpen(o => !o)}
+                            >
+                                {explanationOpen ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                                {explanationOpen ? 'collapse' : 'expand'}
+                            </button>
+                        )}
+                    </div>
                 </CardContent>
             </Card>
+
+            {explanation && explanationOpen && (
+                <Card className="border-slate-200 bg-slate-50">
+                    <CardContent className="px-4 py-3">
+                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">AI Match Explanation</p>
+                        <p className="text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">{explanation}</p>
+                    </CardContent>
+                </Card>
+            )}
 
             <div>
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Five-Tier Breakdown</p>

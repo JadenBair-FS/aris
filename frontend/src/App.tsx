@@ -16,6 +16,7 @@ import RecruiterPostJob from './pages/recruiter/PostJob';
 import RecruiterJobList from './pages/recruiter/JobList';
 import RecruiterJobDetail from './pages/recruiter/JobDetail';
 import CandidateDetail from './pages/recruiter/CandidateDetail';
+import StudyPage from './pages/study/StudyPage';
 
 function AuthLoadingScreen() {
     return (
@@ -53,6 +54,7 @@ function App() {
                         <Route path="/" element={<SmartRoot />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/signup" element={<Signup />} />
+                        <Route path="/study" element={<StudyPage />} />
 
                         {/* Shared authenticated home (role-aware) */}
                         <Route element={<ProtectedRoute allowedRoles="any" />}>

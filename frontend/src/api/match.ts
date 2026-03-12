@@ -8,6 +8,12 @@ export const matchApi = {
             body: JSON.stringify({ userProfileId, jobId }),
         });
     },
+    analyzeQuick: (userProfileId: string, jobDescriptionText: string): Promise<MatchAnalysisResult> => {
+        return apiClient<MatchAnalysisResult>('/match/analyze-quick', {
+            method: 'POST',
+            body: JSON.stringify({ userProfileId, jobDescriptionText }),
+        });
+    },
     getSummary: (userProfileId: string, jobId: string) => {
         return apiClient<MatchSummaryResult>('/match/summary', {
             method: 'POST',
@@ -28,4 +34,9 @@ export const matchApi = {
         apiClient<{ profileId: string; scores: { jobId: string; title: string; fastArisScore: number }[] }>(
             `/match/scores/jobs/${profileId}?limit=${limit}`
         ),
+    explain: (userProfileId: string, jobId: string) =>
+        apiClient<{ explanation: string }>('/match/explain', {
+            method: 'POST',
+            body: JSON.stringify({ userProfileId, jobId }),
+        }),
 };

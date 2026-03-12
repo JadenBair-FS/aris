@@ -27,14 +27,16 @@ public class MatchService
     private readonly GraphService _graphService;
     private readonly GroundingService _groundingService;
     private readonly IChatClient _chatClient;
+    private readonly JobService _jobService;
     private readonly ILogger<MatchService> _logger;
 
-    public MatchService(ArisDbContext context, GraphService graphService, GroundingService groundingService, IChatClient chatClient, ILogger<MatchService> logger)
+    public MatchService(ArisDbContext context, GraphService graphService, GroundingService groundingService, IChatClient chatClient, JobService jobService, ILogger<MatchService> logger)
     {
         _context = context;
         _graphService = graphService;
         _groundingService = groundingService;
         _chatClient = chatClient;
+        _jobService = jobService;
         _logger = logger;
     }
 
@@ -260,6 +262,395 @@ public class MatchService
             HardGaps = hardGaps,
             UngroundedComparison = ungroundedComparison
         };
+    }
+
+    /// <summary>
+    /// Ephemeral match analysis: extracts and grounds the job description in memory,
+    /// then runs the full tier classification against the user's stored profile.
+    /// Nothing is written to any database table.
+    /// Returns a <see cref="MatchAnalysisResult"/> with <see cref="MatchAnalysisResult.JobId"/> set to <see cref="Guid.Empty"/>.
+    /// </summary>
+    public async Task<MatchAnalysisResult?> AnalyzeMatchQuickAsync(Guid userProfileId, string jobDescriptionText)
+    {
+        var user = await _context.UserProfiles.FindAsync(userProfileId);
+
+        if (user == null)
+        {
+            _logger.LogWarning("QuickMatch failed: User {UserId} not found.", userProfileId);
+            return null;
+        }
+        if (user.CleanSignal == null)
+        {
+            _logger.LogWarning("QuickMatch failed: User {UserId} has no CleanSignal.", userProfileId);
+            return null;
+        }
+        if (user.Embedding == null)
+        {
+            _logger.LogWarning("QuickMatch failed: User {UserId} has no Embedding.", userProfileId);
+            return null;
+        }
+
+        var (jobSignal, jobEmbedding) = await _jobService.QuickExtractAndGroundAsync(jobDescriptionText);
+
+        if (jobSignal == null || jobEmbedding == null)
+        {
+            _logger.LogWarning("QuickMatch failed: Could not extract or ground job description.");
+            return null;
+        }
+
+        // Compute cosine similarity in-process (pgvector operator not available for in-memory vectors)
+        var userVec = user.Embedding.ToArray();
+        var jobVec  = jobEmbedding.ToArray();
+        double dot = 0, normU = 0, normJ = 0;
+        for (int i = 0; i < userVec.Length; i++)
+        {
+            dot   += userVec[i] * jobVec[i];
+            normU += userVec[i] * userVec[i];
+            normJ += jobVec[i]  * jobVec[i];
+        }
+        var similarity = (normU > 0 && normJ > 0) ? dot / (Math.Sqrt(normU) * Math.Sqrt(normJ)) : 0.0;
+
+        var userSkills = user.CleanSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var jobSkills  = jobSignal.RequiredSkills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var primaryRole = jobSignal.TargetRoles?.FirstOrDefault();
+        bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
+
+        var candidatePrimaryRole = user.CleanSignal.Roles?.FirstOrDefault(r => r.IsCurrent)
+                                   ?? user.CleanSignal.Roles?.FirstOrDefault();
+        bool isCandidateTech = DomainClassifier.IsTechDomain(
+            candidatePrimaryRole?.OnetCode, candidatePrimaryRole?.Title);
+
+        var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
+
+        var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
+        foreach (var s in implicitSkills) totalUserSkills.Add(s);
+
+        var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
+
+        var matchingSkillItems = matchingSkills.Select(skill =>
+        {
+            var (importance, requiredYears, originalName) = GetJobSkillData(jobSignal, skill);
+            var candidateYears = GetCandidateSkillYears(skill, user.CleanSignal);
+            return new SkillGapItem
+            {
+                SkillName     = skill,
+                OriginalName  = originalName,
+                Importance    = importance,
+                YearsRequired = requiredYears,
+                CandidateYears = candidateYears
+            };
+        }).ToList();
+
+        var implicitlyMatched = jobSkills
+            .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
+            .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var missingSkills = jobSkills
+            .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
+            .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var bridgeable     = new List<SkillGapItem>();
+        var prerequisiteMet = new List<SkillGapItem>();
+        var hardGaps       = new List<SkillGapItem>();
+
+        if (missingSkills.Count > 0)
+        {
+            var neighborhood       = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech);
+            var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech);
+
+            var roadmapTechSkillNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            if (!isCandidateTech)
+            {
+                var roadmapTechList = await _context.Skills
+                    .Where(s => s.IsTech && s.Source == "Roadmap.sh")
+                    .Select(s => s.Name)
+                    .ToListAsync();
+                roadmapTechSkillNames = new HashSet<string>(roadmapTechList, StringComparer.OrdinalIgnoreCase);
+
+                neighborhood = neighborhood
+                    .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+                prerequisiteMetSet = prerequisiteMetSet
+                    .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            }
+
+            var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
+            var bridgePathBySkill = bridgePaths.ToDictionary(
+                p => p.SkillName,
+                p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
+                StringComparer.OrdinalIgnoreCase);
+
+            foreach (var skill in missingSkills)
+            {
+                if (!isCandidateTech && roadmapTechSkillNames.Contains(skill))
+                {
+                    var (hImp, hYears, hOrigName) = GetJobSkillData(jobSignal, skill);
+                    hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = hOrigName, Importance = hImp, YearsRequired = hYears });
+                    continue;
+                }
+
+                var (importance, years, origName) = GetJobSkillData(jobSignal, skill);
+
+                bool isCertification = skill.Contains("Certified", StringComparison.OrdinalIgnoreCase) ||
+                                       skill.Contains("CST",         StringComparison.OrdinalIgnoreCase) ||
+                                       skill.Contains("License",     StringComparison.OrdinalIgnoreCase) ||
+                                       skill.Contains("Certification", StringComparison.OrdinalIgnoreCase) ||
+                                       skill.Contains("Credential",  StringComparison.OrdinalIgnoreCase);
+
+                if (isCertification)
+                {
+                    hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
+                }
+                else if (prerequisiteMetSet.Contains(skill))
+                {
+                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                }
+                else if (neighborhood.Contains(skill))
+                {
+                    bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                }
+                else
+                {
+                    hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
+                }
+            }
+        }
+
+        var importanceWeights = jobSignal.RequiredSkills
+            .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(
+                g => g.Key,
+                g => g.Any(s => !s.Importance.Equals("Preferred", StringComparison.OrdinalIgnoreCase)) ? 1.0 : 0.6,
+                StringComparer.OrdinalIgnoreCase);
+
+        double GetImportanceWeight(string skillName) =>
+            importanceWeights.TryGetValue(skillName, out var w) ? w : 1.0;
+
+        var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
+        var graphCoverageScore = Math.Min(
+            (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
+             implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
+             prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
+             bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
+            1.0);
+        var arisScore = 0.40 * similarity + 0.60 * graphCoverageScore;
+
+        static string Normalize(string s) =>
+            System.Text.RegularExpressions.Regex.Replace(s.ToLowerInvariant().Trim(), @"\.(js|ts|py|net|rb|go)$", "");
+
+        var resumeUngrounded = user.CleanSignal?.UngroundedSkills ?? [];
+        var jobUngrounded    = jobSignal.UngroundedSkills ?? [];
+
+        var resumeMap = resumeUngrounded
+            .GroupBy(s => Normalize(s.Name))
+            .ToDictionary(g => g.Key, g => g.First().Name);
+        var jobMap = jobUngrounded
+            .GroupBy(s => Normalize(s.Name))
+            .ToDictionary(g => g.Key, g => g.First().Name);
+
+        var ungroundedComparison = new UngroundedSkillComparison
+        {
+            Matched           = jobMap.Keys.Intersect(resumeMap.Keys)
+                                          .Select(k => jobMap[k]).Order().ToList(),
+            MissingFromResume = jobMap.Keys.Except(resumeMap.Keys)
+                                          .Select(k => jobMap[k]).Order().ToList(),
+            ExtraInResume     = resumeMap.Keys.Except(jobMap.Keys)
+                                          .Select(k => resumeMap[k]).Order().ToList(),
+        };
+
+        return new MatchAnalysisResult
+        {
+            JobId                      = Guid.Empty,
+            VectorSimilarity           = similarity,
+            ArisScore                  = arisScore,
+            MatchingSkills             = matchingSkillItems,
+            ImplicitlyDiscoveredSkills = implicitlyMatched,
+            BridgeableSkills           = bridgeable,
+            PrerequisiteMetSkills      = prerequisiteMet,
+            HardGaps                   = hardGaps,
+            UngroundedComparison       = ungroundedComparison
+        };
+    }
+
+    /// <summary>
+    /// Fully ephemeral tier analysis: both the resume and job signals are provided in memory.
+    /// No database reads for profile or job posting. No database writes at all.
+    /// Used by the study comparison endpoint where neither artifact is persisted.
+    /// </summary>
+    public async Task<MatchAnalysisResult?> AnalyzeMatchFromSignalsAsync(
+        ARIS.Shared.Models.CleanSignal.ResumeCleanSignal resumeSignal,
+        Pgvector.Vector resumeEmbedding,
+        ARIS.Shared.Models.CleanSignal.JobPostingCleanSignal jobSignal,
+        Pgvector.Vector jobEmbedding)
+    {
+        try
+        {
+            // Compute cosine similarity in-process (pgvector operator unavailable for in-memory vectors)
+            var userVec = resumeEmbedding.ToArray();
+            var jobVec  = jobEmbedding.ToArray();
+            double dot = 0, normU = 0, normJ = 0;
+            for (int i = 0; i < userVec.Length; i++)
+            {
+                dot   += userVec[i] * jobVec[i];
+                normU += userVec[i] * userVec[i];
+                normJ += jobVec[i]  * jobVec[i];
+            }
+            var similarity = (normU > 0 && normJ > 0) ? dot / (Math.Sqrt(normU) * Math.Sqrt(normJ)) : 0.0;
+
+            var userSkills = resumeSignal.Skills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var jobSkills  = jobSignal.RequiredSkills.Select(s => s.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var primaryRole = jobSignal.TargetRoles?.FirstOrDefault();
+            bool isTech = DomainClassifier.IsTechDomain(primaryRole?.OnetCode, primaryRole?.Title);
+
+            var candidatePrimaryRole = resumeSignal.Roles?.FirstOrDefault(r => r.IsCurrent)
+                                       ?? resumeSignal.Roles?.FirstOrDefault();
+            bool isCandidateTech = DomainClassifier.IsTechDomain(
+                candidatePrimaryRole?.OnetCode, candidatePrimaryRole?.Title);
+
+            var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
+
+            var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
+            foreach (var s in implicitSkills) totalUserSkills.Add(s);
+
+            var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
+
+            var matchingSkillItems = matchingSkills.Select(skill =>
+            {
+                var (importance, requiredYears, originalName) = GetJobSkillData(jobSignal, skill);
+                var candidateYears = GetCandidateSkillYears(skill, resumeSignal);
+                return new SkillGapItem
+                {
+                    SkillName      = skill,
+                    OriginalName   = originalName,
+                    Importance     = importance,
+                    YearsRequired  = requiredYears,
+                    CandidateYears = candidateYears
+                };
+            }).ToList();
+
+            var implicitlyMatched = jobSkills
+                .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
+                .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            var missingSkills = jobSkills
+                .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
+                .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            var bridgeable      = new List<SkillGapItem>();
+            var prerequisiteMet = new List<SkillGapItem>();
+            var hardGaps        = new List<SkillGapItem>();
+
+            if (missingSkills.Count > 0)
+            {
+                var neighborhood       = await _graphService.GetValidNeighborhoodAsync(totalUserSkills, isTech);
+                var prerequisiteMetSet = await _graphService.GetPrerequisiteMetSkillsAsync(totalUserSkills, missingSkills, isTech);
+
+                var roadmapTechSkillNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+                if (!isCandidateTech)
+                {
+                    var roadmapTechList = await _context.Skills
+                        .Where(s => s.IsTech && s.Source == "Roadmap.sh")
+                        .Select(s => s.Name)
+                        .ToListAsync();
+                    roadmapTechSkillNames = new HashSet<string>(roadmapTechList, StringComparer.OrdinalIgnoreCase);
+
+                    neighborhood = neighborhood
+                        .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
+                        .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+                    prerequisiteMetSet = prerequisiteMetSet
+                        .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
+                        .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                }
+
+                var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
+                var bridgePathBySkill = bridgePaths.ToDictionary(
+                    p => p.SkillName,
+                    p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
+                    StringComparer.OrdinalIgnoreCase);
+
+                foreach (var skill in missingSkills)
+                {
+                    if (!isCandidateTech && roadmapTechSkillNames.Contains(skill))
+                    {
+                        var (hImp, hYears, hOrigName) = GetJobSkillData(jobSignal, skill);
+                        hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = hOrigName, Importance = hImp, YearsRequired = hYears });
+                        continue;
+                    }
+
+                    var (importance, years, origName) = GetJobSkillData(jobSignal, skill);
+
+                    bool isCertification = skill.Contains("Certified", StringComparison.OrdinalIgnoreCase) ||
+                                          skill.Contains("CST",         StringComparison.OrdinalIgnoreCase) ||
+                                          skill.Contains("License",     StringComparison.OrdinalIgnoreCase) ||
+                                          skill.Contains("Certification", StringComparison.OrdinalIgnoreCase) ||
+                                          skill.Contains("Credential",  StringComparison.OrdinalIgnoreCase);
+
+                    if (isCertification)
+                    {
+                        hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
+                    }
+                    else if (prerequisiteMetSet.Contains(skill))
+                    {
+                        prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                    }
+                    else if (neighborhood.Contains(skill))
+                    {
+                        bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                    }
+                    else
+                    {
+                        hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
+                    }
+                }
+            }
+
+            var importanceWeights = jobSignal.RequiredSkills
+                .GroupBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Any(s => !s.Importance.Equals("Preferred", StringComparison.OrdinalIgnoreCase)) ? 1.0 : 0.6,
+                    StringComparer.OrdinalIgnoreCase);
+
+            double GetImportanceWeight(string skillName) =>
+                importanceWeights.TryGetValue(skillName, out var w) ? w : 1.0;
+
+            var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
+            var graphCoverageScore = Math.Min(
+                (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
+                 implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
+                 prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
+                 bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
+                1.0);
+
+            var arisScore = 0.40 * similarity + 0.60 * graphCoverageScore;
+
+            return new MatchAnalysisResult
+            {
+                JobId                      = Guid.Empty,
+                VectorSimilarity           = similarity,
+                ArisScore                  = arisScore,
+                MatchingSkills             = matchingSkillItems,
+                ImplicitlyDiscoveredSkills = implicitlyMatched,
+                BridgeableSkills           = bridgeable,
+                PrerequisiteMetSkills      = prerequisiteMet,
+                HardGaps                   = hardGaps,
+                UngroundedComparison       = new UngroundedSkillComparison()
+            };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "AnalyzeMatchFromSignalsAsync failed.");
+            return null;
+        }
     }
 
     private static double GetCandidateSkillYears(

@@ -655,6 +655,52 @@ namespace ARIS.API.Services
             return jsonString;
         }
 
+        /// <summary>
+        /// Extracts a <see cref="JobPostingCleanSignal"/> from raw text and grounds it against the
+        /// reference dictionary, then generates an embedding — all in memory with no database writes.
+        /// Used by the ephemeral quick-match endpoint.
+        /// </summary>
+        public async Task<(JobPostingCleanSignal? Signal, Pgvector.Vector? Embedding)> QuickExtractAndGroundAsync(string rawDescription)
+        {
+            try
+            {
+                var cleanSignal = await ExtractJobCleanSignalAsync(rawDescription);
+                if (cleanSignal == null)
+                {
+                    _logger.LogWarning("QuickExtractAndGroundAsync: Clean Signal extraction returned null.");
+                    return (null, null);
+                }
+
+                if (cleanSignal.RequiredSkills.Count < 3 && cleanSignal.Responsibilities.Count > 0)
+                {
+                    _logger.LogInformation("QuickExtractAndGroundAsync: Sparse extraction ({Count} skills). Running responsibilities fallback.", cleanSignal.RequiredSkills.Count);
+                    var fallbackSkills = await ExtractSkillsFromResponsibilitiesAsync(cleanSignal.Responsibilities, cleanSignal.TargetRoles.FirstOrDefault()?.Title);
+                    var existingNames = cleanSignal.RequiredSkills.Select(s => s.Name.ToLowerInvariant()).ToHashSet();
+                    foreach (var skill in fallbackSkills)
+                    {
+                        if (!existingNames.Contains(skill.Name.ToLowerInvariant()))
+                            cleanSignal.RequiredSkills.Add(skill);
+                    }
+                }
+
+                // Ground against the reference dictionary (no DB write — grounding only mutates the in-memory signal)
+                await GroundCleanSignalAsync(cleanSignal, "quick-match-ephemeral");
+
+                // Generate embedding for cosine similarity
+                var symmetricString = BuildSymmetricString(cleanSignal);
+                var truncated = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncated]);
+                var vector = new Pgvector.Vector(embeddings[0].Vector);
+
+                return (cleanSignal, vector);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "QuickExtractAndGroundAsync failed.");
+                return (null, null);
+            }
+        }
+
         public async Task<JobPostingCleanSignal?> ApplyGroundingCorrectionsAsync(Guid jobId, List<GroundingCorrectionItem> corrections)
         {
             var job = await _context.JobPostings.FindAsync(jobId);

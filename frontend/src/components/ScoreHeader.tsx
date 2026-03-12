@@ -4,10 +4,18 @@ import { Badge } from './ui/badge';
 import { formatArisScore } from '@/utils/score';
 
 export function ScoreHeader({ arisScore, vectorSimilarity }: { arisScore: number; vectorSimilarity: number }) {
+    const scoreColorClass =
+        arisScore >= 0.65 ? 'text-green-600' :
+        arisScore >= 0.40 ? 'text-orange-500' :
+        'text-red-600';
     const scoreBadgeClass =
-        arisScore >= 0.75 ? 'bg-green-50 text-green-700 border-green-200' :
-        arisScore >= 0.60 ? 'bg-yellow-50 text-yellow-700 border-yellow-200' :
-        'bg-slate-100 text-slate-600 border-slate-200';
+        arisScore >= 0.65 ? 'bg-green-50 text-green-700 border-green-200' :
+        arisScore >= 0.40 ? 'bg-orange-50 text-orange-700 border-orange-200' :
+        'bg-red-50 text-red-700 border-red-200';
+    const scoreBadgeLabel =
+        arisScore >= 0.65 ? 'Well Qualified' :
+        arisScore >= 0.40 ? 'Partial Match' :
+        'Significant Gaps';
 
     return (
         <Card className="mb-6">
@@ -23,9 +31,9 @@ export function ScoreHeader({ arisScore, vectorSimilarity }: { arisScore: number
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        <span className="text-4xl font-bold">{formatArisScore(arisScore)}</span>
+                        <span className={`text-4xl font-bold ${scoreColorClass}`}>{formatArisScore(arisScore)}</span>
                         <Badge variant="outline" className={`text-xs ${scoreBadgeClass}`}>
-                            {arisScore >= 0.75 ? 'Strong Fit' : arisScore >= 0.60 ? 'Moderate Fit' : 'Partial Fit'}
+                            {scoreBadgeLabel}
                         </Badge>
                     </div>
                 </div>

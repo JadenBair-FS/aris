@@ -104,7 +104,14 @@ builder.Services.AddScoped<ARIS.API.Services.JobService>(sp =>
         groundingFirstPassThreshold,
         groundingSecondPassThreshold,
         numCtx));
-builder.Services.AddScoped<ARIS.API.Services.MatchService>();
+builder.Services.AddScoped<ARIS.API.Services.MatchService>(sp =>
+    new ARIS.API.Services.MatchService(
+        sp.GetRequiredService<ARIS.Shared.Data.ArisDbContext>(),
+        sp.GetRequiredService<ARIS.API.Services.GraphService>(),
+        sp.GetRequiredService<ARIS.API.Services.GroundingService>(),
+        sp.GetRequiredService<Microsoft.Extensions.AI.IChatClient>(),
+        sp.GetRequiredService<ARIS.API.Services.JobService>(),
+        sp.GetRequiredService<ILogger<ARIS.API.Services.MatchService>>()));
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
 builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();

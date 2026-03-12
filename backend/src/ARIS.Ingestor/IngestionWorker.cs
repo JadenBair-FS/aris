@@ -596,11 +596,33 @@ public class IngestionWorker : BackgroundService
 
         if (label.Contains(" vs ", StringComparison.OrdinalIgnoreCase)) return true;
 
+        // Programming syntax / operators — not resume skills
+        if (label.StartsWith('$')) return true;  // MongoDB operators: $and, $or, $regex, $group
+        if (label.StartsWith('@') && label.Length <= 10) return true;  // Template control flow: @if, @else, @for
+        if (label == "==" || label == "===" || label == "!=" || label == "!==" ) return true;
+        if (label.StartsWith("--") && !label.Contains(' ')) return true;  // CLI flags used as labels: --hard, --soft
+
+        // Single-character or purely lowercase abbreviation noise (p, P, if, db, os, rm, dd, nl, hr, id)
+        if (label.Length <= 2 && !label.Any(char.IsUpper)) return true;
+
+        // Roadmap learning guide headings — not resume skills
+        ReadOnlySpan<string> guidePrefixes =
+        [
+            "What is ", "Why use ", "Why Use ", "History of ", "Introduction to ",
+            "Overview of ", "How to ", "When to ", "Guide to ",
+        ];
+        foreach (var g in guidePrefixes)
+            if (label.StartsWith(g, StringComparison.OrdinalIgnoreCase)) return true;
+
+        // " on Frontend" / " on Backend" suffixes (GraphQL on Frontend etc.)
+        if (label.EndsWith(" on Frontend", StringComparison.OrdinalIgnoreCase)) return true;
+        if (label.EndsWith(" on Backend", StringComparison.OrdinalIgnoreCase)) return true;
+
         // Instructional gerund prefixes — covers "Installing X", "Creating Y", "Running Z", etc.
         ReadOnlySpan<string> gerunds =
         [
             "Creating ", "Getting ", "Installing ", "Using ", "Building ", "Making ",
-            "Learning ", "Understanding ", "Setting ", "Running ", "Writing ", "Connecting ",
+            "Learning ", "Understanding ", "Understand ", "Setting ", "Running ", "Writing ", "Connecting ",
             "Deploying ", "Configuring ", "Implementing ", "Working ", "Adding ", "Handling ",
         ];
         foreach (var g in gerunds)

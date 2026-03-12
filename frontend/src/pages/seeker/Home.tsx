@@ -6,7 +6,9 @@ import { matchApi } from '@/api/match';
 import { MatchCard } from '@/components/MatchCard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Upload } from 'lucide-react';
+import { QuickMatch } from './QuickMatch';
 
 export default function SeekerHome() {
     const { user } = useAuth();
@@ -66,31 +68,44 @@ export default function SeekerHome() {
                 </p>
             </div>
 
-            {isMatchLoading && (
-                <div className="space-y-3">
-                    {[0, 1, 2].map(i => <Skeleton key={i} className="h-24 w-full rounded-xl" />)}
-                </div>
-            )}
+            <Tabs defaultValue="matches">
+                <TabsList>
+                    <TabsTrigger value="matches">My Matches</TabsTrigger>
+                    <TabsTrigger value="quick">Quick Match</TabsTrigger>
+                </TabsList>
 
-            {!isMatchLoading && matches.length === 0 && (
-                <div className="text-center py-16 text-slate-400">
-                    <p className="text-sm">No matches found yet.</p>
-                    <p className="text-xs mt-1">Try updating your resume or check back later.</p>
-                </div>
-            )}
+                <TabsContent value="matches" className="mt-4">
+                    {isMatchLoading && (
+                        <div className="space-y-3">
+                            {[0, 1, 2].map(i => <Skeleton key={i} className="h-24 w-full rounded-xl" />)}
+                        </div>
+                    )}
 
-            <div className="space-y-3">
-                {matches.map((match, index) => (
-                    <MatchCard
-                        key={match.jobId}
-                        index={index}
-                        title={match.title}
-                        subtitle={match.jobId.slice(0, 8)}
-                        cta="Analyze Match"
-                        onClick={() => navigate(`/match/${profileId}/${match.jobId}`)}
-                    />
-                ))}
-            </div>
+                    {!isMatchLoading && matches.length === 0 && (
+                        <div className="text-center py-16 text-slate-400">
+                            <p className="text-sm">No matches found yet.</p>
+                            <p className="text-xs mt-1">Try updating your resume or check back later.</p>
+                        </div>
+                    )}
+
+                    <div className="space-y-3">
+                        {matches.map((match, index) => (
+                            <MatchCard
+                                key={match.jobId}
+                                index={index}
+                                title={match.title}
+                                subtitle={match.jobId.slice(0, 8)}
+                                cta="Analyze Match"
+                                onClick={() => navigate(`/match/${profileId}/${match.jobId}`)}
+                            />
+                        ))}
+                    </div>
+                </TabsContent>
+
+                <TabsContent value="quick" className="mt-4">
+                    <QuickMatch profileId={profileId ?? ''} />
+                </TabsContent>
+            </Tabs>
         </div>
     );
 }

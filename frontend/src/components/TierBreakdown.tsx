@@ -91,10 +91,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 2: Implicit Match"
+                title="Tier 2: Foundation Coverage"
                 count={implicitlyDiscoveredSkills.length}
                 borderColor="border-emerald-400"
-                emptyLabel="No implicit matches found"
+                emptyLabel="No foundation coverage found"
             >
                 <div className="flex flex-wrap gap-2 py-1">
                     {implicitlyDiscoveredSkills.map((s, i) => (
@@ -104,10 +104,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 3: Prerequisite Met"
+                title="Tier 3: Transferable Skills"
                 count={prerequisiteMetSkills.length}
                 borderColor="border-yellow-400"
-                emptyLabel="No prerequisite paths found"
+                emptyLabel="No transferable skills found"
             >
                 {prerequisiteMetSkills.map((s, i) => (
                     <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
@@ -118,10 +118,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 4: Bridgeable"
+                title="Tier 4: Adjacent Skills"
                 count={bridgeableSkills.length}
                 borderColor="border-orange-400"
-                emptyLabel="No bridgeable skills found"
+                emptyLabel="No adjacent skills found"
             >
                 {bridgeableSkills.map((s, i) => (
                     <div key={i} className="flex items-center py-1.5 border-b border-slate-50 last:border-0">
@@ -132,10 +132,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 5: Hard Gap"
+                title="Tier 5: Missing Skills"
                 count={hardGaps.length}
                 borderColor="border-red-500"
-                emptyLabel="No hard gaps — great fit!"
+                emptyLabel="No missing skills — great fit!"
             >
                 {hardGaps.map((s, i) => (
                     <div key={i} className="flex items-center py-2 border-b border-slate-50 last:border-0">

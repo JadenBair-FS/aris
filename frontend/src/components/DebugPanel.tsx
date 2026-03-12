@@ -7,7 +7,7 @@ export function DebugPanel() {
     if (!isDebugMode || logs.length === 0) return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 h-[40vh] bg-slate-950 text-slate-50 border-t-2 border-slate-700 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)] flex flex-col z-50 transition-all">
+        <div className="fixed bottom-0 left-0 right-0 h-[50vh] bg-slate-950 text-slate-50 border-t-2 border-slate-700 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)] flex flex-col z-50 transition-all">
             <div className="p-3 border-b border-slate-800 flex justify-between items-center bg-slate-900 shrink-0">
                 <span className="text-sm font-mono text-slate-300 uppercase tracking-widest font-bold">ARIS Network Debug ({logs.length} Requests)</span>
             </div>

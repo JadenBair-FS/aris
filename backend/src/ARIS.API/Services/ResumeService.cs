@@ -123,6 +123,48 @@ namespace ARIS.API.Services
             return embeddings[0].Vector.ToArray();
         }
 
+        /// <summary>
+        /// Extracts and grounds a <see cref="ResumeCleanSignal"/> from raw resume text entirely in memory.
+        /// No database writes occur. Returns null if extraction fails.
+        /// Also generates and returns the symmetric embedding vector for cosine similarity.
+        /// </summary>
+        public async Task<(ResumeCleanSignal? Signal, Pgvector.Vector? Embedding)> QuickExtractResumeSignalAsync(string rawText)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(rawText))
+                {
+                    _logger.LogWarning("QuickExtractResumeSignalAsync: raw text is empty.");
+                    return (null, null);
+                }
+
+                rawText = StripReferences(rawText);
+                rawText = SanitizePdfText(rawText);
+
+                var cleanSignal = await ExtractCleanSignalAsync(rawText);
+                if (cleanSignal == null)
+                {
+                    _logger.LogWarning("QuickExtractResumeSignalAsync: Clean Signal extraction returned null.");
+                    return (null, null);
+                }
+
+                // Ground against the reference dictionary (mutates signal in memory only — no DB write)
+                await GroundCleanSignalAsync(cleanSignal, "study-ephemeral");
+
+                var symmetricString = BuildSymmetricString(cleanSignal);
+                var truncated = symmetricString.Length > 2000 ? symmetricString[..2000] : symmetricString;
+                var embeddings = await _embeddingGenerator.GenerateAsync([truncated]);
+                var vector = new Pgvector.Vector(embeddings[0].Vector);
+
+                return (cleanSignal, vector);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "QuickExtractResumeSignalAsync failed.");
+                return (null, null);
+            }
+        }
+
         public async Task<Guid?> ProcessResumeAsync(Stream fileStream, string userId, Guid? seekerUserId = null)
         {
             try
