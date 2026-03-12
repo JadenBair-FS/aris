@@ -17,3 +17,9 @@ public class ExplainMatchRequest
     public Guid UserProfileId { get; set; }
     public Guid JobId { get; set; }
 }
+
+public class RagasContextRequest
+{
+    public Guid ResumeId { get; set; }
+    public Guid JobId { get; set; }
+}
