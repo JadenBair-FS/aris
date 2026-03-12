@@ -3,6 +3,7 @@ using ARIS.Shared.Data;
 using ARIS.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.AI;
+using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -31,7 +32,7 @@ public class EvalController : ControllerBase
         ResumeService resumeService,
         ResumePdfService resumePdfService,
         GraphService graphService,
-        [FromKeyedServices("openai")] IChatClient? openAiClient,
+        IServiceProvider serviceProvider,
         IConfiguration configuration)
     {
         _matchService    = matchService;
@@ -41,7 +42,7 @@ public class EvalController : ControllerBase
         _resumeService   = resumeService;
         _resumePdfService = resumePdfService;
         _graphService    = graphService;
-        _openAiClient    = openAiClient;
+        _openAiClient    = serviceProvider.GetKeyedService<IChatClient>("openai");
         _chatGptModel    = configuration["OpenAI:ChatGptBaselineModel"] ?? "gpt-4o-mini";
     }
 

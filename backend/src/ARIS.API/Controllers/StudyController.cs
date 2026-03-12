@@ -4,6 +4,7 @@ using ARIS.Shared.Models;
 using ARIS.Shared.Models.CleanSignal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Caching.Memory;
@@ -40,7 +41,7 @@ public class StudyController : ControllerBase
         IChatClient chatClient,
         IMemoryCache cache,
         ILogger<StudyController> logger,
-        [FromKeyedServices("openai")] IChatClient? openAiClient)
+        IServiceProvider serviceProvider)
     {
         _matchService = matchService;
         _jobService = jobService;
@@ -51,7 +52,7 @@ public class StudyController : ControllerBase
         _chatClient = chatClient;
         _cache = cache;
         _logger = logger;
-        _openAiClient = openAiClient;
+        _openAiClient = serviceProvider.GetKeyedService<IChatClient>("openai");
     }
 
     /// <summary>
