@@ -119,11 +119,24 @@ builder.Services.AddScoped<ARIS.API.Services.PersonalInfoExtractor>();
 builder.Services.AddScoped<ARIS.API.Services.ResumePdfService>();
 
 // OpenAI — ChatGPT baseline for three-way eval
-var openAiKey       = builder.Configuration["OpenAI:ApiKey"]
-    ?? Environment.GetEnvironmentVariable("OPENAI_API_KEY")
-    ?? "";
+// builder.Configuration["OpenAI:ApiKey"] can return "" (empty string) when the key exists
+// in appsettings.json but has no value — empty string is not null, so ?? does not fall through.
+// We must explicitly treat empty string as absent and fall back to the environment variable.
+var openAiKeyFromConfig = builder.Configuration["OpenAI:ApiKey"];
+var openAiKey = (!string.IsNullOrWhiteSpace(openAiKeyFromConfig))
+    ? openAiKeyFromConfig
+    : (Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? "");
 var chatGptModel    = builder.Configuration["OpenAI:ChatGptBaselineModel"] ?? "gpt-4o-mini";
-Log.Information("OpenAI model: {Model} | Key configured: {HasKey}", chatGptModel, !string.IsNullOrEmpty(openAiKey));
+
+var openAiKeySource = !string.IsNullOrWhiteSpace(openAiKeyFromConfig) ? "appsettings"
+    : !string.IsNullOrEmpty(openAiKey) ? "OPENAI_API_KEY env var"
+    : "none";
+if (!string.IsNullOrEmpty(openAiKey))
+    Log.Information("OpenAI model: {Model} | Key configured (source: {Source})", chatGptModel, openAiKeySource);
+else
+    Log.Warning("OpenAI: no API key found (checked appsettings OpenAI:ApiKey and OPENAI_API_KEY env var) — " +
+                "ChatGPT baseline will be unavailable.");
+
 if (!string.IsNullOrEmpty(openAiKey))
     builder.Services.AddKeyedSingleton<IChatClient>("openai", (sp, key) =>
         new OpenAIClient(openAiKey).GetChatClient(chatGptModel).AsIChatClient());
