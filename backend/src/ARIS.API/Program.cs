@@ -124,8 +124,9 @@ var openAiKey       = builder.Configuration["OpenAI:ApiKey"]
     ?? "";
 var chatGptModel    = builder.Configuration["OpenAI:ChatGptBaselineModel"] ?? "gpt-4o-mini";
 Log.Information("OpenAI model: {Model} | Key configured: {HasKey}", chatGptModel, !string.IsNullOrEmpty(openAiKey));
-builder.Services.AddKeyedSingleton<IChatClient>("openai", (sp, key) =>
-    new OpenAIClient(openAiKey).GetChatClient(chatGptModel).AsIChatClient());
+if (!string.IsNullOrEmpty(openAiKey))
+    builder.Services.AddKeyedSingleton<IChatClient>("openai", (sp, key) =>
+        new OpenAIClient(openAiKey).GetChatClient(chatGptModel).AsIChatClient());
 
 // Auth — Clerk JWT Bearer
 var clerkAuthority = builder.Configuration["Clerk:Authority"]

@@ -24,7 +24,7 @@ public class StudyController : ControllerBase
     private readonly ArisDbContext _context;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
     private readonly IChatClient _chatClient;
-    private readonly IChatClient _openAiClient;
+    private readonly IChatClient? _openAiClient;
     private readonly IMemoryCache _cache;
     private readonly ILogger<StudyController> _logger;
 
@@ -40,7 +40,7 @@ public class StudyController : ControllerBase
         IChatClient chatClient,
         IMemoryCache cache,
         ILogger<StudyController> logger,
-        [FromKeyedServices("openai")] IChatClient openAiClient)
+        [FromKeyedServices("openai")] IChatClient? openAiClient)
     {
         _matchService = matchService;
         _jobService = jobService;
@@ -388,6 +388,9 @@ public class StudyController : ControllerBase
 
     private async Task<string> GenerateChatGptTailoredResumeAsync(string resumeText, string jobText)
     {
+        if (_openAiClient == null)
+            return "ChatGPT baseline unavailable: OPENAI_API_KEY is not configured.";
+
         try
         {
             var templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");

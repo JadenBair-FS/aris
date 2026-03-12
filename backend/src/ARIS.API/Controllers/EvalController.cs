@@ -16,7 +16,7 @@ public class EvalController : ControllerBase
     private readonly MatchService _matchService;
     private readonly ArisDbContext _context;
     private readonly IChatClient _chatClient;
-    private readonly IChatClient _openAiClient;
+    private readonly IChatClient? _openAiClient;
     private readonly ILogger<EvalController> _logger;
     private readonly ResumeService _resumeService;
     private readonly ResumePdfService _resumePdfService;
@@ -31,7 +31,7 @@ public class EvalController : ControllerBase
         ResumeService resumeService,
         ResumePdfService resumePdfService,
         GraphService graphService,
-        [FromKeyedServices("openai")] IChatClient openAiClient,
+        [FromKeyedServices("openai")] IChatClient? openAiClient,
         IConfiguration configuration)
     {
         _matchService    = matchService;
@@ -306,6 +306,9 @@ public class EvalController : ControllerBase
     private async Task<(string TailoredFullText, string SummaryText)> RunChatGptPipelineAsync(
         string rawResume, string rawJob)
     {
+        if (_openAiClient == null)
+            return ("ChatGPT baseline unavailable: OPENAI_API_KEY is not configured.", "");
+
         var prompt = $$"""
             You are helping a job seeker improve their resume for a specific job.
 
