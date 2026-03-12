@@ -1,6 +1,7 @@
 using ARIS.API.Services;
 using ARIS.Shared.Data;
 using ARIS.Shared.Models;
+using ARIS.Shared.Models.CleanSignal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DependencyInjection;
@@ -132,6 +133,23 @@ public class EvalController : ControllerBase
         public Guid JobId { get; set; }
     }
 
+    public class SkillMatchDetail
+    {
+        public string CanonicalName { get; set; } = "";
+        public string? OriginalName { get; set; }
+        public string? MatchedOn { get; set; }  // which name triggered the hit (null if missing)
+    }
+
+    public class IdentifiedSkillDetail
+    {
+        public string CanonicalName { get; set; } = "";
+        public string? OriginalName { get; set; }
+        public string Tier { get; set; } = "";       // "T1", "T2", "T3", "T4", "T5"
+        public string TierLabel { get; set; } = "";  // "Direct Match", "Foundation", etc.
+        public string? BridgePath { get; set; }
+        public string Importance { get; set; } = "";
+    }
+
     public class ThreeWayResult
     {
         public double SemanticSimilarityScore { get; set; }
@@ -139,9 +157,9 @@ public class EvalController : ControllerBase
         public double AtsScore { get; set; }
         public int MatchingTermsCount { get; set; }
         public int MissingTermsCount { get; set; }
-        public List<string> MatchingTerms { get; set; } = [];
-        public List<string> MissingTerms { get; set; } = [];
-        public List<string> NewTermsAdded { get; set; } = [];
+        public List<SkillMatchDetail> MatchingTerms { get; set; } = [];
+        public List<SkillMatchDetail> MissingTerms { get; set; } = [];
+        public List<SkillMatchDetail> NewTermsAdded { get; set; } = [];
         public int HallucinationCount { get; set; }
         public string SummaryText { get; set; } = "";
         public string TailoredFullText { get; set; } = "";
@@ -172,8 +190,8 @@ public class EvalController : ControllerBase
         catch { rawResumeText = user.RawResume ?? ""; }
         var rawJobText = job.RawDescription ?? "";
 
-        var jobTitle      = job.CleanSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
-        var jobSkillNames = job.CleanSignal.RequiredSkills.Select(s => s.Name).ToList();
+        var jobTitle  = job.CleanSignal.TargetRoles?.FirstOrDefault()?.Title ?? "the role";
+        var jobSkills = job.CleanSignal.RequiredSkills.ToList();
 
         var baselineMatch = await _matchService.AnalyzeMatchAsync(request.ResumeId, request.JobId);
         if (baselineMatch == null)
@@ -185,10 +203,10 @@ public class EvalController : ControllerBase
             baselineMatch.HardGaps.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase);
 
         var swA = Stopwatch.StartNew();
-        var origKeywords = ComputeKeywordMatch(rawResumeText, jobSkillNames);
+        var origKeywords = ComputeKeywordMatch(rawResumeText, jobSkills);
         var origSemScore = await ComputeSemanticSimilarityAsync(rawResumeText, rawJobText);
-        var origKwScore  = jobSkillNames.Count > 0
-            ? Math.Round((double)origKeywords.Matched.Count / jobSkillNames.Count, 4) : 0.0;
+        var origKwScore  = jobSkills.Count > 0
+            ? Math.Round((double)origKeywords.Matched.Count / jobSkills.Count, 4) : 0.0;
         swA.Stop();
 
         var condA = new ThreeWayResult
@@ -254,12 +272,14 @@ public class EvalController : ControllerBase
             var arisHallucinationCount = hardGapNames.Count(name =>
                 arisFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
 
-            var arisKeywords = ComputeKeywordMatch(arisFullText, jobSkillNames);
+            var arisKeywords = ComputeKeywordMatch(arisFullText, jobSkills);
             var arisSemScore = await ComputeSemanticSimilarityAsync(arisFullText, rawJobText);
-            var arisKwScore  = jobSkillNames.Count > 0
-                ? Math.Round((double)arisKeywords.Matched.Count / jobSkillNames.Count, 4) : 0.0;
+            var arisKwScore  = jobSkills.Count > 0
+                ? Math.Round((double)arisKeywords.Matched.Count / jobSkills.Count, 4) : 0.0;
+            var origMatchedCanonicalB = new HashSet<string>(
+                origKeywords.Matched.Select(m => m.CanonicalName), StringComparer.OrdinalIgnoreCase);
             var arisNewTerms = arisKeywords.Matched
-                .Except(origKeywords.Matched, StringComparer.OrdinalIgnoreCase)
+                .Where(m => !origMatchedCanonicalB.Contains(m.CanonicalName))
                 .ToList();
 
             swB.Stop();
@@ -283,12 +303,14 @@ public class EvalController : ControllerBase
 
         var swC = Stopwatch.StartNew();
         var (gptFullText, gptSummary) = await RunChatGptPipelineAsync(rawResumeText, rawJobText);
-        var gptKeywords = ComputeKeywordMatch(gptFullText, jobSkillNames);
+        var gptKeywords = ComputeKeywordMatch(gptFullText, jobSkills);
         var gptSemScore = await ComputeSemanticSimilarityAsync(gptFullText, rawJobText);
-        var gptKwScore  = jobSkillNames.Count > 0
-            ? Math.Round((double)gptKeywords.Matched.Count / jobSkillNames.Count, 4) : 0.0;
+        var gptKwScore  = jobSkills.Count > 0
+            ? Math.Round((double)gptKeywords.Matched.Count / jobSkills.Count, 4) : 0.0;
+        var origMatchedCanonicalC = new HashSet<string>(
+            origKeywords.Matched.Select(m => m.CanonicalName), StringComparer.OrdinalIgnoreCase);
         var gptNewTerms = gptKeywords.Matched
-            .Except(origKeywords.Matched, StringComparer.OrdinalIgnoreCase)
+            .Where(m => !origMatchedCanonicalC.Contains(m.CanonicalName))
             .ToList();
         var gptHallucinationCount = hardGapNames.Count(name =>
             gptFullText.Contains(name, StringComparison.OrdinalIgnoreCase));
@@ -311,15 +333,42 @@ public class EvalController : ControllerBase
             PdfBase64               = null,
         };
 
+        var identifiedSkills = new List<IdentifiedSkillDetail>();
+
+        foreach (var s in baselineMatch.MatchingSkills)
+            identifiedSkills.Add(new IdentifiedSkillDetail {
+                CanonicalName = s.SkillName, OriginalName = s.OriginalName,
+                Tier = "T1", TierLabel = "Direct Match", Importance = s.Importance });
+
+        foreach (var name in baselineMatch.ImplicitlyDiscoveredSkills)
+            identifiedSkills.Add(new IdentifiedSkillDetail {
+                CanonicalName = name, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
+
+        foreach (var s in baselineMatch.PrerequisiteMetSkills)
+            identifiedSkills.Add(new IdentifiedSkillDetail {
+                CanonicalName = s.SkillName, OriginalName = s.OriginalName,
+                Tier = "T3", TierLabel = "Prerequisite Met", BridgePath = s.BridgePath, Importance = s.Importance });
+
+        foreach (var s in baselineMatch.BridgeableSkills)
+            identifiedSkills.Add(new IdentifiedSkillDetail {
+                CanonicalName = s.SkillName, OriginalName = s.OriginalName,
+                Tier = "T4", TierLabel = "Bridgeable (IS_SIMILAR_TO)", BridgePath = s.BridgePath, Importance = s.Importance });
+
+        foreach (var s in baselineMatch.HardGaps)
+            identifiedSkills.Add(new IdentifiedSkillDetail {
+                CanonicalName = s.SkillName, OriginalName = s.OriginalName,
+                Tier = "T5", TierLabel = "Hard Gap", Importance = s.Importance });
+
         return Ok(new
         {
-            resumeId        = request.ResumeId,
-            jobId           = request.JobId,
+            resumeId         = request.ResumeId,
+            jobId            = request.JobId,
             jobTitle,
-            chatGptModel    = _chatGptModel,
-            original        = condA,
-            arisGraphRag    = condB,
-            chatGptBaseline = condC,
+            chatGptModel     = _chatGptModel,
+            identifiedSkills,
+            original         = condA,
+            arisGraphRag     = condB,
+            chatGptBaseline  = condC,
         });
     }
 
@@ -403,17 +452,30 @@ public class EvalController : ControllerBase
 
     //Shared helpers 
 
-    private static (List<string> Matched, List<string> Missing) ComputeKeywordMatch(
-        string text, List<string> jobSkills)
+    private static (List<SkillMatchDetail> Matched, List<SkillMatchDetail> Missing) ComputeKeywordMatch(
+        string text, List<JobSkill> jobSkills)
     {
-        var matched = new List<string>();
-        var missing = new List<string>();
+        var matched = new List<SkillMatchDetail>();
+        var missing = new List<SkillMatchDetail>();
         foreach (var skill in jobSkills)
         {
-            if (text.Contains(skill, StringComparison.OrdinalIgnoreCase))
-                matched.Add(skill);
+            var canonicalHit = text.Contains(skill.Name, StringComparison.OrdinalIgnoreCase);
+            var originalHit  = !string.IsNullOrWhiteSpace(skill.OriginalName)
+                               && text.Contains(skill.OriginalName, StringComparison.OrdinalIgnoreCase);
+            if (canonicalHit || originalHit)
+                matched.Add(new SkillMatchDetail
+                {
+                    CanonicalName = skill.Name,
+                    OriginalName  = skill.OriginalName,
+                    MatchedOn     = canonicalHit ? skill.Name : skill.OriginalName,
+                });
             else
-                missing.Add(skill);
+                missing.Add(new SkillMatchDetail
+                {
+                    CanonicalName = skill.Name,
+                    OriginalName  = skill.OriginalName,
+                    MatchedOn     = null,
+                });
         }
         return (matched, missing);
     }
