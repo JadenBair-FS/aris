@@ -388,29 +388,17 @@ namespace ARIS.API.Services
 
                         if (secondPassMatch != null && secondPassMatch.Distance < _secondPassThreshold)
                         {
-                            var origNorm = originalSkill.Name.ToLowerInvariant().Replace(" ", "").Replace("-", "").Replace(".", "");
-                            var canonNorm = secondPassMatch.Name.ToLowerInvariant().Replace(" ", "").Replace("-", "").Replace(".", "");
-                            bool substringRelated = origNorm.Contains(canonNorm) || canonNorm.Contains(origNorm);
-
-                            if (substringRelated)
+                            _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
+                                originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
+                            groundedSkills.Add(new JobSkill
                             {
-                                _logger.LogInformation("Skill '{Skill}' grounded via pass 2: '{Canonical}' ({Distance:F3}).",
-                                    originalSkill.Name, secondPassMatch.Name, secondPassMatch.Distance);
-                                groundedSkills.Add(new JobSkill
-                                {
-                                    Name = secondPassMatch.Name,
-                                    OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
-                                    Category = originalSkill.Category,
-                                    Importance = originalSkill.Importance,
-                                    YearsOfExperience = originalSkill.YearsOfExperience
-                                });
-                                continue;
-                            }
-                            else
-                            {
-                                _logger.LogInformation("Skill '{Skill}' second-pass candidate '{Canonical}' rejected (no substring relation).",
-                                    originalSkill.Name, secondPassMatch.Name);
-                            }
+                                Name = secondPassMatch.Name,
+                                OriginalName = string.Equals(originalSkill.Name, secondPassMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
+                                Category = originalSkill.Category,
+                                Importance = originalSkill.Importance,
+                                YearsOfExperience = originalSkill.YearsOfExperience
+                            });
+                            continue;
                         }
                     }
 

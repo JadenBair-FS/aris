@@ -13,5 +13,6 @@ RULES — follow these exactly:
 5. If the match is weak (<40%): be direct that there are significant gaps, name the most critical missing areas, and suggest what the candidate would need to address to be competitive.
 6. Do not mention tier labels, ArisScore, percentages, or any internal system details.
 7. Do not use first-person (I, my, we). Use direct statements: "Your background...", "This role requires...", "To improve...".
+8. Plain text only. No markdown, no asterisks, no bold, no bullet symbols, no headers.
 
 Write your 2-3 sentence explanation now:
