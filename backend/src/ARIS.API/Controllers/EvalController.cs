@@ -6,7 +6,6 @@ using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 
 namespace ARIS.API.Controllers;
 
@@ -46,7 +45,7 @@ public class EvalController : ControllerBase
         _chatGptModel    = configuration["OpenAI:ChatGptBaselineModel"] ?? "gpt-4o-mini";
     }
 
-    // ── Tailor Delta (single ARIS pipeline, supplemental) ───────────────────────
+    // Tailor Delta (single ARIS pipeline, supplemental)
 
     public class TailorDeltaRequest
     {
@@ -125,7 +124,7 @@ public class EvalController : ControllerBase
         });
     }
 
-    // ── Three-Way Compare (Original vs ARIS GraphRAG vs ChatGPT) ────────────────
+    // Three-Way Compare (Original vs ARIS GraphRAG vs ChatGPT)
 
     public class ThreeWayCompareRequest
     {
@@ -221,12 +220,29 @@ public class EvalController : ControllerBase
                 tailoredData.PersonalInfo, tailoredData.CleanSignal,
                 tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
 
-            var bulletsText = string.Join("\n", tailoredData.TailoredBullets
-                .Select(b => b.RewrittenBullet)
-                .Where(b => !string.IsNullOrWhiteSpace(b)));
+            // Group bullets by experience entry (Role + Company) to produce structured full text.
+            // Format mirrors what ChatGptTailoring.md asks GPT to return:
+            //   {summary}
+            //   {Role} at {Company}
+            //   {bullet}
+            //   {bullet}
+            var entrySections = tailoredData.TailoredBullets
+                .Where(b => !string.IsNullOrWhiteSpace(b.RewrittenBullet))
+                .GroupBy(b => (b.Role, b.Company))
+                .Select(g =>
+                {
+                    var header = (string.IsNullOrWhiteSpace(g.Key.Role) && string.IsNullOrWhiteSpace(g.Key.Company))
+                        ? ""
+                        : string.IsNullOrWhiteSpace(g.Key.Company)
+                            ? g.Key.Role
+                            : $"{g.Key.Role} at {g.Key.Company}";
+                    var bullets = string.Join("\n", g.Select(b => b.RewrittenBullet));
+                    return string.IsNullOrWhiteSpace(header) ? bullets : $"{header}\n{bullets}";
+                });
+            var bulletsText = string.Join("\n\n", entrySections);
             var arisFullText = string.IsNullOrWhiteSpace(tailoredData.ProfessionalSummary)
                 ? bulletsText
-                : $"{tailoredData.ProfessionalSummary}\n{bulletsText}";
+                : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
             var originalMappings = BuildOriginalMappings(tailoredData.CleanSignal, job.CleanSignal);
             var canonicalSkills = await _matchService.ExtractCanonicalSkillsFromTailoredTextAsync(
@@ -310,52 +326,62 @@ public class EvalController : ControllerBase
         if (_openAiClient == null)
             return ("ChatGPT baseline unavailable: OPENAI_API_KEY is not configured.", "");
 
-        var prompt = $$"""
-            You are helping a job seeker improve their resume for a specific job.
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");
+        string promptTemplate;
+        try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
+        catch { promptTemplate = "Rewrite the following resume to better match the job description. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}"; }
 
-            Resume:
-            {{rawResume}}
-
-            Job Description:
-            {{rawJob}}
-
-            Please rewrite the resume to better highlight this candidate's fit for this role:
-            1. For each work experience entry, rewrite the bullet points to emphasize relevant skills and achievements.
-            2. Write a new 3-5 sentence professional summary at the top.
-
-            Only use information present in the original resume — do not add skills or experiences the candidate has not demonstrated.
-
-            Return your response in this JSON format:
-            {
-              "summary": "...",
-              "experience": [
-                { "company": "...", "title": "...", "bullets": ["...", "..."] }
-              ]
-            }
-            """;
+        var prompt = promptTemplate
+            .Replace("{rawResumeText}", rawResume)
+            .Replace("{rawJobText}", rawJob);
 
         try
         {
             var response = await _openAiClient.GetResponseAsync(prompt);
-            var text = response?.Text?.Trim() ?? "";
-            var json = Regex.Replace(text, @"```(?:json)?", "").Trim();
-            var startIdx = json.IndexOf('{');
-            var endIdx   = json.LastIndexOf('}');
-            if (startIdx >= 0 && endIdx > startIdx)
-                json = json[startIdx..(endIdx + 1)];
+            var fullText = response?.Text?.Trim() ?? "";
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var parsed  = JsonSerializer.Deserialize<GptResumeResponse>(json, options);
-            if (parsed != null)
+            if (string.IsNullOrWhiteSpace(fullText))
+                return ("", "");
+
+            // Extract summary: find the paragraph that follows the "SUMMARY" header.
+            // The prompt asks for: "SUMMARY\n{summary text}\n\n{Role} at {Company}\n..."
+            var summaryText = "";
+            var lines = fullText.Split('\n');
+            var summaryStart = -1;
+            for (int i = 0; i < lines.Length; i++)
             {
-                var bulletsText = string.Join("\n",
-                    (parsed.Experience ?? [])
-                        .SelectMany(e => e.Bullets ?? [])
-                        .Where(b => !string.IsNullOrWhiteSpace(b)));
-                var summary  = parsed.Summary?.Trim() ?? "";
-                var fullText = string.IsNullOrWhiteSpace(summary) ? bulletsText : $"{summary}\n{bulletsText}";
-                return (fullText.Trim(), summary);
+                if (lines[i].Trim().Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
+                {
+                    summaryStart = i + 1;
+                    break;
+                }
             }
+            if (summaryStart >= 0)
+            {
+                var summaryLines = new List<string>();
+                for (int i = summaryStart; i < lines.Length; i++)
+                {
+                    if (string.IsNullOrWhiteSpace(lines[i])) break;
+                    summaryLines.Add(lines[i].Trim());
+                }
+                summaryText = string.Join(" ", summaryLines).Trim();
+            }
+            else
+            {
+                // Fallback: if no SUMMARY header, treat first non-empty paragraph as summary.
+                var paraLines = new List<string>();
+                bool started = false;
+                foreach (var line in lines)
+                {
+                    if (!started && string.IsNullOrWhiteSpace(line)) continue;
+                    started = true;
+                    if (string.IsNullOrWhiteSpace(line)) break;
+                    paraLines.Add(line.Trim());
+                }
+                summaryText = string.Join(" ", paraLines).Trim();
+            }
+
+            return (fullText, summaryText);
         }
         catch (Exception ex)
         {
@@ -364,11 +390,7 @@ public class EvalController : ControllerBase
         return ("", "");
     }
 
-    private record GptResumeResponse(string? Summary, List<GptExperienceEntry>? Experience);
-    private record GptExperienceEntry(string? Company, string? Title, List<string>? Bullets);
-
-    // ── Debug endpoints ──────────────────────────────────────────────────────────
-
+    //Debug endpoints 
     [HttpGet("debug/graph/{skillName}")]
     public async Task<IActionResult> DebugGraphSkill(string skillName)
     {
@@ -376,7 +398,7 @@ public class EvalController : ControllerBase
         return Ok(new { skill = skillName, neighborhood });
     }
 
-    // ── Shared helpers ───────────────────────────────────────────────────────────
+    //Shared helpers 
 
     private static (List<string> Matched, List<string> Missing) ComputeKeywordMatch(
         string text, List<string> jobSkills)
