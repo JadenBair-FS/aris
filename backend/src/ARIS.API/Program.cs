@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql;
+using OpenAI;
 using Scalar.AspNetCore;
 using OllamaSharp;
 using ElBruno.OllamaSharp.Extensions;
@@ -114,9 +115,17 @@ builder.Services.AddScoped<ARIS.API.Services.MatchService>(sp =>
         sp.GetRequiredService<ILogger<ARIS.API.Services.MatchService>>()));
 builder.Services.AddSingleton<ARIS.API.Services.GraphService>();
 builder.Services.AddScoped<ARIS.API.Services.GroundingService>();
-builder.Services.AddScoped<ARIS.API.Services.ExtractionBenchmarkService>();
 builder.Services.AddScoped<ARIS.API.Services.PersonalInfoExtractor>();
 builder.Services.AddScoped<ARIS.API.Services.ResumePdfService>();
+
+// OpenAI — ChatGPT baseline for three-way eval
+var openAiKey       = builder.Configuration["OpenAI:ApiKey"]
+    ?? Environment.GetEnvironmentVariable("OPENAI_API_KEY")
+    ?? "";
+var chatGptModel    = builder.Configuration["OpenAI:ChatGptBaselineModel"] ?? "gpt-4o-mini";
+Log.Information("OpenAI model: {Model} | Key configured: {HasKey}", chatGptModel, !string.IsNullOrEmpty(openAiKey));
+builder.Services.AddKeyedSingleton<IChatClient>("openai", (sp, key) =>
+    new OpenAIClient(openAiKey).GetChatClient(chatGptModel).AsIChatClient());
 
 // Auth — Clerk JWT Bearer
 var clerkAuthority = builder.Configuration["Clerk:Authority"]

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { prepareResume, prepareJob, generateComparison, tailorResume, getMatchPreview } from '@/api/study';
+import { prepareResume, prepareJob, generateComparison, getMatchPreview } from '@/api/study';
 import type { StudyCompareResponse, StudyMatchPreviewResponse, StudyMatchPreviewItem } from '@/api/study';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -47,8 +47,6 @@ function Spinner({ label }: { label: string }) {
         </div>
     );
 }
-
-//Match Preview helpers
 
 function ArisScoreBadge({ score }: { score: number }) {
     const isGood = score >= 0.65;
@@ -106,7 +104,6 @@ function MatchCard({ item }: { item: StudyMatchPreviewItem }) {
     return (
         <Card className="border-slate-200">
             <CardContent className="pt-4 space-y-3">
-                {/* Title row */}
                 <div className="flex items-start justify-between gap-3">
                     <div>
                         <p className="font-semibold text-slate-900 text-sm leading-tight">{item.jobTitle}</p>
@@ -117,10 +114,8 @@ function MatchCard({ item }: { item: StudyMatchPreviewItem }) {
                     <ArisScoreBadge score={item.arisScore} />
                 </div>
 
-                {/* Tier bar */}
                 <TierBar item={item} />
 
-                {/* Matching skills */}
                 {item.topMatchingSkills.length > 0 && (
                     <div className="space-y-1">
                         <p className="text-xs text-slate-500 font-medium">Matching skills:</p>
@@ -132,7 +127,6 @@ function MatchCard({ item }: { item: StudyMatchPreviewItem }) {
                     </div>
                 )}
 
-                {/* Gap skills */}
                 {item.topMissingSkills.length > 0 && (
                     <div className="space-y-1">
                         <p className="text-xs text-slate-500 font-medium">Gaps:</p>
@@ -202,11 +196,6 @@ export default function StudyPage() {
     const [generateLoading, setGenerateLoading] = useState(false);
     const [generateError, setGenerateError] = useState<string | null>(null);
 
-    // Tailor state
-    const [tailoredText, setTailoredText] = useState<string | null>(null);
-    const [tailorLoading, setTailorLoading] = useState(false);
-    const [tailorError, setTailorError] = useState<string | null>(null);
-
     // Match preview state
     const [previewResult, setPreviewResult] = useState<StudyMatchPreviewResponse | null>(null);
     const [previewLoading, setPreviewLoading] = useState(false);
@@ -245,32 +234,16 @@ export default function StudyPage() {
         setGenerateLoading(true);
         setGenerateError(null);
         setResult(null);
-        setTailoredText(null);
         try {
             const data = await generateComparison(resumeKey, jobKey, resumeText, jobText);
             setResult(data);
         } catch (err) {
             const msg = err instanceof Error ? err.message : 'Failed to generate responses.';
             setGenerateError(msg);
-            // If session expired, send user back to the right step
             if (msg.toLowerCase().includes('step 1')) setStep(1);
             else if (msg.toLowerCase().includes('step 2')) setStep(2);
         } finally {
             setGenerateLoading(false);
-        }
-    };
-
-    const handleTailor = async () => {
-        setTailorLoading(true);
-        setTailorError(null);
-        setTailoredText(null);
-        try {
-            const data = await tailorResume(resumeText, jobText, resumeKey ?? undefined, jobKey ?? undefined);
-            setTailoredText(data.tailoredText);
-        } catch (err) {
-            setTailorError(err instanceof Error ? err.message : 'Failed to generate tailored resume.');
-        } finally {
-            setTailorLoading(false);
         }
     };
 
@@ -292,7 +265,6 @@ export default function StudyPage() {
         setResumeText(''); setResumeKey(null); setResumeError(null);
         setJobText(''); setJobKey(null); setJobError(null);
         setResult(null); setGenerateError(null);
-        setTailoredText(null); setTailorError(null);
         setPreviewResult(null); setPreviewLoading(false); setPreviewError(null);
     };
 
@@ -300,7 +272,6 @@ export default function StudyPage() {
         <div className="min-h-screen bg-slate-50">
             <div className="max-w-3xl mx-auto px-4 py-10 space-y-8">
 
-                {/* Header */}
                 <div className="text-center space-y-2">
                     <h1 className="text-3xl font-bold text-slate-900 tracking-tight">ARIS User Study</h1>
                     <p className="text-slate-500 max-w-xl mx-auto text-sm">
@@ -310,7 +281,6 @@ export default function StudyPage() {
 
                 <StepIndicator current={step} />
 
-                {/* ── Step 1: Resume ── */}
                 {step === 1 && (
                     <Card>
                         <CardHeader className="pb-2">
@@ -348,7 +318,6 @@ export default function StudyPage() {
                     </Card>
                 )}
 
-                {/* ── Step 2: Job Description ── */}
                 {step === 2 && (
                     <Card>
                         <CardHeader className="pb-2">
@@ -392,15 +361,14 @@ export default function StudyPage() {
                     </Card>
                 )}
 
-                {/* ── Step 3: Compare ── */}
                 {step === 3 && (
                     <div className="space-y-4">
                         {!result && !generateLoading && (
                             <Card>
                                 <CardHeader className="pb-2">
-                                    <CardTitle className="text-base font-semibold text-slate-800">Step 3 — Compare AI Systems</CardTitle>
+                                    <CardTitle className="text-base font-semibold text-slate-800">Step 3 — Generate Tailored Resumes</CardTitle>
                                     <p className="text-sm text-slate-500 mt-1">
-                                        Your resume and job description have been processed. Click below to generate two AI responses side by side.
+                                        Your resume and job description have been processed. Click below to generate two tailored versions of your resume side by side.
                                         Read both carefully before returning to SurveyMonkey.
                                     </p>
                                 </CardHeader>
@@ -419,7 +387,7 @@ export default function StudyPage() {
                                             onClick={handleGenerate}
                                             className="bg-slate-900 hover:bg-slate-800 text-white px-8"
                                         >
-                                            Generate Responses
+                                            Generate Tailored Resumes
                                         </Button>
                                     </div>
                                 </CardContent>
@@ -427,19 +395,18 @@ export default function StudyPage() {
                         )}
 
                         {generateLoading && (
-                            <Spinner label="Generating AI responses... this may take 30–40 seconds" />
+                            <Spinner label="Tailoring your resume... this may take 30–60 seconds" />
                         )}
 
                         {result && !generateLoading && (
                             <>
-                                {/* Side-by-side results */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
                                     <Card className="flex flex-col border-slate-200">
                                         <CardHeader className="pb-2">
-                                            <CardTitle className="text-sm font-semibold text-slate-800">System 1</CardTitle>
+                                            <CardTitle className="text-sm font-semibold text-slate-800">System A — Tailored Resume</CardTitle>
                                         </CardHeader>
                                         <CardContent className="flex-1">
-                                            <div className="max-h-96 overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
+                                            <div className="max-h-[520px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed font-mono">
                                                 {result.ragResponse}
                                             </div>
                                         </CardContent>
@@ -447,52 +414,16 @@ export default function StudyPage() {
 
                                     <Card className="flex flex-col border-slate-200">
                                         <CardHeader className="pb-2">
-                                            <CardTitle className="text-sm font-semibold text-slate-800">System 2</CardTitle>
+                                            <CardTitle className="text-sm font-semibold text-slate-800">System B — Tailored Resume</CardTitle>
                                         </CardHeader>
                                         <CardContent className="flex-1">
-                                            <div className="max-h-96 overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
+                                            <div className="max-h-[520px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed font-mono">
                                                 {result.graphRagResponse}
                                             </div>
                                         </CardContent>
                                     </Card>
                                 </div>
 
-                                {/* Tailor Resume section */}
-                                <div className="pt-2 border-t border-slate-200 space-y-3">
-                                    <div className="flex flex-col items-center gap-2 text-center">
-                                        <p className="text-sm text-slate-500 max-w-md">
-                                            Optionally, generate a tailored version of your resume for this role.
-                                            Note your impressions — you will be asked about this in the survey.
-                                        </p>
-                                        <Button
-                                            onClick={handleTailor}
-                                            disabled={tailorLoading}
-                                            variant="outline"
-                                            className="px-8 text-sm"
-                                        >
-                                            {tailorLoading ? 'Tailoring resume... this may take 30–40 seconds' : 'Tailor Resume'}
-                                        </Button>
-                                    </div>
-
-                                    {tailorError && (
-                                        <p className="text-sm text-red-600 text-center">{tailorError}</p>
-                                    )}
-
-                                    {tailoredText && (
-                                        <Card className="border-slate-200 bg-slate-50">
-                                            <CardHeader className="pb-2">
-                                                <CardTitle className="text-sm font-semibold text-slate-700">Tailored Resume</CardTitle>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <div className="max-h-[480px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed font-mono">
-                                                    {tailoredText}
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    )}
-                                </div>
-
-                                {/* Match Preview section */}
                                 <div className="pt-2 border-t border-slate-200 space-y-3">
                                     {!previewResult && !previewLoading && (
                                         <div className="flex flex-col items-center gap-2 text-center">
@@ -524,7 +455,6 @@ export default function StudyPage() {
                                     )}
                                 </div>
 
-                                {/* Reset */}
                                 <div className="flex justify-center pt-2">
                                     <Button variant="outline" onClick={handleReset} className="px-8 text-sm">
                                         Start Over

@@ -10,10 +10,6 @@ export interface StudyCompareResponse {
   };
 }
 
-export interface StudyTailorResponse {
-  tailoredText: string;
-}
-
 export async function prepareResume(text: string): Promise<{ sessionKey: string }> {
   const res = await fetch('/api/study/prepare-resume', {
     method: 'POST',
@@ -58,21 +54,6 @@ export async function generateComparison(
   return res.json();
 }
 
-export async function tailorResume(
-  resumeText: string,
-  jobDescriptionText: string,
-  resumeKey?: string,
-  jobKey?: string
-): Promise<StudyTailorResponse> {
-  const res = await fetch('/api/study/tailor', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ resumeText, jobDescriptionText, resumeKey, jobKey }),
-  });
-  if (!res.ok) throw new Error('Failed to generate tailored resume');
-  return res.json();
-}
-
 export interface StudyMatchPreviewItem {
   jobTitle: string;
   companyName?: string;
@@ -102,19 +83,5 @@ export async function getMatchPreview(
     body: JSON.stringify({ resumeKey, resumeText }),
   });
   if (!res.ok) throw new Error('Failed to generate match preview.');
-  return res.json();
-}
-
-// Legacy single-call compare (kept for compatibility)
-export async function compareResponses(
-  resumeText: string,
-  jobDescriptionText: string
-): Promise<StudyCompareResponse> {
-  const res = await fetch('/api/study/compare', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ resumeText, jobDescriptionText }),
-  });
-  if (!res.ok) throw new Error('Failed to generate responses');
   return res.json();
 }

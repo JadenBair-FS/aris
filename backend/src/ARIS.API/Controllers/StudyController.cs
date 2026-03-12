@@ -24,6 +24,7 @@ public class StudyController : ControllerBase
     private readonly ArisDbContext _context;
     private readonly IEmbeddingGenerator<string, Embedding<float>> _embeddingGenerator;
     private readonly IChatClient _chatClient;
+    private readonly IChatClient _openAiClient;
     private readonly IMemoryCache _cache;
     private readonly ILogger<StudyController> _logger;
 
@@ -38,7 +39,8 @@ public class StudyController : ControllerBase
         IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator,
         IChatClient chatClient,
         IMemoryCache cache,
-        ILogger<StudyController> logger)
+        ILogger<StudyController> logger,
+        [FromKeyedServices("openai")] IChatClient openAiClient)
     {
         _matchService = matchService;
         _jobService = jobService;
@@ -49,11 +51,8 @@ public class StudyController : ControllerBase
         _chatClient = chatClient;
         _cache = cache;
         _logger = logger;
+        _openAiClient = openAiClient;
     }
-
-    // -------------------------------------------------------------------------
-    // Step 1: extract + cache resume signal
-    // -------------------------------------------------------------------------
 
     /// <summary>
     /// Extracts a Clean Signal from raw resume text and caches the result for 15 minutes.
@@ -82,10 +81,6 @@ public class StudyController : ControllerBase
         return Ok(new PrepareSessionResponse { SessionKey = key });
     }
 
-    // -------------------------------------------------------------------------
-    // Step 2: extract + cache job signal
-    // -------------------------------------------------------------------------
-
     /// <summary>
     /// Extracts and grounds a Clean Signal from raw job description text and caches the result
     /// for 15 minutes. Returns a session key to be passed to subsequent wizard steps.
@@ -112,10 +107,6 @@ public class StudyController : ControllerBase
         _logger.LogInformation("StudyController.PrepareJob: cached session key {Key}.", key);
         return Ok(new PrepareSessionResponse { SessionKey = key });
     }
-
-    // -------------------------------------------------------------------------
-    // Step 3: tier analysis + two parallel LLM calls using cached signals
-    // -------------------------------------------------------------------------
 
     /// <summary>
     /// Uses cached resume and job signals to run tier analysis and generate side-by-side
@@ -147,30 +138,26 @@ public class StudyController : ControllerBase
             return BadRequest(new { error = "Job session expired. Please restart from step 2." });
         }
 
-        _logger.LogInformation("StudyController.GenerateComparison: running tier analysis + parallel LLM calls.");
+        _logger.LogInformation("StudyController.GenerateComparison: running ChatGPT + ARIS tailoring in parallel.");
 
-        var ragTask = GenerateRagResponseAsync(request.ResumeText, request.JobDescriptionText);
-        var graphRagTask = GenerateGraphRagResponseFromSignalsAsync(
+        var chatGptTask = GenerateChatGptTailoredResumeAsync(request.ResumeText, request.JobDescriptionText);
+        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
             resumeEntry.Signal, resumeEntry.Embedding,
             jobEntry.Signal, jobEntry.Embedding,
             request.ResumeText, request.JobDescriptionText);
 
-        await Task.WhenAll(ragTask, graphRagTask);
+        await Task.WhenAll(chatGptTask, arisTask);
 
-        var (ragResponse, _) = ragTask.Result;
-        var (graphRagResponse, tierSummary) = graphRagTask.Result;
+        var (arisResume, tierSummary) = arisTask.Result;
 
         return Ok(new StudyCompareResponse
         {
-            RagResponse      = ragResponse,
-            GraphRagResponse = graphRagResponse,
+            RagResponse      = chatGptTask.Result,
+            GraphRagResponse = arisResume,
             TierSummary      = tierSummary
         });
     }
 
-    // -------------------------------------------------------------------------
-    // Original compare endpoint (unchanged for backwards compatibility)
-    // -------------------------------------------------------------------------
 
     /// <summary>
     /// Generates two side-by-side LLM analyses for a user study:
@@ -185,29 +172,23 @@ public class StudyController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.JobDescriptionText))
             return BadRequest("JobDescriptionText is required.");
 
-        _logger.LogInformation("StudyController.Compare: starting parallel RAG + GraphRAG pipeline.");
+        _logger.LogInformation("StudyController.Compare: starting parallel ChatGPT + ARIS tailoring.");
 
-        // Run both paths concurrently. Each path is wrapped in try/catch so a failure in one
-        // does not block the other from completing.
-        var ragTask = GenerateRagResponseAsync(request.ResumeText, request.JobDescriptionText);
-        var graphRagTask = GenerateGraphRagResponseAsync(request.ResumeText, request.JobDescriptionText);
+        var chatGptTask = GenerateChatGptTailoredResumeAsync(request.ResumeText, request.JobDescriptionText);
+        var arisTask    = GenerateArisTailoredResumeAsync(request.ResumeText, request.JobDescriptionText);
 
-        await Task.WhenAll(ragTask, graphRagTask);
+        await Task.WhenAll(chatGptTask, arisTask);
 
-        var (ragResponse, _) = ragTask.Result;
-        var (graphRagResponse, tierSummary) = graphRagTask.Result;
+        var (arisResume, tierSummary) = arisTask.Result;
 
         return Ok(new StudyCompareResponse
         {
-            RagResponse      = ragResponse,
-            GraphRagResponse = graphRagResponse,
+            RagResponse      = chatGptTask.Result,
+            GraphRagResponse = arisResume,
             TierSummary      = tierSummary
         });
     }
 
-    // -------------------------------------------------------------------------
-    // Tailor endpoint — optionally uses cached signals when keys are supplied
-    // -------------------------------------------------------------------------
 
     /// <summary>
     /// Produces a tailored resume (summary + experience bullets) using the ARIS knowledge graph.
@@ -229,34 +210,24 @@ public class StudyController : ControllerBase
         JobPostingCleanSignal? jobSignal;
         Pgvector.Vector? jobEmbedding;
 
-        // Use cached signals if both keys are provided and still live
+        (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume = default;
+        (JobPostingCleanSignal Signal, Pgvector.Vector Embedding) cachedJob = default;
+
         bool resumeFromCache = !string.IsNullOrWhiteSpace(request.ResumeKey)
-            && _cache.TryGetValue(
-                $"study:resume:{request.ResumeKey}",
-                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume);
+            && _cache.TryGetValue($"study:resume:{request.ResumeKey}", out cachedResume);
 
         bool jobFromCache = !string.IsNullOrWhiteSpace(request.JobKey)
-            && _cache.TryGetValue(
-                $"study:job:{request.JobKey}",
-                out (JobPostingCleanSignal Signal, Pgvector.Vector Embedding) cachedJob);
+            && _cache.TryGetValue($"study:job:{request.JobKey}", out cachedJob);
 
         if (resumeFromCache && jobFromCache)
         {
             _logger.LogInformation("StudyController.Tailor: using cached signals (resumeKey={R}, jobKey={J}).",
                 request.ResumeKey, request.JobKey);
 
-            // Re-fetch from cache into named variables (the out-vars above are scoped to the if conditions)
-            _cache.TryGetValue(
-                $"study:resume:{request.ResumeKey}",
-                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) resumeTuple);
-            _cache.TryGetValue(
-                $"study:job:{request.JobKey}",
-                out (JobPostingCleanSignal Signal, Pgvector.Vector Embedding) jobTuple);
-
-            resumeSignal     = resumeTuple.Signal;
-            resumeEmbedding  = resumeTuple.Embedding;
-            jobSignal        = jobTuple.Signal;
-            jobEmbedding     = jobTuple.Embedding;
+            resumeSignal     = cachedResume.Signal;
+            resumeEmbedding  = cachedResume.Embedding;
+            jobSignal        = cachedJob.Signal;
+            jobEmbedding     = cachedJob.Embedding;
         }
         else
         {
@@ -314,19 +285,15 @@ public class StudyController : ControllerBase
         ResumeCleanSignal? resumeSignal;
         Pgvector.Vector? resumeEmbedding;
 
-        // Resolve resume signal — prefer cached, fall back to live extraction
+        (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume = default;
+
         bool fromCache = !string.IsNullOrWhiteSpace(request.ResumeKey)
-            && _cache.TryGetValue(
-                $"study:resume:{request.ResumeKey}",
-                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume);
+            && _cache.TryGetValue($"study:resume:{request.ResumeKey}", out cachedResume);
 
         if (fromCache)
         {
-            _cache.TryGetValue(
-                $"study:resume:{request.ResumeKey}",
-                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) resumeTuple);
-            resumeSignal    = resumeTuple.Signal;
-            resumeEmbedding = resumeTuple.Embedding;
+            resumeSignal    = cachedResume.Signal;
+            resumeEmbedding = cachedResume.Embedding;
             _logger.LogInformation("StudyController.MatchPreview: using cached resume signal (key={Key}).", request.ResumeKey);
         }
         else if (!string.IsNullOrWhiteSpace(request.ResumeText))
@@ -342,7 +309,6 @@ public class StudyController : ControllerBase
         if (resumeSignal == null || resumeEmbedding == null)
             return StatusCode(500, "Resume signal extraction failed. Please check your input and try again.");
 
-        // Fetch top-10 job postings by cosine distance to the resume embedding
         var candidates = await _context.JobPostings
             .Where(j => j.Embedding != null && j.CleanSignal != null)
             .Select(j => new
@@ -367,7 +333,6 @@ public class StudyController : ControllerBase
             });
         }
 
-        // Run full ARIS tier analysis for each candidate in parallel
         var analysisTask = candidates.Select(async c =>
         {
             try
@@ -383,7 +348,7 @@ public class StudyController : ControllerBase
                 return new StudyMatchPreviewItem
                 {
                     JobTitle            = jobTitle,
-                    CompanyName         = null, // not stored on JobPosting entity
+                    CompanyName         = null,
                     ArisScore           = Math.Round(matchResult.ArisScore, 4),
                     VectorSimilarity    = Math.Round(matchResult.VectorSimilarity, 4),
                     T1Count             = matchResult.MatchingSkills.Count,
@@ -421,124 +386,88 @@ public class StudyController : ControllerBase
 
 
 
-    // RAG path: embed resume text, find top-20 skills from ref_skills, call Mistral.
-    private async Task<(string Response, object Unused)> GenerateRagResponseAsync(
-        string resumeText, string jobDescriptionText)
+    private async Task<string> GenerateChatGptTailoredResumeAsync(string resumeText, string jobText)
     {
         try
         {
-            // Embed the combined resume text to query the reference skill dictionary
-            var combinedText = resumeText.Length > 2000 ? resumeText[..2000] : resumeText;
-            var embeddings = await _embeddingGenerator.GenerateAsync([combinedText]);
-            var queryVector = new Pgvector.Vector(embeddings[0].Vector);
+            var templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");
+            var template = await System.IO.File.ReadAllTextAsync(templatePath);
 
-            // Top-20 skills from ref_skills by cosine similarity
-            var top20Skills = await _context.Skills
-                .Where(s => s.Embedding != null)
-                .Select(s => new { s.Name, Distance = s.Embedding!.CosineDistance(queryVector) })
-                .OrderBy(x => x.Distance)
-                .Take(20)
-                .ToListAsync();
+            var prompt = template
+                .Replace("{rawResumeText}", resumeText)
+                .Replace("{rawJobText}", jobText);
 
-            var skillsList = string.Join(", ", top20Skills.Select(s => s.Name));
-
-            var prompt = new StringBuilder();
-            prompt.AppendLine($"Given this resume:\n{resumeText}");
-            prompt.AppendLine();
-            prompt.AppendLine($"And this job description:\n{jobDescriptionText}");
-            prompt.AppendLine();
-            prompt.AppendLine($"Top skills from our database that seem relevant: {skillsList}");
-            prompt.AppendLine();
-            prompt.AppendLine("Provide a brief analysis of how well this candidate fits the role and what gaps they may have.");
-
-            var response = await _chatClient.GetResponseAsync(prompt.ToString());
-            var text = response.Text?.Trim() ?? "Analysis could not be generated.";
-            _logger.LogInformation("StudyController: RAG response generated ({Length} chars).", text.Length);
-            return (text, new object());
+            var response = await _openAiClient.GetResponseAsync(prompt);
+            var text = response.Text?.Trim() ?? "";
+            _logger.LogInformation("StudyController: ChatGPT tailored resume generated ({Length} chars).", text.Length);
+            return string.IsNullOrWhiteSpace(text) ? "Tailored resume could not be generated." : text;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "StudyController: RAG path failed.");
-            return ("Standard AI analysis is temporarily unavailable.", new object());
+            _logger.LogError(ex, "StudyController: ChatGPT tailoring failed.");
+            return "System A tailoring is temporarily unavailable.";
         }
     }
 
-    // GraphRAG path (signal extraction variant): extract + ground both signals, run tier analysis, call Mistral.
-    private async Task<(string Response, StudyTierSummary TierSummary)> GenerateGraphRagResponseAsync(
+    private async Task<(string Response, StudyTierSummary TierSummary)> GenerateArisTailoredResumeAsync(
         string resumeText, string jobDescriptionText)
     {
         var emptySummary = new StudyTierSummary();
-
         try
         {
-            // Extract and ground both signals in parallel — neither writes to the DB
             var resumeTask = _resumeService.QuickExtractResumeSignalAsync(resumeText);
             var jobTask    = _jobService.QuickExtractAndGroundAsync(jobDescriptionText);
-
             await Task.WhenAll(resumeTask, jobTask);
 
             var (resumeSignal, resumeEmbedding) = resumeTask.Result;
             var (jobSignal, jobEmbedding)        = jobTask.Result;
 
             if (resumeSignal == null || resumeEmbedding == null)
-            {
-                _logger.LogWarning("StudyController: Resume signal extraction failed for GraphRAG path.");
-                return ("GraphRAG analysis is temporarily unavailable — resume signal could not be extracted.", emptySummary);
-            }
-
+                return ("ARIS tailoring is temporarily unavailable — resume signal could not be extracted.", emptySummary);
             if (jobSignal == null || jobEmbedding == null)
-            {
-                _logger.LogWarning("StudyController: Job signal extraction failed for GraphRAG path.");
-                return ("GraphRAG analysis is temporarily unavailable — job signal could not be extracted.", emptySummary);
-            }
+                return ("ARIS tailoring is temporarily unavailable — job signal could not be extracted.", emptySummary);
 
-            return await BuildGraphRagResponseAsync(
+            return await BuildArisTailoredResumeAsync(
                 resumeSignal, resumeEmbedding, jobSignal, jobEmbedding,
-                resumeText, jobDescriptionText, emptySummary);
+                resumeText, jobDescriptionText);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "StudyController: GraphRAG path failed.");
-            return ("GraphRAG analysis is temporarily unavailable.", emptySummary);
+            _logger.LogError(ex, "StudyController: ARIS tailoring path failed.");
+            return ("ARIS tailoring is temporarily unavailable.", emptySummary);
         }
     }
 
-    // GraphRAG path (pre-extracted signals variant): skip extraction, run tier analysis, call Mistral.
-    private async Task<(string Response, StudyTierSummary TierSummary)> GenerateGraphRagResponseFromSignalsAsync(
+    private async Task<(string Response, StudyTierSummary TierSummary)> GenerateArisTailoredResumeFromSignalsAsync(
         ResumeCleanSignal resumeSignal, Pgvector.Vector resumeEmbedding,
         JobPostingCleanSignal jobSignal, Pgvector.Vector jobEmbedding,
         string resumeText, string jobDescriptionText)
     {
-        var emptySummary = new StudyTierSummary();
-
         try
         {
-            return await BuildGraphRagResponseAsync(
+            return await BuildArisTailoredResumeAsync(
                 resumeSignal, resumeEmbedding, jobSignal, jobEmbedding,
-                resumeText, jobDescriptionText, emptySummary);
+                resumeText, jobDescriptionText);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "StudyController: GraphRAG path (pre-extracted) failed.");
-            return ("GraphRAG analysis is temporarily unavailable.", emptySummary);
+            _logger.LogError(ex, "StudyController: ARIS tailoring (pre-extracted) failed.");
+            return ("ARIS tailoring is temporarily unavailable.", new StudyTierSummary());
         }
     }
 
-    // Shared core logic: tier analysis + prompt building + LLM call.
-    private async Task<(string Response, StudyTierSummary TierSummary)> BuildGraphRagResponseAsync(
+    private async Task<(string Response, StudyTierSummary TierSummary)> BuildArisTailoredResumeAsync(
         ResumeCleanSignal resumeSignal, Pgvector.Vector resumeEmbedding,
         JobPostingCleanSignal jobSignal, Pgvector.Vector jobEmbedding,
-        string resumeText, string jobDescriptionText,
-        StudyTierSummary emptySummary)
+        string resumeText, string jobDescriptionText)
     {
-        // Run full tier classification against the knowledge graph (no DB writes)
         var matchResult = await _matchService.AnalyzeMatchFromSignalsAsync(
             resumeSignal, resumeEmbedding, jobSignal, jobEmbedding);
 
         if (matchResult == null)
         {
             _logger.LogWarning("StudyController: AnalyzeMatchFromSignalsAsync returned null.");
-            return ("GraphRAG analysis is temporarily unavailable — tier classification failed.", emptySummary);
+            return ("ARIS tailoring is temporarily unavailable — tier classification failed.", new StudyTierSummary());
         }
 
         var tierSummary = new StudyTierSummary
@@ -550,40 +479,96 @@ public class StudyController : ControllerBase
             VectorSimilarity = Math.Round(matchResult.VectorSimilarity, 4)
         };
 
-        // Build the enriched GraphRAG prompt
-        var tier1Skills = matchResult.MatchingSkills.Count > 0
-            ? string.Join(", ", matchResult.MatchingSkills.Select(s => s.SkillName))
-            : "None identified";
-        var tier2Skills = matchResult.ImplicitlyDiscoveredSkills.Count > 0
-            ? string.Join(", ", matchResult.ImplicitlyDiscoveredSkills)
-            : "None identified";
-        var tier3Skills = matchResult.PrerequisiteMetSkills.Count > 0
-            ? string.Join(", ", matchResult.PrerequisiteMetSkills.Select(s => s.SkillName))
-            : "None identified";
-        var tier4Skills = matchResult.BridgeableSkills.Count > 0
-            ? string.Join(", ", matchResult.BridgeableSkills.Select(s => s.SkillName))
-            : "None identified";
-        var hardGapSkills = matchResult.HardGaps.Count > 0
-            ? string.Join(", ", matchResult.HardGaps.Select(s => s.SkillName))
-            : "None identified";
+        var graphContextBlock = _graphService.BuildTailoringGraphContext(matchResult, resumeSignal.Skills);
 
-        var prompt = new StringBuilder();
-        prompt.AppendLine($"Given this resume:\n{resumeText}");
-        prompt.AppendLine();
-        prompt.AppendLine($"And this job description:\n{jobDescriptionText}");
-        prompt.AppendLine();
-        prompt.AppendLine("Structured skill analysis from the ARIS knowledge graph:");
-        prompt.AppendLine($"- Direct matches (Tier 1 — candidate clearly has these): {tier1Skills}");
-        prompt.AppendLine($"- Transferable skills (Tier 2 — implied by candidate background): {tier2Skills}");
-        prompt.AppendLine($"- Prerequisite skills met (Tier 3 — candidate has the foundation): {tier3Skills}");
-        prompt.AppendLine($"- Bridgeable skills (Tier 4 — reachable via knowledge-graph path): {tier4Skills}");
-        prompt.AppendLine($"- Skill gaps (Tier 5 — true gaps with no graph path): {hardGapSkills}");
-        prompt.AppendLine();
-        prompt.AppendLine("Using the above tier breakdown as context, provide a detailed analysis of how well this candidate fits the role, which transferable skills are most valuable, and what they should focus on developing.");
+        var tailoringTemplatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
+        var summaryTemplatePath   = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
+        var tailoringTemplate = await System.IO.File.ReadAllTextAsync(tailoringTemplatePath);
+        var summaryTemplate   = await System.IO.File.ReadAllTextAsync(summaryTemplatePath);
 
-        var response = await _chatClient.GetResponseAsync(prompt.ToString());
-        var text = response.Text?.Trim() ?? "Analysis could not be generated.";
-        _logger.LogInformation("StudyController: GraphRAG response generated ({Length} chars).", text.Length);
-        return (text, tierSummary);
+        var resumeSnippet = resumeText.Length > 3000 ? resumeText[..3000] : resumeText;
+        var jobSnippet    = jobDescriptionText.Length > 2000 ? jobDescriptionText[..2000] : jobDescriptionText;
+        var summaryPrompt = summaryTemplate
+            .Replace("{rawResumeSnippet}", resumeSnippet)
+            .Replace("{rawJobSnippet}", jobSnippet)
+            .Replace("{graphContext}", graphContextBlock);
+
+        string summary;
+        try
+        {
+            var summaryResponse = await _chatClient.GetResponseAsync(summaryPrompt);
+            summary = summaryResponse.Text?.Trim() ?? "";
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "StudyController: ARIS summary generation failed.");
+            summary = "";
+        }
+
+        var experienceEntries = resumeSignal.ExperienceSummary
+            .Where(e => e.Bullets.Any(b => !string.IsNullOrWhiteSpace(b)))
+            .ToList();
+
+        var bulletOptions = new ChatOptions { Temperature = 0.15f };
+        var rewrittenEntries = new List<(string Role, string Company, List<string> Bullets)>();
+
+        foreach (var exp in experienceEntries)
+        {
+            var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
+            var bulletPrompt = tailoringTemplate
+                .Replace("{rawResumeText}", resumeText)
+                .Replace("{rawJobText}", jobDescriptionText)
+                .Replace("{graphContext}", graphContextBlock)
+                .Replace("{role}", exp.Role)
+                .Replace("{company}", exp.Company ?? "")
+                .Replace("{bullets}", bulletsText);
+
+            var rewritten = new List<string>();
+            try
+            {
+                var response = await _chatClient.GetResponseAsync(bulletPrompt, bulletOptions);
+                var raw  = response?.Text?.Trim() ?? "";
+                var json = System.Text.RegularExpressions.Regex.Replace(raw, @"```(?:json)?", "").Trim();
+                var si   = json.IndexOf('[');
+                var ei   = json.LastIndexOf(']');
+                if (si >= 0 && ei > si) json = json[si..(ei + 1)];
+
+                var parsed = System.Text.Json.JsonSerializer.Deserialize<List<BulletItem>>(
+                    json, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                if (parsed != null)
+                    rewritten = parsed
+                        .Where(item => !string.IsNullOrWhiteSpace(item.Rewritten))
+                        .Select(item => item.Rewritten!)
+                        .ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "StudyController: bullet rewriting failed for role {Role}.", exp.Role);
+                rewritten = exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)).ToList();
+            }
+
+            rewrittenEntries.Add((exp.Role, exp.Company ?? "", rewritten));
+        }
+
+        var sb = new System.Text.StringBuilder();
+        if (!string.IsNullOrWhiteSpace(summary))
+        {
+            sb.AppendLine(summary);
+            sb.AppendLine();
+        }
+        foreach (var (role, company, bullets) in rewrittenEntries)
+        {
+            sb.AppendLine(string.IsNullOrWhiteSpace(company) ? role : $"{role} at {company}");
+            foreach (var bullet in bullets)
+                sb.AppendLine(bullet);
+            sb.AppendLine();
+        }
+
+        var fullText = sb.ToString().TrimEnd();
+        _logger.LogInformation("StudyController: ARIS tailored resume assembled ({Length} chars).", fullText.Length);
+        return (string.IsNullOrWhiteSpace(fullText) ? "Tailored resume could not be generated." : fullText, tierSummary);
     }
+
+    private record BulletItem(string? Original, string? Rewritten);
 }
