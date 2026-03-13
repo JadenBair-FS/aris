@@ -450,6 +450,89 @@ public class StudyController : ControllerBase
         });
     }
 
+    /// <summary>
+    /// Like Analyze, but skips resume text extraction and loads the user's existing CleanSignal
+    /// and Embedding from the database by UserId. Extracts the job signal from raw text, runs
+    /// match analysis, and generates ARIS vs ChatGPT tailored resumes in parallel.
+    /// Nothing is written to the database.
+    /// </summary>
+    [HttpPost("analyze-with-profile")]
+    public async Task<IActionResult> AnalyzeWithProfile([FromBody] AnalyzeWithProfileRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.JobDescriptionText))
+            return BadRequest("JobDescriptionText is required.");
+
+        _logger.LogInformation("StudyController.AnalyzeWithProfile: loading user profile {UserId}.", request.UserId);
+
+        var user = await _context.UserProfiles.FindAsync(request.UserId);
+
+        if (user?.CleanSignal == null || user.Embedding == null)
+            return NotFound("User profile not found or not yet processed.");
+
+        // Extract raw resume text from the stored RawResume JSON (same pattern as EvalController).
+        string resumeText;
+        try
+        {
+            resumeText = System.Text.Json.JsonDocument.Parse(user.RawResume ?? "{}")
+                .RootElement.TryGetProperty("content", out var c)
+                    ? c.GetString() ?? ""
+                    : user.RawResume ?? "";
+        }
+        catch
+        {
+            resumeText = user.RawResume ?? "";
+        }
+
+        var resumeSignal    = user.CleanSignal;
+        var resumeEmbedding = user.Embedding;
+
+        _logger.LogInformation("StudyController.AnalyzeWithProfile: extracting job signal.");
+
+        var (jobSignal, jobEmbedding) = await _jobService.QuickExtractAndGroundAsync(request.JobDescriptionText);
+
+        if (jobSignal == null || jobEmbedding == null)
+            return BadRequest("Job signal extraction failed.");
+
+        var matchResult = await _matchService.AnalyzeMatchFromSignalsAsync(
+            resumeSignal, resumeEmbedding, jobSignal, jobEmbedding);
+
+        if (matchResult == null)
+            return StatusCode(500, "Tier classification failed.");
+
+        var resumeKey = Guid.NewGuid().ToString("N");
+        var jobKey    = Guid.NewGuid().ToString("N");
+        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding),
+            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
+        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding),
+            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
+
+        _logger.LogInformation("StudyController.AnalyzeWithProfile: running ChatGPT + ARIS tailoring in parallel.");
+
+        var chatGptTask = GenerateChatGptTailoredResumeAsync(resumeText, request.JobDescriptionText);
+        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
+            resumeSignal, resumeEmbedding,
+            jobSignal, jobEmbedding,
+            resumeText, request.JobDescriptionText);
+
+        await Task.WhenAll(chatGptTask, arisTask);
+        var (arisResume, _) = arisTask.Result;
+
+        return Ok(new StudyAnalyzeResponse
+        {
+            ArisScore                  = Math.Round(matchResult.ArisScore, 4),
+            VectorSimilarity           = Math.Round(matchResult.VectorSimilarity, 4),
+            MatchingSkills             = matchResult.MatchingSkills,
+            ImplicitlyDiscoveredSkills = matchResult.ImplicitlyDiscoveredSkills,
+            PrerequisiteMetSkills      = matchResult.PrerequisiteMetSkills,
+            BridgeableSkills           = matchResult.BridgeableSkills,
+            HardGaps                   = matchResult.HardGaps,
+            ArisResume                 = arisResume,
+            ChatGptResume              = chatGptTask.Result,
+            SessionResumeKey           = resumeKey,
+            SessionJobKey              = jobKey,
+        });
+    }
+
     [HttpPost("explain")]
     public async Task<IActionResult> Explain([FromBody] StudyExplainRequest request)
     {

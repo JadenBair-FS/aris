@@ -123,6 +123,22 @@ export interface StudyMatchPreviewResponse {
   totalJobsSearched: number;
 }
 
+export async function analyzeWithProfile(
+  userId: string,
+  jobDescriptionText: string
+): Promise<StudyAnalyzeResponse> {
+  const res = await fetch('/api/study/analyze-with-profile', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId, jobDescriptionText }),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error((body as { error?: string }).error ?? 'Analysis failed. Please try again.');
+  }
+  return res.json();
+}
+
 export async function getMatchPreview(
   resumeKey?: string,
   resumeText?: string

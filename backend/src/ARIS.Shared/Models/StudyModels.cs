@@ -109,6 +109,12 @@ public class StudyExplainRequest
     public required string JobDescriptionText { get; set; }
 }
 
+public class AnalyzeWithProfileRequest
+{
+    public Guid UserId { get; set; }
+    public string JobDescriptionText { get; set; } = "";
+}
+
 public class StudyExplainResponse
 {
     public string Explanation { get; set; } = string.Empty;

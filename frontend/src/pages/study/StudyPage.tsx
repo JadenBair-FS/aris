@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { analyzeStudy, explainStudy } from '@/api/study';
+import { analyzeStudy, analyzeWithProfile, explainStudy } from '@/api/study';
 import type { StudyAnalyzeResponse } from '@/api/study';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,8 +9,10 @@ import { TierBreakdown } from '@/components/TierBreakdown';
 
 type Step = 1 | 2 | 3;
 
-function StepIndicator({ current }: { current: Step }) {
-    const steps = ['Input', 'Match Analysis', 'Blind Comparison'];
+const urlUserId = new URLSearchParams(window.location.search).get('userId');
+
+function StepIndicator({ current, profileMode }: { current: Step; profileMode: boolean }) {
+    const steps = [profileMode ? 'Job Description' : 'Your Details', 'Match Analysis', 'Resume Comparison'];
     return (
         <div className="flex items-center justify-center gap-0">
             {steps.map((label, i) => {
@@ -64,13 +66,20 @@ export default function StudyPage() {
     const [explainLoading, setExplainLoading] = useState(false);
     const [explainError, setExplainError] = useState<string | null>(null);
 
+    const profileMode = urlUserId !== null;
+
+    const resumeA = result?.arisResume ?? '';
+    const resumeB = result?.chatGptResume ?? '';
+
     const handleAnalyze = async () => {
         setAnalyzeLoading(true);
         setAnalyzeError(null);
         setResult(null);
         setExplanation(null);
         try {
-            const data = await analyzeStudy(resumeText, jobText);
+            const data = profileMode
+                ? await analyzeWithProfile(urlUserId!, jobText)
+                : await analyzeStudy(resumeText, jobText);
             setResult(data);
             setStep(2);
         } catch (err) {
@@ -116,35 +125,41 @@ export default function StudyPage() {
                 <div className="text-center space-y-2">
                     <h1 className="text-3xl font-bold text-slate-900 tracking-tight">ARIS User Study</h1>
                     <p className="text-slate-500 max-w-xl mx-auto text-sm">
-                        Thank you for participating. Follow the steps below, then return to SurveyMonkey to complete the survey.
+                        Thank you for participating. Follow the steps below, then complete the survey at the end.
                     </p>
                 </div>
 
-                <StepIndicator current={step} />
+                <StepIndicator current={step} profileMode={profileMode} />
 
                 {step === 1 && (
                     <Card>
                         <CardHeader className="pb-2">
-                            <CardTitle className="text-base font-semibold text-slate-800">Step 1 — Enter Your Resume and Job Description</CardTitle>
-                            <p className="text-sm text-slate-500 mt-1">
-                                Paste the full text of your resume and the job description you want to target, then click Analyze.
-                            </p>
+                            <CardTitle className="text-base font-semibold text-slate-800">
+                                {profileMode
+                                    ? 'Step 1 — Enter the Job Description'
+                                    : 'Step 1 — Enter Your Resume and Job Description'}
+                            </CardTitle>
+                            {profileMode ? (
+                                <div className="space-y-1 mt-1">
+                                    <p className="text-sm text-slate-500">
+                                        Paste the job description you want to target, then click Analyze.
+                                    </p>
+                                    <p className="text-xs text-slate-400">
+                                        Logged in as participant {urlUserId!.slice(0, 8)}&hellip;
+                                    </p>
+                                </div>
+                            ) : (
+                                <p className="text-sm text-slate-500 mt-1">
+                                    Paste the full text of your resume and the job description you want to target, then click Analyze.
+                                </p>
+                            )}
                         </CardHeader>
                         <CardContent className="space-y-4">
                             {analyzeLoading ? (
                                 <Spinner label="Analyzing your resume against the job... this may take 30–60 seconds" />
                             ) : (
                                 <>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div className="space-y-1.5">
-                                            <label className="text-sm font-medium text-slate-700">Your Resume</label>
-                                            <Textarea
-                                                placeholder="Paste your resume text here..."
-                                                className="min-h-64 resize-y bg-white"
-                                                value={resumeText}
-                                                onChange={e => setResumeText(e.target.value)}
-                                            />
-                                        </div>
+                                    {profileMode ? (
                                         <div className="space-y-1.5">
                                             <label className="text-sm font-medium text-slate-700">Job Description</label>
                                             <Textarea
@@ -154,14 +169,39 @@ export default function StudyPage() {
                                                 onChange={e => setJobText(e.target.value)}
                                             />
                                         </div>
-                                    </div>
+                                    ) : (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <label className="text-sm font-medium text-slate-700">Your Resume</label>
+                                                <Textarea
+                                                    placeholder="Paste your resume text here..."
+                                                    className="min-h-64 resize-y bg-white"
+                                                    value={resumeText}
+                                                    onChange={e => setResumeText(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <label className="text-sm font-medium text-slate-700">Job Description</label>
+                                                <Textarea
+                                                    placeholder="Paste the job description here..."
+                                                    className="min-h-64 resize-y bg-white"
+                                                    value={jobText}
+                                                    onChange={e => setJobText(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
                                     {analyzeError && (
                                         <p className="text-sm text-red-600">{analyzeError}</p>
                                     )}
                                     <div className="flex justify-end">
                                         <Button
                                             onClick={handleAnalyze}
-                                            disabled={resumeText.trim().length < 50 || jobText.trim().length < 50}
+                                            disabled={
+                                                profileMode
+                                                    ? jobText.trim().length < 50
+                                                    : resumeText.trim().length < 50 || jobText.trim().length < 50
+                                            }
                                             className="bg-slate-900 hover:bg-slate-800 text-white px-8"
                                         >
                                             Analyze
@@ -234,7 +274,7 @@ export default function StudyPage() {
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {result.arisResume}
+                                        {resumeA}
                                     </div>
                                 </CardContent>
                             </Card>
@@ -245,15 +285,26 @@ export default function StudyPage() {
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {result.chatGptResume}
+                                        {resumeB}
                                     </div>
                                 </CardContent>
                             </Card>
                         </div>
 
-                        <p className="text-xs text-slate-400 text-center">
-                            Record your preference in the survey before continuing.
-                        </p>
+                        <div className="rounded-lg border border-slate-200 bg-slate-50 p-5 text-center space-y-2">
+                            <p className="text-sm font-medium text-slate-700">Ready to complete the survey?</p>
+                            <p className="text-xs text-slate-500">
+                                Note which resume you prefer (A or B), then open the survey below.
+                            </p>
+                            <a
+                                href="https://form.jotform.com/PLACEHOLDER"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block mt-1 px-6 py-2 bg-slate-900 text-white text-sm font-medium rounded-md hover:bg-slate-800"
+                            >
+                                Open Survey
+                            </a>
+                        </div>
 
                         <div className="flex items-center justify-between">
                             <button
