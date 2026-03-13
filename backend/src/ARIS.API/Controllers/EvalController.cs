@@ -263,9 +263,20 @@ public class EvalController : ControllerBase
                     return string.IsNullOrWhiteSpace(header) ? bullets : $"{header}\n{bullets}";
                 });
             var bulletsText = string.Join("\n\n", entrySections);
+
+            // Extract the Skills section from the original resume so keyword matching
+            // covers explicit skill names that ARIS does not rewrite.
+            var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
+                rawResumeText,
+                @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
+                System.Text.RegularExpressions.RegexOptions.Singleline);
+            var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
+
             var arisFullText = string.IsNullOrWhiteSpace(tailoredData.ProfessionalSummary)
-                ? bulletsText
-                : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
+                ? (skillsBlock.Length > 0 ? $"{skillsBlock}\n\n{bulletsText}" : bulletsText)
+                : (skillsBlock.Length > 0
+                    ? $"{tailoredData.ProfessionalSummary}\n\n{skillsBlock}\n\n{bulletsText}"
+                    : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}");
 
             var arisHallucinationCount = hardGapNames.Count(name =>
                 ContainsWholeWord(arisFullText, name));

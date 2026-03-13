@@ -100,7 +100,7 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, PersonalInfoExtractor personalInfoExtractor, MatchService matchService, GraphService graphService, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
+        public ResumeService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, PersonalInfoExtractor personalInfoExtractor, MatchService matchService, GraphService graphService, string ollamaGenerateUrl, string extractionModel, ILogger<ResumeService> logger, double firstPassThreshold = 0.15, double secondPassThreshold = 0.20, int extractionNumCtx = 4096)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;

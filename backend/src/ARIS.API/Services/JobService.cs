@@ -35,7 +35,7 @@ namespace ARIS.API.Services
             Converters = { new LenientStringConverter(), new LenientDoubleConverter() }
         };
 
-        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<JobService> logger, double firstPassThreshold = 0.10, double secondPassThreshold = 0.35, int extractionNumCtx = 4096)
+        public JobService(ArisDbContext context, IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator, IChatClient chatClient, string ollamaGenerateUrl, string extractionModel, ILogger<JobService> logger, double firstPassThreshold = 0.15, double secondPassThreshold = 0.20, int extractionNumCtx = 4096)
         {
             _context = context;
             _embeddingGenerator = embeddingGenerator;
