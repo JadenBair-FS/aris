@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { analyzeStudy, analyzeWithProfile, explainStudy } from '@/api/study';
-import type { StudyAnalyzeResponse } from '@/api/study';
+import { analyzeStudy, analyzeWithProfile, explainStudy, tailorResumes } from '@/api/study';
+import type { StudyAnalyzeResponse, StudyTailorResumesResponse } from '@/api/study';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -62,19 +62,22 @@ export default function StudyPage() {
 
     const [result, setResult] = useState<StudyAnalyzeResponse | null>(null);
 
+    const [tailorResult, setTailorResult] = useState<StudyTailorResumesResponse | null>(null);
+    const [tailorLoading, setTailorLoading] = useState(false);
+    const [tailorError, setTailorError] = useState<string | null>(null);
+
     const [explanation, setExplanation] = useState<string | null>(null);
     const [explainLoading, setExplainLoading] = useState(false);
     const [explainError, setExplainError] = useState<string | null>(null);
 
     const profileMode = urlUserId !== null;
 
-    const resumeA = result?.arisResume ?? '';
-    const resumeB = result?.chatGptResume ?? '';
-
     const handleAnalyze = async () => {
         setAnalyzeLoading(true);
         setAnalyzeError(null);
         setResult(null);
+        setTailorResult(null);
+        setTailorError(null);
         setExplanation(null);
         try {
             const data = profileMode
@@ -82,6 +85,19 @@ export default function StudyPage() {
                 : await analyzeStudy(resumeText, jobText);
             setResult(data);
             setStep(2);
+
+            // Start tailoring in the background — don't await
+            setTailorLoading(true);
+            tailorResumes(data.sessionResumeKey, data.sessionJobKey)
+                .then(tailored => {
+                    setTailorResult(tailored);
+                })
+                .catch(err => {
+                    setTailorError(err instanceof Error ? err.message : 'Tailoring failed. Please try again.');
+                })
+                .finally(() => {
+                    setTailorLoading(false);
+                });
         } catch (err) {
             setAnalyzeError(err instanceof Error ? err.message : 'Analysis failed. Please try again.');
         } finally {
@@ -114,6 +130,8 @@ export default function StudyPage() {
         setJobText('');
         setAnalyzeError(null);
         setResult(null);
+        setTailorResult(null);
+        setTailorError(null);
         setExplanation(null);
         setExplainError(null);
     };
@@ -254,7 +272,7 @@ export default function StudyPage() {
                                 onClick={() => setStep(3)}
                                 className="bg-slate-900 hover:bg-slate-800 text-white px-8"
                             >
-                                Compare Tailored Resumes →
+                                {tailorLoading ? 'Generating Resumes...' : 'Compare Tailored Resumes →'}
                             </Button>
                         </div>
                     </div>
@@ -267,6 +285,15 @@ export default function StudyPage() {
                             <p className="text-sm text-slate-500">Read both carefully before making your selection in the survey.</p>
                         </div>
 
+                        {tailorLoading && (
+                            <Spinner label="Generating tailored resumes... this may take 30–60 seconds" />
+                        )}
+
+                        {tailorError && (
+                            <p className="text-sm text-red-600 text-center">{tailorError}</p>
+                        )}
+
+                        {tailorResult && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
                             <Card className="flex flex-col border-slate-200">
                                 <CardHeader className="pb-2">
@@ -274,7 +301,7 @@ export default function StudyPage() {
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {resumeA}
+                                        {tailorResult.arisResume}
                                     </div>
                                 </CardContent>
                             </Card>
@@ -285,11 +312,12 @@ export default function StudyPage() {
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {resumeB}
+                                        {tailorResult.chatGptResume}
                                     </div>
                                 </CardContent>
                             </Card>
                         </div>
+                        )}
 
                         <div className="rounded-lg border border-slate-200 bg-slate-50 p-5 text-center space-y-2">
                             <p className="text-sm font-medium text-slate-700">Ready to complete the survey?</p>

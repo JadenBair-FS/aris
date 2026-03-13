@@ -418,21 +418,11 @@ public class StudyController : ControllerBase
 
         var resumeKey = Guid.NewGuid().ToString("N");
         var jobKey    = Guid.NewGuid().ToString("N");
-        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding),
-            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
-        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding),
-            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
-
-        _logger.LogInformation("StudyController.Analyze: running ChatGPT + ARIS tailoring in parallel.");
-
-        var chatGptTask = GenerateChatGptTailoredResumeAsync(request.ResumeText, request.JobDescriptionText);
-        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
-            resumeSignal, resumeEmbedding,
-            jobSignal, jobEmbedding,
-            request.ResumeText, request.JobDescriptionText);
-
-        await Task.WhenAll(chatGptTask, arisTask);
-        var (arisResume, _) = arisTask.Result;
+        var ttlOptions = new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl };
+        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding), ttlOptions);
+        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding), ttlOptions);
+        _cache.Set($"study:raw-resume:{resumeKey}", request.ResumeText, ttlOptions);
+        _cache.Set($"study:raw-job:{jobKey}", request.JobDescriptionText, ttlOptions);
 
         return Ok(new StudyAnalyzeResponse
         {
@@ -443,8 +433,6 @@ public class StudyController : ControllerBase
             PrerequisiteMetSkills       = matchResult.PrerequisiteMetSkills,
             BridgeableSkills            = matchResult.BridgeableSkills,
             HardGaps                    = matchResult.HardGaps,
-            ArisResume                  = arisResume,
-            ChatGptResume               = chatGptTask.Result,
             SessionResumeKey            = resumeKey,
             SessionJobKey               = jobKey,
         });
@@ -501,21 +489,11 @@ public class StudyController : ControllerBase
 
         var resumeKey = Guid.NewGuid().ToString("N");
         var jobKey    = Guid.NewGuid().ToString("N");
-        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding),
-            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
-        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding),
-            new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl });
-
-        _logger.LogInformation("StudyController.AnalyzeWithProfile: running ChatGPT + ARIS tailoring in parallel.");
-
-        var chatGptTask = GenerateChatGptTailoredResumeAsync(resumeText, request.JobDescriptionText);
-        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
-            resumeSignal, resumeEmbedding,
-            jobSignal, jobEmbedding,
-            resumeText, request.JobDescriptionText);
-
-        await Task.WhenAll(chatGptTask, arisTask);
-        var (arisResume, _) = arisTask.Result;
+        var ttlOptions = new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = SessionTtl };
+        _cache.Set($"study:resume:{resumeKey}", (resumeSignal, resumeEmbedding), ttlOptions);
+        _cache.Set($"study:job:{jobKey}", (jobSignal, jobEmbedding), ttlOptions);
+        _cache.Set($"study:raw-resume:{resumeKey}", resumeText, ttlOptions);
+        _cache.Set($"study:raw-job:{jobKey}", request.JobDescriptionText, ttlOptions);
 
         return Ok(new StudyAnalyzeResponse
         {
@@ -526,10 +504,44 @@ public class StudyController : ControllerBase
             PrerequisiteMetSkills      = matchResult.PrerequisiteMetSkills,
             BridgeableSkills           = matchResult.BridgeableSkills,
             HardGaps                   = matchResult.HardGaps,
-            ArisResume                 = arisResume,
-            ChatGptResume              = chatGptTask.Result,
             SessionResumeKey           = resumeKey,
             SessionJobKey              = jobKey,
+        });
+    }
+
+    /// <summary>
+    /// Generates the ARIS and ChatGPT tailored resumes using cached session signals.
+    /// Called immediately after Analyze so the match UI can appear without waiting for tailoring.
+    /// </summary>
+    [HttpPost("tailor-resumes")]
+    public async Task<IActionResult> TailorResumes([FromBody] StudyTailorResumesRequest request)
+    {
+        if (!_cache.TryGetValue($"study:resume:{request.SessionResumeKey}",
+                out (ResumeCleanSignal Signal, Pgvector.Vector Embedding) cachedResume))
+            return BadRequest(new { error = "Session expired or invalid. Please re-run the analysis." });
+
+        if (!_cache.TryGetValue($"study:job:{request.SessionJobKey}",
+                out (JobPostingCleanSignal Signal, Pgvector.Vector Embedding) cachedJob))
+            return BadRequest(new { error = "Session expired or invalid. Please re-run the analysis." });
+
+        var resumeText = _cache.Get<string>($"study:raw-resume:{request.SessionResumeKey}") ?? "";
+        var jobText    = _cache.Get<string>($"study:raw-job:{request.SessionJobKey}") ?? "";
+
+        _logger.LogInformation("StudyController.TailorResumes: running ChatGPT + ARIS tailoring in parallel.");
+
+        var chatGptTask = GenerateChatGptTailoredResumeAsync(resumeText, jobText);
+        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
+            cachedResume.Signal, cachedResume.Embedding,
+            cachedJob.Signal, cachedJob.Embedding,
+            resumeText, jobText);
+
+        await Task.WhenAll(chatGptTask, arisTask);
+        var (arisResume, _) = arisTask.Result;
+
+        return Ok(new StudyTailorResumesResponse
+        {
+            ArisResume    = arisResume,
+            ChatGptResume = chatGptTask.Result,
         });
     }
 

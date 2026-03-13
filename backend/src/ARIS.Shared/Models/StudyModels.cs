@@ -119,3 +119,15 @@ public class StudyExplainResponse
 {
     public string Explanation { get; set; } = string.Empty;
 }
+
+public class StudyTailorResumesRequest
+{
+    public required string SessionResumeKey { get; set; }
+    public required string SessionJobKey { get; set; }
+}
+
+public class StudyTailorResumesResponse
+{
+    public string ArisResume { get; set; } = string.Empty;
+    public string ChatGptResume { get; set; } = string.Empty;
+}
