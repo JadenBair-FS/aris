@@ -349,9 +349,9 @@ public class EvalController : ControllerBase
                 CanonicalName = s.SkillName, OriginalName = s.OriginalName,
                 Tier = "T1", TierLabel = "Direct Match", Importance = s.Importance });
 
-        foreach (var name in baselineMatch.ImplicitlyDiscoveredSkills)
+        foreach (var s in baselineMatch.ImplicitlyDiscoveredSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {
-                CanonicalName = name, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
+                CanonicalName = s.SkillName, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
 
         foreach (var s in baselineMatch.PrerequisiteMetSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {
@@ -623,9 +623,9 @@ public class EvalController : ControllerBase
                 CanonicalName = s.SkillName, OriginalName = s.OriginalName,
                 Tier = "T1", TierLabel = "Direct Match", Importance = s.Importance });
 
-        foreach (var name in baselineMatch.ImplicitlyDiscoveredSkills)
+        foreach (var s in baselineMatch.ImplicitlyDiscoveredSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {
-                CanonicalName = name, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
+                CanonicalName = s.SkillName, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
 
         foreach (var s in baselineMatch.PrerequisiteMetSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {
@@ -829,9 +829,9 @@ public class EvalController : ControllerBase
                 CanonicalName = s.SkillName, OriginalName = s.OriginalName,
                 Tier = "T1", TierLabel = "Direct Match", Importance = s.Importance });
 
-        foreach (var name in baselineMatch.ImplicitlyDiscoveredSkills)
+        foreach (var s in baselineMatch.ImplicitlyDiscoveredSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {
-                CanonicalName = name, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
+                CanonicalName = s.SkillName, Tier = "T2", TierLabel = "Foundation (SUBSET_OF)" });
 
         foreach (var s in baselineMatch.PrerequisiteMetSkills)
             identifiedSkills.Add(new IdentifiedSkillDetail {

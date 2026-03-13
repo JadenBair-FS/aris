@@ -91,7 +91,7 @@ public class StudyAnalyzeResponse
     public double ArisScore { get; set; }
     public double VectorSimilarity { get; set; }
     public List<SkillGapItem> MatchingSkills { get; set; } = [];
-    public List<string> ImplicitlyDiscoveredSkills { get; set; } = [];
+    public List<SkillGapItem> ImplicitlyDiscoveredSkills { get; set; } = [];
     public List<SkillGapItem> PrerequisiteMetSkills { get; set; } = [];
     public List<SkillGapItem> BridgeableSkills { get; set; } = [];
     public List<SkillGapItem> HardGaps { get; set; } = [];

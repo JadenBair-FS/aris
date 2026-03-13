@@ -95,7 +95,7 @@ public class MatchService
         var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
 
         var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
-        foreach (var s in implicitSkills) totalUserSkills.Add(s);
+        foreach (var s in implicitSkills.Keys) totalUserSkills.Add(s);
 
         var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
 
@@ -115,17 +115,28 @@ public class MatchService
 
         var implicitlyMatched = jobSkills
             .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-            .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
+            .Where(s => implicitSkills.ContainsKey(s))
+            .Select(s =>
+            {
+                var (importance, _, originalName) = GetJobSkillData(job.CleanSignal!, s);
+                return new SkillGapItem
+                {
+                    SkillName = s,
+                    OriginalName = originalName,
+                    Importance = importance,
+                    BridgePath = $"via {implicitSkills[s]} (SUBSET_OF)"
+                };
+            })
             .ToList();
 
         _logger.LogInformation("Job Skills: {JobSkills}", string.Join(", ", jobSkills));
         _logger.LogInformation("Matching Skills found: {Matches}", string.Join(", ", matchingSkills));
-        _logger.LogInformation("Implicitly Matched found: {ImplicitMatches}", string.Join(", ", implicitlyMatched));
+        _logger.LogInformation("Implicitly Matched found: {ImplicitMatches}", string.Join(", ", implicitlyMatched.Select(s => s.SkillName)));
         _logger.LogInformation("Implicit Skills from Graph: {ImplicitCount}", implicitSkills.Count);
 
         var missingSkills = jobSkills
             .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-            .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
+            .Except(implicitlyMatched.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase)
             .ToList();
 
         var bridgeable = new List<SkillGapItem>();
@@ -220,7 +231,7 @@ public class MatchService
         var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
         var graphCoverageScore = Math.Min(
             (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
-             implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
+             implicitlyMatched.Sum(s => GetImportanceWeight(s.SkillName) * 0.8) +
              prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
              bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
             1.0);
@@ -322,7 +333,7 @@ public class MatchService
         var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
 
         var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
-        foreach (var s in implicitSkills) totalUserSkills.Add(s);
+        foreach (var s in implicitSkills.Keys) totalUserSkills.Add(s);
 
         var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
 
@@ -342,12 +353,23 @@ public class MatchService
 
         var implicitlyMatched = jobSkills
             .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-            .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
+            .Where(s => implicitSkills.ContainsKey(s))
+            .Select(s =>
+            {
+                var (importance, _, originalName) = GetJobSkillData(jobSignal, s);
+                return new SkillGapItem
+                {
+                    SkillName    = s,
+                    OriginalName = originalName,
+                    Importance   = importance,
+                    BridgePath   = $"via {implicitSkills[s]} (SUBSET_OF)"
+                };
+            })
             .ToList();
 
         var missingSkills = jobSkills
             .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-            .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
+            .Except(implicitlyMatched.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase)
             .ToList();
 
         var bridgeable     = new List<SkillGapItem>();
@@ -433,7 +455,7 @@ public class MatchService
         var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
         var graphCoverageScore = Math.Min(
             (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
-             implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
+             implicitlyMatched.Sum(s => GetImportanceWeight(s.SkillName) * 0.8) +
              prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
              bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
             1.0);
@@ -514,7 +536,7 @@ public class MatchService
             var implicitSkills = await _graphService.GetImplicitlyDiscoveredSkillsAsync(userSkills, isTech);
 
             var totalUserSkills = new HashSet<string>(userSkills, StringComparer.OrdinalIgnoreCase);
-            foreach (var s in implicitSkills) totalUserSkills.Add(s);
+            foreach (var s in implicitSkills.Keys) totalUserSkills.Add(s);
 
             var matchingSkills = jobSkills.Intersect(userSkills, StringComparer.OrdinalIgnoreCase).ToList();
 
@@ -534,12 +556,23 @@ public class MatchService
 
             var implicitlyMatched = jobSkills
                 .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-                .Intersect(implicitSkills, StringComparer.OrdinalIgnoreCase)
+                .Where(s => implicitSkills.ContainsKey(s))
+                .Select(s =>
+                {
+                    var (importance, _, originalName) = GetJobSkillData(jobSignal, s);
+                    return new SkillGapItem
+                    {
+                        SkillName    = s,
+                        OriginalName = originalName,
+                        Importance   = importance,
+                        BridgePath   = $"via {implicitSkills[s]} (SUBSET_OF)"
+                    };
+                })
                 .ToList();
 
             var missingSkills = jobSkills
                 .Except(matchingSkills, StringComparer.OrdinalIgnoreCase)
-                .Except(implicitlyMatched, StringComparer.OrdinalIgnoreCase)
+                .Except(implicitlyMatched.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
             var bridgeable      = new List<SkillGapItem>();
@@ -625,7 +658,7 @@ public class MatchService
             var weightedJobTotal = Math.Max(importanceWeights.Values.Sum(), 1.0);
             var graphCoverageScore = Math.Min(
                 (matchingSkillItems.Sum(s => GetImportanceWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
-                 implicitlyMatched.Sum(s => GetImportanceWeight(s) * 0.8) +
+                 implicitlyMatched.Sum(s => GetImportanceWeight(s.SkillName) * 0.8) +
                  prerequisiteMet.Sum(s => GetImportanceWeight(s.SkillName) * 0.6) +
                  bridgeable.Sum(s => GetImportanceWeight(s.SkillName) * 0.4)) / weightedJobTotal,
                 1.0);
@@ -735,7 +768,7 @@ public class MatchService
         // This guarantees the denominator is identical to verifiedScore's denominator.
         double baselineScore =
             (baselineMatch.MatchingSkills.Sum(s => GetWeight(s.SkillName) * 1.0 * ExperienceMultiplier(s.CandidateYears, s.YearsRequired)) +
-             baselineMatch.ImplicitlyDiscoveredSkills.Sum(s => GetWeight(s) * 0.8) +
+             baselineMatch.ImplicitlyDiscoveredSkills.Sum(s => GetWeight(s.SkillName) * 0.8) +
              baselineMatch.PrerequisiteMetSkills.Sum(s => GetWeight(s.SkillName) * 0.6) +
              baselineMatch.BridgeableSkills.Sum(s => GetWeight(s.SkillName) * 0.4)) / weightedJobTotal;
         baselineScore = Math.Min(baselineScore, 1.0);
@@ -751,16 +784,16 @@ public class MatchService
         }
 
         // T2 — floor 0.8; articulated → upgrade to 1.0 (bonus +0.2).
-        foreach (var skill in baselineMatch.ImplicitlyDiscoveredSkills)
+        foreach (var skillItem in baselineMatch.ImplicitlyDiscoveredSkills)
         {
-            if (tailoredSet.Contains(skill))
+            if (tailoredSet.Contains(skillItem.SkillName))
             {
-                verifiedScore += GetWeight(skill) * 1.0;
-                articulatedSkills.Add(skill);
+                verifiedScore += GetWeight(skillItem.SkillName) * 1.0;
+                articulatedSkills.Add(skillItem.SkillName);
             }
             else
             {
-                verifiedScore += GetWeight(skill) * 0.8;
+                verifiedScore += GetWeight(skillItem.SkillName) * 0.8;
             }
         }
 
@@ -902,7 +935,7 @@ public class MatchService
         sb.AppendLine($"You are a career advisor. Provide a concise 2-3 paragraph assessment of how well {candidateTitle} matches {jobTitle}.");
         sb.AppendLine();
         sb.AppendLine($"MATCHING SKILLS: {string.Join(", ", analysis.MatchingSkills.Select(s => s.SkillName))}");
-        sb.AppendLine($"IMPLICIT SKILLS (auto-granted via expertise): {string.Join(", ", analysis.ImplicitlyDiscoveredSkills)}");
+        sb.AppendLine($"IMPLICIT SKILLS (auto-granted via expertise): {string.Join(", ", analysis.ImplicitlyDiscoveredSkills.Select(s => s.SkillName))}");
         sb.AppendLine($"BRIDGEABLE SKILLS (transferable): {string.Join(", ", analysis.BridgeableSkills.Select(s => s.SkillName))}");
         sb.AppendLine($"HARD GAPS (missing): {string.Join(", ", analysis.HardGaps.Select(s => s.SkillName))}");
         sb.AppendLine();
@@ -973,7 +1006,7 @@ public class MatchService
 
         var arisScorePct = (int)Math.Round(analysis.ArisScore * 100);
         var matchingList   = analysis.MatchingSkills.Select(s => s.SkillName).ToList();
-        var implicitList   = analysis.ImplicitlyDiscoveredSkills;
+        var implicitList   = analysis.ImplicitlyDiscoveredSkills.Select(s => s.SkillName).ToList();
         var prereqList     = analysis.PrerequisiteMetSkills.Select(s => s.SkillName).ToList();
         var bridgeList     = analysis.BridgeableSkills.Select(s => s.SkillName).ToList();
         var hardGapList    = analysis.HardGaps.Select(s => s.SkillName).ToList();

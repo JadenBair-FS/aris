@@ -4,7 +4,7 @@ import type { UserProfileDetail, MatchAnalysisResult, ResumeUploadResult, Ground
 function buildTierPayload(analysis: MatchAnalysisResult) {
     return {
         matchingSkills: analysis.matchingSkills.map(s => s.skillName),
-        implicitSkills: analysis.implicitlyDiscoveredSkills,
+        implicitSkills: analysis.implicitlyDiscoveredSkills.map(s => s.skillName),
         prereqMetSkills: analysis.prerequisiteMetSkills.map(s => s.skillName),
         bridgeableSkills: analysis.bridgeableSkills.map(s => s.skillName),
         hardGaps: analysis.hardGaps.map(s => s.skillName),

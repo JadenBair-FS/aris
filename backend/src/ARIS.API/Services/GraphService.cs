@@ -142,9 +142,9 @@ public class GraphService : IDisposable, IAsyncDisposable
     /// IS_SIMILAR_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
     /// DOWN traversal (parent → children) belongs in GetPrerequisiteMetSkillsAsync.
     /// </summary>
-    public async Task<HashSet<string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
+    public async Task<Dictionary<string, string>> GetImplicitlyDiscoveredSkillsAsync(IEnumerable<string> userSkills, bool includeTechSkills = true)
     {
-        var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         var expansionSeed = userSkills.ToList();
 
         const string query = @"
@@ -153,7 +153,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
             WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
               AND parent.source <> 'ONET_Taxonomy'
-            RETURN DISTINCT parent.name AS Name
+            RETURN parent.name AS Name, min(child.name) AS ViaSkill
         ";
 
         try
@@ -168,10 +168,9 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var record in records)
             {
                 var name = record["Name"].As<string>();
-                if (!string.IsNullOrWhiteSpace(name))
-                {
-                    result.Add(name);
-                }
+                var viaSkill = record["ViaSkill"].As<string>();
+                if (!string.IsNullOrWhiteSpace(name) && !result.ContainsKey(name))
+                    result[name] = viaSkill ?? "";
             }
         }
         catch (Exception ex)
@@ -316,7 +315,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         bool IsUsed(string skillName) =>
             alreadyUsedSkills != null && alreadyUsedSkills.Contains(skillName, StringComparer.OrdinalIgnoreCase);
 
-        var t2Skills = match.ImplicitlyDiscoveredSkills.Where(s => !IsUsed(s)).ToList();
+        var t2Skills = match.ImplicitlyDiscoveredSkills.Select(s => s.SkillName).Where(s => !IsUsed(s)).ToList();
         var t3Skills = match.PrerequisiteMetSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
         var t4Skills = match.BridgeableSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
 

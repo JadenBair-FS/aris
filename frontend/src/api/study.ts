@@ -4,7 +4,7 @@ export interface StudyAnalyzeResponse {
   arisScore: number;
   vectorSimilarity: number;
   matchingSkills: SkillGapItem[];
-  implicitlyDiscoveredSkills: string[];
+  implicitlyDiscoveredSkills: SkillGapItem[];
   prerequisiteMetSkills: SkillGapItem[];
   bridgeableSkills: SkillGapItem[];
   hardGaps: SkillGapItem[];
