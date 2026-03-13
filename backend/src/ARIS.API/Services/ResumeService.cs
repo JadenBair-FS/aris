@@ -815,7 +815,8 @@ namespace ARIS.API.Services
         private async Task<string> GenerateSummaryAsync(
             string rawText,
             string rawJobDescription,
-            string graphContext)
+            string graphContext,
+            IChatClient? llmClient = null)
         {
             var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
             var template = await File.ReadAllTextAsync(promptPath);
@@ -829,7 +830,7 @@ namespace ARIS.API.Services
 
             try
             {
-                var response = await _chatClient.GetResponseAsync(prompt);
+                var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt);
                 return response?.Text?.Trim() ?? "";
             }
             catch (Exception ex)
@@ -842,7 +843,8 @@ namespace ARIS.API.Services
         public async Task<TailoredResumeData?> BuildTailoredResumeDataAsync(
             Guid userProfileId,
             Guid jobId,
-            MatchAnalysisResult? precomputedMatch = null)
+            MatchAnalysisResult? precomputedMatch = null,
+            IChatClient? llmClient = null)
         {
             var user = await _context.UserProfiles.FindAsync(userProfileId);
             var job = await _context.JobPostings.FindAsync(jobId);
@@ -863,7 +865,7 @@ namespace ARIS.API.Services
             var rawJobText = job.RawDescription ?? "";
 
             var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText);
-            var summaryTask = GenerateSummaryAsync(rawResumeText, rawJobText, graphContextBlock);
+            var summaryTask = GenerateSummaryAsync(rawResumeText, rawJobText, graphContextBlock, llmClient);
 
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);
@@ -876,6 +878,7 @@ namespace ARIS.API.Services
                 var prompt = tailoringTemplate
                     .Replace("{rawResumeText}", rawResumeText)
                     .Replace("{rawJobText}", rawJobText)
+                    .Replace("{graphContext}", graphContextBlock)
                     .Replace("{role}", exp.Role)
                     .Replace("{company}", exp.Company ?? "")
                     .Replace("{bullets}", bulletsText);
@@ -883,7 +886,7 @@ namespace ARIS.API.Services
                 try
                 {
                     var bulletOptions = new ChatOptions { Temperature = 0.15f };
-                    var response = await _chatClient.GetResponseAsync(prompt, bulletOptions);
+                    var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt, bulletOptions);
                     var text = response?.Text?.Trim() ?? "";
                     var json = System.Text.RegularExpressions.Regex.Replace(text, @"```(?:json)?", "").Trim();
                     var startIdx = json.IndexOf('[');

@@ -712,37 +712,80 @@ public class EvalController : ControllerBase
         };
 
         var swB = Stopwatch.StartNew();
-        var graphContext = _graphService.BuildTailoringGraphContext(baselineMatch, user.CleanSignal?.Skills);
-        var (gptGraphFullText, gptGraphSummary) = await RunGptGraphRagPipelineAsync(rawResumeText, rawJobText, graphContext);
-        var gptGraphKeywords = ComputeKeywordMatch(gptGraphFullText, jobSkills);
-        var gptGraphSemScore = await ComputeSemanticSimilarityAsync(gptGraphFullText, rawJobText);
-        var gptGraphKwScore  = jobSkills.Count > 0
-            ? Math.Round((double)gptGraphKeywords.Matched.Count / jobSkills.Count, 4) : 0.0;
-        var origMatchedCanonicalB = new HashSet<string>(
-            origKeywords.Matched.Select(m => m.CanonicalName), StringComparer.OrdinalIgnoreCase);
-        var gptGraphNewTerms = gptGraphKeywords.Matched
-            .Where(m => !origMatchedCanonicalB.Contains(m.CanonicalName))
-            .ToList();
-        var gptGraphHallucinationCount = hardGapNames.Count(name =>
-            ContainsWholeWord(gptGraphFullText, name));
-        swB.Stop();
-
-        var condB = new ThreeWayResult
+        var gptTailoredData = await _resumeService.BuildTailoredResumeDataAsync(
+            request.ResumeId, request.JobId, precomputedMatch: baselineMatch, llmClient: _openAiClient);
+        ThreeWayResult condB;
+        if (gptTailoredData == null)
         {
-            SemanticSimilarityScore = gptGraphSemScore,
-            KeywordMatchScore       = gptGraphKwScore,
-            AtsScore                = Math.Round(0.5 * gptGraphSemScore + 0.5 * gptGraphKwScore, 4),
-            MatchingTerms           = gptGraphKeywords.Matched,
-            MissingTerms            = gptGraphKeywords.Missing,
-            MatchingTermsCount      = gptGraphKeywords.Matched.Count,
-            MissingTermsCount       = gptGraphKeywords.Missing.Count,
-            NewTermsAdded           = gptGraphNewTerms,
-            HallucinationCount      = gptGraphHallucinationCount,
-            SummaryText             = gptGraphSummary,
-            TailoredFullText        = gptGraphFullText,
-            LatencyMs               = swB.ElapsedMilliseconds,
-            PdfBase64               = null,
-        };
+            swB.Stop();
+            _logger.LogError("GPT+GraphRAG tailoring pipeline returned null for resume={ResumeId} job={JobId}",
+                request.ResumeId, request.JobId);
+            condB = new ThreeWayResult { LatencyMs = swB.ElapsedMilliseconds };
+        }
+        else
+        {
+            var pdfBytes = _resumePdfService.GeneratePdf(
+                gptTailoredData.PersonalInfo, gptTailoredData.CleanSignal,
+                gptTailoredData.ProfessionalSummary, gptTailoredData.TailoredBullets);
+
+            var entrySections = gptTailoredData.TailoredBullets
+                .Where(b => !string.IsNullOrWhiteSpace(b.RewrittenBullet))
+                .GroupBy(b => (b.Role, b.Company))
+                .Select(g =>
+                {
+                    var header = (string.IsNullOrWhiteSpace(g.Key.Role) && string.IsNullOrWhiteSpace(g.Key.Company))
+                        ? ""
+                        : string.IsNullOrWhiteSpace(g.Key.Company)
+                            ? g.Key.Role
+                            : $"{g.Key.Role} at {g.Key.Company}";
+                    var bullets = string.Join("\n", g.Select(b => b.RewrittenBullet));
+                    return string.IsNullOrWhiteSpace(header) ? bullets : $"{header}\n{bullets}";
+                });
+            var bulletsText = string.Join("\n\n", entrySections);
+
+            var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
+                rawResumeText,
+                @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
+                System.Text.RegularExpressions.RegexOptions.Singleline);
+            var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
+
+            var gptGraphFullText = string.IsNullOrWhiteSpace(gptTailoredData.ProfessionalSummary)
+                ? (skillsBlock.Length > 0 ? $"{skillsBlock}\n\n{bulletsText}" : bulletsText)
+                : (skillsBlock.Length > 0
+                    ? $"{gptTailoredData.ProfessionalSummary}\n\n{skillsBlock}\n\n{bulletsText}"
+                    : $"{gptTailoredData.ProfessionalSummary}\n\n{bulletsText}");
+
+            var gptGraphHallucinationCount = hardGapNames.Count(name =>
+                ContainsWholeWord(gptGraphFullText, name));
+
+            var gptGraphKeywords = ComputeKeywordMatch(gptGraphFullText, jobSkills);
+            var gptGraphSemScore = await ComputeSemanticSimilarityAsync(gptGraphFullText, rawJobText);
+            var gptGraphKwScore  = jobSkills.Count > 0
+                ? Math.Round((double)gptGraphKeywords.Matched.Count / jobSkills.Count, 4) : 0.0;
+            var origMatchedCanonicalB = new HashSet<string>(
+                origKeywords.Matched.Select(m => m.CanonicalName), StringComparer.OrdinalIgnoreCase);
+            var gptGraphNewTerms = gptGraphKeywords.Matched
+                .Where(m => !origMatchedCanonicalB.Contains(m.CanonicalName))
+                .ToList();
+
+            swB.Stop();
+            condB = new ThreeWayResult
+            {
+                SemanticSimilarityScore = gptGraphSemScore,
+                KeywordMatchScore       = gptGraphKwScore,
+                AtsScore                = Math.Round(0.5 * gptGraphSemScore + 0.5 * gptGraphKwScore, 4),
+                MatchingTerms           = gptGraphKeywords.Matched,
+                MissingTerms            = gptGraphKeywords.Missing,
+                MatchingTermsCount      = gptGraphKeywords.Matched.Count,
+                MissingTermsCount       = gptGraphKeywords.Missing.Count,
+                NewTermsAdded           = gptGraphNewTerms,
+                HallucinationCount      = gptGraphHallucinationCount,
+                SummaryText             = gptTailoredData.ProfessionalSummary ?? "",
+                TailoredFullText        = gptGraphFullText,
+                LatencyMs               = swB.ElapsedMilliseconds,
+                PdfBase64               = Convert.ToBase64String(pdfBytes),
+            };
+        }
 
         var swC = Stopwatch.StartNew();
         var (gptFullText, gptSummary) = await RunChatGptPipelineAsync(rawResumeText, rawJobText);
@@ -875,74 +918,6 @@ public class EvalController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogWarning(ex, "Mistral baseline pipeline failed; returning empty output");
-        }
-        return ("", "");
-    }
-
-    private async Task<(string TailoredFullText, string SummaryText)> RunGptGraphRagPipelineAsync(
-        string rawResume, string rawJob, string graphContext)
-    {
-        if (_openAiClient == null)
-            return ("GPT+GraphRAG unavailable: OPENAI_API_KEY is not configured.", "");
-
-        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptGraphRagTailoring.md");
-        string promptTemplate;
-        try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
-        catch { promptTemplate = "Rewrite the following resume using the graph context to avoid hard gaps. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}\n\n{graphContext}"; }
-
-        var prompt = promptTemplate
-            .Replace("{rawResumeText}", rawResume)
-            .Replace("{rawJobText}", rawJob)
-            .Replace("{graphContext}", graphContext);
-
-        try
-        {
-            var response = await _openAiClient.GetResponseAsync(prompt);
-            var fullText = response?.Text?.Trim() ?? "";
-
-            if (string.IsNullOrWhiteSpace(fullText))
-                return ("", "");
-
-            var summaryText = "";
-            var lines = fullText.Split('\n');
-            var summaryStart = -1;
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i].Trim().Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
-                {
-                    summaryStart = i + 1;
-                    break;
-                }
-            }
-            if (summaryStart >= 0)
-            {
-                var summaryLines = new List<string>();
-                for (int i = summaryStart; i < lines.Length; i++)
-                {
-                    if (string.IsNullOrWhiteSpace(lines[i])) break;
-                    summaryLines.Add(lines[i].Trim());
-                }
-                summaryText = string.Join(" ", summaryLines).Trim();
-            }
-            else
-            {
-                var paraLines = new List<string>();
-                bool started = false;
-                foreach (var line in lines)
-                {
-                    if (!started && string.IsNullOrWhiteSpace(line)) continue;
-                    started = true;
-                    if (string.IsNullOrWhiteSpace(line)) break;
-                    paraLines.Add(line.Trim());
-                }
-                summaryText = string.Join(" ", paraLines).Trim();
-            }
-
-            return (fullText, summaryText);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex, "GPT+GraphRAG pipeline failed; returning empty output");
         }
         return ("", "");
     }
