@@ -26,7 +26,7 @@ public class PersonalInfoExtractor
         _logger = logger;
     }
 
-    public async Task<PersonalInfo> ExtractAsync(string? rawText)
+    public async Task<PersonalInfo> ExtractAsync(string? rawText, IChatClient? llmClient = null)
     {
         if (string.IsNullOrWhiteSpace(rawText))
             return new PersonalInfo();
@@ -44,7 +44,7 @@ public class PersonalInfoExtractor
 
         try
         {
-            var response = await _chatClient.GetResponseAsync(prompt);
+            var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt);
             var text = response?.Text?.Trim() ?? "";
 
             var json = Regex.Replace(text, @"```(?:json)?", "").Trim();
