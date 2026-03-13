@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 import { DebugPanel } from './DebugPanel';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { House, User, Upload, Briefcase, Plus, LogOut, Trash2, Menu } from 'lucide-react';
+import { House, User, Upload, Briefcase, Plus, LogOut, Trash2, Menu, FlaskConical } from 'lucide-react';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
@@ -33,6 +33,7 @@ export function DashboardLayout() {
         { href: '/home', label: 'Home', icon: House },
         { href: '/profile', label: 'My Profile', icon: User },
         { href: '/profile/upload', label: 'Upload Resume', icon: Upload },
+        { href: '/study', label: 'Resume Study', icon: FlaskConical },
     ];
 
     const recruiterLinks = [
