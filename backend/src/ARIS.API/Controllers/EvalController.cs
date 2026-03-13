@@ -657,6 +657,9 @@ public class EvalController : ControllerBase
     [HttpPost("gpt-compare")]
     public async Task<IActionResult> GptCompare([FromBody] ThreeWayCompareRequest request)
     {
+        if (_openAiClient == null)
+            return StatusCode(503, "GPT compare unavailable: OPENAI_API_KEY is not configured.");
+
         if (request.ResumeId == Guid.Empty || request.JobId == Guid.Empty)
             return BadRequest("ResumeId and JobId are required.");
 
