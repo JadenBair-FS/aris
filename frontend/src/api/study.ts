@@ -8,10 +8,13 @@ export interface StudyAnalyzeResponse {
   prerequisiteMetSkills: SkillGapItem[];
   bridgeableSkills: SkillGapItem[];
   hardGaps: SkillGapItem[];
-  arisResume: string;
-  chatGptResume: string;
   sessionResumeKey: string;
   sessionJobKey: string;
+}
+
+export interface StudyTailorResumesResponse {
+  arisResume: string;
+  chatGptResume: string;
 }
 
 export async function analyzeStudy(
@@ -121,6 +124,22 @@ export interface StudyMatchPreviewItem {
 export interface StudyMatchPreviewResponse {
   matches: StudyMatchPreviewItem[];
   totalJobsSearched: number;
+}
+
+export async function tailorResumes(
+  sessionResumeKey: string,
+  sessionJobKey: string
+): Promise<StudyTailorResumesResponse> {
+  const res = await fetch('/api/study/tailor-resumes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessionResumeKey, sessionJobKey }),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error((body as { error?: string }).error ?? 'Tailoring failed. Please try again.');
+  }
+  return res.json();
 }
 
 export async function analyzeWithProfile(
