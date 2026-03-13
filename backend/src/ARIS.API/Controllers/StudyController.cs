@@ -28,6 +28,7 @@ public class StudyController : ControllerBase
     private readonly IChatClient? _openAiClient;
     private readonly IMemoryCache _cache;
     private readonly ResumePdfService _pdfService;
+    private readonly PersonalInfoExtractor _personalInfoExtractor;
     private readonly ILogger<StudyController> _logger;
 
     private static readonly TimeSpan SessionTtl = TimeSpan.FromMinutes(15);
@@ -42,6 +43,7 @@ public class StudyController : ControllerBase
         IChatClient chatClient,
         IMemoryCache cache,
         ResumePdfService pdfService,
+        PersonalInfoExtractor personalInfoExtractor,
         ILogger<StudyController> logger,
         IServiceProvider serviceProvider)
     {
@@ -54,6 +56,7 @@ public class StudyController : ControllerBase
         _chatClient = chatClient;
         _cache = cache;
         _pdfService = pdfService;
+        _personalInfoExtractor = personalInfoExtractor;
         _logger = logger;
         _openAiClient = serviceProvider.GetKeyedService<IChatClient>("openai");
     }
@@ -532,18 +535,23 @@ public class StudyController : ControllerBase
 
         _logger.LogInformation("StudyController.TailorResumes: running ChatGPT + ARIS tailoring in parallel.");
 
-        var chatGptTask = GenerateChatGptTailoredResumeAsync(resumeText, jobText);
-        var arisTask    = GenerateArisTailoredResumeFromSignalsAsync(
+        var chatGptTask      = GenerateChatGptTailoredResumeAsync(resumeText, jobText);
+        var personalInfoTask = _personalInfoExtractor.ExtractAsync(resumeText);
+        var arisDataTask     = BuildArisTailoredResumeAsync(
             cachedResume.Signal, cachedResume.Embedding,
             cachedJob.Signal, cachedJob.Embedding,
             resumeText, jobText);
 
-        await Task.WhenAll(chatGptTask, arisTask);
-        var (arisResume, _) = arisTask.Result;
-        var chatGptResume = chatGptTask.Result;
+        await Task.WhenAll(chatGptTask, personalInfoTask, arisDataTask);
 
-        var arisPdfTask    = Task.Run(() => _pdfService.GeneratePlainTextPdf(arisResume));
-        var chatGptPdfTask = Task.Run(() => _pdfService.GeneratePlainTextPdf(chatGptResume));
+        var (arisResume, _, arisSummary, arisBullets) = arisDataTask.Result;
+        var chatGptResume = chatGptTask.Result;
+        var personalInfo  = personalInfoTask.Result;
+
+        var (chatGptSummary, chatGptBullets) = ParseChatGptResumeText(chatGptResume, cachedResume.Signal);
+
+        var arisPdfTask    = Task.Run(() => _pdfService.GeneratePdf(personalInfo, cachedResume.Signal, arisSummary, arisBullets));
+        var chatGptPdfTask = Task.Run(() => _pdfService.GeneratePdf(personalInfo, cachedResume.Signal, chatGptSummary, chatGptBullets));
         await Task.WhenAll(arisPdfTask, chatGptPdfTask);
 
         return Ok(new StudyTailorResumesResponse
@@ -668,9 +676,10 @@ public class StudyController : ControllerBase
             if (jobSignal == null || jobEmbedding == null)
                 return ("ARIS tailoring is temporarily unavailable — job signal could not be extracted.", emptySummary);
 
-            return await BuildArisTailoredResumeAsync(
+            var (response, tierSummary, _, _) = await BuildArisTailoredResumeAsync(
                 resumeSignal, resumeEmbedding, jobSignal, jobEmbedding,
                 resumeText, jobDescriptionText);
+            return (response, tierSummary);
         }
         catch (Exception ex)
         {
@@ -686,9 +695,10 @@ public class StudyController : ControllerBase
     {
         try
         {
-            return await BuildArisTailoredResumeAsync(
+            var (response, tierSummary, _, _) = await BuildArisTailoredResumeAsync(
                 resumeSignal, resumeEmbedding, jobSignal, jobEmbedding,
                 resumeText, jobDescriptionText);
+            return (response, tierSummary);
         }
         catch (Exception ex)
         {
@@ -697,7 +707,7 @@ public class StudyController : ControllerBase
         }
     }
 
-    private async Task<(string Response, StudyTierSummary TierSummary)> BuildArisTailoredResumeAsync(
+    private async Task<(string Response, StudyTierSummary TierSummary, string Summary, List<TailoredBullet> Bullets)> BuildArisTailoredResumeAsync(
         ResumeCleanSignal resumeSignal, Pgvector.Vector resumeEmbedding,
         JobPostingCleanSignal jobSignal, Pgvector.Vector jobEmbedding,
         string resumeText, string jobDescriptionText)
@@ -708,7 +718,7 @@ public class StudyController : ControllerBase
         if (matchResult == null)
         {
             _logger.LogWarning("StudyController: AnalyzeMatchFromSignalsAsync returned null.");
-            return ("ARIS tailoring is temporarily unavailable — tier classification failed.", new StudyTierSummary());
+            return ("ARIS tailoring is temporarily unavailable — tier classification failed.", new StudyTierSummary(), "", []);
         }
 
         var tierSummary = new StudyTierSummary
@@ -817,9 +827,98 @@ public class StudyController : ControllerBase
             sb.AppendLine();
         }
 
+        var tailoredBullets = rewrittenEntries
+            .SelectMany(e => e.Bullets.Select(b => new TailoredBullet
+            {
+                RewrittenBullet = b,
+                Role            = e.Role,
+                Company         = e.Company,
+            }))
+            .ToList();
+
         var fullText = sb.ToString().TrimEnd();
         _logger.LogInformation("StudyController: ARIS tailored resume assembled ({Length} chars).", fullText.Length);
-        return (string.IsNullOrWhiteSpace(fullText) ? "Tailored resume could not be generated." : fullText, tierSummary);
+        return (string.IsNullOrWhiteSpace(fullText) ? "Tailored resume could not be generated." : fullText,
+                tierSummary, summary, tailoredBullets);
+    }
+
+    /// <summary>
+    /// Parses the plain-text output from ChatGptTailoring.md into a structured summary and
+    /// list of TailoredBullets. Expected format:
+    ///   SUMMARY
+    ///   {summary text}
+    ///
+    ///   {Role} at {Company}
+    ///   {bullet}
+    ///   {bullet}
+    /// </summary>
+    private static (string Summary, List<TailoredBullet> Bullets) ParseChatGptResumeText(
+        string text, ResumeCleanSignal cleanSignal)
+    {
+        var lines          = text.Split('\n', StringSplitOptions.None);
+        var summaryParts   = new List<string>();
+        var bullets        = new List<TailoredBullet>();
+        string? currentRole    = null;
+        string? currentCompany = null;
+        bool pastSummaryHeader = false;
+        bool summaryCollected  = false;
+
+        foreach (var rawLine in lines)
+        {
+            var trimmed = rawLine.Trim();
+
+            if (trimmed.Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
+            {
+                pastSummaryHeader = true;
+                continue;
+            }
+
+            if (pastSummaryHeader && !summaryCollected)
+            {
+                if (string.IsNullOrWhiteSpace(trimmed))
+                {
+                    if (summaryParts.Count > 0) summaryCollected = true;
+                    continue;
+                }
+                // If this looks like "Role at Company", summary ended without blank line
+                var ai = trimmed.IndexOf(" at ", StringComparison.Ordinal);
+                if (ai > 0 && !trimmed.StartsWith('-') && !trimmed.StartsWith('•'))
+                {
+                    summaryCollected = true;
+                    currentRole    = trimmed[..ai].Trim();
+                    currentCompany = trimmed[(ai + 4)..].Trim();
+                    continue;
+                }
+                summaryParts.Add(trimmed);
+                continue;
+            }
+
+            if (string.IsNullOrWhiteSpace(trimmed)) continue;
+
+            var atIdx   = trimmed.IndexOf(" at ", StringComparison.Ordinal);
+            bool isBullet = trimmed.StartsWith('-') || trimmed.StartsWith('•');
+
+            if (!isBullet && atIdx > 0)
+            {
+                currentRole    = trimmed[..atIdx].Trim();
+                currentCompany = trimmed[(atIdx + 4)..].Trim();
+                continue;
+            }
+
+            if (currentRole != null)
+            {
+                var bulletText = trimmed.TrimStart('-', '•', ' ').Trim();
+                if (!string.IsNullOrWhiteSpace(bulletText))
+                    bullets.Add(new TailoredBullet
+                    {
+                        RewrittenBullet = bulletText,
+                        Role            = currentRole,
+                        Company         = currentCompany ?? "",
+                    });
+            }
+        }
+
+        return (string.Join(" ", summaryParts), bullets);
     }
 
     private record BulletItem(string? Original, string? Rewritten);
