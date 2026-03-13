@@ -864,7 +864,7 @@ namespace ARIS.API.Services
             var rawResumeText = ExtractRawResumeText(user.RawResume) ?? "";
             var rawJobText = job.RawDescription ?? "";
 
-            var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText);
+            var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText, llmClient);
             var summaryTask = GenerateSummaryAsync(rawResumeText, rawJobText, graphContextBlock, llmClient);
 
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
