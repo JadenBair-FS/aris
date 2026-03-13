@@ -1,0 +1,41 @@
+--- POSTING 3 ---
+Job Title: Senior C# Engineer - Microservices Platform
+Company: NorthBay Software
+Location: Seattle, WA (Remote-friendly)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT NORTHBAY SOFTWARE
+NorthBay Software provides a cloud-native ERP platform for mid-market distribution and manufacturing companies. Our platform is built on .NET 8 microservices deployed on Azure Kubernetes Service and serves 500+ clients across North America.
+
+ABOUT THE ROLE
+The Platform Engineering team is hiring a Senior C# Engineer to join our microservices infrastructure squad. You will build shared platform services (auth, notifications, audit), improve our CI/CD pipelines, and set technical standards adopted across 8 product squads.
+
+KEY RESPONSIBILITIES
+- Build shared platform microservices in C# and ASP.NET Core following Domain-Driven Design
+- Design event-driven integrations using Azure Service Bus and MassTransit
+- Implement the Outbox pattern for reliable message publishing with Entity Framework Core
+- Write unit tests with xUnit and contract tests for inter-service APIs
+- Configure and maintain Azure DevOps pipelines for build, test, and deployment to AKS
+- Build internal developer tooling and project templates in C#
+- Lead technical design sessions and review architecture proposals
+
+REQUIRED QUALIFICATIONS
+- 7+ years of .NET software development
+- 5+ years building microservices with ASP.NET Core
+- 4+ years with Entity Framework Core and SQL Server or PostgreSQL
+- 3+ years designing event-driven systems (Azure Service Bus, RabbitMQ, or Kafka)
+- 2+ years deploying .NET applications to Kubernetes (AKS, EKS, or GKE)
+- 2+ years with Azure DevOps or GitHub Actions for CI/CD
+- Strong understanding of DDD, CQRS, and microservices patterns
+- Experience with Docker for containerized microservices
+
+PREFERRED QUALIFICATIONS
+- Experience with MassTransit or NServiceBus for messaging abstractions
+- Familiarity with gRPC for synchronous inter-service communication
+- Knowledge of Blazor for internal tooling development
+- Experience with Terraform or Bicep for Azure infrastructure
+- Contributions to .NET open source projects
+
+COMPENSATION
+$170,000 - $200,000 + equity + benefits (fully remote, annual tech stipend)
+--- END POSTING 3 ---

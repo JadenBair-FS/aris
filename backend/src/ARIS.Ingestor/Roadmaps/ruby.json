@@ -1,0 +1,1341 @@
+{
+  "title": {
+    "card": "Ruby",
+    "page": "Ruby"
+  },
+  "description": "Step by step guide to becoming a Ruby developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "h_qucEbzVP3rJvEK7RPQF",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kdDQd_xz-6walimAN89wY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Yacmivp3Gcjn3_HUzI7jU",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "2FwtvWvGfeMRlm0c4eZpI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sNo1TWRBQopdwuUrE-mEW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "TKF3Ta5-VsMUVOZI7_SmZ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "D3m4Ja2jhdHhMuQTUKbID",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "5Y7pdJJTANt2tM282Vvfe",
+      "type": "vertical",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "bFLmHZdlQzx62pFJNF7uF",
+      "type": "title",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "FfM3pPbyP1VsvWousb3YK",
+      "type": "topic",
+      "data": {
+        "label": "Constants \u0026 Variables"
+      }
+    },
+    {
+      "id": "tRGKIfQG9IiPJGuO8DUX4",
+      "type": "topic",
+      "data": {
+        "label": "Naming conventions"
+      }
+    },
+    {
+      "id": "DKA6AJR1kz6Ox90MmN5Tl",
+      "type": "topic",
+      "data": {
+        "label": "puts, print, p"
+      }
+    },
+    {
+      "id": "PqSnJOOQm3lRoBUs9Fan6",
+      "type": "topic",
+      "data": {
+        "label": "Comments"
+      }
+    },
+    {
+      "id": "_-bUq5jtewDmsmnzYw1-q",
+      "type": "subtopic",
+      "data": {
+        "label": "Integers"
+      }
+    },
+    {
+      "id": "aLIXcqB258WNrdASuN_7G",
+      "type": "subtopic",
+      "data": {
+        "label": "Floats"
+      }
+    },
+    {
+      "id": "Ze02ApxTvyQqtB3VYv3d4",
+      "type": "subtopic",
+      "data": {
+        "label": "Booleans"
+      }
+    },
+    {
+      "id": "F-0Rxwu_RcNF_NOoFHoo7",
+      "type": "subtopic",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "U-V-MNSnIL17Imug_iFvE",
+      "type": "subtopic",
+      "data": {
+        "label": "Symbols"
+      }
+    },
+    {
+      "id": "2QHXNKV0tETI5FroFNylt",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrays"
+      }
+    },
+    {
+      "id": "mpsx0lr9ljlMEzuU5cZD6",
+      "type": "subtopic",
+      "data": {
+        "label": "Hashes"
+      }
+    },
+    {
+      "id": "WMa8k6sbhow-TXNibFj0a",
+      "type": "subtopic",
+      "data": {
+        "label": "nil"
+      }
+    },
+    {
+      "id": "cVSN9992bpxZwZ9JC1HHg",
+      "type": "subtopic",
+      "data": {
+        "label": "if, elsif, else"
+      }
+    },
+    {
+      "id": "MrPUYjPaz2F7c77GoPmue",
+      "type": "subtopic",
+      "data": {
+        "label": "unless"
+      }
+    },
+    {
+      "id": "BiUeOOd9E7V4Gpmu3PWj7",
+      "type": "subtopic",
+      "data": {
+        "label": "case"
+      }
+    },
+    {
+      "id": "gUa4S-_xZhClyiit_MSkQ",
+      "type": "subtopic",
+      "data": {
+        "label": "redo"
+      }
+    },
+    {
+      "id": "0gjDinuRDgPV9iTm39ZnS",
+      "type": "subtopic",
+      "data": {
+        "label": "break"
+      }
+    },
+    {
+      "id": "ueQ4bgcEXEgEDGhfVPjH8",
+      "type": "subtopic",
+      "data": {
+        "label": "next"
+      }
+    },
+    {
+      "id": "CkYLHSGH8dmfS5fK2JLfH",
+      "type": "subtopic",
+      "data": {
+        "label": "Defining methods"
+      }
+    },
+    {
+      "id": "DzolktV1UUCdSWqmqWgV3",
+      "type": "subtopic",
+      "data": {
+        "label": "Blocks"
+      }
+    },
+    {
+      "id": "dbdllih50mNFBrP9huQz9",
+      "type": "subtopic",
+      "data": {
+        "label": "Instance variables"
+      }
+    },
+    {
+      "id": "-2BSGoXGMMP50en_NnQ97",
+      "type": "subtopic",
+      "data": {
+        "label": "begin, rescue, ensure"
+      }
+    },
+    {
+      "id": "iwXBPrnuwPvNRbOIDxWvq",
+      "type": "subtopic",
+      "data": {
+        "label": "RubyGems"
+      }
+    },
+    {
+      "id": "Y6yFuFfcdlcupQUFHV3cg",
+      "type": "subtopic",
+      "data": {
+        "label": "Bundler"
+      }
+    },
+    {
+      "id": "uvPvcmhaO6WbkE9Xs5hsJ",
+      "type": "topic",
+      "data": {
+        "label": "Interactive Ruby (irb)"
+      }
+    },
+    {
+      "id": "Tb5DcDuAZNyuIPepJ_yy4",
+      "type": "subtopic",
+      "data": {
+        "label": "Lambdas"
+      }
+    },
+    {
+      "id": "DD3TQAEl2JD0TIPDNZXXl",
+      "type": "subtopic",
+      "data": {
+        "label": "Procs"
+      }
+    },
+    {
+      "id": "yaC-XKRT0dWDFmDqpCvUw",
+      "type": "subtopic",
+      "data": {
+        "label": "Closures"
+      }
+    },
+    {
+      "id": "ufLdyKM3iya8zuMD1_sIj",
+      "type": "topic",
+      "data": {
+        "label": "Metaprogramming"
+      }
+    },
+    {
+      "id": "oM4ezZoguNFOALXH3Sl6E",
+      "type": "topic",
+      "data": {
+        "label": "Concurrency"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "A_ftl-42mIGBk-9S5LgCv",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "Av5hlCtE-ZoeKpS0k3kLA",
+      "type": "topic",
+      "data": {
+        "label": "Setting things Up"
+      }
+    },
+    {
+      "id": "I708SVAEVSpdHzwxoHhgD",
+      "type": "subtopic",
+      "data": {
+        "label": "Arithmetic"
+      }
+    },
+    {
+      "id": "HiDx1OWbSDJJb7APHwG34",
+      "type": "subtopic",
+      "data": {
+        "label": "Comparison"
+      }
+    },
+    {
+      "id": "vLgIRI5GD9ANBjYJoZmid",
+      "type": "subtopic",
+      "data": {
+        "label": " Logical"
+      }
+    },
+    {
+      "id": "NpHLz4I9wwwXX-KBrjdgU",
+      "type": "subtopic",
+      "data": {
+        "label": "Assignment"
+      }
+    },
+    {
+      "id": "OHq_172eTWaVlxES7Ccfc",
+      "type": "subtopic",
+      "data": {
+        "label": "Ranges"
+      }
+    },
+    {
+      "id": "FIALdP3ZhOlzW-OIlJoT2",
+      "type": "topic",
+      "data": {
+        "label": "Conditional Statements"
+      }
+    },
+    {
+      "id": "aZYZcRlB1Azm4N_jox0Ow",
+      "type": "topic",
+      "data": {
+        "label": "Handling exceptions"
+      }
+    },
+    {
+      "id": "I9dIFxsUrysgrcqUSBNsW",
+      "type": "subtopic",
+      "data": {
+        "label": "Attributes accessors"
+      }
+    },
+    {
+      "id": "m4QhKH7mVhxRqnJOF5Xc2",
+      "type": "subtopic",
+      "data": {
+        "label": "Method Parameters"
+      }
+    },
+    {
+      "id": "qeAOBoD1BI-KBgByoe_Y-",
+      "type": "label",
+      "data": {
+        "label": "Package Management"
+      }
+    },
+    {
+      "id": "xO2RCVIxZprDgEW4-O9n9",
+      "type": "subtopic",
+      "data": {
+        "label": "while"
+      }
+    },
+    {
+      "id": "QFkREObmZZebsCwXM3ML0",
+      "type": "subtopic",
+      "data": {
+        "label": "RDoc"
+      }
+    },
+    {
+      "id": "EDfqLvVxq-PIqb1eGYL20",
+      "type": "subtopic",
+      "data": {
+        "label": "YARD"
+      }
+    },
+    {
+      "id": "Ljvgdf_xfhOGveArQJoG8",
+      "type": "label",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "gHn3q_539Ia31Kviem8lK",
+      "type": "subtopic",
+      "data": {
+        "label": "RuboCop"
+      }
+    },
+    {
+      "id": "Wf6AYAz8gTpaj6ZfOxoZM",
+      "type": "subtopic",
+      "data": {
+        "label": "Standard"
+      }
+    },
+    {
+      "id": "sZtvGFl25yCH4Oj1_vZpf",
+      "type": "label",
+      "data": {
+        "label": "Linting \u0026 Formating"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Ruby on Rails"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "OVPm4SgT7wvapUNWKQOdH",
+      "type": "subtopic",
+      "data": {
+        "label": "until"
+      }
+    },
+    {
+      "id": "NjCor7ePiZapd4f6bMZlV",
+      "type": "topic",
+      "data": {
+        "label": "Type Casting"
+      }
+    },
+    {
+      "id": "UQeCaogH4IJg4_Inxsjg1",
+      "type": "topic",
+      "data": {
+        "label": "File I/O"
+      }
+    },
+    {
+      "id": "B5T4d3FYTvydh4DOcTFFR",
+      "type": "topic",
+      "data": {
+        "label": "Regex"
+      }
+    },
+    {
+      "id": "SB_IzxfilaHBVL1fe5aYG",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope"
+      }
+    },
+    {
+      "id": "CIV4Ph1B-kUcYv_EqVw2I",
+      "type": "subtopic",
+      "data": {
+        "label": "Chaining Methods"
+      }
+    },
+    {
+      "id": "1NIxWfLiaXKNZJSmrudPv",
+      "type": "subtopic",
+      "data": {
+        "label": "times"
+      }
+    },
+    {
+      "id": "VlhY73X3c0PnA1uYjbfZH",
+      "type": "subtopic",
+      "data": {
+        "label": "for"
+      }
+    },
+    {
+      "id": "iJ7e3-VJV6l-Qe-b5yAgC",
+      "type": "subtopic",
+      "data": {
+        "label": "each"
+      }
+    },
+    {
+      "id": "OwRukUn8ypko_hPUHkxv_",
+      "type": "subtopic",
+      "data": {
+        "label": "do/while"
+      }
+    },
+    {
+      "id": "ZQuUDWqbNUxOYc-Fkk2pI",
+      "type": "subtopic",
+      "data": {
+        "label": "Querying"
+      }
+    },
+    {
+      "id": "PQX6c9h1O_p-ExDvC88zl",
+      "type": "subtopic",
+      "data": {
+        "label": "Fetching"
+      }
+    },
+    {
+      "id": "Zil-9cf_-g1H5VUF52bxo",
+      "type": "subtopic",
+      "data": {
+        "label": "Searching \u0026 Filtering"
+      }
+    },
+    {
+      "id": "knmTmlDbyRwZKxuIIVbwn",
+      "type": "subtopic",
+      "data": {
+        "label": "Sorting"
+      }
+    },
+    {
+      "id": "frFY2AeO2BQF6I0CmTLkV",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterating"
+      }
+    },
+    {
+      "id": "Mo9iwQmofTUSXFOjGwY7s",
+      "type": "label",
+      "data": {
+        "label": "Blocks, Procs \u0026 Lambdas"
+      }
+    },
+    {
+      "id": "GO8vwhZOb-3lZj2eQGFQT",
+      "type": "label",
+      "data": {
+        "label": "Methods (aka functions)"
+      }
+    },
+    {
+      "id": "UjaTLzZ03ZxzUVfVmSDUc",
+      "type": "label",
+      "data": {
+        "label": "Classes \u0026 Objects"
+      }
+    },
+    {
+      "id": "lPPdaW7EEyUCxV41ljvPY",
+      "type": "subtopic",
+      "data": {
+        "label": "Defining Classes"
+      }
+    },
+    {
+      "id": "7HSJh15ice_CG3FtfQ5x6",
+      "type": "subtopic",
+      "data": {
+        "label": "Inheritance"
+      }
+    },
+    {
+      "id": "8OF85n6CRQ3u3GFxlJlc8",
+      "type": "subtopic",
+      "data": {
+        "label": "Modules \u0026 Mixins"
+      }
+    },
+    {
+      "id": "yqsXD8ugaAHPnLJsd5XDQ",
+      "type": "subtopic",
+      "data": {
+        "label": " Recursion"
+      }
+    },
+    {
+      "id": "5YaG_dAi1xqG_0aev1Gsm",
+      "type": "label",
+      "data": {
+        "label": "Environments"
+      }
+    },
+    {
+      "id": "0c_0zyh1LQA80gmriWOT3",
+      "type": "subtopic",
+      "data": {
+        "label": "RVM"
+      }
+    },
+    {
+      "id": "VaRe4VrB7hjGp2UUFxtGf",
+      "type": "subtopic",
+      "data": {
+        "label": "Rbenv"
+      }
+    },
+    {
+      "id": "wcw4QurFUczUKnyBPpnr5",
+      "type": "subtopic",
+      "data": {
+        "label": "Stacks  \u0026 queues"
+      }
+    },
+    {
+      "id": "EPNxjJqcP10c1__q1KKea",
+      "type": "subtopic",
+      "data": {
+        "label": "Search Algorithms"
+      }
+    },
+    {
+      "id": "hD6uldPLaedTvUwAWKFYY",
+      "type": "subtopic",
+      "data": {
+        "label": "Sorting Algorithms"
+      }
+    },
+    {
+      "id": "B6k8K0WO4Js3KGy6hFsY6",
+      "type": "label",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "ihUJHaZ1gu3Fb7MiybXCj",
+      "type": "subtopic",
+      "data": {
+        "label": "Method Lookup"
+      }
+    },
+    {
+      "id": "6mCtbDW5pkFQdLSjsr_Ad",
+      "type": "subtopic",
+      "data": {
+        "label": "Monkey Patching"
+      }
+    },
+    {
+      "id": "aNf0-Yhwl98L_oNfipvj3",
+      "type": "subtopic",
+      "data": {
+        "label": "Refinements"
+      }
+    },
+    {
+      "id": "pBbtuN36wqgXz4Oua0ukX",
+      "type": "subtopic",
+      "data": {
+        "label": "method_missing"
+      }
+    },
+    {
+      "id": "5uayAWgKAYW_mJiMxuXmK",
+      "type": "subtopic",
+      "data": {
+        "label": "send"
+      }
+    },
+    {
+      "id": "iwLZktEcLmnahj4o-IgWB",
+      "type": "subtopic",
+      "data": {
+        "label": "define_method"
+      }
+    },
+    {
+      "id": "xJ_F95dKmaRKE42yQ2R-r",
+      "type": "subtopic",
+      "data": {
+        "label": " Threads"
+      }
+    },
+    {
+      "id": "_ruCDzzaSuoE_8tRacTeK",
+      "type": "subtopic",
+      "data": {
+        "label": " Fibers"
+      }
+    },
+    {
+      "id": "Voz_H9SBIeOndzl3gmuS7",
+      "type": "subtopic",
+      "data": {
+        "label": "Pry"
+      }
+    },
+    {
+      "id": "_TyiwnXJ7kQI8Z02ooAIy",
+      "type": "subtopic",
+      "data": {
+        "label": "irb"
+      }
+    },
+    {
+      "id": "PD6q-vB4hFlT3oHWAVU_6",
+      "type": "label",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "r5GiIF1kYA_l9qn6cT5LS",
+      "type": "label",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "C7Dy0rqAo-HotIVlCBa1G",
+      "type": "subtopic",
+      "data": {
+        "label": " Minitest"
+      }
+    },
+    {
+      "id": "E6k00oTuohQOBkPNyuKAA",
+      "type": "subtopic",
+      "data": {
+        "label": "RSpec"
+      }
+    },
+    {
+      "id": "Tzf1uJDIeIjPAVleVe_yx",
+      "type": "subtopic",
+      "data": {
+        "label": " Test::Unit"
+      }
+    },
+    {
+      "id": "2y9U11vXpTXHwkIGogzaf",
+      "type": "subtopic",
+      "data": {
+        "label": "byebug"
+      }
+    },
+    {
+      "id": "JSauSDvDotwrWZiyLuWks",
+      "type": "subtopic",
+      "data": {
+        "label": "debug"
+      }
+    },
+    {
+      "id": "WNiD4Tllt2uDncEVPg8Pm",
+      "type": "subtopic",
+      "data": {
+        "label": "Singleton Classes"
+      }
+    },
+    {
+      "id": "toevE0eM7c5f_zeSaVjdr",
+      "type": "subtopic",
+      "data": {
+        "label": "Concurrent Ruby"
+      }
+    },
+    {
+      "id": "9_KhHCWRDTNl1nroot_Ri",
+      "type": "subtopic",
+      "data": {
+        "label": "VS Code"
+      }
+    },
+    {
+      "id": "WQQuaLnCCzy48uDPJ-sDb",
+      "type": "subtopic",
+      "data": {
+        "label": "RubyMine"
+      }
+    },
+    {
+      "id": "JsoqD1PLPqPDV9kEnGyLj",
+      "type": "label",
+      "data": {
+        "label": "IDEs"
+      }
+    },
+    {
+      "id": "aU4XniRWyGKQxGnrxYKyE",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby DSL"
+      }
+    },
+    {
+      "id": "AE7YB3XH70HJWCf51i5YH",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby on Rails"
+      }
+    },
+    {
+      "id": "QZHvZhbPUFh60BMxhshqD",
+      "type": "label",
+      "data": {
+        "label": "Pick a Framework"
+      }
+    },
+    {
+      "id": "qvg65UaeythwvO38wn8Gc",
+      "type": "subtopic",
+      "data": {
+        "label": "Rack"
+      }
+    },
+    {
+      "id": "XI-1114QVFgALBF9VAb99",
+      "type": "subtopic",
+      "data": {
+        "label": "Sinatra"
+      }
+    },
+    {
+      "id": "cRQjwGKIG7CmbDOwj7dfU",
+      "type": "subtopic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "zY4gsqXOOT3yp9ad9-T5a",
+      "type": "subtopic",
+      "data": {
+        "label": "Installers"
+      }
+    },
+    {
+      "id": "RnKFjcscp8nqwesQ06YWU",
+      "type": "subtopic",
+      "data": {
+        "label": "Managers"
+      }
+    },
+    {
+      "id": "RGo3VGXftLx877w0Cxhwb",
+      "type": "topic",
+      "data": {
+        "label": "Date \u0026 Time"
+      }
+    },
+    {
+      "id": "H4Cz_4xcMJmU0UwvEhNIn",
+      "type": "subtopic",
+      "data": {
+        "label": "Ractors"
+      }
+    },
+    {
+      "id": "6rs1pmEXEGfiiDoblaKQN",
+      "type": "label",
+      "data": {
+        "label": "Syntax Basics"
+      }
+    },
+    {
+      "id": "RNPEadWX0g-C3rIY_LpaU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_MCq5DlNOn_xC7bu6XKy2",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "fAfF3lseBH6U6gQwJz0oN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "wsnjdnZZohQsVBfM1uN8H",
+      "type": "topic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "5ThpsSMnFZUxWV1Y2Z75A",
+      "type": "topic",
+      "data": {
+        "label": "Operators"
+      }
+    },
+    {
+      "id": "dRfPXHrI5CHCELySKLZuQ",
+      "type": "topic",
+      "data": {
+        "label": "Loops \u0026 Enumerations"
+      }
+    },
+    {
+      "id": "jw218cE_PQDRnOTzCXpXr",
+      "type": "topic",
+      "data": {
+        "label": "Enumerable"
+      }
+    },
+    {
+      "id": "oxSxPVDTotbGggIUQVJfc",
+      "type": "label",
+      "data": {
+        "label": "Object-Oriented Programming"
+      }
+    },
+    {
+      "id": "MN4RfvuiVk90-YkRCbbhU",
+      "type": "label",
+      "data": {
+        "label": "Data Structures \u0026 Algorithms"
+      }
+    },
+    {
+      "id": "wVEX-TgWbO-qx8oiWBA2j",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "o1pYnU17AGEyKT01m569s",
+      "type": "label",
+      "data": {
+        "label": "Tooling \u0026 Ecosystem"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "t3hBN1KyP8nJNMDS7taWc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "-P-yJJaR2dVWVCfQAeOkn",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "HVjYtrTP1VR50yuYSwR8A",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__bFLmHZdlQzx62pFJNF7uFx2-m7Kg5TS5_WySre40i2DKbw1",
+      "source": "bFLmHZdlQzx62pFJNF7uF",
+      "target": "A_ftl-42mIGBk-9S5LgCv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__aU4XniRWyGKQxGnrxYKyEz2-H4Cz_4xcMJmU0UwvEhNIny2",
+      "source": "oM4ezZoguNFOALXH3Sl6E",
+      "target": "xJ_F95dKmaRKE42yQ2R-r",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__7HSJh15ice_CG3FtfQ5x6x2-8OF85n6CRQ3u3GFxlJlc8w1",
+      "source": "7HSJh15ice_CG3FtfQ5x6",
+      "target": "8OF85n6CRQ3u3GFxlJlc8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__oM4ezZoguNFOALXH3Sl6Ez2-toevE0eM7c5f_zeSaVjdry1",
+      "source": "oM4ezZoguNFOALXH3Sl6E",
+      "target": "toevE0eM7c5f_zeSaVjdr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__oM4ezZoguNFOALXH3Sl6Ez2-H4Cz_4xcMJmU0UwvEhNIny1",
+      "source": "oM4ezZoguNFOALXH3Sl6E",
+      "target": "H4Cz_4xcMJmU0UwvEhNIn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "nOuAZLOqNVkrBEPsQ-wrn",
+      "source": "Av5hlCtE-ZoeKpS0k3kLA",
+      "target": "RnKFjcscp8nqwesQ06YWU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "3NTQOZWN8nec6Owq4gPxe",
+      "source": "Av5hlCtE-ZoeKpS0k3kLA",
+      "target": "zY4gsqXOOT3yp9ad9-T5a",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Av5hlCtE-ZoeKpS0k3kLAz2-cRQjwGKIG7CmbDOwj7dfUy1",
+      "source": "Av5hlCtE-ZoeKpS0k3kLA",
+      "target": "cRQjwGKIG7CmbDOwj7dfU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Av5hlCtE-ZoeKpS0k3kLAx2-6rs1pmEXEGfiiDoblaKQNw1",
+      "source": "Av5hlCtE-ZoeKpS0k3kLA",
+      "target": "6rs1pmEXEGfiiDoblaKQN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wsnjdnZZohQsVBfM1uN8Hz2-_-bUq5jtewDmsmnzYw1-qy1",
+      "source": "wsnjdnZZohQsVBfM1uN8H",
+      "target": "_-bUq5jtewDmsmnzYw1-q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wsnjdnZZohQsVBfM1uN8Hz2-F-0Rxwu_RcNF_NOoFHoo7y1",
+      "source": "wsnjdnZZohQsVBfM1uN8H",
+      "target": "F-0Rxwu_RcNF_NOoFHoo7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wsnjdnZZohQsVBfM1uN8Hz2-2QHXNKV0tETI5FroFNylty1",
+      "source": "wsnjdnZZohQsVBfM1uN8H",
+      "target": "2QHXNKV0tETI5FroFNylt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wsnjdnZZohQsVBfM1uN8Hz2-U-V-MNSnIL17Imug_iFvEy1",
+      "source": "wsnjdnZZohQsVBfM1uN8H",
+      "target": "U-V-MNSnIL17Imug_iFvE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NjCor7ePiZapd4f6bMZlVx2-5ThpsSMnFZUxWV1Y2Z75Aw2",
+      "source": "NjCor7ePiZapd4f6bMZlV",
+      "target": "5ThpsSMnFZUxWV1Y2Z75A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5ThpsSMnFZUxWV1Y2Z75Ay2-vLgIRI5GD9ANBjYJoZmidz1",
+      "source": "5ThpsSMnFZUxWV1Y2Z75A",
+      "target": "vLgIRI5GD9ANBjYJoZmid",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5ThpsSMnFZUxWV1Y2Z75Ay2-NpHLz4I9wwwXX-KBrjdgUz2",
+      "source": "5ThpsSMnFZUxWV1Y2Z75A",
+      "target": "NpHLz4I9wwwXX-KBrjdgU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5ThpsSMnFZUxWV1Y2Z75Ay2-OHq_172eTWaVlxES7Ccfcz1",
+      "source": "5ThpsSMnFZUxWV1Y2Z75A",
+      "target": "OHq_172eTWaVlxES7Ccfc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5ThpsSMnFZUxWV1Y2Z75Ay2-HiDx1OWbSDJJb7APHwG34z1",
+      "source": "5ThpsSMnFZUxWV1Y2Z75A",
+      "target": "HiDx1OWbSDJJb7APHwG34",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__5ThpsSMnFZUxWV1Y2Z75Ay2-I708SVAEVSpdHzwxoHhgDz1",
+      "source": "5ThpsSMnFZUxWV1Y2Z75A",
+      "target": "I708SVAEVSpdHzwxoHhgD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXrz2-cVSN9992bpxZwZ9JC1HHgy1",
+      "source": "FIALdP3ZhOlzW-OIlJoT2",
+      "target": "cVSN9992bpxZwZ9JC1HHg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXrz2-MrPUYjPaz2F7c77GoPmuey1",
+      "source": "FIALdP3ZhOlzW-OIlJoT2",
+      "target": "MrPUYjPaz2F7c77GoPmue",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__FIALdP3ZhOlzW-OIlJoT2x2-jw218cE_PQDRnOTzCXpXrw1",
+      "source": "FIALdP3ZhOlzW-OIlJoT2",
+      "target": "dRfPXHrI5CHCELySKLZuQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXrz2-xO2RCVIxZprDgEW4-O9n9y1",
+      "source": "dRfPXHrI5CHCELySKLZuQ",
+      "target": "xO2RCVIxZprDgEW4-O9n9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXrz2-VlhY73X3c0PnA1uYjbfZHy1",
+      "source": "dRfPXHrI5CHCELySKLZuQ",
+      "target": "VlhY73X3c0PnA1uYjbfZH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXrz2-0gjDinuRDgPV9iTm39ZnSy1",
+      "source": "dRfPXHrI5CHCELySKLZuQ",
+      "target": "0gjDinuRDgPV9iTm39ZnS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dRfPXHrI5CHCELySKLZuQx2-jw218cE_PQDRnOTzCXpXrw2",
+      "source": "dRfPXHrI5CHCELySKLZuQ",
+      "target": "jw218cE_PQDRnOTzCXpXr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXry2-PQX6c9h1O_p-ExDvC88zlz1",
+      "source": "jw218cE_PQDRnOTzCXpXr",
+      "target": "PQX6c9h1O_p-ExDvC88zl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXry2-Zil-9cf_-g1H5VUF52bxoz1",
+      "source": "jw218cE_PQDRnOTzCXpXr",
+      "target": "Zil-9cf_-g1H5VUF52bxo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXry2-knmTmlDbyRwZKxuIIVbwnz1",
+      "source": "jw218cE_PQDRnOTzCXpXr",
+      "target": "knmTmlDbyRwZKxuIIVbwn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXry2-frFY2AeO2BQF6I0CmTLkVz1",
+      "source": "jw218cE_PQDRnOTzCXpXr",
+      "target": "frFY2AeO2BQF6I0CmTLkV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jw218cE_PQDRnOTzCXpXry2-ZQuUDWqbNUxOYc-Fkk2pIz1",
+      "source": "jw218cE_PQDRnOTzCXpXr",
+      "target": "ZQuUDWqbNUxOYc-Fkk2pI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aZYZcRlB1Azm4N_jox0Owz2--2BSGoXGMMP50en_NnQ97y1",
+      "source": "aZYZcRlB1Azm4N_jox0Ow",
+      "target": "-2BSGoXGMMP50en_NnQ97",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aZYZcRlB1Azm4N_jox0Owx2-uvPvcmhaO6WbkE9Xs5hsJw2",
+      "source": "aZYZcRlB1Azm4N_jox0Ow",
+      "target": "uvPvcmhaO6WbkE9Xs5hsJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uvPvcmhaO6WbkE9Xs5hsJz2-oxSxPVDTotbGggIUQVJfcy1",
+      "source": "uvPvcmhaO6WbkE9Xs5hsJ",
+      "target": "oxSxPVDTotbGggIUQVJfc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__sNo1TWRBQopdwuUrE-mEWx2-ufLdyKM3iya8zuMD1_sIjw1",
+      "source": "sNo1TWRBQopdwuUrE-mEW",
+      "target": "ufLdyKM3iya8zuMD1_sIj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ufLdyKM3iya8zuMD1_sIjz2-aU4XniRWyGKQxGnrxYKyEy1",
+      "source": "ufLdyKM3iya8zuMD1_sIj",
+      "target": "aU4XniRWyGKQxGnrxYKyE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ufLdyKM3iya8zuMD1_sIjz2-pBbtuN36wqgXz4Oua0ukXy1",
+      "source": "ufLdyKM3iya8zuMD1_sIj",
+      "target": "pBbtuN36wqgXz4Oua0ukX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ufLdyKM3iya8zuMD1_sIjz2-iwLZktEcLmnahj4o-IgWBy2",
+      "source": "ufLdyKM3iya8zuMD1_sIj",
+      "target": "iwLZktEcLmnahj4o-IgWB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ufLdyKM3iya8zuMD1_sIjz2-5uayAWgKAYW_mJiMxuXmKy1",
+      "source": "ufLdyKM3iya8zuMD1_sIj",
+      "target": "5uayAWgKAYW_mJiMxuXmK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ufLdyKM3iya8zuMD1_sIjx2-oM4ezZoguNFOALXH3Sl6Ew1",
+      "source": "ufLdyKM3iya8zuMD1_sIj",
+      "target": "oM4ezZoguNFOALXH3Sl6E",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__oM4ezZoguNFOALXH3Sl6Ex2-o1pYnU17AGEyKT01m569sw1",
+      "source": "oM4ezZoguNFOALXH3Sl6E",
+      "target": "o1pYnU17AGEyKT01m569s",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__o1pYnU17AGEyKT01m569sx2-kdDQd_xz-6walimAN89wYw1",
+      "source": "o1pYnU17AGEyKT01m569s",
+      "target": "kdDQd_xz-6walimAN89wY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

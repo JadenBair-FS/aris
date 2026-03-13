@@ -1,0 +1,41 @@
+--- POSTING 1 ---
+Job Title: Senior .NET Software Engineer
+Company: Axiom Systems
+Location: Dallas, TX
+Source: Synthetic based on greenhouse.io research
+
+ABOUT AXIOM SYSTEMS
+Axiom Systems builds enterprise workflow automation software for insurance carriers and third-party administrators. Our platform automates claims processing, policy administration, and compliance reporting for 200+ carriers nationwide. We have 320 employees and are growing our engineering team to support a major platform modernization.
+
+ABOUT THE ROLE
+We are hiring a Senior .NET Software Engineer to lead development on our claims workflow engine, which is being rebuilt as a set of ASP.NET Core microservices. You will design APIs, mentor engineers, and help establish the architectural patterns for our new platform.
+
+KEY RESPONSIBILITIES
+- Design and implement ASP.NET Core Web API services following clean architecture and CQRS patterns
+- Build and maintain Entity Framework Core data models against SQL Server
+- Implement domain-driven design patterns (aggregates, repositories, domain events) for the claims domain
+- Write comprehensive unit and integration tests using xUnit and Moq
+- Deploy services on Azure using Azure Service Bus for event-driven messaging
+- Conduct code reviews and mentor 2-3 mid-level engineers
+- Collaborate with architects on microservices decomposition and API contract design
+
+REQUIRED QUALIFICATIONS
+- 6+ years of .NET software development experience
+- 5+ years building production APIs with ASP.NET Core
+- 4+ years with Entity Framework Core and SQL Server
+- 3+ years applying CQRS or DDD patterns in a production codebase
+- 2+ years writing unit tests with xUnit or NUnit
+- 2+ years with Azure (Service Bus, App Service, or Azure Functions)
+- Experience with Docker for containerized deployments
+- Strong understanding of REST API design and versioning
+
+PREFERRED QUALIFICATIONS
+- Experience with MediatR for CQRS implementation
+- Familiarity with gRPC for inter-service communication
+- Knowledge of Azure DevOps for CI/CD pipelines
+- Background in insurance, finance, or regulated enterprise software
+- Experience with microservices patterns (Circuit Breaker, Saga, Outbox)
+
+COMPENSATION
+$155,000 - $180,000 + bonus + benefits
+--- END POSTING 1 ---

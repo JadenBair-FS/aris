@@ -1,0 +1,1653 @@
+{
+  "title": {
+    "card": "Frontend",
+    "page": "Frontend Developer"
+  },
+  "description": "Step by step guide to becoming a modern frontend developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "rTPILeOl4kayCrrRkV9QA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rmlzKAqMMvFBRvbJB6ume",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "eD2bXXZSLfizqzt7lEWrd",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TNtfSIljEHYwIDsyhbvt1",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "UlCAHtW9pG4UEzZDncztz",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "a8oOlkyM_C8vHuHqeiOAK",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Ag-cO_gijx-4zjVev-ip_",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "cpXONhDqKFe4qD5TAv7Ie",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "w2THS-JTQ48uYd23lqKCh",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "tDo-Q_H0Jor2fUSKhrDCd",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wn2dsBrli3cswlXF4SltS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue Learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "jJebnKe4JftMXZ1lCsipq",
+      "type": "title",
+      "data": {
+        "label": "Front-end"
+      }
+    },
+    {
+      "id": "VlNNwIEDWqQXtqkHWJYzC",
+      "type": "topic",
+      "data": {
+        "label": "Internet"
+      }
+    },
+    {
+      "id": "yCnn-NfSxIybUQ2iTuUGq",
+      "type": "subtopic",
+      "data": {
+        "label": "How does the internet work?"
+      }
+    },
+    {
+      "id": "R12sArWVpbIs_PHxBqVaR",
+      "type": "subtopic",
+      "data": {
+        "label": "What is HTTP?"
+      }
+    },
+    {
+      "id": "ZhSuu2VArnzPDp6dPQQSC",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Domain Name?"
+      }
+    },
+    {
+      "id": "aqMaEY8gkKMikiqleV5EP",
+      "type": "subtopic",
+      "data": {
+        "label": "What is hosting?"
+      }
+    },
+    {
+      "id": "hkxw9jPGYphmjhTjw8766",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS and how it works?"
+      }
+    },
+    {
+      "id": "P82WFaTPgQEPNp5IIuZ1Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Browsers and how they work?"
+      }
+    },
+    {
+      "id": "yWG2VUkaF5IJVVut6AiSy",
+      "type": "topic",
+      "data": {
+        "label": "HTML"
+      }
+    },
+    {
+      "id": "ZhJhf1M2OphYbEmduFq-9",
+      "type": "topic",
+      "data": {
+        "label": "CSS"
+      }
+    },
+    {
+      "id": "ODcfFEorkfJNupoQygM53",
+      "type": "topic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "MXnFhZlNB1zTsBFDyni9H",
+      "type": "topic",
+      "data": {
+        "label": "VCS Hosting"
+      }
+    },
+    {
+      "id": "NIY7c4TQEEHx0hATu-k5C",
+      "type": "topic",
+      "data": {
+        "label": "Version Control "
+      }
+    },
+    {
+      "id": "R_I4SGYqLk5zze5I1zS_E",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "IqvS1V-98cxko3e9sBQgP",
+      "type": "topic",
+      "data": {
+        "label": "Package Managers"
+      }
+    },
+    {
+      "id": "qmTVMJDsEhNIkiwE_UTYu",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "zIoSJMX3cuzCgDYHjgbEh",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab"
+      }
+    },
+    {
+      "id": "yrq3nOwFREzl-9EKnpU-e",
+      "type": "subtopic",
+      "data": {
+        "label": "yarn"
+      }
+    },
+    {
+      "id": "SLxA5qJFp_28TRzr1BjxZ",
+      "type": "subtopic",
+      "data": {
+        "label": "pnpm"
+      }
+    },
+    {
+      "id": "ib_FHinhrw8VuSet-xMF7",
+      "type": "subtopic",
+      "data": {
+        "label": "npm"
+      }
+    },
+    {
+      "id": "eXezX7CVNyC1RuyU_I4yP",
+      "type": "topic",
+      "data": {
+        "label": "Learn a Framework"
+      }
+    },
+    {
+      "id": "-bHFIiXnoUQSov64WI9yo",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular"
+      }
+    },
+    {
+      "id": "ERAdwL1G9M1bnx-fOm5ZA",
+      "type": "subtopic",
+      "data": {
+        "label": "Vue.js"
+      }
+    },
+    {
+      "id": "tG5v3O4lNIFc2uCnacPak",
+      "type": "subtopic",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "ZR-qZ2Lcbu3FtqaMd3wM4",
+      "type": "subtopic",
+      "data": {
+        "label": "Svelte"
+      }
+    },
+    {
+      "id": "DxOSKnqAjZOPP-dq_U7oP",
+      "type": "subtopic",
+      "data": {
+        "label": "Solid JS"
+      }
+    },
+    {
+      "id": "XDTD8el6OwuQ55wC-X4iV",
+      "type": "topic",
+      "data": {
+        "label": "CSS Frameworks"
+      }
+    },
+    {
+      "id": "eghnfG4p7i-EDWfp3CQXC",
+      "type": "subtopic",
+      "data": {
+        "label": "Tailwind"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9VcGfDBBD8YcKatj4VcH1",
+      "type": "topic",
+      "data": {
+        "label": "Linters \u0026 Formatters"
+      }
+    },
+    {
+      "id": "hkSc_1x09m7-7BO7WzlDT",
+      "type": "topic",
+      "data": {
+        "label": "Module Bundlers"
+      }
+    },
+    {
+      "id": "NS-hwaWa5ebSmNNRoxFDp",
+      "type": "subtopic",
+      "data": {
+        "label": "Parcel"
+      }
+    },
+    {
+      "id": "sCjErk7rfWAUvhl8Kfm3n",
+      "type": "subtopic",
+      "data": {
+        "label": "Rollup"
+      }
+    },
+    {
+      "id": "4W7UXfdKIUsm1bUrjdTVT",
+      "type": "subtopic",
+      "data": {
+        "label": "esbuild"
+      }
+    },
+    {
+      "id": "0Awx3zEI5_gYEIrD7IVX6",
+      "type": "subtopic",
+      "data": {
+        "label": "Vite"
+      }
+    },
+    {
+      "id": "zbkpu_gvQ4mgCiZKzS1xv",
+      "type": "subtopic",
+      "data": {
+        "label": "Prettier"
+      }
+    },
+    {
+      "id": "NFjsI712_qP0IOmjuqXar",
+      "type": "subtopic",
+      "data": {
+        "label": "ESLint"
+      }
+    },
+    {
+      "id": "igg4_hb3XE3vuvY8ufV-4",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "hVQ89f6G0LXEgHIOKHDYq",
+      "type": "subtopic",
+      "data": {
+        "label": "Vitest"
+      }
+    },
+    {
+      "id": "g5itUjgRXd9vs9ujHezFl",
+      "type": "subtopic",
+      "data": {
+        "label": "Jest"
+      }
+    },
+    {
+      "id": "jramLk8FGuaEH4YpHIyZT",
+      "type": "subtopic",
+      "data": {
+        "label": "Playwright"
+      }
+    },
+    {
+      "id": "DaynCz5RR26gjT6N6gTDL",
+      "type": "subtopic",
+      "data": {
+        "label": "Cypress"
+      }
+    },
+    {
+      "id": "U5mD5FmVx7VWeKxDpQxB5",
+      "type": "topic",
+      "data": {
+        "label": "Auth Strategies"
+      }
+    },
+    {
+      "id": "RDWbG3Iui6IPgp0shvXtg",
+      "type": "topic",
+      "data": {
+        "label": "Web Security"
+      }
+    },
+    {
+      "id": "AfH2zCbqzw0Nisg1yyISS",
+      "type": "subtopic",
+      "data": {
+        "label": "CORS"
+      }
+    },
+    {
+      "id": "uum7vOhOUR38vLuGZy8Oa",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTPS"
+      }
+    },
+    {
+      "id": "rmcm0CZbtNVC9LZ14-H6h",
+      "type": "subtopic",
+      "data": {
+        "label": "CSP"
+      }
+    },
+    {
+      "id": "JanR7I_lNnUCXhCMGLdn-",
+      "type": "subtopic",
+      "data": {
+        "label": "OWASP Risks"
+      }
+    },
+    {
+      "id": "ruoFa3M4bUE3Dg6GXSiUI",
+      "type": "topic",
+      "data": {
+        "label": "Web Components"
+      }
+    },
+    {
+      "id": "NQ95TJCe3E1IwEuBa__D6",
+      "type": "topic",
+      "data": {
+        "label": "Type Checkers"
+      }
+    },
+    {
+      "id": "VxiQPgcYDFAT6WgSRWpIA",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Elements"
+      }
+    },
+    {
+      "id": "Hk8AVonOd693_y1sykPqd",
+      "type": "subtopic",
+      "data": {
+        "label": "HTML Templates"
+      }
+    },
+    {
+      "id": "-SpsNeOZBkQfDA-rwzgPg",
+      "type": "subtopic",
+      "data": {
+        "label": "Shadow DOM"
+      }
+    },
+    {
+      "id": "Cxspmb14_0i1tfw-ZLxEu",
+      "type": "topic",
+      "data": {
+        "label": "SSR"
+      }
+    },
+    {
+      "id": "OL8I6nOZ8hGGWmtxg_Mv8",
+      "type": "subtopic",
+      "data": {
+        "label": "Svelte"
+      }
+    },
+    {
+      "id": "3TE_iYvbklXK0be-5f2M7",
+      "type": "topic",
+      "data": {
+        "label": "Vue.js"
+      }
+    },
+    {
+      "id": "k6rp6Ua9qUEW_DA_fOg5u",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular"
+      }
+    },
+    {
+      "id": "SGDf_rbfmFSHlxI-Czzlz",
+      "type": "topic",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "KJRkrFZIihCUBrOf579EU",
+      "type": "subtopic",
+      "data": {
+        "label": "react-router"
+      }
+    },
+    {
+      "id": "zNFYAJaSq0YZXL5Rpx1NX",
+      "type": "subtopic",
+      "data": {
+        "label": "Next.js"
+      }
+    },
+    {
+      "id": "BBsXxkbbEG-gnbM1xXKrj",
+      "type": "subtopic",
+      "data": {
+        "label": "Nuxt.js"
+      }
+    },
+    {
+      "id": "P4st_telfCwKLSAU2WsQP",
+      "type": "topic",
+      "data": {
+        "label": "Svelte Kit"
+      }
+    },
+    {
+      "id": "L7AllJfKvClaam3y-u6DP",
+      "type": "topic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "5eUbDdOTOfaOhUlZAmmXW",
+      "type": "subtopic",
+      "data": {
+        "label": "Apollo"
+      }
+    },
+    {
+      "id": "0moPO23ol33WsjVXSpTGf",
+      "type": "subtopic",
+      "data": {
+        "label": "Relay Modern"
+      }
+    },
+    {
+      "id": "n0q32YhWEIAUwbGXexoqV",
+      "type": "topic",
+      "data": {
+        "label": "SSG"
+      }
+    },
+    {
+      "id": "CMrss8E2W0eA6DVEqtPjT",
+      "type": "subtopic",
+      "data": {
+        "label": "Vuepress"
+      }
+    },
+    {
+      "id": "XWJxV42Dpu2D3xDK10Pn3",
+      "type": "subtopic",
+      "data": {
+        "label": "Nuxt.js"
+      }
+    },
+    {
+      "id": "iUxXq7beg55y76dkwhM13",
+      "type": "subtopic",
+      "data": {
+        "label": "Astro"
+      }
+    },
+    {
+      "id": "io0RHJWIcVxDhcYkV9d38",
+      "type": "subtopic",
+      "data": {
+        "label": "Eleventy"
+      }
+    },
+    {
+      "id": "V70884VcuXkfrfHyLGtUg",
+      "type": "subtopic",
+      "data": {
+        "label": "Next.js"
+      }
+    },
+    {
+      "id": "PoM77O2OtxPELxfrW1wtl",
+      "type": "topic",
+      "data": {
+        "label": "PWAs"
+      }
+    },
+    {
+      "id": "VOGKiG2EZVfCBAaa7Df0W",
+      "type": "topic",
+      "data": {
+        "label": "Mobile Apps"
+      }
+    },
+    {
+      "id": "dsTegXTyupjS8iU6I7Xiv",
+      "type": "subtopic",
+      "data": {
+        "label": "React Native"
+      }
+    },
+    {
+      "id": "dIQXjFEUAJAGxxfAYceHU",
+      "type": "subtopic",
+      "data": {
+        "label": "Flutter"
+      }
+    },
+    {
+      "id": "Pxyk3nBlWbgmMjsA93E70",
+      "type": "subtopic",
+      "data": {
+        "label": "Ionic"
+      }
+    },
+    {
+      "id": "KMA7NkxFbPoUDtFnGBFnj",
+      "type": "topic",
+      "data": {
+        "label": "Desktop Apps"
+      }
+    },
+    {
+      "id": "qXKNK_IsGS8-JgLK-Q9oU",
+      "type": "button",
+      "data": {
+        "label": "Nodejs"
+      }
+    },
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "mQHpSyMR4Rra4mqAslgiS",
+      "type": "subtopic",
+      "data": {
+        "label": "Electron"
+      }
+    },
+    {
+      "id": "GJctl0tVXe4B70s35RkLT",
+      "type": "subtopic",
+      "data": {
+        "label": "Tauri"
+      }
+    },
+    {
+      "id": "2MRvAK9G9RGM_auWytcKh",
+      "type": "subtopic",
+      "data": {
+        "label": "Flutter"
+      }
+    },
+    {
+      "id": "h26uS3muFCabe6ekElZcI",
+      "type": "subtopic",
+      "data": {
+        "label": "SWC"
+      }
+    },
+    {
+      "id": "qN-6iiXWgn5qSzK3o0Tjo",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "wA2fSYsbBYU02VJXAvUz8",
+      "type": "subtopic",
+      "data": {
+        "label": "Astro"
+      }
+    },
+    {
+      "id": "slf6jmim4p9ti6ZRHOZe_",
+      "type": "button",
+      "data": {
+        "label": "Fullstack"
+      }
+    },
+    {
+      "id": "MfErpYwkJ0wiWJZEUVfrb",
+      "type": "button",
+      "data": {
+        "label": "Visit Beginner Friendly Version"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yObLj-GcXY9bv2isJPCjs",
+      "type": "paragraph",
+      "data": {
+        "label": "HTML, CSS and JavaScript are the backbone of web development. Make sure to practice by building lots of projects."
+      }
+    },
+    {
+      "id": "w4AronIkLVW4DiB8BB_cE",
+      "type": "button",
+      "data": {
+        "label": "Beginner Project Ideas"
+      }
+    },
+    {
+      "id": "j2H1qGosbveayviOCVkUs",
+      "type": "subtopic",
+      "data": {
+        "label": "Bun"
+      }
+    },
+    {
+      "id": "DI8pvEosrUU7lcaGa7-Kc",
+      "type": "paragraph",
+      "data": {
+        "label": "At this point, you should be able to build modern vanilla JS frontend applications."
+      }
+    },
+    {
+      "id": "cSn0Mp45AKmj-bn-b-j_I",
+      "type": "button",
+      "data": {
+        "label": "Intermediate Project Ideas"
+      }
+    },
+    {
+      "id": "UvCVChB6NZ_yUg0RdIJ2o",
+      "type": "subtopic",
+      "data": {
+        "label": "Biome"
+      }
+    },
+    {
+      "id": "hE-DbpBpYrfB8tmBEjTnG",
+      "type": "subtopic",
+      "data": {
+        "label": "Rolldown"
+      }
+    },
+    {
+      "id": "jgyCo2WH4TJjETAa57N1U",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ydZRVWQrJUl3LZfjhR8QT",
+      "type": "paragraph",
+      "data": {
+        "label": "At this point you should have the expertise of an intermediate level frontend developer. Keep practicing and sharpening your skills."
+      }
+    },
+    {
+      "id": "YFhTAvoRXc8aIa9FVZgtb",
+      "type": "button",
+      "data": {
+        "label": "Advanced Project Ideas"
+      }
+    },
+    {
+      "id": "f9zlP6lGhfe6HBHVYiySu",
+      "type": "subtopic",
+      "data": {
+        "label": "Tanstack Start"
+      }
+    },
+    {
+      "id": "A1ZUy16cVRYqmHxoCtUb0",
+      "type": "topic",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "vpzh9bNXCxgdDFQLsot2_",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub Pages"
+      }
+    },
+    {
+      "id": "kPJ0jZo5AbOzvZgv0zwp0",
+      "type": "subtopic",
+      "data": {
+        "label": "Vercel"
+      }
+    },
+    {
+      "id": "_Uh-UFNe2wP2TV0x2lKY_",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloudflare"
+      }
+    },
+    {
+      "id": "o8GstE5gxcGByh-D7lwqT",
+      "type": "subtopic",
+      "data": {
+        "label": "Netlify"
+      }
+    },
+    {
+      "id": "PJRsqg5Vx9gQTodxaeZfz",
+      "type": "subtopic",
+      "data": {
+        "label": "Railway"
+      }
+    },
+    {
+      "id": "wfGz8pshGQARZ7qStGoSD",
+      "type": "subtopic",
+      "data": {
+        "label": "Render"
+      }
+    },
+    {
+      "id": "6d8cjWZ4BuUjwT0seiuzJ",
+      "type": "topic",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "dz7_QXoO7X0WmS5xuAhhJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Lighthouse"
+      }
+    },
+    {
+      "id": "JWU9jc12_ewaIKt3qWLcp",
+      "type": "subtopic",
+      "data": {
+        "label": "DevTools Usage"
+      }
+    },
+    {
+      "id": "66ya3WdtlkjQyBTc3Lein",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Workers"
+      }
+    },
+    {
+      "id": "FyNXhHq1VIASNq-LI7JIu",
+      "type": "subtopic",
+      "data": {
+        "label": "Streamed Responses"
+      }
+    },
+    {
+      "id": "ap4h4v5Sr4jBH3GwWSH8x",
+      "type": "topic",
+      "data": {
+        "label": "Design Systems"
+      }
+    },
+    {
+      "id": "3HgiMfqihjWceSxd6ei8s",
+      "type": "topic",
+      "data": {
+        "label": "Web APIs"
+      }
+    },
+    {
+      "id": "e-k6EhoxYG9h0x6vWOrDh",
+      "type": "topic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "Df3nTlTvSQkMGzpufRo9q",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Design System"
+      }
+    },
+    {
+      "id": "6kWlgayUZQnr9z88fUOkk",
+      "type": "button",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "tWDmeXItfQDxB8Jij_V4L",
+      "type": "subtopic",
+      "data": {
+        "label": "Cache-Control"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "RcC1fVuePQZ59AsJfeTdR",
+      "type": "subtopic",
+      "data": {
+        "label": "Claude Code"
+      }
+    },
+    {
+      "id": "HQrxxDxKN8gizvXRU5psW",
+      "type": "subtopic",
+      "data": {
+        "label": "Copilot"
+      }
+    },
+    {
+      "id": "CKlkVK_7GZ7xzIUHJqZr8",
+      "type": "subtopic",
+      "data": {
+        "label": "Cursor"
+      }
+    },
+    {
+      "id": "E7-LveK7jO2npxVTLUDfw",
+      "type": "subtopic",
+      "data": {
+        "label": "Antigravity"
+      }
+    },
+    {
+      "id": "yKNdBbahm_h81xdMDT-qx",
+      "type": "subtopic",
+      "data": {
+        "label": "How LLMs work"
+      }
+    },
+    {
+      "id": "IZKl6PxbvgNkryAkdy3-p",
+      "type": "subtopic",
+      "data": {
+        "label": "AI vs Traditional Coding"
+      }
+    },
+    {
+      "id": "0TMdly8yiqnNR8sx36iqc",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Reviews"
+      }
+    },
+    {
+      "id": "q7NpwqQXUp4wt2to-yFiP",
+      "type": "subtopic",
+      "data": {
+        "label": "Docs Generation"
+      }
+    },
+    {
+      "id": "UTupdqjOyLh7-56_0SXJ8",
+      "type": "topic",
+      "data": {
+        "label": "Learn the Basics"
+      }
+    },
+    {
+      "id": "ipcNHz8KbfpE57kNP15hP",
+      "type": "topic",
+      "data": {
+        "label": "AI Assisted Coding"
+      }
+    },
+    {
+      "id": "Gv_g4gK6pZK6l_0xAn34X",
+      "type": "topic",
+      "data": {
+        "label": "Prompting Techniques"
+      }
+    },
+    {
+      "id": "Bic4PHhz-YqzPWRimJO83",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemini"
+      }
+    },
+    {
+      "id": "-ye5ZtYFDoYGpj-UJaBP8",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI"
+      }
+    },
+    {
+      "id": "Lw2nR7x8PYgq1P5CxPAxi",
+      "type": "subtopic",
+      "data": {
+        "label": "Anthropic"
+      }
+    },
+    {
+      "id": "MdYPIf_9ezbIp6Dm5Fyme",
+      "type": "topic",
+      "data": {
+        "label": "Implementing AI"
+      }
+    },
+    {
+      "id": "M56-ufyFSwaQYPISuwUcj",
+      "type": "label",
+      "data": {
+        "label": "AI in Development"
+      }
+    },
+    {
+      "id": "EYT2rTLZ8tUW2u8DOnAWF",
+      "type": "subtopic",
+      "data": {
+        "label": "Refactoring"
+      }
+    },
+    {
+      "id": "Nx7mjvYgqLpmJ0_iSx5of",
+      "type": "subtopic",
+      "data": {
+        "label": "Applications"
+      }
+    },
+    {
+      "id": "k4hMVVBMatedUq5EKiMo4",
+      "type": "button",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "vpimgXt10UQFBDVHR21IU",
+      "type": "button",
+      "data": {
+        "label": "AI Agents Roadmap"
+      }
+    },
+    {
+      "id": "e4j6u0e_WqK1vfrUwJJ4M",
+      "type": "topic",
+      "data": {
+        "label": "Agents"
+      }
+    },
+    {
+      "id": "XFy2gj7DmXeaCoc6MZo_j",
+      "type": "topic",
+      "data": {
+        "label": "MCP"
+      }
+    },
+    {
+      "id": "xL8d-uHMpJKwUvT8z-Jia",
+      "type": "topic",
+      "data": {
+        "label": "Skills"
+      }
+    },
+    {
+      "id": "flwf3QbJioovtOpMw4obo",
+      "type": "label",
+      "data": {
+        "label": "Advanced Frontend"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "tNkdpQjYu72eFK9f_W0RO",
+      "source": "jJebnKe4JftMXZ1lCsipq",
+      "target": "VlNNwIEDWqQXtqkHWJYzC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "ronTDxAvatzbk4n5a-McM",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "yCnn-NfSxIybUQ2iTuUGq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "gaNQ1Peug0eiN0Bfxhtgw",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "R12sArWVpbIs_PHxBqVaR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "351utcB2QNjRmDe5bmcD1",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "ZhSuu2VArnzPDp6dPQQSC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "lupNr9zUQ0sXyzPBxcglQ",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "aqMaEY8gkKMikiqleV5EP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "2IVWwbU20VSU47qjiVU-f",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "hkxw9jPGYphmjhTjw8766",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "9MbeqIRipRgbe34jwalxo",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "P82WFaTPgQEPNp5IIuZ1Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ruoFa3M4bUE3Dg6GXSiUIx2-Hk8AVonOd693_y1sykPqdw1",
+      "source": "ruoFa3M4bUE3Dg6GXSiUI",
+      "target": "Hk8AVonOd693_y1sykPqd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VlNNwIEDWqQXtqkHWJYzCx2-yWG2VUkaF5IJVVut6AiSyw1",
+      "source": "VlNNwIEDWqQXtqkHWJYzC",
+      "target": "yWG2VUkaF5IJVVut6AiSy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ODcfFEorkfJNupoQygM53x2-NIY7c4TQEEHx0hATu-k5Cw1",
+      "source": "ODcfFEorkfJNupoQygM53",
+      "target": "NIY7c4TQEEHx0hATu-k5C",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NIY7c4TQEEHx0hATu-k5Cy2-R_I4SGYqLk5zze5I1zS_Ez1",
+      "source": "NIY7c4TQEEHx0hATu-k5C",
+      "target": "R_I4SGYqLk5zze5I1zS_E",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MXnFhZlNB1zTsBFDyni9Hy2-qmTVMJDsEhNIkiwE_UTYuz2",
+      "source": "MXnFhZlNB1zTsBFDyni9H",
+      "target": "qmTVMJDsEhNIkiwE_UTYu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MXnFhZlNB1zTsBFDyni9Hz2-IqvS1V-98cxko3e9sBQgPy1",
+      "source": "MXnFhZlNB1zTsBFDyni9H",
+      "target": "IqvS1V-98cxko3e9sBQgP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__IqvS1V-98cxko3e9sBQgPx2-XDTD8el6OwuQ55wC-X4iVw1",
+      "source": "IqvS1V-98cxko3e9sBQgP",
+      "target": "XDTD8el6OwuQ55wC-X4iV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__XDTD8el6OwuQ55wC-X4iVx2-eghnfG4p7i-EDWfp3CQXCw2",
+      "source": "XDTD8el6OwuQ55wC-X4iV",
+      "target": "eghnfG4p7i-EDWfp3CQXC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__DI8pvEosrUU7lcaGa7-Kcx2-eXezX7CVNyC1RuyU_I4yPw1",
+      "source": "DI8pvEosrUU7lcaGa7-Kc",
+      "target": "eXezX7CVNyC1RuyU_I4yP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__hkSc_1x09m7-7BO7WzlDTx2-0Awx3zEI5_gYEIrD7IVX6w2",
+      "source": "hkSc_1x09m7-7BO7WzlDT",
+      "target": "0Awx3zEI5_gYEIrD7IVX6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RDWbG3Iui6IPgp0shvXtgw2-JanR7I_lNnUCXhCMGLdn-x1",
+      "source": "RDWbG3Iui6IPgp0shvXtg",
+      "target": "JanR7I_lNnUCXhCMGLdn-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RDWbG3Iui6IPgp0shvXtgx2-Cxspmb14_0i1tfw-ZLxEuw2",
+      "source": "RDWbG3Iui6IPgp0shvXtg",
+      "target": "Cxspmb14_0i1tfw-ZLxEu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Cxspmb14_0i1tfw-ZLxEuy2-a8oOlkyM_C8vHuHqeiOAKz1",
+      "source": "Cxspmb14_0i1tfw-ZLxEu",
+      "target": "a8oOlkyM_C8vHuHqeiOAK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Cxspmb14_0i1tfw-ZLxEux2-n0q32YhWEIAUwbGXexoqVw1",
+      "source": "Cxspmb14_0i1tfw-ZLxEu",
+      "target": "n0q32YhWEIAUwbGXexoqV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__n0q32YhWEIAUwbGXexoqVx2-iUxXq7beg55y76dkwhM13w2",
+      "source": "n0q32YhWEIAUwbGXexoqV",
+      "target": "iUxXq7beg55y76dkwhM13",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ap4h4v5Sr4jBH3GwWSH8xz2-JWU9jc12_ewaIKt3qWLcpy1",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "JWU9jc12_ewaIKt3qWLcp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ap4h4v5Sr4jBH3GwWSH8xz2-dz7_QXoO7X0WmS5xuAhhJy1",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "dz7_QXoO7X0WmS5xuAhhJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ap4h4v5Sr4jBH3GwWSH8xz2-66ya3WdtlkjQyBTc3Leiny1",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "66ya3WdtlkjQyBTc3Lein",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ap4h4v5Sr4jBH3GwWSH8xz2-FyNXhHq1VIASNq-LI7JIuy1",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "FyNXhHq1VIASNq-LI7JIu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ruoFa3M4bUE3Dg6GXSiUIz2-L7AllJfKvClaam3y-u6DPy1",
+      "source": "ruoFa3M4bUE3Dg6GXSiUI",
+      "target": "L7AllJfKvClaam3y-u6DP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__PoM77O2OtxPELxfrW1wtlx2-VOGKiG2EZVfCBAaa7Df0Ww2",
+      "source": "PoM77O2OtxPELxfrW1wtl",
+      "target": "VOGKiG2EZVfCBAaa7Df0W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NQ95TJCe3E1IwEuBa__D6x2-6kWlgayUZQnr9z88fUOkkw1",
+      "source": "NQ95TJCe3E1IwEuBa__D6",
+      "target": "6kWlgayUZQnr9z88fUOkk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6d8cjWZ4BuUjwT0seiuzJz2-tWDmeXItfQDxB8Jij_V4Ly1",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "tWDmeXItfQDxB8Jij_V4L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__VOGKiG2EZVfCBAaa7Df0Wx2-dsTegXTyupjS8iU6I7Xivw1",
+      "source": "VOGKiG2EZVfCBAaa7Df0W",
+      "target": "dsTegXTyupjS8iU6I7Xiv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KMA7NkxFbPoUDtFnGBFnjz2-VOGKiG2EZVfCBAaa7Df0Wy1",
+      "source": "KMA7NkxFbPoUDtFnGBFnj",
+      "target": "VOGKiG2EZVfCBAaa7Df0W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MdYPIf_9ezbIp6Dm5Fymey2-Bic4PHhz-YqzPWRimJO83z1",
+      "source": "MdYPIf_9ezbIp6Dm5Fyme",
+      "target": "Bic4PHhz-YqzPWRimJO83",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MdYPIf_9ezbIp6Dm5Fymey2--ye5ZtYFDoYGpj-UJaBP8z1",
+      "source": "MdYPIf_9ezbIp6Dm5Fyme",
+      "target": "-ye5ZtYFDoYGpj-UJaBP8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MdYPIf_9ezbIp6Dm5Fymey2-Lw2nR7x8PYgq1P5CxPAxiz1",
+      "source": "MdYPIf_9ezbIp6Dm5Fyme",
+      "target": "Lw2nR7x8PYgq1P5CxPAxi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xL8d-uHMpJKwUvT8z-Jiax2-MdYPIf_9ezbIp6Dm5Fymew2",
+      "source": "xL8d-uHMpJKwUvT8z-Jia",
+      "target": "MdYPIf_9ezbIp6Dm5Fyme",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Gv_g4gK6pZK6l_0xAn34Xx2-e4j6u0e_WqK1vfrUwJJ4Mw2",
+      "source": "Gv_g4gK6pZK6l_0xAn34X",
+      "target": "e4j6u0e_WqK1vfrUwJJ4M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eXezX7CVNyC1RuyU_I4yPz2-flwf3QbJioovtOpMw4oboy1",
+      "source": "eXezX7CVNyC1RuyU_I4yP",
+      "target": "M56-ufyFSwaQYPISuwUcj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "80dkO5pGnkuPx2N_LA5ao",
+      "source": "UTupdqjOyLh7-56_0SXJ8",
+      "target": "yKNdBbahm_h81xdMDT-qx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__flwf3QbJioovtOpMw4obox2-UTupdqjOyLh7-56_0SXJ8w1",
+      "source": "M56-ufyFSwaQYPISuwUcj",
+      "target": "UTupdqjOyLh7-56_0SXJ8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Nx7mjvYgqLpmJ0_iSx5ofx2-0TMdly8yiqnNR8sx36iqcw1",
+      "source": "Nx7mjvYgqLpmJ0_iSx5of",
+      "target": "0TMdly8yiqnNR8sx36iqc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ipcNHz8KbfpE57kNP15hPy2-CKlkVK_7GZ7xzIUHJqZr8z1",
+      "source": "ipcNHz8KbfpE57kNP15hP",
+      "target": "CKlkVK_7GZ7xzIUHJqZr8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ipcNHz8KbfpE57kNP15hPy2-E7-LveK7jO2npxVTLUDfwz1",
+      "source": "ipcNHz8KbfpE57kNP15hP",
+      "target": "E7-LveK7jO2npxVTLUDfw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ipcNHz8KbfpE57kNP15hPy2-RcC1fVuePQZ59AsJfeTdRz1",
+      "source": "ipcNHz8KbfpE57kNP15hP",
+      "target": "RcC1fVuePQZ59AsJfeTdR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ipcNHz8KbfpE57kNP15hPy2-HQrxxDxKN8gizvXRU5psWz1",
+      "source": "ipcNHz8KbfpE57kNP15hP",
+      "target": "HQrxxDxKN8gizvXRU5psW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eXezX7CVNyC1RuyU_I4yPx2-ipcNHz8KbfpE57kNP15hPw2",
+      "source": "eXezX7CVNyC1RuyU_I4yP",
+      "target": "ipcNHz8KbfpE57kNP15hP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ipcNHz8KbfpE57kNP15hPx2-Gv_g4gK6pZK6l_0xAn34Xw2",
+      "source": "ipcNHz8KbfpE57kNP15hP",
+      "target": "Gv_g4gK6pZK6l_0xAn34X",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Gv_g4gK6pZK6l_0xAn34Xy2-k4hMVVBMatedUq5EKiMo4z1",
+      "source": "Gv_g4gK6pZK6l_0xAn34X",
+      "target": "k4hMVVBMatedUq5EKiMo4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__vpimgXt10UQFBDVHR21IUz2-e4j6u0e_WqK1vfrUwJJ4My1",
+      "source": "vpimgXt10UQFBDVHR21IU",
+      "target": "e4j6u0e_WqK1vfrUwJJ4M",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MdYPIf_9ezbIp6Dm5Fymez2-flwf3QbJioovtOpMw4oboy2",
+      "source": "MdYPIf_9ezbIp6Dm5Fyme",
+      "target": "flwf3QbJioovtOpMw4obo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "gDaHwD02syERRV6JY77PH",
+      "source": "9VcGfDBBD8YcKatj4VcH1",
+      "target": "UvCVChB6NZ_yUg0RdIJ2o",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__flwf3QbJioovtOpMw4obox2-9VcGfDBBD8YcKatj4VcH1w1",
+      "source": "flwf3QbJioovtOpMw4obo",
+      "target": "9VcGfDBBD8YcKatj4VcH1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__9VcGfDBBD8YcKatj4VcH1y2-hkSc_1x09m7-7BO7WzlDTz2",
+      "source": "9VcGfDBBD8YcKatj4VcH1",
+      "target": "hkSc_1x09m7-7BO7WzlDT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__hkSc_1x09m7-7BO7WzlDTy2-U5mD5FmVx7VWeKxDpQxB5z1",
+      "source": "hkSc_1x09m7-7BO7WzlDT",
+      "target": "U5mD5FmVx7VWeKxDpQxB5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__U5mD5FmVx7VWeKxDpQxB5x2-igg4_hb3XE3vuvY8ufV-4w1",
+      "source": "U5mD5FmVx7VWeKxDpQxB5",
+      "target": "igg4_hb3XE3vuvY8ufV-4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__igg4_hb3XE3vuvY8ufV-4x2-hVQ89f6G0LXEgHIOKHDYqw2",
+      "source": "igg4_hb3XE3vuvY8ufV-4",
+      "target": "hVQ89f6G0LXEgHIOKHDYq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ydZRVWQrJUl3LZfjhR8QTx2-3HgiMfqihjWceSxd6ei8sw1",
+      "source": "ydZRVWQrJUl3LZfjhR8QT",
+      "target": "3HgiMfqihjWceSxd6ei8s",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3HgiMfqihjWceSxd6ei8sz2-RDWbG3Iui6IPgp0shvXtgy1",
+      "source": "3HgiMfqihjWceSxd6ei8s",
+      "target": "RDWbG3Iui6IPgp0shvXtg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__n0q32YhWEIAUwbGXexoqVy2-NQ95TJCe3E1IwEuBa__D6z2",
+      "source": "n0q32YhWEIAUwbGXexoqV",
+      "target": "NQ95TJCe3E1IwEuBa__D6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NQ95TJCe3E1IwEuBa__D6y2-A1ZUy16cVRYqmHxoCtUb0z2",
+      "source": "NQ95TJCe3E1IwEuBa__D6",
+      "target": "A1ZUy16cVRYqmHxoCtUb0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__A1ZUy16cVRYqmHxoCtUb0x2-ap4h4v5Sr4jBH3GwWSH8xw1",
+      "source": "A1ZUy16cVRYqmHxoCtUb0",
+      "target": "ap4h4v5Sr4jBH3GwWSH8x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ap4h4v5Sr4jBH3GwWSH8xx2-6d8cjWZ4BuUjwT0seiuzJw2",
+      "source": "ap4h4v5Sr4jBH3GwWSH8x",
+      "target": "6d8cjWZ4BuUjwT0seiuzJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__L7AllJfKvClaam3y-u6DPx2-5eUbDdOTOfaOhUlZAmmXWw1",
+      "source": "L7AllJfKvClaam3y-u6DP",
+      "target": "5eUbDdOTOfaOhUlZAmmXW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KMA7NkxFbPoUDtFnGBFnjy2-mQHpSyMR4Rra4mqAslgiSz1",
+      "source": "KMA7NkxFbPoUDtFnGBFnj",
+      "target": "mQHpSyMR4Rra4mqAslgiS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KMA7NkxFbPoUDtFnGBFnjy2-GJctl0tVXe4B70s35RkLTz1",
+      "source": "KMA7NkxFbPoUDtFnGBFnj",
+      "target": "GJctl0tVXe4B70s35RkLT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KMA7NkxFbPoUDtFnGBFnjy2-2MRvAK9G9RGM_auWytcKhz1",
+      "source": "KMA7NkxFbPoUDtFnGBFnj",
+      "target": "2MRvAK9G9RGM_auWytcKh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6d8cjWZ4BuUjwT0seiuzJx2-ruoFa3M4bUE3Dg6GXSiUIw2",
+      "source": "6d8cjWZ4BuUjwT0seiuzJ",
+      "target": "ruoFa3M4bUE3Dg6GXSiUI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__L7AllJfKvClaam3y-u6DPz2-e-k6EhoxYG9h0x6vWOrDhy1",
+      "source": "L7AllJfKvClaam3y-u6DP",
+      "target": "e-k6EhoxYG9h0x6vWOrDh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__e-k6EhoxYG9h0x6vWOrDhx2-PoM77O2OtxPELxfrW1wtlw2",
+      "source": "e-k6EhoxYG9h0x6vWOrDh",
+      "target": "PoM77O2OtxPELxfrW1wtl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

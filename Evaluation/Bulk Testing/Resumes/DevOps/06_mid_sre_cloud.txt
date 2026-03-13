@@ -1,0 +1,47 @@
+Aaliyah Monroe
+aaliyah.monroe@email.com | (312) 559-4403 | Chicago, IL | linkedin.com/in/aaliyahmonroe
+
+SUMMARY
+Site Reliability Engineer with 5 years of experience maintaining high-throughput cloud services on AWS and Azure. Background in both software development and infrastructure operations. Specializes in incident management, SLO engineering, and capacity planning for services handling millions of daily requests.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker, Kubernetes
+CI/CD: GitHub Actions, Jenkins
+Cloud: AWS, Azure
+Infrastructure as Code: Terraform
+Monitoring: Prometheus, Grafana, Datadog
+Operating Systems: Linux
+Version Control: Git
+Databases: PostgreSQL, Redis
+Web Servers: Nginx
+
+EXPERIENCE
+
+Senior Site Reliability Engineer | NovaBurst Media | Chicago, IL | February 2022 - Present
+- Owned reliability engineering for a video-streaming platform serving 2.4 million daily active users across AWS and Azure regions
+- Defined and maintained SLOs (99.9% availability, p95 latency <300ms) and built error-budget burn-rate alerts in Prometheus
+- Led incident response for 11 P1 incidents in 2023, achieving a mean time to recover (MTTR) of under 22 minutes
+- Managed Kubernetes clusters (AWS EKS + Azure AKS) running 80+ microservices; implemented horizontal pod autoscalers reducing over-provisioning costs by 31%
+- Provisioned and maintained multi-region Terraform infrastructure including VPCs, load balancers, CDN distributions, and Redis caching layers
+- Configured Nginx ingress controllers across 3 clusters, routing ~18,000 requests per second at peak
+- Built a Datadog synthetic monitoring suite covering 40 critical user journeys, alerting on-call within 90 seconds of degradation
+
+Site Reliability Engineer | Clearfield Insurance Group | Chicago, IL | August 2019 - February 2022
+- Migrated 12 legacy .NET services from on-premise VMs to Docker containers on AWS ECS, improving release cadence from monthly to weekly
+- Wrote Python-based runbook automation for common remediation tasks (disk cleanup, cache flush, dead-letter requeue), reducing on-call toil by ~5 hours per week
+- Maintained PostgreSQL RDS instances (read replicas, PITR backups, slow-query tuning) supporting 500GB+ production databases
+- Built Jenkins pipelines for 8 application teams, standardizing test and deployment workflows
+- Created Grafana dashboards for application and infrastructure health, adopted organization-wide as the standard observability baseline
+
+PROJECTS
+Chaos Engineering Framework
+- Introduced Chaos Mesh experiments on the NovaBurst EKS clusters to validate resilience of 6 critical service dependencies
+- Found and resolved 2 cascading failure scenarios before they impacted production
+
+Capacity Planning Model
+- Built a Python model using historical Prometheus metrics to forecast required Kubernetes node counts 4 weeks ahead
+- Prevented 2 capacity-related incidents in Q4 2023 by triggering node-pool scaling proactively
+
+EDUCATION
+Bachelor of Science, Computer Science | DePaul University | 2019

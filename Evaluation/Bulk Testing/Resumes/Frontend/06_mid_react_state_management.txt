@@ -1,0 +1,28 @@
+Lucas Ferreira
+lucas.ferreira@email.com | (646) 559-8103 | New York, NY | github.com/lucasferreira-ui
+
+SUMMARY
+Frontend engineer with 5 years of experience building complex React single-page applications. Expert in client-side state management with Redux and Zustand, and experienced integrating WebSocket real-time features. Comfortable working with TypeScript, GraphQL APIs, and writing comprehensive Cypress E2E tests.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS
+Frameworks: React, Vite, Next.js
+Databases: (none professional)
+Tools: Git, npm, Jest, Cypress, Redux Toolkit, Zustand, React Query, Apollo Client, Figma
+Cloud/Infra: AWS (S3, CloudFront), Netlify, GitHub Actions
+
+EXPERIENCE
+
+Frontend Engineer | Relay CRM | New York, NY | March 2022 - Present
+- Architected the Redux Toolkit state management layer for a complex CRM application with 6 domain slices handling 50,000+ active records per session
+- Built real-time activity feed and notification system using WebSocket connections with Redux-powered optimistic updates, achieving sub-200ms perceived latency
+- Replaced REST data fetching with Apollo Client and GraphQL, reducing over-fetching by 65% and eliminating 4 redundant API calls on the main dashboard
+- Wrote Cypress E2E test suite covering 55 user journeys; integrated parallel execution in GitHub Actions CI reducing total test time from 24 minutes to 7 minutes
+
+Frontend Developer | Orbit Media Solutions | New York, NY | January 2019 - February 2022
+- Built customer-facing React application for a digital advertising platform managing 200,000+ campaigns
+- Implemented Zustand for lightweight state management in the campaign creation wizard, reducing re-renders by 70%
+- Developed Jest and React Testing Library unit tests achieving 85% coverage across feature components
+
+EDUCATION
+Bachelor of Science, Computer Science | NYU Tandon School of Engineering | 2019

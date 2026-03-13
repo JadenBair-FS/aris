@@ -1,0 +1,28 @@
+Jordan Espinoza
+jordan.espinoza@email.com | (737) 201-5503 | Austin, TX | github.com/jordanespinoza-eng
+
+SUMMARY
+Python backend developer with 5 years of experience building REST APIs and platform services for SaaS products. Deep experience with Django, PostgreSQL, and Redis. Comfortable taking ownership of services end-to-end, from database design to production monitoring on AWS.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: Django, Django REST Framework, FastAPI
+Databases: PostgreSQL, Redis, DynamoDB
+Tools: Git, Docker, pytest, Celery, SQLAlchemy, GitHub Actions, Datadog
+Cloud/Infra: AWS (EC2, RDS, ElastiCache, SQS, Lambda, ECR, ECS)
+
+EXPERIENCE
+
+Backend Engineer II | NexusCommerce | Austin, TX | April 2021 - Present
+- Owned the inventory management microservice serving 3 million daily API requests across 800 merchant storefronts
+- Implemented Redis-backed inventory locking mechanism eliminating 100% of oversell incidents during flash sales
+- Optimized 14 PostgreSQL queries with proper index design, reducing p99 response time from 1,200ms to 180ms
+- Built SQS-based event pipeline for inventory change notifications consumed by 5 downstream services
+
+Backend Developer | Forza Payments | Austin, TX | March 2019 - March 2021
+- Built payment webhook processing service in Django receiving and validating 500,000 events per day from Stripe and Braintree
+- Designed PostgreSQL schema for payment records with proper partitioning by month, managing 200+ GB of transaction data
+- Wrote pytest test suite with 88% coverage and integrated automated testing into CircleCI pipeline
+
+EDUCATION
+Bachelor of Science, Computer Science | Texas A&M University | 2019

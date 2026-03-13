@@ -1,0 +1,32 @@
+Devon Clarke
+devon.clarke@email.com | (617) 543-2278 | Boston, MA | linkedin.com/in/devonclarke-data
+
+SUMMARY
+Analytics engineer with 1.5 years of experience in dbt, SQL, and Python-based data transformation. Proficient in building dbt models in BigQuery and writing data quality tests. Background in business analytics with strong communication skills for working with data consumers.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: dbt, pandas
+Databases: BigQuery, PostgreSQL
+Tools: Git, Apache Airflow, Jupyter Notebook, Looker, Google Sheets
+
+EXPERIENCE
+
+Analytics Engineer | Brightwave Commerce | Boston, MA | January 2024 - Present
+- Built and maintained 25 dbt models across staging, intermediate, and mart layers in BigQuery for e-commerce KPI reporting
+- Wrote dbt schema tests and custom generic tests covering 100% of mart-layer models
+- Collaborated with BI team to optimize Looker dashboard queries, reducing average dashboard load time from 12s to 3s
+- Automated daily Airflow DAG to run dbt models and send Slack alerts on test failures
+
+Data Analyst Intern | Harbour Analytics | Boston, MA | June 2023 - December 2023
+- Wrote SQL queries in BigQuery to extract cohort analysis data for retention reporting
+- Built pandas scripts to clean and deduplicate 300,000-row CRM export files
+- Documented 15 data source definitions in the team's data dictionary
+
+PROJECTS
+
+DBTStarter
+- Open-source dbt project template with BigQuery profile, generic tests, and GitHub Actions CI that runs dbt build on PR
+
+EDUCATION
+Bachelor of Science, Business Analytics | Boston College | 2023

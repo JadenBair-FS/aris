@@ -1,0 +1,28 @@
+Devon Nakamura
+devon.nakamura@email.com | (206) 559-3817 | Seattle, WA | github.com/devonnakamura
+
+SUMMARY
+Backend engineer with 4 years of experience specializing in FastAPI microservices and async Python. Proficient in designing event-driven architectures with Kafka and building data-intensive APIs backed by PostgreSQL and MongoDB. Comfortable leading small squads and mentoring junior engineers.
+
+SKILLS
+Languages: Python, SQL, Bash, Go (basic)
+Frameworks: FastAPI, Flask, SQLAlchemy
+Databases: PostgreSQL, MongoDB, Redis
+Tools: Git, Docker, pytest, Kafka, Celery, Pydantic, GitHub Actions
+Cloud/Infra: AWS (ECS, RDS, SQS, S3, ECR), Docker Compose
+
+EXPERIENCE
+
+Senior Backend Engineer | Moxie Commerce | Seattle, WA | March 2022 - Present
+- Decomposed a Django monolith into 7 FastAPI microservices handling order, inventory, and notification domains, reducing deployment time from 40 minutes to 6 minutes
+- Built Kafka producer/consumer pipelines that route 300,000 order events per day to downstream fulfillment and analytics services
+- Designed MongoDB document schema for flexible product catalog data, supporting 500,000+ SKUs without schema migrations
+- Implemented Redis-based rate limiting and caching layer that reduced PostgreSQL read load by 55%
+
+Backend Engineer | Wavepath Analytics | Seattle, WA | January 2020 - February 2022
+- Built REST and async APIs in FastAPI for a SaaS analytics dashboard serving 600 B2B clients
+- Designed PostgreSQL schemas with partitioning for time-series event data, supporting 5+ billion rows
+- Wrote pytest test suite from scratch achieving 85% coverage; integrated with GitHub Actions CI
+
+EDUCATION
+Bachelor of Science, Computer Engineering | University of Washington | 2019

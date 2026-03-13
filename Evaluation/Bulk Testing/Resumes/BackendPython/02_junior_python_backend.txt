@@ -1,0 +1,33 @@
+Marcus Webb
+marcus.webb@email.com | (415) 882-3049 | San Francisco, CA | github.com/marcuswebb
+
+SUMMARY
+Python backend developer with 1.5 years of professional experience building web services and data pipelines. Proficient in Django and familiar with PostgreSQL, Redis, and Celery for task processing. Looking to deepen expertise in microservices and cloud infrastructure.
+
+SKILLS
+Languages: Python, SQL, JavaScript (basic)
+Frameworks: Django, Django REST Framework, Flask
+Databases: PostgreSQL, MySQL, Redis
+Tools: Git, Docker, pytest, Celery, Postman
+Cloud/Infra: AWS S3, Heroku, GitHub Actions
+
+EXPERIENCE
+
+Backend Developer | Quorum Labs | San Francisco, CA | January 2024 - Present
+- Built user authentication and authorization system with Django and DRF supporting 2,000 registered users
+- Implemented asynchronous email and PDF generation tasks using Celery and Redis message broker
+- Created MySQL to PostgreSQL migration scripts that moved 1.2 million records with zero data loss
+- Wrote API documentation using DRF's built-in schema generation and Swagger UI
+
+Intern, Backend Engineering | Fount Solutions | San Francisco, CA | June 2023 - December 2023
+- Added 8 new REST endpoints to a Django REST Framework application for a logistics client
+- Wrote pytest test cases for existing endpoints with no test coverage, reaching 65% coverage
+- Fixed 14 production bugs involving SQL N+1 queries, reducing average API response time by 22%
+
+PROJECTS
+
+TaskFlow
+- Lightweight project management API built with Django REST Framework, PostgreSQL, and Celery; supports task assignment, deadline reminders via email, and file attachments stored in AWS S3
+
+EDUCATION
+Bachelor of Science, Software Engineering | San Jose State University | 2023

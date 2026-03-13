@@ -1,0 +1,40 @@
+--- POSTING 4 ---
+Job Title: ASP.NET Core Developer
+Company: PeakForms
+Location: Denver, CO
+Source: Synthetic based on greenhouse.io research
+
+ABOUT PEAKFORMS
+PeakForms is a document automation and electronic forms platform for government agencies and legal organizations. Our platform processes 2 million form submissions per year and integrates with state and federal case management systems. We are a 70-person company with strong public sector client relationships.
+
+ABOUT THE ROLE
+We are looking for an ASP.NET Core Developer to join our product engineering team. You will build new form automation features, maintain existing Web API services, and help us migrate legacy WebForms components to modern ASP.NET Core Razor Pages and Blazor.
+
+KEY RESPONSIBILITIES
+- Build new features in ASP.NET Core Web API and Blazor Server
+- Develop Entity Framework Core data models for form definitions, submissions, and workflow state
+- Write unit and integration tests using NUnit and Microsoft Test SDK
+- Implement PDF generation and document assembly features using third-party .NET libraries
+- Build integrations with government identity providers using SAML 2.0 and OpenID Connect
+- Migrate legacy WebForms pages to Blazor components incrementally
+- Collaborate with QA to define acceptance criteria and automate regression tests
+
+REQUIRED QUALIFICATIONS
+- 3+ years of ASP.NET Core development experience
+- 3+ years of C# in a production environment
+- 2+ years with Entity Framework Core and SQL Server
+- 2+ years writing automated tests (NUnit or xUnit)
+- 1+ years building Blazor Server or Blazor WebAssembly applications
+- Solid understanding of HTML, CSS, and JavaScript for Blazor interop scenarios
+- Experience with Git, branching strategies, and code review processes
+
+PREFERRED QUALIFICATIONS
+- Experience with Azure (App Service, SQL Database, Blob Storage)
+- Knowledge of SAML, OpenID Connect, or CAC/PIV authentication
+- Background in government technology or legal software
+- Familiarity with Docker for development environments
+- Experience with SignalR for real-time form collaboration features
+
+COMPENSATION
+$110,000 - $135,000 + benefits (health, dental, vision, pension)
+--- END POSTING 4 ---

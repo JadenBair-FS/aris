@@ -1,0 +1,1591 @@
+{
+  "title": {
+    "card": "Game Developer",
+    "page": "Game Developer"
+  },
+  "description": "Roadmap to becoming a Game Developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "o3PyFTPgsW83BXocJQsDJ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "77ufRs9I5bQ6-3oqeVEeP",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "4Z4RnLqpSbDJRqzA18Z5k",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Z3SBDE-j5lYzk4Qy5ncS7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "EL9CPU70hF4x9ouOQ66Rm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vGVyQfjMJB9sxFRshpV5A",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bYFNueU1BFB3eAQ8HXh7n",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "x1LxhiMT_mbWJZnoeLcnz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ee7D0WF54YreyzBG9MKIh",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "G7_iBEFY0b2FmvLVr0gti",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Game Developer"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant roadmaps"
+      }
+    },
+    {
+      "id": "P5IZjP0g1_fnvHy3YTR4q",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "SIvQYH0q1H29NgbtLq3L8",
+      "type": "button",
+      "data": {
+        "label": "Server Side"
+      }
+    },
+    {
+      "id": "rQArtuVKGVgLn_fw9yO3b",
+      "type": "topic",
+      "data": {
+        "label": "Client Side Development"
+      }
+    },
+    {
+      "id": "m1wX27XBWKXZcTMH2U1xp",
+      "type": "topic",
+      "data": {
+        "label": "Game Mathematics"
+      }
+    },
+    {
+      "id": "grRf-MmaXimDB4iODOV47",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Algebra"
+      }
+    },
+    {
+      "id": "yLEyh5XJ3sl8eHD-PoSvJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Vector"
+      }
+    },
+    {
+      "id": "Kg6Mg9ieUUGXWX9Lai7B0",
+      "type": "subtopic",
+      "data": {
+        "label": "Matrix"
+      }
+    },
+    {
+      "id": "XWxW2ZBw3LcQ4DRk4tgAG",
+      "type": "subtopic",
+      "data": {
+        "label": "Geometry"
+      }
+    },
+    {
+      "id": "XABzEU9owCx9-zw1id9xU",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Transformation"
+      }
+    },
+    {
+      "id": "r5TcXQsU9s4NlAQIPvZ3U",
+      "type": "subtopic",
+      "data": {
+        "label": "Affine Space"
+      }
+    },
+    {
+      "id": "SkCreb6g4i-OFtJWhRYqO",
+      "type": "subtopic",
+      "data": {
+        "label": "Affine Transformation"
+      }
+    },
+    {
+      "id": "iIWEjpkNFBj4R5wQ0mcWY",
+      "type": "topic",
+      "data": {
+        "label": "Orientation"
+      }
+    },
+    {
+      "id": "zPs_LlDvkfxvvCrk5fXB2",
+      "type": "subtopic",
+      "data": {
+        "label": "Quaternion"
+      }
+    },
+    {
+      "id": "L0J2kvveJNsmN9ueXhqKf",
+      "type": "subtopic",
+      "data": {
+        "label": "Euler Angle"
+      }
+    },
+    {
+      "id": "YTkOF_33oL1ZkA-loc_DP",
+      "type": "topic",
+      "data": {
+        "label": "Curve"
+      }
+    },
+    {
+      "id": "nTiHZXRh2j3_FsBotmlGf",
+      "type": "subtopic",
+      "data": {
+        "label": "Spline"
+      }
+    },
+    {
+      "id": "m4AuHjEBnHS0wyATG-I1Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Hermite"
+      }
+    },
+    {
+      "id": "DUEEm9sAaZqSI-W-PFZ8f",
+      "type": "subtopic",
+      "data": {
+        "label": "Bezier"
+      }
+    },
+    {
+      "id": "N9GoA3YvOaKwYjljj6NZv",
+      "type": "subtopic",
+      "data": {
+        "label": "Catmull-Rom"
+      }
+    },
+    {
+      "id": "5qfoD77wU4ETI7rUSy4Nc",
+      "type": "topic",
+      "data": {
+        "label": "Projection"
+      }
+    },
+    {
+      "id": "LEJymJ2EaAW5FM5LgKW38",
+      "type": "subtopic",
+      "data": {
+        "label": "Perspective"
+      }
+    },
+    {
+      "id": "d6C1qFv-Tad3AtMBDLI6r",
+      "type": "subtopic",
+      "data": {
+        "label": "Orthogonal"
+      }
+    },
+    {
+      "id": "UTBnrQiZ6Bf96yJYIUf3b",
+      "type": "topic",
+      "data": {
+        "label": "Game Physics"
+      }
+    },
+    {
+      "id": "0D7KQlF-9ylmILTBBVxot",
+      "type": "topic",
+      "data": {
+        "label": "Dynamics"
+      }
+    },
+    {
+      "id": "HWtU4q-YPXxSi64t43VNF",
+      "type": "subtopic",
+      "data": {
+        "label": "Center of Mass"
+      }
+    },
+    {
+      "id": "6E2mkXuAzoYnrT1SEIA16",
+      "type": "subtopic",
+      "data": {
+        "label": "Moment of Inertia"
+      }
+    },
+    {
+      "id": "ejZMnxZ0QrN-jBqo9Vrj8",
+      "type": "subtopic",
+      "data": {
+        "label": "Acceleration"
+      }
+    },
+    {
+      "id": "m2_wUW2VHMCXHnn5B91qr",
+      "type": "subtopic",
+      "data": {
+        "label": "Joints"
+      }
+    },
+    {
+      "id": "qduFRhmrzJ2sn0g7L-tza",
+      "type": "subtopic",
+      "data": {
+        "label": "Force"
+      }
+    },
+    {
+      "id": "egOcxFTQP7vPIGrxcieuk",
+      "type": "subtopic",
+      "data": {
+        "label": "Restitution"
+      }
+    },
+    {
+      "id": "Y7HYY5eq7OG42V9yQz0Q1",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular Velocity"
+      }
+    },
+    {
+      "id": "WzcmdW_fKHv3gwdBnvI0_",
+      "type": "subtopic",
+      "data": {
+        "label": "Buoyancy"
+      }
+    },
+    {
+      "id": "Z_U6abGV_wVkTGZ2LVkFK",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear Velocity"
+      }
+    },
+    {
+      "id": "Hz9R4YGYtD0jAur8rYist",
+      "type": "subtopic",
+      "data": {
+        "label": "Friction"
+      }
+    },
+    {
+      "id": "AdOfOJtLtNgDwuABb6orE",
+      "type": "topic",
+      "data": {
+        "label": "Collision Detection"
+      }
+    },
+    {
+      "id": "SuemqQuiePab0Qpm2EGy9",
+      "type": "subtopic",
+      "data": {
+        "label": "Narrow Phase"
+      }
+    },
+    {
+      "id": "AKd2UpITqBZV7cZszSRps",
+      "type": "subtopic",
+      "data": {
+        "label": "Broad Phase"
+      }
+    },
+    {
+      "id": "YLusnwCba7BIdKOYUoY6F",
+      "type": "subtopic",
+      "data": {
+        "label": "Convexity"
+      }
+    },
+    {
+      "id": "pG_V12qhS4HevoP_KHTvh",
+      "type": "subtopic",
+      "data": {
+        "label": "Convex"
+      }
+    },
+    {
+      "id": "jslk7Gy58VspO1uXGDgBp",
+      "type": "subtopic",
+      "data": {
+        "label": "Concave"
+      }
+    },
+    {
+      "id": "jixffcPBELkhoG0e7Te8g",
+      "type": "subtopic",
+      "data": {
+        "label": "Convex Hull"
+      }
+    },
+    {
+      "id": "bgP9NpD0DJGqN4VCt65xP",
+      "type": "subtopic",
+      "data": {
+        "label": "Convex Decomposition"
+      }
+    },
+    {
+      "id": "vmRYaXNVCe0N73xG8bsEK",
+      "type": "subtopic",
+      "data": {
+        "label": "Intersection"
+      }
+    },
+    {
+      "id": "kSMz7mZ243qMKtT_YD3AD",
+      "type": "subtopic",
+      "data": {
+        "label": "SAT"
+      }
+    },
+    {
+      "id": "lwd3Gz9bJEKCIwhXD6m-v",
+      "type": "subtopic",
+      "data": {
+        "label": "GJK"
+      }
+    },
+    {
+      "id": "vWLKYK2KUzV1fO-vQunzW",
+      "type": "subtopic",
+      "data": {
+        "label": "EPA"
+      }
+    },
+    {
+      "id": "PLR_4yoRifoTzkOR4c7ym",
+      "type": "subtopic",
+      "data": {
+        "label": "Bounding Volume"
+      }
+    },
+    {
+      "id": "aTeYGd4JlPr5txNPyBezn",
+      "type": "subtopic",
+      "data": {
+        "label": "AABB"
+      }
+    },
+    {
+      "id": "7nGtvbxoEAheiF4IPMfPf",
+      "type": "subtopic",
+      "data": {
+        "label": "OBB"
+      }
+    },
+    {
+      "id": "9Fk3XSINBr2NNdbMtwsIK",
+      "type": "subtopic",
+      "data": {
+        "label": "Spatial Partitioning"
+      }
+    },
+    {
+      "id": "STdvFYM9V0a36IkPXjvrB",
+      "type": "subtopic",
+      "data": {
+        "label": "Sort \u0026 Sweep"
+      }
+    },
+    {
+      "id": "FCc5xwb_G3VsDRXOcg3hV",
+      "type": "subtopic",
+      "data": {
+        "label": "BVH"
+      }
+    },
+    {
+      "id": "XHFV4d6Ab4kWQ3-XcZTyT",
+      "type": "subtopic",
+      "data": {
+        "label": "DBVT"
+      }
+    },
+    {
+      "id": "1yK8TH4Pn7Ag8VQoug54i",
+      "type": "subtopic",
+      "data": {
+        "label": "CCD"
+      }
+    },
+    {
+      "id": "fv5tivGad2P9GRZOodfn2",
+      "type": "topic",
+      "data": {
+        "label": "Game Engine"
+      }
+    },
+    {
+      "id": "7OffO2mBmfBKqPBTZ9ngI",
+      "type": "subtopic",
+      "data": {
+        "label": "Godot"
+      }
+    },
+    {
+      "id": "a6H-cZtp3A_fB8jnfMxBR",
+      "type": "subtopic",
+      "data": {
+        "label": "Unreal Engine"
+      }
+    },
+    {
+      "id": "CeAUEN233L4IoFSZtIvvl",
+      "type": "subtopic",
+      "data": {
+        "label": "Native"
+      }
+    },
+    {
+      "id": "rNeOti8DDyWTMP9FB9kJ_",
+      "type": "subtopic",
+      "data": {
+        "label": "Unity 3D"
+      }
+    },
+    {
+      "id": "4YgbrXLXf5mfaL2tlYkzk",
+      "type": "topic",
+      "data": {
+        "label": "Programming Languages"
+      }
+    },
+    {
+      "id": "jsq0UXnIIC0Z_nbK2w48f",
+      "type": "subtopic",
+      "data": {
+        "label": "C/C\u002B\u002B"
+      }
+    },
+    {
+      "id": "Ph3ZqmSnwwzUBUC-6dgf-",
+      "type": "subtopic",
+      "data": {
+        "label": "C#"
+      }
+    },
+    {
+      "id": "AaRZiItRcn8fYb5R62vfT",
+      "type": "subtopic",
+      "data": {
+        "label": "GDScript"
+      }
+    },
+    {
+      "id": "ts9pWxUimvFqfNJYCmNNw",
+      "type": "subtopic",
+      "data": {
+        "label": "Rust"
+      }
+    },
+    {
+      "id": "AJp_QRLgSG5ETXDIjUjmm",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "lIb5MeDoqVj6HycveOgTS",
+      "type": "topic",
+      "data": {
+        "label": "Computer Graphics"
+      }
+    },
+    {
+      "id": "JW5c_0JEtO-OiBoXUia6A",
+      "type": "subtopic",
+      "data": {
+        "label": "Ray Tracing"
+      }
+    },
+    {
+      "id": "vYNj9nzu90e9xlrzHULnP",
+      "type": "subtopic",
+      "data": {
+        "label": "Rasterization"
+      }
+    },
+    {
+      "id": "shSRnMf4NONuZ3TGPAoQc",
+      "type": "subtopic",
+      "data": {
+        "label": "Graphics Pipeline"
+      }
+    },
+    {
+      "id": "rmtxybcavWV6A53R4ZWgc",
+      "type": "subtopic",
+      "data": {
+        "label": "Sampling"
+      }
+    },
+    {
+      "id": "qIrePusMuvcUva9LMDmDx",
+      "type": "subtopic",
+      "data": {
+        "label": "Shader"
+      }
+    },
+    {
+      "id": "WVgozaQPFbYthZLWMbNUg",
+      "type": "subtopic",
+      "data": {
+        "label": "Rendering Equation"
+      }
+    },
+    {
+      "id": "eI2jym4AAz3ani-lreSKE",
+      "type": "subtopic",
+      "data": {
+        "label": "Reflection"
+      }
+    },
+    {
+      "id": "0g1z5G2dsF4PTIfFAG984",
+      "type": "subtopic",
+      "data": {
+        "label": "Diffuse"
+      }
+    },
+    {
+      "id": "odfZWKtPbb-lC35oeTCNV",
+      "type": "subtopic",
+      "data": {
+        "label": "Specular"
+      }
+    },
+    {
+      "id": "THMmnx8p_P0X-dSPoHvst",
+      "type": "subtopic",
+      "data": {
+        "label": "Mapping"
+      }
+    },
+    {
+      "id": "iBZ1JsEWI0xuLgUvfWfl-",
+      "type": "subtopic",
+      "data": {
+        "label": "Texture"
+      }
+    },
+    {
+      "id": "r4UkMd5QURbvJ3Jlr_H9H",
+      "type": "subtopic",
+      "data": {
+        "label": "Bump"
+      }
+    },
+    {
+      "id": "YGeGleEN203nokiZIYJN8",
+      "type": "subtopic",
+      "data": {
+        "label": "Parallax"
+      }
+    },
+    {
+      "id": "9cBOfj58I4hBlxlQIyV9g",
+      "type": "subtopic",
+      "data": {
+        "label": "Horizon"
+      }
+    },
+    {
+      "id": "1RdyzTI_TXqmct2bIbNh9",
+      "type": "subtopic",
+      "data": {
+        "label": "Computer Animation"
+      }
+    },
+    {
+      "id": "WK6fLWJq9Vh2ySVrSqd-U",
+      "type": "subtopic",
+      "data": {
+        "label": "Color"
+      }
+    },
+    {
+      "id": "1S1qPogijW2SQCiF7KLZe",
+      "type": "subtopic",
+      "data": {
+        "label": "Visual Perception"
+      }
+    },
+    {
+      "id": "RgC9TOc0wbr2QSuvrpIDV",
+      "type": "subtopic",
+      "data": {
+        "label": "Tone Reproduction"
+      }
+    },
+    {
+      "id": "lNKSnx79jCQW0AM1bFITr",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "bEF-DIgaMpKyRTw2uAB8R",
+      "type": "label",
+      "data": {
+        "label": "Getting deeper"
+      }
+    },
+    {
+      "id": "DDN3mn0LTueBhjRzXFcbU",
+      "type": "subtopic",
+      "data": {
+        "label": "Lighting and Shadow"
+      }
+    },
+    {
+      "id": "ygtru6fqQ3gpFZRN_I8rP",
+      "type": "subtopic",
+      "data": {
+        "label": "Shadow Map"
+      }
+    },
+    {
+      "id": "Wq8siopWTD7sylNi0575X",
+      "type": "subtopic",
+      "data": {
+        "label": "2D"
+      }
+    },
+    {
+      "id": "cv1-AwewuqJsZDBI3h84G",
+      "type": "subtopic",
+      "data": {
+        "label": "Cube"
+      }
+    },
+    {
+      "id": "Lu38SfZ38y89BffLRMmGk",
+      "type": "subtopic",
+      "data": {
+        "label": "Cascaded"
+      }
+    },
+    {
+      "id": "VLrcBE1vb6N5fw5YESCge",
+      "type": "subtopic",
+      "data": {
+        "label": "Light Source"
+      }
+    },
+    {
+      "id": "foD8K7V0yIxgeXwl687Bv",
+      "type": "subtopic",
+      "data": {
+        "label": "Directional"
+      }
+    },
+    {
+      "id": "aNhyXWW2b7yKTv8y14zk9",
+      "type": "subtopic",
+      "data": {
+        "label": "Point"
+      }
+    },
+    {
+      "id": "FetbhcK1RDt4izZ6NEUEP",
+      "type": "subtopic",
+      "data": {
+        "label": "Spot"
+      }
+    },
+    {
+      "id": "sC3omOmL2DOyTSvET5cDa",
+      "type": "subtopic",
+      "data": {
+        "label": "Infinite"
+      }
+    },
+    {
+      "id": "OcxesFnB5wO6VXrHYnhz-",
+      "type": "subtopic",
+      "data": {
+        "label": "Visibility and Occlusion"
+      }
+    },
+    {
+      "id": "MlLYqO_8JDNOwKRvaM-bf",
+      "type": "subtopic",
+      "data": {
+        "label": "Occluder"
+      }
+    },
+    {
+      "id": "1gdDeUPBRco10LpOxug4k",
+      "type": "subtopic",
+      "data": {
+        "label": "Culling"
+      }
+    },
+    {
+      "id": "xP_VDMu1z9jiVnZaBFKJQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Clipping"
+      }
+    },
+    {
+      "id": "2ocwC0P1-ZFmjA9EmA1lV",
+      "type": "subtopic",
+      "data": {
+        "label": "Fog"
+      }
+    },
+    {
+      "id": "UcLGWYu41Ok2NYdLNIY5C",
+      "type": "subtopic",
+      "data": {
+        "label": "Frustum"
+      }
+    },
+    {
+      "id": "_1LkU258hzizSIgXipE0b",
+      "type": "subtopic",
+      "data": {
+        "label": "Light"
+      }
+    },
+    {
+      "id": "lqfW8hkuN3vWtacrqBBtI",
+      "type": "subtopic",
+      "data": {
+        "label": "Shadow"
+      }
+    },
+    {
+      "id": "-r15srXTBLnUGokpXKclH",
+      "type": "subtopic",
+      "data": {
+        "label": "Polygon"
+      }
+    },
+    {
+      "id": "GHfLMtgmc36OCvjQvW_Su",
+      "type": "subtopic",
+      "data": {
+        "label": "Polyhedron"
+      }
+    },
+    {
+      "id": "AEAVc8Ih4fctSGGVJG0Np",
+      "type": "subtopic",
+      "data": {
+        "label": "Stencil Shadow"
+      }
+    },
+    {
+      "id": "5ZdQrL9tPyQ4Ho1hecKLD",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Kx7O7RLp7aPGtOvK8e314",
+      "type": "topic",
+      "data": {
+        "label": "Graphics API"
+      }
+    },
+    {
+      "id": "bgWFV09AtDv1yJS5t0EaB",
+      "type": "subtopic",
+      "data": {
+        "label": "DirectX"
+      }
+    },
+    {
+      "id": "ffa5-YxRhE3zhWg7KXQ4r",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenGL"
+      }
+    },
+    {
+      "id": "CeydBMwckqKll-2AgOlyd",
+      "type": "subtopic",
+      "data": {
+        "label": "WebGL"
+      }
+    },
+    {
+      "id": "wYUDJb-q1rtM4w2QV3Wr1",
+      "type": "subtopic",
+      "data": {
+        "label": "HLSL"
+      }
+    },
+    {
+      "id": "j8mWMFMQCEIPUzegDDsm1",
+      "type": "subtopic",
+      "data": {
+        "label": "GLSL"
+      }
+    },
+    {
+      "id": "EVOiWAeZsIvjLTt3EYu-6",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenGL ES"
+      }
+    },
+    {
+      "id": "oEznLciLxZJaulMlBGgg4",
+      "type": "subtopic",
+      "data": {
+        "label": "Metal"
+      }
+    },
+    {
+      "id": "yPfhJSTFS7a72UcqF1ROK",
+      "type": "subtopic",
+      "data": {
+        "label": "Vulkan"
+      }
+    },
+    {
+      "id": "DvV32n3NoXNEej8Fsqqs2",
+      "type": "subtopic",
+      "data": {
+        "label": "SPIR-V"
+      }
+    },
+    {
+      "id": "Hpf_CPmLpCSP8Qo07Kq1X",
+      "type": "topic",
+      "data": {
+        "label": "Game AI"
+      }
+    },
+    {
+      "id": "Ky-95ipdgyPZGAIdqwMCk",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Making"
+      }
+    },
+    {
+      "id": "rwGivalwv2ozdSlVMSc4U",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Tree"
+      }
+    },
+    {
+      "id": "aJa_2xkZuSjQ5bt6Kj5oe",
+      "type": "subtopic",
+      "data": {
+        "label": "State Machine"
+      }
+    },
+    {
+      "id": "ztoW8fBY73Es624A_tjd7",
+      "type": "subtopic",
+      "data": {
+        "label": "Behavior Tree"
+      }
+    },
+    {
+      "id": "4ZCVUpYrCT14d_JULulLe",
+      "type": "subtopic",
+      "data": {
+        "label": "Fuzzy Logic"
+      }
+    },
+    {
+      "id": "c6j-30p84vk3MZEF1R2hN",
+      "type": "subtopic",
+      "data": {
+        "label": "Markov System"
+      }
+    },
+    {
+      "id": "Cuc0xvCAkVyUtwOxO_Uua",
+      "type": "subtopic",
+      "data": {
+        "label": "Goal Oriented Behavior"
+      }
+    },
+    {
+      "id": "mUyzX-DXnIKDl-r9o8d38",
+      "type": "subtopic",
+      "data": {
+        "label": "Movement"
+      }
+    },
+    {
+      "id": "eoK70YRCz73GmzbNhh5kg",
+      "type": "subtopic",
+      "data": {
+        "label": "Board Game"
+      }
+    },
+    {
+      "id": "oOjGqicW3eqRwWyIwJdBA",
+      "type": "subtopic",
+      "data": {
+        "label": "Minimax"
+      }
+    },
+    {
+      "id": "KYCi4d475zZfNwlj6HZVD",
+      "type": "subtopic",
+      "data": {
+        "label": "AB Pruning"
+      }
+    },
+    {
+      "id": "QD9TfZn3yhGPVwiyJ6d0V",
+      "type": "subtopic",
+      "data": {
+        "label": "MCTS"
+      }
+    },
+    {
+      "id": "Hpk8eOaOepERMmOvUgkxa",
+      "type": "topic",
+      "data": {
+        "label": "Game AI"
+      }
+    },
+    {
+      "id": "1G4wQLJCBBN0ynvbpc9DG",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "laGrI97zR5SEwbYims5E5",
+      "type": "label",
+      "data": {
+        "label": "Maximise your skills"
+      }
+    },
+    {
+      "id": "ul5XnVwQCwr4ZaL4kBNpd",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Learning"
+      }
+    },
+    {
+      "id": "aw1BAGqrdBBmUwB6vMF_A",
+      "type": "subtopic",
+      "data": {
+        "label": "Naive Bayes Classifier"
+      }
+    },
+    {
+      "id": "sz1047M8_kScjth84yPwU",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Tree Learning"
+      }
+    },
+    {
+      "id": "ltkEyfuDxExs7knqs79ya",
+      "type": "subtopic",
+      "data": {
+        "label": "Deep Learning"
+      }
+    },
+    {
+      "id": "AoH2r4EOHyZd8YaV24rBk",
+      "type": "subtopic",
+      "data": {
+        "label": "Artificial Neural Network"
+      }
+    },
+    {
+      "id": "rGEHTfdNeBAX3_XqC-vvI",
+      "type": "subtopic",
+      "data": {
+        "label": "Reinforcements Learning"
+      }
+    },
+    {
+      "id": "-QCv_s22wvTQ-OeQYgBUA",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9_OcZ9rzedDFfwEYxAghh",
+      "type": "subtopic",
+      "data": {
+        "label": "Learning"
+      }
+    },
+    {
+      "id": "CDYszS1U4v95GozB_drbt",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Rendering"
+      }
+    },
+    {
+      "id": "_i7BXZq-iLxQc3QZRMees",
+      "type": "subtopic",
+      "data": {
+        "label": "Real-time Ray Tracing"
+      }
+    },
+    {
+      "id": "qoIkw9o8iMx7MzUyVYoR2",
+      "type": "subtopic",
+      "data": {
+        "label": "DirectX Ray Tracing"
+      }
+    },
+    {
+      "id": "tDGnV8dGIFr_diz4HcEjr",
+      "type": "subtopic",
+      "data": {
+        "label": "Vulkan Ray Tracing"
+      }
+    },
+    {
+      "id": "GDLysy3__cbYidEaOmFze",
+      "type": "subtopic",
+      "data": {
+        "label": "OptiX"
+      }
+    },
+    {
+      "id": "XvFtMHrYsBREmuerE7CGc",
+      "type": "subtopic",
+      "data": {
+        "label": "Physically-Based Rendering"
+      }
+    },
+    {
+      "id": "PuhXaRZ-Ql5PCqzMyz3en",
+      "type": "subtopic",
+      "data": {
+        "label": "Translucency \u0026 Transparency"
+      }
+    },
+    {
+      "id": "H3hkafXO9zqEnWuwHa38P",
+      "type": "subtopic",
+      "data": {
+        "label": "Conservation of Energy"
+      }
+    },
+    {
+      "id": "olY1ibR7kw1yJ58TfU-37",
+      "type": "subtopic",
+      "data": {
+        "label": "Metallicity"
+      }
+    },
+    {
+      "id": "YrQgfjsdLCIUxrwflpEHO",
+      "type": "subtopic",
+      "data": {
+        "label": "Microsurface Scattering"
+      }
+    },
+    {
+      "id": "FbfHP9hFBuISrGzKaX-qm",
+      "type": "paragraph",
+      "data": {
+        "label": "Shout out to Chris Ohk who helped make the initial version of this roadmap."
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "Visit his GitHub"
+      }
+    },
+    {
+      "id": "dlGf3ZdFXYx0Z6Viu2x-l",
+      "type": "button",
+      "data": {
+        "label": "API Design"
+      }
+    },
+    {
+      "id": "3in61wmgTAqq7nSJm00p-",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-rQArtuVKGVgLn_fw9yO3bz2-SIvQYH0q1H29NgbtLq3L8y1",
+      "source": "rQArtuVKGVgLn_fw9yO3b",
+      "target": "SIvQYH0q1H29NgbtLq3L8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-rQArtuVKGVgLn_fw9yO3bx2-m1wX27XBWKXZcTMH2U1xpw2",
+      "source": "rQArtuVKGVgLn_fw9yO3b",
+      "target": "m1wX27XBWKXZcTMH2U1xp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-rQArtuVKGVgLn_fw9yO3bw2",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "rQArtuVKGVgLn_fw9yO3b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpx2-YTkOF_33oL1ZkA-loc_DPw1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "YTkOF_33oL1ZkA-loc_DP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-grRf-MmaXimDB4iODOV47z1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "grRf-MmaXimDB4iODOV47",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-Kg6Mg9ieUUGXWX9Lai7B0z1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "Kg6Mg9ieUUGXWX9Lai7B0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-XABzEU9owCx9-zw1id9xUz1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "XABzEU9owCx9-zw1id9xU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-r5TcXQsU9s4NlAQIPvZ3Uz1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "r5TcXQsU9s4NlAQIPvZ3U",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-SkCreb6g4i-OFtJWhRYqOz1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "SkCreb6g4i-OFtJWhRYqO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpy2-iIWEjpkNFBj4R5wQ0mcWYz2",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "iIWEjpkNFBj4R5wQ0mcWY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-m1wX27XBWKXZcTMH2U1xpz2-4YgbrXLXf5mfaL2tlYkzky1",
+      "source": "m1wX27XBWKXZcTMH2U1xp",
+      "target": "UTBnrQiZ6Bf96yJYIUf3b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SuemqQuiePab0Qpm2EGy9y2-vmRYaXNVCe0N73xG8bsEKz2",
+      "source": "SuemqQuiePab0Qpm2EGy9",
+      "target": "vmRYaXNVCe0N73xG8bsEK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vmRYaXNVCe0N73xG8bsEKy2-kSMz7mZ243qMKtT_YD3ADz1",
+      "source": "vmRYaXNVCe0N73xG8bsEK",
+      "target": "kSMz7mZ243qMKtT_YD3AD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vmRYaXNVCe0N73xG8bsEKy2-lwd3Gz9bJEKCIwhXD6m-vz2",
+      "source": "vmRYaXNVCe0N73xG8bsEK",
+      "target": "lwd3Gz9bJEKCIwhXD6m-v",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vmRYaXNVCe0N73xG8bsEKy2-vWLKYK2KUzV1fO-vQunzWz1",
+      "source": "vmRYaXNVCe0N73xG8bsEK",
+      "target": "vWLKYK2KUzV1fO-vQunzW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SuemqQuiePab0Qpm2EGy9y2-YLusnwCba7BIdKOYUoY6Fz2",
+      "source": "SuemqQuiePab0Qpm2EGy9",
+      "target": "YLusnwCba7BIdKOYUoY6F",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-pG_V12qhS4HevoP_KHTvhy2-jixffcPBELkhoG0e7Te8gz2",
+      "source": "pG_V12qhS4HevoP_KHTvh",
+      "target": "jixffcPBELkhoG0e7Te8g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-jslk7Gy58VspO1uXGDgBpy2-bgP9NpD0DJGqN4VCt65xPz2",
+      "source": "jslk7Gy58VspO1uXGDgBp",
+      "target": "bgP9NpD0DJGqN4VCt65xP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YLusnwCba7BIdKOYUoY6Fx2-pG_V12qhS4HevoP_KHTvhw1",
+      "source": "YLusnwCba7BIdKOYUoY6F",
+      "target": "pG_V12qhS4HevoP_KHTvh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-AKd2UpITqBZV7cZszSRpsx2-PLR_4yoRifoTzkOR4c7ymw1",
+      "source": "AKd2UpITqBZV7cZszSRps",
+      "target": "PLR_4yoRifoTzkOR4c7ym",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-PLR_4yoRifoTzkOR4c7ymy2-aTeYGd4JlPr5txNPyBeznz1",
+      "source": "PLR_4yoRifoTzkOR4c7ym",
+      "target": "aTeYGd4JlPr5txNPyBezn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9Fk3XSINBr2NNdbMtwsIKy2-STdvFYM9V0a36IkPXjvrBz1",
+      "source": "9Fk3XSINBr2NNdbMtwsIK",
+      "target": "STdvFYM9V0a36IkPXjvrB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-9Fk3XSINBr2NNdbMtwsIKy2-FCc5xwb_G3VsDRXOcg3hVz2",
+      "source": "9Fk3XSINBr2NNdbMtwsIK",
+      "target": "FCc5xwb_G3VsDRXOcg3hV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-FCc5xwb_G3VsDRXOcg3hVy2-XHFV4d6Ab4kWQ3-XcZTyTz1",
+      "source": "FCc5xwb_G3VsDRXOcg3hV",
+      "target": "XHFV4d6Ab4kWQ3-XcZTyT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UTBnrQiZ6Bf96yJYIUf3by2-4YgbrXLXf5mfaL2tlYkzkz2",
+      "source": "UTBnrQiZ6Bf96yJYIUf3b",
+      "target": "fv5tivGad2P9GRZOodfn2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-4YgbrXLXf5mfaL2tlYkzky2-rNeOti8DDyWTMP9FB9kJ_z1",
+      "source": "fv5tivGad2P9GRZOodfn2",
+      "target": "rNeOti8DDyWTMP9FB9kJ_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4YgbrXLXf5mfaL2tlYkzky2-a6H-cZtp3A_fB8jnfMxBRz2",
+      "source": "fv5tivGad2P9GRZOodfn2",
+      "target": "a6H-cZtp3A_fB8jnfMxBR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4YgbrXLXf5mfaL2tlYkzky2-CeAUEN233L4IoFSZtIvvlz1",
+      "source": "fv5tivGad2P9GRZOodfn2",
+      "target": "CeAUEN233L4IoFSZtIvvl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4YgbrXLXf5mfaL2tlYkzky2-7OffO2mBmfBKqPBTZ9ngIz1",
+      "source": "fv5tivGad2P9GRZOodfn2",
+      "target": "7OffO2mBmfBKqPBTZ9ngI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UTBnrQiZ6Bf96yJYIUf3bx2-AdOfOJtLtNgDwuABb6orEw1",
+      "source": "UTBnrQiZ6Bf96yJYIUf3b",
+      "target": "AdOfOJtLtNgDwuABb6orE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4YgbrXLXf5mfaL2tlYkzky2-jsq0UXnIIC0Z_nbK2w48fz1",
+      "source": "4YgbrXLXf5mfaL2tlYkzk",
+      "target": "jsq0UXnIIC0Z_nbK2w48f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-THMmnx8p_P0X-dSPoHvstx2-iBZ1JsEWI0xuLgUvfWfl-w1",
+      "source": "THMmnx8p_P0X-dSPoHvst",
+      "target": "iBZ1JsEWI0xuLgUvfWfl-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbty2-JW5c_0JEtO-OiBoXUia6Az1",
+      "source": "lIb5MeDoqVj6HycveOgTS",
+      "target": "JW5c_0JEtO-OiBoXUia6A",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbty2-vYNj9nzu90e9xlrzHULnPz1",
+      "source": "lIb5MeDoqVj6HycveOgTS",
+      "target": "vYNj9nzu90e9xlrzHULnP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbty2-shSRnMf4NONuZ3TGPAoQcz1",
+      "source": "lIb5MeDoqVj6HycveOgTS",
+      "target": "shSRnMf4NONuZ3TGPAoQc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbty2-rmtxybcavWV6A53R4ZWgcz1",
+      "source": "lIb5MeDoqVj6HycveOgTS",
+      "target": "rmtxybcavWV6A53R4ZWgc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-eI2jym4AAz3ani-lreSKEx2-0g1z5G2dsF4PTIfFAG984w1",
+      "source": "eI2jym4AAz3ani-lreSKE",
+      "target": "0g1z5G2dsF4PTIfFAG984",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UTBnrQiZ6Bf96yJYIUf3bw2-0D7KQlF-9ylmILTBBVxotx2",
+      "source": "UTBnrQiZ6Bf96yJYIUf3b",
+      "target": "0D7KQlF-9ylmILTBBVxot",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lIb5MeDoqVj6HycveOgTSy2-qIrePusMuvcUva9LMDmDxz1",
+      "source": "lIb5MeDoqVj6HycveOgTS",
+      "target": "qIrePusMuvcUva9LMDmDx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbtz2-Ky-95ipdgyPZGAIdqwMCky1",
+      "source": "Hpf_CPmLpCSP8Qo07Kq1X",
+      "target": "Ky-95ipdgyPZGAIdqwMCk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Hpf_CPmLpCSP8Qo07Kq1Xx2-CDYszS1U4v95GozB_drbtw1",
+      "source": "Hpf_CPmLpCSP8Qo07Kq1X",
+      "target": "Hpk8eOaOepERMmOvUgkxa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Hpk8eOaOepERMmOvUgkxax2-CDYszS1U4v95GozB_drbtw1",
+      "source": "Hpk8eOaOepERMmOvUgkxa",
+      "target": "CDYszS1U4v95GozB_drbt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-XvFtMHrYsBREmuerE7CGcx2-qoIkw9o8iMx7MzUyVYoR2w1",
+      "source": "_i7BXZq-iLxQc3QZRMees",
+      "target": "qoIkw9o8iMx7MzUyVYoR2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbtz2-XvFtMHrYsBREmuerE7CGcy2",
+      "source": "CDYszS1U4v95GozB_drbt",
+      "target": "_i7BXZq-iLxQc3QZRMees",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbty2-XvFtMHrYsBREmuerE7CGcz1",
+      "source": "CDYszS1U4v95GozB_drbt",
+      "target": "XvFtMHrYsBREmuerE7CGc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XvFtMHrYsBREmuerE7CGcx2-YrQgfjsdLCIUxrwflpEHOw1",
+      "source": "XvFtMHrYsBREmuerE7CGc",
+      "target": "YrQgfjsdLCIUxrwflpEHO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CDYszS1U4v95GozB_drbtx2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "CDYszS1U4v95GozB_drbt",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

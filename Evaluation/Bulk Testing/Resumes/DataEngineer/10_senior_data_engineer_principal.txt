@@ -1,0 +1,29 @@
+Evan Blackwood
+evan.blackwood@email.com | (415) 334-9872 | San Francisco, CA | linkedin.com/in/evanblackwood-de
+
+SUMMARY
+Principal data engineer with 12 years of experience leading data infrastructure and platform engineering at scale. Expert in Spark, Kafka, dbt, Airflow, and multi-cloud architecture (AWS and GCP). Deep experience in data mesh, data contract governance, and enabling self-service data access for large organizations. Led teams of 8-15 engineers.
+
+SKILLS
+Languages: Python, SQL, Bash, Scala, Java
+Frameworks: Apache Spark, Apache Kafka, Apache Flink, dbt, Apache Airflow, pandas
+Databases: Snowflake, BigQuery, Redshift, Cassandra, S3
+Tools: Git, Docker, Kubernetes, Terraform, Confluent Platform, DataHub, OpenLineage, GitHub Actions
+
+EXPERIENCE
+
+Distinguished Data Engineer | Orion Cloud | San Francisco, CA | February 2018 - Present
+- Designed Orion's data mesh architecture spanning 8 data domains, 300+ dbt models, and 50 Kafka topics, enabling 4 business units to own and publish their domain data products independently
+- Built streaming data platform on Confluent Kafka + Flink processing 50 billion events per day with exactly-once delivery semantics
+- Reduced mean time to data incident resolution from 8 hours to 45 minutes by implementing OpenLineage-based data lineage and automated anomaly detection
+- Grew and led data platform team from 3 to 15 engineers over 6 years; developed career ladders, hiring rubrics, and mentorship frameworks
+
+Senior Data Engineer | Cascade Media | San Francisco, CA | January 2015 - January 2018
+- Built Spark-based batch data platform processing 2 PB per month on AWS EMR, replacing fragile ETL scripts
+- Designed Airflow pipeline orchestration with 100+ DAGs and SLA monitoring for 20 critical pipelines
+
+Data Engineer | DataBridge Solutions | San Francisco, CA | June 2012 - December 2014
+- Built Python ETL and PostgreSQL data warehouse for a logistics analytics startup; first data engineering hire
+
+EDUCATION
+Bachelor of Science, Computer Science | UC San Diego | 2012

@@ -1,0 +1,42 @@
+Marcus Tillman
+marcus.tillman@email.com | (614) 883-2047 | Columbus, OH | linkedin.com/in/marcustillman
+
+SUMMARY
+Junior DevOps engineer with 1.5 years of experience supporting CI/CD pipelines and cloud infrastructure for a mid-sized SaaS company. Comfortable with Linux administration, containerization, and automated deployments. Eager to grow skills in Kubernetes and infrastructure automation.
+
+SKILLS
+Languages: Bash, Python
+Containers: Docker
+CI/CD: GitHub Actions, Jenkins
+Cloud: AWS
+Operating Systems: Linux
+Monitoring: Grafana
+Version Control: Git
+
+EXPERIENCE
+
+DevOps Engineer I | Bridgepoint Software | Columbus, OH | October 2024 - Present
+- Maintained and improved GitHub Actions pipelines for 4 microservices, reducing average build time from 18 minutes to 11 minutes
+- Containerized 2 legacy applications using Docker, enabling consistent staging and production environments
+- Assisted in managing AWS EC2 instances and S3 buckets across development and production environments
+- Wrote Bash scripts to automate log rotation and nightly database backup jobs, saving ~3 hours of manual work per week
+- Set up Grafana dashboards to visualize CPU and memory utilization for 6 production servers
+- Collaborated with 3 backend engineers to troubleshoot deployment failures and reduce incident response time by 20%
+
+Junior Systems Administrator | Nexlane Technologies | Columbus, OH | June 2024 - October 2024
+- Administered Linux servers (Ubuntu 22.04) for internal tooling and QA environments
+- Wrote Python scripts to parse application logs and generate daily error-rate reports
+- Managed Git repositories and enforced branching strategies for a 5-person engineering team
+- Documented runbooks for common deployment and rollback procedures
+
+PROJECTS
+Home Lab Kubernetes Cluster
+- Built a 3-node Kubernetes cluster on local hardware to experiment with pod scheduling, namespaces, and basic service networking
+- Deployed a personal web application using Docker images and Kubernetes manifests
+
+GitHub Actions Deployment Automation
+- Created a multi-stage GitHub Actions workflow that builds, tests, and deploys a Python Flask app to AWS EC2 on every merge to main
+- Reduced manual deployment steps from 12 to 2
+
+EDUCATION
+Bachelor of Science, Information Technology | Ohio State University | 2024

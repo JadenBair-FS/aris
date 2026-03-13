@@ -1,0 +1,28 @@
+Fiona Gallagher
+fiona.gallagher@email.com | (617) 443-7710 | Boston, MA | linkedin.com/in/fionagallagher-dotnet
+
+SUMMARY
+.NET developer with 4 years of experience building cloud-native services on Azure. Proficient in ASP.NET Core, C#, Entity Framework Core, and Azure services including Service Bus, Functions, and Azure DevOps. Experienced with CQRS patterns and xUnit testing in production codebases.
+
+SKILLS
+Languages: C#, SQL, TypeScript (basic)
+Frameworks: ASP.NET Core, Entity Framework Core, MediatR, Azure Functions
+Databases: SQL Server, Azure SQL, CosmosDB (basic)
+Tools: Git, Visual Studio, xUnit, Moq, FluentValidation, Docker, Azure DevOps
+Cloud/Infra: Azure (App Service, Functions, Service Bus, SQL Database, Key Vault, Application Insights)
+
+EXPERIENCE
+
+.NET Developer II | Harborview Analytics | Boston, MA | April 2022 - Present
+- Built CQRS-patterned ASP.NET Core API with MediatR handling 300,000 daily requests for a financial reporting platform, achieving 99.95% uptime
+- Implemented Azure Service Bus-triggered Azure Functions for asynchronous report generation, eliminating all request timeout errors for large report exports
+- Designed Entity Framework Core Fluent API configurations for a 25-entity SQL Server database with full audit logging using Interceptors
+- Set up Azure DevOps pipeline with automated xUnit test gating, code coverage reporting, and Bicep-based infrastructure deployment
+
+Junior .NET Developer | Granite Systems | Providence, RI | January 2020 - March 2022
+- Built ASP.NET Core Web API features for a SaaS project management platform
+- Wrote xUnit and Moq tests for service and repository classes, reaching 78% test coverage
+- Implemented FluentValidation rules for all API request models
+
+EDUCATION
+Bachelor of Science, Computer Science | UMass Lowell | 2020

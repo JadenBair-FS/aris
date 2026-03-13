@@ -1,0 +1,385 @@
+{
+  "type": "resume",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        20284,
+        17618,
+        17764
+      ],
+      "avgLatencyMs": 18555.333333333332,
+      "output": {
+        "roles": [
+          {
+            "title": "Scrub Technician",
+            "duration": "August 2024 - Present",
+            "is_current": true
+          },
+          {
+            "title": "Scrub Technician",
+            "duration": "April 2024 - April 2025",
+            "is_current": false
+          },
+          {
+            "title": "Scrub Technician",
+            "duration": "September 2022 - April 2024",
+            "is_current": false
+          },
+          {
+            "title": "Barista",
+            "duration": "April 2022 - April 2024",
+            "is_current": false
+          },
+          {
+            "title": "Team Lead",
+            "duration": "FEBRUARY 2017 - MAY 2018",
+            "is_current": false
+          },
+          {
+            "title": "Business Enrollment Coordinator",
+            "duration": "NOVEMBER 2015 - FEBRUARY 2017",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Certified Nursing Assistant",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Medical Billing",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Medical Coding",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Sterile Technique",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 7
+          },
+          {
+            "name": "BLS",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Computer Savvy",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 5.5
+          },
+          {
+            "name": "Clerical Work",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Phone Etiquette",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 5.5
+          },
+          {
+            "name": "Bilingual",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Time Management",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Leadership",
+            "category": "Soft",
+            "proficiency": "Intermediate",
+            "years_of_experience": 3.5
+          },
+          {
+            "name": "Organized",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 7
+          },
+          {
+            "name": "Self-motivated",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 7
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Scrub Technician",
+            "company": "Ashby Plastic Surgery",
+            "bullets": [
+              "Assisting the Doctor during surgeries",
+              "Setting up the operating room before a surgery starts",
+              "Cleaning and sterilizing instruments used in surgery",
+              "Maintaining the inventory of supplies used for surgeries"
+            ]
+          },
+          {
+            "role": "Scrub Technician",
+            "company": "Intermountain Healthcare",
+            "bullets": [
+              "Working on labor and delivery",
+              "Duties of a CNA",
+              "Trained to be a scrub technician on the job",
+              "Being able to work in emergency situations",
+              "Use of sterile techniques",
+              "Rotated being health unit coordinators"
+            ]
+          },
+          {
+            "role": "Scrub Technician",
+            "company": "Atlantic Surgery and Laser Center",
+            "bullets": [
+              "Preparing the operating room for surgeries",
+              "Maintaining sterile technique",
+              "Memorizing multiple surgical procedures",
+              "Medical billing and coding for the patients we saw"
+            ]
+          },
+          {
+            "role": "Barista",
+            "company": "Starbucks",
+            "bullets": [
+              "Serving customers",
+              "Preparing drinks",
+              "Cashiering"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Certified Nursing Assistant",
+            "institution": "Davis Technical College, Utah",
+            "year": "2019"
+          },
+          {
+            "degree": "High School Diploma",
+            "institution": "Northridge High School, Utah",
+            "year": "2014"
+          }
+        ]
+      },
+      "skillCount": 13,
+      "roleCount": 6,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        23266,
+        24151,
+        20760
+      ],
+      "avgLatencyMs": 22725.666666666668,
+      "output": {
+        "roles": [
+          {
+            "title": "Scrub Technician",
+            "duration": "August 2024 - Present",
+            "is_current": true
+          },
+          {
+            "title": "Scrub Technician",
+            "duration": "April 2025 - April 2024",
+            "is_current": false
+          },
+          {
+            "title": "Scrub Technician",
+            "duration": "September 2022 - April 2024",
+            "is_current": false
+          },
+          {
+            "title": "Barista",
+            "duration": "April 2024 - April 2022",
+            "is_current": false
+          },
+          {
+            "title": "Scrub Technician",
+            "duration": "March 2022 - September 2019",
+            "is_current": false
+          },
+          {
+            "title": "Food Service Associate",
+            "duration": "September 2019 - July 2018",
+            "is_current": false
+          },
+          {
+            "title": "Team Lead",
+            "duration": "May 2018 - February 2017",
+            "is_current": false
+          },
+          {
+            "title": "Business Enrollment Coordinator",
+            "duration": "February 2017 - November 2015",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Sterile Technique",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Medical Billing",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Medical Coding",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "BLS",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Computer Savvy",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Clerical Work",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "Phone Etiquette",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Bilingual",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Time Management",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Leadership",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Organized",
+            "category": "Soft",
+            "proficiency": "Intermediate",
+            "years_of_experience": 0.5
+          },
+          {
+            "name": "Self-motivated",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Scrub Technician",
+            "company": "Ashby Plastic Surgery",
+            "bullets": [
+              "Assisting the Doctor during surgeries",
+              "Setting up the operating room before a surgery starts"
+            ]
+          },
+          {
+            "role": "Scrub Technician",
+            "company": "Intermountain Healthcare",
+            "bullets": [
+              "Working on labor and delivery",
+              "Rotating being health unit coordinators"
+            ]
+          },
+          {
+            "role": "Scrub Technician",
+            "company": "Atlantic Surgery and Laser Center",
+            "bullets": [
+              "Preparing the operating room for surgeries",
+              "Maintaining sterile technique"
+            ]
+          },
+          {
+            "role": "Barista",
+            "company": "Starbucks",
+            "bullets": []
+          }
+        ],
+        "education": [
+          {
+            "degree": "Certified Nursing Assistant",
+            "institution": "Davis Technical College, Utah",
+            "year": "2019"
+          },
+          {
+            "degree": "High School Diploma",
+            "institution": "Northridge High School, Utah",
+            "year": "2014"
+          }
+        ]
+      },
+      "skillCount": 12,
+      "roleCount": 8,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.22,
+    "skillCounts": {
+      "mistral": 13,
+      "llama3.2:3b": 12
+    },
+    "sharedSkills": [
+      "Medical Billing",
+      "Medical Coding",
+      "Sterile Technique",
+      "BLS",
+      "Computer Savvy",
+      "Clerical Work",
+      "Phone Etiquette",
+      "Bilingual",
+      "Time Management",
+      "Leadership",
+      "Organized",
+      "Self-motivated"
+    ],
+    "uniqueToLargerModel": [
+      "Certified Nursing Assistant"
+    ]
+  }
+}

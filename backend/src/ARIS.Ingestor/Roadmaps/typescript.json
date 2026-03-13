@@ -1,0 +1,1203 @@
+{
+  "title": {
+    "card": "TypeScript",
+    "page": "TypeScript"
+  },
+  "description": "Everything you need to learn about TypeScript in @currentYear@",
+  "nodes": [
+    {
+      "id": "ZB1TdxJOvkLqmiyBiPb8B",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qnLkLaY7Nt73nuaRxLJsg",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "IkitRuGt2Pud6aootSJB-",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "d86vtx3nM-5mhQWgMUfcT",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_4my3Mfk5lxztykcJQ66s",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "v-557S7JKWhkSPaDYi0BN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "h-SAVlYMgS3y0WmKNd9r9",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "OnZEUqOyO3OtLtfJRLcas",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "pQNklz7gALnQrIaPu97LH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lcJ5Qry7uPRXDMfqgTKXk",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8d6HSzaJNgPSWvhU5Fydf",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "DAwKHBng7Tytlcd2_8GOR",
+      "type": "button",
+      "data": {
+        "label": "JavaScript Roadmap"
+      }
+    },
+    {
+      "id": "KDd40JOAvZ8O1mfhTYB3K",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to TypeScript"
+      }
+    },
+    {
+      "id": "Y3FQ2wGWFb1VciLEVEGUf",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "MQWzN_kXxVJMOYbRXSGJc",
+      "type": "subtopic",
+      "data": {
+        "label": "TypeScript vs JavaScript"
+      }
+    },
+    {
+      "id": "dcLaEU_lb0z_QypL1ZhpX",
+      "type": "subtopic",
+      "data": {
+        "label": "TS and JS Interoperability"
+      }
+    },
+    {
+      "id": "dA8CNQOgJRDa0T7rmyS7f",
+      "type": "subtopic",
+      "data": {
+        "label": "Installation and Configuration"
+      }
+    },
+    {
+      "id": "DmqrX56d9KnBcOSwlJR2q",
+      "type": "subtopic",
+      "data": {
+        "label": "tsconfig.json"
+      }
+    },
+    {
+      "id": "RrExVb7l2gd0s_TlNdLeD",
+      "type": "subtopic",
+      "data": {
+        "label": "Compiler Options"
+      }
+    },
+    {
+      "id": "qdy4ZIY2EKgmPNdu_ndcg",
+      "type": "subtopic",
+      "data": {
+        "label": "Running TypeScript"
+      }
+    },
+    {
+      "id": "Iv_t13PSVzet5VPKFtAp1",
+      "type": "subtopic",
+      "data": {
+        "label": "tsc"
+      }
+    },
+    {
+      "id": "ZCM2_X4BiKh5FTCizrr-E",
+      "type": "subtopic",
+      "data": {
+        "label": "ts-node"
+      }
+    },
+    {
+      "id": "_bZ71i36haWgHQTY0yMOx",
+      "type": "subtopic",
+      "data": {
+        "label": "TS Playground"
+      }
+    },
+    {
+      "id": "qcrGApxNzkGYxgcd7o45d",
+      "type": "topic",
+      "data": {
+        "label": "TypeScript Types"
+      }
+    },
+    {
+      "id": "OtdcYVLAgWsaKcaEjKOW1",
+      "type": "label",
+      "data": {
+        "label": "Primitive Types"
+      }
+    },
+    {
+      "id": "hfIHxa5i_5rEpjtzqEsic",
+      "type": "subtopic",
+      "data": {
+        "label": "boolean"
+      }
+    },
+    {
+      "id": "UH9d3cvGy_e67WFNFwCyf",
+      "type": "subtopic",
+      "data": {
+        "label": "number"
+      }
+    },
+    {
+      "id": "d8iV-IBZ6cSnH8Z5_HRmc",
+      "type": "subtopic",
+      "data": {
+        "label": "string"
+      }
+    },
+    {
+      "id": "yLlQg7BF--ZwRHbXBWfOi",
+      "type": "subtopic",
+      "data": {
+        "label": "void"
+      }
+    },
+    {
+      "id": "Sa6IZtM4XJstultz-pbh0",
+      "type": "subtopic",
+      "data": {
+        "label": "undefined"
+      }
+    },
+    {
+      "id": "cjAwawhZLo1qVQ93XIdm2",
+      "type": "subtopic",
+      "data": {
+        "label": "null"
+      }
+    },
+    {
+      "id": "SKqGm8fqxSRoE5HqDNqHB",
+      "type": "label",
+      "data": {
+        "label": "Object Types"
+      }
+    },
+    {
+      "id": "mVKsM7R4Ivpdhnbwt1aRb",
+      "type": "subtopic",
+      "data": {
+        "label": "Interface"
+      }
+    },
+    {
+      "id": "tTSITP1W1ymS-njbFb8Ts",
+      "type": "subtopic",
+      "data": {
+        "label": "Class"
+      }
+    },
+    {
+      "id": "bfZIXHceDKDGQl-24kQpT",
+      "type": "subtopic",
+      "data": {
+        "label": "Enum"
+      }
+    },
+    {
+      "id": "YbDuIo1BbZKEAZwmXlCdZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Array"
+      }
+    },
+    {
+      "id": "jq-GD0DLyzrEXQKUmt5kv",
+      "type": "subtopic",
+      "data": {
+        "label": "Tuple"
+      }
+    },
+    {
+      "id": "bx8s7zcSqfKHhHLF45YWd",
+      "type": "label",
+      "data": {
+        "label": "Top Types"
+      }
+    },
+    {
+      "id": "vnqvm_WiaKqpdxrW4wRGa",
+      "type": "subtopic",
+      "data": {
+        "label": "Object"
+      }
+    },
+    {
+      "id": "O2TYbd9i_OQwQk2dKh-ly",
+      "type": "subtopic",
+      "data": {
+        "label": "unknown"
+      }
+    },
+    {
+      "id": "yXiLegSlL7SveU8rBGj8U",
+      "type": "subtopic",
+      "data": {
+        "label": "any"
+      }
+    },
+    {
+      "id": "I_ZPF1QaS4gvwNNBDzW8w",
+      "type": "label",
+      "data": {
+        "label": "Bottom Types"
+      }
+    },
+    {
+      "id": "0pi9VTbngcAIswuu5LIYg",
+      "type": "subtopic",
+      "data": {
+        "label": "never"
+      }
+    },
+    {
+      "id": "AYoKlh6xTM5FgiK4h2HFp",
+      "type": "label",
+      "data": {
+        "label": "Assertions"
+      }
+    },
+    {
+      "id": "pGFnTqi0-RSj0YRmNA5iy",
+      "type": "subtopic",
+      "data": {
+        "label": "as const"
+      }
+    },
+    {
+      "id": "Ba0baUbomrW9td_K8U-5L",
+      "type": "subtopic",
+      "data": {
+        "label": "as [type]"
+      }
+    },
+    {
+      "id": "afTNr36VqeXoJpHxm2IoS",
+      "type": "subtopic",
+      "data": {
+        "label": "as any"
+      }
+    },
+    {
+      "id": "mjaL5ocLnM8VQlhUxW6KU",
+      "type": "subtopic",
+      "data": {
+        "label": "Non-null Assertion"
+      }
+    },
+    {
+      "id": "HD1UGOidp7JGKdW6CEdQ_",
+      "type": "subtopic",
+      "data": {
+        "label": "satisfies keyword"
+      }
+    },
+    {
+      "id": "KUur-gfOBQodTS-irFet7",
+      "type": "topic",
+      "data": {
+        "label": "Type Inference"
+      }
+    },
+    {
+      "id": "alMJCEyUZ90xz-2_g3YRj",
+      "type": "topic",
+      "data": {
+        "label": "Type Compatibility"
+      }
+    },
+    {
+      "id": "qefnsugcveizVq2TORRgn",
+      "type": "topic",
+      "data": {
+        "label": "Combining Types"
+      }
+    },
+    {
+      "id": "5z5w3yv1HbOpMlzEd4Iot",
+      "type": "subtopic",
+      "data": {
+        "label": "Union Types"
+      }
+    },
+    {
+      "id": "RWYXEZMODUrqwRWf_Lqi9",
+      "type": "subtopic",
+      "data": {
+        "label": "Intersection Types"
+      }
+    },
+    {
+      "id": "M_3O21zjppgWptIT5dtu8",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Aliases"
+      }
+    },
+    {
+      "id": "t1Tcesfq7bV2TkHcfD6lU",
+      "type": "subtopic",
+      "data": {
+        "label": "keyof Operator"
+      }
+    },
+    {
+      "id": "cFZsxpYHDxm7IWwergb3r",
+      "type": "topic",
+      "data": {
+        "label": "Type Guards / Narrowing"
+      }
+    },
+    {
+      "id": "EDOU5a7UK17yp3PdFBJMc",
+      "type": "subtopic",
+      "data": {
+        "label": "instanceof"
+      }
+    },
+    {
+      "id": "ZiOcFZy85p7tLzUkyKDei",
+      "type": "subtopic",
+      "data": {
+        "label": "typeof"
+      }
+    },
+    {
+      "id": "Wy2yIK5vgLjEcc9VjuQK5",
+      "type": "subtopic",
+      "data": {
+        "label": "Equality"
+      }
+    },
+    {
+      "id": "Xonbxc7MvMEonKBvbkCAH",
+      "type": "subtopic",
+      "data": {
+        "label": "Truthiness"
+      }
+    },
+    {
+      "id": "1DOSAieOmWUNNsQQrqf2m",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Predicates"
+      }
+    },
+    {
+      "id": "qOynVkDi1gFz0mxyJHjfJ",
+      "type": "topic",
+      "data": {
+        "label": "TypeScript Functions"
+      }
+    },
+    {
+      "id": "9FIhHwDNzyKpb42NmSv3K",
+      "type": "subtopic",
+      "data": {
+        "label": "Typing Functions"
+      }
+    },
+    {
+      "id": "-0Zp6b8NjDyz9MAQE3HfS",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Overloading"
+      }
+    },
+    {
+      "id": "aH1DxiG5xrdNlKutJ_gTz",
+      "type": "topic",
+      "data": {
+        "label": "TypeScript Interfaces"
+      }
+    },
+    {
+      "id": "TxkEpoOiuUm-fXJuFVKcH",
+      "type": "subtopic",
+      "data": {
+        "label": "Types vs Interfaces"
+      }
+    },
+    {
+      "id": "O-9WQqidujLIEOTcOfy4n",
+      "type": "subtopic",
+      "data": {
+        "label": "Extending Interfaces"
+      }
+    },
+    {
+      "id": "fY40W8prpgiNqRL50w7ub",
+      "type": "subtopic",
+      "data": {
+        "label": "Interface Declaration"
+      }
+    },
+    {
+      "id": "lvtTSHH9yBTCiLng8btnI",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid Types"
+      }
+    },
+    {
+      "id": "ib0jfZzukYOZ42AdJqt_W",
+      "type": "topic",
+      "data": {
+        "label": "Classes"
+      }
+    },
+    {
+      "id": "3XrKbK5Od2eoM0BLaS4kU",
+      "type": "subtopic",
+      "data": {
+        "label": "Constructor Params"
+      }
+    },
+    {
+      "id": "oxzcYXxy2I7GI7nbvFYVa",
+      "type": "subtopic",
+      "data": {
+        "label": "Constructor Overloading"
+      }
+    },
+    {
+      "id": "RJ7on8WoxrKcXrR3qY5Rs",
+      "type": "subtopic",
+      "data": {
+        "label": "Access Modifiers"
+      }
+    },
+    {
+      "id": "tZFWeWHdOUJcCEtHfXH9p",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstract Classes"
+      }
+    },
+    {
+      "id": "8P0-vb9nlnmz7iC4UvyJZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Inheritance vs Polymorphism"
+      }
+    },
+    {
+      "id": "aknqutxN2WDQ4RFcT-szM",
+      "type": "subtopic",
+      "data": {
+        "label": "Method Overriding"
+      }
+    },
+    {
+      "id": "4gaKqNtGLFqpk9WVKZl0v",
+      "type": "topic",
+      "data": {
+        "label": "Generics"
+      }
+    },
+    {
+      "id": "T2-VAVfntouJOoWHpHZ3n",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Types"
+      }
+    },
+    {
+      "id": "0NXHAOUYGIwuPwlN7r_B3",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Constraints"
+      }
+    },
+    {
+      "id": "TRx3wvWnRdJJf5eL-GBG4",
+      "type": "topic",
+      "data": {
+        "label": "Decorators"
+      }
+    },
+    {
+      "id": "LSwUHfalnk5MgHt21PANb",
+      "type": "topic",
+      "data": {
+        "label": "Utility Types"
+      }
+    },
+    {
+      "id": "gBTem9Dp3IQLAkqGX4fOF",
+      "type": "subtopic",
+      "data": {
+        "label": "Partial"
+      }
+    },
+    {
+      "id": "E88tHQvARkHURZwGaO02l",
+      "type": "subtopic",
+      "data": {
+        "label": "Pick"
+      }
+    },
+    {
+      "id": "yjlxygHl8QONNUrdx-Q0A",
+      "type": "subtopic",
+      "data": {
+        "label": "Omit"
+      }
+    },
+    {
+      "id": "IuO9-O_DQdDYuAbdGWdgb",
+      "type": "subtopic",
+      "data": {
+        "label": "Readonly"
+      }
+    },
+    {
+      "id": "DRdBmF5Dt_r09LoPOxOuq",
+      "type": "subtopic",
+      "data": {
+        "label": "Record"
+      }
+    },
+    {
+      "id": "0fvOXi9gJbEc7etqTggNE",
+      "type": "subtopic",
+      "data": {
+        "label": "Exclude"
+      }
+    },
+    {
+      "id": "IIAbAzXiVQm1JEi2MTMZN",
+      "type": "subtopic",
+      "data": {
+        "label": "Extract"
+      }
+    },
+    {
+      "id": "_BAZlBEzE7ddr315OeHvl",
+      "type": "subtopic",
+      "data": {
+        "label": "NonNullable"
+      }
+    },
+    {
+      "id": "a7hl0iMZ-jcUACxqIYVqv",
+      "type": "subtopic",
+      "data": {
+        "label": "Parameters"
+      }
+    },
+    {
+      "id": "On75JR_UkiIlha0_qaSeu",
+      "type": "subtopic",
+      "data": {
+        "label": "ReturnType"
+      }
+    },
+    {
+      "id": "izGAjNtrh3BzQt3KiZX0W",
+      "type": "subtopic",
+      "data": {
+        "label": "InstanceType"
+      }
+    },
+    {
+      "id": "aEhI_9mFWXRIZh1ZxTuzu",
+      "type": "subtopic",
+      "data": {
+        "label": "Awaited"
+      }
+    },
+    {
+      "id": "2F7vOL__v9dLBohA263aj",
+      "type": "topic",
+      "data": {
+        "label": "Advanced Types"
+      }
+    },
+    {
+      "id": "VQ-V9qIdKgnpSJg2UnpuB",
+      "type": "subtopic",
+      "data": {
+        "label": "Mapped Types"
+      }
+    },
+    {
+      "id": "ubGIhi-WLE0EopTYXzmPL",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditional Types"
+      }
+    },
+    {
+      "id": "CWzGwvl6NwYCaLYSLIjqQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Literal Types"
+      }
+    },
+    {
+      "id": "xP25nGw42VqdfZ_9pDMXd",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Literal Types"
+      }
+    },
+    {
+      "id": "N8xBTJ74xv1E5hSLYZtze",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursive Types"
+      }
+    },
+    {
+      "id": "sE9lqkkqwnsVJxTJv37YZ",
+      "type": "topic",
+      "data": {
+        "label": "TypeScript Modules"
+      }
+    },
+    {
+      "id": "EtVwQ4lnWi3IIFHGb2Qib",
+      "type": "subtopic",
+      "data": {
+        "label": "Namespaces"
+      }
+    },
+    {
+      "id": "k_5y77k8ZZ9_O2WpWXWTY",
+      "type": "subtopic",
+      "data": {
+        "label": "Ambient Modules"
+      }
+    },
+    {
+      "id": "egQWk1n3p8Pep83yIwCtI",
+      "type": "subtopic",
+      "data": {
+        "label": "External Modules"
+      }
+    },
+    {
+      "id": "16TT8R4N-9tCfWmPetqMP",
+      "type": "subtopic",
+      "data": {
+        "label": "Namespace Augmentation"
+      }
+    },
+    {
+      "id": "JQwWeB1gkANSYfQmH69Bs",
+      "type": "subtopic",
+      "data": {
+        "label": "Global Augmentation"
+      }
+    },
+    {
+      "id": "RqZaWGxxNRItBhVwWKysc",
+      "type": "topic",
+      "data": {
+        "label": "Ecosystem"
+      }
+    },
+    {
+      "id": "fU8Vnw1DobM4iXl1Tq6EK",
+      "type": "subtopic",
+      "data": {
+        "label": "Formatting"
+      }
+    },
+    {
+      "id": "8PcAPOrKisKRYPWamz4nV",
+      "type": "subtopic",
+      "data": {
+        "label": "Linting"
+      }
+    },
+    {
+      "id": "PCX3KcvMUW3mmQEepLTXp",
+      "type": "subtopic",
+      "data": {
+        "label": "Useful Packages"
+      }
+    },
+    {
+      "id": "I5uwfej5XMwR2N2gpBILh",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Tools"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following related roadmaps"
+      }
+    },
+    {
+      "id": "P5IZjP0g1_fnvHy3YTR4q",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "U0fJo2a3vnaodNJhfZ78I",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "iuSv7V59YxUZawN38Qlli",
+      "type": "button",
+      "data": {
+        "label": "Node.js"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-DAwKHBng7Tytlcd2_8GORw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "DAwKHBng7Tytlcd2_8GOR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DAwKHBng7Tytlcd2_8GORx2-KDd40JOAvZ8O1mfhTYB3Kw2",
+      "source": "DAwKHBng7Tytlcd2_8GOR",
+      "target": "KDd40JOAvZ8O1mfhTYB3K",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Ky2-dcLaEU_lb0z_QypL1ZhpXz1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "dcLaEU_lb0z_QypL1ZhpX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Ky2-MQWzN_kXxVJMOYbRXSGJcz2",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "MQWzN_kXxVJMOYbRXSGJc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Ky2-dA8CNQOgJRDa0T7rmyS7fz1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "dA8CNQOgJRDa0T7rmyS7f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kz2-qdy4ZIY2EKgmPNdu_ndcgy1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "qdy4ZIY2EKgmPNdu_ndcg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kx2-qcrGApxNzkGYxgcd7o45dw1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "qcrGApxNzkGYxgcd7o45d",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qcrGApxNzkGYxgcd7o45dx2-_4my3Mfk5lxztykcJQ66sw1",
+      "source": "qcrGApxNzkGYxgcd7o45d",
+      "target": "_4my3Mfk5lxztykcJQ66s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-qcrGApxNzkGYxgcd7o45dy2-KUur-gfOBQodTS-irFet7z2",
+      "source": "qcrGApxNzkGYxgcd7o45d",
+      "target": "KUur-gfOBQodTS-irFet7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-alMJCEyUZ90xz-2_g3YRjx2-qefnsugcveizVq2TORRgnw2",
+      "source": "alMJCEyUZ90xz-2_g3YRj",
+      "target": "qefnsugcveizVq2TORRgn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qefnsugcveizVq2TORRgnx2-ib0jfZzukYOZ42AdJqt_Ww1",
+      "source": "qefnsugcveizVq2TORRgn",
+      "target": "cFZsxpYHDxm7IWwergb3r",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wz2-Wy2yIK5vgLjEcc9VjuQK5y1",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "Wy2yIK5vgLjEcc9VjuQK5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wz2-EDOU5a7UK17yp3PdFBJMcy1",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "EDOU5a7UK17yp3PdFBJMc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wz2-ZiOcFZy85p7tLzUkyKDeiy2",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "ZiOcFZy85p7tLzUkyKDei",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wz2-Xonbxc7MvMEonKBvbkCAHy2",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "Xonbxc7MvMEonKBvbkCAH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wz2-1DOSAieOmWUNNsQQrqf2my1",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "1DOSAieOmWUNNsQQrqf2m",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-cFZsxpYHDxm7IWwergb3rx2-ib0jfZzukYOZ42AdJqt_Ww1",
+      "source": "cFZsxpYHDxm7IWwergb3r",
+      "target": "qOynVkDi1gFz0mxyJHjfJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ib0jfZzukYOZ42AdJqt_Wx2-9FIhHwDNzyKpb42NmSv3Kw2",
+      "source": "qOynVkDi1gFz0mxyJHjfJ",
+      "target": "9FIhHwDNzyKpb42NmSv3K",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-qOynVkDi1gFz0mxyJHjfJz2-aH1DxiG5xrdNlKutJ_gTzx1",
+      "source": "qOynVkDi1gFz0mxyJHjfJ",
+      "target": "aH1DxiG5xrdNlKutJ_gTz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-aH1DxiG5xrdNlKutJ_gTzz2-TxkEpoOiuUm-fXJuFVKcHy1",
+      "source": "aH1DxiG5xrdNlKutJ_gTz",
+      "target": "TxkEpoOiuUm-fXJuFVKcH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aH1DxiG5xrdNlKutJ_gTzz2-O-9WQqidujLIEOTcOfy4ny2",
+      "source": "aH1DxiG5xrdNlKutJ_gTz",
+      "target": "O-9WQqidujLIEOTcOfy4n",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aH1DxiG5xrdNlKutJ_gTzz2-fY40W8prpgiNqRL50w7uby1",
+      "source": "aH1DxiG5xrdNlKutJ_gTz",
+      "target": "fY40W8prpgiNqRL50w7ub",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-aH1DxiG5xrdNlKutJ_gTzz2-lvtTSHH9yBTCiLng8btnIy1",
+      "source": "aH1DxiG5xrdNlKutJ_gTz",
+      "target": "lvtTSHH9yBTCiLng8btnI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-T2-VAVfntouJOoWHpHZ3nz1",
+      "source": "4gaKqNtGLFqpk9WVKZl0v",
+      "target": "T2-VAVfntouJOoWHpHZ3n",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-0NXHAOUYGIwuPwlN7r_B3z1",
+      "source": "4gaKqNtGLFqpk9WVKZl0v",
+      "target": "0NXHAOUYGIwuPwlN7r_B3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-TRx3wvWnRdJJf5eL-GBG4y2-2F7vOL__v9dLBohA263ajz1",
+      "source": "TRx3wvWnRdJJf5eL-GBG4",
+      "target": "LSwUHfalnk5MgHt21PANb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-E88tHQvARkHURZwGaO02lz2",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "E88tHQvARkHURZwGaO02l",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-IuO9-O_DQdDYuAbdGWdgbz2",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "IuO9-O_DQdDYuAbdGWdgb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-0fvOXi9gJbEc7etqTggNEz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "0fvOXi9gJbEc7etqTggNE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-aEhI_9mFWXRIZh1ZxTuzuz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "aEhI_9mFWXRIZh1ZxTuzu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-a7hl0iMZ-jcUACxqIYVqvz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "a7hl0iMZ-jcUACxqIYVqv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-_BAZlBEzE7ddr315OeHvlz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "_BAZlBEzE7ddr315OeHvl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-On75JR_UkiIlha0_qaSeuz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "On75JR_UkiIlha0_qaSeu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajy2-izGAjNtrh3BzQt3KiZX0Wz1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "izGAjNtrh3BzQt3KiZX0W",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LSwUHfalnk5MgHt21PANbx2-2F7vOL__v9dLBohA263ajw1",
+      "source": "LSwUHfalnk5MgHt21PANb",
+      "target": "2F7vOL__v9dLBohA263aj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajx2-VQ-V9qIdKgnpSJg2UnpuBw1",
+      "source": "2F7vOL__v9dLBohA263aj",
+      "target": "VQ-V9qIdKgnpSJg2UnpuB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2F7vOL__v9dLBohA263ajz2-sE9lqkkqwnsVJxTJv37YZy1",
+      "source": "2F7vOL__v9dLBohA263aj",
+      "target": "sE9lqkkqwnsVJxTJv37YZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-sE9lqkkqwnsVJxTJv37YZw2-JQwWeB1gkANSYfQmH69Bsx1",
+      "source": "sE9lqkkqwnsVJxTJv37YZ",
+      "target": "JQwWeB1gkANSYfQmH69Bs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-sE9lqkkqwnsVJxTJv37YZy2-RqZaWGxxNRItBhVwWKyscw1",
+      "source": "sE9lqkkqwnsVJxTJv37YZ",
+      "target": "RqZaWGxxNRItBhVwWKysc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-RqZaWGxxNRItBhVwWKyscz2-fU8Vnw1DobM4iXl1Tq6EKy1",
+      "source": "RqZaWGxxNRItBhVwWKysc",
+      "target": "fU8Vnw1DobM4iXl1Tq6EK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RqZaWGxxNRItBhVwWKyscz2-8PcAPOrKisKRYPWamz4nVy2",
+      "source": "RqZaWGxxNRItBhVwWKysc",
+      "target": "8PcAPOrKisKRYPWamz4nV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RqZaWGxxNRItBhVwWKyscz2-PCX3KcvMUW3mmQEepLTXpy1",
+      "source": "RqZaWGxxNRItBhVwWKysc",
+      "target": "PCX3KcvMUW3mmQEepLTXp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RqZaWGxxNRItBhVwWKyscz2-I5uwfej5XMwR2N2gpBILhy2",
+      "source": "RqZaWGxxNRItBhVwWKysc",
+      "target": "I5uwfej5XMwR2N2gpBILh",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-RqZaWGxxNRItBhVwWKyscy2-GV_zWF6rSWg5bqgiXhOEfz2",
+      "source": "RqZaWGxxNRItBhVwWKysc",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

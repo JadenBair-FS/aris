@@ -1,0 +1,1049 @@
+{
+  "title": {
+    "card": "React",
+    "page": "React Developer"
+  },
+  "description": "Everything that is there to learn about React and the ecosystem in @currentYear@.",
+  "nodes": [
+    {
+      "id": "-AKmITUmSGIflJG-eGkm5",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "NiyRDadVpAFMzSVtgoFZ0",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sL8hbjRDbzA2bc9OzIfPe",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "n1TuNyZjK9CLAfbKRQENe",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "NeJdgNbsxiUjt_GBzub6Z",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "FkTj8n1pIAGa1nf93MUKC",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "clS37EDia6KZVHCszqRqZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "l4RmWQLIK1NOOm6QTQMBa",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following related roadmaps"
+      }
+    },
+    {
+      "id": "ZSrQoNGKiR484uALMWO9F",
+      "type": "button",
+      "data": {
+        "label": "TypeScript Roadmap"
+      }
+    },
+    {
+      "id": "P5IZjP0g1_fnvHy3YTR4q",
+      "type": "button",
+      "data": {
+        "label": "Frontend Roadmap"
+      }
+    },
+    {
+      "id": "tU4Umtnfu01t9gLlnlK6b",
+      "type": "topic",
+      "data": {
+        "label": "CLI Tools"
+      }
+    },
+    {
+      "id": "XDvH2t3AJGevS17uM8TO6",
+      "type": "button",
+      "data": {
+        "label": "JavaScript Roadmap"
+      }
+    },
+    {
+      "id": "y9ToYDix-koRbR6FLydFw",
+      "type": "subtopic",
+      "data": {
+        "label": "Vite"
+      }
+    },
+    {
+      "id": "XB1EQomsFGntZTofIfckn",
+      "type": "paragraph",
+      "data": {
+        "label": "Make sure to learn the \u0022Beginner\u0022 topics of the JavaScript roadmap before you start learning React."
+      }
+    },
+    {
+      "id": "79K4xgljcoSHkCYI1D55O",
+      "type": "topic",
+      "data": {
+        "label": "Components"
+      }
+    },
+    {
+      "id": "8mw4TxlLN4ZKAlLl-_NVV",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Components"
+      }
+    },
+    {
+      "id": "h_o0LOSuwRvymWLF7IVj_",
+      "type": "paragraph",
+      "data": {
+        "label": "There used to be \u0022Class Components\u0022 which React doesn\u0027t recommend any more. You don\u0027t need to learn about them but you might still notice them in some legacy projects"
+      }
+    },
+    {
+      "id": "HMTUjok_ZAcrP6YobWs3T",
+      "type": "label",
+      "data": {
+        "label": "Component Basics"
+      }
+    },
+    {
+      "id": "WREBxWSNQDD_6fzpHL6CE",
+      "type": "subtopic",
+      "data": {
+        "label": "JSX"
+      }
+    },
+    {
+      "id": "RFuy3Eho3mnW1GpP08BVw",
+      "type": "subtopic",
+      "data": {
+        "label": "Props vs State"
+      }
+    },
+    {
+      "id": "aE6XBgH23135_9QmD4ff2",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditional Rendering"
+      }
+    },
+    {
+      "id": "4T59gdcwdXqj9kCuK7cfp",
+      "type": "subtopic",
+      "data": {
+        "label": "Composition"
+      }
+    },
+    {
+      "id": "0uiGsC5SWavNdlFqizkKe",
+      "type": "topic",
+      "data": {
+        "label": "Rendering"
+      }
+    },
+    {
+      "id": "8OBlgDRUg-CTgDXY-QHyO",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Lifecycle"
+      }
+    },
+    {
+      "id": "HeWVCPHqVnnbOn6zIim4K",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists and Keys"
+      }
+    },
+    {
+      "id": "vdumdIglnouf1KyGIGZnc",
+      "type": "subtopic",
+      "data": {
+        "label": "Render Props"
+      }
+    },
+    {
+      "id": "_zNAOhFWMcWqP4oxNPCXF",
+      "type": "subtopic",
+      "data": {
+        "label": "Refs"
+      }
+    },
+    {
+      "id": "Nex2HcTOYIbfqUzXyxSMY",
+      "type": "subtopic",
+      "data": {
+        "label": "Events"
+      }
+    },
+    {
+      "id": "zOENl96GUZRw2PP2KxIck",
+      "type": "subtopic",
+      "data": {
+        "label": "High Order Components"
+      }
+    },
+    {
+      "id": "LbLQhonBqzxHU6B-L--Vq",
+      "type": "topic",
+      "data": {
+        "label": "Hooks"
+      }
+    },
+    {
+      "id": "mkmz1JuNsTOR1D4vqilCX",
+      "type": "label",
+      "data": {
+        "label": "Basic Hooks"
+      }
+    },
+    {
+      "id": "YEpkbNzEMzS6wAKg85J_N",
+      "type": "subtopic",
+      "data": {
+        "label": "useState"
+      }
+    },
+    {
+      "id": "8OnzX03hkZ9K9i__tjmFX",
+      "type": "subtopic",
+      "data": {
+        "label": "useEffect"
+      }
+    },
+    {
+      "id": "HX75SExuzR5AP7TQ94qid",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Custom Hooks"
+      }
+    },
+    {
+      "id": "EyspErq0ByXTgkgk3SGUz",
+      "type": "label",
+      "data": {
+        "label": "Common Hooks"
+      }
+    },
+    {
+      "id": "dgoDNDtW2_q9R9yhkXrcz",
+      "type": "subtopic",
+      "data": {
+        "label": "useCallback"
+      }
+    },
+    {
+      "id": "t_laNdMmdLApYszqXRdWg",
+      "type": "subtopic",
+      "data": {
+        "label": "useRef"
+      }
+    },
+    {
+      "id": "w3bNp7OkehI1gjx8NzlC8",
+      "type": "subtopic",
+      "data": {
+        "label": "useMemo"
+      }
+    },
+    {
+      "id": "v48Mv0wQqjXbvy8x6gDjQ",
+      "type": "subtopic",
+      "data": {
+        "label": "useReducer"
+      }
+    },
+    {
+      "id": "D5_O-uElftYGQr_bTU_se",
+      "type": "subtopic",
+      "data": {
+        "label": "useContext"
+      }
+    },
+    {
+      "id": "FK59Zsm5ENA9g11XWCan_",
+      "type": "subtopic",
+      "data": {
+        "label": "useState"
+      }
+    },
+    {
+      "id": "mkyU0ug8MXxV4biHuOity",
+      "type": "subtopic",
+      "data": {
+        "label": "Hooks Best Practices"
+      }
+    },
+    {
+      "id": "NStw6bi_pPB49K41BFSgo",
+      "type": "topic",
+      "data": {
+        "label": "Routers"
+      }
+    },
+    {
+      "id": "zWL8VLx_g0SWubavJDs6i",
+      "type": "subtopic",
+      "data": {
+        "label": "Tanstack Router"
+      }
+    },
+    {
+      "id": "jvp43wFkKlGQX2y7IxkbM",
+      "type": "subtopic",
+      "data": {
+        "label": "React Router"
+      }
+    },
+    {
+      "id": "I7_mX4h-Yywp1YyTJRKXI",
+      "type": "topic",
+      "data": {
+        "label": "State Management"
+      }
+    },
+    {
+      "id": "10uL0r388lKh8pWYWqRZD",
+      "type": "subtopic",
+      "data": {
+        "label": "Context"
+      }
+    },
+    {
+      "id": "nl5imPsdY2oEWlg-9TTuk",
+      "type": "subtopic",
+      "data": {
+        "label": "Zustand"
+      }
+    },
+    {
+      "id": "yI6XiNW04EL78UL4lkVgd",
+      "type": "subtopic",
+      "data": {
+        "label": "Jotai"
+      }
+    },
+    {
+      "id": "DfrCkbD-HEHwLymv10zb5",
+      "type": "topic",
+      "data": {
+        "label": "Writing CSS"
+      }
+    },
+    {
+      "id": "MnDgQq9Vcxsu3wDqv5uh2",
+      "type": "topic",
+      "data": {
+        "label": "Headless Component Libraries"
+      }
+    },
+    {
+      "id": "KO3viVIJJREtxXxsocN7j",
+      "type": "subtopic",
+      "data": {
+        "label": "Tailwind CSS"
+      }
+    },
+    {
+      "id": "thfnymb_UIiKxakKfiua5",
+      "type": "topic",
+      "data": {
+        "label": "Component / Libraries"
+      }
+    },
+    {
+      "id": "akVNUPOqaTXaSHoQFlkP_",
+      "type": "subtopic",
+      "data": {
+        "label": "Panda CSS"
+      }
+    },
+    {
+      "id": "uqphqAnlcJOLnwHZs5jWu",
+      "type": "subtopic",
+      "data": {
+        "label": "Chakra UI"
+      }
+    },
+    {
+      "id": "gy7eBxPOlwG8BvxHVLDQ9",
+      "type": "subtopic",
+      "data": {
+        "label": "Material UI"
+      }
+    },
+    {
+      "id": "njKsYNkwTXPQ1NjlGKXab",
+      "type": "subtopic",
+      "data": {
+        "label": "Shadcn UI"
+      }
+    },
+    {
+      "id": "awoEhwPKjUcR84XGL6Som",
+      "type": "subtopic",
+      "data": {
+        "label": "CSS Modules"
+      }
+    },
+    {
+      "id": "XL9XOV2h0BAuA5cFcM5L_",
+      "type": "subtopic",
+      "data": {
+        "label": "Radix UI"
+      }
+    },
+    {
+      "id": "RvDfKoa_HIW3QDBfkPv3m",
+      "type": "subtopic",
+      "data": {
+        "label": "React Aria"
+      }
+    },
+    {
+      "id": "kiCTo0U6VgNON8rv_Ktlj",
+      "type": "subtopic",
+      "data": {
+        "label": "Ark UI"
+      }
+    },
+    {
+      "id": "b4AP2OggxFAwsQtUwiUJJ",
+      "type": "topic",
+      "data": {
+        "label": "API Calls"
+      }
+    },
+    {
+      "id": "8nMbfGxe3STMbrAVcqHHh",
+      "type": "subtopic",
+      "data": {
+        "label": "Apollo"
+      }
+    },
+    {
+      "id": "cLfM342sZfsCwmPPxQpEI",
+      "type": "subtopic",
+      "data": {
+        "label": "Relay"
+      }
+    },
+    {
+      "id": "9M5jRu0pj8KMvg9f-2oqZ",
+      "type": "subtopic",
+      "data": {
+        "label": "urql"
+      }
+    },
+    {
+      "id": "zWcMFfyiWJddGbiIhmdKm",
+      "type": "label",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "-ea1KsXEyz-4voHXklG_J",
+      "type": "subtopic",
+      "data": {
+        "label": "swr"
+      }
+    },
+    {
+      "id": "5EPmbiNdP_vhIXclv_GjV",
+      "type": "subtopic",
+      "data": {
+        "label": "Tanstack Query"
+      }
+    },
+    {
+      "id": "ElqWQClryfSYdL7P_mgYK",
+      "type": "subtopic",
+      "data": {
+        "label": "Axios"
+      }
+    },
+    {
+      "id": "h49-tjEkKcq7d7ikRHIOx",
+      "type": "subtopic",
+      "data": {
+        "label": "rtk-query"
+      }
+    },
+    {
+      "id": "KNAlIYCENB4VMuQGqJNk3",
+      "type": "label",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "e_lwZ-a72-tAan2KDX6k3",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "opa61u9gYgSpoPtxp58wu",
+      "type": "subtopic",
+      "data": {
+        "label": "Jest"
+      }
+    },
+    {
+      "id": "LULjhsPNONyI5912DKzPw",
+      "type": "subtopic",
+      "data": {
+        "label": "Vitest"
+      }
+    },
+    {
+      "id": "cQllxv7qGbRtM9O5llgN6",
+      "type": "subtopic",
+      "data": {
+        "label": "react-testing-library"
+      }
+    },
+    {
+      "id": "zN7Ps1puD-YpHbKi1pHH8",
+      "type": "subtopic",
+      "data": {
+        "label": "Cypress"
+      }
+    },
+    {
+      "id": "g39P0c6M2sHNoUPs0m8tr",
+      "type": "subtopic",
+      "data": {
+        "label": "Playwright"
+      }
+    },
+    {
+      "id": "W-atg_Msa9uPLr6RXAKSb",
+      "type": "topic",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "HdWq9ue0JdwmwqSIN2OD_",
+      "type": "subtopic",
+      "data": {
+        "label": "Next.js"
+      }
+    },
+    {
+      "id": "_HoZkE7FH-v3wI_722ZTF",
+      "type": "subtopic",
+      "data": {
+        "label": "Astro"
+      }
+    },
+    {
+      "id": "-WjJBYCmRRj08n_9HxohY",
+      "type": "subtopic",
+      "data": {
+        "label": "react-router"
+      }
+    },
+    {
+      "id": "KHcC5pFN3qLnsbPPKpYd2",
+      "type": "topic",
+      "data": {
+        "label": "Forms"
+      }
+    },
+    {
+      "id": "_5ht0PAdVOJWPzTRS1mVg",
+      "type": "subtopic",
+      "data": {
+        "label": "React Hook Form"
+      }
+    },
+    {
+      "id": "gr1CaLvL7tFOkIRywSsID",
+      "type": "subtopic",
+      "data": {
+        "label": "Formik"
+      }
+    },
+    {
+      "id": "UNlvRp6k3_RDoTAAIEfJ1",
+      "type": "topic",
+      "data": {
+        "label": "Types \u0026 Validation"
+      }
+    },
+    {
+      "id": "ElgRwv5LSVg5FXGx-2K2s",
+      "type": "subtopic",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "K3RZ8ESxWCpLKHePF87Hy",
+      "type": "subtopic",
+      "data": {
+        "label": "Zod"
+      }
+    },
+    {
+      "id": "ydxyne6RzIDPHij1Z3CsN",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "bRpeoo9zXrnZ2IHSI7JX4",
+      "type": "topic",
+      "data": {
+        "label": "Animation"
+      }
+    },
+    {
+      "id": "SUeXDkmOLipdRP4fSrZOH",
+      "type": "topic",
+      "data": {
+        "label": "Server APIs"
+      }
+    },
+    {
+      "id": "H6-XGDjs4f-qbv13v5av0",
+      "type": "subtopic",
+      "data": {
+        "label": "Framer Motion"
+      }
+    },
+    {
+      "id": "WzoB5B6SdOI4Mzv6U51nY",
+      "type": "subtopic",
+      "data": {
+        "label": "react spring"
+      }
+    },
+    {
+      "id": "y2dI1DVLWKAkv6VRpgaQa",
+      "type": "subtopic",
+      "data": {
+        "label": "GSock"
+      }
+    },
+    {
+      "id": "_F3WMxhzaK9F8_-zHDDMF",
+      "type": "topic",
+      "data": {
+        "label": "Suspense"
+      }
+    },
+    {
+      "id": "DcDggX4OmmwvJGHwuV86t",
+      "type": "topic",
+      "data": {
+        "label": "Portals"
+      }
+    },
+    {
+      "id": "gMHMjsh0i8paLZUH5mDX3",
+      "type": "topic",
+      "data": {
+        "label": "Error Boundaries"
+      }
+    },
+    {
+      "id": "txARr3lgTvy-vJCj5zAb1",
+      "type": "topic",
+      "data": {
+        "label": "Mobile Applications"
+      }
+    },
+    {
+      "id": "NvXAq1vN2wpncdW-yTL4c",
+      "type": "subtopic",
+      "data": {
+        "label": "React Native"
+      }
+    },
+    {
+      "id": "5xCbPG6RMI0OEAI4aXKC7",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "1kbrCI5JS0c9wbzxXpgFU",
+      "type": "subtopic",
+      "data": {
+        "label": "MobX"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-XDvH2t3AJGevS17uM8TO6w1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "XDvH2t3AJGevS17uM8TO6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-tU4Umtnfu01t9gLlnlK6bz2-y9ToYDix-koRbR6FLydFwy1",
+      "source": "tU4Umtnfu01t9gLlnlK6b",
+      "target": "y9ToYDix-koRbR6FLydFw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XDvH2t3AJGevS17uM8TO6x2-tU4Umtnfu01t9gLlnlK6bw2",
+      "source": "XDvH2t3AJGevS17uM8TO6",
+      "target": "tU4Umtnfu01t9gLlnlK6b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-0uiGsC5SWavNdlFqizkKey2-8mw4TxlLN4ZKAlLl-_NVVz1",
+      "source": "79K4xgljcoSHkCYI1D55O",
+      "target": "8mw4TxlLN4ZKAlLl-_NVV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-tU4Umtnfu01t9gLlnlK6bx2-0uiGsC5SWavNdlFqizkKew2",
+      "source": "tU4Umtnfu01t9gLlnlK6b",
+      "target": "79K4xgljcoSHkCYI1D55O",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-79K4xgljcoSHkCYI1D55Oz2-0uiGsC5SWavNdlFqizkKey2",
+      "source": "79K4xgljcoSHkCYI1D55O",
+      "target": "0uiGsC5SWavNdlFqizkKe",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-0uiGsC5SWavNdlFqizkKey2-thfnymb_UIiKxakKfiua5z1",
+      "source": "0uiGsC5SWavNdlFqizkKe",
+      "target": "LbLQhonBqzxHU6B-L--Vq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-thfnymb_UIiKxakKfiua5y2-HX75SExuzR5AP7TQ94qidz1",
+      "source": "LbLQhonBqzxHU6B-L--Vq",
+      "target": "HX75SExuzR5AP7TQ94qid",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-thfnymb_UIiKxakKfiua5y2-mkyU0ug8MXxV4biHuOityz1",
+      "source": "LbLQhonBqzxHU6B-L--Vq",
+      "target": "mkyU0ug8MXxV4biHuOity",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-LbLQhonBqzxHU6B-L--Vqz2-thfnymb_UIiKxakKfiua5y1",
+      "source": "LbLQhonBqzxHU6B-L--Vq",
+      "target": "NStw6bi_pPB49K41BFSgo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-thfnymb_UIiKxakKfiua5x2-jvp43wFkKlGQX2y7IxkbMw2",
+      "source": "NStw6bi_pPB49K41BFSgo",
+      "target": "jvp43wFkKlGQX2y7IxkbM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-NStw6bi_pPB49K41BFSgoy2-thfnymb_UIiKxakKfiua5z1",
+      "source": "NStw6bi_pPB49K41BFSgo",
+      "target": "I7_mX4h-Yywp1YyTJRKXI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-thfnymb_UIiKxakKfiua5w2-yI6XiNW04EL78UL4lkVgdx1",
+      "source": "I7_mX4h-Yywp1YyTJRKXI",
+      "target": "yI6XiNW04EL78UL4lkVgd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-akVNUPOqaTXaSHoQFlkP_x2-DfrCkbD-HEHwLymv10zb5w2",
+      "source": "KO3viVIJJREtxXxsocN7j",
+      "target": "DfrCkbD-HEHwLymv10zb5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-I7_mX4h-Yywp1YyTJRKXIy2-DfrCkbD-HEHwLymv10zb5z1",
+      "source": "I7_mX4h-Yywp1YyTJRKXI",
+      "target": "DfrCkbD-HEHwLymv10zb5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DfrCkbD-HEHwLymv10zb5y2-thfnymb_UIiKxakKfiua5z1",
+      "source": "DfrCkbD-HEHwLymv10zb5",
+      "target": "thfnymb_UIiKxakKfiua5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-MnDgQq9Vcxsu3wDqv5uh2z2-XL9XOV2h0BAuA5cFcM5L_y1",
+      "source": "MnDgQq9Vcxsu3wDqv5uh2",
+      "target": "XL9XOV2h0BAuA5cFcM5L_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MnDgQq9Vcxsu3wDqv5uh2z2-RvDfKoa_HIW3QDBfkPv3my1",
+      "source": "MnDgQq9Vcxsu3wDqv5uh2",
+      "target": "RvDfKoa_HIW3QDBfkPv3m",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MnDgQq9Vcxsu3wDqv5uh2z2-kiCTo0U6VgNON8rv_Ktljy2",
+      "source": "MnDgQq9Vcxsu3wDqv5uh2",
+      "target": "kiCTo0U6VgNON8rv_Ktlj",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MnDgQq9Vcxsu3wDqv5uh2x2-nK1DhEXBKVhvSR1P_vzgjy2",
+      "source": "MnDgQq9Vcxsu3wDqv5uh2",
+      "target": "b4AP2OggxFAwsQtUwiUJJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjx2--AKmITUmSGIflJG-eGkm5w1",
+      "source": "b4AP2OggxFAwsQtUwiUJJ",
+      "target": "-AKmITUmSGIflJG-eGkm5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-b4AP2OggxFAwsQtUwiUJJz2-nK1DhEXBKVhvSR1P_vzgjy1",
+      "source": "b4AP2OggxFAwsQtUwiUJJ",
+      "target": "e_lwZ-a72-tAan2KDX6k3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjw2-cQllxv7qGbRtM9O5llgN6x1",
+      "source": "e_lwZ-a72-tAan2KDX6k3",
+      "target": "cQllxv7qGbRtM9O5llgN6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjx2-zN7Ps1puD-YpHbKi1pHH8w1",
+      "source": "e_lwZ-a72-tAan2KDX6k3",
+      "target": "zN7Ps1puD-YpHbKi1pHH8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjw2-HdWq9ue0JdwmwqSIN2OD_x1",
+      "source": "W-atg_Msa9uPLr6RXAKSb",
+      "target": "HdWq9ue0JdwmwqSIN2OD_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-e_lwZ-a72-tAan2KDX6k3z2-nK1DhEXBKVhvSR1P_vzgjy2",
+      "source": "e_lwZ-a72-tAan2KDX6k3",
+      "target": "W-atg_Msa9uPLr6RXAKSb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-W-atg_Msa9uPLr6RXAKSbx2-nK1DhEXBKVhvSR1P_vzgjw2",
+      "source": "W-atg_Msa9uPLr6RXAKSb",
+      "target": "KHcC5pFN3qLnsbPPKpYd2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjx2-_5ht0PAdVOJWPzTRS1mVgw1",
+      "source": "KHcC5pFN3qLnsbPPKpYd2",
+      "target": "_5ht0PAdVOJWPzTRS1mVg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KHcC5pFN3qLnsbPPKpYd2y2-nK1DhEXBKVhvSR1P_vzgjz1",
+      "source": "KHcC5pFN3qLnsbPPKpYd2",
+      "target": "UNlvRp6k3_RDoTAAIEfJ1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nK1DhEXBKVhvSR1P_vzgjw2-K3RZ8ESxWCpLKHePF87Hyx1",
+      "source": "UNlvRp6k3_RDoTAAIEfJ1",
+      "target": "K3RZ8ESxWCpLKHePF87Hy",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-UNlvRp6k3_RDoTAAIEfJ1y2-ydxyne6RzIDPHij1Z3CsNz1",
+      "source": "UNlvRp6k3_RDoTAAIEfJ1",
+      "target": "ydxyne6RzIDPHij1Z3CsN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ydxyne6RzIDPHij1Z3CsNy2-bRpeoo9zXrnZ2IHSI7JX4w1",
+      "source": "ydxyne6RzIDPHij1Z3CsN",
+      "target": "bRpeoo9zXrnZ2IHSI7JX4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-bRpeoo9zXrnZ2IHSI7JX4x2-H6-XGDjs4f-qbv13v5av0w2",
+      "source": "bRpeoo9zXrnZ2IHSI7JX4",
+      "target": "H6-XGDjs4f-qbv13v5av0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-bRpeoo9zXrnZ2IHSI7JX4z2-gMHMjsh0i8paLZUH5mDX3y1",
+      "source": "bRpeoo9zXrnZ2IHSI7JX4",
+      "target": "gMHMjsh0i8paLZUH5mDX3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DcDggX4OmmwvJGHwuV86tz2-txARr3lgTvy-vJCj5zAb1y1",
+      "source": "DcDggX4OmmwvJGHwuV86t",
+      "target": "txARr3lgTvy-vJCj5zAb1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-txARr3lgTvy-vJCj5zAb1w2-NvXAq1vN2wpncdW-yTL4cx1",
+      "source": "txARr3lgTvy-vJCj5zAb1",
+      "target": "NvXAq1vN2wpncdW-yTL4c",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-txARr3lgTvy-vJCj5zAb1x2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "txARr3lgTvy-vJCj5zAb1",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

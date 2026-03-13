@@ -1,0 +1,32 @@
+Yuki Tanaka
+yuki.tanaka@email.com | (415) 722-3884 | San Francisco, CA | github.com/yukitanaka-fe
+
+SUMMARY
+Frontend engineer with 3 years of experience specializing in React component libraries and design systems. Experienced building accessible, reusable UI components with TypeScript, Storybook documentation, and comprehensive Jest tests. Enjoys the intersection of engineering and design collaboration.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS
+Frameworks: React, Next.js, Vite
+Databases: (none professional)
+Tools: Git, npm, Jest, React Testing Library, Storybook, Figma, Chromatic, ESLint
+Cloud/Infra: Vercel, AWS S3 + CloudFront, GitHub Actions
+
+EXPERIENCE
+
+Frontend Engineer | Allure Design Studio | San Francisco, CA | September 2022 - Present
+- Built and maintained a shared React component library (42 components) with TypeScript, Radix UI primitives, and Tailwind CSS used by 5 product squads
+- Published Storybook documentation to Chromatic for visual regression testing, catching 8 unintended visual regressions per release cycle on average
+- Implemented WCAG 2.1 AA accessibility standards across all components including full keyboard navigation and screen reader compatibility
+- Integrated components into 3 Next.js applications, collaborating with designers in Figma to ensure pixel-perfect implementation
+
+Frontend Developer | CloudRoute | San Francisco, CA | June 2021 - August 2022
+- Built customer-facing React dashboard for a network monitoring SaaS product, delivering 12 feature screens in 9 months
+- Replaced inline styles with a CSS Modules and Sass architecture, reducing stylesheet bundle size by 38%
+
+PROJECTS
+
+OpenKit UI
+- Open-source React component library with 20 components, TypeScript, Storybook, and Jest tests; 340 GitHub stars
+
+EDUCATION
+Bachelor of Science, Human-Computer Interaction | UC San Diego | 2021

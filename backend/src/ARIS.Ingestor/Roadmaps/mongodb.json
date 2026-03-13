@@ -1,0 +1,1313 @@
+{
+  "title": {
+    "card": "MongoDB",
+    "page": "MongoDB"
+  },
+  "description": "Step by step guide to learning MongoDB in @currentYear@",
+  "nodes": [
+    {
+      "id": "zbPmRKsJEPj3DRoBvzcUc",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ZvC3oxZLBvXUjoWZqCWX2",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "1HBTZGBuT2cKNmwgFkGOF",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jUeL4fW8Xlr5iB6MvlvS1",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "3Ws8Y34nbhyYTD7T3HnAd",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "P8q0Gc8jjCGizF17aNBho",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "-F2qzAcXPHgbcs_ADll1G",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "I4nV_ht5zBjcmqPR2vTLz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "uOPqGqPeXBrtLY8uYin3j",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "MongoDB"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "z50iixpcCMe9sTh-gwTI3",
+      "type": "topic",
+      "data": {
+        "label": "MongoDB Basics"
+      }
+    },
+    {
+      "id": "cMfsRtvzvDZZJ0TqeUOxm",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL vs NoSQL"
+      }
+    },
+    {
+      "id": "tJljSlb5S_tZLZhZHHd_I",
+      "type": "subtopic",
+      "data": {
+        "label": "What is MongoDB?"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "For ecosystem and more, check these other tracks involving GraphQL"
+      }
+    },
+    {
+      "id": "6AIUtChWC_gK8Ax0UuBjd",
+      "type": "button",
+      "data": {
+        "label": "Frontend Roadmap"
+      }
+    },
+    {
+      "id": "f5WRewBlpeYMf71cPcXs-",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "qh8MEbXKPVt8mqlarhUj0",
+      "type": "subtopic",
+      "data": {
+        "label": "When to use MongoDB?"
+      }
+    },
+    {
+      "id": "1UXfFROvcunyhkx0zB_1S",
+      "type": "subtopic",
+      "data": {
+        "label": "What is MongoDB Atlas?"
+      }
+    },
+    {
+      "id": "1pCWjSvjvbox5OpyWJ8Kv",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB Terminology"
+      }
+    },
+    {
+      "id": "_UIfRdlj6BeEESw1FW9RH",
+      "type": "topic",
+      "data": {
+        "label": "Data Model \u0026 Data Types"
+      }
+    },
+    {
+      "id": "F4W9XBSbkpzWIrAhRBSRS",
+      "type": "subtopic",
+      "data": {
+        "label": "BSON vs JSON"
+      }
+    },
+    {
+      "id": "6MqhN-PTf1PRzYCTxC8pn",
+      "type": "subtopic",
+      "data": {
+        "label": "Embedded Objects \u0026 Arrays"
+      }
+    },
+    {
+      "id": "4Cf_wcoByPqpOOpdbAJuq",
+      "type": "subtopic",
+      "data": {
+        "label": "Double"
+      }
+    },
+    {
+      "id": "eU4XCnrf27FO3KCda8QYw",
+      "type": "subtopic",
+      "data": {
+        "label": "String"
+      }
+    },
+    {
+      "id": "q6ZKxFcSAQ8bgUdGaDpuu",
+      "type": "subtopic",
+      "data": {
+        "label": "Array"
+      }
+    },
+    {
+      "id": "QcdZKNcCtKls6P4YNXR2W",
+      "type": "subtopic",
+      "data": {
+        "label": "Object"
+      }
+    },
+    {
+      "id": "UM6jH6bAijYS0Hmw87UQ-",
+      "type": "subtopic",
+      "data": {
+        "label": "Binary Data"
+      }
+    },
+    {
+      "id": "kx_GOr51UMpdUAnS5u9qZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Undefined"
+      }
+    },
+    {
+      "id": "mxd3-l3-NtPw53dEvhqm4",
+      "type": "subtopic",
+      "data": {
+        "label": "Object ID"
+      }
+    },
+    {
+      "id": "hmo7zCZ1jKgobS5R0eBSD",
+      "type": "subtopic",
+      "data": {
+        "label": "Boolean"
+      }
+    },
+    {
+      "id": "T6cq--pute6-8aG7z6QKN",
+      "type": "subtopic",
+      "data": {
+        "label": "Date"
+      }
+    },
+    {
+      "id": "g6AKQiFcY_8lsWRbkbZSC",
+      "type": "subtopic",
+      "data": {
+        "label": "Null"
+      }
+    },
+    {
+      "id": "z6I9XgIGQYWUd5l9DIZRX",
+      "type": "subtopic",
+      "data": {
+        "label": "Regular Expression"
+      }
+    },
+    {
+      "id": "UXO5i6nPa5CRW1z7FAn_S",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "XAS4jQlsHkttLDuSSsD2o",
+      "type": "subtopic",
+      "data": {
+        "label": "Symbol"
+      }
+    },
+    {
+      "id": "xKFZSKG2GPD-phY2HLMsx",
+      "type": "subtopic",
+      "data": {
+        "label": "Int32/Int"
+      }
+    },
+    {
+      "id": "iJFDFdIN_N4-DlJwrFIiB",
+      "type": "subtopic",
+      "data": {
+        "label": "Int64 / Long"
+      }
+    },
+    {
+      "id": "zbFH2NRHZEOv5eKLL_HR0",
+      "type": "subtopic",
+      "data": {
+        "label": "Timestamp"
+      }
+    },
+    {
+      "id": "OGtR5D_DUCSci1lFBT83z",
+      "type": "subtopic",
+      "data": {
+        "label": "Decimal128"
+      }
+    },
+    {
+      "id": "jQSMLd6gG158tJDzo1k_1",
+      "type": "subtopic",
+      "data": {
+        "label": "Min Key"
+      }
+    },
+    {
+      "id": "QF7SL237FyBQdqvKUzop6",
+      "type": "subtopic",
+      "data": {
+        "label": "Max Key"
+      }
+    },
+    {
+      "id": "kZtfRfhkNzKVJPcvjm0ku",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7SGYNo3oHlgm_1cwhWfw7",
+      "type": "topic",
+      "data": {
+        "label": "Collections \u0026 Methods"
+      }
+    },
+    {
+      "id": "hC83jKoO_XFI83WpsdN_Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Counting Documents"
+      }
+    },
+    {
+      "id": "mXdn4u5CiQRDE83qMiWZX",
+      "type": "subtopic",
+      "data": {
+        "label": "insert() and relevant"
+      }
+    },
+    {
+      "id": "iMpCEXRDXg0Kq9OFNywbI",
+      "type": "subtopic",
+      "data": {
+        "label": "find() and relevant"
+      }
+    },
+    {
+      "id": "liGbnGyQaG-Vqt6cuB91N",
+      "type": "subtopic",
+      "data": {
+        "label": "update() and relevant"
+      }
+    },
+    {
+      "id": "qjoLxSkfKbzG1sZUXnyw9",
+      "type": "subtopic",
+      "data": {
+        "label": "delete() and relevant"
+      }
+    },
+    {
+      "id": "yc2HqhjhIV6UU_2P-ykKB",
+      "type": "subtopic",
+      "data": {
+        "label": "bulkWrite() and relevant"
+      }
+    },
+    {
+      "id": "4h8NdcdXmNqJxLkVJqPtX",
+      "type": "subtopic",
+      "data": {
+        "label": "validate()"
+      }
+    },
+    {
+      "id": "Ff3yMMi2r0UQdPnY1QgL4",
+      "type": "paragraph",
+      "data": {
+        "label": "Useful concepts"
+      }
+    },
+    {
+      "id": "thOckmrCJ45NVNPNxm4eg",
+      "type": "subtopic",
+      "data": {
+        "label": "Read / Write Concerns"
+      }
+    },
+    {
+      "id": "K9x7yQP59cB764Q5PqAs_",
+      "type": "subtopic",
+      "data": {
+        "label": "Cursors"
+      }
+    },
+    {
+      "id": "s8El0Q22GD_rOZGlDtkgH",
+      "type": "subtopic",
+      "data": {
+        "label": "Retryable Reads / Writes"
+      }
+    },
+    {
+      "id": "B8SFhoVV8ei1Yz6vl57l_",
+      "type": "topic",
+      "data": {
+        "label": "Query Operators"
+      }
+    },
+    {
+      "id": "gakF5Zfgk7QIgg_UwqG_Y",
+      "type": "subtopic",
+      "data": {
+        "label": "$project"
+      }
+    },
+    {
+      "id": "sxDyp3bP-YhgmDMVUFTaA",
+      "type": "subtopic",
+      "data": {
+        "label": "$include"
+      }
+    },
+    {
+      "id": "nk0V3o3oKuIb8A0gDECFJ",
+      "type": "subtopic",
+      "data": {
+        "label": "$exclude"
+      }
+    },
+    {
+      "id": "9mmxYBtvPYZlvFjQvE-2N",
+      "type": "subtopic",
+      "data": {
+        "label": "$slice"
+      }
+    },
+    {
+      "id": "XFCrm9msWAIcmTgFJxjt2",
+      "type": "label",
+      "data": {
+        "label": "Projection Operators"
+      }
+    },
+    {
+      "id": "f9PDNUACdzBKUmz12jpbU",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "2h8z2mrgRKSLKI-eBc3zM",
+      "type": "subtopic",
+      "data": {
+        "label": "$eq"
+      }
+    },
+    {
+      "id": "4ldCHOolpPKqFaZnzuINw",
+      "type": "label",
+      "data": {
+        "label": "Comparison Operators"
+      }
+    },
+    {
+      "id": "wbZb0RwmANH4ssF07cAar",
+      "type": "subtopic",
+      "data": {
+        "label": "$gt"
+      }
+    },
+    {
+      "id": "5-MLEEigFPRloN7wLa05T",
+      "type": "subtopic",
+      "data": {
+        "label": "$lt"
+      }
+    },
+    {
+      "id": "eOfsrmOQI0dJW6HV_myVH",
+      "type": "subtopic",
+      "data": {
+        "label": "$lte"
+      }
+    },
+    {
+      "id": "kV5Tmu9ocDnuPQvkx2W0u",
+      "type": "subtopic",
+      "data": {
+        "label": "$gte"
+      }
+    },
+    {
+      "id": "Q8dr1JPEnLX0z4DiQwnAz",
+      "type": "subtopic",
+      "data": {
+        "label": "$ne"
+      }
+    },
+    {
+      "id": "MorGIP7KB2N9KpMSD5ECK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Wd20OKQYYuW_bT6U-yRxT",
+      "type": "subtopic",
+      "data": {
+        "label": "$in"
+      }
+    },
+    {
+      "id": "WPVFpQCNffYafwERUYmLb",
+      "type": "label",
+      "data": {
+        "label": "Array Operators"
+      }
+    },
+    {
+      "id": "ZKHUCskdKQf4IaMUTN_e7",
+      "type": "subtopic",
+      "data": {
+        "label": "$nin"
+      }
+    },
+    {
+      "id": "hPPoO8ysGeEGEQhdveiDO",
+      "type": "subtopic",
+      "data": {
+        "label": "$all"
+      }
+    },
+    {
+      "id": "TJHVY8DRWbDKeT_pIPJay",
+      "type": "subtopic",
+      "data": {
+        "label": "$elemMatch"
+      }
+    },
+    {
+      "id": "-VMIkV6S6H1blngxLXk7Y",
+      "type": "subtopic",
+      "data": {
+        "label": "$size"
+      }
+    },
+    {
+      "id": "lqe7C2BSaop2D2Zbk_GNZ",
+      "type": "label",
+      "data": {
+        "label": "Element Operators"
+      }
+    },
+    {
+      "id": "12kfpSapv2uNxpHzLkFSL",
+      "type": "subtopic",
+      "data": {
+        "label": "$exists"
+      }
+    },
+    {
+      "id": "BxzMbF7cdvGPuy1EcRvWd",
+      "type": "subtopic",
+      "data": {
+        "label": "$type"
+      }
+    },
+    {
+      "id": "PmfjHFz-DW69pNh_t13Nm",
+      "type": "subtopic",
+      "data": {
+        "label": "$regex"
+      }
+    },
+    {
+      "id": "PQFlUoIH2PTXdNDrADJ14",
+      "type": "label",
+      "data": {
+        "label": "Logical Operators"
+      }
+    },
+    {
+      "id": "-62S4wRxHpIM2I59xjGun",
+      "type": "subtopic",
+      "data": {
+        "label": "$and"
+      }
+    },
+    {
+      "id": "43BfjlUju-yJaGv-FaJty",
+      "type": "subtopic",
+      "data": {
+        "label": "$or"
+      }
+    },
+    {
+      "id": "qaUj9916Fh4BtiLz_pwQs",
+      "type": "subtopic",
+      "data": {
+        "label": "$not"
+      }
+    },
+    {
+      "id": "7xq_mdQOlUTuhfnogOl8h",
+      "type": "subtopic",
+      "data": {
+        "label": "$nor"
+      }
+    },
+    {
+      "id": "A9W2LsivDc0ialLp83fYP",
+      "type": "topic",
+      "data": {
+        "label": "Performance Optimization"
+      }
+    },
+    {
+      "id": "haA1ltV6VzgJVJcJNMK0W",
+      "type": "topic",
+      "data": {
+        "label": "Creating Indexes"
+      }
+    },
+    {
+      "id": "SjPzR6JjdBeiqFsrRJPfW",
+      "type": "subtopic",
+      "data": {
+        "label": "Single Field"
+      }
+    },
+    {
+      "id": "eSb4WAfWxJu6R95pPX6wm",
+      "type": "subtopic",
+      "data": {
+        "label": "Compound"
+      }
+    },
+    {
+      "id": "PV_3TEYdtVZ2VCDZEOsu_",
+      "type": "subtopic",
+      "data": {
+        "label": "Text"
+      }
+    },
+    {
+      "id": "butGgZXGPTZI-sWx24bOr",
+      "type": "subtopic",
+      "data": {
+        "label": "Expiring"
+      }
+    },
+    {
+      "id": "bqXlDnPuMQIKulD9cTvPf",
+      "type": "subtopic",
+      "data": {
+        "label": "Geospatial Indexes"
+      }
+    },
+    {
+      "id": "YidhAuVk_VGukx_FfJSz2",
+      "type": "subtopic",
+      "data": {
+        "label": "Atlas Search Indexes"
+      }
+    },
+    {
+      "id": "kG0ZeGatgvC1azZKMQiA_",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "gpihoIJkzSS1WOvmH2ueo",
+      "type": "topic",
+      "data": {
+        "label": "Aggregation"
+      }
+    },
+    {
+      "id": "41NR1_9KpDaoNA6H_-9tJ",
+      "type": "label",
+      "data": {
+        "label": "Common Operators"
+      }
+    },
+    {
+      "id": "_c7itVw1R1_UB-NPtL-WI",
+      "type": "subtopic",
+      "data": {
+        "label": "$match"
+      }
+    },
+    {
+      "id": "nz048lC4Q4S7fMVbxLGEk",
+      "type": "subtopic",
+      "data": {
+        "label": "$group"
+      }
+    },
+    {
+      "id": "BCWS8uV2pSWe7CX-VlnTg",
+      "type": "subtopic",
+      "data": {
+        "label": "$sort"
+      }
+    },
+    {
+      "id": "dO2mJejkWBH903LG0dWgN",
+      "type": "subtopic",
+      "data": {
+        "label": "$project"
+      }
+    },
+    {
+      "id": "4CjjGPOy-385Bco_PeQwa",
+      "type": "subtopic",
+      "data": {
+        "label": "$skip"
+      }
+    },
+    {
+      "id": "AzUVaGnGv9uypJ31alR9r",
+      "type": "subtopic",
+      "data": {
+        "label": "$limit"
+      }
+    },
+    {
+      "id": "AY-8KJGA9ZA6ay3rbURt3",
+      "type": "subtopic",
+      "data": {
+        "label": "$unwind"
+      }
+    },
+    {
+      "id": "strw_oGTkZEH-o8zA4IRP",
+      "type": "subtopic",
+      "data": {
+        "label": "$lookup"
+      }
+    },
+    {
+      "id": "CfM0iyd2bNRIiDWTUkspd",
+      "type": "subtopic",
+      "data": {
+        "label": "$sum"
+      }
+    },
+    {
+      "id": "eDks8Jmsbq3_nHgLydyxP",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipelines, Stages and Operators"
+      }
+    },
+    {
+      "id": "aHcmsaqAfG5fC90VV-EHP",
+      "type": "topic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "6H2MMnEfS6uHGS-6pFo8u",
+      "type": "topic",
+      "data": {
+        "label": "Developer Tools"
+      }
+    },
+    {
+      "id": "73REfcB_T0yBP-KQ0EYmF",
+      "type": "subtopic",
+      "data": {
+        "label": "Language Drivers"
+      }
+    },
+    {
+      "id": "9GazilUU8H4o-uTkecbDZ",
+      "type": "label",
+      "data": {
+        "label": "MongoDB Connectors"
+      }
+    },
+    {
+      "id": "JAosQ9tFj7y70lGQ0vHzC",
+      "type": "subtopic",
+      "data": {
+        "label": "Kafka"
+      }
+    },
+    {
+      "id": "K09-nD6xF5YJUQBBpFXMz",
+      "type": "subtopic",
+      "data": {
+        "label": "Spark"
+      }
+    },
+    {
+      "id": "kJJ-W6BV1ofIvuFT_PCcz",
+      "type": "subtopic",
+      "data": {
+        "label": "Elastic Search"
+      }
+    },
+    {
+      "id": "dxWIRnCaguSoU4g2_DiOI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ebE-JUTXEeH4lNb3UKvKa",
+      "type": "label",
+      "data": {
+        "label": "Backup \u0026 Recovery"
+      }
+    },
+    {
+      "id": "xaWDHCkcGm4oovPPxVMB9",
+      "type": "subtopic",
+      "data": {
+        "label": "mongodump"
+      }
+    },
+    {
+      "id": "TKngxMNGMgrdO26D7eeSg",
+      "type": "subtopic",
+      "data": {
+        "label": "mongorestore"
+      }
+    },
+    {
+      "id": "cOKQQ7SaiawWF49MdCGTh",
+      "type": "topic",
+      "data": {
+        "label": "Scaling MongoDB"
+      }
+    },
+    {
+      "id": "QrHT-H12AV4-V-y_nzmNk",
+      "type": "subtopic",
+      "data": {
+        "label": "Replicasets"
+      }
+    },
+    {
+      "id": "CijW3HCjVRZHQIBsQ9_0H",
+      "type": "subtopic",
+      "data": {
+        "label": "Sharded Clusters"
+      }
+    },
+    {
+      "id": "iVDxuERBjKMBHueEfqP0x",
+      "type": "subtopic",
+      "data": {
+        "label": "Tuning Configuration"
+      }
+    },
+    {
+      "id": "XjB0uOnsYl4edzZWpQ-nm",
+      "type": "subtopic",
+      "data": {
+        "label": "Indexing"
+      }
+    },
+    {
+      "id": "4L9UQ4oaaK3wZwOLIMa6T",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "LC923iJhfiUDIs_0-9rc7",
+      "type": "topic",
+      "data": {
+        "label": "MongoDB Security"
+      }
+    },
+    {
+      "id": "yRJ6jeysFXBpwLEqvrdKk",
+      "type": "subtopic",
+      "data": {
+        "label": "Role-based Access Control"
+      }
+    },
+    {
+      "id": "NV39oWwr7iB_dnlnD_Q6Y",
+      "type": "subtopic",
+      "data": {
+        "label": "X.509 Certificate Auth"
+      }
+    },
+    {
+      "id": "YuzMOO7kf2tO6V6WehqF_",
+      "type": "subtopic",
+      "data": {
+        "label": "Kerberos Authentication"
+      }
+    },
+    {
+      "id": "NoDNdno9UOlMrOC0Wga9E",
+      "type": "subtopic",
+      "data": {
+        "label": "LDAP Proxy Auth"
+      }
+    },
+    {
+      "id": "w1L-yFBM2AyeNBFyH5skW",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB Audit"
+      }
+    },
+    {
+      "id": "6ep18j_y_ZCu8I1tmi48O",
+      "type": "label",
+      "data": {
+        "label": "Encryption"
+      }
+    },
+    {
+      "id": "iJjqlTgXxHWC-8bh6uCGQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Encryption at Rest"
+      }
+    },
+    {
+      "id": "LpfuM6SuhlNNjBcHM68ee",
+      "type": "subtopic",
+      "data": {
+        "label": "Queryable Encryption"
+      }
+    },
+    {
+      "id": "YJiWemHO1l5q9WhgoHyYd",
+      "type": "subtopic",
+      "data": {
+        "label": "Client-Side Field Level"
+      }
+    },
+    {
+      "id": "5F7zAAnvnVTTnBzOB7TSu",
+      "type": "subtopic",
+      "data": {
+        "label": "TLS / SSL Encryption"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "z50iixpcCMe9sTh-gwTI3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-2rlmLn_yQQV-7DpX1qT98y2",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "tJljSlb5S_tZLZhZHHd_I",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "cMfsRtvzvDZZJ0TqeUOxm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-qh8MEbXKPVt8mqlarhUj0y1",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "qh8MEbXKPVt8mqlarhUj0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-1UXfFROvcunyhkx0zB_1Sy1",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "1UXfFROvcunyhkx0zB_1S",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-2rlmLn_yQQV-7DpX1qT98y1",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "1pCWjSvjvbox5OpyWJ8Kv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__z50iixpcCMe9sTh-gwTI3x2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "z50iixpcCMe9sTh-gwTI3",
+      "target": "_UIfRdlj6BeEESw1FW9RH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge___UIfRdlj6BeEESw1FW9RHx2-JfXwzkN29UGz17FYHHE3Aw1",
+      "source": "_UIfRdlj6BeEESw1FW9RH",
+      "target": "7SGYNo3oHlgm_1cwhWfw7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-liGbnGyQaG-Vqt6cuB91Ny1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "liGbnGyQaG-Vqt6cuB91N",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-iMpCEXRDXg0Kq9OFNywbIy1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "iMpCEXRDXg0Kq9OFNywbI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-qjoLxSkfKbzG1sZUXnyw9y1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "qjoLxSkfKbzG1sZUXnyw9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-mXdn4u5CiQRDE83qMiWZXy2",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "mXdn4u5CiQRDE83qMiWZX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-yc2HqhjhIV6UU_2P-ykKBy1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "yc2HqhjhIV6UU_2P-ykKB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-hC83jKoO_XFI83WpsdN_Zy2",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "hC83jKoO_XFI83WpsdN_Z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-2rlmLn_yQQV-7DpX1qT98y1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "4h8NdcdXmNqJxLkVJqPtX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PuRlxMpnjEZt3E3m7Hgzwx2-Ff3yMMi2r0UQdPnY1QgL4w1",
+      "source": "7SGYNo3oHlgm_1cwhWfw7",
+      "target": "Ff3yMMi2r0UQdPnY1QgL4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Ff3yMMi2r0UQdPnY1QgL4y2-thOckmrCJ45NVNPNxm4egz2",
+      "source": "Ff3yMMi2r0UQdPnY1QgL4",
+      "target": "thOckmrCJ45NVNPNxm4eg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Ff3yMMi2r0UQdPnY1QgL4y2-K9x7yQP59cB764Q5PqAs_z1",
+      "source": "Ff3yMMi2r0UQdPnY1QgL4",
+      "target": "K9x7yQP59cB764Q5PqAs_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Ff3yMMi2r0UQdPnY1QgL4y2-9mmxYBtvPYZlvFjQvE-2Nz2",
+      "source": "Ff3yMMi2r0UQdPnY1QgL4",
+      "target": "s8El0Q22GD_rOZGlDtkgH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Ff3yMMi2r0UQdPnY1QgL4z2-LC923iJhfiUDIs_0-9rc7y1",
+      "source": "Ff3yMMi2r0UQdPnY1QgL4",
+      "target": "B8SFhoVV8ei1Yz6vl57l_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7x2-I4nV_ht5zBjcmqPR2vTLzw1",
+      "source": "B8SFhoVV8ei1Yz6vl57l_",
+      "target": "I4nV_ht5zBjcmqPR2vTLz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Ff3yMMi2r0UQdPnY1QgL4x2-LC923iJhfiUDIs_0-9rc7z1",
+      "source": "Ff3yMMi2r0UQdPnY1QgL4",
+      "target": "A9W2LsivDc0ialLp83fYP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__A9W2LsivDc0ialLp83fYPz2-LC923iJhfiUDIs_0-9rc7w1",
+      "source": "A9W2LsivDc0ialLp83fYP",
+      "target": "gpihoIJkzSS1WOvmH2ueo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__3Ws8Y34nbhyYTD7T3HnAdx2-A9W2LsivDc0ialLp83fYPw2",
+      "source": "3Ws8Y34nbhyYTD7T3HnAd",
+      "target": "A9W2LsivDc0ialLp83fYP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__A9W2LsivDc0ialLp83fYPx2-YidhAuVk_VGukx_FfJSz2w1",
+      "source": "A9W2LsivDc0ialLp83fYP",
+      "target": "YidhAuVk_VGukx_FfJSz2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-eDks8Jmsbq3_nHgLydyxPy2",
+      "source": "gpihoIJkzSS1WOvmH2ueo",
+      "target": "eDks8Jmsbq3_nHgLydyxP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__gpihoIJkzSS1WOvmH2ueox2-LC923iJhfiUDIs_0-9rc7w2",
+      "source": "gpihoIJkzSS1WOvmH2ueo",
+      "target": "aHcmsaqAfG5fC90VV-EHP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__aHcmsaqAfG5fC90VV-EHPx2-LC923iJhfiUDIs_0-9rc7w1",
+      "source": "aHcmsaqAfG5fC90VV-EHP",
+      "target": "6H2MMnEfS6uHGS-6pFo8u",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__6H2MMnEfS6uHGS-6pFo8ux2-LC923iJhfiUDIs_0-9rc7w2",
+      "source": "6H2MMnEfS6uHGS-6pFo8u",
+      "target": "cOKQQ7SaiawWF49MdCGTh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-QrHT-H12AV4-V-y_nzmNky1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "QrHT-H12AV4-V-y_nzmNk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-CijW3HCjVRZHQIBsQ9_0Hy1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "CijW3HCjVRZHQIBsQ9_0H",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-iVDxuERBjKMBHueEfqP0xy1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "iVDxuERBjKMBHueEfqP0x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-XjB0uOnsYl4edzZWpQ-nmy1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "XjB0uOnsYl4edzZWpQ-nm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7z2-4L9UQ4oaaK3wZwOLIMa6Ty1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "4L9UQ4oaaK3wZwOLIMa6T",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__1HBTZGBuT2cKNmwgFkGOFz2-6H2MMnEfS6uHGS-6pFo8uy1",
+      "source": "1HBTZGBuT2cKNmwgFkGOF",
+      "target": "6H2MMnEfS6uHGS-6pFo8u",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cOKQQ7SaiawWF49MdCGThx2-LC923iJhfiUDIs_0-9rc7w1",
+      "source": "cOKQQ7SaiawWF49MdCGTh",
+      "target": "LC923iJhfiUDIs_0-9rc7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7y2-5F7zAAnvnVTTnBzOB7TSuz2",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "YuzMOO7kf2tO6V6WehqF_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7y2-NoDNdno9UOlMrOC0Wga9Ez1",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "NoDNdno9UOlMrOC0Wga9E",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7y2-w1L-yFBM2AyeNBFyH5skWz1",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "w1L-yFBM2AyeNBFyH5skW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7y2-NV39oWwr7iB_dnlnD_Q6Yz1",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "NV39oWwr7iB_dnlnD_Q6Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7y2-yRJ6jeysFXBpwLEqvrdKkz1",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "yRJ6jeysFXBpwLEqvrdKk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__LC923iJhfiUDIs_0-9rc7x2-O5dely89N5UCMBeUfh8udw1",
+      "source": "LC923iJhfiUDIs_0-9rc7",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

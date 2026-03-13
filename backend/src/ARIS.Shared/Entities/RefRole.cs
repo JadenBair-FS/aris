@@ -20,8 +20,13 @@ public class RefRole
     [Column("description")]
     public string? Description { get; set; }
 
-    [Column("embedding", TypeName = "vector(768)")]
+    [Column("embedding", TypeName = "vector(1024)")]
     public Vector? Embedding { get; set; }
 
+    [Column("job_zone")]
+    public int? JobZone { get; set; }
+
     public List<RefRoleSkill> RoleSkills { get; set; } = new();
+    public ICollection<RefRoleKnowledge> RoleKnowledge { get; set; } = new List<RefRoleKnowledge>();
+    public ICollection<RefRoleAbility> RoleAbilities { get; set; } = new List<RefRoleAbility>();
 }

@@ -1,0 +1,155 @@
+{
+  "type": "resume",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [],
+      "avgLatencyMs": 0,
+      "output": null,
+      "skillCount": 0,
+      "roleCount": 0,
+      "success": false,
+      "error": "IAsyncEnumerable<ChatResponseStream> did not yield an item with Done=true. The stream might be corrupted or incomplete."
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        15846,
+        16263,
+        16254
+      ],
+      "avgLatencyMs": 16121,
+      "output": {
+        "roles": [
+          {
+            "title": "Journeyman Plumber",
+            "duration": "June 2018 – Present",
+            "is_current": true
+          },
+          {
+            "title": "Plumbing Apprentice",
+            "duration": "August 2014 – May 2018",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Copper Sweating & Soldering",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "PEX & ProPress Systems",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Drain-Waste-Vent (DWV) Installation",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Backflow Testing & Repair",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Blueprint Reading",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Residential & Commercial Code Compliance",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Water Heater Installation (Tank & Tankless)",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Gas Line Installation",
+            "category": "Technical",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Camera & Hydro-Jetting Diagnostics",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Fixture & Faucet Installation",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Customer Service",
+            "category": "Soft",
+            "proficiency": "Advanced",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Job Estimation & Quoting",
+            "category": "Soft",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Journeyman Plumber",
+            "company": "Summit Mechanical Services",
+            "bullets": [
+              "Install, repair, and maintain residential and commercial plumbing systems",
+              "Perform rough-in plumbing for new construction projects"
+            ]
+          },
+          {
+            "role": "Plumbing Apprentice",
+            "company": "Bridger Construction Group",
+            "bullets": [
+              "Completed 4-year registered apprenticeship program (8,000+ hours)",
+              "Assisted in full plumbing installations for multi-unit residential developments"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Certificate in Plumbing Technology",
+            "institution": "Emily Griffith Technical College",
+            "year": "2014"
+          },
+          {
+            "degree": "High School Diploma",
+            "institution": "North High School",
+            "year": "2014"
+          }
+        ]
+      },
+      "skillCount": 12,
+      "roleCount": 2,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "llama3.2:3b",
+    "speedupFactor": 1,
+    "skillCounts": {
+      "mistral": 0,
+      "llama3.2:3b": 12
+    },
+    "sharedSkills": [],
+    "uniqueToLargerModel": []
+  }
+}

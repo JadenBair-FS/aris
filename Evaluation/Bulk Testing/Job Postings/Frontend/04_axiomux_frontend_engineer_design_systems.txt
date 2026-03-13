@@ -1,0 +1,40 @@
+--- POSTING 4 ---
+Job Title: Frontend Engineer - Design Systems
+Company: AxioMux
+Location: Denver, CO (Remote)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT AXIOMUX
+AxioMux is an enterprise SaaS platform for supply chain visibility used by Fortune 500 manufacturers and logistics companies. With 90 engineers across 12 squads, our design systems team is the connective tissue that ensures consistent, accessible UI across 6 product surfaces.
+
+ABOUT THE ROLE
+The Design Systems team is hiring a Frontend Engineer to grow and maintain our component library (built in React + TypeScript), improve documentation, and champion accessibility across the organization. This is a high-leverage role with exposure to every product team.
+
+KEY RESPONSIBILITIES
+- Build, test, and publish reusable React components used by all product squads
+- Maintain and improve design token architecture synced with Figma variables
+- Write thorough unit tests (Jest + React Testing Library) and visual regression tests (Chromatic)
+- Enforce WCAG 2.1 AA accessibility standards across all components
+- Collaborate with Figma-based designers to translate design decisions into code
+- Publish and maintain Storybook documentation for 80+ components
+- Conduct component reviews and consult product engineers on library usage patterns
+
+REQUIRED QUALIFICATIONS
+- 4+ years of frontend development
+- 3+ years building React components with TypeScript
+- 2+ years contributing to or maintaining a shared design system or component library
+- Strong proficiency with CSS (custom properties, Flexbox, Grid)
+- Experience with Jest and React Testing Library
+- Solid understanding of web accessibility (ARIA roles, keyboard navigation, focus management)
+- Familiarity with Figma for design-to-code workflows
+
+PREFERRED QUALIFICATIONS
+- Experience publishing npm packages
+- Knowledge of Chromatic or Percy for visual regression testing
+- Familiarity with Radix UI, Headless UI, or similar unstyled primitive libraries
+- Experience with CSS-in-JS solutions (styled-components, Emotion)
+- Background in enterprise SaaS product development
+
+COMPENSATION
+$130,000 - $155,000 + equity + benefits (full remote, home office stipend)
+--- END POSTING 4 ---

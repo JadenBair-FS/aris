@@ -1,0 +1,54 @@
+Full job description
+Job Posting: Junior Software Developer
+
+What We Do
+
+At MyBrand, we believe in the power of connection: It’s at the core of everything we do. At MyBrand, we design, source, and distribute branded products that drive an impact. Our work is centered on building and maintaining trusted partnerships with our clients, vendors, and team members. We strive to provide creative solutions, exceptional service, and “It’s All Good!®” spirit and energy in all we do.
+
+Position Overview
+
+The technology team is a small, fast-moving group inside MyBrand. We’re investing heavily in technology to unlock our team's potential and to elevate our client experience.
+
+Our work spans a few core initiatives:
+
+Client platform – Design and develop a platform where clients manage proposals, assets, orders, invoices, logistics, and more.
+Internal automation & AI – Use code and AI agents to improve or redefine internal processes. Automate repetitive work so people can spend more time on creativity and relationships.
+Marketing site – Iterate on mybrandpromo.com, including SEO-driven experiments and content changes.
+Data & BI – Manage the data pipeline for BI tools and assist with dashboards and KPIs.
+Your focus will shift among these initiatives based on the company roadmap and your strengths.
+
+What You’ll Do
+
+Contribute to features across the stack (backend, UI, testing, and tooling), taking smaller projects end-to-end with guidance as needed.
+Assist in prototyping and shipping internal AI tools and automations, learning from more senior developers’ designs and patterns.
+Work closely with internal stakeholders (sales, operations, creative) — and occasionally clients — to understand problems, clarify requirements, and support delivery of pragmatic solutions.
+Help maintain and improve the reliability, performance, and observability of our systems by fixing bugs, writing tests, and implementing monitoring under direction from senior engineers.
+Follow and help refine our development practices (code reviews, documentation, testing, deployment), contributing ideas and feedback as part of a small engineering team.
+Take initiative in planning and organizing your own work, communicating progress and blockers early so the team can support you.
+Our Stack
+
+You’re not expected to know every part of our stack; we’re looking for someone excited to work with and learn tools like:
+
+App frameworks: Next.js, TanStack Start
+Backend & data: Postgres, Convex, Metabase
+Infra & devops: Vercel, GitHub, Axiom
+Tooling: Turborepo, Biome, pnpm
+Styling & UI: Tailwind, Shadcn
+Collaboration: Linear, Slack
+Experience
+
+We’re looking for a creative, practical generalist who learns quickly, works autonomously, and loves using AI.
+
+You might be a good fit if you have:
+
+0–1+ years of experience, including internships, bootcamps, coursework, or personal projects
+Looking for an interesting, varied, and challenging role using high leverage AI tooling
+Basic programming experience with TypeScript or JavaScript
+Interest in or exposure to LLMs and AI coding tools
+Some familiarity with modern frontend frameworks (React preferred)
+Willingness to learn backend concepts (APIs, databases, data models)
+Good communication and a collaborative mindset
+Ability to take feedback and iterate quickly
+Values Alignment
+
+The Junior Software Developer will exemplify MyBrand’s core values and “It’s All Good!®” leadership attributes.

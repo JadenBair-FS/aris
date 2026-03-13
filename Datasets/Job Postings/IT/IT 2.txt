@@ -1,0 +1,32 @@
+Full job description
+About the Team
+
+The IT Services and Support team is responsible for providing seamless, efficient, and reliable IT solutions across the organization. We handle frontline IT support, manage vendor relationships and equipment inventory, and continuously improve our processes and documentation to enhance the overall employee experience.
+
+About the Role
+
+As a Frontline IT Support Specialist, you’ll be the first point of contact in our helpdesk for hardware, software, and network issues. You’ll resolve incoming support requests, collaborate across teams to improve repeatable workflows such as onboarding and device imaging, and share ideas that make everyday work smoother for everyone.
+
+This role is based in our Seattle office and requires five days per week on site. Relocation assistance is available.
+
+In this role, you will:
+Provide frontline helpdesk support:
+Serve as the primary contact for troubleshooting hardware, software, and network issues, ensuring prompt and reliable resolution of employee requests.
+
+Improve support systems and processes:
+Work with cross-functional partners to identify opportunities for improvement, help create and maintain repeatable workflows, and contribute ideas during IT team meetings.
+
+Participate in on-call rotation
+
+: Join a scheduled helpdesk on-call rotation for priority incidents.
+
+You might thrive in this role if you:
+Bring strong technical expertise in macOS (with working knowledge of Windows as a plus), identity and device management (Azure AD, Jamf, Intune), and enterprise collaboration tools such as Google Workspace, Office 365, Slack, and Atlassian products.
+
+Demonstrate excellent written and verbal communication skills, ensuring clarity and professionalism in every interaction.
+
+Are highly driven and motivated, with a proactive approach to problem solving and continuous improvement.
+
+Show precision and attention to detail in your work, consistently delivering high-quality results.
+
+Possess a customer-first mindset and the ability to clearly explain technical details to diverse audiences.

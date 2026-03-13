@@ -1,0 +1,31 @@
+Daria Volkov
+daria.volkov@email.com | (415) 904-6218 | San Francisco, CA | linkedin.com/in/dariavolkov-eng
+
+SUMMARY
+Senior frontend engineer with 8 years of experience building large-scale React applications and leading frontend architecture. Expert in TypeScript, performance optimization, and design systems. Led frontend teams of up to 8 engineers at Series B and Series C companies, delivering products used by millions of users.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass/SCSS
+Frameworks: React, Next.js, Vite, Remix
+Databases: (none professional)
+Tools: Git, npm/yarn, Jest, Cypress, Playwright, Redux Toolkit, React Query, Storybook, Figma, Webpack, Datadog RUM
+Cloud/Infra: AWS (S3, CloudFront, Amplify), Vercel, GitHub Actions
+
+EXPERIENCE
+
+Staff Frontend Engineer | Meridian Commerce | San Francisco, CA | April 2021 - Present
+- Led frontend architecture for a marketplace platform serving 8 million active buyers and 400,000 sellers, built on Next.js 13+ App Router and TypeScript
+- Drove Core Web Vitals improvement initiative: LCP from 5.1s to 1.2s, CLS from 0.28 to 0.02, and INP from 580ms to 48ms across all storefront pages
+- Designed and delivered the Meridian Design System (80 components) with design token pipeline from Figma to npm, adopted company-wide across 4 product surfaces
+- Built Playwright E2E test suite covering 120 critical user paths; integrated into blue/green deployment pipeline as a quality gate
+
+Senior Frontend Engineer | Pivot Analytics | San Francisco, CA | January 2018 - March 2021
+- Architected complex React SPA for a BI dashboard product with 200+ interactive chart types using D3.js and Recharts
+- Led migration from JavaScript to TypeScript across 120,000 lines of codebase with zero production regressions
+- Implemented Redux Toolkit state management for shared filter, time range, and permission state across 30 dashboard modules
+
+Frontend Engineer | Launchpad Digital | San Francisco, CA | July 2016 - December 2017
+- Built React 15/16 client applications for 6 startup clients, delivering MVP products in 8-12 week sprints
+
+EDUCATION
+Bachelor of Science, Computer Science | Stanford University | 2016

@@ -1,0 +1,1053 @@
+{
+  "title": {
+    "card": "Technical Writer",
+    "page": "Technical Writer"
+  },
+  "description": "Roadmap for anyone looking for a career in technical writing in @currentYear@",
+  "nodes": [
+    {
+      "id": "C1UYq0kwAatvnq8ondEGr",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Tea_v904u6tNFuMBzkVft",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "BRSq7FKGqrbjRR0NKEw9C",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "emeziC4p96dk2ZdBnUGqj",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "V-W_mPzOTLkdzaeU9jDtu",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "5OchPaFXMYtz9WvMOpOK8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "5AnsmwOaq25Z8FY3BRGm-",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PSSovQ00thrVrRJCz2SYB",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8bAy2PKLRM8fm-2oDrQQ_",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "dqJMYRZ0lm1Iw-MavHli-",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "5Z9o-b3vBA-ITFg86zzYM",
+      "type": "title",
+      "data": {
+        "label": "Technical Writer"
+      }
+    },
+    {
+      "id": "XgM_I974PlXAu4AbeqHX1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HlUUGj3dOZ68t4gIjerXh",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "ZRGsokU313Ky-anWbWK6q",
+      "type": "subtopic",
+      "data": {
+        "label": "Who is a Technical Writer?"
+      }
+    },
+    {
+      "id": "jl1FsQ5-WGKeFyaILNt_p",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Technical Writing?"
+      }
+    },
+    {
+      "id": "j69erqfosSZMDlmKcnnn0",
+      "type": "subtopic",
+      "data": {
+        "label": "Role of Technical Writers inOrganizations"
+      }
+    },
+    {
+      "id": "cNeT1dJDfgn0ndPzSxhSL",
+      "type": "subtopic",
+      "data": {
+        "label": "Forms of Technical Writing"
+      }
+    },
+    {
+      "id": "FVxNjbDBxgf6vkZWw1Awt",
+      "type": "subtopic",
+      "data": {
+        "label": "Growth as a Technical Writer"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "8rjUZ9NZPGwVRGmk6Dlyb",
+      "type": "topic",
+      "data": {
+        "label": "Required Skills"
+      }
+    },
+    {
+      "id": "DubLTESNn3wvEH_bKQZbP",
+      "type": "subtopic",
+      "data": {
+        "label": "Technology Expertise"
+      }
+    },
+    {
+      "id": "kNIiAJrvrNoOAllUbRtUB",
+      "type": "subtopic",
+      "data": {
+        "label": "Language Proficiency"
+      }
+    },
+    {
+      "id": "7-3tqRUpntoQP4nK_nul5",
+      "type": "subtopic",
+      "data": {
+        "label": "Written Communication Proficiency"
+      }
+    },
+    {
+      "id": "_5xFbl2BHx0f2u9HmSVS8",
+      "type": "topic",
+      "data": {
+        "label": "Tooling"
+      }
+    },
+    {
+      "id": "jC3ZrpskBqzxiV6SKf4Uf",
+      "type": "subtopic",
+      "data": {
+        "label": "Publishing Tools"
+      }
+    },
+    {
+      "id": "cSZbTOB0FPPOlGzy-MkSi",
+      "type": "subtopic",
+      "data": {
+        "label": "Plagiarism Checker"
+      }
+    },
+    {
+      "id": "Am_ocP3r0HM45LYfMcQxM",
+      "type": "subtopic",
+      "data": {
+        "label": "Editing Tools"
+      }
+    },
+    {
+      "id": "ffJyulu9GPB_TDqjeJYyV",
+      "type": "subtopic",
+      "data": {
+        "label": "Git / Version Control"
+      }
+    },
+    {
+      "id": "TJ1iuzQ9u_WbrllRQkgm_",
+      "type": "subtopic",
+      "data": {
+        "label": "Markdown"
+      }
+    },
+    {
+      "id": "0XWiraeoicNBbaGYQnNZr",
+      "type": "subtopic",
+      "data": {
+        "label": "Research Tools"
+      }
+    },
+    {
+      "id": "sdoFe4A3y_-Zp3mlrJ5r8",
+      "type": "subtopic",
+      "data": {
+        "label": "Blogging Platforms"
+      }
+    },
+    {
+      "id": "FD-8LQ_g2_O_i2Qwp-Gpv",
+      "type": "subtopic",
+      "data": {
+        "label": "SEO Tools"
+      }
+    },
+    {
+      "id": "yYLsG2LuPaNUuhXSVev_0",
+      "type": "topic",
+      "data": {
+        "label": "Best Practices"
+      }
+    },
+    {
+      "id": "27muFD1Ld1gF6hhIh22sG",
+      "type": "subtopic",
+      "data": {
+        "label": "Story Telling"
+      }
+    },
+    {
+      "id": "lxSSjgtqJk-PtRp4hARDw",
+      "type": "subtopic",
+      "data": {
+        "label": "Subtle Selling"
+      }
+    },
+    {
+      "id": "Ezz2e4lYLD_bdNNwvsV_y",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Structure"
+      }
+    },
+    {
+      "id": "a1ChwDwztjZBi79y38AGa",
+      "type": "subtopic",
+      "data": {
+        "label": "Call to Actions"
+      }
+    },
+    {
+      "id": "8qSL2esjsA3YYuB4d7B9z",
+      "type": "subtopic",
+      "data": {
+        "label": "References"
+      }
+    },
+    {
+      "id": "WmOvQYlnedX0QgC5Adeen",
+      "type": "subtopic",
+      "data": {
+        "label": "Crafting Great Titles"
+      }
+    },
+    {
+      "id": "7FGMPztd6ouvqemcGhIol",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Objectives \u0026 Intent"
+      }
+    },
+    {
+      "id": "UuV51vM2JT_LFFXORSwru",
+      "type": "subtopic",
+      "data": {
+        "label": "User Persona"
+      }
+    },
+    {
+      "id": "cnEVPsqZqs9ZdyqmOuLGA",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Style Guides"
+      }
+    },
+    {
+      "id": "O-dZEkmU0tP3dUIUPM6YJ",
+      "type": "topic",
+      "data": {
+        "label": "Content Research"
+      }
+    },
+    {
+      "id": "SX4vL_JEHrwqHdThyqKKO",
+      "type": "subtopic",
+      "data": {
+        "label": "Topic Score"
+      }
+    },
+    {
+      "id": "JtFLW5WwH5Ixmnb0qikia",
+      "type": "subtopic",
+      "data": {
+        "label": "Keyword Volume"
+      }
+    },
+    {
+      "id": "QMehC1tmWPVWaTsiV9sFC",
+      "type": "subtopic",
+      "data": {
+        "label": "Communities \u0026 Forums"
+      }
+    },
+    {
+      "id": "IZqyEqkrBoEfLBwIQwJl6",
+      "type": "subtopic",
+      "data": {
+        "label": "Search Trends"
+      }
+    },
+    {
+      "id": "xFMsHYYxC0hLueY9xxART",
+      "type": "subtopic",
+      "data": {
+        "label": "Support Request Evaluation"
+      }
+    },
+    {
+      "id": "xV8mox1WnSbl2jAGqQpeg",
+      "type": "topic",
+      "data": {
+        "label": "Types of Technical Content"
+      }
+    },
+    {
+      "id": "d9mTdwqx6QWKYO5PA_rDH",
+      "type": "subtopic",
+      "data": {
+        "label": "Product Content"
+      }
+    },
+    {
+      "id": "UFuMiHtWq1M8dS8547lOp",
+      "type": "subtopic",
+      "data": {
+        "label": "General Product Prose"
+      }
+    },
+    {
+      "id": "C-eVVtF6Yabp2a6XvMeh_",
+      "type": "subtopic",
+      "data": {
+        "label": "How-to Guides"
+      }
+    },
+    {
+      "id": "e8oNoXw1KLY4jDzojIXyk",
+      "type": "topic",
+      "data": {
+        "label": "Developer Docs"
+      }
+    },
+    {
+      "id": "FgyBWRtE34VNqBt_5QhAf",
+      "type": "subtopic",
+      "data": {
+        "label": "User Goals"
+      }
+    },
+    {
+      "id": "2pNW7wDGih_m73lhGZRg6",
+      "type": "subtopic",
+      "data": {
+        "label": "Developer Journey"
+      }
+    },
+    {
+      "id": "jYhfx6RETFgDulyNqdTBy",
+      "type": "subtopic",
+      "data": {
+        "label": "Docs Structure"
+      }
+    },
+    {
+      "id": "z5_73Q7dWbBd4m_OrdZlH",
+      "type": "topic",
+      "data": {
+        "label": "API Reference"
+      }
+    },
+    {
+      "id": "iBBeZopD8SNo7sWTohMim",
+      "type": "subtopic",
+      "data": {
+        "label": "Docs Generation Tools"
+      }
+    },
+    {
+      "id": "co-35BsWMrD6PXohpFqba",
+      "type": "subtopic",
+      "data": {
+        "label": "API Definitions"
+      }
+    },
+    {
+      "id": "e_bsYrZ0eQqduURg2ybX4",
+      "type": "topic",
+      "data": {
+        "label": "Help Content"
+      }
+    },
+    {
+      "id": "8fJcJi96Ige6z2PBuTquC",
+      "type": "subtopic",
+      "data": {
+        "label": "Troubleshooting"
+      }
+    },
+    {
+      "id": "7w1SjK-LV9SBZJ673eAUd",
+      "type": "subtopic",
+      "data": {
+        "label": "Developer Support"
+      }
+    },
+    {
+      "id": "How-4Re1NhxPLDoshUM-G",
+      "type": "subtopic",
+      "data": {
+        "label": "Platform Support"
+      }
+    },
+    {
+      "id": "mJ1s5-SGd_tj8y0LLZxYg",
+      "type": "topic",
+      "data": {
+        "label": "Technical Content Marketing"
+      }
+    },
+    {
+      "id": "O1apL6I_g9DQl8VbL3X4W",
+      "type": "subtopic",
+      "data": {
+        "label": "ICP \u0026 Buyer Persona"
+      }
+    },
+    {
+      "id": "EhhKxYPtoLztZXBXl3ZGl",
+      "type": "subtopic",
+      "data": {
+        "label": "Buyer Journey \u0026 Content Funnel"
+      }
+    },
+    {
+      "id": "-IBL9S4DelIi07w_fmrX3",
+      "type": "topic",
+      "data": {
+        "label": "Content SEO"
+      }
+    },
+    {
+      "id": "UphVii3y4T_PkRMqFJ4r_",
+      "type": "subtopic",
+      "data": {
+        "label": "Backlinking"
+      }
+    },
+    {
+      "id": "eAioe6b7w8pV2Dvawl_fw",
+      "type": "subtopic",
+      "data": {
+        "label": "Short-tail Keywords"
+      }
+    },
+    {
+      "id": "2LAvq7W11WMIubSprlK_l",
+      "type": "subtopic",
+      "data": {
+        "label": "Long-Tail Keywords"
+      }
+    },
+    {
+      "id": "IA6TuXmOZr_-Y3HLHqxp0",
+      "type": "subtopic",
+      "data": {
+        "label": "SEO Keywords"
+      }
+    },
+    {
+      "id": "5dnZe0oCIzb5qGwgI6pwH",
+      "type": "topic",
+      "data": {
+        "label": "Top-funnel Content"
+      }
+    },
+    {
+      "id": "wBDjGa2PgdmeXxHnILFjY",
+      "type": "subtopic",
+      "data": {
+        "label": "Pillar Content"
+      }
+    },
+    {
+      "id": "7S2lymeBZSMBZSsmei7us",
+      "type": "subtopic",
+      "data": {
+        "label": "Awareness Blog Posts"
+      }
+    },
+    {
+      "id": "HoNQSWy82ybT0YmejCzRb",
+      "type": "subtopic",
+      "data": {
+        "label": "Research Reports"
+      }
+    },
+    {
+      "id": "Q2KD70IKwBXAH3UQgeZpp",
+      "type": "topic",
+      "data": {
+        "label": "Mid-funnel Content"
+      }
+    },
+    {
+      "id": "XDX2QxMUkUok2fcS3tFki",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic Gated Content"
+      }
+    },
+    {
+      "id": "Xa7yBWcbP2aPs4u0C4cLJ",
+      "type": "subtopic",
+      "data": {
+        "label": "White-papers"
+      }
+    },
+    {
+      "id": "5zQpravkqwafvwXVOuNPX",
+      "type": "subtopic",
+      "data": {
+        "label": "eBook"
+      }
+    },
+    {
+      "id": "vo1udIIRpxNZCpA3g32F3",
+      "type": "topic",
+      "data": {
+        "label": "Bottom-funnel Content"
+      }
+    },
+    {
+      "id": "2wjRA_pQ9cCG9Ww994FEM",
+      "type": "subtopic",
+      "data": {
+        "label": "Comparative Posts"
+      }
+    },
+    {
+      "id": "K459CcDrcPMJCimIcCzM6",
+      "type": "subtopic",
+      "data": {
+        "label": "Tutorials"
+      }
+    },
+    {
+      "id": "-GZXLc9RjY6eWkKC1K_Rg",
+      "type": "topic",
+      "data": {
+        "label": "Release Notes / Product Announcements"
+      }
+    },
+    {
+      "id": "W44q1iEj7RKM55-9jabMJ",
+      "type": "topic",
+      "data": {
+        "label": "Customer Case-Studies"
+      }
+    },
+    {
+      "id": "pgrKfp1trcIxhDdvLk95g",
+      "type": "topic",
+      "data": {
+        "label": "Frequently Asked Questions"
+      }
+    },
+    {
+      "id": "tAFenZA0MFhMPE5cevNuD",
+      "type": "topic",
+      "data": {
+        "label": "Technical Website Copy"
+      }
+    },
+    {
+      "id": "XyFEYDJvJpGZ7qSdoSZeI",
+      "type": "topic",
+      "data": {
+        "label": "Content Optimization"
+      }
+    },
+    {
+      "id": "TbSBCITdLswhVB82fErTP",
+      "type": "topic",
+      "data": {
+        "label": "Content Analysis"
+      }
+    },
+    {
+      "id": "qpOfqbgLy5TzlNQEyt6DG",
+      "type": "subtopic",
+      "data": {
+        "label": "Link Shorteners / Tracking"
+      }
+    },
+    {
+      "id": "hlhBgI3SvU3tMtNaHtu8k",
+      "type": "subtopic",
+      "data": {
+        "label": "Platform Tracking and Metrics"
+      }
+    },
+    {
+      "id": "UiXn-CnPcLWAflKJzaJ2a",
+      "type": "subtopic",
+      "data": {
+        "label": "Conversion Tracking"
+      }
+    },
+    {
+      "id": "JgdrXG7MX1gGuNG9uyubA",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Aging \u0026 Timelines"
+      }
+    },
+    {
+      "id": "mrqBxsNRl1CQEKtuYSy9F",
+      "type": "topic",
+      "data": {
+        "label": "Content Distribution"
+      }
+    },
+    {
+      "id": "NIxIhMEOxrUR8nbjbF_Fp",
+      "type": "subtopic",
+      "data": {
+        "label": "Canonical Link"
+      }
+    },
+    {
+      "id": "AarJ887P-SFRnKaOOv9yw",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenGraph Data"
+      }
+    },
+    {
+      "id": "m9-DqsQfeukmhjhIfCph-",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Distribution Channels"
+      }
+    },
+    {
+      "id": "_cAGbAswDhOqpoiiikPbD",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Distribution Amplification Strategies"
+      }
+    },
+    {
+      "id": "KEP_DmmmIbG5zdC0dj6a_",
+      "type": "paragraph",
+      "data": {
+        "label": "Keep Learning"
+      }
+    },
+    {
+      "id": "vxDLRIXVZFTbfqiOmjUER",
+      "type": "paragraph",
+      "data": {
+        "label": "Shout-out to Hackmamba who helped make this roadmap"
+      }
+    },
+    {
+      "id": "D5Gn7dAWlTB-Q0bbPc6ka",
+      "type": "button",
+      "data": {
+        "label": "Visit their Website"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-ZRGsokU313Ky-anWbWK6qy1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "ZRGsokU313Ky-anWbWK6q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-jl1FsQ5-WGKeFyaILNt_py1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "jl1FsQ5-WGKeFyaILNt_p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-j69erqfosSZMDlmKcnnn0y2",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "j69erqfosSZMDlmKcnnn0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-cNeT1dJDfgn0ndPzSxhSLy1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "cNeT1dJDfgn0ndPzSxhSL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-FVxNjbDBxgf6vkZWw1Awty1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "FVxNjbDBxgf6vkZWw1Awt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5Z9o-b3vBA-ITFg86zzYMx2-HlUUGj3dOZ68t4gIjerXhw1",
+      "source": "5Z9o-b3vBA-ITFg86zzYM",
+      "target": "HlUUGj3dOZ68t4gIjerXh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-O-dZEkmU0tP3dUIUPM6YJz2",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "8rjUZ9NZPGwVRGmk6Dlyb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8rjUZ9NZPGwVRGmk6Dlybw2-7-3tqRUpntoQP4nK_nul5x1",
+      "source": "8rjUZ9NZPGwVRGmk6Dlyb",
+      "target": "7-3tqRUpntoQP4nK_nul5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8rjUZ9NZPGwVRGmk6Dlybz2-O-dZEkmU0tP3dUIUPM6YJy2",
+      "source": "8rjUZ9NZPGwVRGmk6Dlyb",
+      "target": "_5xFbl2BHx0f2u9HmSVS8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJz2-jC3ZrpskBqzxiV6SKf4Ufy2",
+      "source": "_5xFbl2BHx0f2u9HmSVS8",
+      "target": "jC3ZrpskBqzxiV6SKf4Uf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJz2-cSZbTOB0FPPOlGzy-MkSiy1",
+      "source": "_5xFbl2BHx0f2u9HmSVS8",
+      "target": "cSZbTOB0FPPOlGzy-MkSi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJz2-ffJyulu9GPB_TDqjeJYyVy1",
+      "source": "_5xFbl2BHx0f2u9HmSVS8",
+      "target": "ffJyulu9GPB_TDqjeJYyV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJw2-0XWiraeoicNBbaGYQnNZrx2",
+      "source": "_5xFbl2BHx0f2u9HmSVS8",
+      "target": "0XWiraeoicNBbaGYQnNZr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_5xFbl2BHx0f2u9HmSVS8x2-O-dZEkmU0tP3dUIUPM6YJw1",
+      "source": "_5xFbl2BHx0f2u9HmSVS8",
+      "target": "yYLsG2LuPaNUuhXSVev_0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-27muFD1Ld1gF6hhIh22sGz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "27muFD1Ld1gF6hhIh22sG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-lxSSjgtqJk-PtRp4hARDwz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "lxSSjgtqJk-PtRp4hARDw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-Ezz2e4lYLD_bdNNwvsV_yz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "Ezz2e4lYLD_bdNNwvsV_y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-a1ChwDwztjZBi79y38AGaz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "a1ChwDwztjZBi79y38AGa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-8qSL2esjsA3YYuB4d7B9zz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "8qSL2esjsA3YYuB4d7B9z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-WmOvQYlnedX0QgC5Adeenz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "WmOvQYlnedX0QgC5Adeen",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-7FGMPztd6ouvqemcGhIolz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "7FGMPztd6ouvqemcGhIol",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-UuV51vM2JT_LFFXORSwruz1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "UuV51vM2JT_LFFXORSwru",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-cnEVPsqZqs9ZdyqmOuLGAz2",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "cnEVPsqZqs9ZdyqmOuLGA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yYLsG2LuPaNUuhXSVev_0z2-O-dZEkmU0tP3dUIUPM6YJy1",
+      "source": "yYLsG2LuPaNUuhXSVev_0",
+      "target": "O-dZEkmU0tP3dUIUPM6YJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJy2-xV8mox1WnSbl2jAGqQpegz1",
+      "source": "O-dZEkmU0tP3dUIUPM6YJ",
+      "target": "xV8mox1WnSbl2jAGqQpeg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-xV8mox1WnSbl2jAGqQpegw2-C-eVVtF6Yabp2a6XvMeh_x1",
+      "source": "xV8mox1WnSbl2jAGqQpeg",
+      "target": "C-eVVtF6Yabp2a6XvMeh_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-O-dZEkmU0tP3dUIUPM6YJx2-SX4vL_JEHrwqHdThyqKKOw1",
+      "source": "O-dZEkmU0tP3dUIUPM6YJ",
+      "target": "SX4vL_JEHrwqHdThyqKKO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-xV8mox1WnSbl2jAGqQpegy2-mrqBxsNRl1CQEKtuYSy9Fz1",
+      "source": "xV8mox1WnSbl2jAGqQpeg",
+      "target": "mJ1s5-SGd_tj8y0LLZxYg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mJ1s5-SGd_tj8y0LLZxYgx2-mrqBxsNRl1CQEKtuYSy9Fw1",
+      "source": "mJ1s5-SGd_tj8y0LLZxYg",
+      "target": "-IBL9S4DelIi07w_fmrX3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge--IBL9S4DelIi07w_fmrX3z2-mrqBxsNRl1CQEKtuYSy9Fy2",
+      "source": "-IBL9S4DelIi07w_fmrX3",
+      "target": "5dnZe0oCIzb5qGwgI6pwH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fx2-wBDjGa2PgdmeXxHnILFjYw1",
+      "source": "5dnZe0oCIzb5qGwgI6pwH",
+      "target": "wBDjGa2PgdmeXxHnILFjY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-5dnZe0oCIzb5qGwgI6pwHz2-mrqBxsNRl1CQEKtuYSy9Fy1",
+      "source": "5dnZe0oCIzb5qGwgI6pwH",
+      "target": "Q2KD70IKwBXAH3UQgeZpp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fx2-XDX2QxMUkUok2fcS3tFkiw1",
+      "source": "Q2KD70IKwBXAH3UQgeZpp",
+      "target": "XDX2QxMUkUok2fcS3tFki",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Q2KD70IKwBXAH3UQgeZppz2-mrqBxsNRl1CQEKtuYSy9Fy1",
+      "source": "Q2KD70IKwBXAH3UQgeZpp",
+      "target": "vo1udIIRpxNZCpA3g32F3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-XyFEYDJvJpGZ7qSdoSZeIy2-mrqBxsNRl1CQEKtuYSy9Fz1",
+      "source": "XyFEYDJvJpGZ7qSdoSZeI",
+      "target": "TbSBCITdLswhVB82fErTP",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fw2-JgdrXG7MX1gGuNG9uyubAx1",
+      "source": "TbSBCITdLswhVB82fErTP",
+      "target": "JgdrXG7MX1gGuNG9uyubA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-TbSBCITdLswhVB82fErTPz2-mrqBxsNRl1CQEKtuYSy9Fy1",
+      "source": "TbSBCITdLswhVB82fErTP",
+      "target": "mrqBxsNRl1CQEKtuYSy9F",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fz2-NIxIhMEOxrUR8nbjbF_Fpy1",
+      "source": "mrqBxsNRl1CQEKtuYSy9F",
+      "target": "NIxIhMEOxrUR8nbjbF_Fp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fz2-m9-DqsQfeukmhjhIfCph-y2",
+      "source": "mrqBxsNRl1CQEKtuYSy9F",
+      "target": "m9-DqsQfeukmhjhIfCph-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fz2-_cAGbAswDhOqpoiiikPbDy1",
+      "source": "mrqBxsNRl1CQEKtuYSy9F",
+      "target": "_cAGbAswDhOqpoiiikPbD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-mrqBxsNRl1CQEKtuYSy9Fx2-KEP_DmmmIbG5zdC0dj6a_w1",
+      "source": "mrqBxsNRl1CQEKtuYSy9F",
+      "target": "KEP_DmmmIbG5zdC0dj6a_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

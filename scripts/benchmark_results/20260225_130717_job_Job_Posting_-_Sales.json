@@ -1,0 +1,137 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        11047,
+        8162,
+        7994
+      ],
+      "avgLatencyMs": 9067.666666666666,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Enterprise Account Executive",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "B2B enterprise software sales",
+            "importance": "Essential",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Manufacturing, distribution, or logistics verticals",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Salesforce CRM",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Supply chain domain knowledge",
+            "importance": "Essential",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Formal sales methodology training",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "ERP-adjacent or supply chain visibility software",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Multi-lingual skills (Spanish)",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Own a defined territory and build a qualified pipeline 3x quota through outbound prospecting, partner referrals, and marketing-sourced leads",
+          "Lead discovery, demonstration, and business case development for enterprise opportunities",
+          "Navigate complex procurement cycles involving procurement, finance, IT, and operations stakeholders",
+          "Manage contract negotiation and legal review with support from revenue operations and legal",
+          "Accurately forecast a rolling 90-day pipeline in Salesforce; maintain deal hygiene and activity logging",
+          "Partner with Solutions Engineering for technical demos and proof-of-concept engagements",
+          "Attend industry events (MODEX, ProMat, CSCMP) to build brand presence and generate pipeline",
+          "Collaborate with Customer Success to identify expansion and referral opportunities within named accounts"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree in Business, Supply Chain, Engineering, or a related field",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 7,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        11023,
+        11155,
+        11252
+      ],
+      "avgLatencyMs": 11143.333333333334,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Enterprise Account Executive",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "B2B enterprise software sales experience",
+            "importance": "Essential",
+            "years_of_experience": 5
+          }
+        ],
+        "responsibilities": [
+          "University-Level Teaching",
+          "Academic Program Management",
+          "Faculty Personnel Management",
+          "Budget Administration",
+          "Computer Science Research"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Bachelor's degree in Business, Supply Chain, Engineering, or a related field",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 1,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.23,
+    "skillCounts": {
+      "mistral": 7,
+      "llama3.2:3b": 1
+    },
+    "sharedSkills": [],
+    "uniqueToLargerModel": [
+      "B2B enterprise software sales",
+      "Manufacturing, distribution, or logistics verticals",
+      "Salesforce CRM",
+      "Supply chain domain knowledge",
+      "Formal sales methodology training",
+      "ERP-adjacent or supply chain visibility software",
+      "Multi-lingual skills (Spanish)"
+    ]
+  }
+}

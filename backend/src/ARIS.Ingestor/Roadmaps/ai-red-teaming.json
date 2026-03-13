@@ -1,0 +1,1018 @@
+{
+  "title": {
+    "card": "AI Red Teaming",
+    "page": "AI Red Teaming"
+  },
+  "description": "Learn to become a red teaming expert in AI in @curentYear@",
+  "nodes": [
+    {
+      "id": "jyFzaSxCTk4-SkVtAqXDV",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "H4Y1ce23KsYCYq82ivOV0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Rtu5ME2bE59I6aTleE5LW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "KY9r0pUBM5Ekknhlcmmea",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "8hmAWdzRHE4qqvBblYrFY",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "t4IWddpRLqlm5vQgE-Cn0",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Wjwheg_zRNrTZj67PBG5l",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "buH0t6fc1m7rIkFM_J-3a",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "R9DQNc0AyAQ2HLpP4HOk6",
+      "type": "subtopic",
+      "data": {
+        "label": "AI Security Fundamentals"
+      }
+    },
+    {
+      "id": "fNTb9y3zs1HPYclAmu_Wv",
+      "type": "subtopic",
+      "data": {
+        "label": "Why Red Team AI Systems?"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "AI Red Teaming"
+      }
+    },
+    {
+      "id": "HFJIYcI16OMyM77fAw9af",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "1gyuEV519LjN-KpROoVwv",
+      "type": "subtopic",
+      "data": {
+        "label": "Ethical Considerations"
+      }
+    },
+    {
+      "id": "FcAeu8woDM7N51do6aiBV",
+      "type": "paragraph",
+      "data": {
+        "label": "Special thanks to \u0022Learn Prompting\u0022 for their help in making this roadmap"
+      }
+    },
+    {
+      "id": "5n6N956H6tfwlQ0vqXW7e",
+      "type": "button",
+      "data": {
+        "label": "learnprompting.org"
+      }
+    },
+    {
+      "id": "Irkc9DgBfqSn72WaJqXEt",
+      "type": "subtopic",
+      "data": {
+        "label": "Role of Red Teams"
+      }
+    },
+    {
+      "id": "EQrDljYCypm5zlzVmXane",
+      "type": "paragraph",
+      "data": {
+        "label": "Foundational Knowledge"
+      }
+    },
+    {
+      "id": "USnljlWi_1nOvc-zViBh7",
+      "type": "paragraph",
+      "data": {
+        "label": "AI / ML Fundamentals"
+      }
+    },
+    {
+      "id": "NvOJIv36Utpm7_kOZyr79",
+      "type": "subtopic",
+      "data": {
+        "label": "Supervised Learning"
+      }
+    },
+    {
+      "id": "ZC0yKsu-CJC-LZKKo2pLD",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsupervised Learning"
+      }
+    },
+    {
+      "id": "Xqzc4mOKsVzwaUxLGjHya",
+      "type": "subtopic",
+      "data": {
+        "label": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "RuKzVhd1nZphCrlW1wZGL",
+      "type": "subtopic",
+      "data": {
+        "label": "Neural Networks"
+      }
+    },
+    {
+      "id": "3XJ-g0KvHP75U18mxCqgw",
+      "type": "subtopic",
+      "data": {
+        "label": "Generative Models"
+      }
+    },
+    {
+      "id": "8K-wCn2cLc7Vs_V4sC3sE",
+      "type": "subtopic",
+      "data": {
+        "label": "Large Language Models"
+      }
+    },
+    {
+      "id": "gx4KaFqKgJX9n9_ZGMqlZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "wg_PryJK5Ucr8bZofa4z-",
+      "type": "paragraph",
+      "data": {
+        "label": "Cybsecurity Principles"
+      }
+    },
+    {
+      "id": "WZkIHZkV2qDYbYF9KBBRi",
+      "type": "subtopic",
+      "data": {
+        "label": "Confidentiality, Integrity, Availability"
+      }
+    },
+    {
+      "id": "RDOaTBWP3aIJPUp_kcafm",
+      "type": "subtopic",
+      "data": {
+        "label": "Threat Modeling"
+      }
+    },
+    {
+      "id": "MupRvk_8Io2Hn7yEvU663",
+      "type": "subtopic",
+      "data": {
+        "label": "Risk Management"
+      }
+    },
+    {
+      "id": "887lc3tWCRH-sOHSxWgWJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Vulnerability Assessment"
+      }
+    },
+    {
+      "id": "Ds8pqn4y9Npo7z6ubunvc",
+      "type": "subtopic",
+      "data": {
+        "label": "Jailbreak Techniques"
+      }
+    },
+    {
+      "id": "j7uLLpt8MkZ1rqM7UBPW4",
+      "type": "subtopic",
+      "data": {
+        "label": "Safety Filter Bypasses"
+      }
+    },
+    {
+      "id": "XOrAPDRhBvde9R-znEipH",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Injection"
+      }
+    },
+    {
+      "id": "1Xr7mxVekeAHzTL7G4eAZ",
+      "type": "topic",
+      "data": {
+        "label": "Prompt Hacking"
+      }
+    },
+    {
+      "id": "5zHow4KZVpfhch5Aabeft",
+      "type": "subtopic",
+      "data": {
+        "label": "Direct"
+      }
+    },
+    {
+      "id": "3_gJRtJSdm2iAfkwmcv0e",
+      "type": "subtopic",
+      "data": {
+        "label": "Indirect"
+      }
+    },
+    {
+      "id": "G1u_Kq4NeUsGX2qnUTuJU",
+      "type": "subtopic",
+      "data": {
+        "label": "Countermeasures"
+      }
+    },
+    {
+      "id": "vhBu5x8INTtqvx6vcYAhE",
+      "type": "topic",
+      "data": {
+        "label": "Code Injection"
+      }
+    },
+    {
+      "id": "EHWGhqS4g0fKsnF-on4VC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "uBXrri2bXVsNiM8fIHHOv",
+      "type": "topic",
+      "data": {
+        "label": "Model Vulnerabilities"
+      }
+    },
+    {
+      "id": "QFzLx5nc4rCCD8WVc20mo",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Weight Stealing"
+      }
+    },
+    {
+      "id": "DQeOavZCoXpF3k_qRDABs",
+      "type": "subtopic",
+      "data": {
+        "label": "Unauthorized Access"
+      }
+    },
+    {
+      "id": "JMfZg9VvFMAZvIgfSpLCk",
+      "type": "label",
+      "data": {
+        "label": "Model Extraction"
+      }
+    },
+    {
+      "id": "hw4ErrC1Yy2KU-fdNwrM6",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "nD0_64ELEeJSN-0aZiR7i",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Poisoning"
+      }
+    },
+    {
+      "id": "xjlttOti-_laPRn8a2fVy",
+      "type": "subtopic",
+      "data": {
+        "label": "Adversarial Examples"
+      }
+    },
+    {
+      "id": "lhY7I24au9B1b7Wzr-6jR",
+      "type": "label",
+      "data": {
+        "label": "Model Manipulation"
+      }
+    },
+    {
+      "id": "iE5PcswBHnu_EBFIacib0",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Inversion"
+      }
+    },
+    {
+      "id": "W-FfFY2KB_5u1sg-8h_Sv",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "2Y0ZO-etpv3XIvunDLu-W",
+      "type": "subtopic",
+      "data": {
+        "label": "Adversarial Training"
+      }
+    },
+    {
+      "id": "6gEHMhh6BGJI-ZYN27YPW",
+      "type": "subtopic",
+      "data": {
+        "label": "Robust Model Design"
+      }
+    },
+    {
+      "id": "AMtXkS3wOqxPGf9ib6bi8",
+      "type": "label",
+      "data": {
+        "label": "Defense Strategies"
+      }
+    },
+    {
+      "id": "7Km0mFpHguHYPs5UhHTsM",
+      "type": "subtopic",
+      "data": {
+        "label": "Continuous Monitoring"
+      }
+    },
+    {
+      "id": "YpDr02T3XuKdDFcA44B4F",
+      "type": "paragraph",
+      "data": {
+        "label": "System Security"
+      }
+    },
+    {
+      "id": "aKzai0A8J55-OBXTnQih1",
+      "type": "subtopic",
+      "data": {
+        "label": "Insecure Deserialization"
+      }
+    },
+    {
+      "id": "kgDsDlBk8W2aM6LyWpFY8",
+      "type": "subtopic",
+      "data": {
+        "label": "Remote Code Execution"
+      }
+    },
+    {
+      "id": "nhUKKWyBH80nyKfGT8ErC",
+      "type": "topic",
+      "data": {
+        "label": "Infrastructure Security"
+      }
+    },
+    {
+      "id": "Tszl26iNBnQBdBEWOueDA",
+      "type": "subtopic",
+      "data": {
+        "label": "API Protection"
+      }
+    },
+    {
+      "id": "J7gjlt2MBx7lOkOnfGvPF",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "JQ3bR8odXJfd-1RCEf3-Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "ptbK6pLZbvotCcoaVOlhm",
+      "type": "paragraph",
+      "data": {
+        "label": "Testing Methodologies"
+      }
+    },
+    {
+      "id": "0bApnJTt-Z2IUf0X3OCYf",
+      "type": "subtopic",
+      "data": {
+        "label": "Black Box Testing"
+      }
+    },
+    {
+      "id": "Mrk_js5UVn4dRDw-Yco3Y",
+      "type": "subtopic",
+      "data": {
+        "label": "White Box Testing"
+      }
+    },
+    {
+      "id": "ZVNAMCP68XKRXVxF2-hBc",
+      "type": "subtopic",
+      "data": {
+        "label": "Grey Box Testing"
+      }
+    },
+    {
+      "id": "LVdYN9hyCyNPYn2Lz1y9b",
+      "type": "subtopic",
+      "data": {
+        "label": "Automated vs Manual"
+      }
+    },
+    {
+      "id": "65Lo60JQS5YlvvQ6KevXt",
+      "type": "subtopic",
+      "data": {
+        "label": "Continuous Testing"
+      }
+    },
+    {
+      "id": "zB-hhiDU8BPXoDZXlqPyW",
+      "type": "paragraph",
+      "data": {
+        "label": "Tools and Frameworks"
+      }
+    },
+    {
+      "id": "c8n8FcYKDOgPLQvV9xF5J",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Platforms"
+      }
+    },
+    {
+      "id": "59lkLcoqV4gq7f8Zm0X2p",
+      "type": "subtopic",
+      "data": {
+        "label": "Monitoring Solutions"
+      }
+    },
+    {
+      "id": "et1Xrr8ez-fmB0mAq8W_a",
+      "type": "subtopic",
+      "data": {
+        "label": "Benchmark Datasets"
+      }
+    },
+    {
+      "id": "C1zO2xC0AqyV53p2YEPWg",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Testing Scripts"
+      }
+    },
+    {
+      "id": "BLnfNlA0C4yzy1dvifjwx",
+      "type": "subtopic",
+      "data": {
+        "label": "Reporting Tools"
+      }
+    },
+    {
+      "id": "yraH8ID6eALCTPZnrjxH9",
+      "type": "paragraph",
+      "data": {
+        "label": "Professional Development"
+      }
+    },
+    {
+      "id": "s1xKK8HL5-QGZpcutiuvj",
+      "type": "subtopic",
+      "data": {
+        "label": "Specialized Courses"
+      }
+    },
+    {
+      "id": "HHjsFR6wRDqUd66PMDE_7",
+      "type": "subtopic",
+      "data": {
+        "label": "Industry Credentials"
+      }
+    },
+    {
+      "id": "kQ9ireRCosbBw2M91hP9Y",
+      "type": "label",
+      "data": {
+        "label": "Certifications"
+      }
+    },
+    {
+      "id": "MmwwRK4I9aRH_ha7duPqf",
+      "type": "subtopic",
+      "data": {
+        "label": "Lab Environments"
+      }
+    },
+    {
+      "id": "2Imb64Px3ZQcBpSQjdc_G",
+      "type": "subtopic",
+      "data": {
+        "label": "CTF Challenges"
+      }
+    },
+    {
+      "id": "T8QzRM83aE3vOvU_ot8Zm",
+      "type": "label",
+      "data": {
+        "label": "Practical Experience"
+      }
+    },
+    {
+      "id": "DpYsL0du37n40toH33fIr",
+      "type": "subtopic",
+      "data": {
+        "label": "Red Team Simulations"
+      }
+    },
+    {
+      "id": "D84bHT-mLU1digq0_7nn_",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "LuKnmd9nSz9yLbTU_5Yp2",
+      "type": "subtopic",
+      "data": {
+        "label": "Conferences"
+      }
+    },
+    {
+      "id": "ZlR03pM-sqVFZNhD1gMSJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Research Groups"
+      }
+    },
+    {
+      "id": "ngi9yk6_ZTUOr90b2KSZD",
+      "type": "label",
+      "data": {
+        "label": "Community Engagement"
+      }
+    },
+    {
+      "id": "Smncq-n1OlnLAY27AFQOO",
+      "type": "subtopic",
+      "data": {
+        "label": "Forums"
+      }
+    },
+    {
+      "id": "rFMsUHR6bP0t9KqZxHtrE",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "rpvQMyWGn7_7NzWOjBJCd",
+      "type": "paragraph",
+      "data": {
+        "label": "Real-world Applications"
+      }
+    },
+    {
+      "id": "xJYTRbPxMn0Xs5ea0Ygn6",
+      "type": "subtopic",
+      "data": {
+        "label": "LLM Security Testing"
+      }
+    },
+    {
+      "id": "FVsKivsJrIb82B0lpPmgw",
+      "type": "subtopic",
+      "data": {
+        "label": "Agentic AI Security"
+      }
+    },
+    {
+      "id": "KAcCZ3zcv25R6HwzAsfUG",
+      "type": "subtopic",
+      "data": {
+        "label": "Responsible Disclosure"
+      }
+    },
+    {
+      "id": "kEUGGhl9GQU04yjihX1_h",
+      "type": "paragraph",
+      "data": {
+        "label": "Future Directions"
+      }
+    },
+    {
+      "id": "-G8v_CNa8wO_g-46_RFQo",
+      "type": "subtopic",
+      "data": {
+        "label": "Emerging Threats"
+      }
+    },
+    {
+      "id": "soC-kcem1ISbnCQMa6BIB",
+      "type": "subtopic",
+      "data": {
+        "label": "Advanced Techniques"
+      }
+    },
+    {
+      "id": "VmaIHVsCpq2um_0cA33V3",
+      "type": "subtopic",
+      "data": {
+        "label": "Research Opportunities"
+      }
+    },
+    {
+      "id": "WePO66_4-gNcSdE00WKmw",
+      "type": "subtopic",
+      "data": {
+        "label": "Industry Standards"
+      }
+    },
+    {
+      "id": "9l6XW089CXuuYntRTtrj3",
+      "type": "linksgroup",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "qnWjt9HoNnyLacZ96z03g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant tracks to keep learning"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "AI Engineer"
+      }
+    },
+    {
+      "id": "0CxO0xyfbyyRymDjXm3k2",
+      "type": "button",
+      "data": {
+        "label": "AI \u0026 Data Scientist"
+      }
+    },
+    {
+      "id": "bAA_NreUn1yOULk6GanqQ",
+      "type": "button",
+      "data": {
+        "label": "Data Analyst"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-JDDG4KfhtIlw1rkNCzUliz2-gx4KaFqKgJX9n9_ZGMqlZy1",
+      "source": "HFJIYcI16OMyM77fAw9af",
+      "target": "1gyuEV519LjN-KpROoVwv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-nhUKKWyBH80nyKfGT8ErCw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "HFJIYcI16OMyM77fAw9af",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-nhUKKWyBH80nyKfGT8ErCz2-R9DQNc0AyAQ2HLpP4HOk6y1",
+      "source": "HFJIYcI16OMyM77fAw9af",
+      "target": "R9DQNc0AyAQ2HLpP4HOk6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-nhUKKWyBH80nyKfGT8ErCz2-fNTb9y3zs1HPYclAmu_Wvy1",
+      "source": "HFJIYcI16OMyM77fAw9af",
+      "target": "fNTb9y3zs1HPYclAmu_Wv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nhUKKWyBH80nyKfGT8ErCz2-gx4KaFqKgJX9n9_ZGMqlZy1",
+      "source": "HFJIYcI16OMyM77fAw9af",
+      "target": "Irkc9DgBfqSn72WaJqXEt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__HFJIYcI16OMyM77fAw9afx2-EQrDljYCypm5zlzVmXanew2",
+      "source": "HFJIYcI16OMyM77fAw9af",
+      "target": "EQrDljYCypm5zlzVmXane",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__EQrDljYCypm5zlzVmXanex2-USnljlWi_1nOvc-zViBh7w1",
+      "source": "EQrDljYCypm5zlzVmXane",
+      "target": "USnljlWi_1nOvc-zViBh7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-NvOJIv36Utpm7_kOZyr79z1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "NvOJIv36Utpm7_kOZyr79",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-ZC0yKsu-CJC-LZKKo2pLDz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "ZC0yKsu-CJC-LZKKo2pLD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-Xqzc4mOKsVzwaUxLGjHyaz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "Xqzc4mOKsVzwaUxLGjHya",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-RuKzVhd1nZphCrlW1wZGLz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "RuKzVhd1nZphCrlW1wZGL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-3XJ-g0KvHP75U18mxCqgwz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "3XJ-g0KvHP75U18mxCqgw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-8K-wCn2cLc7Vs_V4sC3sEz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "8K-wCn2cLc7Vs_V4sC3sE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__USnljlWi_1nOvc-zViBh7y2-gx4KaFqKgJX9n9_ZGMqlZz1",
+      "source": "USnljlWi_1nOvc-zViBh7",
+      "target": "gx4KaFqKgJX9n9_ZGMqlZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wg_PryJK5Ucr8bZofa4z-z2-WZkIHZkV2qDYbYF9KBBRiy1",
+      "source": "wg_PryJK5Ucr8bZofa4z-",
+      "target": "WZkIHZkV2qDYbYF9KBBRi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wg_PryJK5Ucr8bZofa4z-z2-RDOaTBWP3aIJPUp_kcafmy1",
+      "source": "wg_PryJK5Ucr8bZofa4z-",
+      "target": "RDOaTBWP3aIJPUp_kcafm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wg_PryJK5Ucr8bZofa4z-z2-MupRvk_8Io2Hn7yEvU663y1",
+      "source": "wg_PryJK5Ucr8bZofa4z-",
+      "target": "MupRvk_8Io2Hn7yEvU663",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wg_PryJK5Ucr8bZofa4z-z2-887lc3tWCRH-sOHSxWgWJy1",
+      "source": "wg_PryJK5Ucr8bZofa4z-",
+      "target": "887lc3tWCRH-sOHSxWgWJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wg_PryJK5Ucr8bZofa4z-x2-nhUKKWyBH80nyKfGT8ErCw1",
+      "source": "wg_PryJK5Ucr8bZofa4z-",
+      "target": "1Xr7mxVekeAHzTL7G4eAZ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__1Xr7mxVekeAHzTL7G4eAZx2-uBXrri2bXVsNiM8fIHHOvw1",
+      "source": "1Xr7mxVekeAHzTL7G4eAZ",
+      "target": "uBXrri2bXVsNiM8fIHHOv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__uBXrri2bXVsNiM8fIHHOvx2-YpDr02T3XuKdDFcA44B4Fw2",
+      "source": "uBXrri2bXVsNiM8fIHHOv",
+      "target": "YpDr02T3XuKdDFcA44B4F",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__YpDr02T3XuKdDFcA44B4Fx2-vhBu5x8INTtqvx6vcYAhEw1",
+      "source": "YpDr02T3XuKdDFcA44B4F",
+      "target": "vhBu5x8INTtqvx6vcYAhE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vhBu5x8INTtqvx6vcYAhEz2-ptbK6pLZbvotCcoaVOlhmy1",
+      "source": "vhBu5x8INTtqvx6vcYAhE",
+      "target": "ptbK6pLZbvotCcoaVOlhm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ptbK6pLZbvotCcoaVOlhmx2-0bApnJTt-Z2IUf0X3OCYfw1",
+      "source": "ptbK6pLZbvotCcoaVOlhm",
+      "target": "0bApnJTt-Z2IUf0X3OCYf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__65Lo60JQS5YlvvQ6KevXtx2-rpvQMyWGn7_7NzWOjBJCdw1",
+      "source": "65Lo60JQS5YlvvQ6KevXt",
+      "target": "zB-hhiDU8BPXoDZXlqPyW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rpvQMyWGn7_7NzWOjBJCdx2-c8n8FcYKDOgPLQvV9xF5Jw1",
+      "source": "zB-hhiDU8BPXoDZXlqPyW",
+      "target": "c8n8FcYKDOgPLQvV9xF5J",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zB-hhiDU8BPXoDZXlqPyWy2-rpvQMyWGn7_7NzWOjBJCdz1",
+      "source": "zB-hhiDU8BPXoDZXlqPyW",
+      "target": "yraH8ID6eALCTPZnrjxH9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__yraH8ID6eALCTPZnrjxH9x2-rpvQMyWGn7_7NzWOjBJCdw1",
+      "source": "yraH8ID6eALCTPZnrjxH9",
+      "target": "rpvQMyWGn7_7NzWOjBJCd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rpvQMyWGn7_7NzWOjBJCdx2-xJYTRbPxMn0Xs5ea0Ygn6w2",
+      "source": "rpvQMyWGn7_7NzWOjBJCd",
+      "target": "xJYTRbPxMn0Xs5ea0Ygn6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__KAcCZ3zcv25R6HwzAsfUGx2-kEUGGhl9GQU04yjihX1_hw2",
+      "source": "KAcCZ3zcv25R6HwzAsfUG",
+      "target": "kEUGGhl9GQU04yjihX1_h",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__kEUGGhl9GQU04yjihX1_hz2--G8v_CNa8wO_g-46_RFQoy2",
+      "source": "kEUGGhl9GQU04yjihX1_h",
+      "target": "-G8v_CNa8wO_g-46_RFQo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kEUGGhl9GQU04yjihX1_hz2-soC-kcem1ISbnCQMa6BIBy1",
+      "source": "kEUGGhl9GQU04yjihX1_h",
+      "target": "soC-kcem1ISbnCQMa6BIB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kEUGGhl9GQU04yjihX1_hz2-VmaIHVsCpq2um_0cA33V3y1",
+      "source": "kEUGGhl9GQU04yjihX1_h",
+      "target": "VmaIHVsCpq2um_0cA33V3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__kEUGGhl9GQU04yjihX1_hz2-WePO66_4-gNcSdE00WKmwy1",
+      "source": "kEUGGhl9GQU04yjihX1_h",
+      "target": "WePO66_4-gNcSdE00WKmw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+Senior .NET Developer
+Company: EnterpriseCore Solutions
+
+EnterpriseCore Solutions builds mission-critical workflow automation software for
+Fortune 1000 manufacturing and logistics companies. We are hiring a Senior .NET
+Developer to lead backend API development on our flagship platform.
+
+Requirements:
+- Entity Framework Core (2+ years)
+- NUnit (1+ years)
+- Blazor (1+ years)
+- Docker (2+ years)
+- gRPC (1+ years)
+- RabbitMQ (1+ years)
+- ASP.NET Core (4+ years)
+- C# (4+ years)
+- SQL Server (3+ years)
+- Git (3+ years)
+- REST APIs (3+ years)
+
+Responsibilities:
+- Architect and implement ASP.NET Core REST APIs consumed by web and mobile clients
+- Use Entity Framework Core for ORM and schema migration management
+- Write comprehensive unit and integration tests with NUnit
+- Build Blazor components for internal admin tooling
+- Containerize services with Docker and manage deployments
+- Implement gRPC service contracts for inter-service communication
+- Integrate RabbitMQ for asynchronous event messaging across services
+
+Compensation: $140,000 - $165,000 + equity + benefits
+Location: Austin, TX (Hybrid)

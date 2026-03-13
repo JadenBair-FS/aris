@@ -1,8 +1,8 @@
 using System.Net.Http.Json;
-using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
+using ARIS.Shared.Models.Ingestion.Onet;
 
 namespace ARIS.Ingestor.Services;
 
@@ -37,7 +37,7 @@ public class OnetService
         _logger.LogInformation("Fetching all occupations from O*NET...");
         var occupations = new List<OccupationListDto>();
         int start = 1;
-        int end = 50; // Fetch in batches
+        int end = 50; 
         string? nextUrl = $"online/career_clusters/all?start={start}&end={end}";
 
         try 
@@ -54,14 +54,12 @@ public class OnetService
 
                 if (!string.IsNullOrEmpty(response?.Next))
                 {
-                    // If full URL, extracting path or using it directly if HttpClient wasn't bound to base.
-                    // Since BaseAddress is set, we need the relative path.
-                    // API returns: "https://services.onetcenter.org/ws/online/career_clusters/all?start=21&end=40"
+                   
                     var nextUri = new Uri(response.Next);
                     nextUrl = nextUri.PathAndQuery;
                     
-                    // Safety break for testing (remove in prod to get all ~1000)
-                    if (occupations.Count >= 50) break; 
+                    // Safety break removed for full ingestion
+                    // if (occupations.Count >= 50) break; 
                 }
                 else
                 {
@@ -97,34 +95,40 @@ public class OnetService
 
             // Get Tasks
             // Endpoint: /online/occupations/{code}/summary/tasks
-            try 
-            {
-                var tasksResponse = await _httpClient.GetFromJsonAsync<TasksResponse>($"online/occupations/{onetCode}/summary/tasks?start=1&end=20", cancellationToken);
-                if (tasksResponse?.Task != null)
-                {
-                    details.Tasks = tasksResponse.Task.Select(t => t.Title).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
-            }
+            //try 
+            //{
+            //    var tasksResponse = await _httpClient.GetFromJsonAsync<TasksResponse>($"online/occupations/{onetCode}/summary/tasks?start=1&end=20", cancellationToken);
+            //    if (tasksResponse?.Task != null)
+            //    {
+            //        details.Tasks = tasksResponse.Task.Select(t => t.Title).ToList();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
+            //}
 
-            // Get Skills
-            // Endpoint: /online/occupations/{code}/summary/skills
+            // Get Technology Skills (specific software/tools used on the job)
+            // Endpoint: /online/occupations/{code}/summary/technology_skills
+            // Note: API returns "title" field on examples, not "name". Also includes "example_more".
             try
             {
-                var skillsResponse = await _httpClient.GetFromJsonAsync<SkillsResponse>($"online/occupations/{onetCode}/summary/skills?start=1&end=20", cancellationToken);
-                if (skillsResponse?.Element != null)
+                var techResponse = await _httpClient.GetFromJsonAsync<TechnologySkillsResponse>($"online/occupations/{onetCode}/summary/technology_skills", cancellationToken);
+                if (techResponse?.Category != null)
                 {
-                    details.Skills = skillsResponse.Element.Select(s => s.Name).ToList();
+                    details.TechnologySkills = techResponse.Category
+                        .SelectMany(c => (c.Example ?? []).Concat(c.ExampleMore ?? []))
+                        .Where(e => !string.IsNullOrWhiteSpace(e.Title))
+                        .Select(e => e.Title!)
+                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                        .ToList();
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "Could not fetch skills for {Code}", onetCode);
+                _logger.LogWarning(ex, "Could not fetch technology skills for {Code}", onetCode);
             }
-            
+
             return details;
         }
         catch (Exception ex)
@@ -133,87 +137,115 @@ public class OnetService
             return null;
         }
     }
-}
 
-// --- DTOs Matching OpenAPI Schema ---
+    public async Task<List<SkillTaxonomyNode>> GetSkillTaxonomyAsync(string endpoint, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var result = await _httpClient.GetFromJsonAsync<List<SkillTaxonomyNode>>(endpoint, cancellationToken);
+            return result ?? [];
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching skill taxonomy from {Endpoint}", endpoint);
+            return [];
+        }
+    }
 
-public class OccupationListResponse
-{
-    [JsonPropertyName("start")]
-    public int Start { get; set; }
+    public async Task<List<OnetElement>> GetOccupationSkillsAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "skills", cancellationToken);
 
-    [JsonPropertyName("end")]
-    public int End { get; set; }
+    public async Task<List<OnetElement>> GetOccupationKnowledgeAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "knowledge", cancellationToken);
 
-    [JsonPropertyName("total")]
-    public int Total { get; set; }
+    public async Task<List<OnetElement>> GetOccupationAbilitiesAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "abilities", cancellationToken);
 
-    [JsonPropertyName("next")]
-    public string? Next { get; set; }
+    public async Task<List<OnetElement>> GetOccupationWorkActivitiesAsync(string onetCode, CancellationToken cancellationToken = default)
+        => await GetOccupationElementsAsync(onetCode, "work_activities", cancellationToken);
 
-    [JsonPropertyName("occupation")]
-    public List<OccupationListDto>? Occupation { get; set; }
-}
+    public async Task<List<OnetDetailTask>> GetOccupationTasksAsync(string onetCode, CancellationToken cancellationToken = default)
+    {
+        const int pageSize = 100;
+        const int cap = 200;
+        var results = new List<OnetDetailTask>();
+        string? nextUrl = $"online/occupations/{onetCode}/details/tasks?start=1&end={pageSize}";
 
-public class OccupationListDto
-{
-    [JsonPropertyName("code")]
-    public required string Code { get; set; }
+        try
+        {
+            while (!string.IsNullOrEmpty(nextUrl) && results.Count < cap && !cancellationToken.IsCancellationRequested)
+            {
+                var response = await _httpClient.GetFromJsonAsync<OnetTaskResponse>(nextUrl, cancellationToken);
+                if (response?.Tasks != null)
+                    results.AddRange(response.Tasks);
 
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
-}
+                if (!string.IsNullOrEmpty(response?.Next) && results.Count < cap)
+                {
+                    var nextUri = new Uri(response.Next);
+                    nextUrl = nextUri.PathAndQuery;
+                }
+                else
+                {
+                    nextUrl = null;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch tasks for {Code}", onetCode);
+        }
 
-public class OccupationSummaryDto
-{
-    [JsonPropertyName("code")]
-    public required string Code { get; set; }
+        return results.Count > cap ? results.Take(cap).ToList() : results;
+    }
 
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
+    public async Task<int?> GetOccupationJobZoneAsync(string onetCode, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var response = await _httpClient.GetFromJsonAsync<OnetJobZoneResponse>(
+                $"online/occupations/{onetCode}/details/job_zone", cancellationToken);
+            return response?.JobZone?.Value;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch job zone for {Code}", onetCode);
+            return null;
+        }
+    }
 
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-}
+    // Shared pagination helper for element-based endpoints (skills, knowledge, abilities, work_activities)
+    private async Task<List<OnetElement>> GetOccupationElementsAsync(
+        string onetCode, string detailType, CancellationToken cancellationToken)
+    {
+        const int pageSize = 100;
+        const int cap = 200;
+        var results = new List<OnetElement>();
+        string? nextUrl = $"online/occupations/{onetCode}/details/{detailType}?start=1&end={pageSize}";
 
-public class TasksResponse
-{
-    [JsonPropertyName("task")]
-    public List<TaskDto>? Task { get; set; }
-}
+        try
+        {
+            while (!string.IsNullOrEmpty(nextUrl) && results.Count < cap && !cancellationToken.IsCancellationRequested)
+            {
+                var response = await _httpClient.GetFromJsonAsync<OnetElementResponse>(nextUrl, cancellationToken);
+                if (response?.Element != null)
+                    results.AddRange(response.Element);
 
-public class TaskDto
-{
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
+                if (!string.IsNullOrEmpty(response?.Next) && results.Count < cap)
+                {
+                    var nextUri = new Uri(response.Next);
+                    nextUrl = nextUri.PathAndQuery;
+                }
+                else
+                {
+                    nextUrl = null;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Could not fetch {DetailType} for {Code}", detailType, onetCode);
+        }
 
-    [JsonPropertyName("title")]
-    public required string Title { get; set; }
-}
-
-public class SkillsResponse
-{
-    [JsonPropertyName("element")]
-    public List<SkillElementDto>? Element { get; set; }
-}
-
-public class SkillElementDto
-{
-    [JsonPropertyName("id")]
-    public string? Id { get; set; }
-
-    [JsonPropertyName("name")]
-    public required string Name { get; set; }
-
-    [JsonPropertyName("description")]
-    public string? Description { get; set; }
-}
-
-public class OccupationDetailsDto
-{
-    public required string Code { get; set; }
-    public required string Title { get; set; }
-    public string? Description { get; set; }
-    public List<string> Tasks { get; set; } = new();
-    public List<string> Skills { get; set; } = new();
+        return results.Count > cap ? results.Take(cap).ToList() : results;
+    }
 }

@@ -1,0 +1,2036 @@
+{
+  "title": {
+    "card": "Kotlin",
+    "page": "Kotlin"
+  },
+  "description": "Step by step guide to learning Kotlin in @currentYear@",
+  "nodes": [
+    {
+      "id": "QpZsfeARvWVKmQlVm15zA",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ngC2yWT4K3x0G0fCJdK_5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JPNEU6-Ml-2TQKYg2qzoR",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "25TxkSlhXLmwDdnazBmb4",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "k2_QAZC6dz9Dk33Tm3FpZ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "3RnZYzNI_QXM_uY-9WV9a",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "gl3rcIbQenrvAJEa1WvXV",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Qa4L0QUh-ZYANVgfGMK7u",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "IRGMCDRfOXTqPlvHvPiZO",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "tnVHtn9xqE_k-5k7poqwy",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "Kotlin"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to Kotlin"
+      }
+    },
+    {
+      "id": "4PrkkoZ5fY-oow0O-bVhu",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use Kotlin"
+      }
+    },
+    {
+      "id": "SLF_-a7Uwsl-fEqYiCIvF",
+      "type": "subtopic",
+      "data": {
+        "label": "History of Kotlin"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "id1ai__oCcB32i2hsiesC",
+      "type": "subtopic",
+      "data": {
+        "label": "Java Interoperability"
+      }
+    },
+    {
+      "id": "2YpRGABphohPnZ9z0l1X0",
+      "type": "paragraph",
+      "data": {
+        "label": "Language Basics"
+      }
+    },
+    {
+      "id": "vDWwBv0KF_S88cQFtnDVB",
+      "type": "subtopic",
+      "data": {
+        "label": "val vs var"
+      }
+    },
+    {
+      "id": "s7hNf7C-IO-EoEtzbg3qb",
+      "type": "topic",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "uMTIONS6pAxrdh7zoDHIz",
+      "type": "subtopic",
+      "data": {
+        "label": "Integers"
+      }
+    },
+    {
+      "id": "mY6B8kIe6dGjHes-qm0jp",
+      "type": "subtopic",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "liEMxRi675sNpqf950GXS",
+      "type": "subtopic",
+      "data": {
+        "label": "Floats"
+      }
+    },
+    {
+      "id": "eoV8P756JUNC87FhsA2DG",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrays"
+      }
+    },
+    {
+      "id": "g0bGnHk9WoSF6GsHLSicv",
+      "type": "subtopic",
+      "data": {
+        "label": "Unsigned Integers"
+      }
+    },
+    {
+      "id": "YX5BhDgJ5NjASPc7kYySG",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Inference"
+      }
+    },
+    {
+      "id": "Z0NaGuewAo9QO-T4BGBr4",
+      "type": "subtopic",
+      "data": {
+        "label": "Booleans"
+      }
+    },
+    {
+      "id": "3ihCc-dNSKb_32qj0EF5j",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Checks \u0026 Casts"
+      }
+    },
+    {
+      "id": "vTAV9gzVDTJdnQ-BNktT_",
+      "type": "subtopic",
+      "data": {
+        "label": "Characters"
+      }
+    },
+    {
+      "id": "0K0aFQPi3CnB8BAAA2pIs",
+      "type": "topic",
+      "data": {
+        "label": "Data types"
+      }
+    },
+    {
+      "id": "vk146kvcjWYdweOeJIM9h",
+      "type": "subtopic",
+      "data": {
+        "label": "print \u0026 println"
+      }
+    },
+    {
+      "id": "oQe1JVwYnLDNfvi-s7BQX",
+      "type": "subtopic",
+      "data": {
+        "label": "String Templates"
+      }
+    },
+    {
+      "id": "Yr7DSqmOAOe15574qBrIT",
+      "type": "topic",
+      "data": {
+        "label": "Printing data"
+      }
+    },
+    {
+      "id": "0iZ9qfst8yw08cTW8d-Nx",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "KeZhyjPFuuBwWPLXgyGs2",
+      "type": "subtopic",
+      "data": {
+        "label": "Maps"
+      }
+    },
+    {
+      "id": "GKRPXFLWsnLIXw8OS_DlK",
+      "type": "subtopic",
+      "data": {
+        "label": "Sets"
+      }
+    },
+    {
+      "id": "x7Ok7RObQOQPTS3fBTHaF",
+      "type": "topic",
+      "data": {
+        "label": "Collections"
+      }
+    },
+    {
+      "id": "LZlkx9YYylodmjUXxnj7a",
+      "type": "topic",
+      "data": {
+        "label": "Ranges"
+      }
+    },
+    {
+      "id": "o-iGCtrwA3AVbrBJW_7u3",
+      "type": "topic",
+      "data": {
+        "label": "Progressions"
+      }
+    },
+    {
+      "id": "2oS2FhszadxPm9eg2VTUV",
+      "type": "subtopic",
+      "data": {
+        "label": "if"
+      }
+    },
+    {
+      "id": "zJT9KVWYIbDTsGp5tTJEh",
+      "type": "subtopic",
+      "data": {
+        "label": "when"
+      }
+    },
+    {
+      "id": "-fp4xlFS4iAzRxXKIaiIO",
+      "type": "topic",
+      "data": {
+        "label": "Conditional Expressions"
+      }
+    },
+    {
+      "id": "-JmIDPedgVOw2RpIhYNv2",
+      "type": "subtopic",
+      "data": {
+        "label": "for"
+      }
+    },
+    {
+      "id": "Lfdvpef2gXVdqr4e1dCHw",
+      "type": "subtopic",
+      "data": {
+        "label": "Label Loops"
+      }
+    },
+    {
+      "id": "qNupY4DnTFYZrGEQJPXcw",
+      "type": "subtopic",
+      "data": {
+        "label": "while"
+      }
+    },
+    {
+      "id": "hRcMw3NHSOy2TVympIYaf",
+      "type": "topic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "8_u8eKhWHESek7pfpaOln",
+      "type": "subtopic",
+      "data": {
+        "label": "Throwing Exceptions"
+      }
+    },
+    {
+      "id": "VKDnV_Xlmj3lurkN_ZirD",
+      "type": "subtopic",
+      "data": {
+        "label": "Catching Exceptions"
+      }
+    },
+    {
+      "id": "yo7tp80t2jnlCf5c3T_7N",
+      "type": "paragraph",
+      "data": {
+        "label": "Control Flow"
+      }
+    },
+    {
+      "id": "zYmuAlJVJbDEU9qJo-n8p",
+      "type": "topic",
+      "data": {
+        "label": "Exceptions"
+      }
+    },
+    {
+      "id": "itfZ7m4s0001DCUV2vVuZ",
+      "type": "paragraph",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "cFExAjlc_ATE8V9EWE5on",
+      "type": "subtopic",
+      "data": {
+        "label": "Lambda Functions"
+      }
+    },
+    {
+      "id": "9IIvovotEnTiNzVovWOiW",
+      "type": "subtopic",
+      "data": {
+        "label": "parameters"
+      }
+    },
+    {
+      "id": "HrjELmsiLAyxK6ru3ifgb",
+      "type": "topic",
+      "data": {
+        "label": "Local Functions"
+      }
+    },
+    {
+      "id": "EXFJKm3FLX3OehSX8mBFO",
+      "type": "topic",
+      "data": {
+        "label": "Member Functions"
+      }
+    },
+    {
+      "id": "B2cxzgsEpeSzGATX4WNeO",
+      "type": "subtopic",
+      "data": {
+        "label": "varargs"
+      }
+    },
+    {
+      "id": "Q9MQRfJuvXL3YluwJ1CfF",
+      "type": "subtopic",
+      "data": {
+        "label": "Higher-order Functions\uFEFF"
+      }
+    },
+    {
+      "id": "0lUpMxlIXOuze0-cOgyHp",
+      "type": "topic",
+      "data": {
+        "label": "Standard functions"
+      }
+    },
+    {
+      "id": "gVXXMYVlZZ5CHPBwGlGmZ",
+      "type": "subtopic",
+      "data": {
+        "label": "return"
+      }
+    },
+    {
+      "id": "Ikv5K8lKG0vlA7WheGQHY",
+      "type": "topic",
+      "data": {
+        "label": "Tail-recursive Functions"
+      }
+    },
+    {
+      "id": "7BYTt5_wILzkbYmQW1Xny",
+      "type": "subtopic",
+      "data": {
+        "label": "Anonymous Functions"
+      }
+    },
+    {
+      "id": "jpijY-Wbe6yNXZeNodpNt",
+      "type": "topic",
+      "data": {
+        "label": "Extension Functions"
+      }
+    },
+    {
+      "id": "WoPaR-IylckAixqAAwkeg",
+      "type": "topic",
+      "data": {
+        "label": "Function Types"
+      }
+    },
+    {
+      "id": "G_4qkm1cSGm-Q1KELBOds",
+      "type": "paragraph",
+      "data": {
+        "label": "Collection Operations"
+      }
+    },
+    {
+      "id": "D4G8DOX5b39Rxw2FtgnjQ",
+      "type": "subtopic",
+      "data": {
+        "label": "read-only vs mutable"
+      }
+    },
+    {
+      "id": "LLC--5n2K19hVvMuQ5nIO",
+      "type": "topic",
+      "data": {
+        "label": "Sequences"
+      }
+    },
+    {
+      "id": "H1794CAM_XqNJVT1LkXRG",
+      "type": "subtopic",
+      "data": {
+        "label": "Iterators"
+      }
+    },
+    {
+      "id": "gR2pyEoMFPg6ha3YULRAR",
+      "type": "subtopic",
+      "data": {
+        "label": "Transformations"
+      }
+    },
+    {
+      "id": "l4-AiY4mfwstDzxIASESe",
+      "type": "subtopic",
+      "data": {
+        "label": "Retrieving Collection Parts"
+      }
+    },
+    {
+      "id": "kHebnqaFOWOPgycYJCdyL",
+      "type": "subtopic",
+      "data": {
+        "label": "Filtering"
+      }
+    },
+    {
+      "id": "_L6O23eo-oYsxA3pNXhC-",
+      "type": "subtopic",
+      "data": {
+        "label": "Retrieving single elements"
+      }
+    },
+    {
+      "id": "A0wxD3ih-r8w2NAd2dOgS",
+      "type": "subtopic",
+      "data": {
+        "label": "plus \u0026 minus Operators"
+      }
+    },
+    {
+      "id": "95fcqMEswDxcIcdFjr81M",
+      "type": "subtopic",
+      "data": {
+        "label": "Ordering"
+      }
+    },
+    {
+      "id": "oVq4WYOC5U-uHMDeufN2L",
+      "type": "subtopic",
+      "data": {
+        "label": "Grouping"
+      }
+    },
+    {
+      "id": "nRpmP5Nd2r4YKRNsmoscJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Aggregate Operations"
+      }
+    },
+    {
+      "id": "mn4A5fHVe6WH9Dn_bQxjp",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "RC4OTCCtpHv9_J4JzAQze",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "oQaxtbqUb1jub9yfuyKTc",
+      "type": "topic",
+      "data": {
+        "label": "main  Function"
+      }
+    },
+    {
+      "id": "G3SKq-A6CBSzY7kMJIkHk",
+      "type": "topic",
+      "data": {
+        "label": "Comments"
+      }
+    },
+    {
+      "id": "PfXvx1jxcuR31Nm1Pia5M",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "_4_NXfG-9jzLv9tNHP74E",
+      "type": "subtopic",
+      "data": {
+        "label": "Maps"
+      }
+    },
+    {
+      "id": "XbsKQ7192Kvze-6Un_W2q",
+      "type": "subtopic",
+      "data": {
+        "label": "Sets"
+      }
+    },
+    {
+      "id": "YPXjgnvJSjmH1zLVZowis",
+      "type": "label",
+      "data": {
+        "label": "Collection-specific Operations"
+      }
+    },
+    {
+      "id": "mVteyJ-TxvAdB9_kLbJZs",
+      "type": "paragraph",
+      "data": {
+        "label": "Classes \u0026 Objects"
+      }
+    },
+    {
+      "id": "AW03C8g40fm5RUdVmAaZe",
+      "type": "topic",
+      "data": {
+        "label": "Creating Instances"
+      }
+    },
+    {
+      "id": "2DNh4oQet17AUQWvJ64fb",
+      "type": "topic",
+      "data": {
+        "label": "Class Members"
+      }
+    },
+    {
+      "id": "uiK2GDDnLzVbhq5erNxFL",
+      "type": "topic",
+      "data": {
+        "label": "Defining Classess"
+      }
+    },
+    {
+      "id": "8jkUleKbxXSxPHbeFUTGK",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstract Class"
+      }
+    },
+    {
+      "id": "0bQsJ-CAOo7srxjSocc6Y",
+      "type": "topic",
+      "data": {
+        "label": "Extension Functions"
+      }
+    },
+    {
+      "id": "UYOkP-AYKf8aw92pGSXl_",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "xkT2UmeP9c37giF169aWD",
+      "type": "subtopic",
+      "data": {
+        "label": "Constructors"
+      }
+    },
+    {
+      "id": "9tLiTYbNf9WnisvwBhObC",
+      "type": "subtopic",
+      "data": {
+        "label": "Methods"
+      }
+    },
+    {
+      "id": "2wbXYUOx1f4rmD5EHuzOw",
+      "type": "subtopic",
+      "data": {
+        "label": "Properties"
+      }
+    },
+    {
+      "id": "tjCG72uQt87-fIoBBzy0s",
+      "type": "subtopic",
+      "data": {
+        "label": "Nested \u0026 Inner Classes"
+      }
+    },
+    {
+      "id": "migCYrzhAQ4keUk1MHPpZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Declarations"
+      }
+    },
+    {
+      "id": "rOpgM--1Q1mBYmK5AlYAY",
+      "type": "topic",
+      "data": {
+        "label": "Property Delegates"
+      }
+    },
+    {
+      "id": "aDgV966VKxzN0_vZ_oxRW",
+      "type": "topic",
+      "data": {
+        "label": "Inheritance"
+      }
+    },
+    {
+      "id": "yAT8zsAb-iJLFzTTYVJ4v",
+      "type": "topic",
+      "data": {
+        "label": "Visibility Modifiers"
+      }
+    },
+    {
+      "id": "aCOWSt8oeJD7jxnmHggiN",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Classes"
+      }
+    },
+    {
+      "id": "HIy-sN0veS5atkJI2ffSu",
+      "type": "subtopic",
+      "data": {
+        "label": "Sealed Class"
+      }
+    },
+    {
+      "id": "yQx5zVNvsit5AnRlDJsZu",
+      "type": "subtopic",
+      "data": {
+        "label": "Class Generics"
+      }
+    },
+    {
+      "id": "qsDphbFvDu7PEDKt7k0JC",
+      "type": "subtopic",
+      "data": {
+        "label": "Enum Class"
+      }
+    },
+    {
+      "id": "rCNP0MYQhLgYRMzu3JTxP",
+      "type": "subtopic",
+      "data": {
+        "label": "Inline Class"
+      }
+    },
+    {
+      "id": "d2KZMmwOG29uLnTP3tU_o",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Aliases"
+      }
+    },
+    {
+      "id": "iEgObftAmbysHLinX9vwt",
+      "type": "paragraph",
+      "data": {
+        "label": "Null Safety"
+      }
+    },
+    {
+      "id": "7xmKy-sipKYv8k-WYTulA",
+      "type": "subtopic",
+      "data": {
+        "label": "Nullable vs Non-nullable"
+      }
+    },
+    {
+      "id": "xId8W3jQNhGJJvXFCcXir",
+      "type": "subtopic",
+      "data": {
+        "label": "Nullability Check Operators"
+      }
+    },
+    {
+      "id": "Vh_rxz7BsX6ZB777fTkXz",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Null Safety?"
+      }
+    },
+    {
+      "id": "QmfR2rJMP7o_meBR8wIpK",
+      "type": "subtopic",
+      "data": {
+        "label": "Safe Casts"
+      }
+    },
+    {
+      "id": "93xmMkFoiv9qpPQOXWYHf",
+      "type": "paragraph",
+      "data": {
+        "label": "Async Programming"
+      }
+    },
+    {
+      "id": "lV108QhOIYF_6CW-UKybx",
+      "type": "topic",
+      "data": {
+        "label": "Coroutines"
+      }
+    },
+    {
+      "id": "kVHtQQGhgIdJcQO0yynqG",
+      "type": "topic",
+      "data": {
+        "label": "Suspending Functions"
+      }
+    },
+    {
+      "id": "hvApxzNV0ly2Ck7_UuX3J",
+      "type": "topic",
+      "data": {
+        "label": "Coroutines Builders"
+      }
+    },
+    {
+      "id": "x5KaFoEEYNjR1a-4KlIcd",
+      "type": "topic",
+      "data": {
+        "label": "Coroutines Behavior"
+      }
+    },
+    {
+      "id": "e6h0Xi4ReqLa6VJc1VJYG",
+      "type": "topic",
+      "data": {
+        "label": "Asynchronous Flow"
+      }
+    },
+    {
+      "id": "ftCSs-gbgOdzZ2QFbEpEF",
+      "type": "topic",
+      "data": {
+        "label": "Coroutines Best practices "
+      }
+    },
+    {
+      "id": "5E-FSsctqgJZDR_-Q90eY",
+      "type": "paragraph",
+      "data": {
+        "label": "Packages \u0026 Ecosystem"
+      }
+    },
+    {
+      "id": "jcXt2Op2VDy6BbHzrqVyr",
+      "type": "topic",
+      "data": {
+        "label": "Understanding Packages"
+      }
+    },
+    {
+      "id": "sCmAS0uEg2rZbNITYII5i",
+      "type": "topic",
+      "data": {
+        "label": "Importing Packages"
+      }
+    },
+    {
+      "id": "IkKa6qg20Z36Lk_hgGugu",
+      "type": "label",
+      "data": {
+        "label": "More on Classes \u0026 Objects"
+      }
+    },
+    {
+      "id": "FhBQsozNCYTaWwCsDDVyq",
+      "type": "topic",
+      "data": {
+        "label": "Standard Library"
+      }
+    },
+    {
+      "id": "cPiTsuFCkMZciOr9Wp9ID",
+      "type": "subtopic",
+      "data": {
+        "label": "Default Imports"
+      }
+    },
+    {
+      "id": "s900IAqx50Pg7ngDmGLLG",
+      "type": "subtopic",
+      "data": {
+        "label": "Opt-in Requirements"
+      }
+    },
+    {
+      "id": "GC4hGG4v8F-8bHQTdlDWG",
+      "type": "subtopic",
+      "data": {
+        "label": "Gradle"
+      }
+    },
+    {
+      "id": "fln83FunYP4v_0jNfNtXx",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin Libraries"
+      }
+    },
+    {
+      "id": "2_jmtc-zIQ7SuPNccHyXw",
+      "type": "subtopic",
+      "data": {
+        "label": "Test Library"
+      }
+    },
+    {
+      "id": "y14epi1_XqCPHJBZecq_M",
+      "type": "subtopic",
+      "data": {
+        "label": "Coroutines"
+      }
+    },
+    {
+      "id": "TyuUD4479UXsbRY9nOGno",
+      "type": "subtopic",
+      "data": {
+        "label": "Serialization"
+      }
+    },
+    {
+      "id": "oTHsTW8zVcamI1DcqH2o9",
+      "type": "subtopic",
+      "data": {
+        "label": "I/O Library"
+      }
+    },
+    {
+      "id": "bohaQpYQH9kMssn4kVDxA",
+      "type": "subtopic",
+      "data": {
+        "label": "Date \u0026 Time"
+      }
+    },
+    {
+      "id": "rvPHK5Je3y4hPUKeaO00Q",
+      "type": "subtopic",
+      "data": {
+        "label": "JVM Metadata"
+      }
+    },
+    {
+      "id": "mkGY2gTa5_ykZnoRMEvnm",
+      "type": "subtopic",
+      "data": {
+        "label": "Gradle Pluggins"
+      }
+    },
+    {
+      "id": "I7aYcM42DuLZMHuu4AWwR",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "B1PAHsUITg5NtxllZ1OsR",
+      "type": "topic",
+      "data": {
+        "label": "Build Tools"
+      }
+    },
+    {
+      "id": "7j55MuqI7BqRtwvTAQU6D",
+      "type": "subtopic",
+      "data": {
+        "label": "Maven"
+      }
+    },
+    {
+      "id": "JP4S5PgiWS7_WF_JFWvas",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Tool API"
+      }
+    },
+    {
+      "id": "wDBRLUYhlnkPr-rIpnY8G",
+      "type": "topic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "vlMxe68Xp-YrC3gUXfzwr",
+      "type": "subtopic",
+      "data": {
+        "label": "Dokka"
+      }
+    },
+    {
+      "id": "ipV1RoEkn9-yKD98nB4dC",
+      "type": "subtopic",
+      "data": {
+        "label": "KDoc"
+      }
+    },
+    {
+      "id": "zlyP0oCA5I5x5fHphutmd",
+      "type": "topic",
+      "data": {
+        "label": "CI/CD Tools"
+      }
+    },
+    {
+      "id": "aIG_7-igm_LSR3ybAPz0j",
+      "type": "subtopic",
+      "data": {
+        "label": "TeamCity"
+      }
+    },
+    {
+      "id": "jlNoWJ3lyBYDBy8DJPe7o",
+      "type": "paragraph",
+      "data": {
+        "label": "Kotlin Platforms"
+      }
+    },
+    {
+      "id": "aj_yIDgFpBOfoSs2kYBBT",
+      "type": "topic",
+      "data": {
+        "label": "Server-side Apps"
+      }
+    },
+    {
+      "id": "IiWY4HhtDRj3N9D-o4fAd",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin/JavaScript"
+      }
+    },
+    {
+      "id": "naVzP9xVnnVu47DieEfBU",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin/WASM"
+      }
+    },
+    {
+      "id": "e24E1zTPdr6tNnlKitCys",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin Multiplatform"
+      }
+    },
+    {
+      "id": "RSufL2bzKXZhz9M98oGTA",
+      "type": "topic",
+      "data": {
+        "label": "AI Development"
+      }
+    },
+    {
+      "id": "2z9t6nLOZuiyGi6DAhNmI",
+      "type": "subtopic",
+      "data": {
+        "label": "IntelliJ IDEA "
+      }
+    },
+    {
+      "id": "dBn3sAg2sey3zQNRwdMq2",
+      "type": "subtopic",
+      "data": {
+        "label": "Android Studio"
+      }
+    },
+    {
+      "id": "Ee6XleWvK-v9fCxbz9a1n",
+      "type": "topic",
+      "data": {
+        "label": "IDEs"
+      }
+    },
+    {
+      "id": "PHHviBSqhYDSNuHBFbw3l",
+      "type": "subtopic",
+      "data": {
+        "label": "Kotline Notebook"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Android"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "Full Stack"
+      }
+    },
+    {
+      "id": "rcV4H-hV0AzKZXrWeesMi",
+      "type": "label",
+      "data": {
+        "label": "Basic Types"
+      }
+    },
+    {
+      "id": "KbmJGmWEr_kxFYoFb-JC9",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting up the Environment"
+      }
+    },
+    {
+      "id": "Obf1lA3vl0F6HVMMQDeNz",
+      "type": "topic",
+      "data": {
+        "label": "Code Organization"
+      }
+    },
+    {
+      "id": "yi0SCKL2sgqKlDGwT7Fmo",
+      "type": "subtopic",
+      "data": {
+        "label": "break \u0026 continue "
+      }
+    },
+    {
+      "id": "jzJNHdc4tamjjdRpj-tsH",
+      "type": "topic",
+      "data": {
+        "label": "Competitive Programming"
+      }
+    },
+    {
+      "id": "If4Lv0M03ALLpQ88Vwp6i",
+      "type": "topic",
+      "data": {
+        "label": "I/O"
+      }
+    },
+    {
+      "id": "D56NrdWDFS-vQdALQOKXV",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing \u0026 Reading Files"
+      }
+    },
+    {
+      "id": "xCfSwvrdrSOYdEIdsxEuw",
+      "type": "subtopic",
+      "data": {
+        "label": "Buffered Streams"
+      }
+    },
+    {
+      "id": "4xn_kz-HcOoXTFGNLTPgv",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Files"
+      }
+    },
+    {
+      "id": "E0ooAe-E-RQ6WRjFLuYK7",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin/Java"
+      }
+    },
+    {
+      "id": "I_Ecet4Q1QQXHoIvt2OqK",
+      "type": "subtopic",
+      "data": {
+        "label": "Java from Kotlin"
+      }
+    },
+    {
+      "id": "qBuo_kgC-0ugiRCvR5JwQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Kotlin from Java"
+      }
+    },
+    {
+      "id": "By2b4Ukz6QjAUPFvqBx6g",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring Boot"
+      }
+    },
+    {
+      "id": "gwD16v8OnLvgfsn2zx780",
+      "type": "subtopic",
+      "data": {
+        "label": "Compose Multiplatform"
+      }
+    },
+    {
+      "id": "nCaPm0PSeS5rztRWiBL2s",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin/Native"
+      }
+    },
+    {
+      "id": "_88wF-lAkqW41C6FRmCHO",
+      "type": "topic",
+      "data": {
+        "label": "Kotlin Scripting"
+      }
+    },
+    {
+      "id": "7ybzwy7g4HSQYPUGFTD4q",
+      "type": "subtopic",
+      "data": {
+        "label": "C Interoperability"
+      }
+    },
+    {
+      "id": "aEvbW7AtLvvtol4qEQofe",
+      "type": "subtopic",
+      "data": {
+        "label": "Swift/Objective-C Interop."
+      }
+    },
+    {
+      "id": "xpALRb8KUT-i4Lj0EjI7o",
+      "type": "subtopic",
+      "data": {
+        "label": "Android SDK"
+      }
+    },
+    {
+      "id": "SzGLbXgW6Z6UHPoTjI-pB",
+      "type": "subtopic",
+      "data": {
+        "label": "Android Studio"
+      }
+    },
+    {
+      "id": "3bzq_ZWCVoe3KiKJPTLGR",
+      "type": "subtopic",
+      "data": {
+        "label": "Android Jetpack"
+      }
+    },
+    {
+      "id": "qBzu8ZCmtE--kmCKVcYRc",
+      "type": "paragraph",
+      "data": {
+        "label": "Kotlin Applications"
+      }
+    },
+    {
+      "id": "q546Dq42Z3-WN-FOll4K1",
+      "type": "subtopic",
+      "data": {
+        "label": "Ktor"
+      }
+    },
+    {
+      "id": "uIYjaX5WlKooyK-i1lGz5",
+      "type": "subtopic",
+      "data": {
+        "label": "Spring"
+      }
+    },
+    {
+      "id": "MzV6A_0Sa9LhgalNmhwq8",
+      "type": "subtopic",
+      "data": {
+        "label": "Quarkus"
+      }
+    },
+    {
+      "id": "MCZaiTrPBrIMouBdyBD0y",
+      "type": "subtopic",
+      "data": {
+        "label": "Vert.x"
+      }
+    },
+    {
+      "id": "VN6GXb7XaG-aW-tfEDMcT",
+      "type": "label",
+      "data": {
+        "label": "Popular Frameworks"
+      }
+    },
+    {
+      "id": "nNGeY4qnJfuK5xmmiY6La",
+      "type": "topic",
+      "data": {
+        "label": "Data Analysis"
+      }
+    },
+    {
+      "id": "n4AFoCcKqnGRRWuD0Ud-9",
+      "type": "subtopic",
+      "data": {
+        "label": "Kotlin Notebooks"
+      }
+    },
+    {
+      "id": "AarV0h4U6Ol3auLGOW3iZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Kotlin DataFrame"
+      }
+    },
+    {
+      "id": "JIivSHQvSotmFIpqUc5rJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Kandy"
+      }
+    },
+    {
+      "id": "a5IDGzg8-FppJWCmhcq9q",
+      "type": "subtopic",
+      "data": {
+        "label": "Koog"
+      }
+    },
+    {
+      "id": "lZ3U7pyi2OPwexYmKdAb7",
+      "type": "button",
+      "data": {
+        "label": "Android Development"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "target": "4PrkkoZ5fY-oow0O-bVhu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-6r9XbwlBtHmJrhviG2cTDy2",
+      "source": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "target": "id1ai__oCcB32i2hsiesC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__uvnV1IjE8RV-FKDxHntUUy2-qj6X-U4iWsQlGhMaa4A9wz1",
+      "source": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "target": "2YpRGABphohPnZ9z0l1X0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__WwLLyHL5psm0GOI9bmOnez2-2rlmLn_yQQV-7DpX1qT98y1",
+      "source": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "target": "SLF_-a7Uwsl-fEqYiCIvF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Obf1lA3vl0F6HVMMQDeNzx2-vDWwBv0KF_S88cQFtnDVBw1",
+      "source": "s7hNf7C-IO-EoEtzbg3qb",
+      "target": "vDWwBv0KF_S88cQFtnDVB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__x7Ok7RObQOQPTS3fBTHaFz2-PfXvx1jxcuR31Nm1Pia5My1",
+      "source": "x7Ok7RObQOQPTS3fBTHaF",
+      "target": "0iZ9qfst8yw08cTW8d-Nx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__G3SKq-A6CBSzY7kMJIkHkw2-oQe1JVwYnLDNfvi-s7BQXx2",
+      "source": "Yr7DSqmOAOe15574qBrIT",
+      "target": "oQe1JVwYnLDNfvi-s7BQX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__-fp4xlFS4iAzRxXKIaiIOz2-zYmuAlJVJbDEU9qJo-n8py1",
+      "source": "-fp4xlFS4iAzRxXKIaiIO",
+      "target": "hRcMw3NHSOy2TVympIYaf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zYmuAlJVJbDEU9qJo-n8px2-8_u8eKhWHESek7pfpaOlnw2",
+      "source": "zYmuAlJVJbDEU9qJo-n8p",
+      "target": "8_u8eKhWHESek7pfpaOln",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OzNFGkXyGxjc62odgb7_Tz2-zYmuAlJVJbDEU9qJo-n8py1",
+      "source": "itfZ7m4s0001DCUV2vVuZ",
+      "target": "zYmuAlJVJbDEU9qJo-n8p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Vh_rxz7BsX6ZB777fTkXzy2-gVXXMYVlZZ5CHPBwGlGmZz1",
+      "source": "0lUpMxlIXOuze0-cOgyHp",
+      "target": "9IIvovotEnTiNzVovWOiW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Vh_rxz7BsX6ZB777fTkXzy2-B2cxzgsEpeSzGATX4WNeOz1",
+      "source": "0lUpMxlIXOuze0-cOgyHp",
+      "target": "B2cxzgsEpeSzGATX4WNeO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OzNFGkXyGxjc62odgb7_Tx2-Vh_rxz7BsX6ZB777fTkXzw1",
+      "source": "itfZ7m4s0001DCUV2vVuZ",
+      "target": "0lUpMxlIXOuze0-cOgyHp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Vh_rxz7BsX6ZB777fTkXzy2-gVXXMYVlZZ5CHPBwGlGmZz2",
+      "source": "0lUpMxlIXOuze0-cOgyHp",
+      "target": "gVXXMYVlZZ5CHPBwGlGmZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Oi7Wxz1BpFl76o6uqmxxiz2-Q9MQRfJuvXL3YluwJ1CfFy1",
+      "source": "WoPaR-IylckAixqAAwkeg",
+      "target": "Q9MQRfJuvXL3YluwJ1CfF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Oi7Wxz1BpFl76o6uqmxxiz2-cFExAjlc_ATE8V9EWE5ony2",
+      "source": "WoPaR-IylckAixqAAwkeg",
+      "target": "cFExAjlc_ATE8V9EWE5on",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Oi7Wxz1BpFl76o6uqmxxiz2-7BYTt5_wILzkbYmQW1Xnyy1",
+      "source": "WoPaR-IylckAixqAAwkeg",
+      "target": "7BYTt5_wILzkbYmQW1Xny",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__1nvbtEcHL-Q703GuFzZdix2-OzNFGkXyGxjc62odgb7_Tw1",
+      "source": "jpijY-Wbe6yNXZeNodpNt",
+      "target": "G_4qkm1cSGm-Q1KELBOds",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jTaXJANfaVzUc1R0G90thy2-G3SKq-A6CBSzY7kMJIkHkz1",
+      "source": "LLC--5n2K19hVvMuQ5nIO",
+      "target": "Yr7DSqmOAOe15574qBrIT",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__x7Ok7RObQOQPTS3fBTHaFz2-D4G8DOX5b39Rxw2FtgnjQy1",
+      "source": "x7Ok7RObQOQPTS3fBTHaF",
+      "target": "D4G8DOX5b39Rxw2FtgnjQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__x7Ok7RObQOQPTS3fBTHaFz2-H1794CAM_XqNJVT1LkXRGy1",
+      "source": "x7Ok7RObQOQPTS3fBTHaF",
+      "target": "H1794CAM_XqNJVT1LkXRG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__G_4qkm1cSGm-Q1KELBOdsz2-qBzu8ZCmtE--kmCKVcYRcy2",
+      "source": "G_4qkm1cSGm-Q1KELBOds",
+      "target": "mVteyJ-TxvAdB9_kLbJZs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcx2-Vh_rxz7BsX6ZB777fTkXzw1",
+      "source": "mVteyJ-TxvAdB9_kLbJZs",
+      "target": "uiK2GDDnLzVbhq5erNxFL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__xId8W3jQNhGJJvXFCcXiry2-9tLiTYbNf9WnisvwBhObCz2",
+      "source": "2DNh4oQet17AUQWvJ64fb",
+      "target": "9tLiTYbNf9WnisvwBhObC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xId8W3jQNhGJJvXFCcXiry2-xkT2UmeP9c37giF169aWDz1",
+      "source": "2DNh4oQet17AUQWvJ64fb",
+      "target": "xkT2UmeP9c37giF169aWD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xId8W3jQNhGJJvXFCcXiry2-tjCG72uQt87-fIoBBzy0sz1",
+      "source": "2DNh4oQet17AUQWvJ64fb",
+      "target": "tjCG72uQt87-fIoBBzy0s",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__xId8W3jQNhGJJvXFCcXiry2-migCYrzhAQ4keUk1MHPpZz1",
+      "source": "2DNh4oQet17AUQWvJ64fb",
+      "target": "migCYrzhAQ4keUk1MHPpZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcy2-Vh_rxz7BsX6ZB777fTkXzz1",
+      "source": "iEgObftAmbysHLinX9vwt",
+      "target": "Vh_rxz7BsX6ZB777fTkXz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcy2-7xmKy-sipKYv8k-WYTulAz1",
+      "source": "iEgObftAmbysHLinX9vwt",
+      "target": "7xmKy-sipKYv8k-WYTulA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcy2-xId8W3jQNhGJJvXFCcXirz1",
+      "source": "iEgObftAmbysHLinX9vwt",
+      "target": "xId8W3jQNhGJJvXFCcXir",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcy2-QmfR2rJMP7o_meBR8wIpKz1",
+      "source": "iEgObftAmbysHLinX9vwt",
+      "target": "QmfR2rJMP7o_meBR8wIpK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__iEgObftAmbysHLinX9vwtx2-qBzu8ZCmtE--kmCKVcYRcw2",
+      "source": "iEgObftAmbysHLinX9vwt",
+      "target": "93xmMkFoiv9qpPQOXWYHf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcy2-e24E1zTPdr6tNnlKitCysz2",
+      "source": "93xmMkFoiv9qpPQOXWYHf",
+      "target": "lV108QhOIYF_6CW-UKybx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jzJNHdc4tamjjdRpj-tsHz2-qBzu8ZCmtE--kmCKVcYRcy2",
+      "source": "ftCSs-gbgOdzZ2QFbEpEF",
+      "target": "5E-FSsctqgJZDR_-Q90eY",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcw2-Xrlb1F-KenIOoYmbaGkgTx2",
+      "source": "5E-FSsctqgJZDR_-Q90eY",
+      "target": "jcXt2Op2VDy6BbHzrqVyr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcz2-vzWQZVUJWjYvXhsVZM9pty2",
+      "source": "5E-FSsctqgJZDR_-Q90eY",
+      "target": "sCmAS0uEg2rZbNITYII5i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__rOpgM--1Q1mBYmK5AlYAYy2-iEgObftAmbysHLinX9vwtz2",
+      "source": "rOpgM--1Q1mBYmK5AlYAY",
+      "target": "iEgObftAmbysHLinX9vwt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__KvNG4DBZT_sCLdeeSQoS-x2-vzWQZVUJWjYvXhsVZM9ptw2",
+      "source": "FhBQsozNCYTaWwCsDDVyq",
+      "target": "cPiTsuFCkMZciOr9Wp9ID",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__FhBQsozNCYTaWwCsDDVyqw2-sCmAS0uEg2rZbNITYII5ix2",
+      "source": "FhBQsozNCYTaWwCsDDVyq",
+      "target": "sCmAS0uEg2rZbNITYII5i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__FhBQsozNCYTaWwCsDDVyqy2-KvNG4DBZT_sCLdeeSQoS-z1",
+      "source": "FhBQsozNCYTaWwCsDDVyq",
+      "target": "fln83FunYP4v_0jNfNtXx",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fln83FunYP4v_0jNfNtXxx2-wDBRLUYhlnkPr-rIpnY8Gw1",
+      "source": "fln83FunYP4v_0jNfNtXx",
+      "target": "wDBRLUYhlnkPr-rIpnY8G",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wDBRLUYhlnkPr-rIpnY8Gz2-vlMxe68Xp-YrC3gUXfzwry1",
+      "source": "wDBRLUYhlnkPr-rIpnY8G",
+      "target": "vlMxe68Xp-YrC3gUXfzwr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wDBRLUYhlnkPr-rIpnY8Gz2-ipV1RoEkn9-yKD98nB4dCy1",
+      "source": "wDBRLUYhlnkPr-rIpnY8G",
+      "target": "ipV1RoEkn9-yKD98nB4dC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__wDBRLUYhlnkPr-rIpnY8Gx2-B1PAHsUITg5NtxllZ1OsRw1",
+      "source": "wDBRLUYhlnkPr-rIpnY8G",
+      "target": "B1PAHsUITg5NtxllZ1OsR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__B1PAHsUITg5NtxllZ1OsRz2-KvNG4DBZT_sCLdeeSQoS-y1",
+      "source": "B1PAHsUITg5NtxllZ1OsR",
+      "target": "zlyP0oCA5I5x5fHphutmd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__KvNG4DBZT_sCLdeeSQoS-w2-aIG_7-igm_LSR3ybAPz0jx2",
+      "source": "zlyP0oCA5I5x5fHphutmd",
+      "target": "aIG_7-igm_LSR3ybAPz0j",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__KvNG4DBZT_sCLdeeSQoS-x2-2z9t6nLOZuiyGi6DAhNmIw2",
+      "source": "Ee6XleWvK-v9fCxbz9a1n",
+      "target": "2z9t6nLOZuiyGi6DAhNmI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__pxOK11BiBoxuRDb5LUKm3x2-KvNG4DBZT_sCLdeeSQoS-w2",
+      "source": "zlyP0oCA5I5x5fHphutmd",
+      "target": "Ee6XleWvK-v9fCxbz9a1n",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0K0aFQPi3CnB8BAAA2pIsw2-YX5BhDgJ5NjASPc7kYySGx1",
+      "source": "0K0aFQPi3CnB8BAAA2pIs",
+      "target": "YX5BhDgJ5NjASPc7kYySG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__0K0aFQPi3CnB8BAAA2pIsz2-QpZsfeARvWVKmQlVm15zAy1",
+      "source": "0K0aFQPi3CnB8BAAA2pIs",
+      "target": "QpZsfeARvWVKmQlVm15zA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Lod4cyZLuaCMmQ3-GkH8Zx2-KbmJGmWEr_kxFYoFb-JC9w1",
+      "source": "Lod4cyZLuaCMmQ3-GkH8Z",
+      "target": "KbmJGmWEr_kxFYoFb-JC9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__hRcMw3NHSOy2TVympIYafx2-zYmuAlJVJbDEU9qJo-n8pw1",
+      "source": "hRcMw3NHSOy2TVympIYaf",
+      "target": "zYmuAlJVJbDEU9qJo-n8p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Ee6XleWvK-v9fCxbz9a1ny2-KvNG4DBZT_sCLdeeSQoS-z1",
+      "source": "Ee6XleWvK-v9fCxbz9a1n",
+      "target": "If4Lv0M03ALLpQ88Vwp6i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__KvNG4DBZT_sCLdeeSQoS-x2-qBzu8ZCmtE--kmCKVcYRcw1",
+      "source": "If4Lv0M03ALLpQ88Vwp6i",
+      "target": "jlNoWJ3lyBYDBy8DJPe7o",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__If4Lv0M03ALLpQ88Vwp6iy2-9YDninuW0Bcaw59XRpmYHz1",
+      "source": "If4Lv0M03ALLpQ88Vwp6i",
+      "target": "D56NrdWDFS-vQdALQOKXV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcx2-e24E1zTPdr6tNnlKitCysw1",
+      "source": "jlNoWJ3lyBYDBy8DJPe7o",
+      "target": "e24E1zTPdr6tNnlKitCys",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__e24E1zTPdr6tNnlKitCysy2-JIivSHQvSotmFIpqUc5rJz1",
+      "source": "e24E1zTPdr6tNnlKitCys",
+      "target": "gwD16v8OnLvgfsn2zx780",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__e24E1zTPdr6tNnlKitCysx2-E0ooAe-E-RQ6WRjFLuYK7w2",
+      "source": "e24E1zTPdr6tNnlKitCys",
+      "target": "E0ooAe-E-RQ6WRjFLuYK7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__2YpRGABphohPnZ9z0l1X0x2-Obf1lA3vl0F6HVMMQDeNzw1",
+      "source": "2YpRGABphohPnZ9z0l1X0",
+      "target": "Obf1lA3vl0F6HVMMQDeNz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__s7hNf7C-IO-EoEtzbg3qbz2-0K0aFQPi3CnB8BAAA2pIsy2",
+      "source": "s7hNf7C-IO-EoEtzbg3qb",
+      "target": "0K0aFQPi3CnB8BAAA2pIs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__0K0aFQPi3CnB8BAAA2pIsx2-G3SKq-A6CBSzY7kMJIkHkw1",
+      "source": "0K0aFQPi3CnB8BAAA2pIs",
+      "target": "G3SKq-A6CBSzY7kMJIkHk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__G3SKq-A6CBSzY7kMJIkHkx2-x7Ok7RObQOQPTS3fBTHaFw2",
+      "source": "G3SKq-A6CBSzY7kMJIkHk",
+      "target": "x7Ok7RObQOQPTS3fBTHaF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Yr7DSqmOAOe15574qBrITx2-yo7tp80t2jnlCf5c3T_7Nw2",
+      "source": "Yr7DSqmOAOe15574qBrIT",
+      "target": "yo7tp80t2jnlCf5c3T_7N",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__yo7tp80t2jnlCf5c3T_7Nz2--fp4xlFS4iAzRxXKIaiIOy1",
+      "source": "yo7tp80t2jnlCf5c3T_7N",
+      "target": "-fp4xlFS4iAzRxXKIaiIO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__G_4qkm1cSGm-Q1KELBOdsx2-3RnZYzNI_QXM_uY-9WV9aw1",
+      "source": "G_4qkm1cSGm-Q1KELBOds",
+      "target": "3RnZYzNI_QXM_uY-9WV9a",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rOpgM--1Q1mBYmK5AlYAYx2-k2_QAZC6dz9Dk33Tm3FpZw1",
+      "source": "rOpgM--1Q1mBYmK5AlYAY",
+      "target": "k2_QAZC6dz9Dk33Tm3FpZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__If4Lv0M03ALLpQ88Vwp6iy2-xCfSwvrdrSOYdEIdsxEuwz2",
+      "source": "If4Lv0M03ALLpQ88Vwp6i",
+      "target": "xCfSwvrdrSOYdEIdsxEuw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4xn_kz-HcOoXTFGNLTPgvz2-If4Lv0M03ALLpQ88Vwp6iy1",
+      "source": "4xn_kz-HcOoXTFGNLTPgv",
+      "target": "If4Lv0M03ALLpQ88Vwp6i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E0ooAe-E-RQ6WRjFLuYK7y2-qBuo_kgC-0ugiRCvR5JwQz1",
+      "source": "E0ooAe-E-RQ6WRjFLuYK7",
+      "target": "qBuo_kgC-0ugiRCvR5JwQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E0ooAe-E-RQ6WRjFLuYK7y2-By2b4Ukz6QjAUPFvqBx6gz2",
+      "source": "E0ooAe-E-RQ6WRjFLuYK7",
+      "target": "By2b4Ukz6QjAUPFvqBx6g",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E0ooAe-E-RQ6WRjFLuYK7y2-I_Ecet4Q1QQXHoIvt2OqKz1",
+      "source": "E0ooAe-E-RQ6WRjFLuYK7",
+      "target": "I_Ecet4Q1QQXHoIvt2OqK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__E0ooAe-E-RQ6WRjFLuYK7z2-nCaPm0PSeS5rztRWiBL2sy1",
+      "source": "E0ooAe-E-RQ6WRjFLuYK7",
+      "target": "nCaPm0PSeS5rztRWiBL2s",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nCaPm0PSeS5rztRWiBL2sw2-aEvbW7AtLvvtol4qEQofex1",
+      "source": "nCaPm0PSeS5rztRWiBL2s",
+      "target": "aEvbW7AtLvvtol4qEQofe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge___88wF-lAkqW41C6FRmCHOy2-qBzu8ZCmtE--kmCKVcYRcz2",
+      "source": "_88wF-lAkqW41C6FRmCHO",
+      "target": "qBzu8ZCmtE--kmCKVcYRc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__qBzu8ZCmtE--kmCKVcYRcx2-lZ3U7pyi2OPwexYmKdAb7w2",
+      "source": "qBzu8ZCmtE--kmCKVcYRc",
+      "target": "lZ3U7pyi2OPwexYmKdAb7",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lZ3U7pyi2OPwexYmKdAb7y2-SzGLbXgW6Z6UHPoTjI-pBz2",
+      "source": "lZ3U7pyi2OPwexYmKdAb7",
+      "target": "SzGLbXgW6Z6UHPoTjI-pB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__lZ3U7pyi2OPwexYmKdAb7y2-xpALRb8KUT-i4Lj0EjI7oz1",
+      "source": "lZ3U7pyi2OPwexYmKdAb7",
+      "target": "xpALRb8KUT-i4Lj0EjI7o",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__lZ3U7pyi2OPwexYmKdAb7y2-3bzq_ZWCVoe3KiKJPTLGRz1",
+      "source": "lZ3U7pyi2OPwexYmKdAb7",
+      "target": "3bzq_ZWCVoe3KiKJPTLGR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aj_yIDgFpBOfoSs2kYBBTz2-q546Dq42Z3-WN-FOll4K1y1",
+      "source": "aj_yIDgFpBOfoSs2kYBBT",
+      "target": "q546Dq42Z3-WN-FOll4K1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__aj_yIDgFpBOfoSs2kYBBTz2-MzV6A_0Sa9LhgalNmhwq8y1",
+      "source": "aj_yIDgFpBOfoSs2kYBBT",
+      "target": "MzV6A_0Sa9LhgalNmhwq8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nNGeY4qnJfuK5xmmiY6Lay2-n4AFoCcKqnGRRWuD0Ud-9z1",
+      "source": "nNGeY4qnJfuK5xmmiY6La",
+      "target": "n4AFoCcKqnGRRWuD0Ud-9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nNGeY4qnJfuK5xmmiY6Lay2-AarV0h4U6Ol3auLGOW3iZz1",
+      "source": "nNGeY4qnJfuK5xmmiY6La",
+      "target": "AarV0h4U6Ol3auLGOW3iZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nNGeY4qnJfuK5xmmiY6Lay2-JIivSHQvSotmFIpqUc5rJz1",
+      "source": "nNGeY4qnJfuK5xmmiY6La",
+      "target": "JIivSHQvSotmFIpqUc5rJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RSufL2bzKXZhz9M98oGTAz2-a5IDGzg8-FppJWCmhcq9qy1",
+      "source": "RSufL2bzKXZhz9M98oGTA",
+      "target": "a5IDGzg8-FppJWCmhcq9q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__RSufL2bzKXZhz9M98oGTAx2-O5dely89N5UCMBeUfh8udw2",
+      "source": "RSufL2bzKXZhz9M98oGTA",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

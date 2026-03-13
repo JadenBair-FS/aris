@@ -1,0 +1,34 @@
+Full job description
+Welcome to Veracity life! Here work is more than just a task; it's a vibrant tapestry woven with passion, collaboration, and endless opportunities. At Veracity, we believe that a fulfilling career is not just about what you do but also about the environment in which you thrive. Dive into a glimpse of life within our dynamic organization as we look forward to hearing from you.
+
+
+Experience Life at Veracity Software Private Limited
+Cultivating Collaboration
+At Veracity, collaboration isn't just encouraged; it's ingrained in our DNA. Step into an environment where teamwork is more than just a buzzword; it's the cornerstone of our success. From brainstorming sessions to cross-departmental projects, every interaction fosters connections that fuel innovation
+
+Nurturing Growth
+Your growth isn't just a priority; it's our commitment. At Veracity, we provide the tools, resources, and support necessary for your professional development journey. Whether through mentorship programs, skill-building workshops, or access to cutting-edge technologies, we empower you to reach new heights and unlock your full potential.
+
+Work-Life Integration
+In a fast-paced world, balance is key. At Veracity, we understand the importance of harmonizing professional aspirations with personal well-being. Embrace a culture that prioritizes flexibility, offering remote work options, flexible schedules, and wellness initiatives designed to help you thrive both inside and outside the workplace.
+
+Celebrating Diversity
+Our strength lies in our diversity. At Veracity, we celebrate the unique perspectives, backgrounds, and experiences that each team member brings to the table. Join a community where inclusivity isn't just a value; it's a way of life, fostering an environment where everyone feels heard, valued, and empowered to contribute their best.
+
+Embracing Fun and Fulfillment
+Life at Veracity isn't all about work; it's about finding joy in the journey. From team outings to social events, we believe in fostering a sense of camaraderie and belonging beyond the confines of the office. Join us in creating memories, forging friendships, and making every moment count.
+
+
+Jr Python Developer
+Job Description
+As a Python Developer, your role is to apply your knowledge set to fetch data from multiple online sources, cleanse it and build APIs on top of it.
+Mandatory Skills And Qualifications
+1 to 2 years' experience in core HTML , JavaScript and Python development
+Should have knowledge of Regular expressions , data storage procedures.
+Excellent knowledge on Web Crawling / Web scraping in Python is a must.
+Develop frameworks for automating and maintaining constant flow of data from multiple sources
+Basics of databases. Good troubleshooting and debugging skills
+Developing highly reliable web crawlers and parsers across various websites
+Extract structured / unstructured data and store them into SQL / No SQL data store.
+Experience
+1 – 2 Years

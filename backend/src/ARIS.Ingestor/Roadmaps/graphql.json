@@ -1,0 +1,995 @@
+{
+  "title": {
+    "card": "GraphQL",
+    "page": "GraphQL"
+  },
+  "description": "Step by step guide to learn GraphQL in @currentYear@",
+  "nodes": [
+    {
+      "id": "SFhbL3KKBd053kCVToTm1",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BVXPP2J15hss2hF85urjN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "0YJo_ti1JDu1GRmdC2WzA",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QGWApwm1h5K_n0M81b9DH",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "D0RHwVcuH4qus_oiCbDo0",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "C2zefkHdFZjID3CdqXmAy",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "zQpkRd7jNV509JOpL6VxX",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "icm7gi90MRG4vn9KUUaqR",
+      "type": "paragraph",
+      "data": {
+        "label": "Int, Float, String, Boolean, ID"
+      }
+    },
+    {
+      "id": "4qvR1QQzrmoVIVCAsp92H",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "HU7wZWiES3m3xl1-NYP6F",
+      "type": "title",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "uqyE79OItPOX33E5FoGel",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JfXwzkN29UGz17FYHHE3A",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "cMfsRtvzvDZZJ0TqeUOxm",
+      "type": "subtopic",
+      "data": {
+        "label": "What is GraphQL"
+      }
+    },
+    {
+      "id": "2rlmLn_yQQV-7DpX1qT98",
+      "type": "subtopic",
+      "data": {
+        "label": "Problems GraphQL Solves"
+      }
+    },
+    {
+      "id": "w_rUaBorHFOY74S0JiEwM",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "J5mU0v491qrm-mr1W3Msd",
+      "type": "subtopic",
+      "data": {
+        "label": "Thinking in Graphs"
+      }
+    },
+    {
+      "id": "W_Lg8086ZhrIqtck1sgnb",
+      "type": "topic",
+      "data": {
+        "label": "GraphQL Queries"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "For ecosystem and more, check these other tracks involving GraphQL"
+      }
+    },
+    {
+      "id": "6AIUtChWC_gK8Ax0UuBjd",
+      "type": "button",
+      "data": {
+        "label": "Frontend Roadmap"
+      }
+    },
+    {
+      "id": "6r9XbwlBtHmJrhviG2cTD",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL on Frontend"
+      }
+    },
+    {
+      "id": "ODQ8zrHc2rsc8PN-APKvz",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL on Backend"
+      }
+    },
+    {
+      "id": "2SU4dcaz7zwGsF7g8FjmI",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Queries?"
+      }
+    },
+    {
+      "id": "Pc9H7AcoqJQkWnuhbytyD",
+      "type": "subtopic",
+      "data": {
+        "label": "Fields"
+      }
+    },
+    {
+      "id": "B77yLU4SuRChSjEbmYwc-",
+      "type": "subtopic",
+      "data": {
+        "label": "Aliases"
+      }
+    },
+    {
+      "id": "hrpb108R8Gyu3hhzkMYzL",
+      "type": "subtopic",
+      "data": {
+        "label": "Arguments"
+      }
+    },
+    {
+      "id": "MnmwccPahqPCzOhqjfbsY",
+      "type": "subtopic",
+      "data": {
+        "label": "Directives"
+      }
+    },
+    {
+      "id": "YZaFEK547FYricfOuANvH",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "CehwjrCG_wbUU-TFNCuJn",
+      "type": "subtopic",
+      "data": {
+        "label": "Fragments"
+      }
+    },
+    {
+      "id": "jy_91mhFWbpR6sYVbuX1x",
+      "type": "topic",
+      "data": {
+        "label": "Mutations"
+      }
+    },
+    {
+      "id": "9Q2pGidY-rfkltHq3vChp",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Mutations?"
+      }
+    },
+    {
+      "id": "AySlY8AyI6jE-cy-qKKOU",
+      "type": "subtopic",
+      "data": {
+        "label": "Multiple Fields in Mutation"
+      }
+    },
+    {
+      "id": "q9TYEygvUyHourdZIvk8G",
+      "type": "subtopic",
+      "data": {
+        "label": "Operation Name"
+      }
+    },
+    {
+      "id": "IbEqXlGjsyNLKE9dZrPPk",
+      "type": "topic",
+      "data": {
+        "label": "Subscriptions"
+      }
+    },
+    {
+      "id": "RlBc-hWEUOPaEQLTgJa-K",
+      "type": "subtopic",
+      "data": {
+        "label": "What are Subscriptions"
+      }
+    },
+    {
+      "id": "kJMyRhasBKfBypent3GxK",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Based Subscriptions"
+      }
+    },
+    {
+      "id": "CHdzww8_TNfeM6Bp1oTPI",
+      "type": "subtopic",
+      "data": {
+        "label": "Live Queries"
+      }
+    },
+    {
+      "id": "t6XxFB_lx27kS4FE2_GMH",
+      "type": "subtopic",
+      "data": {
+        "label": "@defer / @stream directives"
+      }
+    },
+    {
+      "id": "lj1WEh4WbfBsoZFYsi1Yz",
+      "type": "topic",
+      "data": {
+        "label": "Schema"
+      }
+    },
+    {
+      "id": "jpu0_FAlxtD-H80mPcod5",
+      "type": "subtopic",
+      "data": {
+        "label": "Type System"
+      }
+    },
+    {
+      "id": "HPdntdgTar1T34CZX8Y6y",
+      "type": "subtopic",
+      "data": {
+        "label": "Fields"
+      }
+    },
+    {
+      "id": "U-tLelmNQtR-pUq-sxU_2",
+      "type": "subtopic",
+      "data": {
+        "label": "Scalars"
+      }
+    },
+    {
+      "id": "wfOsfb0zSAIdNkwFHfBcw",
+      "type": "subtopic",
+      "data": {
+        "label": "Enums"
+      }
+    },
+    {
+      "id": "tc_rjJZrr2x3bp8mcoQ0F",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "d2ikbo4sZq7PmaCi5znkd",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "LX9vZpx7yKlf0iR6AtBWz",
+      "type": "subtopic",
+      "data": {
+        "label": "Objects"
+      }
+    },
+    {
+      "id": "59COH3rerJJzKr6vrj4bF",
+      "type": "subtopic",
+      "data": {
+        "label": "Unions"
+      }
+    },
+    {
+      "id": "A54vi3Ao7fBHyTuqoH_it",
+      "type": "subtopic",
+      "data": {
+        "label": "Arguments"
+      }
+    },
+    {
+      "id": "2q3TO7k_byrLI7LkcCplG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "iYkHCKTsjtvo40f3eZoet",
+      "type": "topic",
+      "data": {
+        "label": "Validation"
+      }
+    },
+    {
+      "id": "72wGg6yP8WnEdmkeKL9vh",
+      "type": "topic",
+      "data": {
+        "label": "Execution"
+      }
+    },
+    {
+      "id": "AlJlHZD3_SPoLNaqdM-pB",
+      "type": "subtopic",
+      "data": {
+        "label": "Root Fields"
+      }
+    },
+    {
+      "id": "VDur5xYBC0LJtQgDrSEyj",
+      "type": "subtopic",
+      "data": {
+        "label": "Resolvers"
+      }
+    },
+    {
+      "id": "uPpsj2kCdgKsJpmTaw86u",
+      "type": "subtopic",
+      "data": {
+        "label": "Synchronous"
+      }
+    },
+    {
+      "id": "tbDvQBtLRAcD-xYX9V7Va",
+      "type": "subtopic",
+      "data": {
+        "label": "Asynchronous"
+      }
+    },
+    {
+      "id": "QFUOmJlPkkjpcl1vJxg9h",
+      "type": "subtopic",
+      "data": {
+        "label": "Scalar Coercion"
+      }
+    },
+    {
+      "id": "sJ1_c3e08aehiqNMbIEEP",
+      "type": "subtopic",
+      "data": {
+        "label": "Lists"
+      }
+    },
+    {
+      "id": "I4wNBXV4xEZ0LWBhv5FwF",
+      "type": "subtopic",
+      "data": {
+        "label": "Validation"
+      }
+    },
+    {
+      "id": "zQHifboRreE4OgJ7GnUlp",
+      "type": "subtopic",
+      "data": {
+        "label": "Producing the Result"
+      }
+    },
+    {
+      "id": "jk64WxDch-mqf3_8SdY-D",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "inhjhH-7xJyX8o4DQqErF",
+      "type": "topic",
+      "data": {
+        "label": "Serving over Internet"
+      }
+    },
+    {
+      "id": "Ya0ORdmEHEPpp1GAzMLVT",
+      "type": "label",
+      "data": {
+        "label": "GraphQL Over HTTP"
+      }
+    },
+    {
+      "id": "V3bgswBFr1xames3F8S_V",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL Over HTTP Spec"
+      }
+    },
+    {
+      "id": "UYwuUVTeurwODV4_Kdt_W",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "v9gVexHfDkpG9z3NL5S-9",
+      "type": "subtopic",
+      "data": {
+        "label": "Batching"
+      }
+    },
+    {
+      "id": "i-zcfN6RNXhA_sb7DcIon",
+      "type": "subtopic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "ud-BWNe_McqpZXHtlXPyr",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "st02HY5-DEab1pYXkBc3S",
+      "type": "label",
+      "data": {
+        "label": "GraphQL Over WebSockets"
+      }
+    },
+    {
+      "id": "A-PQ3_FVuCK3Eud75hsdj",
+      "type": "subtopic",
+      "data": {
+        "label": "Specification"
+      }
+    },
+    {
+      "id": "2YLm_S1j_832pb1OGSNaM",
+      "type": "subtopic",
+      "data": {
+        "label": "Realtime"
+      }
+    },
+    {
+      "id": "GzwPvLybxTJM96fUhQUOi",
+      "type": "subtopic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "cH2FSWgKxQbBoI0tI-QNH",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "F4nR2VZ4k1uekWXINoMKH",
+      "type": "label",
+      "data": {
+        "label": "GraphQL Over SSE"
+      }
+    },
+    {
+      "id": "O8k-m6s9B_uXkLsXKVFnL",
+      "type": "subtopic",
+      "data": {
+        "label": "Specification"
+      }
+    },
+    {
+      "id": "G50ZMlmP7Ru5LcFne5Rhu",
+      "type": "subtopic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "1mBWGT53bwy8JHSnf_6lr",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Uf8XxJPs7RzKVhlxiQdbB",
+      "type": "topic",
+      "data": {
+        "label": "Pagination"
+      }
+    },
+    {
+      "id": "Qab1pyIZiJ3Z9q8CuEsc-",
+      "type": "paragraph",
+      "data": {
+        "label": "Implementations"
+      }
+    },
+    {
+      "id": "jCzrMElTo-c9xGcpPOOPl",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL.js"
+      }
+    },
+    {
+      "id": "9nVo95gRNGHGIbaJQPH1x",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL Go"
+      }
+    },
+    {
+      "id": "1q77xUifPS5sLx5tktXxF",
+      "type": "label",
+      "data": {
+        "label": "Go Implementation"
+      }
+    },
+    {
+      "id": "qmlQ3184CZ9HgvRHVcPT6",
+      "type": "label",
+      "data": {
+        "label": "JavaScript Implementation"
+      }
+    },
+    {
+      "id": "7szipojhVb2VoL3VcS619",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL Java"
+      }
+    },
+    {
+      "id": "-STVQpKbY5I9eTExdJ6mc",
+      "type": "label",
+      "data": {
+        "label": "Java Implementation"
+      }
+    },
+    {
+      "id": "XD0hNlAu05_ZYgv8JvEp1",
+      "type": "paragraph",
+      "data": {
+        "label": "Servers"
+      }
+    },
+    {
+      "id": "_8RiK9B8endMNBjiKsazU",
+      "type": "label",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "N-vsu-wvOikuoTbzdgX3X",
+      "type": "subtopic",
+      "data": {
+        "label": "graphql-http"
+      }
+    },
+    {
+      "id": "Gotb1xtxySCVC5MrnkPSs",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL Yoga"
+      }
+    },
+    {
+      "id": "o_VkyoN6DmUUkfl0u0cro",
+      "type": "subtopic",
+      "data": {
+        "label": "Apollo Server"
+      }
+    },
+    {
+      "id": "iTV2H8clmRTOksul4v38p",
+      "type": "subtopic",
+      "data": {
+        "label": "mercurius"
+      }
+    },
+    {
+      "id": "lUOOZDUJOgktHf07nGzCJ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "WFO_AwmbUJPAFj0tFClJg",
+      "type": "paragraph",
+      "data": {
+        "label": "Clients"
+      }
+    },
+    {
+      "id": "4IugiCX3rnKv5ak50sqGm",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "3lQ4cxevkw0p8v7fHm4I7",
+      "type": "label",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "datKo3vPDwXoyVskcrdkc",
+      "type": "subtopic",
+      "data": {
+        "label": "graphql-http"
+      }
+    },
+    {
+      "id": "Ab_ngkf6bmejvcp9okuw6",
+      "type": "subtopic",
+      "data": {
+        "label": "Relay"
+      }
+    },
+    {
+      "id": "D5O7ky5eXwm_Ys1IcFNaq",
+      "type": "subtopic",
+      "data": {
+        "label": "Apollo Client"
+      }
+    },
+    {
+      "id": "WP0Oo_YMfLBlXqDQQtKes",
+      "type": "subtopic",
+      "data": {
+        "label": "Urql"
+      }
+    },
+    {
+      "id": "BjJfMCOatN2_3TVt-6GnG",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "f5WRewBlpeYMf71cPcXs-",
+      "type": "button",
+      "data": {
+        "label": "Backend Roadmap"
+      }
+    },
+    {
+      "id": "UOQYh4L1q1XAl7EuxlQ3m",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "kS01-perdFxHsTKTwvuC4",
+      "type": "label",
+      "data": {
+        "label": "Python Implementation"
+      }
+    },
+    {
+      "id": "r3Yf5pxzgSGAckOPr3eSt",
+      "type": "subtopic",
+      "data": {
+        "label": "Graphene"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__HU7wZWiES3m3xl1-NYP6Fx2-08qKtgnhJ3tlb5JKfTDf5w1",
+      "source": "HU7wZWiES3m3xl1-NYP6F",
+      "target": "JfXwzkN29UGz17FYHHE3A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-2rlmLn_yQQV-7DpX1qT98y2",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "2rlmLn_yQQV-7DpX1qT98",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-cMfsRtvzvDZZJ0TqeUOxmy1",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "cMfsRtvzvDZZJ0TqeUOxm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4U-HZQGH7kaWCB94Xy8Mhz2-VhSEH_RoWFt1z2lial7xZy2",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "J5mU0v491qrm-mr1W3Msd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-6r9XbwlBtHmJrhviG2cTDy2",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "6r9XbwlBtHmJrhviG2cTD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Az2-ODQ8zrHc2rsc8PN-APKvzy1",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "ODQ8zrHc2rsc8PN-APKvz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-YZaFEK547FYricfOuANvHz1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "YZaFEK547FYricfOuANvH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-B77yLU4SuRChSjEbmYwc-z1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "B77yLU4SuRChSjEbmYwc-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-hrpb108R8Gyu3hhzkMYzLz1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "hrpb108R8Gyu3hhzkMYzL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-MnmwccPahqPCzOhqjfbsYz2",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "MnmwccPahqPCzOhqjfbsY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-CehwjrCG_wbUU-TFNCuJnz1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "CehwjrCG_wbUU-TFNCuJn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-Pc9H7AcoqJQkWnuhbytyDz1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "Pc9H7AcoqJQkWnuhbytyD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-2SU4dcaz7zwGsF7g8FjmIz1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "2SU4dcaz7zwGsF7g8FjmI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__W_Lg8086ZhrIqtck1sgnbx2-cSXsu17F1Oy34Wp6J-N3Cw1",
+      "source": "W_Lg8086ZhrIqtck1sgnb",
+      "target": "jy_91mhFWbpR6sYVbuX1x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cz2-AySlY8AyI6jE-cy-qKKOUy1",
+      "source": "jy_91mhFWbpR6sYVbuX1x",
+      "target": "AySlY8AyI6jE-cy-qKKOU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cz2-q9TYEygvUyHourdZIvk8Gy1",
+      "source": "jy_91mhFWbpR6sYVbuX1x",
+      "target": "q9TYEygvUyHourdZIvk8G",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cz2-9Q2pGidY-rfkltHq3vChpy1",
+      "source": "jy_91mhFWbpR6sYVbuX1x",
+      "target": "9Q2pGidY-rfkltHq3vChp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jy_91mhFWbpR6sYVbuX1xx2-cSXsu17F1Oy34Wp6J-N3Cw1",
+      "source": "jy_91mhFWbpR6sYVbuX1x",
+      "target": "IbEqXlGjsyNLKE9dZrPPk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-RlBc-hWEUOPaEQLTgJa-Kz2",
+      "source": "IbEqXlGjsyNLKE9dZrPPk",
+      "target": "RlBc-hWEUOPaEQLTgJa-K",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-kJMyRhasBKfBypent3GxKz1",
+      "source": "IbEqXlGjsyNLKE9dZrPPk",
+      "target": "kJMyRhasBKfBypent3GxK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-CHdzww8_TNfeM6Bp1oTPIz1",
+      "source": "IbEqXlGjsyNLKE9dZrPPk",
+      "target": "CHdzww8_TNfeM6Bp1oTPI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cSXsu17F1Oy34Wp6J-N3Cy2-sJ1_c3e08aehiqNMbIEEPz1",
+      "source": "IbEqXlGjsyNLKE9dZrPPk",
+      "target": "t6XxFB_lx27kS4FE2_GMH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__IbEqXlGjsyNLKE9dZrPPkx2-cSXsu17F1Oy34Wp6J-N3Cw1",
+      "source": "IbEqXlGjsyNLKE9dZrPPk",
+      "target": "lj1WEh4WbfBsoZFYsi1Yz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lj1WEh4WbfBsoZFYsi1Yzx2-cSXsu17F1Oy34Wp6J-N3Cw2",
+      "source": "lj1WEh4WbfBsoZFYsi1Yz",
+      "target": "iYkHCKTsjtvo40f3eZoet",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__iYkHCKTsjtvo40f3eZoetx2-cSXsu17F1Oy34Wp6J-N3Cw1",
+      "source": "iYkHCKTsjtvo40f3eZoet",
+      "target": "72wGg6yP8WnEdmkeKL9vh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__72wGg6yP8WnEdmkeKL9vhx2-cSXsu17F1Oy34Wp6J-N3Cw2",
+      "source": "72wGg6yP8WnEdmkeKL9vh",
+      "target": "inhjhH-7xJyX8o4DQqErF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__inhjhH-7xJyX8o4DQqErFx2-cSXsu17F1Oy34Wp6J-N3Cw1",
+      "source": "inhjhH-7xJyX8o4DQqErF",
+      "target": "Uf8XxJPs7RzKVhlxiQdbB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JfXwzkN29UGz17FYHHE3Ax2-W_Lg8086ZhrIqtck1sgnbw2",
+      "source": "JfXwzkN29UGz17FYHHE3A",
+      "target": "W_Lg8086ZhrIqtck1sgnb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__8YdlLJ_Ki8NxgVzMNeyzox2-mZPU_kbBDBV5j0kaEO-tjw2",
+      "source": "Uf8XxJPs7RzKVhlxiQdbB",
+      "target": "Qab1pyIZiJ3Z9q8CuEsc-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__BVXPP2J15hss2hF85urjNz2-WFO_AwmbUJPAFj0tFClJgy1",
+      "source": "BVXPP2J15hss2hF85urjN",
+      "target": "Qab1pyIZiJ3Z9q8CuEsc-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Qab1pyIZiJ3Z9q8CuEsc-x2-WFO_AwmbUJPAFj0tFClJgw2",
+      "source": "Qab1pyIZiJ3Z9q8CuEsc-",
+      "target": "XD0hNlAu05_ZYgv8JvEp1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__XD0hNlAu05_ZYgv8JvEp1x2-WFO_AwmbUJPAFj0tFClJgw1",
+      "source": "XD0hNlAu05_ZYgv8JvEp1",
+      "target": "WFO_AwmbUJPAFj0tFClJg",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

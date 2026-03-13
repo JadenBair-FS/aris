@@ -1,0 +1,1794 @@
+{
+  "title": {
+    "card": "PHP",
+    "page": "PHP Roadmap"
+  },
+  "description": "Step by step guide to learning PHP in @currentYear@",
+  "nodes": [
+    {
+      "id": "JdMITvYygFHULtbW-267m",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WobnwQysg22KeqQUfFq3c",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "33xDnONCKXab3GnA_QgR0",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "pc14qPNQD6yLbN54QCFrw",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "gn5qNP3VTmmQE2tT6o-vS",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "4DITxbB38FakSCzjsQ0Js",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "O-VQ9xI9U_dcv1eXC10Pm",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "k2geFuCziHUELrMsMYMom",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "nWYHpcvp1RT1gSqs1Dqcs",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "A_lYlCAkORf0LldseIxtz",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "1mXQQdSdlKkWfjlT47nE0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "CORVHVLE5hxVl5fd4jVhd",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "dv4WVzUCQ6d95AfBqdqQV",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "RjrP6TuYhXhW3uuZgqurX",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "hitsVjqeIuzCP0VUZRXkS",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "bN07oOEWH_UrXKfpp8MB0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BxU_vv4FsalsT1Hq0qRRK",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "PHP"
+      }
+    },
+    {
+      "id": "_hYN0gEi9BL24nptEtXWU",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to PHP"
+      }
+    },
+    {
+      "id": "5Irad96FtU3TkNZRK7x_8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant tracks to learn more"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "xi0QAi4kXm3-IFKgopnOP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "CH_K6mmFX_GdSzi2n1ID7",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "b2CuLrhsUNnb4OxI6RRAS",
+      "type": "subtopic",
+      "data": {
+        "label": "Evolution and History"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "lGgcjbbv3WAMOEi_NUZYh",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "6sHRQTcoKL3TlgNJlwyx8",
+      "type": "subtopic",
+      "data": {
+        "label": "PHP Versions and Features"
+      }
+    },
+    {
+      "id": "_LhLDVZjLt1DoAP1NuUES",
+      "type": "subtopic",
+      "data": {
+        "label": "What is PHP?"
+      }
+    },
+    {
+      "id": "qA7UjGPRBRZaBdgHTS5o3",
+      "type": "paragraph",
+      "data": {
+        "label": "Development Environment"
+      }
+    },
+    {
+      "id": "3_TuxOSzBuktBlBF05r_z",
+      "type": "topic",
+      "data": {
+        "label": "Installing PHP"
+      }
+    },
+    {
+      "id": "36Y1HkHxhuxh2qVQB8NVE",
+      "type": "subtopic",
+      "data": {
+        "label": "WAMP"
+      }
+    },
+    {
+      "id": "-wniKEBwbF0Fi1fHpF-Gc",
+      "type": "subtopic",
+      "data": {
+        "label": "XAMPP"
+      }
+    },
+    {
+      "id": "t7p7TU2khaxsZPYAdwFAA",
+      "type": "subtopic",
+      "data": {
+        "label": "MAMP"
+      }
+    },
+    {
+      "id": "7LjxtrmgJtTJc0_kP83Tr",
+      "type": "subtopic",
+      "data": {
+        "label": "LAMP"
+      }
+    },
+    {
+      "id": "SCp3PCqxAYbM9iBgLCG4_",
+      "type": "label",
+      "data": {
+        "label": "Local Server"
+      }
+    },
+    {
+      "id": "usBwcXnWuUlaN71q1nbED",
+      "type": "paragraph",
+      "data": {
+        "label": "Learn the Fundamentals"
+      }
+    },
+    {
+      "id": "hzBUHSuFwLYNooF_vEmrs",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic PHP Syntax"
+      }
+    },
+    {
+      "id": "D0BtyxyjIBcpfn5wP23WC",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables and Scope"
+      }
+    },
+    {
+      "id": "srIHPZabaCGdB5VvUXaMa",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "2ykzBBdYhWuM-neGf0AWP",
+      "type": "subtopic",
+      "data": {
+        "label": "echo"
+      }
+    },
+    {
+      "id": "NQUmO90sqe7fnzod3Ia8H",
+      "type": "subtopic",
+      "data": {
+        "label": "print"
+      }
+    },
+    {
+      "id": "JCCeVC0hOrvIeyfg1ScKA",
+      "type": "subtopic",
+      "data": {
+        "label": "var_dump"
+      }
+    },
+    {
+      "id": "wsC7OGXOyfCY4pLLNrR2v",
+      "type": "subtopic",
+      "data": {
+        "label": "print_r"
+      }
+    },
+    {
+      "id": "d_Ei1E5a0j425i9Jf6ffd",
+      "type": "label",
+      "data": {
+        "label": "Output and Debugging"
+      }
+    },
+    {
+      "id": "pzReF4C0mcCWAnpfIJbwl",
+      "type": "subtopic",
+      "data": {
+        "label": "Casting Data Types"
+      }
+    },
+    {
+      "id": "IhKjvT6CjRz4dsSU7SNQo",
+      "type": "topic",
+      "data": {
+        "label": "Arrays"
+      }
+    },
+    {
+      "id": "j2S8dP3HlAOOoZdpj-7Dx",
+      "type": "subtopic",
+      "data": {
+        "label": "Indexed Arrays"
+      }
+    },
+    {
+      "id": "i_NRsOJNNp7AOqMgu5Jg8",
+      "type": "subtopic",
+      "data": {
+        "label": "Associative Arrays"
+      }
+    },
+    {
+      "id": "uARTOZ-ZwugSmbCJoRS5Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi-dimensional Arrays"
+      }
+    },
+    {
+      "id": "38YksjvhXCbgnHqkl57Cz",
+      "type": "topic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "-McOv-ZPTGayX7Mx2Thw1",
+      "type": "subtopic",
+      "data": {
+        "label": "if/else"
+      }
+    },
+    {
+      "id": "bgJ9-m6Fiu3VCc-NZlbpn",
+      "type": "subtopic",
+      "data": {
+        "label": "switch"
+      }
+    },
+    {
+      "id": "3gNzX-bw2iqur7U7-_W38",
+      "type": "subtopic",
+      "data": {
+        "label": "match"
+      }
+    },
+    {
+      "id": "w0ntgFBhgGd5RUFd-qlPK",
+      "type": "subtopic",
+      "data": {
+        "label": "Null Coalescing Operator"
+      }
+    },
+    {
+      "id": "1NXSk8VZDr89jQTTkOL7x",
+      "type": "subtopic",
+      "data": {
+        "label": "Null Safe Operator"
+      }
+    },
+    {
+      "id": "qwt8xN4vuTrY-D0czYITI",
+      "type": "topic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "VLRLymQmLfscrBfzXKvHi",
+      "type": "subtopic",
+      "data": {
+        "label": "Constants"
+      }
+    },
+    {
+      "id": "WiGv7vi7Mtw-YqPMcnnyw",
+      "type": "topic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "1nODJchgSuWbcvSlxnWeE",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Declaration"
+      }
+    },
+    {
+      "id": "mpQKoBzsOa-5iWo08sOhQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Parameters / Return Values"
+      }
+    },
+    {
+      "id": "RgVP99rJJ8FVecIA45w20",
+      "type": "subtopic",
+      "data": {
+        "label": "Default / Optional Params"
+      }
+    },
+    {
+      "id": "RkNjYva8o_jXp9suz5YdG",
+      "type": "subtopic",
+      "data": {
+        "label": "Named Arguments"
+      }
+    },
+    {
+      "id": "Nr5m6wQLp7VyG3AucrSc8",
+      "type": "subtopic",
+      "data": {
+        "label": "Anonymous Functions"
+      }
+    },
+    {
+      "id": "mP1BIkqbWVVTU-zZv1ZL6",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrow Functions"
+      }
+    },
+    {
+      "id": "x7hA2KAzJIjc-prgCEw6V",
+      "type": "subtopic",
+      "data": {
+        "label": "Callback Functions"
+      }
+    },
+    {
+      "id": "D9ybK5INH5zSOcYMb5ZPi",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursion"
+      }
+    },
+    {
+      "id": "rtmytETfyyLdcXUC0QyzL",
+      "type": "subtopic",
+      "data": {
+        "label": "Variadic Functions"
+      }
+    },
+    {
+      "id": "fBym6pkzRkNh0LWyCg3Bv",
+      "type": "paragraph",
+      "data": {
+        "label": "File Handling"
+      }
+    },
+    {
+      "id": "Kaaqu-mN7xvHN6CbIn616",
+      "type": "subtopic",
+      "data": {
+        "label": "require"
+      }
+    },
+    {
+      "id": "-CyJbsg2ho3RvfzKnJj5C",
+      "type": "subtopic",
+      "data": {
+        "label": "require_once"
+      }
+    },
+    {
+      "id": "hKfv7V6bl2LXssq9Ffi7C",
+      "type": "subtopic",
+      "data": {
+        "label": "include"
+      }
+    },
+    {
+      "id": "SwtLDgyPmDry20qS4FBfH",
+      "type": "subtopic",
+      "data": {
+        "label": "include_once"
+      }
+    },
+    {
+      "id": "CNrhogom5tjAOY6ancboh",
+      "type": "label",
+      "data": {
+        "label": "Include and Require Files"
+      }
+    },
+    {
+      "id": "two4UycJaCfSp6jQqtTAb",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Files"
+      }
+    },
+    {
+      "id": "S9wTlkbv9-R6dohhZ47hs",
+      "type": "subtopic",
+      "data": {
+        "label": "Reading Files"
+      }
+    },
+    {
+      "id": "tgIyG6vHWpe9sz6lHmj5a",
+      "type": "subtopic",
+      "data": {
+        "label": "File Permissions"
+      }
+    },
+    {
+      "id": "xpvaGtnZo9BL3HfKCzsV_",
+      "type": "label",
+      "data": {
+        "label": "File Operations"
+      }
+    },
+    {
+      "id": "t6N8bYfapkiiFMPdYmqpq",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3oLk2mHY-nDgNXmaOZzEr",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "DB2cxZE58WCCavW2PNwmf",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON Processing"
+      }
+    },
+    {
+      "id": "MRDjEjbkMpk7shcWAoPOF",
+      "type": "subtopic",
+      "data": {
+        "label": "CSV Processing"
+      }
+    },
+    {
+      "id": "ggkWo0DRSSDDkHpbiyUyf",
+      "type": "subtopic",
+      "data": {
+        "label": "XML Processing"
+      }
+    },
+    {
+      "id": "qEQHasW-P1aIenzurfCNB",
+      "type": "label",
+      "data": {
+        "label": "File Operations"
+      }
+    },
+    {
+      "id": "_V2EY4z-CTE4g-HtjU_ov",
+      "type": "paragraph",
+      "data": {
+        "label": "HTTP / Request Handling"
+      }
+    },
+    {
+      "id": "IxzVu2Uxmtw9koAB7nP3J",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "tn_iIfaJZVtPK6vFds7FH",
+      "type": "topic",
+      "data": {
+        "label": "HTTP Methods"
+      }
+    },
+    {
+      "id": "GFYGFVfxkOoPI5mI4zSt1",
+      "type": "subtopic",
+      "data": {
+        "label": "$_GET"
+      }
+    },
+    {
+      "id": "qNG-a4iIO-puZsMwAMzYC",
+      "type": "subtopic",
+      "data": {
+        "label": "$_POST"
+      }
+    },
+    {
+      "id": "A6rfW4uJhyfAX2b18_EEC",
+      "type": "subtopic",
+      "data": {
+        "label": "$_REQUEST"
+      }
+    },
+    {
+      "id": "7Ja2at_N9tRTlvSGahrqn",
+      "type": "subtopic",
+      "data": {
+        "label": "$_SERVER"
+      }
+    },
+    {
+      "id": "1fD7xL7hD9Dv62ksAy-fF",
+      "type": "label",
+      "data": {
+        "label": "Super Global Variables"
+      }
+    },
+    {
+      "id": "sYI7f1PYP7G30_Uj2mZRv",
+      "type": "topic",
+      "data": {
+        "label": "Form Processing"
+      }
+    },
+    {
+      "id": "HNo8QO4aPbvgePiA4l6tq",
+      "type": "topic",
+      "data": {
+        "label": "File Uploads"
+      }
+    },
+    {
+      "id": "CGehmZjcgTWC7fQAvxmNW",
+      "type": "topic",
+      "data": {
+        "label": "State Management"
+      }
+    },
+    {
+      "id": "so03-fK7E2WvTm6XsPq4i",
+      "type": "subtopic",
+      "data": {
+        "label": "Cookies"
+      }
+    },
+    {
+      "id": "qobzzgzArNHLLn9Oiqc6G",
+      "type": "subtopic",
+      "data": {
+        "label": "Sessions"
+      }
+    },
+    {
+      "id": "93oEIZttb85S23C1fLraP",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Validation"
+      }
+    },
+    {
+      "id": "DxqQrToZSayWplKdCkTgT",
+      "type": "subtopic",
+      "data": {
+        "label": "XSS Prevention"
+      }
+    },
+    {
+      "id": "801vB_JMas4ucriUmfrLg",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Injection"
+      }
+    },
+    {
+      "id": "J9yIXZTtwbFzH2u4dI1ep",
+      "type": "subtopic",
+      "data": {
+        "label": "CSRF Protection"
+      }
+    },
+    {
+      "id": "JbWFfJiCRrXDhnuIx_lqx",
+      "type": "subtopic",
+      "data": {
+        "label": "Password Hashing"
+      }
+    },
+    {
+      "id": "HJJzKYXdK4BWITLP4APLZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Auth Mechanisms"
+      }
+    },
+    {
+      "id": "tfC1tCrbvH5J43WUpG9Yb",
+      "type": "subtopic",
+      "data": {
+        "label": "Sanitization Techniques"
+      }
+    },
+    {
+      "id": "ESNhqQpKQ-SmCOBDTObk-",
+      "type": "label",
+      "data": {
+        "label": "Basics of Security"
+      }
+    },
+    {
+      "id": "ujVb9PtG6AlDUPLk_SWUU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "77uKH6zwzzEycoZkGotpK",
+      "type": "paragraph",
+      "data": {
+        "label": "Working with Databases"
+      }
+    },
+    {
+      "id": "ViaJCS5_Zngyrm6F01s3J",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "cJtPz1RMN1qDE4eRdv4N_",
+      "type": "subtopic",
+      "data": {
+        "label": "PDO"
+      }
+    },
+    {
+      "id": "YLuo0oZJzTCoiZoOSG57z",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQLi"
+      }
+    },
+    {
+      "id": "6bK1pQ7pM3oowXyKNYIty",
+      "type": "label",
+      "data": {
+        "label": "Database Connectivity"
+      }
+    },
+    {
+      "id": "SeqGIfcLuveZ2z5ZSXcOd",
+      "type": "subtopic",
+      "data": {
+        "label": "Object-Relational Mapping (ORM)"
+      }
+    },
+    {
+      "id": "FY-F6n9j29hQrnFry3VGb",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Transactions"
+      }
+    },
+    {
+      "id": "txUyPR_tdC8iTJV3RtvBz",
+      "type": "subtopic",
+      "data": {
+        "label": "Connection Pooling"
+      }
+    },
+    {
+      "id": "M1nVsh_sCSFJRf6-7Ttsj",
+      "type": "subtopic",
+      "data": {
+        "label": "Performance Optimization"
+      }
+    },
+    {
+      "id": "meplwvmHMtI3Sb_fyodzZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Database Migrations"
+      }
+    },
+    {
+      "id": "pfX7PZgDo-QB2E35wTlwT",
+      "type": "label",
+      "data": {
+        "label": "Advanced Database Techniques"
+      }
+    },
+    {
+      "id": "-uTMq6j24oe-_6XHfYfxE",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "uH9DTrDCBmBzXlup8KG3G",
+      "type": "paragraph",
+      "data": {
+        "label": "Object Oriented Programming"
+      }
+    },
+    {
+      "id": "EczRVrMg8N-aIvwmuHaBx",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PIuplWreo7PFG3Mdn2t6W",
+      "type": "subtopic",
+      "data": {
+        "label": "Classes and Objects"
+      }
+    },
+    {
+      "id": "oNUt1oT8pYBVvH0S2P6cb",
+      "type": "subtopic",
+      "data": {
+        "label": "Constructor / Destructor"
+      }
+    },
+    {
+      "id": "MRAPXshy9RoYdReY6grf_",
+      "type": "subtopic",
+      "data": {
+        "label": "Properties and Methods"
+      }
+    },
+    {
+      "id": "RD2RaBmA2XWkEa13PTCTX",
+      "type": "subtopic",
+      "data": {
+        "label": "Access Specifiers"
+      }
+    },
+    {
+      "id": "qlkpwXfOc1p7j37hrzffI",
+      "type": "subtopic",
+      "data": {
+        "label": "Static Methods and Properties"
+      }
+    },
+    {
+      "id": "c5q2e_jyMt8Pir5Od3lRi",
+      "type": "subtopic",
+      "data": {
+        "label": "Inheritance"
+      }
+    },
+    {
+      "id": "yTviiPFR5b_dr3WyxdxxQ",
+      "type": "topic",
+      "data": {
+        "label": "OOP Fundamentals"
+      }
+    },
+    {
+      "id": "BOWGF4ovKzGC_3MFQET9p",
+      "type": "paragraph",
+      "data": {
+        "label": "More OOP Concepts"
+      }
+    },
+    {
+      "id": "gtq5KrghF28f5G8nuDcYQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Polymorphism"
+      }
+    },
+    {
+      "id": "ub79EkMiOmPBwXLRuYFL8",
+      "type": "subtopic",
+      "data": {
+        "label": "Abstract classes"
+      }
+    },
+    {
+      "id": "vu0H-TsD7hkJgOQbSRj92",
+      "type": "subtopic",
+      "data": {
+        "label": "Interfaces"
+      }
+    },
+    {
+      "id": "GR09ns9B-0cONQaQ_uj-7",
+      "type": "subtopic",
+      "data": {
+        "label": "Traits"
+      }
+    },
+    {
+      "id": "9raJ06lKRZITbjWeLil-F",
+      "type": "subtopic",
+      "data": {
+        "label": "Namespaces"
+      }
+    },
+    {
+      "id": "rSXsPWto7Jeyw3Szl9pvf",
+      "type": "subtopic",
+      "data": {
+        "label": "Magic methods"
+      }
+    },
+    {
+      "id": "KEE50C6lOS4eX8sAbfhYe",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency injection"
+      }
+    },
+    {
+      "id": "sPW-Ti2VyNYzxq6EYkbn7",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Declarations"
+      }
+    },
+    {
+      "id": "oAED9Fd5FFTB2Dm7Vi2JF",
+      "type": "paragraph",
+      "data": {
+        "label": "Frameworks \u0026 Tools"
+      }
+    },
+    {
+      "id": "zsscRQZIq5o0JZir9hlz-",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel"
+      }
+    },
+    {
+      "id": "57VSMVePOr9qUD5x_LNdf",
+      "type": "subtopic",
+      "data": {
+        "label": "Symfony"
+      }
+    },
+    {
+      "id": "Qz5SD_EDrAZBMBDyjpTtH",
+      "type": "label",
+      "data": {
+        "label": "Popular Frameworks"
+      }
+    },
+    {
+      "id": "yVFDu2aTiEZ4PWMdKdW2P",
+      "type": "subtopic",
+      "data": {
+        "label": "Composer"
+      }
+    },
+    {
+      "id": "xZf2jjnCVHwYfDH2hs9kR",
+      "type": "subtopic",
+      "data": {
+        "label": "Packagist"
+      }
+    },
+    {
+      "id": "qFiTsf6Es-gwqe6J6bdL1",
+      "type": "subtopic",
+      "data": {
+        "label": "Autoloading"
+      }
+    },
+    {
+      "id": "CQwvbTXeYxm4yKTnbgQ-P",
+      "type": "label",
+      "data": {
+        "label": "Package Management"
+      }
+    },
+    {
+      "id": "CQksvYg9NAk4xhlAsYwlW",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Ckno7MXH8tSaegNekAiuL",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NfBKKwG2GGBPppOjoLLBg",
+      "type": "subtopic",
+      "data": {
+        "label": "PHPUnit"
+      }
+    },
+    {
+      "id": "d6MydchA52HIxfAUjmZui",
+      "type": "subtopic",
+      "data": {
+        "label": "Pest"
+      }
+    },
+    {
+      "id": "X0mFrPsMoaoVxe9FSJ0OQ",
+      "type": "label",
+      "data": {
+        "label": "Testing Tools"
+      }
+    },
+    {
+      "id": "6eWgZVLV479oQzl0fu-Od",
+      "type": "topic",
+      "data": {
+        "label": "Style Tools"
+      }
+    },
+    {
+      "id": "fSpvZ_4kGFMbFVCWhA8vn",
+      "type": "subtopic",
+      "data": {
+        "label": "PHPCodeSniffer"
+      }
+    },
+    {
+      "id": "r07k_hT2z2EiIBH4q3F7-",
+      "type": "subtopic",
+      "data": {
+        "label": "PHP CS Fixer"
+      }
+    },
+    {
+      "id": "PrG_5dyBblXsWYYRcOJMa",
+      "type": "topic",
+      "data": {
+        "label": "Static Analysis"
+      }
+    },
+    {
+      "id": "12k71gNfwAcT9K5aLWgbZ",
+      "type": "subtopic",
+      "data": {
+        "label": "PHPStan"
+      }
+    },
+    {
+      "id": "B45YVzov8X_iOtneiFEqa",
+      "type": "subtopic",
+      "data": {
+        "label": "Phan"
+      }
+    },
+    {
+      "id": "T1XD93j6Lkpl88JSmys9b",
+      "type": "subtopic",
+      "data": {
+        "label": "Psalm"
+      }
+    },
+    {
+      "id": "_3kirB7iU8ZHdwu3C6X3T",
+      "type": "label",
+      "data": {
+        "label": "External Integrations"
+      }
+    },
+    {
+      "id": "KC6D81-T-FwQc7Osw1rlY",
+      "type": "subtopic",
+      "data": {
+        "label": "cURL"
+      }
+    },
+    {
+      "id": "_Al4NXKVQAnk8OikwvXCL",
+      "type": "subtopic",
+      "data": {
+        "label": "Guzzle"
+      }
+    },
+    {
+      "id": "SD9k16UlVve9WtNMDA5Za",
+      "type": "topic",
+      "data": {
+        "label": "PHP-FIG"
+      }
+    },
+    {
+      "id": "3tONibbRgK7HCwGTE2Gqw",
+      "type": "subtopic",
+      "data": {
+        "label": "PSR Standards"
+      }
+    },
+    {
+      "id": "wovWgSJsUDWgAuqWE45wv",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "H3zHxetW5HPKp-31GFOnR",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "wIaG8FvXY1l89Vmc2Rj-e",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "YCo5bnHpjGFfH9xCAgRJh",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "okaY9JLgjz8JRaVAgz9Dr",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced PHP Topics"
+      }
+    },
+    {
+      "id": "z1IO3hBgTht06oJutACrV",
+      "type": "label",
+      "data": {
+        "label": "Performance Optimization"
+      }
+    },
+    {
+      "id": "_Dh78x_tPLqZweg--qZFQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Profiling Techniques"
+      }
+    },
+    {
+      "id": "Av-BMa57RvrLlAXLffOH0",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching Strategies"
+      }
+    },
+    {
+      "id": "bt7dK2PcOZ72B9HXPyMwL",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Management"
+      }
+    },
+    {
+      "id": "VpwwF8j5ZtXVSbzNfE7Sx",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuration Tuning"
+      }
+    },
+    {
+      "id": "NieqZd1juaNYoZOrB7e31",
+      "type": "subtopic",
+      "data": {
+        "label": "Opcode Caching"
+      }
+    },
+    {
+      "id": "VhyYNGhOdKKrz_-uTkrjD",
+      "type": "subtopic",
+      "data": {
+        "label": "Executing System Commands"
+      }
+    },
+    {
+      "id": "NTKUMgsKGYISIyhgOJPQn",
+      "type": "subtopic",
+      "data": {
+        "label": "Process Control"
+      }
+    },
+    {
+      "id": "fitjnLYKLHJ2P5G7JAvzm",
+      "type": "subtopic",
+      "data": {
+        "label": "Environment Variables"
+      }
+    },
+    {
+      "id": "DTaAZaU1CwzW7esoDhj85",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuration Files"
+      }
+    },
+    {
+      "id": "qp5Xi12c0qcSzTanzJq0Z",
+      "type": "label",
+      "data": {
+        "label": "System Interactions"
+      }
+    },
+    {
+      "id": "VqqfBbME7nkMk7SeK4kxQ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "bnNgbziFgsgr0HtGkVTYW",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "KcavBCDfV-jrLoq33oGd5",
+      "type": "label",
+      "data": {
+        "label": "Debugging Tools"
+      }
+    },
+    {
+      "id": "lFoHoMRywCWa056ii5cKQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Xdebug"
+      }
+    },
+    {
+      "id": "KpQb5Zh3GUcbYUyXHvyu2",
+      "type": "subtopic",
+      "data": {
+        "label": "Zend Debugger"
+      }
+    },
+    {
+      "id": "0sSCn2V5p-m5zuE8ubCx_",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "nwsvebWwCbfmy2ks1q6Kh",
+      "type": "label",
+      "data": {
+        "label": "Web Servers"
+      }
+    },
+    {
+      "id": "KMQqePqAjQ-ReDwHqeofx",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache"
+      }
+    },
+    {
+      "id": "aspZpACHEKOsi_Er5FYPY",
+      "type": "subtopic",
+      "data": {
+        "label": "Nginx"
+      }
+    },
+    {
+      "id": "xz_XU3RNTleqzeG8jiL1j",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "szbK3mnYAi7WHyZpDRDTZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7uTIanigHQopkfWfPnDzb",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "AoGS-5MSkp8gtJFQVPSBE",
+      "type": "subtopic",
+      "data": {
+        "label": "PHP-FPM"
+      }
+    },
+    {
+      "id": "5GM8QPK9cN34oEYoGshHn",
+      "type": "button",
+      "data": {
+        "label": "Visit DevOps Beginner Roadmap"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-_hYN0gEi9BL24nptEtXWUw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "_hYN0gEi9BL24nptEtXWU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUy2-_LhLDVZjLt1DoAP1NuUESz1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "_LhLDVZjLt1DoAP1NuUES",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUz2-b2CuLrhsUNnb4OxI6RRASy1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "b2CuLrhsUNnb4OxI6RRAS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUz2-6sHRQTcoKL3TlgNJlwyx8y1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "6sHRQTcoKL3TlgNJlwyx8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUx2-qA7UjGPRBRZaBdgHTS5o3w1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "qA7UjGPRBRZaBdgHTS5o3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-qA7UjGPRBRZaBdgHTS5o3z2-3_TuxOSzBuktBlBF05r_zy1",
+      "source": "qA7UjGPRBRZaBdgHTS5o3",
+      "target": "3_TuxOSzBuktBlBF05r_z",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-BxU_vv4FsalsT1Hq0qRRKy2-usBwcXnWuUlaN71q1nbEDz1",
+      "source": "BxU_vv4FsalsT1Hq0qRRK",
+      "target": "usBwcXnWuUlaN71q1nbED",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDy2-hzBUHSuFwLYNooF_vEmrsz1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "hzBUHSuFwLYNooF_vEmrs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDy2-D0BtyxyjIBcpfn5wP23WCz1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "D0BtyxyjIBcpfn5wP23WC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDy2-srIHPZabaCGdB5VvUXaMaz1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "srIHPZabaCGdB5VvUXaMa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDy2-IhKjvT6CjRz4dsSU7SNQoz1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "pzReF4C0mcCWAnpfIJbwl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDy2-bN07oOEWH_UrXKfpp8MB0z1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "bN07oOEWH_UrXKfpp8MB0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-usBwcXnWuUlaN71q1nbEDx2-IhKjvT6CjRz4dsSU7SNQow1",
+      "source": "usBwcXnWuUlaN71q1nbED",
+      "target": "IhKjvT6CjRz4dsSU7SNQo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-IhKjvT6CjRz4dsSU7SNQox2-j2S8dP3HlAOOoZdpj-7Dxw1",
+      "source": "IhKjvT6CjRz4dsSU7SNQo",
+      "target": "j2S8dP3HlAOOoZdpj-7Dx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-IhKjvT6CjRz4dsSU7SNQoz2-WiGv7vi7Mtw-YqPMcnnywy1",
+      "source": "IhKjvT6CjRz4dsSU7SNQo",
+      "target": "38YksjvhXCbgnHqkl57Cz",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnyww2-1NXSk8VZDr89jQTTkOL7xx1",
+      "source": "38YksjvhXCbgnHqkl57Cz",
+      "target": "1NXSk8VZDr89jQTTkOL7x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-qwt8xN4vuTrY-D0czYITIy2-WiGv7vi7Mtw-YqPMcnnywz2",
+      "source": "qwt8xN4vuTrY-D0czYITI",
+      "target": "WiGv7vi7Mtw-YqPMcnnyw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-38YksjvhXCbgnHqkl57Czx2-qwt8xN4vuTrY-D0czYITIw1",
+      "source": "38YksjvhXCbgnHqkl57Cz",
+      "target": "qwt8xN4vuTrY-D0czYITI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywy2-1nODJchgSuWbcvSlxnWeEz2",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "1nODJchgSuWbcvSlxnWeE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywy2-mpQKoBzsOa-5iWo08sOhQz1",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "mpQKoBzsOa-5iWo08sOhQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywy2-RgVP99rJJ8FVecIA45w20z1",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "RgVP99rJJ8FVecIA45w20",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywy2-RkNjYva8o_jXp9suz5YdGz1",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "RkNjYva8o_jXp9suz5YdG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywx2-Nr5m6wQLp7VyG3AucrSc8w1",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "Nr5m6wQLp7VyG3AucrSc8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fBym6pkzRkNh0LWyCg3Bvx2-hitsVjqeIuzCP0VUZRXkSw1",
+      "source": "fBym6pkzRkNh0LWyCg3Bv",
+      "target": "hitsVjqeIuzCP0VUZRXkS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-WiGv7vi7Mtw-YqPMcnnywz2-fBym6pkzRkNh0LWyCg3Bvy1",
+      "source": "WiGv7vi7Mtw-YqPMcnnyw",
+      "target": "fBym6pkzRkNh0LWyCg3Bv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_V2EY4z-CTE4g-HtjU_ovw2-dv4WVzUCQ6d95AfBqdqQVx1",
+      "source": "_V2EY4z-CTE4g-HtjU_ov",
+      "target": "dv4WVzUCQ6d95AfBqdqQV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_V2EY4z-CTE4g-HtjU_ovx2-sYI7f1PYP7G30_Uj2mZRvw1",
+      "source": "_V2EY4z-CTE4g-HtjU_ov",
+      "target": "sYI7f1PYP7G30_Uj2mZRv",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-HNo8QO4aPbvgePiA4l6tqz2-CGehmZjcgTWC7fQAvxmNWy1",
+      "source": "HNo8QO4aPbvgePiA4l6tq",
+      "target": "CGehmZjcgTWC7fQAvxmNW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-CGehmZjcgTWC7fQAvxmNWz2-so03-fK7E2WvTm6XsPq4iy2",
+      "source": "CGehmZjcgTWC7fQAvxmNW",
+      "target": "so03-fK7E2WvTm6XsPq4i",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CGehmZjcgTWC7fQAvxmNWz2-qobzzgzArNHLLn9Oiqc6Gy1",
+      "source": "CGehmZjcgTWC7fQAvxmNW",
+      "target": "qobzzgzArNHLLn9Oiqc6G",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-77uKH6zwzzEycoZkGotpKy2-1mXQQdSdlKkWfjlT47nE0w2",
+      "source": "77uKH6zwzzEycoZkGotpK",
+      "target": "1mXQQdSdlKkWfjlT47nE0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-uH9DTrDCBmBzXlup8KG3Gz2-yTviiPFR5b_dr3WyxdxxQy2",
+      "source": "uH9DTrDCBmBzXlup8KG3G",
+      "target": "yTviiPFR5b_dr3WyxdxxQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-PIuplWreo7PFG3Mdn2t6Wy1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "PIuplWreo7PFG3Mdn2t6W",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-oNUt1oT8pYBVvH0S2P6cby1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "oNUt1oT8pYBVvH0S2P6cb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-MRAPXshy9RoYdReY6grf_y1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "MRAPXshy9RoYdReY6grf_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-RD2RaBmA2XWkEa13PTCTXy1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "RD2RaBmA2XWkEa13PTCTX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-qlkpwXfOc1p7j37hrzffIy1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "qlkpwXfOc1p7j37hrzffI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQz2-c5q2e_jyMt8Pir5Od3lRiy1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "c5q2e_jyMt8Pir5Od3lRi",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yTviiPFR5b_dr3WyxdxxQx2-BOWGF4ovKzGC_3MFQET9pw1",
+      "source": "yTviiPFR5b_dr3WyxdxxQ",
+      "target": "BOWGF4ovKzGC_3MFQET9p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-gtq5KrghF28f5G8nuDcYQz1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "gtq5KrghF28f5G8nuDcYQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-ub79EkMiOmPBwXLRuYFL8z1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "ub79EkMiOmPBwXLRuYFL8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-vu0H-TsD7hkJgOQbSRj92z1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "vu0H-TsD7hkJgOQbSRj92",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-GR09ns9B-0cONQaQ_uj-7z1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "GR09ns9B-0cONQaQ_uj-7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-9raJ06lKRZITbjWeLil-Fz1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "9raJ06lKRZITbjWeLil-F",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-rSXsPWto7Jeyw3Szl9pvfz1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "rSXsPWto7Jeyw3Szl9pvf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-KEE50C6lOS4eX8sAbfhYez1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "KEE50C6lOS4eX8sAbfhYe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9py2-sPW-Ti2VyNYzxq6EYkbn7z1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "sPW-Ti2VyNYzxq6EYkbn7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-BOWGF4ovKzGC_3MFQET9pz2-oAED9Fd5FFTB2Dm7Vi2JFy1",
+      "source": "BOWGF4ovKzGC_3MFQET9p",
+      "target": "oAED9Fd5FFTB2Dm7Vi2JF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-oAED9Fd5FFTB2Dm7Vi2JFx2-nWYHpcvp1RT1gSqs1Dqcsw1",
+      "source": "oAED9Fd5FFTB2Dm7Vi2JF",
+      "target": "nWYHpcvp1RT1gSqs1Dqcs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-PrG_5dyBblXsWYYRcOJMax2-12k71gNfwAcT9K5aLWgbZw1",
+      "source": "PrG_5dyBblXsWYYRcOJMa",
+      "target": "12k71gNfwAcT9K5aLWgbZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-6eWgZVLV479oQzl0fu-Ody2-PrG_5dyBblXsWYYRcOJMaz1",
+      "source": "6eWgZVLV479oQzl0fu-Od",
+      "target": "PrG_5dyBblXsWYYRcOJMa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-SD9k16UlVve9WtNMDA5Zaw2-3tONibbRgK7HCwGTE2Gqwx1",
+      "source": "SD9k16UlVve9WtNMDA5Za",
+      "target": "3tONibbRgK7HCwGTE2Gqw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SD9k16UlVve9WtNMDA5Zax2-okaY9JLgjz8JRaVAgz9Drw1",
+      "source": "SD9k16UlVve9WtNMDA5Za",
+      "target": "okaY9JLgjz8JRaVAgz9Dr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-okaY9JLgjz8JRaVAgz9Drx2-gn5qNP3VTmmQE2tT6o-vSw1",
+      "source": "okaY9JLgjz8JRaVAgz9Dr",
+      "target": "gn5qNP3VTmmQE2tT6o-vS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

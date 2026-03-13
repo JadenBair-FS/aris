@@ -1,0 +1,1416 @@
+{
+  "title": {
+    "card": "Laravel",
+    "page": "Laravel"
+  },
+  "description": "Step by step guide to mastering Laravel in @currentYear@",
+  "nodes": [
+    {
+      "id": "3LIJ2VBs4u_FZfGZV8BQw",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "f8tXFpI9qe2W83bOEewwd",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "9xIWoyVx2oIjG0Dyv21ME",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5ny3M0G2Tk8XjBvcUd2iN",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Yox2jDQWcLzEXNOuidzIU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "586zzhfvZ1SADT62s1QZa",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "13gwXW6gmYxTBr-Uc4LG2",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "tFh9dWMKgLWz9N6zd0dX4",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lQUIF_jhRgBRG7hHpWQna",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "oGDxiqekYj52KyMF9zZYX",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "y3uzrmKB3jd-LI6fCRe10",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "YqCP8FLUZvHoAwawust8j",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_RwACRtwA-prVcOBz0M3B",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "4fcZALYLD4P8kDrHZ76WB",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "XsRjDbarOgNYBvlRDbhit",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "MSE84wbyfBAThbrsRb2BW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4EjiElss3V3t50nbUFdpo",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "pQAZy855oLUqUhTvJL4ST",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "loAUjW-PJgJKyBV3gDZ6m",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "Kee5SXZbkwmoxAF8O6Y2f",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel Herd"
+      }
+    },
+    {
+      "id": "cmczkTxiNFtfnr5Wgznef",
+      "type": "topic",
+      "data": {
+        "label": "Installing Laravel"
+      }
+    },
+    {
+      "id": "vI2qUCCDghYynHr2hUSkb",
+      "type": "subtopic",
+      "data": {
+        "label": "Breeze"
+      }
+    },
+    {
+      "id": "5A0DGzGXXBHQTRuzWEkuW",
+      "type": "subtopic",
+      "data": {
+        "label": "Livewire"
+      }
+    },
+    {
+      "id": "lBpyPXS2zHbJ49bHpOyi5",
+      "type": "subtopic",
+      "data": {
+        "label": "Jetstream"
+      }
+    },
+    {
+      "id": "0B41E-UtzvCsXVDX5DUqY",
+      "type": "subtopic",
+      "data": {
+        "label": "Inertia"
+      }
+    },
+    {
+      "id": "9YTtSeu4nY5A5AcFcZFto",
+      "type": "topic",
+      "data": {
+        "label": "Starter Kits"
+      }
+    },
+    {
+      "id": "7NR5Dj24EFDsvea61_BTu",
+      "type": "topic",
+      "data": {
+        "label": "Create a new project"
+      }
+    },
+    {
+      "id": "jARVkKaEkVAYIe8WSO0aY",
+      "type": "topic",
+      "data": {
+        "label": "Request\u2013Response Flow"
+      }
+    },
+    {
+      "id": "U9EVG_fIFy57WWPwJSXv6",
+      "type": "subtopic",
+      "data": {
+        "label": "App"
+      }
+    },
+    {
+      "id": "ieFd1B_Ntp1pK8ew47WyP",
+      "type": "subtopic",
+      "data": {
+        "label": "Resources"
+      }
+    },
+    {
+      "id": "BWl1EezIH8xHf0N4grruF",
+      "type": "subtopic",
+      "data": {
+        "label": "Bootstrap"
+      }
+    },
+    {
+      "id": "eMVYQ1Q1o1IZmeHnrfBV7",
+      "type": "subtopic",
+      "data": {
+        "label": "Routes"
+      }
+    },
+    {
+      "id": "RfSXcTBYSX4_9YhsOdSQc",
+      "type": "subtopic",
+      "data": {
+        "label": "Config"
+      }
+    },
+    {
+      "id": "Q8IaWP-McT1x89_87fVUF",
+      "type": "subtopic",
+      "data": {
+        "label": "Storage"
+      }
+    },
+    {
+      "id": "QEapMmUt1VLeERQy8pOEn",
+      "type": "subtopic",
+      "data": {
+        "label": "Database"
+      }
+    },
+    {
+      "id": "6iTp6YFyfzg_7uyIKwu37",
+      "type": "subtopic",
+      "data": {
+        "label": "Tests"
+      }
+    },
+    {
+      "id": "ciVFg7PpqdBtSt0XaXNZL",
+      "type": "subtopic",
+      "data": {
+        "label": "Public"
+      }
+    },
+    {
+      "id": "-xOvjCCRwfkms2SRUvMaC",
+      "type": "subtopic",
+      "data": {
+        "label": "Vendor"
+      }
+    },
+    {
+      "id": "LgHiEGflKuzsBEOMSX4i4",
+      "type": "topic",
+      "data": {
+        "label": "Basic Routes"
+      }
+    },
+    {
+      "id": "6TkDx8eXb9nMU_OE3ArhJ",
+      "type": "topic",
+      "data": {
+        "label": "Route parameters"
+      }
+    },
+    {
+      "id": "PAdXLppvU-X94gK5uCbf-",
+      "type": "topic",
+      "data": {
+        "label": "Named routes"
+      }
+    },
+    {
+      "id": "Pmw0OdtrsMIaHB9Y8v3An",
+      "type": "topic",
+      "data": {
+        "label": "Route groups"
+      }
+    },
+    {
+      "id": "SoHBSaHmds3C4uJ-vljhf",
+      "type": "topic",
+      "data": {
+        "label": "Middleware"
+      }
+    },
+    {
+      "id": "hC0-JDJtpgh4ELcFuhch1",
+      "type": "subtopic",
+      "data": {
+        "label": "Route model binding"
+      }
+    },
+    {
+      "id": "_0QY_h0802wBAKEo2Hq9f",
+      "type": "subtopic",
+      "data": {
+        "label": "Rate limiting "
+      }
+    },
+    {
+      "id": "Xjt4YYR8zEzUfNY6D2JwU",
+      "type": "topic",
+      "data": {
+        "label": "Basic controllers"
+      }
+    },
+    {
+      "id": "AAURmpEyp78p31GY0q3rV",
+      "type": "topic",
+      "data": {
+        "label": "Resource controllers"
+      }
+    },
+    {
+      "id": "1hS7qJ218Ud3et0E1JsfH",
+      "type": "topic",
+      "data": {
+        "label": "Single-action controllers"
+      }
+    },
+    {
+      "id": "1icfSs9qyM4RB_RG2N9l6",
+      "type": "topic",
+      "data": {
+        "label": "Dependency injection"
+      }
+    },
+    {
+      "id": "jBPpf2X6oNXwPH5FuWHvt",
+      "type": "subtopic",
+      "data": {
+        "label": "Global vs Route"
+      }
+    },
+    {
+      "id": "wR92EYaAPILQRmtBiaoCX",
+      "type": "topic",
+      "data": {
+        "label": "Retrieving data \u0026 files"
+      }
+    },
+    {
+      "id": "PaAvakZ8NziU1mEAN6okm",
+      "type": "subtopic",
+      "data": {
+        "label": "Files"
+      }
+    },
+    {
+      "id": "PipmRcDfvwRYNLe9VMbeU",
+      "type": "subtopic",
+      "data": {
+        "label": "Views"
+      }
+    },
+    {
+      "id": "pb7eSi-UQ7KTcdi8_pzya",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON"
+      }
+    },
+    {
+      "id": "j684EyDXKtd9QgcYQdtB4",
+      "type": "subtopic",
+      "data": {
+        "label": "Redirects"
+      }
+    },
+    {
+      "id": "PWAlppGP7HNMD7y4I6LnJ",
+      "type": "topic",
+      "data": {
+        "label": "Creating Responses"
+      }
+    },
+    {
+      "id": "L6uzrZ7z6ebnha3r-aHzb",
+      "type": "topic",
+      "data": {
+        "label": "Blade Templating"
+      }
+    },
+    {
+      "id": "SX0gVvrD0oNFUlhrfmPBV",
+      "type": "topic",
+      "data": {
+        "label": "Displaying data"
+      }
+    },
+    {
+      "id": "lG-7OBSjPCyxpYQsROA5C",
+      "type": "topic",
+      "data": {
+        "label": "Blade Directives"
+      }
+    },
+    {
+      "id": "NkxalJLKZxQPvTzecBrJa",
+      "type": "topic",
+      "data": {
+        "label": "Layouts"
+      }
+    },
+    {
+      "id": "rUKVDwwjP3pXswi-rWIj2",
+      "type": "topic",
+      "data": {
+        "label": "Blade \u002B Livewire"
+      }
+    },
+    {
+      "id": "y6rsw2UrgUR0tm2Zzqhxk",
+      "type": "topic",
+      "data": {
+        "label": "Configuration"
+      }
+    },
+    {
+      "id": "OpRkcv-Qom47TALqcEsRc",
+      "type": "topic",
+      "data": {
+        "label": "Query Builder"
+      }
+    },
+    {
+      "id": "2VWPYrDyJSRy_SNysjK1P",
+      "type": "subtopic",
+      "data": {
+        "label": "CRUD Operations"
+      }
+    },
+    {
+      "id": "lPuBSP-PNifc0jIWzn_Gd",
+      "type": "subtopic",
+      "data": {
+        "label": "Casts, Accessors"
+      }
+    },
+    {
+      "id": "NEbYfTpH0mnbPKPFI1x-B",
+      "type": "subtopic",
+      "data": {
+        "label": "Relationships"
+      }
+    },
+    {
+      "id": "d35_8oQcSQUBnDMiwzNfU",
+      "type": "subtopic",
+      "data": {
+        "label": "Query scopes"
+      }
+    },
+    {
+      "id": "IxFi316xmxdP2ZZDVSE5f",
+      "type": "topic",
+      "data": {
+        "label": "Migrations, seeders"
+      }
+    },
+    {
+      "id": "aY_sz_Nb-kX4NL0g_nXoA",
+      "type": "subtopic",
+      "data": {
+        "label": "Manual validation"
+      }
+    },
+    {
+      "id": "-H9JJ_DsGAjtwdki5LPo-",
+      "type": "subtopic",
+      "data": {
+        "label": "Error messages"
+      }
+    },
+    {
+      "id": "SZY9d1QisyChz-Jmu82pC",
+      "type": "topic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "BXiM7ROYLZ7_a6x6c_wyd",
+      "type": "topic",
+      "data": {
+        "label": "Encryption \u0026 Hashing"
+      }
+    },
+    {
+      "id": "kn3-JVSd_C_KKx3SzGx84",
+      "type": "topic",
+      "data": {
+        "label": "Queues \u0026 Jobs"
+      }
+    },
+    {
+      "id": "Wt_QP7R4DRUNOMQZSnMeI",
+      "type": "topic",
+      "data": {
+        "label": "Logging Basics "
+      }
+    },
+    {
+      "id": "nvxpeUXdFs1elkG4FS8PR",
+      "type": "topic",
+      "data": {
+        "label": "Debugging basics"
+      }
+    },
+    {
+      "id": "ZlD6g0djdDH6ozwMJ5WIr",
+      "type": "subtopic",
+      "data": {
+        "label": "Handling Exceptions"
+      }
+    },
+    {
+      "id": "qetgYqhWAEHUfDIDkMGGX",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP Exceptions"
+      }
+    },
+    {
+      "id": "69IAYj71d4L6XxwX0M_j4",
+      "type": "topic",
+      "data": {
+        "label": "Unit \u0026 Feature tests"
+      }
+    },
+    {
+      "id": "Luq5PQpmDJDpf8DAkpiJt",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuration"
+      }
+    },
+    {
+      "id": "jL-NldBPyDK_0SqvMBqVu",
+      "type": "subtopic",
+      "data": {
+        "label": "Optimization"
+      }
+    },
+    {
+      "id": "JLMf5OE1ggRMOabf8KDwp",
+      "type": "subtopic",
+      "data": {
+        "label": "Health Route"
+      }
+    },
+    {
+      "id": "teD9pAQ-dKKLg5kYOPN6c",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel Forge"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "Xkh9VbM-yPX0Vkgj1tnoC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "S5K2LZZmxYKF7uMeBJR9y",
+      "type": "button",
+      "data": {
+        "label": "PHP Roadmap"
+      }
+    },
+    {
+      "id": "QvWjQUrEYX9NRbzdm3Fvp",
+      "type": "topic",
+      "data": {
+        "label": "What is Laravel?"
+      }
+    },
+    {
+      "id": "8wOQ-Kmz3dBlOKMg-ui5D",
+      "type": "subtopic",
+      "data": {
+        "label": "Why Web Frameworks?"
+      }
+    },
+    {
+      "id": "_Squ3npZfjfd_xYn__Qna",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel for Full Stack"
+      }
+    },
+    {
+      "id": "ns75IOfTHNmWsLm4q8sQx",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel for Frontend"
+      }
+    },
+    {
+      "id": "mPCzSwS_falCWlbyyzYyH",
+      "type": "paragraph",
+      "data": {
+        "label": "Yor First App"
+      }
+    },
+    {
+      "id": "yReWNr4qDBqQmblJwAEE4",
+      "type": "label",
+      "data": {
+        "label": "Project Structure"
+      }
+    },
+    {
+      "id": "Ap35AOS9vRMP2r5pUxtGZ",
+      "type": "paragraph",
+      "data": {
+        "label": "Routing \u0026 Controllers"
+      }
+    },
+    {
+      "id": "ZtU9ao0PYsW8qEEIfLeD5",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "5NMRzpig1p9SJaeA7Twmh",
+      "type": "topic",
+      "data": {
+        "label": "View Routes"
+      }
+    },
+    {
+      "id": "LCCEkY9fZOUqNo1jIpy0D",
+      "type": "topic",
+      "data": {
+        "label": "Redirect Routes"
+      }
+    },
+    {
+      "id": "l14wSdac211BUDxKkGk9J",
+      "type": "subtopic",
+      "data": {
+        "label": "CORS"
+      }
+    },
+    {
+      "id": "eeWk2_ZYQUcYlITUzSly0",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "K0gluwjHn-o4Rl5HS8vKG",
+      "type": "label",
+      "data": {
+        "label": "Advanced Routing"
+      }
+    },
+    {
+      "id": "ZobtakCgkiO6Tum_fLE5s",
+      "type": "paragraph",
+      "data": {
+        "label": "Views \u0026 Blade"
+      }
+    },
+    {
+      "id": "bDM7WPrs8fW_V4KkIfbru",
+      "type": "topic",
+      "data": {
+        "label": "Components"
+      }
+    },
+    {
+      "id": "m1mVsw_kF2GW50UM-6o3f",
+      "type": "subtopic",
+      "data": {
+        "label": "if, else"
+      }
+    },
+    {
+      "id": "GTtgi4rShCn3AFwgBLuFc",
+      "type": "subtopic",
+      "data": {
+        "label": "loops"
+      }
+    },
+    {
+      "id": "jUOSg0uw-e3NSmyL4_85W",
+      "type": "paragraph",
+      "data": {
+        "label": "Databases \u0026 Eloquent"
+      }
+    },
+    {
+      "id": "xqXQsC_2EX4rnGAiKML9o",
+      "type": "topic",
+      "data": {
+        "label": "Eloquent ORM"
+      }
+    },
+    {
+      "id": "zJf_ZQYXSGob24p9rrVfr",
+      "type": "topic",
+      "data": {
+        "label": "Pagination"
+      }
+    },
+    {
+      "id": "A07HwtMsmcaRB7gAruqOH",
+      "type": "subtopic",
+      "data": {
+        "label": "Forms"
+      }
+    },
+    {
+      "id": "PBK-lqE3yWB2Mj1kHq4Rz",
+      "type": "subtopic",
+      "data": {
+        "label": "Manual Authentication"
+      }
+    },
+    {
+      "id": "-yacHIWQ5Oylia9e0pJXT",
+      "type": "subtopic",
+      "data": {
+        "label": "With Starter Kits"
+      }
+    },
+    {
+      "id": "dGNOYhShoyT9ovSouI00l",
+      "type": "subtopic",
+      "data": {
+        "label": "Sanctum"
+      }
+    },
+    {
+      "id": "2QZCHTZMP72sVuf97A59N",
+      "type": "subtopic",
+      "data": {
+        "label": "Passport"
+      }
+    },
+    {
+      "id": "PvSwwdBaYY32Sv5qfe9aB",
+      "type": "topic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "mOxPpW0Ic9_ZAYYNrZlb9",
+      "type": "subtopic",
+      "data": {
+        "label": "Policies"
+      }
+    },
+    {
+      "id": "YCDtdh7aZ7YPa_LFOZTLh",
+      "type": "subtopic",
+      "data": {
+        "label": "Gates"
+      }
+    },
+    {
+      "id": "ZE8urT865-JSR6evbXxw3",
+      "type": "paragraph",
+      "data": {
+        "label": "Logging \u0026 Debugging"
+      }
+    },
+    {
+      "id": "JeJXr5g6pJY3za5E_ewEY",
+      "type": "topic",
+      "data": {
+        "label": "Log Stacks \u0026 Messages"
+      }
+    },
+    {
+      "id": "j5giyFLzIm2wsOqkbjc4-",
+      "type": "subtopic",
+      "data": {
+        "label": "Telescope"
+      }
+    },
+    {
+      "id": "G_e9X1yp-SJ-pSOO1Knvq",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugbar"
+      }
+    },
+    {
+      "id": "VvSn3Zqxi6HPBkDqxoqEE",
+      "type": "subtopic",
+      "data": {
+        "label": "Message Customization"
+      }
+    },
+    {
+      "id": "RRJ4YsoM9SD1ZbaUVduEQ",
+      "type": "label",
+      "data": {
+        "label": "Error Handling"
+      }
+    },
+    {
+      "id": "4InRt-kRnrFN1066ApR0p",
+      "type": "paragraph",
+      "data": {
+        "label": "Requests \u0026 Responses"
+      }
+    },
+    {
+      "id": "3hluy0wKpsbWHpI1AwTfB",
+      "type": "subtopic",
+      "data": {
+        "label": "Pest"
+      }
+    },
+    {
+      "id": "pUJVZ6oUKVSixtxshwhqi",
+      "type": "subtopic",
+      "data": {
+        "label": "PHPUnit"
+      }
+    },
+    {
+      "id": "mpfzIVmulV3sJthKxP_PV",
+      "type": "subtopic",
+      "data": {
+        "label": "Streamed Responses"
+      }
+    },
+    {
+      "id": "j6yRlknaTSWY6wlqeqdky",
+      "type": "label",
+      "data": {
+        "label": "Validation"
+      }
+    },
+    {
+      "id": "-MfbXnkwrE-nxokFNi0Wi",
+      "type": "paragraph",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "UzhlPw7flQ9UHeia0o-uj",
+      "type": "subtopic",
+      "data": {
+        "label": "Laravel Cloud"
+      }
+    },
+    {
+      "id": "KZ52I2q7hvBS5cIeVqBR0",
+      "type": "label",
+      "data": {
+        "label": "Deployment Options"
+      }
+    },
+    {
+      "id": "nNFGTPDGmI7bcUwnClRgQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "z8obc-biJAAs9EJbr7fiI",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Features"
+      }
+    },
+    {
+      "id": "MRWdMXNwNyVgyNrx0qTdp",
+      "type": "topic",
+      "data": {
+        "label": "Events \u0026 Listeners"
+      }
+    },
+    {
+      "id": "LZ8UiFvBT_rxirANh6XxZ",
+      "type": "topic",
+      "data": {
+        "label": "Notifications"
+      }
+    },
+    {
+      "id": "aWC-GXotQYf5e43Hgfaa9",
+      "type": "topic",
+      "data": {
+        "label": "Task Schedulling"
+      }
+    },
+    {
+      "id": "oB20h3_6U41cVvoACb63y",
+      "type": "topic",
+      "data": {
+        "label": "File Storage"
+      }
+    },
+    {
+      "id": "_y5s3ZGwvWR_RiQ0VnWYv",
+      "type": "topic",
+      "data": {
+        "label": "Localization"
+      }
+    },
+    {
+      "id": "182iKn3FXLZEKI47S7GIk",
+      "type": "topic",
+      "data": {
+        "label": "Facades"
+      }
+    },
+    {
+      "id": "t3iEtiCHghB4S9gAQOQJM",
+      "type": "topic",
+      "data": {
+        "label": "Package Management"
+      }
+    },
+    {
+      "id": "NcgOltUze3TkP-8c_ohLq",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "mz4QuqdC_EXKuX3KLX8_S",
+      "type": "subtopic",
+      "data": {
+        "label": "Artisan"
+      }
+    },
+    {
+      "id": "UuHmg37MvwNAXJCPUt1-a",
+      "type": "label",
+      "data": {
+        "label": "Code Style"
+      }
+    },
+    {
+      "id": "9f6LOAmz06Z4yk2_Z3SYr",
+      "type": "label",
+      "data": {
+        "label": "CLIs"
+      }
+    },
+    {
+      "id": "_hhgO69zAsDdtvIW0iM7a",
+      "type": "subtopic",
+      "data": {
+        "label": "Sail"
+      }
+    },
+    {
+      "id": "h78y25Zlzoc2RrrCIGztf",
+      "type": "subtopic",
+      "data": {
+        "label": "Octane"
+      }
+    },
+    {
+      "id": "4oRub9QpVWe2mw5SPPt5b",
+      "type": "label",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "PHP"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "Full Stack"
+      }
+    },
+    {
+      "id": "M-x3UwacbhtaGyPS6tzu3",
+      "type": "subtopic",
+      "data": {
+        "label": "Pulse"
+      }
+    },
+    {
+      "id": "460FOmMKHjW7xOSWx61IC",
+      "type": "label",
+      "data": {
+        "label": "Monitoring"
+      }
+    },
+    {
+      "id": "8XZ3g4gW34k1sThHvb2cH",
+      "type": "subtopic",
+      "data": {
+        "label": "Pint"
+      }
+    },
+    {
+      "id": "IBS_S2EFIE2wygViIzriS",
+      "type": "title",
+      "data": {
+        "label": "Laravel"
+      }
+    },
+    {
+      "id": "OnNjO3zDIYNHesUxr8qdt",
+      "type": "paragraph",
+      "data": {
+        "label": "Tools and Packages"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__S5K2LZZmxYKF7uMeBJR9yx2-QvWjQUrEYX9NRbzdm3Fvpw1",
+      "source": "S5K2LZZmxYKF7uMeBJR9y",
+      "target": "QvWjQUrEYX9NRbzdm3Fvp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QvWjQUrEYX9NRbzdm3Fvpz2-8wOQ-Kmz3dBlOKMg-ui5Dy1",
+      "source": "QvWjQUrEYX9NRbzdm3Fvp",
+      "target": "8wOQ-Kmz3dBlOKMg-ui5D",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QvWjQUrEYX9NRbzdm3Fvpz2-_Squ3npZfjfd_xYn__Qnay1",
+      "source": "QvWjQUrEYX9NRbzdm3Fvp",
+      "target": "_Squ3npZfjfd_xYn__Qna",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__QvWjQUrEYX9NRbzdm3Fvpz2-ns75IOfTHNmWsLm4q8sQxy1",
+      "source": "QvWjQUrEYX9NRbzdm3Fvp",
+      "target": "ns75IOfTHNmWsLm4q8sQx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cmczkTxiNFtfnr5Wgznefz2-QvWjQUrEYX9NRbzdm3Fvpy1",
+      "source": "cmczkTxiNFtfnr5Wgznef",
+      "target": "QvWjQUrEYX9NRbzdm3Fvp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__cmczkTxiNFtfnr5Wgznefw2-Kee5SXZbkwmoxAF8O6Y2fx1",
+      "source": "cmczkTxiNFtfnr5Wgznef",
+      "target": "Kee5SXZbkwmoxAF8O6Y2f",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__cmczkTxiNFtfnr5Wgznefx2-Wg2RjkOZHWARHUiG2uGskw1",
+      "source": "cmczkTxiNFtfnr5Wgznef",
+      "target": "mPCzSwS_falCWlbyyzYyH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wg2RjkOZHWARHUiG2uGskz2-7NR5Dj24EFDsvea61_BTuy1",
+      "source": "mPCzSwS_falCWlbyyzYyH",
+      "target": "7NR5Dj24EFDsvea61_BTu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__7NR5Dj24EFDsvea61_BTuz2-9YTtSeu4nY5A5AcFcZFtoy2",
+      "source": "7NR5Dj24EFDsvea61_BTu",
+      "target": "9YTtSeu4nY5A5AcFcZFto",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wg2RjkOZHWARHUiG2uGskz2-LgHiEGflKuzsBEOMSX4i4y1",
+      "source": "Ap35AOS9vRMP2r5pUxtGZ",
+      "target": "LgHiEGflKuzsBEOMSX4i4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__1icfSs9qyM4RB_RG2N9l6z2-SoHBSaHmds3C4uJ-vljhfy2",
+      "source": "1icfSs9qyM4RB_RG2N9l6",
+      "target": "SoHBSaHmds3C4uJ-vljhf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__SoHBSaHmds3C4uJ-vljhfx2-omxlZou6hdY5yPiiI1Sz1w2",
+      "source": "SoHBSaHmds3C4uJ-vljhf",
+      "target": "jBPpf2X6oNXwPH5FuWHvt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__SoHBSaHmds3C4uJ-vljhfz2-Wg2RjkOZHWARHUiG2uGsky1",
+      "source": "SoHBSaHmds3C4uJ-vljhf",
+      "target": "ZobtakCgkiO6Tum_fLE5s",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wg2RjkOZHWARHUiG2uGskx2-L6uzrZ7z6ebnha3r-aHzbw1",
+      "source": "ZobtakCgkiO6Tum_fLE5s",
+      "target": "L6uzrZ7z6ebnha3r-aHzb",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lG-7OBSjPCyxpYQsROA5Cy2-GTtgi4rShCn3AFwgBLuFcz1",
+      "source": "lG-7OBSjPCyxpYQsROA5C",
+      "target": "GTtgi4rShCn3AFwgBLuFc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__rUKVDwwjP3pXswi-rWIj2y2-Wg2RjkOZHWARHUiG2uGskz2",
+      "source": "rUKVDwwjP3pXswi-rWIj2",
+      "target": "jUOSg0uw-e3NSmyL4_85W",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wg2RjkOZHWARHUiG2uGsky2-y6rsw2UrgUR0tm2Zzqhxkz1",
+      "source": "jUOSg0uw-e3NSmyL4_85W",
+      "target": "y6rsw2UrgUR0tm2Zzqhxk",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__y6rsw2UrgUR0tm2Zzqhxkw2-xqXQsC_2EX4rnGAiKML9ox2",
+      "source": "y6rsw2UrgUR0tm2Zzqhxk",
+      "target": "xqXQsC_2EX4rnGAiKML9o",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__wR92EYaAPILQRmtBiaoCXx2-PWAlppGP7HNMD7y4I6LnJw2",
+      "source": "wR92EYaAPILQRmtBiaoCX",
+      "target": "PWAlppGP7HNMD7y4I6LnJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zJf_ZQYXSGob24p9rrVfrz2-4InRt-kRnrFN1066ApR0py1",
+      "source": "zJf_ZQYXSGob24p9rrVfr",
+      "target": "4InRt-kRnrFN1066ApR0p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4InRt-kRnrFN1066ApR0pz2-wR92EYaAPILQRmtBiaoCXy1",
+      "source": "4InRt-kRnrFN1066ApR0p",
+      "target": "wR92EYaAPILQRmtBiaoCX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__PWAlppGP7HNMD7y4I6LnJy2-PipmRcDfvwRYNLe9VMbeUz1",
+      "source": "PWAlppGP7HNMD7y4I6LnJ",
+      "target": "PipmRcDfvwRYNLe9VMbeU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PWAlppGP7HNMD7y4I6LnJy2-j684EyDXKtd9QgcYQdtB4z1",
+      "source": "PWAlppGP7HNMD7y4I6LnJ",
+      "target": "j684EyDXKtd9QgcYQdtB4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PWAlppGP7HNMD7y4I6LnJy2-mpfzIVmulV3sJthKxP_PVz1",
+      "source": "PWAlppGP7HNMD7y4I6LnJ",
+      "target": "mpfzIVmulV3sJthKxP_PV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PWAlppGP7HNMD7y4I6LnJx2-oGDxiqekYj52KyMF9zZYXw1",
+      "source": "PWAlppGP7HNMD7y4I6LnJ",
+      "target": "oGDxiqekYj52KyMF9zZYX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__SZY9d1QisyChz-Jmu82pCx2--yacHIWQ5Oylia9e0pJXTw1",
+      "source": "SZY9d1QisyChz-Jmu82pC",
+      "target": "-yacHIWQ5Oylia9e0pJXT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__SZY9d1QisyChz-Jmu82pCy2-PvSwwdBaYY32Sv5qfe9aBz1",
+      "source": "SZY9d1QisyChz-Jmu82pC",
+      "target": "PvSwwdBaYY32Sv5qfe9aB",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__BXiM7ROYLZ7_a6x6c_wydx2-ZE8urT865-JSR6evbXxw3w1",
+      "source": "BXiM7ROYLZ7_a6x6c_wyd",
+      "target": "ZE8urT865-JSR6evbXxw3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZE8urT865-JSR6evbXxw3x2-Wt_QP7R4DRUNOMQZSnMeIw2",
+      "source": "ZE8urT865-JSR6evbXxw3",
+      "target": "Wt_QP7R4DRUNOMQZSnMeI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JeJXr5g6pJY3za5E_ewEYz2-nvxpeUXdFs1elkG4FS8PRy2",
+      "source": "JeJXr5g6pJY3za5E_ewEY",
+      "target": "nvxpeUXdFs1elkG4FS8PR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__IBS_S2EFIE2wygViIzriSx2-S5K2LZZmxYKF7uMeBJR9yw1",
+      "source": "IBS_S2EFIE2wygViIzriS",
+      "target": "S5K2LZZmxYKF7uMeBJR9y",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__JeJXr5g6pJY3za5E_ewEYx2--MfbXnkwrE-nxokFNi0Wiw1",
+      "source": "JeJXr5g6pJY3za5E_ewEY",
+      "target": "-MfbXnkwrE-nxokFNi0Wi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__-MfbXnkwrE-nxokFNi0Wiz2-69IAYj71d4L6XxwX0M_j4y1",
+      "source": "-MfbXnkwrE-nxokFNi0Wi",
+      "target": "69IAYj71d4L6XxwX0M_j4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__69IAYj71d4L6XxwX0M_j4z2-z8obc-biJAAs9EJbr7fiIy2",
+      "source": "69IAYj71d4L6XxwX0M_j4",
+      "target": "z8obc-biJAAs9EJbr7fiI",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__t3iEtiCHghB4S9gAQOQJMx2-OnNjO3zDIYNHesUxr8qdtz2",
+      "source": "t3iEtiCHghB4S9gAQOQJM",
+      "target": "nNFGTPDGmI7bcUwnClRgQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__z8obc-biJAAs9EJbr7fiIx2-kn3-JVSd_C_KKx3SzGx84w2",
+      "source": "z8obc-biJAAs9EJbr7fiI",
+      "target": "kn3-JVSd_C_KKx3SzGx84",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nNFGTPDGmI7bcUwnClRgQy2-OnNjO3zDIYNHesUxr8qdtz1",
+      "source": "nNFGTPDGmI7bcUwnClRgQ",
+      "target": "OnNjO3zDIYNHesUxr8qdt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nNFGTPDGmI7bcUwnClRgQw2-lQUIF_jhRgBRG7hHpWQnax1",
+      "source": "nNFGTPDGmI7bcUwnClRgQ",
+      "target": "lQUIF_jhRgBRG7hHpWQna",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OnNjO3zDIYNHesUxr8qdtw2-NcgOltUze3TkP-8c_ohLqx1",
+      "source": "OnNjO3zDIYNHesUxr8qdt",
+      "target": "NcgOltUze3TkP-8c_ohLq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__nNFGTPDGmI7bcUwnClRgQx2-O5dely89N5UCMBeUfh8udw1",
+      "source": "nNFGTPDGmI7bcUwnClRgQ",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

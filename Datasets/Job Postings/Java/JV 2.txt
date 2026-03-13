@@ -1,0 +1,31 @@
+Full job description
+Infosys is seeking a Jr. Java Developer - This position’s primary responsibility will be to provide technical expertise and coordinate for day-to-day deliverables for the team. The chosen candidate will assist in the technical design of large business systems; builds applications, interfaces between applications, understands data security, retention, and recovery. The role holder should be able to research on technologies independently to recommend appropriate solutions & should contribute to technology-specific best practices & standards; contribute to success criteria from design through deployment, including, reliability, cost-effectiveness, performance, data integrity, maintainability and scalability; contributes expertise on significant application components, program languages, databases, operating systems, etc., and guides/mentors the team during the build and test phases.
+Required Qualifications:
+Bachelor’s degree or foreign equivalent required from an accredited institution. Will also consider three years of progressive experience in the specialty in lieu of every year of education.
+Candidate must be located within commuting distance of New York, NY or be willing to relocate to the area. This position may require travel to project locations.
+Candidates authorized to work for any employer in the United States without employer-based visa sponsorship are welcome to apply. Infosys is unable to provide immigration sponsorship for this role at this time.
+Experience in Java development.
+Understanding in Spring Framework and Spring Boot.
+Experience in SQL and Non-relational database
+Preferred Qualifications:
+At least 1 years of experience in Java/J2EE technologies and experience in frameworks like Spring, Hibernate
+Experience and good knowledge of Webservices, REST services
+Experience with any enterprise web server preferably Websphere or JBoss
+Experience with microservices architecture.
+Solid understanding of RESTful services, JSON, and API design.
+Exposure with JPA/Hibernate, SQL, and relational databases.
+Familiarity with message brokers (Kafka, RabbitMQ) is a plus.
+Exposure with CI/CD tools (Jenkins, GitLab CI, etc.).
+Strong problem-solving and analytical skills.
+Excellent communication and collaboration abilities.
+At least 1 years of experience in software development life cycle.
+At least 1 years of experience in Project life cycle activities on development and maintenance projects.
+Willing to work in application/production support
+Experience in Banking domain
+Design, develop, and maintain enterprise-grade applications using Java and Spring Boot.
+Implement microservices architecture and ensure seamless integration between services.
+Develop and consume RESTful APIs.
+Optimize application performance and ensure scalability.
+Collaborate with cross-functional teams including QA, DevOps, and Product Management.
+Write clean, maintainable, and well-documented code following best practices.
+Troubleshoot and resolve technical issues in production and non-production environments.

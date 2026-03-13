@@ -1,0 +1,34 @@
+Tobias Vance
+tobias.vance@email.com | (503) 419-6602 | Portland, OR | linkedin.com/in/tobiasvance-eng
+
+SUMMARY
+Senior backend engineer with 11 years of Python experience, specializing in high-throughput API infrastructure, PostgreSQL performance engineering, and AWS architecture. Known for designing systems that are simple, observable, and operationally excellent. Led teams of 6-10 engineers across fintech and developer tools companies.
+
+SKILLS
+Languages: Python, SQL, Bash, Rust (learning)
+Frameworks: FastAPI, Django, SQLAlchemy, Celery, gRPC, Pydantic
+Databases: PostgreSQL, MongoDB, Redis, Cassandra
+Tools: Git, Docker, pytest, Kafka, Terraform, GitHub Actions, Datadog, Jaeger
+Cloud/Infra: AWS (EKS, Aurora, ElastiCache, MSK, S3, CloudFront, WAF), Kubernetes, Helm
+
+EXPERIENCE
+
+Distinguished Engineer | Pinnacle Payments | Portland, OR | March 2019 - Present
+- Architected Python-based payment gateway processing $1.2 billion in daily transactions across 20 FastAPI microservices on AWS EKS
+- Designed Aurora PostgreSQL multi-master cluster supporting 200,000 transactions per second with automated failover under 30 seconds
+- Built Kafka MSK streaming infrastructure with exactly-once delivery semantics for payment event sourcing
+- Reduced mean time to recovery for production incidents from 47 minutes to 8 minutes by implementing OpenTelemetry distributed tracing across all services
+- Grew and mentored engineering team from 3 to 12 engineers over 4 years
+
+Senior Staff Engineer | GridIron Software | Portland, OR | January 2016 - February 2019
+- Led Python migration from a Perl monolith to Django microservices, delivering 10x improvement in developer velocity
+- Designed Redis Cluster topology handling 100 million daily cache operations with zero single points of failure
+- Built Celery-based distributed job platform handling 5 million background tasks per day
+
+Software Engineer | Bluehaven Systems | Portland, OR | July 2013 - December 2015
+- Built core API services in Django REST Framework for a SaaS logistics platform
+- Designed PostgreSQL schema and query patterns for 500 million shipment tracking records
+- Introduced Docker-based development workflows adopted by the entire 20-person engineering team
+
+EDUCATION
+Bachelor of Science, Computer Science | Oregon State University | 2013

@@ -1,0 +1,32 @@
+Valentina Cruz
+valentina.cruz@email.com | (917) 443-9820 | New York, NY | linkedin.com/in/valentinacruz-frontend
+
+SUMMARY
+Staff-level frontend engineer with 12 years of experience building large-scale React applications and complex frontend architectures. Expert in micro-frontend systems, Module Federation, and cross-team component governance. Track record of improving team velocity and delivering performant, accessible products at enterprises and high-growth startups.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass/SCSS
+Frameworks: React, Next.js, Vite, Webpack
+Databases: (none professional)
+Tools: Git, Webpack Module Federation, pnpm, Turborepo, Jest, Cypress, Playwright, Redux Toolkit, React Query, Storybook, Figma, Chromatic
+Cloud/Infra: AWS (S3, CloudFront, Lambda@Edge), Vercel, GitHub Actions, Fastly
+
+EXPERIENCE
+
+Principal Frontend Engineer | Spectrum Financial | New York, NY | January 2019 - Present
+- Designed and implemented a micro-frontend architecture using Webpack Module Federation across 12 independently deployed React applications serving 4 million users
+- Established the Spectrum Design System (100+ components) with React, TypeScript, and Tailwind CSS, reducing time to build new feature UIs by 50% across 14 product squads
+- Led performance engineering effort that achieved 95+ Lighthouse scores across all customer-facing properties, unlocking $2M in annual SEO-driven revenue growth
+- Managed a team of 10 frontend engineers with structured code review, architecture governance, and technical roadmap planning
+
+Senior Frontend Engineer | Mosaic Marketplace | New York, NY | March 2015 - December 2018
+- Architected React SPA for a two-sided marketplace with complex multi-step checkout, seller onboarding, and real-time order tracking
+- Built component library with Storybook and automated Chromatic visual regression, adopted across 3 frontend teams
+- Implemented Cypress E2E test coverage for 80+ purchase and seller onboarding flows
+
+Frontend Engineer | Quanta Digital Agency | New York, NY | June 2013 - February 2015
+- Delivered 12 responsive web applications for digital media and e-commerce clients using React and jQuery
+- Wrote CSS/Sass stylesheets for pixel-perfect cross-browser responsive layouts
+
+EDUCATION
+Bachelor of Science, Computer Science | Cornell University | 2013

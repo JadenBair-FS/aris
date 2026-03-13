@@ -1,0 +1,31 @@
+James Whitfield
+james.whitfield@email.com | (512) 993-7741 | Austin, TX | github.com/jameswhitfield-net
+
+SUMMARY
+Senior .NET platform engineer with 10 years of experience building developer platforms, shared services, and microservices infrastructure. Expert in ASP.NET Core, gRPC, Azure DevOps, and Kubernetes on AKS. Strong background in internal developer experience, monorepo tooling, and setting cross-team engineering standards.
+
+SKILLS
+Languages: C#, SQL, Bash, Go (basic)
+Frameworks: ASP.NET Core, gRPC, Entity Framework Core, MediatR, MassTransit
+Databases: SQL Server, PostgreSQL, Redis, Azure SQL
+Tools: Git, Visual Studio, xUnit, Moq, Docker, Kubernetes, Helm, Terraform, Azure DevOps, Grafana, OpenTelemetry
+Cloud/Infra: Azure (AKS, Service Bus, Event Hubs, SQL Database, Key Vault, Application Insights, Container Registry)
+
+EXPERIENCE
+
+Principal .NET Engineer | CoreAxis | Austin, TX | June 2019 - Present
+- Designed and built the CoreAxis platform engineering layer: shared ASP.NET Core middleware, gRPC service mesh contracts, Helm chart templates, and Azure DevOps pipeline templates adopted by 12 product squads
+- Led migration of 25 legacy .NET Framework services to .NET 8 ASP.NET Core with Docker containerization and AKS deployment, delivering 3x throughput improvement
+- Implemented distributed tracing with OpenTelemetry across all services, reducing mean time to identify performance regressions from 4 hours to 20 minutes
+- Built internal C# SDK package for authentication, logging, and structured error handling, reducing boilerplate by 50% per service
+
+Senior .NET Developer | Blackthorn Software | Austin, TX | April 2016 - May 2019
+- Built ASP.NET Core microservices for a healthcare SaaS platform with CQRS using MediatR and xUnit testing
+- Designed Azure Service Bus-based event publishing for patient workflow state changes consumed by 5 downstream services
+- Implemented Entity Framework Core repository pattern with SQL Server and Redis caching layer
+
+.NET Developer | Frontier Systems | San Antonio, TX | August 2014 - March 2016
+- Built ASP.NET MVC web application and Web API services for a logistics company
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Texas at Austin | 2014

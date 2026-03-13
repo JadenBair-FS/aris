@@ -1,0 +1,1571 @@
+{
+  "title": {
+    "card": "Django",
+    "page": "Django"
+  },
+  "description": "Step-by-step guide to becoming a Django Developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "bETAz4EGpBoQc8Reny5xy",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "dOFwWP4UnBRwU8WI3ZAy7",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "GR2QbT-v6zPW5fbIcGuir",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "CWzEdlbb1ssFz3RiAN6i1",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "xiriJKZaF8dbuqkJQ88AO",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "AJcBrhuUNpgx6RWF8tGFw",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "zRrhp04EE_sxFjcvRU13q",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tVn1ae9xENLaQoLVQO80W",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ytOlL5KcQ1NW-kvOsxi79",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qHxynl33WTpiVk4SXIgKq",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "AJCqdp4dS10pyW91RVTxW",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "xdxitF1Foo6W9Pj6-2Be1",
+      "type": "subtopic",
+      "data": {
+        "label": "Why use web frameworks"
+      }
+    },
+    {
+      "id": "m7fQLURtbiz4BM2UcZPeS",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "d0JBAP2Sot-u4diwqDYIq",
+      "type": "topic",
+      "data": {
+        "label": "Projects \u0026 Apps"
+      }
+    },
+    {
+      "id": "_RRCcJpO33XAgdsBzJdY9",
+      "type": "subtopic",
+      "data": {
+        "label": "settings.py"
+      }
+    },
+    {
+      "id": "wwKzZhC3xPQ-oymwjW5Yn",
+      "type": "subtopic",
+      "data": {
+        "label": "manage.py"
+      }
+    },
+    {
+      "id": "b9VXaPBraxAakcwHkyRYu",
+      "type": "subtopic",
+      "data": {
+        "label": "urls.py"
+      }
+    },
+    {
+      "id": "ThYltfCyVKkKL_6jY2g-d",
+      "type": "subtopic",
+      "data": {
+        "label": "URL patterns"
+      }
+    },
+    {
+      "id": "3qImaY9Hs3Cvatw1X96Ns",
+      "type": "subtopic",
+      "data": {
+        "label": "Named URLs"
+      }
+    },
+    {
+      "id": "NB50RuNBT5Oja2Ry6p892",
+      "type": "subtopic",
+      "data": {
+        "label": "Path converters"
+      }
+    },
+    {
+      "id": "KlEgfzfkPu0O43tJIsU3H",
+      "type": "subtopic",
+      "data": {
+        "label": "Reverse URL"
+      }
+    },
+    {
+      "id": "3k2Fo1-qldnE38HLtAtvv",
+      "type": "subtopic",
+      "data": {
+        "label": "Function-based views"
+      }
+    },
+    {
+      "id": "49YSIjTsb6Lnv39AukGrD",
+      "type": "subtopic",
+      "data": {
+        "label": "Class-based views"
+      }
+    },
+    {
+      "id": "-JKD1SRtFWt3b99aPbfx7",
+      "type": "subtopic",
+      "data": {
+        "label": "Generic views "
+      }
+    },
+    {
+      "id": "yla_7mhlkfxvI_YZ5Zikm",
+      "type": "topic",
+      "data": {
+        "label": "DTL Syntax"
+      }
+    },
+    {
+      "id": "wxkaVWdZGcAZVxbfOJvZE",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "iY7yJ9NN77F6wvlgD4zKG",
+      "type": "topic",
+      "data": {
+        "label": "Models"
+      }
+    },
+    {
+      "id": "SWNGsyrpP7XghRa_zKQbb",
+      "type": "topic",
+      "data": {
+        "label": "Model inheritance"
+      }
+    },
+    {
+      "id": "j4P7KBtfwdGSX0ga0BgpV",
+      "type": "subtopic",
+      "data": {
+        "label": "Field options"
+      }
+    },
+    {
+      "id": "7dV6o6DnKkv6TX7KCbnzC",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom fields"
+      }
+    },
+    {
+      "id": "NV1l8YU9CHw_I8NhhN0hO",
+      "type": "topic",
+      "data": {
+        "label": "Model methods"
+      }
+    },
+    {
+      "id": "D7wMA3PYw1RYMz9lXGsgW",
+      "type": "topic",
+      "data": {
+        "label": "Model relationships "
+      }
+    },
+    {
+      "id": "ykgvgR6YE_-V1LAtr0DvU",
+      "type": "subtopic",
+      "data": {
+        "label": "PostgreSQL"
+      }
+    },
+    {
+      "id": "pnyNAPLViP4LBGvkVbZ5s",
+      "type": "subtopic",
+      "data": {
+        "label": "MySQL "
+      }
+    },
+    {
+      "id": "o6qNq8D_gwC5UrkKjz57o",
+      "type": "subtopic",
+      "data": {
+        "label": "SQLite"
+      }
+    },
+    {
+      "id": "udVG-R6R2UHnvTsXO80xQ",
+      "type": "subtopic",
+      "data": {
+        "label": "MariaDB"
+      }
+    },
+    {
+      "id": "8ud6LNbixJEP1It9AUMB7",
+      "type": "subtopic",
+      "data": {
+        "label": "Querying data"
+      }
+    },
+    {
+      "id": "9PRY8NUilH2xITVyhpQSy",
+      "type": "subtopic",
+      "data": {
+        "label": "Aggregations"
+      }
+    },
+    {
+      "id": "_2hoRFibz8dYBPhHJX8NW",
+      "type": "subtopic",
+      "data": {
+        "label": "Create, Update, Delete"
+      }
+    },
+    {
+      "id": "LDajzTC8AKD-13JVtL0Tk",
+      "type": "subtopic",
+      "data": {
+        "label": "Filtering \u0026 lookups"
+      }
+    },
+    {
+      "id": "7rCNwoQW2lI7xxMUP_ESa",
+      "type": "subtopic",
+      "data": {
+        "label": "Raw SQL"
+      }
+    },
+    {
+      "id": "tCK6V3T4oGy9O8Wur2k9d",
+      "type": "topic",
+      "data": {
+        "label": "Migrations"
+      }
+    },
+    {
+      "id": "KHoau3Pz7o951L8Ivryk0",
+      "type": "subtopic",
+      "data": {
+        "label": "Admin Customization"
+      }
+    },
+    {
+      "id": "hxVeLMj_jQYPNqMPcT8FW",
+      "type": "subtopic",
+      "data": {
+        "label": "Users \u0026 Permissions"
+      }
+    },
+    {
+      "id": "SEEiAOOxLGUaZi3wYncUm",
+      "type": "subtopic",
+      "data": {
+        "label": "Built-in user model"
+      }
+    },
+    {
+      "id": "F0OPk3bIoeXhIRthKg9MD",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom user model"
+      }
+    },
+    {
+      "id": "AztOoGUtPW_6jP6NqJ5T-",
+      "type": "topic",
+      "data": {
+        "label": "Message Framework"
+      }
+    },
+    {
+      "id": "SxATl4QiM9iA1_qaUNJXx",
+      "type": "topic",
+      "data": {
+        "label": "Logging"
+      }
+    },
+    {
+      "id": "PsDSs7qC_M3l-Ang1wTZe",
+      "type": "subtopic",
+      "data": {
+        "label": "Production Checklist"
+      }
+    },
+    {
+      "id": "xAGTajVXYVvgHaQbcuW7X",
+      "type": "title",
+      "data": {
+        "label": "Django"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "Xkh9VbM-yPX0Vkgj1tnoC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "S5K2LZZmxYKF7uMeBJR9y",
+      "type": "button",
+      "data": {
+        "label": "Python Roadmap"
+      }
+    },
+    {
+      "id": "Xrcl09I9ZShOwhAWynsO6",
+      "type": "subtopic",
+      "data": {
+        "label": "How the Web Works"
+      }
+    },
+    {
+      "id": "nmuU5A7uG-R-6GPH_njsm",
+      "type": "label",
+      "data": {
+        "label": "Your First Project"
+      }
+    },
+    {
+      "id": "GB1fgFjrGS-ZM8QTJinOr",
+      "type": "topic",
+      "data": {
+        "label": "Installing  Django"
+      }
+    },
+    {
+      "id": "e-5mm0hv-sgG4lfDcISQ6",
+      "type": "subtopic",
+      "data": {
+        "label": "views.py"
+      }
+    },
+    {
+      "id": "WYPjCQcccmwcjnxM_5VkU",
+      "type": "subtopic",
+      "data": {
+        "label": "models.py"
+      }
+    },
+    {
+      "id": "g-KGkdGeCJQe6NMe82gR8",
+      "type": "subtopic",
+      "data": {
+        "label": "tests.py"
+      }
+    },
+    {
+      "id": "tffzsnhXGpN8-CPLgmdxn",
+      "type": "subtopic",
+      "data": {
+        "label": "admin.py"
+      }
+    },
+    {
+      "id": "lUlJdqmd7YRpyRCfgT_EK",
+      "type": "subtopic",
+      "data": {
+        "label": "migrations"
+      }
+    },
+    {
+      "id": "k7aMrFNIY11_bD_XwVLv7",
+      "type": "subtopic",
+      "data": {
+        "label": "static"
+      }
+    },
+    {
+      "id": "GA1Zn14Q2EvDmo452V8OO",
+      "type": "subtopic",
+      "data": {
+        "label": "media"
+      }
+    },
+    {
+      "id": "YLvdL6lwZk2vlMK7QaTk7",
+      "type": "subtopic",
+      "data": {
+        "label": "templates"
+      }
+    },
+    {
+      "id": "GqMJaqBCbfav0MbsrHCpc",
+      "type": "label",
+      "data": {
+        "label": "Routing"
+      }
+    },
+    {
+      "id": "ftFF3oFfqpKvjQhXk3bWw",
+      "type": "topic",
+      "data": {
+        "label": "Request Reponse Flow"
+      }
+    },
+    {
+      "id": "QJJh0Dl4IT_I3_eACrStj",
+      "type": "topic",
+      "data": {
+        "label": "Running your Project"
+      }
+    },
+    {
+      "id": "6y3ZnxclaV6JVGhUkQMtB",
+      "type": "subtopic",
+      "data": {
+        "label": "urls.py"
+      }
+    },
+    {
+      "id": "DbJ1BIOoerkCH4P95Z7wD",
+      "type": "subtopic",
+      "data": {
+        "label": "Regex Paths"
+      }
+    },
+    {
+      "id": "kVhW3uJawiK1waW-2Gk7F",
+      "type": "subtopic",
+      "data": {
+        "label": "Routing Middleware"
+      }
+    },
+    {
+      "id": "DFOxP2aF-hJWQsdFA4Qjw",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "CXrUh4hBN7fhXShUhtO5n",
+      "type": "subtopic",
+      "data": {
+        "label": "The MVC Model"
+      }
+    },
+    {
+      "id": "PLptJOKtL4BLIUpC_HQby",
+      "type": "label",
+      "data": {
+        "label": "Views"
+      }
+    },
+    {
+      "id": "04iZjMANQFOjASGRz9Maw",
+      "type": "topic",
+      "data": {
+        "label": "Views"
+      }
+    },
+    {
+      "id": "mLMh30_UjacqqNRyKRCiP",
+      "type": "subtopic",
+      "data": {
+        "label": "ListView"
+      }
+    },
+    {
+      "id": "D8vZfjzzt3gPda-6iF5Y4",
+      "type": "subtopic",
+      "data": {
+        "label": " DetailView"
+      }
+    },
+    {
+      "id": "osfekQvv2IjQir8xG7Jqn",
+      "type": "subtopic",
+      "data": {
+        "label": "CreateView"
+      }
+    },
+    {
+      "id": "vS0Y5DmrAEwoQ9gblM-8Q",
+      "type": "subtopic",
+      "data": {
+        "label": "UpdateView"
+      }
+    },
+    {
+      "id": "RpvuHOwFN03aeY3hvt1N0",
+      "type": "subtopic",
+      "data": {
+        "label": "DeleteView"
+      }
+    },
+    {
+      "id": "eQaN3y7cQgOcQ1BstNV-4",
+      "type": "topic",
+      "data": {
+        "label": "Customizing Views"
+      }
+    },
+    {
+      "id": "v5skymtqU7PmMuBsl-1rX",
+      "type": "topic",
+      "data": {
+        "label": "Templates"
+      }
+    },
+    {
+      "id": "G16UvJ5_T7TlJ4mVqiqR9",
+      "type": "label",
+      "data": {
+        "label": "Templates"
+      }
+    },
+    {
+      "id": "jhZsz4yMcYHgWsigQ4nzU",
+      "type": "subtopic",
+      "data": {
+        "label": "Filters \u0026 custom filters"
+      }
+    },
+    {
+      "id": "W2v9_4sn5aoZjxMKOQTcw",
+      "type": "subtopic",
+      "data": {
+        "label": "Tags \u0026 custom tags"
+      }
+    },
+    {
+      "id": "4j0fCRER1a_c7FY06Q68h",
+      "type": "topic",
+      "data": {
+        "label": "Template Inheritance"
+      }
+    },
+    {
+      "id": "Ta2kZmFI4sguQDb1gKJLh",
+      "type": "subtopic",
+      "data": {
+        "label": "for"
+      }
+    },
+    {
+      "id": "9sR_5U94v5qZdEiwngo67",
+      "type": "subtopic",
+      "data": {
+        "label": "if"
+      }
+    },
+    {
+      "id": "abBG2_jXz9u8IJZlE2CTQ",
+      "type": "label",
+      "data": {
+        "label": "Models, Databases \u0026 ORM"
+      }
+    },
+    {
+      "id": "LRy9b1uiuM9ik8sResdl8",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "CX-9Ii3e9rrokUTF0_hI5",
+      "type": "subtopic",
+      "data": {
+        "label": "Fields types"
+      }
+    },
+    {
+      "id": "yRaVL7FoWcHb2A8uz5TV8",
+      "type": "topic",
+      "data": {
+        "label": "Setting up the Database"
+      }
+    },
+    {
+      "id": "GQqNJQ3FkO-kBM8WYVBmn",
+      "type": "topic",
+      "data": {
+        "label": "Django ORM"
+      }
+    },
+    {
+      "id": "TXhI0IHDH6a4_vNyCDEYH",
+      "type": "subtopic",
+      "data": {
+        "label": "Comments"
+      }
+    },
+    {
+      "id": "u2bq7WaT2aSbrSaa0yB86",
+      "type": "subtopic",
+      "data": {
+        "label": "Query Optimization"
+      }
+    },
+    {
+      "id": "QfMol3yLeta2rN_wdv0bH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MJIQZoLMiURPrhqMUddG7",
+      "type": "topic",
+      "data": {
+        "label": "Static Files"
+      }
+    },
+    {
+      "id": "Voo8COgeTLD-607m793gh",
+      "type": "topic",
+      "data": {
+        "label": "Django Admin"
+      }
+    },
+    {
+      "id": "IsZm5SZWJ0CTjxCOKZnn-",
+      "type": "topic",
+      "data": {
+        "label": "Middleware"
+      }
+    },
+    {
+      "id": "k2P3gilbLJ7tjbLhBym_m",
+      "type": "topic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "8-LeguN1r6pLVGvBbwzPZ",
+      "type": "topic",
+      "data": {
+        "label": "Authorization"
+      }
+    },
+    {
+      "id": "oCxrIu2UfV6loYn8ncaLu",
+      "type": "subtopic",
+      "data": {
+        "label": "Customization"
+      }
+    },
+    {
+      "id": "oUjfjCRymVJs4HzmMeks5",
+      "type": "subtopic",
+      "data": {
+        "label": "Whitenoise"
+      }
+    },
+    {
+      "id": "-ZFQ0QzqqBIuSQK9CwLg4",
+      "type": "topic",
+      "data": {
+        "label": "Pagination"
+      }
+    },
+    {
+      "id": "YKyWtsxm1HcVsA56iyEOJ",
+      "type": "subtopic",
+      "data": {
+        "label": "django-allauth"
+      }
+    },
+    {
+      "id": "fAONU8BPC_BvB-LT7oiZp",
+      "type": "label",
+      "data": {
+        "label": "Logging, Debugging \u0026 Testing"
+      }
+    },
+    {
+      "id": "YsFp5SxOeR9zK_9ZrN2Pp",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jPhWe3MfOLbisxNCaivmz",
+      "type": "subtopic",
+      "data": {
+        "label": "Filters"
+      }
+    },
+    {
+      "id": "IO9J54i7gSyunGRtIYJra",
+      "type": "subtopic",
+      "data": {
+        "label": "Handlers "
+      }
+    },
+    {
+      "id": "zoFHTdr2iBTGdHbmv_9LI",
+      "type": "subtopic",
+      "data": {
+        "label": "Loggers"
+      }
+    },
+    {
+      "id": "rvnqGZxTu3YMH4HQwJ61i",
+      "type": "subtopic",
+      "data": {
+        "label": "Formatters"
+      }
+    },
+    {
+      "id": "D8idHBTlx0YUel55HEuU7",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "x45F-FdQOch35hZqNMfIn",
+      "type": "topic",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "i8me37ZwzObjy1-JbrRjf",
+      "type": "subtopic",
+      "data": {
+        "label": "django_silk"
+      }
+    },
+    {
+      "id": "WRHWs75DbhuiVZm1XMe7z",
+      "type": "subtopic",
+      "data": {
+        "label": "PDB, IPDB"
+      }
+    },
+    {
+      "id": "OSkwgXDOhm6oyk_VlUbUc",
+      "type": "subtopic",
+      "data": {
+        "label": "debug_toolbar"
+      }
+    },
+    {
+      "id": "mxo_Wwx0To8CaOxBMSQyI",
+      "type": "subtopic",
+      "data": {
+        "label": "Error Pages"
+      }
+    },
+    {
+      "id": "K2dNQ69laFT853CFniJrZ",
+      "type": "subtopic",
+      "data": {
+        "label": "pytest"
+      }
+    },
+    {
+      "id": "iKzWEV8ymBEh_J2ppKZjF",
+      "type": "subtopic",
+      "data": {
+        "label": "unittest \u0026 TestCase"
+      }
+    },
+    {
+      "id": "HD_-WR69-8f7uhiS0YwYP",
+      "type": "topic",
+      "data": {
+        "label": "Django Test Framework "
+      }
+    },
+    {
+      "id": "npuNlbB8K4Jg4E4Gad6ES",
+      "type": "label",
+      "data": {
+        "label": "Advanced Topics"
+      }
+    },
+    {
+      "id": "x19j7d1jd_uFhy85w71i0",
+      "type": "subtopic",
+      "data": {
+        "label": "Background Tasks"
+      }
+    },
+    {
+      "id": "8AuyffbXskd8jltqyJVer",
+      "type": "subtopic",
+      "data": {
+        "label": "Asynchronous Django"
+      }
+    },
+    {
+      "id": "UDpTybashBHcy2S-oooww",
+      "type": "subtopic",
+      "data": {
+        "label": "Caching"
+      }
+    },
+    {
+      "id": "waLyhhzu4JkMnhnVdP9xf",
+      "type": "subtopic",
+      "data": {
+        "label": "Localization"
+      }
+    },
+    {
+      "id": "gPy4yi6smV4gcRj_WCqYR",
+      "type": "subtopic",
+      "data": {
+        "label": "Signals"
+      }
+    },
+    {
+      "id": "R4-oE2zFnwxvF05u5DYV4",
+      "type": "topic",
+      "data": {
+        "label": "Django Shell"
+      }
+    },
+    {
+      "id": "Izeh6ERNrqXxqb5pHEobB",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "2D0qBqhw5VJDOCDnh2BcB",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jnR93iiFLqqpahhqq4w8-",
+      "type": "topic",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "Full Stack"
+      }
+    },
+    {
+      "id": "1JeM23O8r_WnIdmgrgZ_7",
+      "type": "topic",
+      "data": {
+        "label": "Virtual envs"
+      }
+    },
+    {
+      "id": "Wjb6k1yBkFIaDl6oVH4Af",
+      "type": "label",
+      "data": {
+        "label": "API Development"
+      }
+    },
+    {
+      "id": "ultPpF8Lpqry-SdAbNCB1",
+      "type": "topic",
+      "data": {
+        "label": "Django  REST Framework"
+      }
+    },
+    {
+      "id": "1p5abgLJ31IRTUiFwbeSa",
+      "type": "subtopic",
+      "data": {
+        "label": "Routers"
+      }
+    },
+    {
+      "id": "MY9L0_kzjrbda43d-Ey-H",
+      "type": "subtopic",
+      "data": {
+        "label": "Views \u0026 ViewSets"
+      }
+    },
+    {
+      "id": "aJ0jM_zjUJkt0wVfJQYt7",
+      "type": "subtopic",
+      "data": {
+        "label": "Serializers"
+      }
+    },
+    {
+      "id": "vGOif8VuGJROFL5CbAMXZ",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jhMYTiVacTLeatfAjAnPJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Django Forms"
+      }
+    },
+    {
+      "id": "HjcEX3u5iRSlq69U-pSEs",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Forms"
+      }
+    },
+    {
+      "id": "-HGUhMNlPlbwuKMDX1e18",
+      "type": "subtopic",
+      "data": {
+        "label": "Form Validation"
+      }
+    },
+    {
+      "id": "cHcvlHcsCvlQ-qkrfR9sv",
+      "type": "label",
+      "data": {
+        "label": "Project Structure"
+      }
+    },
+    {
+      "id": "bH-h1wVpH1iRJIy8ryVfG",
+      "type": "label",
+      "data": {
+        "label": "App Structure"
+      }
+    },
+    {
+      "id": "Rn9ZH9nZLrX8sdn3j4YIG",
+      "type": "label",
+      "data": {
+        "label": "Other Files"
+      }
+    },
+    {
+      "id": "hIhhpzmKNvEFNGv-k8kjt",
+      "type": "label",
+      "data": {
+        "label": "Model Fields"
+      }
+    },
+    {
+      "id": "HIYa1kUuAgP_W4OxuvZxr",
+      "type": "label",
+      "data": {
+        "label": "Routing Fundamentals"
+      }
+    },
+    {
+      "id": "2ZZSP2eDocCVjl8qQ5BEa",
+      "type": "label",
+      "data": {
+        "label": "Supported DBs"
+      }
+    },
+    {
+      "id": "FRoHdknR6UELiWivxlbjs",
+      "type": "label",
+      "data": {
+        "label": "Validation"
+      }
+    },
+    {
+      "id": "raLbcEYC4yXdPKjaBkpJ2",
+      "type": "label",
+      "data": {
+        "label": "Logging Framework"
+      }
+    },
+    {
+      "id": "B86paKhwiZsM5XP-V-AE8",
+      "type": "topic",
+      "data": {
+        "label": "Django Ninja"
+      }
+    },
+    {
+      "id": "_JaSWTa-VufNB0-6NH5KL",
+      "type": "subtopic",
+      "data": {
+        "label": "CSRF"
+      }
+    },
+    {
+      "id": "OoboX9UxuQ0pgjwQZmjIV",
+      "type": "subtopic",
+      "data": {
+        "label": "Transactions"
+      }
+    },
+    {
+      "id": "3CnuISrkDffQgys-x0AP4",
+      "type": "subtopic",
+      "data": {
+        "label": "Fixtures"
+      }
+    },
+    {
+      "id": "RVSvQ1Dfy8tcV2hfcZL4z",
+      "type": "button",
+      "data": {
+        "label": "DevOps Roadmap"
+      }
+    },
+    {
+      "id": "Jjj1dVybPHsdP-57yF7iX",
+      "type": "subtopic",
+      "data": {
+        "label": "Celery"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__xAGTajVXYVvgHaQbcuW7Xx2-S5K2LZZmxYKF7uMeBJR9yw1",
+      "source": "xAGTajVXYVvgHaQbcuW7X",
+      "target": "S5K2LZZmxYKF7uMeBJR9y",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "qD5jFQQXb_JV3JdlMZRFS",
+      "source": "m7fQLURtbiz4BM2UcZPeS",
+      "target": "Xrcl09I9ZShOwhAWynsO6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "bhVtcS63PaYLv2T9TApgL",
+      "source": "m7fQLURtbiz4BM2UcZPeS",
+      "target": "xdxitF1Foo6W9Pj6-2Be1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__S5K2LZZmxYKF7uMeBJR9yx2-m7fQLURtbiz4BM2UcZPeSw1",
+      "source": "S5K2LZZmxYKF7uMeBJR9y",
+      "target": "m7fQLURtbiz4BM2UcZPeS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__m7fQLURtbiz4BM2UcZPeSy2-NBZ4_LkKZV-KGvCOkUysgz1",
+      "source": "m7fQLURtbiz4BM2UcZPeS",
+      "target": "nmuU5A7uG-R-6GPH_njsm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgw2-GB1fgFjrGS-ZM8QTJinOrx1",
+      "source": "nmuU5A7uG-R-6GPH_njsm",
+      "target": "GB1fgFjrGS-ZM8QTJinOr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgx2-7O1Y9C3OwEtwKgcic18eMw1",
+      "source": "nmuU5A7uG-R-6GPH_njsm",
+      "target": "d0JBAP2Sot-u4diwqDYIq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgx2-7O1Y9C3OwEtwKgcic18eMw1",
+      "source": "GqMJaqBCbfav0MbsrHCpc",
+      "target": "ftFF3oFfqpKvjQhXk3bWw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QJJh0Dl4IT_I3_eACrStjw2-nmuU5A7uG-R-6GPH_njsmx2",
+      "source": "d0JBAP2Sot-u4diwqDYIq",
+      "target": "nmuU5A7uG-R-6GPH_njsm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QJJh0Dl4IT_I3_eACrStjx2-NBZ4_LkKZV-KGvCOkUysgw2",
+      "source": "QJJh0Dl4IT_I3_eACrStj",
+      "target": "GqMJaqBCbfav0MbsrHCpc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__d0JBAP2Sot-u4diwqDYIqz2-QJJh0Dl4IT_I3_eACrStjy1",
+      "source": "d0JBAP2Sot-u4diwqDYIq",
+      "target": "QJJh0Dl4IT_I3_eACrStj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__m7fQLURtbiz4BM2UcZPeSz2-CXrUh4hBN7fhXShUhtO5ny2",
+      "source": "m7fQLURtbiz4BM2UcZPeS",
+      "target": "CXrUh4hBN7fhXShUhtO5n",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OaLn_W4mMofrW9y6A0miZx2-NBZ4_LkKZV-KGvCOkUysgw1",
+      "source": "ftFF3oFfqpKvjQhXk3bWw",
+      "target": "PLptJOKtL4BLIUpC_HQby",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgx2-OaLn_W4mMofrW9y6A0miZw1",
+      "source": "PLptJOKtL4BLIUpC_HQby",
+      "target": "04iZjMANQFOjASGRz9Maw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__OaLn_W4mMofrW9y6A0miZz2-3k2Fo1-qldnE38HLtAtvvy1",
+      "source": "04iZjMANQFOjASGRz9Maw",
+      "target": "3k2Fo1-qldnE38HLtAtvv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__OaLn_W4mMofrW9y6A0miZz2-49YSIjTsb6Lnv39AukGrDy1",
+      "source": "04iZjMANQFOjASGRz9Maw",
+      "target": "49YSIjTsb6Lnv39AukGrD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__49YSIjTsb6Lnv39AukGrDx2--JKD1SRtFWt3b99aPbfx7w2",
+      "source": "49YSIjTsb6Lnv39AukGrD",
+      "target": "-JKD1SRtFWt3b99aPbfx7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgx2-v5skymtqU7PmMuBsl-1rXw2",
+      "source": "G16UvJ5_T7TlJ4mVqiqR9",
+      "target": "v5skymtqU7PmMuBsl-1rX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__v5skymtqU7PmMuBsl-1rXy2-yla_7mhlkfxvI_YZ5Zikmz2",
+      "source": "v5skymtqU7PmMuBsl-1rX",
+      "target": "yla_7mhlkfxvI_YZ5Zikm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Xu9LLHnfyMffeObhdNZo4x2-NBZ4_LkKZV-KGvCOkUysgw1",
+      "source": "4j0fCRER1a_c7FY06Q68h",
+      "target": "abBG2_jXz9u8IJZlE2CTQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NBZ4_LkKZV-KGvCOkUysgz2-iY7yJ9NN77F6wvlgD4zKGy1",
+      "source": "abBG2_jXz9u8IJZlE2CTQ",
+      "target": "iY7yJ9NN77F6wvlgD4zKG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__iY7yJ9NN77F6wvlgD4zKGw2-7dV6o6DnKkv6TX7KCbnzCx2",
+      "source": "iY7yJ9NN77F6wvlgD4zKG",
+      "target": "7dV6o6DnKkv6TX7KCbnzC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__SWNGsyrpP7XghRa_zKQbby2-yRaVL7FoWcHb2A8uz5TV8z2",
+      "source": "SWNGsyrpP7XghRa_zKQbb",
+      "target": "yRaVL7FoWcHb2A8uz5TV8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__yRaVL7FoWcHb2A8uz5TV8y2-zRrhp04EE_sxFjcvRU13qz2",
+      "source": "yRaVL7FoWcHb2A8uz5TV8",
+      "target": "zRrhp04EE_sxFjcvRU13q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__keVMvXWtlkZua7gS7ES-iy2-Voo8COgeTLD-607m793ghz2",
+      "source": "IsZm5SZWJ0CTjxCOKZnn-",
+      "target": "Voo8COgeTLD-607m793gh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Voo8COgeTLD-607m793ghx2-FiReMeGm_i9SNrwKTpKrEw1",
+      "source": "Voo8COgeTLD-607m793gh",
+      "target": "KHoau3Pz7o951L8Ivryk0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__8-LeguN1r6pLVGvBbwzPZy2-v8-Z646IGnvA50boZwNGPz1",
+      "source": "8-LeguN1r6pLVGvBbwzPZ",
+      "target": "hxVeLMj_jQYPNqMPcT8FW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__IsZm5SZWJ0CTjxCOKZnn-x2-k2P3gilbLJ7tjbLhBym_mw2",
+      "source": "IsZm5SZWJ0CTjxCOKZnn-",
+      "target": "k2P3gilbLJ7tjbLhBym_m",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__k2P3gilbLJ7tjbLhBym_mz2-SEEiAOOxLGUaZi3wYncUmy1",
+      "source": "k2P3gilbLJ7tjbLhBym_m",
+      "target": "SEEiAOOxLGUaZi3wYncUm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__k2P3gilbLJ7tjbLhBym_mz2-F0OPk3bIoeXhIRthKg9MDy2",
+      "source": "k2P3gilbLJ7tjbLhBym_m",
+      "target": "F0OPk3bIoeXhIRthKg9MD",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MJIQZoLMiURPrhqMUddG7w2-oUjfjCRymVJs4HzmMeks5x2",
+      "source": "MJIQZoLMiURPrhqMUddG7",
+      "target": "oUjfjCRymVJs4HzmMeks5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__k2P3gilbLJ7tjbLhBym_mz2-YKyWtsxm1HcVsA56iyEOJy1",
+      "source": "k2P3gilbLJ7tjbLhBym_m",
+      "target": "YKyWtsxm1HcVsA56iyEOJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-w2-52jBMgr-rtaaxNUfZ0vsHx2",
+      "source": "SxATl4QiM9iA1_qaUNJXx",
+      "target": "fAONU8BPC_BvB-LT7oiZp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xqss7tgZaLSCHHXetX8G8",
+      "source": "x45F-FdQOch35hZqNMfIn",
+      "target": "mxo_Wwx0To8CaOxBMSQyI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "d5l0hiOEYY1y6XQTJDnea",
+      "source": "x45F-FdQOch35hZqNMfIn",
+      "target": "OSkwgXDOhm6oyk_VlUbUc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "7b5T6FBD6LTFTBSrTPOgN",
+      "source": "x45F-FdQOch35hZqNMfIn",
+      "target": "WRHWs75DbhuiVZm1XMe7z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "-i1GJWqXlXdZETltSvQ-B",
+      "source": "x45F-FdQOch35hZqNMfIn",
+      "target": "i8me37ZwzObjy1-JbrRjf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-z2-K2dNQ69laFT853CFniJrZy1",
+      "source": "HD_-WR69-8f7uhiS0YwYP",
+      "target": "K2dNQ69laFT853CFniJrZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-z2-iKzWEV8ymBEh_J2ppKZjFy1",
+      "source": "HD_-WR69-8f7uhiS0YwYP",
+      "target": "iKzWEV8ymBEh_J2ppKZjF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-x2-npuNlbB8K4Jg4E4Gad6ESw1",
+      "source": "HD_-WR69-8f7uhiS0YwYP",
+      "target": "npuNlbB8K4Jg4E4Gad6ES",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__R4-oE2zFnwxvF05u5DYV4x2-Voo8COgeTLD-607m793ghw1",
+      "source": "R4-oE2zFnwxvF05u5DYV4",
+      "target": "Voo8COgeTLD-607m793gh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__npuNlbB8K4Jg4E4Gad6ESz2-jnR93iiFLqqpahhqq4w8-y1",
+      "source": "npuNlbB8K4Jg4E4Gad6ES",
+      "target": "jnR93iiFLqqpahhqq4w8-",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__8-LeguN1r6pLVGvBbwzPZx2-Wjb6k1yBkFIaDl6oVH4Afw1",
+      "source": "8-LeguN1r6pLVGvBbwzPZ",
+      "target": "Wjb6k1yBkFIaDl6oVH4Af",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wjb6k1yBkFIaDl6oVH4Afx2-ultPpF8Lpqry-SdAbNCB1w1",
+      "source": "Wjb6k1yBkFIaDl6oVH4Af",
+      "target": "ultPpF8Lpqry-SdAbNCB1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__IsZm5SZWJ0CTjxCOKZnn-z2-oCxrIu2UfV6loYn8ncaLuy1",
+      "source": "IsZm5SZWJ0CTjxCOKZnn-",
+      "target": "oCxrIu2UfV6loYn8ncaLu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__ultPpF8Lpqry-SdAbNCB1y2-aJ0jM_zjUJkt0wVfJQYt7z1",
+      "source": "ultPpF8Lpqry-SdAbNCB1",
+      "target": "aJ0jM_zjUJkt0wVfJQYt7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__MY9L0_kzjrbda43d-Ey-Hz2-ultPpF8Lpqry-SdAbNCB1y2",
+      "source": "MY9L0_kzjrbda43d-Ey-H",
+      "target": "ultPpF8Lpqry-SdAbNCB1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__1p5abgLJ31IRTUiFwbeSaz2-ultPpF8Lpqry-SdAbNCB1y1",
+      "source": "1p5abgLJ31IRTUiFwbeSa",
+      "target": "ultPpF8Lpqry-SdAbNCB1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__GQqNJQ3FkO-kBM8WYVBmnx2-AJcBrhuUNpgx6RWF8tGFww2",
+      "source": "GQqNJQ3FkO-kBM8WYVBmn",
+      "target": "AJcBrhuUNpgx6RWF8tGFw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__eQaN3y7cQgOcQ1BstNV-4x2-G16UvJ5_T7TlJ4mVqiqR9w1",
+      "source": "eQaN3y7cQgOcQ1BstNV-4",
+      "target": "G16UvJ5_T7TlJ4mVqiqR9",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__B86paKhwiZsM5XP-V-AE8x2-fAONU8BPC_BvB-LT7oiZpw1",
+      "source": "B86paKhwiZsM5XP-V-AE8",
+      "target": "fAONU8BPC_BvB-LT7oiZp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__d0JBAP2Sot-u4diwqDYIqx2-dOFwWP4UnBRwU8WI3ZAy7w1",
+      "source": "d0JBAP2Sot-u4diwqDYIq",
+      "target": "dOFwWP4UnBRwU8WI3ZAy7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-w2-RVSvQ1Dfy8tcV2hfcZL4zx2",
+      "source": "jnR93iiFLqqpahhqq4w8-",
+      "target": "RVSvQ1Dfy8tcV2hfcZL4z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jnR93iiFLqqpahhqq4w8-x2-PsDSs7qC_M3l-Ang1wTZew2",
+      "source": "jnR93iiFLqqpahhqq4w8-",
+      "target": "PsDSs7qC_M3l-Ang1wTZe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__8AuyffbXskd8jltqyJVerw2-Jjj1dVybPHsdP-57yF7iXx1",
+      "source": "8AuyffbXskd8jltqyJVer",
+      "target": "Jjj1dVybPHsdP-57yF7iX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

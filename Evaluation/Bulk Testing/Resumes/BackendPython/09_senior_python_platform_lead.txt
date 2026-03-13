@@ -1,0 +1,31 @@
+Simone Hartley
+simone.hartley@email.com | (510) 237-4481 | Oakland, CA | github.com/simonehartley
+
+SUMMARY
+Senior Python engineer with 9 years of experience leading platform teams and building developer-facing infrastructure. Deep expertise in async Python, API design, Redis architecture, and Kubernetes deployments on GCP. Passionate about developer experience, internal tooling, and observability.
+
+SKILLS
+Languages: Python, SQL, Bash, TypeScript (basic)
+Frameworks: FastAPI, Django, grpcio, SQLAlchemy, Pydantic
+Databases: PostgreSQL, Redis, Firestore
+Tools: Git, Docker, pytest, Kafka, Terraform, GCP Pub/Sub, Prometheus, OpenTelemetry
+Cloud/Infra: GCP (GKE, Cloud SQL, Cloud Run, Pub/Sub, BigQuery), Kubernetes, Helm
+
+EXPERIENCE
+
+Principal Backend Engineer | Mosaic AI | Oakland, CA | June 2020 - Present
+- Designed and built the API gateway and service mesh layer for a 40-service Python microservices platform using FastAPI and gRPC
+- Built the internal Python SDK used by all teams for service discovery, authentication, and structured logging, reducing boilerplate by 60% across services
+- Implemented distributed rate limiting using Redis Cluster with Lua scripts, handling 50 million requests per day with 99.99% accuracy
+- Led migration from GCP Cloud Run to GKE, improving horizontal autoscaling responsiveness by 4x
+
+Senior Engineer | Arbor Analytics | San Francisco, CA | March 2017 - May 2020
+- Built real-time analytics ingestion pipeline in Python processing 8 billion events per month via GCP Pub/Sub and BigQuery streaming inserts
+- Designed PostgreSQL schema for multi-tenant analytics with optimized JSONB indexing, supporting 2,000 concurrent queries
+
+Backend Developer | Pathfinder Technology | San Francisco, CA | August 2015 - February 2017
+- Built and maintained Django REST Framework APIs for a talent management SaaS platform
+- Implemented Celery workers for background PDF reporting and email campaigns using Redis broker
+
+EDUCATION
+Bachelor of Science, Electrical Engineering and Computer Science | UC Berkeley | 2015

@@ -1,0 +1,193 @@
+{
+  "type": "job",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        14807,
+        11838,
+        11283
+      ],
+      "avgLatencyMs": 12642.666666666666,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Licensed Residential & Commercial Plumber",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "Colorado Master Plumber License",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Copper soldering",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Brazing",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "PEX crimping and expansion fittings",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "ProPress systems",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "IPC standards",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Reading and interpreting architectural and MEP blueprints",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Backflow Prevention Assembly Tester certification",
+            "importance": "Essential",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "Perform rough-in and finish plumbing installations for residential and commercial new construction projects, including multi-family housing and mixed-use developments",
+          "Install, repair, and maintain copper, PEX, CPVC, and cast iron piping systems for domestic water, waste, and vent applications",
+          "Install and service commercial boiler systems, including hydronic heating loops, expansion tanks, and circulating pumps for facilities up to 500,000 BTU",
+          "Perform backflow preventer installation, testing, and annual certification for both residential and commercial accounts",
+          "Install and commission tankless and traditional water heaters, including commercial-grade units and recirculation systems",
+          "Install medical gas piping systems in healthcare facilities in accordance with ASSE 6010 standards and NFPA 99 requirements",
+          "Design and install sustainable plumbing systems including rainwater harvesting, greywater recycling, and high-efficiency fixture packages for LEED-certified projects",
+          "Mentor and supervise apprentice and journeyman plumbers, providing on-the-job training and verifying work quality",
+          "Coordinate with general contractors, electricians, HVAC technicians, and building inspectors to ensure proper sequencing and code compliance",
+          "Maintain detailed daily work logs, material usage records, and service documentation using ServiceTitan field management software",
+          "Respond to emergency service calls on a rotating on-call basis (approximately one week per month)"
+        ],
+        "minimum_education": []
+      },
+      "skillCount": 8,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        12135,
+        10497,
+        17590
+      ],
+      "avgLatencyMs": 13407.333333333334,
+      "output": {
+        "target_roles": [
+          {
+            "title": "Licensed Residential & Commercial Plumber",
+            "priority": "Primary"
+          }
+        ],
+        "required_skills": [
+          {
+            "name": "Colorado Master Plumber License",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Copper Soldering",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Brazing",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "PEX Crimping and Expansion Fittings",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "ProPress Systems",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Reading and Interpreting Architectural and MEP Blueprints",
+            "importance": "Essential",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Backflow Prevention Assembly Tester Certification",
+            "importance": "Essential",
+            "years_of_experience": 0
+          },
+          {
+            "name": "ASSE 6010 Medical Gas Systems Installer Certification",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "ServiceTitan or Similar Field Service Management Software",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "Bilingual English/Spanish",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          },
+          {
+            "name": "LEED Green Associate or AP Credential",
+            "importance": "Preferred",
+            "years_of_experience": 0
+          }
+        ],
+        "responsibilities": [
+          "University-Level Teaching",
+          "Academic Program Management"
+        ],
+        "minimum_education": [
+          {
+            "degree": "Master's Degree",
+            "required": "true"
+          },
+          {
+            "degree": "Journeyman License with Documented Progress toward Master Exam within 12 Months",
+            "required": "true"
+          }
+        ]
+      },
+      "skillCount": 11,
+      "roleCount": 1,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "mistral",
+    "speedupFactor": 1.06,
+    "skillCounts": {
+      "mistral": 8,
+      "llama3.2:3b": 11
+    },
+    "sharedSkills": [
+      "Colorado Master Plumber License",
+      "Copper soldering",
+      "Brazing",
+      "PEX crimping and expansion fittings",
+      "ProPress systems",
+      "Reading and interpreting architectural and MEP blueprints",
+      "Backflow Prevention Assembly Tester certification"
+    ],
+    "uniqueToLargerModel": [
+      "IPC standards"
+    ]
+  }
+}

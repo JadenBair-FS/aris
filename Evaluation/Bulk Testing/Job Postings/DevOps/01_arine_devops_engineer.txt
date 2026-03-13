@@ -1,0 +1,41 @@
+--- POSTING 1 ---
+Job Title: DevOps Engineer
+Company: Arine
+Location: Remote (United States) — Must Be Available Pacific Time Zone
+Source: https://job-boards.greenhouse.io/arine/jobs/5795151004
+
+ABOUT ARINE
+Arine is a San Francisco-based healthcare technology company focused on medication management optimization. The organization addresses a critical healthcare issue: incorrect drugs and doses cost the US healthcare system over $528 billion in waste, avoidable harm, and hospitalizations each year. Arine leverages data science, machine learning, and clinical expertise to develop personalized care plans at scale, managing over 18 million lives across health plans. The company ranked 236 on the 2024 Inc. 5000 list.
+
+ABOUT THE ROLE
+Arine seeks a technically skilled DevOps Engineer to build and scale cloud infrastructure and delivery pipelines, with a strong emphasis on AWS, CI/CD, and Infrastructure as Code. The role also incorporates AI-driven tooling to improve reliability, security, and delivery speed. The engineer will partner closely with development, QA, and product teams to support releases and ensure infrastructure reliability across a regulated healthcare environment.
+
+KEY RESPONSIBILITIES
+- Design, build, and maintain automated CI/CD pipelines (GitHub Actions, Jenkins) for fast, secure deployments
+- Provision, manage, and optimize AWS services (EC2, ECS, S3, RDS, Lambda, VPC, IAM) to support scalable, highly available applications
+- Implement and maintain Infrastructure as Code frameworks using Terraform and CloudFormation
+- Leverage AI and automation for log and metric anomaly detection and predictive alerting
+- Build robust monitoring, logging, and alerting systems using CloudWatch, Datadog, and the ELK stack
+- Implement DevSecOps best practices including secrets management, vulnerability scanning, and compliance controls
+- Partner with development, QA, and product teams on release coordination and infrastructure reliability
+- Evaluate and integrate AIOps tools to proactively surface operational issues before they impact users
+
+REQUIRED QUALIFICATIONS
+- 3-5 years of experience in DevOps, Cloud Engineering, or Site Reliability Engineering
+- Strong hands-on Amazon Web Services (AWS) experience across core services
+- CI/CD pipeline implementation expertise with GitHub Actions, Jenkins, or AWS CodePipeline
+- Infrastructure as Code proficiency using Terraform and/or CloudFormation
+- Docker and container orchestration experience with EKS or ECS
+- Strong scripting skills in Bash and Python
+- Linux, networking concepts, and shell scripting knowledge
+- Experience with industry-standard monitoring and logging platforms
+- Familiarity with AI-driven operations (AIOps) tools
+
+PREFERRED QUALIFICATIONS
+- Serverless architecture experience (Lambda, Step Functions, API Gateway)
+- Security scanning and compliance automation, or exposure to SOC2/HIPAA frameworks
+- Experience working in regulated environments such as healthcare or finance
+
+COMPENSATION
+$120,000 - $150,000 per year (base salary; excludes additional compensation and benefits)
+--- END POSTING 1 ---

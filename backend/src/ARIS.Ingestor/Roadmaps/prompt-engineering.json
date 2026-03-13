@@ -1,0 +1,756 @@
+{
+  "title": {
+    "card": "Prompt Engineering",
+    "page": "Prompt Engineering Roadmap"
+  },
+  "description": "Step by step guide to learning Prompt Engineering in @curentYear@",
+  "nodes": [
+    {
+      "id": "4XxWBlG--Jno5rp9jgKSO",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "Om4JhS6vA7meXZMz2db6p",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "1A9GZB7qdEWLUSzrHTxcE",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "f30g-r_2QkuZbVKjV4QAP",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "ydL4q2dOu6gj3S3dD8IRY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "jVjMjAPHn0n1LwcdZ4ysv",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "6A6v4832QCVhaYfvKmdf0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "fH9YBXRZk8tdO98pz3Duw",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "PImdr3fH3MMVHRCUdpqIe",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "E-hQlPvhbecgS9ZMTLw4B",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "IQOO39FNFdFZXTMaCtdml",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "c58fcsthBlVfzfr-MHdpF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ji35JsKgUQXN4DJGEgTAC",
+      "type": "title",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "Wm2VPi1Tn_Y7dqPowny69",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "jrH1qE6EnFXL4fTyYU8gR",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "74JxgfJ_1qmVNZ_QRp9Ne",
+      "type": "subtopic",
+      "data": {
+        "label": "LLMs and how they work?"
+      }
+    },
+    {
+      "id": "i4ijY3T5gLgNz0XqRipXe",
+      "type": "subtopic",
+      "data": {
+        "label": "What is a Prompt?"
+      }
+    },
+    {
+      "id": "43drPbTwPqJQPyzwYUdBT",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Prompt Engineering?"
+      }
+    },
+    {
+      "id": "LsUOBAaW4hjGRrOUqEcCD",
+      "type": "label",
+      "data": {
+        "label": "Models offered by ____"
+      }
+    },
+    {
+      "id": "Yb5cQiV2ETxPbBYCLOpt2",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI"
+      }
+    },
+    {
+      "id": "o-6UKLZ6oCRbAKgRjH2uI",
+      "type": "subtopic",
+      "data": {
+        "label": "Google"
+      }
+    },
+    {
+      "id": "V8pDOwrRKKcHBTd4qlSsH",
+      "type": "subtopic",
+      "data": {
+        "label": "Anthropic"
+      }
+    },
+    {
+      "id": "Td2YzDFT4LPGDw8JMmQSQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Meta"
+      }
+    },
+    {
+      "id": "3wshuH7_DXgbhxsLzzI4D",
+      "type": "subtopic",
+      "data": {
+        "label": "xAI"
+      }
+    },
+    {
+      "id": "B7EH5iIy1LB26wNl1SSpF",
+      "type": "label",
+      "data": {
+        "label": "Common Terminology"
+      }
+    },
+    {
+      "id": "pamV5Z8DRKk2ioZbg6QVK",
+      "type": "subtopic",
+      "data": {
+        "label": "LLM"
+      }
+    },
+    {
+      "id": "NPcaSEteeEA5g22wQ7nL_",
+      "type": "subtopic",
+      "data": {
+        "label": "Tokens"
+      }
+    },
+    {
+      "id": "b-Xtkv6rt8QgzJXSShOX-",
+      "type": "subtopic",
+      "data": {
+        "label": "Context Window"
+      }
+    },
+    {
+      "id": "SWDa3Su3VS815WQbvvNsa",
+      "type": "subtopic",
+      "data": {
+        "label": "Hallucination"
+      }
+    },
+    {
+      "id": "yfsjW1eze8mWT0iHxv078",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Weights / Parameters"
+      }
+    },
+    {
+      "id": "Ke5GT163k_ek9SzbcbBGE",
+      "type": "subtopic",
+      "data": {
+        "label": "Fine-Tuning vs Prompt Engg."
+      }
+    },
+    {
+      "id": "gxydtFKmnXNY9I5kpTwjP",
+      "type": "subtopic",
+      "data": {
+        "label": "RAG"
+      }
+    },
+    {
+      "id": "Pw5LWA9vNRY0N2M0FW16f",
+      "type": "subtopic",
+      "data": {
+        "label": "Agents"
+      }
+    },
+    {
+      "id": "6W_ONYREbXHwPigoDx1cW",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Injection"
+      }
+    },
+    {
+      "id": "Sj1CMZzZp8kF-LuHcd_UU",
+      "type": "subtopic",
+      "data": {
+        "label": "AI vs AGI"
+      }
+    },
+    {
+      "id": "do4ui2s0NJpVDChe9NPI1",
+      "type": "paragraph",
+      "data": {
+        "label": "LLM Configuration"
+      }
+    },
+    {
+      "id": "JgigM7HvmNOuKnp60v1Ce",
+      "type": "topic",
+      "data": {
+        "label": "Sampling Parameters"
+      }
+    },
+    {
+      "id": "iMwg-I76-Tg5dhu8DGO6U",
+      "type": "subtopic",
+      "data": {
+        "label": "Temperature"
+      }
+    },
+    {
+      "id": "FF8ai1v5GDzxXLQhpwuPj",
+      "type": "subtopic",
+      "data": {
+        "label": "Top-K"
+      }
+    },
+    {
+      "id": "-G1U1jDN5st1fTUtQmMl1",
+      "type": "subtopic",
+      "data": {
+        "label": "Top-P"
+      }
+    },
+    {
+      "id": "wSf7Zr8ZYBuKWX0GQX6J3",
+      "type": "topic",
+      "data": {
+        "label": "Output Control"
+      }
+    },
+    {
+      "id": "vK9Gf8dGu2UvvJJhhuHG9",
+      "type": "subtopic",
+      "data": {
+        "label": "Max Tokens"
+      }
+    },
+    {
+      "id": "v3CylRlojeltcwnE76j8Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Stop Sequences"
+      }
+    },
+    {
+      "id": "g8ylIg4Zh567u-E3yVVY4",
+      "type": "topic",
+      "data": {
+        "label": "Repetition Penalties"
+      }
+    },
+    {
+      "id": "YIVNjkmTOY61VmL0md9Pj",
+      "type": "subtopic",
+      "data": {
+        "label": "Frequency Penalty"
+      }
+    },
+    {
+      "id": "WpO8V5caudySVehOcuDvK",
+      "type": "subtopic",
+      "data": {
+        "label": "Presence Penalty"
+      }
+    },
+    {
+      "id": "j-PWO-ZmF9Oi9A5bwMRto",
+      "type": "topic",
+      "data": {
+        "label": "Structured Outputs"
+      }
+    },
+    {
+      "id": "lIf9xR4ZKbNpY9K6Liy8I",
+      "type": "paragraph",
+      "data": {
+        "label": "Prompting Techniques"
+      }
+    },
+    {
+      "id": "GRerL9UXN73TwpCW2eTIE",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero-Shot Prompting"
+      }
+    },
+    {
+      "id": "Iufv_LsgUNls-Alx_Btlh",
+      "type": "subtopic",
+      "data": {
+        "label": "One-Shot / Few-Shot Prompting"
+      }
+    },
+    {
+      "id": "fWo39-hehRgwmx7CF36mM",
+      "type": "subtopic",
+      "data": {
+        "label": "System Prompting"
+      }
+    },
+    {
+      "id": "XHWKGaSRBYT4MsCHwV-iR",
+      "type": "subtopic",
+      "data": {
+        "label": "Role Prompting"
+      }
+    },
+    {
+      "id": "5TNK1KcSzh9GTKiEJnM-y",
+      "type": "subtopic",
+      "data": {
+        "label": "Contextual Prompting"
+      }
+    },
+    {
+      "id": "3iJVcbCmnGdF39ne0U00r",
+      "type": "label",
+      "data": {
+        "label": "System / Role / Contextual"
+      }
+    },
+    {
+      "id": "2MboHh8ugkoH8dSd9d4Mk",
+      "type": "subtopic",
+      "data": {
+        "label": "Step-back Prompting"
+      }
+    },
+    {
+      "id": "weRaJxEplhKDyFWSMeoyI",
+      "type": "subtopic",
+      "data": {
+        "label": "Chain of Thought (CoT) Prompting"
+      }
+    },
+    {
+      "id": "1EzqCoplXPiHjp9Z-vqn-",
+      "type": "subtopic",
+      "data": {
+        "label": "Self-Consistency Prompting"
+      }
+    },
+    {
+      "id": "ob9D0W9B9145Da64nbi1M",
+      "type": "subtopic",
+      "data": {
+        "label": "Tree of Thoughts (ToT) Prompting"
+      }
+    },
+    {
+      "id": "8Ks6txRSUfMK7VotSQ4sC",
+      "type": "subtopic",
+      "data": {
+        "label": "ReAct Prompting"
+      }
+    },
+    {
+      "id": "diHNCiuKHeMVgvJ4OMwVh",
+      "type": "topic",
+      "data": {
+        "label": "Automatic Prompt Engineering"
+      }
+    },
+    {
+      "id": "5baiI4hKmZv6gkTHnfxH6",
+      "type": "label",
+      "data": {
+        "label": "Use LLM to generate Prompts"
+      }
+    },
+    {
+      "id": "Wvu9Q_kNhH1_JlOgxAjP6",
+      "type": "topic",
+      "data": {
+        "label": "AI Red Teaming"
+      }
+    },
+    {
+      "id": "ZU2LDlC5UEz-Dd5GeLZ3v",
+      "type": "button",
+      "data": {
+        "label": "AI Red Teaming Roadmap"
+      }
+    },
+    {
+      "id": "a3s4_DxtLGo6v-GPpQSXp",
+      "type": "paragraph",
+      "data": {
+        "label": "Prompting Best Practices"
+      }
+    },
+    {
+      "id": "-tQ7Cn4fHAfGmDkUb9bMb",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Provide few-shot examples for structure or  output style you need"
+      }
+    },
+    {
+      "id": "xaAeeGwAPdo4dGyIqDDgV",
+      "type": "label",
+      "data": {
+        "label": "\u2014  Keep your prompts short and concise"
+      }
+    },
+    {
+      "id": "31XQlT6NkkT20sAX-TkVm",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Prioritize giving clearer instructions over adding constraints"
+      }
+    },
+    {
+      "id": "y9iXqGBteGkVcgvxPBb0s",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Control the maximum output length"
+      }
+    },
+    {
+      "id": "tr7dmZpkguAJUmnpK_JLi",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Use variables / placeholders in your prompts for easier configuration"
+      }
+    },
+    {
+      "id": "UGhqnEUD6RnDTPIMeU16Y",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Experiment with input formats and writing styles"
+      }
+    },
+    {
+      "id": "iQycTLfHB2I21lZKt08YR",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Tune sampling (temperature, top-k, top-p) for determinism vs creativity"
+      }
+    },
+    {
+      "id": "qg7-CD2SVsU1bvFWZJ3Zn",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Guard against prompt injection; sanitize user text"
+      }
+    },
+    {
+      "id": "M71WrxOxArDF1lgM6WJgW",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Automate evaluation; integrate unit tests for outputs"
+      }
+    },
+    {
+      "id": "BX6MXjBAjBj0ql2N-HM3b",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Document and track prompt versions"
+      }
+    },
+    {
+      "id": "T5quDRbzzWXeEnT-F09WG",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Optimize for latency \u0026 cost in production pipelines"
+      }
+    },
+    {
+      "id": "vIgk7Kc2mKigvE9PWcuX5",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Document decisions, failures, and learnings for future devs"
+      }
+    },
+    {
+      "id": "jb0pTPfNUwEzlT1uAXCGx",
+      "type": "label",
+      "data": {
+        "label": "\u2014 Delimit different sections with triple backticks or XML tags"
+      }
+    },
+    {
+      "id": "7RBX-apLraCu-jURtrKfp",
+      "type": "label",
+      "data": {
+        "label": "\u2014  Ask for structured output if it helps e.g. JSON, XML, Markdown, CSV etc"
+      }
+    },
+    {
+      "id": "0H2keZYD8iTNyBgmNVhto",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Debiasing"
+      }
+    },
+    {
+      "id": "HOqWHqAkxLX8f2ImSmZE7",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Ensembling"
+      }
+    },
+    {
+      "id": "CvV3GIvQhsTvE-TQjTpIQ",
+      "type": "subtopic",
+      "data": {
+        "label": "LLM Self Evaluation"
+      }
+    },
+    {
+      "id": "P5nDyQbME53DOEfSkcY6I",
+      "type": "subtopic",
+      "data": {
+        "label": "Calibrating LLMs"
+      }
+    },
+    {
+      "id": "CwgyTJmEDzeHkC3zsw_d_",
+      "type": "label",
+      "data": {
+        "label": "Improving Reliability"
+      }
+    },
+    {
+      "id": "svCGq5RhnXjXs6VkZ_wZJ",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "FjydLFdJ_L1oUR2HxFA6C",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following roadmaps"
+      }
+    },
+    {
+      "id": "UloavCkIvZnD1XMFohYVT",
+      "type": "button",
+      "data": {
+        "label": "AI Engineer Roadmap"
+      }
+    },
+    {
+      "id": "RLtk1C3gofHnLJ17x3o5b",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "AI Agents Roadmap"
+      }
+    },
+    {
+      "id": "TE7AkAihqIMNA-hxdw8y6",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "aeErHpKYzENRqICdJGIqG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__Ji35JsKgUQXN4DJGEgTACx2-jrH1qE6EnFXL4fTyYU8gRw1",
+      "source": "Ji35JsKgUQXN4DJGEgTAC",
+      "target": "jrH1qE6EnFXL4fTyYU8gR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-74JxgfJ_1qmVNZ_QRp9Ney1",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "74JxgfJ_1qmVNZ_QRp9Ne",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-i4ijY3T5gLgNz0XqRipXey1",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "i4ijY3T5gLgNz0XqRipXe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRz2-43drPbTwPqJQPyzwYUdBTy2",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "43drPbTwPqJQPyzwYUdBT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__jrH1qE6EnFXL4fTyYU8gRx2-do4ui2s0NJpVDChe9NPI1w1",
+      "source": "jrH1qE6EnFXL4fTyYU8gR",
+      "target": "do4ui2s0NJpVDChe9NPI1",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__do4ui2s0NJpVDChe9NPI1x2-j-PWO-ZmF9Oi9A5bwMRtow1",
+      "source": "do4ui2s0NJpVDChe9NPI1",
+      "target": "JgigM7HvmNOuKnp60v1Ce",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__P5nDyQbME53DOEfSkcY6Ix2-0vLaVNJaJSHZ_bHli6Qzsz1",
+      "source": "P5nDyQbME53DOEfSkcY6I",
+      "target": "0vLaVNJaJSHZ_bHli6Qzs",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__g8ylIg4Zh567u-E3yVVY4y2-j-PWO-ZmF9Oi9A5bwMRtoz2",
+      "source": "g8ylIg4Zh567u-E3yVVY4",
+      "target": "j-PWO-ZmF9Oi9A5bwMRto",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__j-PWO-ZmF9Oi9A5bwMRtoy2-lIf9xR4ZKbNpY9K6Liy8Iz1",
+      "source": "j-PWO-ZmF9Oi9A5bwMRto",
+      "target": "lIf9xR4ZKbNpY9K6Liy8I",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__5baiI4hKmZv6gkTHnfxH6x2-Wvu9Q_kNhH1_JlOgxAjP6w2",
+      "source": "5baiI4hKmZv6gkTHnfxH6",
+      "target": "Wvu9Q_kNhH1_JlOgxAjP6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Wvu9Q_kNhH1_JlOgxAjP6y2-a3s4_DxtLGo6v-GPpQSXpz1",
+      "source": "Wvu9Q_kNhH1_JlOgxAjP6",
+      "target": "a3s4_DxtLGo6v-GPpQSXp",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__a3s4_DxtLGo6v-GPpQSXpx2-6A6v4832QCVhaYfvKmdf0w1",
+      "source": "a3s4_DxtLGo6v-GPpQSXp",
+      "target": "6A6v4832QCVhaYfvKmdf0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

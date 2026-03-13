@@ -1,0 +1,41 @@
+--- POSTING 2 ---
+Job Title: .NET Backend Engineer
+Company: SparkLedge
+Location: Chicago, IL
+Source: Synthetic based on greenhouse.io research
+
+ABOUT SPARKLEDGE
+SparkLedge is a SaaS platform for employee learning and development used by 1,200 mid-market companies. Our platform delivers personalized learning paths, tracks completion and compliance, and integrates with popular HRIS systems. We are Series B with 110 employees.
+
+ABOUT THE ROLE
+We are looking for a .NET Backend Engineer to build and maintain the API services and data layer for the SparkLedge platform. You will work in a cross-functional squad alongside frontend, data, and QA engineers.
+
+KEY RESPONSIBILITIES
+- Build and maintain RESTful APIs using ASP.NET Core and C# 12
+- Develop Entity Framework Core data models and migrations against SQL Server
+- Implement background job processing using Azure Functions and Service Bus
+- Write unit tests with xUnit and integration tests against real SQL Server instances
+- Integrate with third-party HRIS APIs (Workday, BambooHR) via REST and OAuth2
+- Participate in architecture discussions on API design and service boundaries
+- Perform code reviews and contribute to engineering standards documentation
+
+REQUIRED QUALIFICATIONS
+- 3+ years of .NET backend development experience
+- 3+ years building REST APIs with ASP.NET Core
+- 2+ years using Entity Framework Core with SQL Server
+- 2+ years writing unit tests with xUnit or NUnit
+- 1+ years working with Azure (Functions, Service Bus, App Service, or Blob Storage)
+- Solid understanding of C# async/await patterns and LINQ
+- Experience with Docker for local development environments
+- Proficiency with Git and pull request workflows
+
+PREFERRED QUALIFICATIONS
+- Experience with Blazor for any admin or internal tooling surfaces
+- Familiarity with Azure DevOps for CI/CD
+- Knowledge of OAuth2 and OpenID Connect (identity integration experience)
+- Background in HR tech, compliance, or learning management systems
+- Experience with SignalR for real-time notifications
+
+COMPENSATION
+$115,000 - $140,000 + equity + benefits
+--- END POSTING 2 ---

@@ -1,0 +1,2766 @@
+{
+  "title": {
+    "card": "Cyber Security",
+    "page": "Cyber Security Expert"
+  },
+  "description": "Step by step guide to becoming a Cyber Security Expert in @currentYear@",
+  "nodes": [
+    {
+      "id": "Ua8SDkyd9VtTqjrh17B9t",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0chjO1tLOWpFVXk3OEpgN",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "sxKISh5cBkQYtiLknLJsM",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "YyqMiJgEQTkM8snOlZQVr",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "QKWwtq6kqGgcMh63Zy4Va",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "FNyo1X9BP0v8GnBhPYXDR",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "DfC6Qg-kj35sKLoXSuaD7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6su23I9VvPjUw-3QPrcEo",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "hQ2uraeJ3zerDvEHMleJe",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "OcvcB4rWdJY1Xbe0A0Qwx",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "GEp7BfyOSkS-8i3P4jLCj",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "GAUtI7Z6Xblg6yZctu-wz",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "A_c4jiw7VKOHek-PZTrqu",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "4_8vkR5-Zgzx5l9vbEpM0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "bmLWcL3CqdiLYUdmKi93B",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "g9i4uhgcbHRGZ0ttxfoBG",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "vpVkdDBnrOF3NrXEw8Hpn",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "EDAwfCY7aqdDo-VT-k-Js",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "L8q17C-usuz7mo1PqDWld",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "e7uabnTNmXPwm-qfDu7Hl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "S_kvx3o0Astz09U2X6RAi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "aTv22cTfxUAc0mlwUMhfN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "x0yoSjQ3wyxYMYYQD58em",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-EnxQFVTyS3p-gp0QyPCd",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "cufgzgnnTxPucwhSz3BQo",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Cyber Security"
+      }
+    },
+    {
+      "id": "oimYzZYFXKjgvc7D4c-2u",
+      "type": "topic",
+      "data": {
+        "label": "Fundamental IT Skills"
+      }
+    },
+    {
+      "id": "Y-00drWVavq2B1BBpoOkN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ih0YZt8u9vDwYo8y1t41n",
+      "type": "subtopic",
+      "data": {
+        "label": "Computer Hardware Components"
+      }
+    },
+    {
+      "id": "F1QVCEmGkgvz-_H5lTxY2",
+      "type": "subtopic",
+      "data": {
+        "label": "Connection Types and their function"
+      }
+    },
+    {
+      "id": "pJUhQin--BGMuXHPwx3JJ",
+      "type": "subtopic",
+      "data": {
+        "label": "OS-Independent Troubleshooting"
+      }
+    },
+    {
+      "id": "_7RjH4Goi0x6Noy6za0rP",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Basics of Popular Suites"
+      }
+    },
+    {
+      "id": "T0aU8ZQGShmF9uXhWY4sD",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Computer Networking"
+      }
+    },
+    {
+      "id": "hwAUFLYpc_ftCfXq95dey",
+      "type": "subtopic",
+      "data": {
+        "label": "NFC"
+      }
+    },
+    {
+      "id": "fUBNKHNPXbemRYrnzH3VT",
+      "type": "subtopic",
+      "data": {
+        "label": "WiFi"
+      }
+    },
+    {
+      "id": "DbWf5LdqiByPiJa4xHtl_",
+      "type": "subtopic",
+      "data": {
+        "label": "Bluetooth"
+      }
+    },
+    {
+      "id": "KsZ63c3KQLLn373c5CZnp",
+      "type": "subtopic",
+      "data": {
+        "label": "Infrared"
+      }
+    },
+    {
+      "id": "E7yfALgu9E2auOYDOTmex",
+      "type": "subtopic",
+      "data": {
+        "label": "iCloud"
+      }
+    },
+    {
+      "id": "IOK_FluAv34j3Tj_NvwdO",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Suite"
+      }
+    },
+    {
+      "id": "-5haJATqlmj0SFSFAqN6A",
+      "type": "subtopic",
+      "data": {
+        "label": "MS Office Suite"
+      }
+    },
+    {
+      "id": "4kG2uNnZNmTdzJZK3w6Rj",
+      "type": "label",
+      "data": {
+        "label": "CTFs (Capture the Flag)"
+      }
+    },
+    {
+      "id": "wkuE_cChPZT2MHyGjUuU4",
+      "type": "subtopic",
+      "data": {
+        "label": "HackTheBox"
+      }
+    },
+    {
+      "id": "kht-L7_v-DbglMYUHuchp",
+      "type": "subtopic",
+      "data": {
+        "label": "TryHackMe"
+      }
+    },
+    {
+      "id": "W94wY_otBuvVW_-EFlKA6",
+      "type": "subtopic",
+      "data": {
+        "label": "VulnHub"
+      }
+    },
+    {
+      "id": "pou5xHwnz9Zsy5J6lNlKq",
+      "type": "subtopic",
+      "data": {
+        "label": "picoCTF"
+      }
+    },
+    {
+      "id": "WCeJrvWl837m1BIjuA1Mu",
+      "type": "subtopic",
+      "data": {
+        "label": "SANS Holiday Hack Challenge"
+      }
+    },
+    {
+      "id": "4dZqgrIsbcshLTJPo29os",
+      "type": "label",
+      "data": {
+        "label": "Certifications"
+      }
+    },
+    {
+      "id": "1gKxcnmRherd4kQCrNwDn",
+      "type": "paragraph",
+      "data": {
+        "label": "Beginner Certifications"
+      }
+    },
+    {
+      "id": "lbAgU5lR1O7L_5mCbNz_D",
+      "type": "subtopic",
+      "data": {
+        "label": "CompTIA A\u002B"
+      }
+    },
+    {
+      "id": "p34Qwlj2sjwEPR2ay1WOK",
+      "type": "subtopic",
+      "data": {
+        "label": "CompTIA Linux\u002B"
+      }
+    },
+    {
+      "id": "4RGbNOfMPDbBcvUFWTTCV",
+      "type": "subtopic",
+      "data": {
+        "label": "CompTIA Network\u002B"
+      }
+    },
+    {
+      "id": "4RD22UZATfL8dc71YkJwQ",
+      "type": "subtopic",
+      "data": {
+        "label": "CCNA"
+      }
+    },
+    {
+      "id": "AxeDcKK3cUtEojtHQPBw7",
+      "type": "subtopic",
+      "data": {
+        "label": "CompTIA Security\u002B"
+      }
+    },
+    {
+      "id": "rimygCL5JuYfbzSc5H0zI",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Certifications"
+      }
+    },
+    {
+      "id": "AAo7DXB7hyBzO6p05gx1i",
+      "type": "subtopic",
+      "data": {
+        "label": "CEH"
+      }
+    },
+    {
+      "id": "lqFp4VLY_S-5tAbhNQTew",
+      "type": "subtopic",
+      "data": {
+        "label": "CISA"
+      }
+    },
+    {
+      "id": "s86x24SHPEbbOB9lYNU-w",
+      "type": "subtopic",
+      "data": {
+        "label": "CISM"
+      }
+    },
+    {
+      "id": "nlmATCTgHoIoMcEOW8bUW",
+      "type": "subtopic",
+      "data": {
+        "label": "GSEC"
+      }
+    },
+    {
+      "id": "t4h9rEKWz5Us0qJKXhxlX",
+      "type": "subtopic",
+      "data": {
+        "label": "GPEN"
+      }
+    },
+    {
+      "id": "rwniCTWfYpKP5gi02Pa9f",
+      "type": "subtopic",
+      "data": {
+        "label": "GWAPT"
+      }
+    },
+    {
+      "id": "ZiUT-lyIBfHTzG-dwSy96",
+      "type": "subtopic",
+      "data": {
+        "label": "GIAC"
+      }
+    },
+    {
+      "id": "SwVGVP2bbCFs2uNg9Qtxb",
+      "type": "subtopic",
+      "data": {
+        "label": "OSCP"
+      }
+    },
+    {
+      "id": "rA1skdztev3-8VmAtIlmr",
+      "type": "subtopic",
+      "data": {
+        "label": "CREST"
+      }
+    },
+    {
+      "id": "BqvijNoRzSGYLCMP-6hhr",
+      "type": "subtopic",
+      "data": {
+        "label": "CISSP"
+      }
+    },
+    {
+      "id": "UY6xdt_V3YMkZxZ1hZLvW",
+      "type": "topic",
+      "data": {
+        "label": "Operating Systems"
+      }
+    },
+    {
+      "id": "BNUKEQ4YpZmIhSPQdkHgU",
+      "type": "subtopic",
+      "data": {
+        "label": "Windows"
+      }
+    },
+    {
+      "id": "4frVcjYI1VlVU9hQgpwcT",
+      "type": "subtopic",
+      "data": {
+        "label": "Linux"
+      }
+    },
+    {
+      "id": "dztwr-DSckggQbcNIi4_2",
+      "type": "subtopic",
+      "data": {
+        "label": "MacOS"
+      }
+    },
+    {
+      "id": "02aaEP9E5tlefeGBxf_Rj",
+      "type": "subtopic",
+      "data": {
+        "label": "Installation and Configuration"
+      }
+    },
+    {
+      "id": "yXOGqlufAZ69uiBzKFfh6",
+      "type": "subtopic",
+      "data": {
+        "label": "Different Versions and Differences"
+      }
+    },
+    {
+      "id": "MGitS_eJBoY99zOR-W3F4",
+      "type": "subtopic",
+      "data": {
+        "label": "Navigating using GUI and CLI"
+      }
+    },
+    {
+      "id": "bTfL7cPOmBBFl-eHxUJI6",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Permissions"
+      }
+    },
+    {
+      "id": "Ot3LGpM-CT_nKsNqIKIye",
+      "type": "subtopic",
+      "data": {
+        "label": "Installing Software and Applications"
+      }
+    },
+    {
+      "id": "zRXyoJMap9irOYo3AdHE8",
+      "type": "subtopic",
+      "data": {
+        "label": "Performing CRUD on Files"
+      }
+    },
+    {
+      "id": "xeRWOX1fWQDLNLWMAFTEe",
+      "type": "subtopic",
+      "data": {
+        "label": "Troubleshooting"
+      }
+    },
+    {
+      "id": "WDrSO7wBNn-2jB8mcyT7j",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Commands"
+      }
+    },
+    {
+      "id": "_4aPOIqioIWCEWbPqC6rV",
+      "type": "label",
+      "data": {
+        "label": "Learn following for each"
+      }
+    },
+    {
+      "id": "gSLr-Lc119eX9Ig-kDzJ2",
+      "type": "topic",
+      "data": {
+        "label": "Networking Knowledge"
+      }
+    },
+    {
+      "id": "OXUd1UPPsBhNoUGLKZJGV",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the OSI Model"
+      }
+    },
+    {
+      "id": "ViF-mpR17MB3_KJ1rV8mS",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Protocols and their Uses"
+      }
+    },
+    {
+      "id": "0tx2QYDYXhm85iYrCWd9U",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Ports and their Uses"
+      }
+    },
+    {
+      "id": "dJ0NUsODFhk52W2zZxoPh",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL and TLS Basics"
+      }
+    },
+    {
+      "id": "umbMBQ0yYmB5PgWfY6zfO",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of NAS and SAN"
+      }
+    },
+    {
+      "id": "E8Z7qFFW-I9ivr0HzoXCq",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Subnetting"
+      }
+    },
+    {
+      "id": "2nQfhnvBjJg1uDZ28aE4v",
+      "type": "subtopic",
+      "data": {
+        "label": "Public vs Private IP Addresses"
+      }
+    },
+    {
+      "id": "ziELvuQjNdneU2r59whyr",
+      "type": "label",
+      "data": {
+        "label": "IP Terminology"
+      }
+    },
+    {
+      "id": "0TWwox-4pSwuXojI8ixFO",
+      "type": "subtopic",
+      "data": {
+        "label": "localhost"
+      }
+    },
+    {
+      "id": "W_oloLu2Euz5zRSy7v_T8",
+      "type": "subtopic",
+      "data": {
+        "label": "loopback"
+      }
+    },
+    {
+      "id": "PPIH1oHW4_ZDyD3U3shDg",
+      "type": "subtopic",
+      "data": {
+        "label": "CIDR"
+      }
+    },
+    {
+      "id": "f-v8qtweWXFY_Ryo3oYUF",
+      "type": "subtopic",
+      "data": {
+        "label": "subnet mask"
+      }
+    },
+    {
+      "id": "5rKaFtjYx0n2iF8uTLs8X",
+      "type": "subtopic",
+      "data": {
+        "label": "default gateway"
+      }
+    },
+    {
+      "id": "YIrr0O9RSwdonm9IuqqLJ",
+      "type": "label",
+      "data": {
+        "label": "Understand the Terminology"
+      }
+    },
+    {
+      "id": "d5Cv3EXf6OXW19yPJ4x6e",
+      "type": "subtopic",
+      "data": {
+        "label": "VLAN"
+      }
+    },
+    {
+      "id": "gfpvDQz61I3zTB7tGu7vp",
+      "type": "subtopic",
+      "data": {
+        "label": "DMZ"
+      }
+    },
+    {
+      "id": "M52V7hmG4ORf4TIVw3W3J",
+      "type": "subtopic",
+      "data": {
+        "label": "ARP"
+      }
+    },
+    {
+      "id": "ZTC5bLWEIQcdmowc7sk_E",
+      "type": "subtopic",
+      "data": {
+        "label": "VM"
+      }
+    },
+    {
+      "id": "T4312p70FqRBkzVfWKMaR",
+      "type": "subtopic",
+      "data": {
+        "label": "DHCP"
+      }
+    },
+    {
+      "id": "ORIdKG8H97VkBUYpiDtXf",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS"
+      }
+    },
+    {
+      "id": "Kkd3f_0OYNCdpDgrJ-_Ju",
+      "type": "subtopic",
+      "data": {
+        "label": "NAT"
+      }
+    },
+    {
+      "id": "FdoqB2---uDAyz6xZjk_u",
+      "type": "subtopic",
+      "data": {
+        "label": "IP"
+      }
+    },
+    {
+      "id": "lwSFIbIX-xOZ0QK2sGFb1",
+      "type": "subtopic",
+      "data": {
+        "label": "Router"
+      }
+    },
+    {
+      "id": "r9byGV8XuBPzoqj5ZPf2W",
+      "type": "subtopic",
+      "data": {
+        "label": "Switch"
+      }
+    },
+    {
+      "id": "gTozEpxJeG1NTkVBHH-05",
+      "type": "subtopic",
+      "data": {
+        "label": "VPN"
+      }
+    },
+    {
+      "id": "LrwTMH_1fTd8iB9wJg-0t",
+      "type": "subtopic",
+      "data": {
+        "label": "MAN"
+      }
+    },
+    {
+      "id": "xWxusBtMEWnd-6n7oqjHz",
+      "type": "subtopic",
+      "data": {
+        "label": "LAN"
+      }
+    },
+    {
+      "id": "vCkTJMkDXcQmwsmeNUAX5",
+      "type": "subtopic",
+      "data": {
+        "label": "WAN"
+      }
+    },
+    {
+      "id": "QCVYF1rmPsMVtklBNDNaB",
+      "type": "subtopic",
+      "data": {
+        "label": "WLAN"
+      }
+    },
+    {
+      "id": "n2nh_Yxc7y1uLO42nZDGA",
+      "type": "label",
+      "data": {
+        "label": "Understand these"
+      }
+    },
+    {
+      "id": "M2J4wsTcEo3IcULZDRNyM",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "R5HEeh6jwpQDo27rz1KSH",
+      "type": "subtopic",
+      "data": {
+        "label": "DHCP"
+      }
+    },
+    {
+      "id": "r1IKvhpwg2umazLGlQZL1",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS"
+      }
+    },
+    {
+      "id": "tf0TymdPHbplDHvuVIIh4",
+      "type": "subtopic",
+      "data": {
+        "label": "NTP"
+      }
+    },
+    {
+      "id": "hN8p5YBcSaPm-byQUIz8L",
+      "type": "subtopic",
+      "data": {
+        "label": "IPAM"
+      }
+    },
+    {
+      "id": "BeOWMvEDBZn64OsZkBkQ2",
+      "type": "label",
+      "data": {
+        "label": "Functions of each"
+      }
+    },
+    {
+      "id": "HJ1wroQw_zvdE0HORyOck",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "P0ZhAXd_H-mTOMr13Ag31",
+      "type": "subtopic",
+      "data": {
+        "label": "Star"
+      }
+    },
+    {
+      "id": "9vEUVJ8NTh0wKyIE6-diY",
+      "type": "subtopic",
+      "data": {
+        "label": "Ring"
+      }
+    },
+    {
+      "id": "PYeF15e7iVB9seFrrO7W6",
+      "type": "subtopic",
+      "data": {
+        "label": "Mesh"
+      }
+    },
+    {
+      "id": "0DWh4WmLK_ENDuqQmQcu4",
+      "type": "subtopic",
+      "data": {
+        "label": "Bus"
+      }
+    },
+    {
+      "id": "RfVcN1i-70yq4bEAcm-Ry",
+      "type": "label",
+      "data": {
+        "label": "Network Topologies"
+      }
+    },
+    {
+      "id": "6Dfk8Gt9DE8EYczCwEAyQ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "8Mog890Lj-gVBpWa05EzT",
+      "type": "subtopic",
+      "data": {
+        "label": "SSH"
+      }
+    },
+    {
+      "id": "Ia6M1FKPNpqLDiWx7CwDh",
+      "type": "subtopic",
+      "data": {
+        "label": "RDP"
+      }
+    },
+    {
+      "id": "ftYYMxRpVer-jgSswHLNa",
+      "type": "subtopic",
+      "data": {
+        "label": "FTP"
+      }
+    },
+    {
+      "id": "YEy6o-clTBKZp1yOkLwNb",
+      "type": "subtopic",
+      "data": {
+        "label": "SFTP"
+      }
+    },
+    {
+      "id": "8He-lADSDdhv4-CjwRMlw",
+      "type": "label",
+      "data": {
+        "label": "Network Protocols"
+      }
+    },
+    {
+      "id": "3Awm221OJHxXNLiL9yxfd",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP / HTTPS"
+      }
+    },
+    {
+      "id": "LKK1A5-xawA7yCIAWHS8P",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL / TLS"
+      }
+    },
+    {
+      "id": "AjywuCZdBi9atGUbetlUL",
+      "type": "subtopic",
+      "data": {
+        "label": "VMWare"
+      }
+    },
+    {
+      "id": "vGVFhZXYOZOy4qFpLLbxp",
+      "type": "subtopic",
+      "data": {
+        "label": "VirtualBox"
+      }
+    },
+    {
+      "id": "BisNooct1vJDKaBKsGR7_",
+      "type": "subtopic",
+      "data": {
+        "label": "esxi"
+      }
+    },
+    {
+      "id": "jqX1A5hFF3Qznqup4lfiF",
+      "type": "subtopic",
+      "data": {
+        "label": "proxmox"
+      }
+    },
+    {
+      "id": "CzZbiEbtngRNJOKbNQUxp",
+      "type": "label",
+      "data": {
+        "label": "Common Virtualization Technologies"
+      }
+    },
+    {
+      "id": "CIoLaRv5I3sCr9tBnZHEi",
+      "type": "subtopic",
+      "data": {
+        "label": "Hypervisor"
+      }
+    },
+    {
+      "id": "251sxqoHggQ4sZ676iX5w",
+      "type": "subtopic",
+      "data": {
+        "label": "VM"
+      }
+    },
+    {
+      "id": "LocGETHz6ANYinNd5ZLsS",
+      "type": "subtopic",
+      "data": {
+        "label": "GuestOS"
+      }
+    },
+    {
+      "id": "p7w3C94xjLwSMm5qA8XlL",
+      "type": "subtopic",
+      "data": {
+        "label": "HostOS"
+      }
+    },
+    {
+      "id": "eDe7z_-RSBCCZBl9isKFl",
+      "type": "label",
+      "data": {
+        "label": "Basics of Virtualization"
+      }
+    },
+    {
+      "id": "OdqcE-If6coh0i2C2ob4Z",
+      "type": "label",
+      "data": {
+        "label": "Troubleshooting Tools"
+      }
+    },
+    {
+      "id": "tk4iG5i1Ml9w9KRO1tGJU",
+      "type": "subtopic",
+      "data": {
+        "label": "nslookup"
+      }
+    },
+    {
+      "id": "jr8JlyqmN3p7Ol3_kD9AH",
+      "type": "subtopic",
+      "data": {
+        "label": "iptables"
+      }
+    },
+    {
+      "id": "k6UX0BJho5arjGD2RWPgH",
+      "type": "subtopic",
+      "data": {
+        "label": "Packet Sniffers"
+      }
+    },
+    {
+      "id": "u-6xuZUyOrogh1bU4cwER",
+      "type": "subtopic",
+      "data": {
+        "label": "ipconfig"
+      }
+    },
+    {
+      "id": "2M3PRbGzo14agbEPe32ww",
+      "type": "subtopic",
+      "data": {
+        "label": "netstat"
+      }
+    },
+    {
+      "id": "iJRQHzh5HXADuWpCouwxv",
+      "type": "subtopic",
+      "data": {
+        "label": "Port Scanners"
+      }
+    },
+    {
+      "id": "GuuY-Q6FZzfspB3wrH64r",
+      "type": "subtopic",
+      "data": {
+        "label": "ping"
+      }
+    },
+    {
+      "id": "D2YYv1iTRGken75sHO0Gt",
+      "type": "subtopic",
+      "data": {
+        "label": "dig"
+      }
+    },
+    {
+      "id": "hkO3Ga6KctKODr4gos6qX",
+      "type": "subtopic",
+      "data": {
+        "label": "arp"
+      }
+    },
+    {
+      "id": "K05mEAsjImyPge0hDtsU0",
+      "type": "subtopic",
+      "data": {
+        "label": "Protocol Analyzers"
+      }
+    },
+    {
+      "id": "xqwIEyGfdZFxk6QqbPswe",
+      "type": "subtopic",
+      "data": {
+        "label": "nmap"
+      }
+    },
+    {
+      "id": "xFuWk7M-Vctk_xb7bHbWs",
+      "type": "subtopic",
+      "data": {
+        "label": "route"
+      }
+    },
+    {
+      "id": "y8GaUNpaCT1Ai88wPOk6d",
+      "type": "subtopic",
+      "data": {
+        "label": "tcpdump"
+      }
+    },
+    {
+      "id": "cSz9Qx3PGwmhq3SSKYKfg",
+      "type": "subtopic",
+      "data": {
+        "label": "tracert"
+      }
+    },
+    {
+      "id": "lG6afUOx3jSQFxbH92otL",
+      "type": "subtopic",
+      "data": {
+        "label": "Kerberos"
+      }
+    },
+    {
+      "id": "lV3swvD6QGLmD9iVfbKIF",
+      "type": "subtopic",
+      "data": {
+        "label": "LDAP"
+      }
+    },
+    {
+      "id": "xL32OqDKm6O043TYgVV1r",
+      "type": "subtopic",
+      "data": {
+        "label": "SSO"
+      }
+    },
+    {
+      "id": "tH3RLnJseqOzRIbZMklHD",
+      "type": "subtopic",
+      "data": {
+        "label": "RADIUS"
+      }
+    },
+    {
+      "id": "WXRaVCYwuGQsjJ5wyvbea",
+      "type": "subtopic",
+      "data": {
+        "label": "Certificates"
+      }
+    },
+    {
+      "id": "vYvFuz7lAJXZ1vK_4999a",
+      "type": "subtopic",
+      "data": {
+        "label": "Local Auth"
+      }
+    },
+    {
+      "id": "RB-mm3jkLiiEbUthZ3iAt",
+      "type": "label",
+      "data": {
+        "label": "Authentication Methodologies"
+      }
+    },
+    {
+      "id": "_hYN0gEi9BL24nptEtXWU",
+      "type": "topic",
+      "data": {
+        "label": "Security Skills and Knowledge"
+      }
+    },
+    {
+      "id": "2g3Y0RAgXF0UWpJ-PadMR",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "C53zF5OsU-kO96-MiMDFW",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rzY_QsvnC1shDTPQ-til0",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Common Hacking Tools"
+      }
+    },
+    {
+      "id": "Lg7mz4zeCToEzZBFxYuaU",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Common Exploit Frameworks"
+      }
+    },
+    {
+      "id": "Rae-f9DHDZuwIwW6eRtKF",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Concept of Defense in Depth"
+      }
+    },
+    {
+      "id": "Ec6EairjFJLCHc7b-1xxe",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Concept of Runbooks"
+      }
+    },
+    {
+      "id": "7KLGFfco-hw7a62kXtS3d",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Basics of Forensics"
+      }
+    },
+    {
+      "id": "_x3BgX93N-Pt1_JK7wk0p",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics and Concepts of Threat Hunting"
+      }
+    },
+    {
+      "id": "lcxAXtO6LoGd85nOFnLo8",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Vulnerability Management"
+      }
+    },
+    {
+      "id": "uoGA4T_-c-2ip_zfEUcJJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Reverse Engineering"
+      }
+    },
+    {
+      "id": "NkAAQikwH-A6vrF8fWpuB",
+      "type": "subtopic",
+      "data": {
+        "label": "Penetration Testing Rules of Engagement"
+      }
+    },
+    {
+      "id": "PUgPgpKio4Npzs86qEXa7",
+      "type": "subtopic",
+      "data": {
+        "label": "Perimiter vs DMZ vs Segmentation"
+      }
+    },
+    {
+      "id": "HavEL0u65ZxHt92TfbLzk",
+      "type": "subtopic",
+      "data": {
+        "label": "Core Concepts of Zero Trust"
+      }
+    },
+    {
+      "id": "kqT0FRLt9Ak9P8PhHldO-",
+      "type": "subtopic",
+      "data": {
+        "label": "Roles of Compliance and Auditors"
+      }
+    },
+    {
+      "id": "ggAja18sBUUdCfVsT0vCv",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the Definition of Risk"
+      }
+    },
+    {
+      "id": "9asy3STW4oTYYHcUazaRj",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Backups and Resiliency"
+      }
+    },
+    {
+      "id": "H38Vb7xvuBJXVzgPBdRdT",
+      "type": "subtopic",
+      "data": {
+        "label": "Cyber Kill Chain"
+      }
+    },
+    {
+      "id": "pnfVrOjDeG1uYAeqHxhJP",
+      "type": "subtopic",
+      "data": {
+        "label": "MFA \u0026 2FA"
+      }
+    },
+    {
+      "id": "_S25EOGS3P8647zLM5i-g",
+      "type": "subtopic",
+      "data": {
+        "label": "Operating System Hardening"
+      }
+    },
+    {
+      "id": "aDF7ZcOX9uR8l0W4aqhYn",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Concept of Isolation"
+      }
+    },
+    {
+      "id": "FJsEBOFexbDyAj86XWBCc",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of IDS and IPS"
+      }
+    },
+    {
+      "id": "bj5YX8zhlam0yoNckL8e4",
+      "type": "subtopic",
+      "data": {
+        "label": "Honeypots"
+      }
+    },
+    {
+      "id": "WG7DdsxESm31VcLFfkVTz",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication vs Authorization"
+      }
+    },
+    {
+      "id": "7tDxTcKJNAUxbHLPCnPFO",
+      "type": "subtopic",
+      "data": {
+        "label": "Blue / Red / Purple Teams"
+      }
+    },
+    {
+      "id": "XwRCZf-yHJsXVjaRfb3R4",
+      "type": "subtopic",
+      "data": {
+        "label": "False Negative / False Positive"
+      }
+    },
+    {
+      "id": "M6uwyD4ibguxytf1od-og",
+      "type": "subtopic",
+      "data": {
+        "label": "True Negative / True Positive"
+      }
+    },
+    {
+      "id": "wN5x5pY53B8d0yopa1z8F",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Threat Intel, OSINT"
+      }
+    },
+    {
+      "id": "zQx_VUS1zRmF4zCGjJD5-",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand Handshakes"
+      }
+    },
+    {
+      "id": "uz6ELaLEu9U4fHVfnQiOa",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand CIA Triad"
+      }
+    },
+    {
+      "id": "cvI8-sxY5i8lpelW9iY_5",
+      "type": "subtopic",
+      "data": {
+        "label": "Privilege Escalation"
+      }
+    },
+    {
+      "id": "fyOYVqiBqyKC4aqc6-y0q",
+      "type": "subtopic",
+      "data": {
+        "label": "Web Based Attacks and OWASP10"
+      }
+    },
+    {
+      "id": "v7CD_sHqLWbm9ibXXESIK",
+      "type": "subtopic",
+      "data": {
+        "label": "Learn how Malware works and Types"
+      }
+    },
+    {
+      "id": "i4OwpsvRGbZWIo237UK4b",
+      "type": "label",
+      "data": {
+        "label": "Tools for Incident Response and Discovery"
+      }
+    },
+    {
+      "id": "Hoou7kWyfB2wx_yFHug_H",
+      "type": "subtopic",
+      "data": {
+        "label": "nmap"
+      }
+    },
+    {
+      "id": "jJtS0mgCYc0wbjuXssDRO",
+      "type": "subtopic",
+      "data": {
+        "label": "tracert"
+      }
+    },
+    {
+      "id": "OUarb1oS1-PX_3OXNR0rV",
+      "type": "subtopic",
+      "data": {
+        "label": "nslookup"
+      }
+    },
+    {
+      "id": "W7iQUCjODGYgE4PjC5TZI",
+      "type": "subtopic",
+      "data": {
+        "label": "curl"
+      }
+    },
+    {
+      "id": "Cclbt4bNfkHwFwZOvJuLK",
+      "type": "subtopic",
+      "data": {
+        "label": "hping"
+      }
+    },
+    {
+      "id": "yfTpp-ePuDB931FnvNB-Y",
+      "type": "subtopic",
+      "data": {
+        "label": "ping"
+      }
+    },
+    {
+      "id": "fzdZF-nzIL69kaA7kwOCn",
+      "type": "subtopic",
+      "data": {
+        "label": "arp"
+      }
+    },
+    {
+      "id": "D2ptX6ja_HvFEafMIzWOy",
+      "type": "subtopic",
+      "data": {
+        "label": "cat"
+      }
+    },
+    {
+      "id": "9xbU_hrEOUtMm-Q09Fe6t",
+      "type": "subtopic",
+      "data": {
+        "label": "dd"
+      }
+    },
+    {
+      "id": "VNmrb5Dm4UKUgL8JBfhnE",
+      "type": "subtopic",
+      "data": {
+        "label": "head"
+      }
+    },
+    {
+      "id": "Dfz-6aug0juUpMmOJLCJ9",
+      "type": "subtopic",
+      "data": {
+        "label": "grep"
+      }
+    },
+    {
+      "id": "Sm9bxKUElINHND8FdZ5f2",
+      "type": "subtopic",
+      "data": {
+        "label": "wireshark"
+      }
+    },
+    {
+      "id": "gNan93Mg9Ym2AF3Q2gqoi",
+      "type": "subtopic",
+      "data": {
+        "label": "winhex"
+      }
+    },
+    {
+      "id": "wspNQPmqWRjKoFm6x_bVw",
+      "type": "subtopic",
+      "data": {
+        "label": "memdump"
+      }
+    },
+    {
+      "id": "_jJhL1RtaqHJmlcWrd-Ak",
+      "type": "subtopic",
+      "data": {
+        "label": "FTK Imager"
+      }
+    },
+    {
+      "id": "bIwpjIoxSUZloxDuQNpMu",
+      "type": "subtopic",
+      "data": {
+        "label": "autopsy"
+      }
+    },
+    {
+      "id": "XyaWZZ45axJMKXoWwsyFj",
+      "type": "subtopic",
+      "data": {
+        "label": "dig"
+      }
+    },
+    {
+      "id": "762Wf_Eh-3zq69CZZiIjR",
+      "type": "subtopic",
+      "data": {
+        "label": "tail"
+      }
+    },
+    {
+      "id": "IXNGFF4sOFbQ_aND-ELK0",
+      "type": "subtopic",
+      "data": {
+        "label": "ipconfig"
+      }
+    },
+    {
+      "id": "P_-Fdgkjhzxniq3KW8PlP",
+      "type": "label",
+      "data": {
+        "label": "Basics of Cryptography"
+      }
+    },
+    {
+      "id": "jqWhR6oTyX6yolUBv71VC",
+      "type": "subtopic",
+      "data": {
+        "label": "Salting"
+      }
+    },
+    {
+      "id": "0UZmAECMnfioi-VeXcvg8",
+      "type": "subtopic",
+      "data": {
+        "label": "Hashing"
+      }
+    },
+    {
+      "id": "rmR6HJqEhHDgX55Xy5BAW",
+      "type": "subtopic",
+      "data": {
+        "label": "Key Exchange"
+      }
+    },
+    {
+      "id": "fxyJxrf3mnFTa3wXk1MCW",
+      "type": "subtopic",
+      "data": {
+        "label": "PKI"
+      }
+    },
+    {
+      "id": "7svh9qaaPp0Hz23yinIye",
+      "type": "subtopic",
+      "data": {
+        "label": "Private vs Public Keys"
+      }
+    },
+    {
+      "id": "kxlg6rpfqqoBfmMMg3EkJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Obfuscation"
+      }
+    },
+    {
+      "id": "wb3Wc9be7bJ_Xr5p-Pnvm",
+      "type": "label",
+      "data": {
+        "label": "Understand Frameworks"
+      }
+    },
+    {
+      "id": "auR7fNyd77W2UA-PjXeJS",
+      "type": "subtopic",
+      "data": {
+        "label": "ATT\u0026CK"
+      }
+    },
+    {
+      "id": "7Bmp4x6gbvWMuVDdGRUGj",
+      "type": "subtopic",
+      "data": {
+        "label": "Kill Chain"
+      }
+    },
+    {
+      "id": "AY-hoPGnAZSd1ExaYX8LR",
+      "type": "subtopic",
+      "data": {
+        "label": "Diamond Model"
+      }
+    },
+    {
+      "id": "zruYWobdu1xW9lTDUZk4-",
+      "type": "label",
+      "data": {
+        "label": "Understand Common Standards"
+      }
+    },
+    {
+      "id": "oRssaVG-K-JwlL6TAHhXw",
+      "type": "subtopic",
+      "data": {
+        "label": "ISO"
+      }
+    },
+    {
+      "id": "SOkJUTd1NUKSwYMIprv4m",
+      "type": "subtopic",
+      "data": {
+        "label": "NIST"
+      }
+    },
+    {
+      "id": "fjEdufrZAfW4Rl6yDU8Hk",
+      "type": "subtopic",
+      "data": {
+        "label": "RMF"
+      }
+    },
+    {
+      "id": "sSihnptkoEqUsHjDpckhG",
+      "type": "subtopic",
+      "data": {
+        "label": "CIS"
+      }
+    },
+    {
+      "id": "HjfgaSEZjW9BOXy_Ixzkk",
+      "type": "subtopic",
+      "data": {
+        "label": "CSF"
+      }
+    },
+    {
+      "id": "ILAZCecheh0RHHitBx7B2",
+      "type": "label",
+      "data": {
+        "label": "Understand the following"
+      }
+    },
+    {
+      "id": "c2kY3wZVFKZYxMARhLIwO",
+      "type": "subtopic",
+      "data": {
+        "label": "SIEM"
+      }
+    },
+    {
+      "id": "i0ulrA-GJrNhIVmzdWDrn",
+      "type": "subtopic",
+      "data": {
+        "label": "SOAR"
+      }
+    },
+    {
+      "id": "Kg9vI3skbes7-UqApDWq0",
+      "type": "label",
+      "data": {
+        "label": "Common Distros for hacking"
+      }
+    },
+    {
+      "id": "zR6djXnfTSFVEfvJonQjf",
+      "type": "subtopic",
+      "data": {
+        "label": "ParrotOS"
+      }
+    },
+    {
+      "id": "w6wXkoLrv0_d-Ah0txUHd",
+      "type": "subtopic",
+      "data": {
+        "label": "Kali Linux"
+      }
+    },
+    {
+      "id": "10qbxX8DCrfyH7tgYexxQ",
+      "type": "subtopic",
+      "data": {
+        "label": "LOLBAS"
+      }
+    },
+    {
+      "id": "3Q030CQumukKTg3YessCN",
+      "type": "label",
+      "data": {
+        "label": "Using tools for Unintended Purposes"
+      }
+    },
+    {
+      "id": "JAEDRu2Vg-0M_TJi2cnPg",
+      "type": "label",
+      "data": {
+        "label": "Learn how to find and use these logs"
+      }
+    },
+    {
+      "id": "KbFwL--xF-eYjGy8PZdrM",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Logs"
+      }
+    },
+    {
+      "id": "7oFwRkmoZom8exMDtMslX",
+      "type": "subtopic",
+      "data": {
+        "label": "syslogs"
+      }
+    },
+    {
+      "id": "xXz-SwvXA2cLfdCd-hLtW",
+      "type": "subtopic",
+      "data": {
+        "label": "netflow"
+      }
+    },
+    {
+      "id": "TIxEkfBrN6EXQ3IKP1B7u",
+      "type": "subtopic",
+      "data": {
+        "label": "Packet Captures"
+      }
+    },
+    {
+      "id": "np0PwKy-EvIa_f_LC6Eem",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewall Logs"
+      }
+    },
+    {
+      "id": "H1RC3OllZeqe_NvNcS1pU",
+      "type": "label",
+      "data": {
+        "label": "Understand Hardening Concepts"
+      }
+    },
+    {
+      "id": "OAukNfV5T0KTnIF9jKYRF",
+      "type": "subtopic",
+      "data": {
+        "label": "MAC-based"
+      }
+    },
+    {
+      "id": "6oAzYfwsHQYNVbi7c2Tly",
+      "type": "subtopic",
+      "data": {
+        "label": "NAC-based"
+      }
+    },
+    {
+      "id": "W7bcydXdwlubXF2PHKOuq",
+      "type": "subtopic",
+      "data": {
+        "label": "Port Blocking"
+      }
+    },
+    {
+      "id": "FxuMJmDoDkIsPFp2iocFg",
+      "type": "subtopic",
+      "data": {
+        "label": "Group Policy"
+      }
+    },
+    {
+      "id": "8JM95sonFUhZCdaynUA_M",
+      "type": "subtopic",
+      "data": {
+        "label": "ACLs"
+      }
+    },
+    {
+      "id": "oFgyQYL3Ws-l7B5AF-bTR",
+      "type": "subtopic",
+      "data": {
+        "label": "Sinkholes"
+      }
+    },
+    {
+      "id": "e-MDyUR3GEv-e4Qsx_5vV",
+      "type": "subtopic",
+      "data": {
+        "label": "Patching"
+      }
+    },
+    {
+      "id": "UF3BV1sEEOrqh5ilnfM1B",
+      "type": "subtopic",
+      "data": {
+        "label": "Jump Server"
+      }
+    },
+    {
+      "id": "LEgJtu1GZKOtoAXyOGWLE",
+      "type": "subtopic",
+      "data": {
+        "label": "Endpoint Security"
+      }
+    },
+    {
+      "id": "ck93KaGoD_sGLp2Y-DvIR",
+      "type": "label",
+      "data": {
+        "label": "Secure vs Unsecure Protocols"
+      }
+    },
+    {
+      "id": "9Z6HPHPj4escSVDWftFEx",
+      "type": "subtopic",
+      "data": {
+        "label": "FTP vs SFTP"
+      }
+    },
+    {
+      "id": "6ILPXeUDDmmYRiA_gNTSr",
+      "type": "subtopic",
+      "data": {
+        "label": "SSL vs TLS"
+      }
+    },
+    {
+      "id": "gNFVtBxSYP5Uw3o3tlJ0M",
+      "type": "subtopic",
+      "data": {
+        "label": "IPSEC"
+      }
+    },
+    {
+      "id": "LLGXONul7JfZGUahnK0AZ",
+      "type": "subtopic",
+      "data": {
+        "label": "DNSSEC"
+      }
+    },
+    {
+      "id": "z_fDvTgKw51Uepo6eMQd9",
+      "type": "subtopic",
+      "data": {
+        "label": "LDAPS"
+      }
+    },
+    {
+      "id": "_9lQSG6fn69Yd9rs1pQdL",
+      "type": "subtopic",
+      "data": {
+        "label": "SRTP"
+      }
+    },
+    {
+      "id": "9rmDvycXFcsGOq3v-_ziD",
+      "type": "subtopic",
+      "data": {
+        "label": "S/MIME"
+      }
+    },
+    {
+      "id": "217hzGfJmj6rLNjOGKx9q",
+      "type": "label",
+      "data": {
+        "label": "Understand the following Terms"
+      }
+    },
+    {
+      "id": "3140n5prZYySsuBHjqGOJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Antivirus"
+      }
+    },
+    {
+      "id": "9QtY1hMJ7NKLFztYK-mHY",
+      "type": "subtopic",
+      "data": {
+        "label": "Antimalware"
+      }
+    },
+    {
+      "id": "QvHWrmMzO8IvNQ234E_wf",
+      "type": "subtopic",
+      "data": {
+        "label": "EDR"
+      }
+    },
+    {
+      "id": "iolsTC-63d_1wzKGul-cT",
+      "type": "subtopic",
+      "data": {
+        "label": "DLP"
+      }
+    },
+    {
+      "id": "35oCRzhzpVfitQPL4K9KC",
+      "type": "subtopic",
+      "data": {
+        "label": "ACL"
+      }
+    },
+    {
+      "id": "tWDo5R3KU5KOjDdtv801x",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewall \u0026 Nextgen Firewall"
+      }
+    },
+    {
+      "id": "l5EnhOCnkN-RKvgrS9ylH",
+      "type": "subtopic",
+      "data": {
+        "label": "HIPS"
+      }
+    },
+    {
+      "id": "LIPtxl_oKZRcbvXT4EdNf",
+      "type": "subtopic",
+      "data": {
+        "label": "NIDS"
+      }
+    },
+    {
+      "id": "7w9qj16OD4pUzq-ItdxeK",
+      "type": "subtopic",
+      "data": {
+        "label": "NIPS"
+      }
+    },
+    {
+      "id": "jWl1VWkZn3n1G2eHq6EnX",
+      "type": "subtopic",
+      "data": {
+        "label": "Host Based Firewall"
+      }
+    },
+    {
+      "id": "SLKwuLHHpC7D1FqrpPRAe",
+      "type": "subtopic",
+      "data": {
+        "label": "Sandboxing"
+      }
+    },
+    {
+      "id": "1jwtExZzR9ABKvD_S9zFG",
+      "type": "subtopic",
+      "data": {
+        "label": "EAP vs PEAP"
+      }
+    },
+    {
+      "id": "HSCGbM2-aTnJWUX6jGaDP",
+      "type": "subtopic",
+      "data": {
+        "label": "WPS"
+      }
+    },
+    {
+      "id": "MBnDE0VyVh2u2p-r90jVk",
+      "type": "subtopic",
+      "data": {
+        "label": "WPA vs WPA2 vs WPA3 vs WEP"
+      }
+    },
+    {
+      "id": "cs_xQZ5Z0IFbqYy6Zkuwp",
+      "type": "label",
+      "data": {
+        "label": "Understand the Incident Response Process"
+      }
+    },
+    {
+      "id": "w6V4JOtXKCMPAkKIQxvMg",
+      "type": "subtopic",
+      "data": {
+        "label": "Preparation"
+      }
+    },
+    {
+      "id": "XsRoldaBXUSiGbvY1TjQd",
+      "type": "subtopic",
+      "data": {
+        "label": "Identification"
+      }
+    },
+    {
+      "id": "l7WnKuR2HTD4Vf9U2TxkK",
+      "type": "subtopic",
+      "data": {
+        "label": "Containment"
+      }
+    },
+    {
+      "id": "N17xAIo7sgbB0nrIDMWju",
+      "type": "subtopic",
+      "data": {
+        "label": "Eradication"
+      }
+    },
+    {
+      "id": "vFjbZAJq8OfLb3_tsc7oT",
+      "type": "subtopic",
+      "data": {
+        "label": "Recovery"
+      }
+    },
+    {
+      "id": "ErRol7AT02HTn3umsPD_0",
+      "type": "subtopic",
+      "data": {
+        "label": "Lessons Learned"
+      }
+    },
+    {
+      "id": "t5IarTzpQONANS6ReNlNR",
+      "type": "label",
+      "data": {
+        "label": "Understand Threat Classification"
+      }
+    },
+    {
+      "id": "zqRaMmqcLfx400kJ-h0LO",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero Day"
+      }
+    },
+    {
+      "id": "HPlPGKs7NLqmBidHJkOZg",
+      "type": "subtopic",
+      "data": {
+        "label": "Known vs Unknown"
+      }
+    },
+    {
+      "id": "l0BvDtwWoRSEjm6O0WDPy",
+      "type": "subtopic",
+      "data": {
+        "label": "APT"
+      }
+    },
+    {
+      "id": "vDjRijJm5bwqBsIhtWtK6",
+      "type": "label",
+      "data": {
+        "label": "Understand Common Tools"
+      }
+    },
+    {
+      "id": "rxzcAzHjzIc9lkWSw0fef",
+      "type": "subtopic",
+      "data": {
+        "label": "VirusTotal"
+      }
+    },
+    {
+      "id": "h__KxKa0Q74_egY7GOe-L",
+      "type": "subtopic",
+      "data": {
+        "label": "Joe Sandbox"
+      }
+    },
+    {
+      "id": "GZHFR43UzN0WIIxGKZOdX",
+      "type": "subtopic",
+      "data": {
+        "label": "any.run"
+      }
+    },
+    {
+      "id": "lFt1k1Q-NlWWqyDA3gWD1",
+      "type": "subtopic",
+      "data": {
+        "label": "urlvoid"
+      }
+    },
+    {
+      "id": "lMiW2q-b72KUl-2S7M6Vb",
+      "type": "subtopic",
+      "data": {
+        "label": "urlscan"
+      }
+    },
+    {
+      "id": "-RnlvUltJ9IDtH0HEnMbN",
+      "type": "subtopic",
+      "data": {
+        "label": "WHOIS"
+      }
+    },
+    {
+      "id": "3giWhwHHgeNJLz5Nf99zC",
+      "type": "label",
+      "data": {
+        "label": "Attack Types and Differences"
+      }
+    },
+    {
+      "id": "7obusm5UtHwWMcMMEB3lt",
+      "type": "subtopic",
+      "data": {
+        "label": "Phishing"
+      }
+    },
+    {
+      "id": "M65fCl72qlF0VTbGNT6du",
+      "type": "subtopic",
+      "data": {
+        "label": "Whishing"
+      }
+    },
+    {
+      "id": "KSwl6sX2W47vUmytpm8LH",
+      "type": "subtopic",
+      "data": {
+        "label": "Whaling"
+      }
+    },
+    {
+      "id": "d4U6Jq-CUB1nNN2OCFoum",
+      "type": "subtopic",
+      "data": {
+        "label": "Smishing"
+      }
+    },
+    {
+      "id": "cbEMUyg_btIPjdx-XqIM5",
+      "type": "subtopic",
+      "data": {
+        "label": "Spam vs Spim"
+      }
+    },
+    {
+      "id": "FD0bkmxNpPXiUB_NevEUf",
+      "type": "subtopic",
+      "data": {
+        "label": "Shoulder Surfing"
+      }
+    },
+    {
+      "id": "Iu0Qtk13RjrhHpSlm0uyh",
+      "type": "subtopic",
+      "data": {
+        "label": "Dumpster Diving"
+      }
+    },
+    {
+      "id": "o-keJgF9hmifQ_hUD91iN",
+      "type": "subtopic",
+      "data": {
+        "label": "Tailgating"
+      }
+    },
+    {
+      "id": "v9njgIxZyabJZ5iND3JGc",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero day"
+      }
+    },
+    {
+      "id": "O1VceThdxRlgQ6DcGyY7Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Social Engineering"
+      }
+    },
+    {
+      "id": "UU_inxa8Y2lLP2BRhdLDT",
+      "type": "subtopic",
+      "data": {
+        "label": "Reconnaissance"
+      }
+    },
+    {
+      "id": "ZEgxmvjWPp5NofLFz_FTJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Impersonation"
+      }
+    },
+    {
+      "id": "dcvuKHq0nHgHLcLwtl4IJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Watering Hole Attack"
+      }
+    },
+    {
+      "id": "cO70zHvHgBAH29khF-hBW",
+      "type": "subtopic",
+      "data": {
+        "label": "Drive by Attack"
+      }
+    },
+    {
+      "id": "0LeDwj_tMaXjQBBOUJ5CL",
+      "type": "subtopic",
+      "data": {
+        "label": "Typo Squatting"
+      }
+    },
+    {
+      "id": "Q0i-plPQkb_NIvOQBVaDd",
+      "type": "subtopic",
+      "data": {
+        "label": "Brute Force vs Password Spray"
+      }
+    },
+    {
+      "id": "xa62u-IX7efTGnKZRQp9a",
+      "type": "label",
+      "data": {
+        "label": "Common Attacks"
+      }
+    },
+    {
+      "id": "IF5H0ZJ72XnqXti3jRWYF",
+      "type": "subtopic",
+      "data": {
+        "label": "DoS vs DDoS"
+      }
+    },
+    {
+      "id": "ODlVT6MhV-RVUbRMG0mHi",
+      "type": "subtopic",
+      "data": {
+        "label": "MITM"
+      }
+    },
+    {
+      "id": "LteSouUtAj3JWWOzcjQPl",
+      "type": "subtopic",
+      "data": {
+        "label": "Spoofing"
+      }
+    },
+    {
+      "id": "O1fY2n40yjZtJUEeoItKr",
+      "type": "subtopic",
+      "data": {
+        "label": "Evil Twin"
+      }
+    },
+    {
+      "id": "urtsyYWViEzbqYLoNfQAh",
+      "type": "subtopic",
+      "data": {
+        "label": "DNS Poisoning"
+      }
+    },
+    {
+      "id": "LfWJJaT3fv0p6fUeS8b84",
+      "type": "subtopic",
+      "data": {
+        "label": "Deauth Attack"
+      }
+    },
+    {
+      "id": "u4hySof6if5hiONSaW-Uf",
+      "type": "subtopic",
+      "data": {
+        "label": "VLAN Hopping"
+      }
+    },
+    {
+      "id": "Ee7LfbhwJbiWjJ3b_bbni",
+      "type": "subtopic",
+      "data": {
+        "label": "Rogue Access Point"
+      }
+    },
+    {
+      "id": "n8ZOZxNhlnw7DpzoXe_f_",
+      "type": "subtopic",
+      "data": {
+        "label": "Buffer Overflow"
+      }
+    },
+    {
+      "id": "nOND14t7ISgSH3zNpV3F8",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Leak"
+      }
+    },
+    {
+      "id": "2jo1r9O_rCnDwRv1_4Wo-",
+      "type": "subtopic",
+      "data": {
+        "label": "XSS"
+      }
+    },
+    {
+      "id": "P-Am25WJV8cFd_KsX7cdj",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Injection"
+      }
+    },
+    {
+      "id": "pK2iRArULlK-B3iSVo4-n",
+      "type": "subtopic",
+      "data": {
+        "label": "CSRF"
+      }
+    },
+    {
+      "id": "mIX8PsIGuwgPCGQZ6ok2H",
+      "type": "subtopic",
+      "data": {
+        "label": "Replay Attack"
+      }
+    },
+    {
+      "id": "sMuKqf27y4iG0GrCdF5DN",
+      "type": "subtopic",
+      "data": {
+        "label": "Pass the Hash"
+      }
+    },
+    {
+      "id": "L0ROYh2DNlkybNDO2ezJY",
+      "type": "subtopic",
+      "data": {
+        "label": "Directory Traversal"
+      }
+    },
+    {
+      "id": "44mOl6aMZ_hrCvBtbjeF9",
+      "type": "label",
+      "data": {
+        "label": "Understand Audience"
+      }
+    },
+    {
+      "id": "lv6fI3WeJawuCbwKtMRIh",
+      "type": "subtopic",
+      "data": {
+        "label": "Stakeholders"
+      }
+    },
+    {
+      "id": "05tH6WhToC615JTFN-TPc",
+      "type": "subtopic",
+      "data": {
+        "label": "HR"
+      }
+    },
+    {
+      "id": "C5bCIdPi0gGkY_r4qqoXZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Legal"
+      }
+    },
+    {
+      "id": "05Gbgy6aawYlYIx38u8DE",
+      "type": "subtopic",
+      "data": {
+        "label": "Compliance"
+      }
+    },
+    {
+      "id": "s9tHpzYRj2HCImwQhnjFM",
+      "type": "subtopic",
+      "data": {
+        "label": "Management"
+      }
+    },
+    {
+      "id": "pGVjAG7bRay7w5viG1ggu",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "vVaBQ5VtsE_ZeXbCOF8ux",
+      "type": "topic",
+      "data": {
+        "label": "Cloud Skills and Knowledge"
+      }
+    },
+    {
+      "id": "ThLsXkqLw--uddHz0spCH",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the Concept of Security in the Cloud"
+      }
+    },
+    {
+      "id": "XL3FVeGFDhAl_gSol6Tjt",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the basics and general flow of deploying in the cloud"
+      }
+    },
+    {
+      "id": "KGjYM4Onr5GQf1Yv9IabI",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the differences between cloud and on-premises"
+      }
+    },
+    {
+      "id": "RJctUpvlUJGAdwBNtDSXw",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the concept of Infrastructure as Code"
+      }
+    },
+    {
+      "id": "-83ltMEl3le3yD68OFnTM",
+      "type": "subtopic",
+      "data": {
+        "label": "Understand the Concept of Serverless"
+      }
+    },
+    {
+      "id": "sVw5KVNxPEatBRKb2ZbS_",
+      "type": "subtopic",
+      "data": {
+        "label": "SaaS"
+      }
+    },
+    {
+      "id": "PQ_np6O-4PK2V-r5lywQg",
+      "type": "subtopic",
+      "data": {
+        "label": "PaaS"
+      }
+    },
+    {
+      "id": "1nPifNUm-udLChIqLC_uK",
+      "type": "subtopic",
+      "data": {
+        "label": "IaaS"
+      }
+    },
+    {
+      "id": "RhWmIPPDg5ajNUwyB9p0A",
+      "type": "label",
+      "data": {
+        "label": "Understand Cloud Services"
+      }
+    },
+    {
+      "id": "rCZEv0M3YolFtqx8mKEJF",
+      "type": "label",
+      "data": {
+        "label": "Cloud Models"
+      }
+    },
+    {
+      "id": "ecpMKP1cQXXsfKETDUrSf",
+      "type": "subtopic",
+      "data": {
+        "label": "Private"
+      }
+    },
+    {
+      "id": "ZDj7KBuyZsKyEMZViMoXW",
+      "type": "subtopic",
+      "data": {
+        "label": "Public"
+      }
+    },
+    {
+      "id": "ywRlTuTfh5-NHnv4ZyW1t",
+      "type": "subtopic",
+      "data": {
+        "label": "Hybrid"
+      }
+    },
+    {
+      "id": "0LztOTc3NG3OujCVwlcVU",
+      "type": "subtopic",
+      "data": {
+        "label": "AWS"
+      }
+    },
+    {
+      "id": "tOLA5QPKi6LHl1ljsOMwX",
+      "type": "subtopic",
+      "data": {
+        "label": "GCP"
+      }
+    },
+    {
+      "id": "GklBi7Qx1akN_cS9UMrha",
+      "type": "subtopic",
+      "data": {
+        "label": "Azure"
+      }
+    },
+    {
+      "id": "ZHcNHw2IB3VOdO7I0lgV4",
+      "type": "label",
+      "data": {
+        "label": "Common Cloud Environments"
+      }
+    },
+    {
+      "id": "2jsTgT7k8MeaDtx6RJhOP",
+      "type": "subtopic",
+      "data": {
+        "label": "S3"
+      }
+    },
+    {
+      "id": "9OastXVfiG1YRMm68ecnn",
+      "type": "subtopic",
+      "data": {
+        "label": "Dropbox"
+      }
+    },
+    {
+      "id": "4Man3Bd-ySLFlAdxbLOHw",
+      "type": "subtopic",
+      "data": {
+        "label": "Box"
+      }
+    },
+    {
+      "id": "MWqnhDKm9jXvDDjkeVNxm",
+      "type": "subtopic",
+      "data": {
+        "label": "OneDrive"
+      }
+    },
+    {
+      "id": "fTZ4PqH-AMhYA_65w4wFO",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Drive"
+      }
+    },
+    {
+      "id": "Wqy6ki13hP5c0VhGYEhHj",
+      "type": "subtopic",
+      "data": {
+        "label": "iCloud"
+      }
+    },
+    {
+      "id": "28r-hIOdH85SCDWl4y4LF",
+      "type": "label",
+      "data": {
+        "label": "Common Cloud Storage"
+      }
+    },
+    {
+      "id": "_RnuQ7952N8GWZfPD60sJ",
+      "type": "topic",
+      "data": {
+        "label": "Programming Skills"
+      }
+    },
+    {
+      "id": "XiHvGy--OkPFfJeKA6-LP",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "jehVvdz8BnruKjqHMKu5v",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "2SThr6mHpX6rpW-gmsqxG",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "8jj9hpe9jQIgCc8Txyw3O",
+      "type": "subtopic",
+      "data": {
+        "label": "C\u002B\u002B"
+      }
+    },
+    {
+      "id": "tao0Bb_JR0Ubl62HO8plp",
+      "type": "subtopic",
+      "data": {
+        "label": "Bash"
+      }
+    },
+    {
+      "id": "paY9x2VJA98FNGBFGRXp2",
+      "type": "subtopic",
+      "data": {
+        "label": "Power Shell"
+      }
+    },
+    {
+      "id": "auuG7WaYMfJAiJC6kvcbW",
+      "type": "paragraph",
+      "data": {
+        "label": "Keep Learning"
+      }
+    },
+    {
+      "id": "Jd9t8e9r29dHRsN40dDOk",
+      "type": "subtopic",
+      "data": {
+        "label": "GTFOBINS"
+      }
+    },
+    {
+      "id": "Rnpx7VkhrBkSQTni6UuTR",
+      "type": "subtopic",
+      "data": {
+        "label": "WADCOMS"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-_hYN0gEi9BL24nptEtXWUw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "oimYzZYFXKjgvc7D4c-2u",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-F1QVCEmGkgvz-_H5lTxY2z2-hwAUFLYpc_ftCfXq95deyy1",
+      "source": "F1QVCEmGkgvz-_H5lTxY2",
+      "target": "hwAUFLYpc_ftCfXq95dey",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-F1QVCEmGkgvz-_H5lTxY2z2-fUBNKHNPXbemRYrnzH3VTy2",
+      "source": "F1QVCEmGkgvz-_H5lTxY2",
+      "target": "fUBNKHNPXbemRYrnzH3VT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_7RjH4Goi0x6Noy6za0rPz2--5haJATqlmj0SFSFAqN6Ay2",
+      "source": "_7RjH4Goi0x6Noy6za0rP",
+      "target": "-5haJATqlmj0SFSFAqN6A",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_7RjH4Goi0x6Noy6za0rPz2-E7yfALgu9E2auOYDOTmexy1",
+      "source": "_7RjH4Goi0x6Noy6za0rP",
+      "target": "E7yfALgu9E2auOYDOTmex",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_7RjH4Goi0x6Noy6za0rPz2-IOK_FluAv34j3Tj_NvwdOy1",
+      "source": "_7RjH4Goi0x6Noy6za0rP",
+      "target": "IOK_FluAv34j3Tj_NvwdO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-M2J4wsTcEo3IcULZDRNyMz2-_hYN0gEi9BL24nptEtXWUy1",
+      "source": "M2J4wsTcEo3IcULZDRNyM",
+      "target": "gSLr-Lc119eX9Ig-kDzJ2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUx2-7tDxTcKJNAUxbHLPCnPFOw1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "7tDxTcKJNAUxbHLPCnPFO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-vVaBQ5VtsE_ZeXbCOF8uxy2-_RnuQ7952N8GWZfPD60sJy1",
+      "source": "vVaBQ5VtsE_ZeXbCOF8ux",
+      "target": "_RnuQ7952N8GWZfPD60sJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-vVaBQ5VtsE_ZeXbCOF8uxx2-FNyo1X9BP0v8GnBhPYXDRw1",
+      "source": "vVaBQ5VtsE_ZeXbCOF8ux",
+      "target": "FNyo1X9BP0v8GnBhPYXDR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-XiHvGy--OkPFfJeKA6-LPy1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "XiHvGy--OkPFfJeKA6-LP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-jehVvdz8BnruKjqHMKu5vy1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "jehVvdz8BnruKjqHMKu5v",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-_RnuQ7952N8GWZfPD60sJz1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "_RnuQ7952N8GWZfPD60sJ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-2SThr6mHpX6rpW-gmsqxGy1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "2SThr6mHpX6rpW-gmsqxG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-8jj9hpe9jQIgCc8Txyw3Oy1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "8jj9hpe9jQIgCc8Txyw3O",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-tao0Bb_JR0Ubl62HO8plpy2",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "tao0Bb_JR0Ubl62HO8plp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJz2-paY9x2VJA98FNGBFGRXp2y1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "paY9x2VJA98FNGBFGRXp2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_RnuQ7952N8GWZfPD60sJx2-auuG7WaYMfJAiJC6kvcbWw1",
+      "source": "_RnuQ7952N8GWZfPD60sJ",
+      "target": "auuG7WaYMfJAiJC6kvcbW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

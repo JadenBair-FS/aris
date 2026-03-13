@@ -1,0 +1,41 @@
+--- POSTING 5 ---
+Job Title: Senior .NET Engineer - Azure Cloud
+Company: IronVault
+Location: Boston, MA (Hybrid)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT IRONVAULT
+IronVault is a cybersecurity SaaS company providing identity threat detection and privileged access management for enterprise clients. We protect 3 million identities across 400 enterprise accounts and run entirely on Azure. We are Series C with 180 employees.
+
+ABOUT THE ROLE
+We are hiring a Senior .NET Engineer for our cloud platform team. You will build the APIs and background services that power IronVault's identity analytics features, working on a high-security, compliance-driven codebase with strong testing requirements.
+
+KEY RESPONSIBILITIES
+- Build and maintain ASP.NET Core Web API services for identity analytics and policy enforcement
+- Implement event-driven workflows using Azure Service Bus, Azure Event Grid, and Azure Functions
+- Design Entity Framework Core data models against Azure SQL Database with strict audit logging
+- Write comprehensive unit tests (xUnit + Moq) and integration tests with test containers
+- Implement gRPC services for low-latency inter-service communication
+- Work with security engineers to implement SOC 2 and FedRAMP compliance requirements in code
+- Mentor engineers and lead architectural design reviews
+
+REQUIRED QUALIFICATIONS
+- 7+ years of .NET software engineering experience
+- 5+ years building production ASP.NET Core APIs
+- 4+ years with Entity Framework Core and SQL Server or Azure SQL
+- 3+ years designing with Azure services (Functions, Service Bus, Event Grid, Key Vault)
+- 2+ years implementing gRPC services in .NET
+- 2+ years writing unit tests with xUnit or NUnit
+- Experience with Docker and Kubernetes (AKS) for production deployments
+- Strong understanding of security patterns: OAuth2, JWT, mTLS, secrets management
+
+PREFERRED QUALIFICATIONS
+- Experience with CQRS (MediatR), DDD, and microservices patterns
+- Familiarity with Blazor for any internal admin tooling
+- Knowledge of Azure Bicep or Terraform for infrastructure-as-code
+- Background in cybersecurity, identity management, or compliance software
+- Experience with OpenTelemetry for distributed tracing in .NET
+
+COMPENSATION
+$180,000 - $215,000 + equity + benefits (top-tier health, 401k match, RSUs)
+--- END POSTING 5 ---

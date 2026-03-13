@@ -1,0 +1,41 @@
+--- POSTING 3 ---
+Job Title: Backend Software Engineer - Python
+Company: StackSpark Commerce
+Location: Seattle, WA
+Source: Synthetic based on greenhouse.io research
+
+ABOUT STACKSPARK COMMERCE
+StackSpark Commerce is a marketplace platform connecting independent artisans and small brands with millions of buyers across North America. We handle 50,000+ daily orders and are rebuilding our monolith into domain-driven microservices to support our next phase of scale.
+
+ABOUT THE ROLE
+We need a Backend Software Engineer to accelerate our microservices migration and build new platform capabilities. You will own services in the order management and inventory domains, working alongside a team of 12 backend engineers embedded in cross-functional squads.
+
+KEY RESPONSIBILITIES
+- Decompose legacy Django monolith functionality into FastAPI microservices
+- Design and implement event-driven workflows using Kafka and AWS SQS
+- Build and maintain data models backed by PostgreSQL and MongoDB
+- Implement caching strategies with Redis to reduce database load on high-traffic endpoints
+- Write automated tests (unit, integration, contract) using pytest
+- Instrument services with structured logging, metrics (Prometheus), and distributed tracing
+- Collaborate with data engineering team on pipeline contracts and schema evolution
+
+REQUIRED QUALIFICATIONS
+- 4+ years of Python backend development
+- 2+ years building microservices with FastAPI or Flask
+- 2+ years of relational database experience (PostgreSQL strongly preferred)
+- 1+ years working with MongoDB or another document store
+- 1+ years using Docker in development and production
+- Familiarity with message queues (Kafka, RabbitMQ, or SQS)
+- Experience with Redis caching patterns
+- Strong Python testing skills with pytest
+
+PREFERRED QUALIFICATIONS
+- Experience with Kubernetes and Helm charts
+- Knowledge of event sourcing or CQRS patterns
+- Prior work on marketplace or e-commerce platforms
+- Familiarity with AWS CDK or Terraform
+- Experience with SQLAlchemy or Tortoise-ORM
+
+COMPENSATION
+$130,000 - $160,000 + equity + benefits
+--- END POSTING 3 ---

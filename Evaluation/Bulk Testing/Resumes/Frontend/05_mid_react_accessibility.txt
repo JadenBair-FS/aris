@@ -1,0 +1,33 @@
+Amara Nwosu
+amara.nwosu@email.com | (202) 318-6750 | Washington, DC | linkedin.com/in/amaranwosu-fe
+
+SUMMARY
+Frontend developer with 4 years of experience with a strong focus on accessibility and inclusive design. Extensive experience implementing WCAG 2.1 standards, building keyboard-navigable interfaces, and collaborating with assistive technology users on usability testing. Proficient in React, TypeScript, and Sass.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass/SCSS
+Frameworks: React, Next.js, Gatsby
+Databases: (none professional)
+Tools: Git, npm, Jest, React Testing Library, Axe DevTools, Figma, Storybook, ESLint
+Cloud/Infra: Netlify, Vercel, GitHub Actions
+
+EXPERIENCE
+
+Frontend Engineer | CivicBridge | Washington, DC | October 2022 - Present
+- Led accessibility remediation for a government digital services portal serving 500,000 annual users, achieving WCAG 2.1 AA compliance for 100% of 85 components
+- Built a React component library with TypeScript and Sass using Radix UI primitives as the accessible foundation for all new UI development
+- Implemented automated accessibility testing in CI using axe-core and jest-axe, preventing regressions across 6 engineering squads
+- Collaborated with a screen reader user focus group to redesign the form submission workflow, reducing completion errors by 34%
+
+Frontend Developer | Sapphire Creative | Washington, DC | July 2020 - September 2022
+- Built marketing and product pages in Gatsby and Next.js for 8 client websites
+- Wrote Sass stylesheets with SCSS variables and mixins for consistent design token usage across projects
+- Implemented Jest and React Testing Library test suites for all interactive components
+
+PROJECTS
+
+A11yKit
+- React accessibility component toolkit with 15 fully-accessible patterns (modal, combobox, disclosure, tabs, alert dialog) documented in Storybook; 580 GitHub stars
+
+EDUCATION
+Bachelor of Arts, Communication Design | Howard University | 2020

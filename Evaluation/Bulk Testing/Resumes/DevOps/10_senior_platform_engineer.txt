@@ -1,0 +1,53 @@
+Vivienne Hartley
+vivienne.hartley@email.com | (503) 416-7792 | Portland, OR | linkedin.com/in/viviennehartley
+
+SUMMARY
+Senior platform engineer with 10 years of experience building internal developer platforms and infrastructure automation tooling. Specializes in Kubernetes-native platform design, GitOps at scale, and infrastructure standardization across multi-cloud environments. Track record of enabling large engineering organizations to ship faster without sacrificing reliability or security.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker, Kubernetes
+CI/CD: ArgoCD, GitHub Actions, GitLab CI/CD
+Infrastructure as Code: Terraform, Helm, Ansible
+Cloud: AWS, Google Cloud Platform
+Monitoring: Prometheus, Grafana, Datadog
+Operating Systems: Linux
+Version Control: Git
+Databases: PostgreSQL, Redis
+Web Servers: Nginx
+
+EXPERIENCE
+
+Principal Platform Engineer | Cascade Cloud | Portland, OR | August 2019 - Present
+- Designed and owned an internal developer platform (IDP) used by 120 engineers across 14 product teams, abstracting Kubernetes, Terraform, and CI/CD complexity behind a self-service portal
+- Managed a fleet of Kubernetes clusters (AWS EKS and GCP GKE, 8 clusters, 250+ nodes) with standardized node pool policies, RBAC, and network policies
+- Standardized all service deployments on Helm charts and ArgoCD; enabled any team to deploy to production in under 12 minutes with full audit trail
+- Designed the GitOps repository structure for 60+ services, including environment promotion workflows, progressive delivery strategies using Argo Rollouts, and automated rollback triggers
+- Wrote reusable Terraform modules covering 14 AWS and GCP resource patterns; all infrastructure provisioned through module calls, reducing ad-hoc resource creation to zero
+- Built an Ansible-based Linux hardening playbook applied to all EC2 and GCE instances at launch (CIS Level 2 compliance), used across 400+ servers
+- Implemented Prometheus federation, Grafana Mimir for long-term metric storage, and Datadog for APM; created a unified observability layer for 60 services
+- Configured Nginx ingress controllers with WAF rules and rate limiting across 5 clusters, processing 45,000 requests per second at peak
+
+Senior Platform Engineer | Trellis Software | Portland, OR | May 2015 - August 2019
+- Built and maintained the CI/CD infrastructure for a 60-engineer organization using Jenkins (on-premise) and later migrated to GitLab CI/CD
+- Led a 2-year initiative to containerize 20 legacy applications using Docker; all applications were running in Kubernetes by end of initiative
+- Maintained PostgreSQL and Redis infrastructure on AWS, including cluster replication, backup validation, and performance tuning for databases serving 10M+ rows
+- Designed a Terraform-based multi-account AWS landing zone with centralized IAM, VPC peering, and CloudTrail logging
+- Mentored 6 engineers during tenure; 3 were promoted to senior level
+
+Platform Engineer | Rimrock Digital | Eugene, OR | July 2013 - May 2015
+- Managed Linux server infrastructure (Ubuntu and CentOS) for web hosting and internal tooling
+- Wrote Python and Bash automation for provisioning, monitoring, and backup workflows
+- Introduced Git branching standards and code review practices for a 10-person engineering team
+
+PROJECTS
+Self-Service Environment Provisioner
+- Built a Python-based CLI tool backed by Terraform and GitLab CI/CD that allows engineers to spin up full staging environments (Kubernetes namespace + database + secrets) in under 8 minutes by running a single command
+- Reduced DevOps team provisioning requests by 85% within 6 months of launch
+
+Multi-Cluster Observability Stack
+- Deployed Prometheus federation across 8 clusters with Grafana Mimir as the centralized storage backend, enabling 90-day metric retention and cross-cluster alerting
+- Created a Grafana alerting-as-code framework with 60+ alert rules version-controlled in Git, peer-reviewed via pull request
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Oregon | 2013

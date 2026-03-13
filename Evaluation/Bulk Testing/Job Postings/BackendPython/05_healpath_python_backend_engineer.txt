@@ -1,0 +1,41 @@
+--- POSTING 5 ---
+Job Title: Python Backend Engineer
+Company: HealPath
+Location: Boston, MA
+Source: Synthetic based on greenhouse.io research
+
+ABOUT HEALPATH
+HealPath is a digital health platform that connects patients with mental health providers and automates prior authorization and claims workflows for behavioral health clinics. We serve 1,200 clinics nationwide and are backed by $45M in Series B funding. Our mission is to remove administrative barriers from mental healthcare.
+
+ABOUT THE ROLE
+We are hiring a Python Backend Engineer to build and maintain the clinical workflow services at the core of our platform. You will work on HIPAA-compliant APIs, insurance integration services, and the data pipelines that help clinic operators run their practices more efficiently.
+
+KEY RESPONSIBILITIES
+- Build RESTful and event-driven services using Flask and Python 3.11+
+- Implement HIPAA-compliant data handling across all services handling PHI
+- Design and optimize PostgreSQL data models for patient, provider, and claims entities
+- Integrate with insurance clearinghouses and EHR systems via HL7 FHIR APIs
+- Write automated tests with pytest targeting >85% coverage on all critical paths
+- Maintain Celery workers that process claim submissions and eligibility verifications
+- Participate in security reviews and threat modeling for new features
+
+REQUIRED QUALIFICATIONS
+- 3+ years of Python backend development
+- 2+ years building REST APIs with Flask or FastAPI
+- 2+ years with PostgreSQL including stored procedures and triggers
+- 1+ years using Celery for background task processing
+- 1+ years working in a HIPAA-regulated environment (or strong willingness to learn)
+- Experience with Redis for caching and session management
+- Solid understanding of OAuth2 and API security best practices
+- Proficiency with Git, code review, and CI/CD pipelines
+
+PREFERRED QUALIFICATIONS
+- Experience with HL7, FHIR, or EDI 837/835 formats
+- Familiarity with AWS (RDS, Lambda, S3, KMS for encryption)
+- Background in healthcare technology or insurance workflows
+- Knowledge of Docker and container-based deployments
+- Experience with SQLAlchemy ORM
+
+COMPENSATION
+$125,000 - $150,000 + equity + benefits (full medical, dental, vision, 401k match)
+--- END POSTING 5 ---

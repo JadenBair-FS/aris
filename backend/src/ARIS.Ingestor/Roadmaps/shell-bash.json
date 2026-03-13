@@ -1,0 +1,2031 @@
+{
+  "title": {
+    "card": "Shell / Bash",
+    "page": "Shell / Bash"
+  },
+  "description": "Learn to master Shell and Bash in @currentYear@",
+  "nodes": [
+    {
+      "id": "mLfUouDr1p7tNq4XvfaHO",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "4kvjQFObp7fXUVkaMYpxS",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "-JwPyV2URKQr25_QNhVJS",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "JxcDueue_wB1Z2TZPviYb",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "9oNAH4CTTnuhHEBluDRFq",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GhQcZ769W04wlLlFLXxsu",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "k7uW3URwNERpUEqh5ZaaN",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "g-FLBZuP0bdI4w-vB-7zP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "q0llun_f5RVovBueK6JyH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bEqd0otw55vTo1Q8M628e",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "1m8lLknZhviP_MOjmhgzw",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "L4KgH_DMlaJntqlZPnRms",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UQSBZQnZyZOG6_RmQJbb4",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "s3Hf8dcEq5Ikb3hf2UVZg",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vkqAxGF-Ah2EL_hZu3FDX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_-ADHOnSRkTnioVBDZTSl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "RdH9oRDP2urFyvbeEiWzm",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "NMy6-nD3jAkUVcOj0TthU",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "bCNBoO2HqcZVTRWo6lDIa",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "NfmdNOTpvfKIIut642Q6E",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "UnbtqWm0138b5Id8RVcbM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MptfUMaYaGAsSPsH66WKe",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "94KazcF2-iOrowSwLe6Xi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Zfz7SThoqOBczwIAisF96",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gbaBiNdufToHyF2Z2ENtc",
+      "type": "title",
+      "data": {
+        "label": "Shell/Bash"
+      }
+    },
+    {
+      "id": "86QR-PVqgvvyvJvgTIer-",
+      "type": "subtopic",
+      "data": {
+        "label": "CLI vs GUI"
+      }
+    },
+    {
+      "id": "GdSViKr5r3uHxzihSjdYV",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Bash?"
+      }
+    },
+    {
+      "id": "LloORF-pz-sbfuzNj1WjG",
+      "type": "subtopic",
+      "data": {
+        "label": "What is scripting?"
+      }
+    },
+    {
+      "id": "lzzQWCFqpOnN2J_3Jck_3",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "EqgAG1t05RuiAO1TXRq4Y",
+      "type": "subtopic",
+      "data": {
+        "label": "bash"
+      }
+    },
+    {
+      "id": "BP7hfSSD13DM2np0zaGBB",
+      "type": "subtopic",
+      "data": {
+        "label": "dash"
+      }
+    },
+    {
+      "id": "LjkmfTYWMrOKLSqtpyKGk",
+      "type": "subtopic",
+      "data": {
+        "label": "fish"
+      }
+    },
+    {
+      "id": "m-sOOaGyhQg3bgmWsXtOH",
+      "type": "subtopic",
+      "data": {
+        "label": "zsh"
+      }
+    },
+    {
+      "id": "C7HE5jpaSIUqm6L8b9orY",
+      "type": "subtopic",
+      "data": {
+        "label": "cmd"
+      }
+    },
+    {
+      "id": "SHD2pc0D5QjDpEwzsFWz-",
+      "type": "subtopic",
+      "data": {
+        "label": "tcsh"
+      }
+    },
+    {
+      "id": "y4mIT9yer85CrU_KlRxGk",
+      "type": "subtopic",
+      "data": {
+        "label": "PowerShell"
+      }
+    },
+    {
+      "id": "BnblV98Tul3QlyA1nIB63",
+      "type": "subtopic",
+      "data": {
+        "label": "ksh"
+      }
+    },
+    {
+      "id": "IYlYUnQh2iZrdpyUsMxg0",
+      "type": "topic",
+      "data": {
+        "label": "Popular Shells"
+      }
+    },
+    {
+      "id": "6SR4c75dEKoFxZ88sDtfi",
+      "type": "topic",
+      "data": {
+        "label": "Setting Up Bash"
+      }
+    },
+    {
+      "id": "ng5ySgj1HQmD_gfQ4TSPI",
+      "type": "subtopic",
+      "data": {
+        "label": "pwd"
+      }
+    },
+    {
+      "id": "gCPCTm96RrFeNM_Ok4TAY",
+      "type": "subtopic",
+      "data": {
+        "label": "cp"
+      }
+    },
+    {
+      "id": "k45FWrNrRuIp6HEN3ysTd",
+      "type": "subtopic",
+      "data": {
+        "label": "echo"
+      }
+    },
+    {
+      "id": "zN32jR8SNm5P1txqQsyCv",
+      "type": "subtopic",
+      "data": {
+        "label": "mv"
+      }
+    },
+    {
+      "id": "Zom0OpBLi153i8hkoYLj5",
+      "type": "subtopic",
+      "data": {
+        "label": "cat"
+      }
+    },
+    {
+      "id": "fssn0pz6ooqG-EE8rZl-L",
+      "type": "subtopic",
+      "data": {
+        "label": "touch"
+      }
+    },
+    {
+      "id": "pAb3O3Isca9u6yK5mqWQ2",
+      "type": "subtopic",
+      "data": {
+        "label": "find"
+      }
+    },
+    {
+      "id": "uS5HS_4a-lk3AtXaMyAlp",
+      "type": "subtopic",
+      "data": {
+        "label": "rm"
+      }
+    },
+    {
+      "id": "DUUstDjzKKAXN1IXzbqjt",
+      "type": "topic",
+      "data": {
+        "label": "Files \u0026 Directories"
+      }
+    },
+    {
+      "id": "M27BJ6fgVdaBxyWE-OdNl",
+      "type": "subtopic",
+      "data": {
+        "label": "rwx"
+      }
+    },
+    {
+      "id": "zxdwDMOVAoP8IgUqrggKq",
+      "type": "topic",
+      "data": {
+        "label": "File Permissions"
+      }
+    },
+    {
+      "id": "HESaq3OyuouEqjpZITYUd",
+      "type": "topic",
+      "data": {
+        "label": "Tab Completion"
+      }
+    },
+    {
+      "id": "LlxpR2LiAr9uKMXEXTk0H",
+      "type": "topic",
+      "data": {
+        "label": "Bash Alias"
+      }
+    },
+    {
+      "id": "tu3NFc76-j6VVysFdk8Kd",
+      "type": "topic",
+      "data": {
+        "label": "Repeat Commands"
+      }
+    },
+    {
+      "id": "4yRwCKzvCctFpMD2mYiky",
+      "type": "topic",
+      "data": {
+        "label": "Help Commands"
+      }
+    },
+    {
+      "id": "Ydqpp_YYujdHyYraNEt4h",
+      "type": "topic",
+      "data": {
+        "label": "Stop Execution"
+      }
+    },
+    {
+      "id": "3VulHH-Y-VdMRM6VBVWar",
+      "type": "subtopic",
+      "data": {
+        "label": "stdin, stdout, stderr"
+      }
+    },
+    {
+      "id": "YyCvxYgFzobwF_vMQXunZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipes"
+      }
+    },
+    {
+      "id": "MpSnq-W8z4QA8-oU_tbRC",
+      "type": "subtopic",
+      "data": {
+        "label": "Output redirection"
+      }
+    },
+    {
+      "id": "BuOM-A5110MPv8325EQnM",
+      "type": "subtopic",
+      "data": {
+        "label": "Command substitution"
+      }
+    },
+    {
+      "id": "Chfv9Fyy-Mk2zpOrYNbjV",
+      "type": "subtopic",
+      "data": {
+        "label": "Input redirection"
+      }
+    },
+    {
+      "id": "uk7TEHUqTIjmH4MJToxPe",
+      "type": "subtopic",
+      "data": {
+        "label": "Process substitution"
+      }
+    },
+    {
+      "id": "zu0hsOt8GVlARhbepjQ1A",
+      "type": "subtopic",
+      "data": {
+        "label": "Error redirection"
+      }
+    },
+    {
+      "id": "reLvp_PnKqpyWWtnuICPj",
+      "type": "topic",
+      "data": {
+        "label": "Redirects \u0026 Pipelines"
+      }
+    },
+    {
+      "id": "kW_sjWK-rtGokfL_OByhM",
+      "type": "subtopic",
+      "data": {
+        "label": "less, more"
+      }
+    },
+    {
+      "id": "ZqAwAme_yvasmYHEZID1G",
+      "type": "subtopic",
+      "data": {
+        "label": "grep"
+      }
+    },
+    {
+      "id": "WSxairrSGlV0LEps2xeIC",
+      "type": "subtopic",
+      "data": {
+        "label": "head, tail"
+      }
+    },
+    {
+      "id": "NtjrVcEHf8wuh771U2AMI",
+      "type": "subtopic",
+      "data": {
+        "label": "Nano"
+      }
+    },
+    {
+      "id": "WbZu0zM2d56LiGauOp8ub",
+      "type": "topic",
+      "data": {
+        "label": "Basic Editor Ops."
+      }
+    },
+    {
+      "id": "it421LC-vLFNmTcWxrsX6",
+      "type": "topic",
+      "data": {
+        "label": "Text Editors"
+      }
+    },
+    {
+      "id": "nMFXyeZ8I5jAPfs16Jixn",
+      "type": "topic",
+      "data": {
+        "label": "Bash Script Anatomy"
+      }
+    },
+    {
+      "id": "dj3KiBtPjRK2DF5HeuoYZ",
+      "type": "topic",
+      "data": {
+        "label": "Running Shell Scripts"
+      }
+    },
+    {
+      "id": "1mBAGIrg4ohvJcJ-y8Kbl",
+      "type": "subtopic",
+      "data": {
+        "label": "Environment vs Shell vars."
+      }
+    },
+    {
+      "id": "ivcDgpa1kMPxcOt1OCjba",
+      "type": "subtopic",
+      "data": {
+        "label": "Variable Scopes"
+      }
+    },
+    {
+      "id": "4leZS9_-GAbx5ycMQosOX",
+      "type": "subtopic",
+      "data": {
+        "label": "Create, Print, Modify"
+      }
+    },
+    {
+      "id": "9-PPCJDdGh5SWKT4jT6Zs",
+      "type": "subtopic",
+      "data": {
+        "label": "Variables best practices"
+      }
+    },
+    {
+      "id": "_BzADQXji4lVY620U4cZa",
+      "type": "subtopic",
+      "data": {
+        "label": "Special variables "
+      }
+    },
+    {
+      "id": "sBI1aCY7XmXBwqTrokt9F",
+      "type": "subtopic",
+      "data": {
+        "label": "String length"
+      }
+    },
+    {
+      "id": "aYQlgbgFt250MW1nLYvFK",
+      "type": "subtopic",
+      "data": {
+        "label": "Pattern replacement"
+      }
+    },
+    {
+      "id": "6TonvFzr_nmoFsATwuZK7",
+      "type": "subtopic",
+      "data": {
+        "label": "Substring extraction"
+      }
+    },
+    {
+      "id": "cBJbM6nl0Dy9Ru5hruzpK",
+      "type": "subtopic",
+      "data": {
+        "label": "Case conversion"
+      }
+    },
+    {
+      "id": "PS9R8AX-_dgeqYL2Y67Ff",
+      "type": "topic",
+      "data": {
+        "label": "String Manipulation"
+      }
+    },
+    {
+      "id": "o2vQXl9WDOO4NAsLjYv_4",
+      "type": "subtopic",
+      "data": {
+        "label": "Read user input"
+      }
+    },
+    {
+      "id": "WOoTpi1vAZpktjtQgG9GK",
+      "type": "subtopic",
+      "data": {
+        "label": "Here documents"
+      }
+    },
+    {
+      "id": "XCCuDzGE-5LPhHEPGvVMj",
+      "type": "subtopic",
+      "data": {
+        "label": "printf formatting"
+      }
+    },
+    {
+      "id": "D0VV5UpW2X4mMghpp2fdo",
+      "type": "subtopic",
+      "data": {
+        "label": "Here strings"
+      }
+    },
+    {
+      "id": "n0sesqABTmbGYmcqlpH4b",
+      "type": "topic",
+      "data": {
+        "label": "Input/Output"
+      }
+    },
+    {
+      "id": "sYzelzBxQUcz5bK1HVWam",
+      "type": "topic",
+      "data": {
+        "label": "Comments"
+      }
+    },
+    {
+      "id": "Sz2F519WqEhkKZE0NBveH",
+      "type": "subtopic",
+      "data": {
+        "label": "Strings"
+      }
+    },
+    {
+      "id": "4WFWrrcvLgU8Fz8RjQ4lf",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrays "
+      }
+    },
+    {
+      "id": "a5cz3ZGg-JQKzdJdihCtO",
+      "type": "subtopic",
+      "data": {
+        "label": "Numeric"
+      }
+    },
+    {
+      "id": "YM7wA4MgeailSoXR_03Qx",
+      "type": "subtopic",
+      "data": {
+        "label": "Associative Arrays"
+      }
+    },
+    {
+      "id": "vM0Y4fao-pNjNjWYCJve3",
+      "type": "topic",
+      "data": {
+        "label": "Bash Data Types"
+      }
+    },
+    {
+      "id": "60ika3rjs42VIk-3AcOdq",
+      "type": "subtopic",
+      "data": {
+        "label": "Arithmetic"
+      }
+    },
+    {
+      "id": "tRwO9DC_ZUD4g5iSVC40u",
+      "type": "subtopic",
+      "data": {
+        "label": "Logical"
+      }
+    },
+    {
+      "id": "XUDkgfURAsI_A3v3EPZA_",
+      "type": "subtopic",
+      "data": {
+        "label": "Comparison "
+      }
+    },
+    {
+      "id": "PuV5XtaeKgb9vdFIKta5M",
+      "type": "subtopic",
+      "data": {
+        "label": "File test "
+      }
+    },
+    {
+      "id": "ryZ2MI4blZCwfuNC_TeUe",
+      "type": "subtopic",
+      "data": {
+        "label": "String operators"
+      }
+    },
+    {
+      "id": "Co0k7A7MyQoELnPwPU10m",
+      "type": "topic",
+      "data": {
+        "label": "Bash Operators"
+      }
+    },
+    {
+      "id": "DiYuY3M3eD1WKO5w16Swa",
+      "type": "subtopic",
+      "data": {
+        "label": "$1, $2, $3"
+      }
+    },
+    {
+      "id": "2Fh0NFuNxuc-wU3VXv8Zj",
+      "type": "subtopic",
+      "data": {
+        "label": "$* "
+      }
+    },
+    {
+      "id": "pgZIDDxAP9mOtEI0HL3l-",
+      "type": "subtopic",
+      "data": {
+        "label": "$0"
+      }
+    },
+    {
+      "id": "hoRtqMV7B23bBJFI-RWRB",
+      "type": "subtopic",
+      "data": {
+        "label": "$#"
+      }
+    },
+    {
+      "id": "VLzMSaoVA46PTLHwZtDUx",
+      "type": "subtopic",
+      "data": {
+        "label": "$@ "
+      }
+    },
+    {
+      "id": "u_kpVb3V8Xp-0fex_5-yG",
+      "type": "subtopic",
+      "data": {
+        "label": "shift"
+      }
+    },
+    {
+      "id": "BCkD0b9unC1lfjUThU3hX",
+      "type": "topic",
+      "data": {
+        "label": "Script Arguments"
+      }
+    },
+    {
+      "id": "JB_FThjpxO-7G01XrKDPi",
+      "type": "subtopic",
+      "data": {
+        "label": "exit"
+      }
+    },
+    {
+      "id": "hxjqlxolS_ahtro4T0EKG",
+      "type": "subtopic",
+      "data": {
+        "label": "$?"
+      }
+    },
+    {
+      "id": "wKMq5G8cmqo3JnHG4Z-c1",
+      "type": "subtopic",
+      "data": {
+        "label": "Success vs failure "
+      }
+    },
+    {
+      "id": "fG4D7iuiCDlV1PFwMfAdM",
+      "type": "topic",
+      "data": {
+        "label": "Exit Codes"
+      }
+    },
+    {
+      "id": "fz9XJLGkMPpq6TRJn3Hsh",
+      "type": "subtopic",
+      "data": {
+        "label": "if"
+      }
+    },
+    {
+      "id": "SSSVVAve99X8FZX9vtHlo",
+      "type": "subtopic",
+      "data": {
+        "label": "case"
+      }
+    },
+    {
+      "id": "tEaYnBeI5tO8NT-a1PG3B",
+      "type": "topic",
+      "data": {
+        "label": "Conditionals"
+      }
+    },
+    {
+      "id": "zE7sS5VNUbEbt1y2iSvEi",
+      "type": "subtopic",
+      "data": {
+        "label": "for"
+      }
+    },
+    {
+      "id": "51xww3YG_O8O7y8CUum83",
+      "type": "subtopic",
+      "data": {
+        "label": "until"
+      }
+    },
+    {
+      "id": "yX-SskrRyFAUFpyIYG7BU",
+      "type": "subtopic",
+      "data": {
+        "label": "while"
+      }
+    },
+    {
+      "id": "Wl39zpLh6alsMkn0YZ9-N",
+      "type": "subtopic",
+      "data": {
+        "label": "break, continue"
+      }
+    },
+    {
+      "id": "1rIFm5ROQ8b1rsWeD9h4x",
+      "type": "topic",
+      "data": {
+        "label": "Loops"
+      }
+    },
+    {
+      "id": "qNsNJrqwsGtumOM2STB8u",
+      "type": "subtopic",
+      "data": {
+        "label": "Basic regex syntax"
+      }
+    },
+    {
+      "id": "6IzuWNaMVjjyQV-KLqRlX",
+      "type": "subtopic",
+      "data": {
+        "label": "Extended regex"
+      }
+    },
+    {
+      "id": "W7NlQoj0EDxvuMVj4MKXc",
+      "type": "topic",
+      "data": {
+        "label": "Regular Expressions"
+      }
+    },
+    {
+      "id": "I-N9SM8ZVcOTVQs8_vtJm",
+      "type": "subtopic",
+      "data": {
+        "label": "set -e "
+      }
+    },
+    {
+      "id": "OOskpOLWFe1rN0XMuabAS",
+      "type": "subtopic",
+      "data": {
+        "label": "set -o"
+      }
+    },
+    {
+      "id": "HrzalKXWVmqD-8SfdQJVu",
+      "type": "subtopic",
+      "data": {
+        "label": "set -u "
+      }
+    },
+    {
+      "id": "Qs5jcx6d643cJDdhkPPxD",
+      "type": "subtopic",
+      "data": {
+        "label": "Error logging"
+      }
+    },
+    {
+      "id": "c0F44DSG7eVcqwaOfk2Z-",
+      "type": "subtopic",
+      "data": {
+        "label": "trap"
+      }
+    },
+    {
+      "id": "aNpvGNnV0q-7emxJVJow2",
+      "type": "topic",
+      "data": {
+        "label": "Error Handling"
+      }
+    },
+    {
+      "id": "7-4WglSAbhBZUpP8HS6xY",
+      "type": "subtopic",
+      "data": {
+        "label": "nohup"
+      }
+    },
+    {
+      "id": "Sn7RlXc5dgD1gqDGikco-",
+      "type": "subtopic",
+      "data": {
+        "label": "jobs"
+      }
+    },
+    {
+      "id": "Qs07iAbFbJk97xHpo10dO",
+      "type": "subtopic",
+      "data": {
+        "label": "disown"
+      }
+    },
+    {
+      "id": "Ey38pCn0vlhZXLrJChtIW",
+      "type": "subtopic",
+      "data": {
+        "label": "fg, bg"
+      }
+    },
+    {
+      "id": "Oc80VSBDYTHkGOV4Jqo19",
+      "type": "subtopic",
+      "data": {
+        "label": "Process substitution"
+      }
+    },
+    {
+      "id": "ZTJrnx12KSrcyUfd0RfPu",
+      "type": "topic",
+      "data": {
+        "label": "Process Management"
+      }
+    },
+    {
+      "id": "fR3sok0EJTGHELbPO6MAW",
+      "type": "topic",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "gOdW5k4fRu9P-3D3ze8aA",
+      "type": "subtopic",
+      "data": {
+        "label": "ps"
+      }
+    },
+    {
+      "id": "8Ll6sByPqMnjVms5J1ns5",
+      "type": "subtopic",
+      "data": {
+        "label": "free"
+      }
+    },
+    {
+      "id": "M2afRR6yY8iq85_MnfGKV",
+      "type": "subtopic",
+      "data": {
+        "label": "top, htop"
+      }
+    },
+    {
+      "id": "R57tdCBI0rLmzWEuJeBTW",
+      "type": "subtopic",
+      "data": {
+        "label": "uptime"
+      }
+    },
+    {
+      "id": "rmSSz2ka9e1nQwx18Ofy8",
+      "type": "subtopic",
+      "data": {
+        "label": "df, du"
+      }
+    },
+    {
+      "id": "lwul2wUhhCnXxKO6-ysX2",
+      "type": "subtopic",
+      "data": {
+        "label": "iostat, vmstat"
+      }
+    },
+    {
+      "id": "Kwr37_gNDhkwSkg49bg35",
+      "type": "topic",
+      "data": {
+        "label": "Package Management"
+      }
+    },
+    {
+      "id": "LdhFo8UrT6EBs6IE42uLx",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "Xkh9VbM-yPX0Vkgj1tnoC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "VCzTId8UMInDwhWaE1LGC",
+      "type": "paragraph",
+      "data": {
+        "label": "Shell Fundamentals"
+      }
+    },
+    {
+      "id": "Kn_EQciiD_Fjj308aF_j0",
+      "type": "subtopic",
+      "data": {
+        "label": "ls"
+      }
+    },
+    {
+      "id": "9A6SE89by-1I2HmpGarLj",
+      "type": "subtopic",
+      "data": {
+        "label": "cd"
+      }
+    },
+    {
+      "id": "pwP3U4zz9Jtpnp2ZRgajh",
+      "type": "subtopic",
+      "data": {
+        "label": "mkdir"
+      }
+    },
+    {
+      "id": "cqZP-2xfil-1Zq3TD7qiN",
+      "type": "subtopic",
+      "data": {
+        "label": "rmdir"
+      }
+    },
+    {
+      "id": "QnC0gCoBj_559CgaTQgr4",
+      "type": "subtopic",
+      "data": {
+        "label": "Navigate between dirs"
+      }
+    },
+    {
+      "id": "qrqPo-pgzupCK0IxlGn7S",
+      "type": "subtopic",
+      "data": {
+        "label": "chmod"
+      }
+    },
+    {
+      "id": "w95b7f3-7Q8qtTpyJih6B",
+      "type": "subtopic",
+      "data": {
+        "label": "chown"
+      }
+    },
+    {
+      "id": "zaXwK7xPsrULce1yJwhB_",
+      "type": "subtopic",
+      "data": {
+        "label": "chgrp"
+      }
+    },
+    {
+      "id": "UkU8b0Va8i7tdztckwFuo",
+      "type": "label",
+      "data": {
+        "label": "View \u0026 Search"
+      }
+    },
+    {
+      "id": "ud8fTxgvvbhCyyAxJA6lc",
+      "type": "subtopic",
+      "data": {
+        "label": "find"
+      }
+    },
+    {
+      "id": "12H3psmYm-zYMqXcFfJ39",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "rtzApgTlDTfC_rdCnU6xx",
+      "type": "subtopic",
+      "data": {
+        "label": "join, split"
+      }
+    },
+    {
+      "id": "EU-UAaRVY2s_PLZHJWf9z",
+      "type": "subtopic",
+      "data": {
+        "label": "cut, paste"
+      }
+    },
+    {
+      "id": "YJblaz_GKC5sH7ntFe5ls",
+      "type": "subtopic",
+      "data": {
+        "label": "tr"
+      }
+    },
+    {
+      "id": "9prQb87v10SNntlWKPKi5",
+      "type": "label",
+      "data": {
+        "label": "Text Transform"
+      }
+    },
+    {
+      "id": "4XfvvrFQoV0X7dfaKYFlv",
+      "type": "subtopic",
+      "data": {
+        "label": "sed"
+      }
+    },
+    {
+      "id": "P9pwqBvPDhcvVIj8fNhGX",
+      "type": "subtopic",
+      "data": {
+        "label": "sort"
+      }
+    },
+    {
+      "id": "mg5f-DAezgwmwflmncSsO",
+      "type": "subtopic",
+      "data": {
+        "label": "wc"
+      }
+    },
+    {
+      "id": "4pygQshD_WdP0i6xq3Kc8",
+      "type": "subtopic",
+      "data": {
+        "label": "uniq"
+      }
+    },
+    {
+      "id": "v8GkZDSyDBYTXTOPuMk-w",
+      "type": "label",
+      "data": {
+        "label": "Analysis"
+      }
+    },
+    {
+      "id": "TZEmlwTGBWAZ6w8jZ-p8U",
+      "type": "subtopic",
+      "data": {
+        "label": "nl"
+      }
+    },
+    {
+      "id": "Jh1gVJvhe-H22VB4hnbuU",
+      "type": "subtopic",
+      "data": {
+        "label": "awk"
+      }
+    },
+    {
+      "id": "IYi-ZdIJ1oP6YvzknlppF",
+      "type": "paragraph",
+      "data": {
+        "label": "Bash Scripting"
+      }
+    },
+    {
+      "id": "RLpPo7LFIVGJZgn9L2-VX",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "0MfStpml5tMjVPnpASR7a",
+      "type": "paragraph",
+      "data": {
+        "label": "Working with Text"
+      }
+    },
+    {
+      "id": "mtpXbNu62-3BDL5uV2jHj",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "qG71FX6DwRm1rdtjtN78u",
+      "type": "subtopic",
+      "data": {
+        "label": "?"
+      }
+    },
+    {
+      "id": "X6aVYPapBn-EC9Dw6LMDB",
+      "type": "subtopic",
+      "data": {
+        "label": "*"
+      }
+    },
+    {
+      "id": "Pr8XdVGYBIuCyRW4w45sa",
+      "type": "subtopic",
+      "data": {
+        "label": "[...]"
+      }
+    },
+    {
+      "id": "txRGPbgf0YGuEEYsM9vpP",
+      "type": "label",
+      "data": {
+        "label": "Wildcards"
+      }
+    },
+    {
+      "id": "mYg9d8e0_XjtXBqBYtaaL",
+      "type": "subtopic",
+      "data": {
+        "label": "{...}"
+      }
+    },
+    {
+      "id": "AiDr7sOJkSN6p346jcDpJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Emacs"
+      }
+    },
+    {
+      "id": "jPAHVLBC87n4TIyiAZJue",
+      "type": "subtopic",
+      "data": {
+        "label": "Vim"
+      }
+    },
+    {
+      "id": "QZXUYcr1vvbvxRmPSsK53",
+      "type": "subtopic",
+      "data": {
+        "label": "Vi"
+      }
+    },
+    {
+      "id": "NjYarMv0YgMD6kXyW3X5d",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "A8yHsbJui8IZSiQGol4_K",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "aZ7WGLUZyejFRbfWtSyhB",
+      "type": "subtopic",
+      "data": {
+        "label": "Running with Bash"
+      }
+    },
+    {
+      "id": "9xn7KfHZYPseAixtw_dtG",
+      "type": "subtopic",
+      "data": {
+        "label": "Direct Execution"
+      }
+    },
+    {
+      "id": "ZBYzPltaUePoOldJ6zRj8",
+      "type": "subtopic",
+      "data": {
+        "label": "Running with Source"
+      }
+    },
+    {
+      "id": "4HK6WBtTsz9sTk-4yANcz",
+      "type": "label",
+      "data": {
+        "label": "Variables"
+      }
+    },
+    {
+      "id": "yIvSbyHW8-gvGWb5ES064",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3LCft8Ctih7Tof3h8DB86",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "LHoR6krZTuJW5BGiKf_AT",
+      "type": "subtopic",
+      "data": {
+        "label": "Arithmetic expansion"
+      }
+    },
+    {
+      "id": "iLlCMD61QthgIKoHU59RG",
+      "type": "label",
+      "data": {
+        "label": "Working with Numerics"
+      }
+    },
+    {
+      "id": "oI019HqH9UO_tQRe2xebi",
+      "type": "subtopic",
+      "data": {
+        "label": "let"
+      }
+    },
+    {
+      "id": "GXF6SSkYtVyGYB_LFSIpe",
+      "type": "subtopic",
+      "data": {
+        "label": "awk"
+      }
+    },
+    {
+      "id": "VOYYJUqKqkTRaxqUip8yr",
+      "type": "subtopic",
+      "data": {
+        "label": "expr"
+      }
+    },
+    {
+      "id": "B2g_optsVEtw-5vRYIpgb",
+      "type": "subtopic",
+      "data": {
+        "label": "bc"
+      }
+    },
+    {
+      "id": "FOi_18Yx5-BgpW9F0P_vX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6oWXLER2UO841bR5AwRAX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "peZDR615PgGw7TQalyG_2",
+      "type": "topic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "lil5vo78g474F1yomar9y",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Scopes"
+      }
+    },
+    {
+      "id": "X4-kdfaVimq5VP_gPTWR0",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursive Functions"
+      }
+    },
+    {
+      "id": "wA1j14K91rgvf_XRTbz4e",
+      "type": "paragraph",
+      "data": {
+        "label": "Advanced Scripting"
+      }
+    },
+    {
+      "id": "8Q1FCxKYYl-HnMGkwdK6h",
+      "type": "subtopic",
+      "data": {
+        "label": "set -x"
+      }
+    },
+    {
+      "id": "_UDEyH6hECoOoXcbcXTLy",
+      "type": "subtopic",
+      "data": {
+        "label": "bash -n"
+      }
+    },
+    {
+      "id": "r_G62Mx-S8wBcxduFbPMh",
+      "type": "subtopic",
+      "data": {
+        "label": "shellcheck"
+      }
+    },
+    {
+      "id": "eY3Ue94oS99GX2JHGwhTQ",
+      "type": "paragraph",
+      "data": {
+        "label": "System Admin."
+      }
+    },
+    {
+      "id": "VZqkqJcYPbGB5J7rT-a8n",
+      "type": "label",
+      "data": {
+        "label": "System Monitoring"
+      }
+    },
+    {
+      "id": "CR-dxBmQnlmcW2bL9KQRJ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "D-sgMFB-IhNw41hNJsSF6",
+      "type": "subtopic",
+      "data": {
+        "label": "ping"
+      }
+    },
+    {
+      "id": "F5w3pYH5Z58NAJ81p5q8n",
+      "type": "subtopic",
+      "data": {
+        "label": "wget"
+      }
+    },
+    {
+      "id": "ZWMGvUxnohv6-dzsaSHuB",
+      "type": "subtopic",
+      "data": {
+        "label": "curl"
+      }
+    },
+    {
+      "id": "PzRwOkhukRE1cTHXOXUTu",
+      "type": "subtopic",
+      "data": {
+        "label": "scp"
+      }
+    },
+    {
+      "id": "eVbx1WsfeHcVaFs-vXpwF",
+      "type": "subtopic",
+      "data": {
+        "label": "ssh"
+      }
+    },
+    {
+      "id": "mImvR0TfLjDqj_Td4G7Gy",
+      "type": "subtopic",
+      "data": {
+        "label": "rsync"
+      }
+    },
+    {
+      "id": "39EtJ6dMFURRGqqPNGEAq",
+      "type": "label",
+      "data": {
+        "label": "Networking"
+      }
+    },
+    {
+      "id": "q-41zNMAJ-BYwrz_fZP60",
+      "type": "subtopic",
+      "data": {
+        "label": "ifconfig, ip"
+      }
+    },
+    {
+      "id": "bX48eoEWdUFeL2rYXuzG5",
+      "type": "subtopic",
+      "data": {
+        "label": "netstat, ss"
+      }
+    },
+    {
+      "id": "d8jGE833q0Wf6gB3DZil4",
+      "type": "subtopic",
+      "data": {
+        "label": "brew"
+      }
+    },
+    {
+      "id": "nfyh2co43xfR9DJbNnM_Y",
+      "type": "subtopic",
+      "data": {
+        "label": "apt"
+      }
+    },
+    {
+      "id": "iE263510iTgm3OEeB9b77",
+      "type": "subtopic",
+      "data": {
+        "label": "dnf"
+      }
+    },
+    {
+      "id": "_p6LP0uvp9QpBISr1t4KX",
+      "type": "subtopic",
+      "data": {
+        "label": "yum"
+      }
+    },
+    {
+      "id": "taF4TabPYb8vAmjeEfdng",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "ESjj2b8Hk0Irj4E2Gmj6w",
+      "type": "subtopic",
+      "data": {
+        "label": "tar"
+      }
+    },
+    {
+      "id": "b8ph0RGUpVWrgEQ05Wvgy",
+      "type": "subtopic",
+      "data": {
+        "label": "gzip, gunzip"
+      }
+    },
+    {
+      "id": "hOtzJ9tH4OcB2uI2T_si5",
+      "type": "subtopic",
+      "data": {
+        "label": "zip, unzip"
+      }
+    },
+    {
+      "id": "qedrcO4QA2ZxV24l0Q6Or",
+      "type": "subtopic",
+      "data": {
+        "label": "bzip2, xz"
+      }
+    },
+    {
+      "id": "Mn7cVjQOVm5Kr1_cjghVc",
+      "type": "label",
+      "data": {
+        "label": "File Compression"
+      }
+    },
+    {
+      "id": "seu0KkOi5-WnaaFMRNbNY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "QGDwieDblgpS6U0n_Ivt8",
+      "type": "subtopic",
+      "data": {
+        "label": "cron, crontab"
+      }
+    },
+    {
+      "id": "Wny7lCxP2M1FaoUYDD7Gf",
+      "type": "subtopic",
+      "data": {
+        "label": "at"
+      }
+    },
+    {
+      "id": "ResodrV_p7zK1dJbqT0us",
+      "type": "subtopic",
+      "data": {
+        "label": "systemd timers"
+      }
+    },
+    {
+      "id": "3FTtGJyjAb4Y3bEaLuU4_",
+      "type": "label",
+      "data": {
+        "label": "Task Schedulling"
+      }
+    },
+    {
+      "id": "ycDYu_myv4LQBHNKtftcz",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "QaWH-1EplhGtLCrM_rwUE",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "O5dely89N5UCMBeUfh8ud",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following roadmaps to keep learning"
+      }
+    },
+    {
+      "id": "cyCi36GIPZkvXKc6hxDN1",
+      "type": "button",
+      "data": {
+        "label": "Linux"
+      }
+    },
+    {
+      "id": "HfoXNLtpPamsiy8mq98rT",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "ZU36zvbYT-R3anWJVIqAq",
+      "type": "button",
+      "data": {
+        "label": "DevOps"
+      }
+    },
+    {
+      "id": "6hXvAV0R7FlJ8UkQzRzMZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Bash Debug"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "AIYZcwq0BE-I8ettlO77F",
+      "source": "gbaBiNdufToHyF2Z2ENtc",
+      "target": "lzzQWCFqpOnN2J_3Jck_3",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "f4I8ucxbIWLZKHCmznJiz",
+      "source": "lzzQWCFqpOnN2J_3Jck_3",
+      "target": "86QR-PVqgvvyvJvgTIer-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "DqC4vb1NxqewvxzmQvwNi",
+      "source": "lzzQWCFqpOnN2J_3Jck_3",
+      "target": "LloORF-pz-sbfuzNj1WjG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "41sgG0Co4iin24IVti3pf",
+      "source": "lzzQWCFqpOnN2J_3Jck_3",
+      "target": "IYlYUnQh2iZrdpyUsMxg0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "J_ENkYRnfAZ-G-6uKGtOx",
+      "source": "IYlYUnQh2iZrdpyUsMxg0",
+      "target": "EqgAG1t05RuiAO1TXRq4Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "nGIltDJeHtH9GreSgeEWb",
+      "source": "IYlYUnQh2iZrdpyUsMxg0",
+      "target": "LjkmfTYWMrOKLSqtpyKGk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "p_iICjjSwIgRGgoRGj8II",
+      "source": "IYlYUnQh2iZrdpyUsMxg0",
+      "target": "6SR4c75dEKoFxZ88sDtfi",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lzzQWCFqpOnN2J_3Jck_3z2-GdSViKr5r3uHxzihSjdYVy2",
+      "source": "lzzQWCFqpOnN2J_3Jck_3",
+      "target": "GdSViKr5r3uHxzihSjdYV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__IYlYUnQh2iZrdpyUsMxg0y2-BnblV98Tul3QlyA1nIB63z1",
+      "source": "IYlYUnQh2iZrdpyUsMxg0",
+      "target": "BnblV98Tul3QlyA1nIB63",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__IYlYUnQh2iZrdpyUsMxg0y2-y4mIT9yer85CrU_KlRxGkz1",
+      "source": "IYlYUnQh2iZrdpyUsMxg0",
+      "target": "y4mIT9yer85CrU_KlRxGk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__6SR4c75dEKoFxZ88sDtfiz2-SvGjImDYN1hTamQ6Fqr69y2",
+      "source": "6SR4c75dEKoFxZ88sDtfi",
+      "target": "VCzTId8UMInDwhWaE1LGC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__QnC0gCoBj_559CgaTQgr4w2-SvGjImDYN1hTamQ6Fqr69x1",
+      "source": "DUUstDjzKKAXN1IXzbqjt",
+      "target": "VCzTId8UMInDwhWaE1LGC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__DUUstDjzKKAXN1IXzbqjty2-HESaq3OyuouEqjpZITYUdz1",
+      "source": "DUUstDjzKKAXN1IXzbqjt",
+      "target": "HESaq3OyuouEqjpZITYUd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__reLvp_PnKqpyWWtnuICPjz2-0MfStpml5tMjVPnpASR7ay1",
+      "source": "reLvp_PnKqpyWWtnuICPj",
+      "target": "0MfStpml5tMjVPnpASR7a",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NMy6-nD3jAkUVcOj0TthUy2-eY3Ue94oS99GX2JHGwhTQz1",
+      "source": "NMy6-nD3jAkUVcOj0TthU",
+      "target": "IYi-ZdIJ1oP6YvzknlppF",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eY3Ue94oS99GX2JHGwhTQx2-it421LC-vLFNmTcWxrsX6w1",
+      "source": "IYi-ZdIJ1oP6YvzknlppF",
+      "target": "it421LC-vLFNmTcWxrsX6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__it421LC-vLFNmTcWxrsX6z2-WbZu0zM2d56LiGauOp8uby1",
+      "source": "it421LC-vLFNmTcWxrsX6",
+      "target": "WbZu0zM2d56LiGauOp8ub",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__dj3KiBtPjRK2DF5HeuoYZz2-9xn7KfHZYPseAixtw_dtGy1",
+      "source": "dj3KiBtPjRK2DF5HeuoYZ",
+      "target": "9xn7KfHZYPseAixtw_dtG",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dj3KiBtPjRK2DF5HeuoYZz2-aZ7WGLUZyejFRbfWtSyhBy1",
+      "source": "dj3KiBtPjRK2DF5HeuoYZ",
+      "target": "aZ7WGLUZyejFRbfWtSyhB",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dj3KiBtPjRK2DF5HeuoYZz2-ZBYzPltaUePoOldJ6zRj8y1",
+      "source": "dj3KiBtPjRK2DF5HeuoYZ",
+      "target": "ZBYzPltaUePoOldJ6zRj8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__dj3KiBtPjRK2DF5HeuoYZx2-RdH9oRDP2urFyvbeEiWzmw1",
+      "source": "dj3KiBtPjRK2DF5HeuoYZ",
+      "target": "RdH9oRDP2urFyvbeEiWzm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vM0Y4fao-pNjNjWYCJve3w2-YM7wA4MgeailSoXR_03Qxx1",
+      "source": "vM0Y4fao-pNjNjWYCJve3",
+      "target": "YM7wA4MgeailSoXR_03Qx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Co0k7A7MyQoELnPwPU10mx2-60ika3rjs42VIk-3AcOdqw2",
+      "source": "Co0k7A7MyQoELnPwPU10m",
+      "target": "60ika3rjs42VIk-3AcOdq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__Co0k7A7MyQoELnPwPU10mz2-n0sesqABTmbGYmcqlpH4by1",
+      "source": "Co0k7A7MyQoELnPwPU10m",
+      "target": "n0sesqABTmbGYmcqlpH4b",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__n0sesqABTmbGYmcqlpH4bw2-D0VV5UpW2X4mMghpp2fdox1",
+      "source": "n0sesqABTmbGYmcqlpH4b",
+      "target": "D0VV5UpW2X4mMghpp2fdo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__PS9R8AX-_dgeqYL2Y67Ffx2-sBI1aCY7XmXBwqTrokt9Fw1",
+      "source": "PS9R8AX-_dgeqYL2Y67Ff",
+      "target": "sBI1aCY7XmXBwqTrokt9F",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__BCkD0b9unC1lfjUThU3hXz2-fG4D7iuiCDlV1PFwMfAdMy2",
+      "source": "BCkD0b9unC1lfjUThU3hX",
+      "target": "fG4D7iuiCDlV1PFwMfAdM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fG4D7iuiCDlV1PFwMfAdMz2-PS9R8AX-_dgeqYL2Y67Ffy2",
+      "source": "fG4D7iuiCDlV1PFwMfAdM",
+      "target": "PS9R8AX-_dgeqYL2Y67Ff",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__BCkD0b9unC1lfjUThU3hXx2-zxdwDMOVAoP8IgUqrggKqw1",
+      "source": "BCkD0b9unC1lfjUThU3hX",
+      "target": "zxdwDMOVAoP8IgUqrggKq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__NfmdNOTpvfKIIut642Q6Ex2-tEaYnBeI5tO8NT-a1PG3Bw1",
+      "source": "NfmdNOTpvfKIIut642Q6E",
+      "target": "tEaYnBeI5tO8NT-a1PG3B",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__peZDR615PgGw7TQalyG_2w2-Wl39zpLh6alsMkn0YZ9-Nx1",
+      "source": "1rIFm5ROQ8b1rsWeD9h4x",
+      "target": "Wl39zpLh6alsMkn0YZ9-N",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__tEaYnBeI5tO8NT-a1PG3Bz2-peZDR615PgGw7TQalyG_2y1",
+      "source": "tEaYnBeI5tO8NT-a1PG3B",
+      "target": "1rIFm5ROQ8b1rsWeD9h4x",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__1rIFm5ROQ8b1rsWeD9h4xz2-peZDR615PgGw7TQalyG_2y2",
+      "source": "1rIFm5ROQ8b1rsWeD9h4x",
+      "target": "peZDR615PgGw7TQalyG_2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__peZDR615PgGw7TQalyG_2w2-X4-kdfaVimq5VP_gPTWR0x1",
+      "source": "peZDR615PgGw7TQalyG_2",
+      "target": "X4-kdfaVimq5VP_gPTWR0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__peZDR615PgGw7TQalyG_2x2-eY3Ue94oS99GX2JHGwhTQw2",
+      "source": "peZDR615PgGw7TQalyG_2",
+      "target": "wA1j14K91rgvf_XRTbz4e",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eY3Ue94oS99GX2JHGwhTQx2-aNpvGNnV0q-7emxJVJow2w1",
+      "source": "wA1j14K91rgvf_XRTbz4e",
+      "target": "aNpvGNnV0q-7emxJVJow2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fR3sok0EJTGHELbPO6MAWz2-aNpvGNnV0q-7emxJVJow2y1",
+      "source": "fR3sok0EJTGHELbPO6MAW",
+      "target": "aNpvGNnV0q-7emxJVJow2",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__W7NlQoj0EDxvuMVj4MKXcy2-qNsNJrqwsGtumOM2STB8uz1",
+      "source": "W7NlQoj0EDxvuMVj4MKXc",
+      "target": "qNsNJrqwsGtumOM2STB8u",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__W7NlQoj0EDxvuMVj4MKXcy2-6IzuWNaMVjjyQV-KLqRlXz1",
+      "source": "W7NlQoj0EDxvuMVj4MKXc",
+      "target": "6IzuWNaMVjjyQV-KLqRlX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__W7NlQoj0EDxvuMVj4MKXcx2-ZTJrnx12KSrcyUfd0RfPuw1",
+      "source": "W7NlQoj0EDxvuMVj4MKXc",
+      "target": "ZTJrnx12KSrcyUfd0RfPu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__ZTJrnx12KSrcyUfd0RfPuy2-eY3Ue94oS99GX2JHGwhTQz2",
+      "source": "ZTJrnx12KSrcyUfd0RfPu",
+      "target": "eY3Ue94oS99GX2JHGwhTQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__eY3Ue94oS99GX2JHGwhTQx2-GhQcZ769W04wlLlFLXxsuw1",
+      "source": "eY3Ue94oS99GX2JHGwhTQ",
+      "target": "GhQcZ769W04wlLlFLXxsu",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__Kwr37_gNDhkwSkg49bg35x2-O5dely89N5UCMBeUfh8udw1",
+      "source": "Kwr37_gNDhkwSkg49bg35",
+      "target": "O5dely89N5UCMBeUfh8ud",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__sYzelzBxQUcz5bK1HVWamz2-Co0k7A7MyQoELnPwPU10my2",
+      "source": "sYzelzBxQUcz5bK1HVWam",
+      "target": "Co0k7A7MyQoELnPwPU10m",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__vM0Y4fao-pNjNjWYCJve3x2-sYzelzBxQUcz5bK1HVWamw1",
+      "source": "vM0Y4fao-pNjNjWYCJve3",
+      "target": "sYzelzBxQUcz5bK1HVWam",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fR3sok0EJTGHELbPO6MAWw2-6hXvAV0R7FlJ8UkQzRzMZx2",
+      "source": "fR3sok0EJTGHELbPO6MAW",
+      "target": "6hXvAV0R7FlJ8UkQzRzMZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1774 @@
+{
+  "title": {
+    "card": "JavaScript",
+    "page": "JavaScript Roadmap"
+  },
+  "description": "Step by step guide to learn JavaScript in @currentYear@",
+  "nodes": [
+    {
+      "id": "RT5Y79D2bHy6PsH_R3ErB",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Vw9QlH1HRpkhY0MB_qYSl",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "7_PNaE81zDfU_rrERJaut",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nIKq5h-D4CH0rTuyvIYrj",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vbQvUkXTW5X7Msi5h5bfU",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "k92omG8sirMkkG21L2lIG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "0njVxhIA2YIJ9qKyVxjf8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WVB_JzBBd0IBLQeOmLA8l",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "-F3iMNrT9JSZDZLQGwebH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "H7egAB_mCOFfyVvVfE7Sq",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TN-WaRT4V6szTvQtqbw7U",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "UhkFfLGkLhOZy7f98T7fi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "efeOuXHkhR2UBWM2Uz1Ih",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "DyhRrYJ78u0ZoxzC-4bF-",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "JM16NHhFVOwwbwqCubmYw",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iZjl6qe9LGLFqXyopMUFX",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "H3WkCOmbGQhvqjbdp5lkI",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "NblxOcAnB1id7c9z6d6jL",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "SSqBPOJROQpX5poMFSJtJ",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "HQhfzCPLg18t6pGMaL0hv",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "o-91XV8kk0_35-alDkXtP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "_kaSKWCyvpshv9dtT4kKM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "WRMo2Zwtiar8b-40FntG6",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "bV3JIUCFixDt8-D7HDfxc",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "13pndno5JSKQQaRHPTWdC",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "JavaScript"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following related roadmaps"
+      }
+    },
+    {
+      "id": "ZSrQoNGKiR484uALMWO9F",
+      "type": "button",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "P5IZjP0g1_fnvHy3YTR4q",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "YD5y17K5nqmWaBwYcufZO",
+      "type": "legend",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "6khAD6mzZ9S96JJuC5_j6",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to JavaScript"
+      }
+    },
+    {
+      "id": "UBB-8hUcwo4Mfd0cmEcdA",
+      "type": "subtopic",
+      "data": {
+        "label": "What is JavaScript"
+      }
+    },
+    {
+      "id": "l-GKzcsBNA0r6Jax8hwnP",
+      "type": "subtopic",
+      "data": {
+        "label": "History of JavaScript"
+      }
+    },
+    {
+      "id": "SFPsWnVpZBAw3_re7op4h",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript Versions"
+      }
+    },
+    {
+      "id": "uXsWIUUxtc4H_iRx3uZv0",
+      "type": "subtopic",
+      "data": {
+        "label": "How to run JavaScript"
+      }
+    },
+    {
+      "id": "BqbAWt--Guqex-rrb4ZUv",
+      "type": "subtopic",
+      "data": {
+        "label": "Variable Declarations"
+      }
+    },
+    {
+      "id": "Lb5jLF91WO5V5CWpifciW",
+      "type": "subtopic",
+      "data": {
+        "label": "Hoisting"
+      }
+    },
+    {
+      "id": "HfieG3v3wnmpZDfNwEJvZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Variable Naming Rules"
+      }
+    },
+    {
+      "id": "7iMJuaB7yKlSIbT4dBe5L",
+      "type": "subtopic",
+      "data": {
+        "label": "Variable Scopes"
+      }
+    },
+    {
+      "id": "JSjeM8qnBg4onXq9mn5gB",
+      "type": "subtopic",
+      "data": {
+        "label": "var"
+      }
+    },
+    {
+      "id": "kDRa9G3pMp0Cb0mqYUawM",
+      "type": "subtopic",
+      "data": {
+        "label": "let"
+      }
+    },
+    {
+      "id": "q85z6x1Lc-yLWepwtIT2_",
+      "type": "subtopic",
+      "data": {
+        "label": "const"
+      }
+    },
+    {
+      "id": "uqEzHYx13Y2EpvTTRzykn",
+      "type": "subtopic",
+      "data": {
+        "label": "Block"
+      }
+    },
+    {
+      "id": "YMT7O6lrMSMtNo0EnmsnQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Function"
+      }
+    },
+    {
+      "id": "oC4o6GLEES_nUgCJu9Q6I",
+      "type": "subtopic",
+      "data": {
+        "label": "Global"
+      }
+    },
+    {
+      "id": "kvActjpU4FUJdrmuFoFEe",
+      "type": "topic",
+      "data": {
+        "label": "All about Variables"
+      }
+    },
+    {
+      "id": "-jbPPuEXacBR0d0CWPHgd",
+      "type": "topic",
+      "data": {
+        "label": "Data Types"
+      }
+    },
+    {
+      "id": "1RcwBHU3jzx0YxxUGZic4",
+      "type": "subtopic",
+      "data": {
+        "label": "string"
+      }
+    },
+    {
+      "id": "ZLs0NKM0lrnOy5ATDhlk0",
+      "type": "subtopic",
+      "data": {
+        "label": "undefined"
+      }
+    },
+    {
+      "id": "GZ_SXsWmP7AsXRTc4WUMw",
+      "type": "subtopic",
+      "data": {
+        "label": "number"
+      }
+    },
+    {
+      "id": "6lUF0neW1piiP1RsaVxEX",
+      "type": "subtopic",
+      "data": {
+        "label": "bigint"
+      }
+    },
+    {
+      "id": "b1HvkoWA2t4kt8mS6FySm",
+      "type": "subtopic",
+      "data": {
+        "label": "boolean"
+      }
+    },
+    {
+      "id": "CxyNyFMuTLS3owtRMgClD",
+      "type": "subtopic",
+      "data": {
+        "label": "null"
+      }
+    },
+    {
+      "id": "R6ICrk6vjoBxx5nRGo4Jg",
+      "type": "subtopic",
+      "data": {
+        "label": "Symbol"
+      }
+    },
+    {
+      "id": "AsJveV8cD6YH1VF156K4t",
+      "type": "label",
+      "data": {
+        "label": "Primitive Types"
+      }
+    },
+    {
+      "id": "xe8HZ8Mt1fK8yJMcDPYHJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Object"
+      }
+    },
+    {
+      "id": "0I6dJE0ygXPGjeRAe8AtT",
+      "type": "subtopic",
+      "data": {
+        "label": "Object Prototype"
+      }
+    },
+    {
+      "id": "Xge6eru1hRGobnOEHLZqv",
+      "type": "subtopic",
+      "data": {
+        "label": "Prototypal Inheritance"
+      }
+    },
+    {
+      "id": "RRACLQ6-aopkxImIp3Toc",
+      "type": "subtopic",
+      "data": {
+        "label": "typeof operator"
+      }
+    },
+    {
+      "id": "D95ndkkwmT5X_HqboEn6E",
+      "type": "subtopic",
+      "data": {
+        "label": "Built-in Objects"
+      }
+    },
+    {
+      "id": "XPmBieVCXvL3WbWkYRoKr",
+      "type": "topic",
+      "data": {
+        "label": "Type Casting"
+      }
+    },
+    {
+      "id": "_Bo2YZqZ_gY35SLPML4T6",
+      "type": "subtopic",
+      "data": {
+        "label": "Type Conversion vs Coercion"
+      }
+    },
+    {
+      "id": "1xhjrRN-Rfekei2JwwU7Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Explicit Type Casting"
+      }
+    },
+    {
+      "id": "pP42K_eH4RCdUdUS8BJlP",
+      "type": "subtopic",
+      "data": {
+        "label": "Implicit Type Casting"
+      }
+    },
+    {
+      "id": "ADarwihuI2nBq1C3U7-Zr",
+      "type": "topic",
+      "data": {
+        "label": "Data Structures"
+      }
+    },
+    {
+      "id": "rhJrrqkRqy2Qw_he4SPGz",
+      "type": "subtopic",
+      "data": {
+        "label": "Keyed Collections"
+      }
+    },
+    {
+      "id": "Xc0jL4rafpI-ixIaAxo9O",
+      "type": "subtopic",
+      "data": {
+        "label": "Map"
+      }
+    },
+    {
+      "id": "6icsjC4aisDgPWasVuCOt",
+      "type": "subtopic",
+      "data": {
+        "label": "Weak Map"
+      }
+    },
+    {
+      "id": "sciU68E13mcfL577y6Vim",
+      "type": "subtopic",
+      "data": {
+        "label": "Set"
+      }
+    },
+    {
+      "id": "DSFzj61N9ojz29mjExhVa",
+      "type": "subtopic",
+      "data": {
+        "label": "Weak Set"
+      }
+    },
+    {
+      "id": "lBOGoHZrmnIRatvryDwTm",
+      "type": "subtopic",
+      "data": {
+        "label": "Indexed Collections"
+      }
+    },
+    {
+      "id": "8X1mdQ3NDBVOZZWBbAFRE",
+      "type": "subtopic",
+      "data": {
+        "label": "Typed Arrays"
+      }
+    },
+    {
+      "id": "NZedBxG9B9TRVOf2QE2yL",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrays"
+      }
+    },
+    {
+      "id": "JwLGAuSOTyZ5BHSqeBDU6",
+      "type": "subtopic",
+      "data": {
+        "label": "Structured Data"
+      }
+    },
+    {
+      "id": "bFNvtHp97OzKnPJgr7WaH",
+      "type": "subtopic",
+      "data": {
+        "label": "JSON"
+      }
+    },
+    {
+      "id": "23Xa6q5VvRVlzc6Dx8vST",
+      "type": "topic",
+      "data": {
+        "label": "Equality Comparisons"
+      }
+    },
+    {
+      "id": "RonBj1htt6jnBt3W7zoTA",
+      "type": "subtopic",
+      "data": {
+        "label": "=="
+      }
+    },
+    {
+      "id": "lJwcc6JoUIQoiQ6FkV2KW",
+      "type": "subtopic",
+      "data": {
+        "label": "==="
+      }
+    },
+    {
+      "id": "ATma3bLKdmWY_WTsPIKxh",
+      "type": "subtopic",
+      "data": {
+        "label": "Object.is"
+      }
+    },
+    {
+      "id": "w_jxbePkFlj8DO1erTIzf",
+      "type": "label",
+      "data": {
+        "label": "Value Comparison Operators"
+      }
+    },
+    {
+      "id": "PLallt_T33W6bUEn0Hc3W",
+      "type": "subtopic",
+      "data": {
+        "label": "isLooselyEqual"
+      }
+    },
+    {
+      "id": "pcILon_Jjm2_XS10iUJ0E",
+      "type": "subtopic",
+      "data": {
+        "label": "isStrictlyEqual"
+      }
+    },
+    {
+      "id": "fL3B2hkTgMb0oEwMiWJtK",
+      "type": "subtopic",
+      "data": {
+        "label": "SameValueZero"
+      }
+    },
+    {
+      "id": "Saqi1gQD3ddyJQ9tFIXqz",
+      "type": "label",
+      "data": {
+        "label": "Equality Algorithms"
+      }
+    },
+    {
+      "id": "YD-2l_amfqqqCdtc_Zdzo",
+      "type": "topic",
+      "data": {
+        "label": "Loops and Iterations"
+      }
+    },
+    {
+      "id": "2M211rcaPSWbZ-sPoSEVR",
+      "type": "subtopic",
+      "data": {
+        "label": "for"
+      }
+    },
+    {
+      "id": "57lO_3uxJaWsFXS-0J1AK",
+      "type": "subtopic",
+      "data": {
+        "label": "do...while"
+      }
+    },
+    {
+      "id": "9-MpHmzK_IiCi6IcvAlGM",
+      "type": "subtopic",
+      "data": {
+        "label": "while"
+      }
+    },
+    {
+      "id": "cq3vvFZoNnAAZJ6oEBUwb",
+      "type": "subtopic",
+      "data": {
+        "label": "for...in loop"
+      }
+    },
+    {
+      "id": "FBz6h_AmTJBXoBN-a38a5",
+      "type": "subtopic",
+      "data": {
+        "label": "for...of loop"
+      }
+    },
+    {
+      "id": "4oHFzn7R7xLxfuLpsJjr-",
+      "type": "subtopic",
+      "data": {
+        "label": "break / continue"
+      }
+    },
+    {
+      "id": "3tckJ2Sci7z-sNx9jx9eF",
+      "type": "topic",
+      "data": {
+        "label": "Control Flow"
+      }
+    },
+    {
+      "id": "34TKGxV9YziOWMh9rT_KE",
+      "type": "subtopic",
+      "data": {
+        "label": "Exceptional Handling"
+      }
+    },
+    {
+      "id": "ttCsd2_H2SuRivCjGv1OX",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditional Statements"
+      }
+    },
+    {
+      "id": "ndbDXAx6bL4lZmpXv16Y_",
+      "type": "subtopic",
+      "data": {
+        "label": "if...else"
+      }
+    },
+    {
+      "id": "H_QlcUlavKKfcNK8CYAvb",
+      "type": "subtopic",
+      "data": {
+        "label": "Switch"
+      }
+    },
+    {
+      "id": "ReGIniyLYl5hGExchrJd2",
+      "type": "subtopic",
+      "data": {
+        "label": "throw statement"
+      }
+    },
+    {
+      "id": "rbjEZe5vxCJ8reI1oZ-jf",
+      "type": "subtopic",
+      "data": {
+        "label": "try/catch/finally"
+      }
+    },
+    {
+      "id": "-z-4VTaC3tOThqChgyoMs",
+      "type": "subtopic",
+      "data": {
+        "label": "Error Objects"
+      }
+    },
+    {
+      "id": "_6vZa43gWjxO2OcD1iCCQ",
+      "type": "topic",
+      "data": {
+        "label": "Expressions \u0026 Operators"
+      }
+    },
+    {
+      "id": "IvBtUzIGnkgGXrJjqmjf4",
+      "type": "subtopic",
+      "data": {
+        "label": "Assignment Operators"
+      }
+    },
+    {
+      "id": "-v4_V4UuoZSgUk2sqOCim",
+      "type": "subtopic",
+      "data": {
+        "label": "Comparison Operators"
+      }
+    },
+    {
+      "id": "0PK1NwlgkNe2Vf-We4uLH",
+      "type": "subtopic",
+      "data": {
+        "label": "Arithmetic Operators"
+      }
+    },
+    {
+      "id": "ghjNJW67Wj5L5QK46xwL-",
+      "type": "subtopic",
+      "data": {
+        "label": "Bitwise Operators"
+      }
+    },
+    {
+      "id": "bo4SvzU4BrPl3c99zW7Y5",
+      "type": "subtopic",
+      "data": {
+        "label": "Logical Operators"
+      }
+    },
+    {
+      "id": "udoz0DZi7f-vm30dSnYKu",
+      "type": "subtopic",
+      "data": {
+        "label": "BigInt Operators"
+      }
+    },
+    {
+      "id": "c38b6t5f17Zg2O2yg3eFP",
+      "type": "subtopic",
+      "data": {
+        "label": "String Operators"
+      }
+    },
+    {
+      "id": "640mk-m5mB90Mme-7jcXV",
+      "type": "subtopic",
+      "data": {
+        "label": "Conditional Operators"
+      }
+    },
+    {
+      "id": "6_8EwyZY2jBkZr7xnfRY3",
+      "type": "subtopic",
+      "data": {
+        "label": "Comma Operators"
+      }
+    },
+    {
+      "id": "k9rSR-YQ8B_iRcXNm2btP",
+      "type": "subtopic",
+      "data": {
+        "label": "Unary Operators"
+      }
+    },
+    {
+      "id": "k8bJH9qydZm8I9rhH7rXw",
+      "type": "topic",
+      "data": {
+        "label": "Functions"
+      }
+    },
+    {
+      "id": "R1D4fsZliHv7wIo8Tj-kp",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Parameters"
+      }
+    },
+    {
+      "id": "fr0NChxMXLpJizyMhXcXS",
+      "type": "subtopic",
+      "data": {
+        "label": "Arrow Functions"
+      }
+    },
+    {
+      "id": "YZlCoPvZuX5MmpLOTj5d4",
+      "type": "subtopic",
+      "data": {
+        "label": "IIFEs"
+      }
+    },
+    {
+      "id": "QLC7bW-qHskLH2HOA-Sko",
+      "type": "subtopic",
+      "data": {
+        "label": "arguments object"
+      }
+    },
+    {
+      "id": "ISNzEYtrWe2v0R7Xfl5k-",
+      "type": "subtopic",
+      "data": {
+        "label": "Scope \u0026 Function Stack"
+      }
+    },
+    {
+      "id": "s8wUJivWmetysJ8bt9FBC",
+      "type": "subtopic",
+      "data": {
+        "label": "Built-in Functions"
+      }
+    },
+    {
+      "id": "8X8mRl-puL0Lp43dO5mha",
+      "type": "subtopic",
+      "data": {
+        "label": "Default Params"
+      }
+    },
+    {
+      "id": "-_6q0bIjQrvAaCWrVkASO",
+      "type": "subtopic",
+      "data": {
+        "label": "Rest"
+      }
+    },
+    {
+      "id": "YJGhhFuWmFvhRKOg6nwON",
+      "type": "subtopic",
+      "data": {
+        "label": "Recursion"
+      }
+    },
+    {
+      "id": "q7b5iMJ1Lfka5A-K-YcaN",
+      "type": "subtopic",
+      "data": {
+        "label": "Lexical Scoping"
+      }
+    },
+    {
+      "id": "itS6B12I8I1KNCPvc0KCQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Closures"
+      }
+    },
+    {
+      "id": "Xw8lb0xCWKmNs4KZfhBUy",
+      "type": "topic",
+      "data": {
+        "label": "Strict Mode"
+      }
+    },
+    {
+      "id": "fm2CuL1IZp3hnrLrPUX7U",
+      "type": "topic",
+      "data": {
+        "label": "Using (this) keyword"
+      }
+    },
+    {
+      "id": "3E5MuxPvEJU-dwgTrbQAR",
+      "type": "subtopic",
+      "data": {
+        "label": "in a method"
+      }
+    },
+    {
+      "id": "azsXq6Y5iCvQDgTWZpWQ3",
+      "type": "subtopic",
+      "data": {
+        "label": "in a function"
+      }
+    },
+    {
+      "id": "qps2Mdm-lwa4Wr0IxKm0C",
+      "type": "subtopic",
+      "data": {
+        "label": "using it alone"
+      }
+    },
+    {
+      "id": "JVbEBtVrTTFnTF3_yUIAC",
+      "type": "subtopic",
+      "data": {
+        "label": "in event handlers"
+      }
+    },
+    {
+      "id": "P0190rTm2wLQmCzWOKour",
+      "type": "subtopic",
+      "data": {
+        "label": "in arrow functions"
+      }
+    },
+    {
+      "id": "EAN6DCiCfSq04R4vKgZ0q",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Borrowing"
+      }
+    },
+    {
+      "id": "p2NhSwPYMtRiPRHjPaqmX",
+      "type": "subtopic",
+      "data": {
+        "label": "Explicit Binding"
+      }
+    },
+    {
+      "id": "gsyY3Oa3Jf0W5K_lyqBYO",
+      "type": "subtopic",
+      "data": {
+        "label": "call"
+      }
+    },
+    {
+      "id": "-BtF34cEzI6J8sZCDRlRE",
+      "type": "subtopic",
+      "data": {
+        "label": "apply"
+      }
+    },
+    {
+      "id": "dbercnxXVTJXMpYSDNGb2",
+      "type": "subtopic",
+      "data": {
+        "label": "bind"
+      }
+    },
+    {
+      "id": "sFOqx6_7poVIVuXhJVY0E",
+      "type": "topic",
+      "data": {
+        "label": "Asynchronous JavaScript"
+      }
+    },
+    {
+      "id": "_bs5NNHVdHLWGBmpYwHMi",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Loop"
+      }
+    },
+    {
+      "id": "wXypuqEmFLIubx-QQvDIr",
+      "type": "subtopic",
+      "data": {
+        "label": "setTimeout"
+      }
+    },
+    {
+      "id": "jaC3XXudd7OBKwwCpoPFf",
+      "type": "subtopic",
+      "data": {
+        "label": "setInterval"
+      }
+    },
+    {
+      "id": "D8oGY7pdviRByaz6c9sU6",
+      "type": "subtopic",
+      "data": {
+        "label": "Callbacks"
+      }
+    },
+    {
+      "id": "yXSF5gGST7l2X-4z1g0d_",
+      "type": "subtopic",
+      "data": {
+        "label": "Promises"
+      }
+    },
+    {
+      "id": "PJSdqvh5OBwPCNpn3q_S5",
+      "type": "subtopic",
+      "data": {
+        "label": "Callback Hell"
+      }
+    },
+    {
+      "id": "Dn872mgexmxoLtbkIgIgz",
+      "type": "subtopic",
+      "data": {
+        "label": "async/await"
+      }
+    },
+    {
+      "id": "q6vciQb_Jk-Up16Pk5NeE",
+      "type": "topic",
+      "data": {
+        "label": "Working with APIs"
+      }
+    },
+    {
+      "id": "kL5rfWxXe4J44ENru1uJS",
+      "type": "subtopic",
+      "data": {
+        "label": "Fetch"
+      }
+    },
+    {
+      "id": "LiuhBE7dIlkoWkthSoCsa",
+      "type": "subtopic",
+      "data": {
+        "label": "XMLHTTPRequest"
+      }
+    },
+    {
+      "id": "F_Lrj0F7UXriqJ0mhwxCy",
+      "type": "topic",
+      "data": {
+        "label": "Classes"
+      }
+    },
+    {
+      "id": "TZ8XGdykSJjKBjX6Nivwo",
+      "type": "topic",
+      "data": {
+        "label": "Iterators and Generators"
+      }
+    },
+    {
+      "id": "hLnJlwnECFbVMeFpH0M5Q",
+      "type": "topic",
+      "data": {
+        "label": "Modules in JavaScript"
+      }
+    },
+    {
+      "id": "4EXeGkOpfAViB9Uo4zL6O",
+      "type": "subtopic",
+      "data": {
+        "label": "CommonJS"
+      }
+    },
+    {
+      "id": "jLNmYeo20Mbu4WRvVgvwU",
+      "type": "subtopic",
+      "data": {
+        "label": "ESM"
+      }
+    },
+    {
+      "id": "MatU4SthAAhByJ40XdZQn",
+      "type": "topic",
+      "data": {
+        "label": "Memory Management"
+      }
+    },
+    {
+      "id": "ZR2WfH1cerA-V_kaPwRvm",
+      "type": "subtopic",
+      "data": {
+        "label": "Memory Lifecycle"
+      }
+    },
+    {
+      "id": "bhuGtcyqPFKu-900aESYz",
+      "type": "topic",
+      "data": {
+        "label": "DOM APIs"
+      }
+    },
+    {
+      "id": "KKyX8N4lTgN0w-Khm6Ztq",
+      "type": "subtopic",
+      "data": {
+        "label": "Garbage Collection"
+      }
+    },
+    {
+      "id": "rc5WzBBOm2cus-rQl8EOE",
+      "type": "topic",
+      "data": {
+        "label": "Using Browser DevTools"
+      }
+    },
+    {
+      "id": "dhEtcgv7G9fNV-AUNJdWk",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Issues"
+      }
+    },
+    {
+      "id": "BA_ArmZMnVMaL_zl3W3Pt",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Memory Leaks"
+      }
+    },
+    {
+      "id": "ECxISKUAU7js_JsfSHzud",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Performance"
+      }
+    },
+    {
+      "id": "U0fJo2a3vnaodNJhfZ78I",
+      "type": "button",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "iuSv7V59YxUZawN38Qlli",
+      "type": "button",
+      "data": {
+        "label": "Node.js"
+      }
+    },
+    {
+      "id": "nfMrC0eoXZl72H4o3VFEP",
+      "type": "subtopic",
+      "data": {
+        "label": "SameValue"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-UBB-8hUcwo4Mfd0cmEcdAz1",
+      "source": "6khAD6mzZ9S96JJuC5_j6",
+      "target": "UBB-8hUcwo4Mfd0cmEcdA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-l-GKzcsBNA0r6Jax8hwnPz2",
+      "source": "6khAD6mzZ9S96JJuC5_j6",
+      "target": "l-GKzcsBNA0r6Jax8hwnP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-SFPsWnVpZBAw3_re7op4hz1",
+      "source": "6khAD6mzZ9S96JJuC5_j6",
+      "target": "SFPsWnVpZBAw3_re7op4h",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-uXsWIUUxtc4H_iRx3uZv0z1",
+      "source": "6khAD6mzZ9S96JJuC5_j6",
+      "target": "uXsWIUUxtc4H_iRx3uZv0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-ADarwihuI2nBq1C3U7-Zrw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "6khAD6mzZ9S96JJuC5_j6",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-7iMJuaB7yKlSIbT4dBe5Ly1",
+      "source": "kvActjpU4FUJdrmuFoFEe",
+      "target": "7iMJuaB7yKlSIbT4dBe5L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-HfieG3v3wnmpZDfNwEJvZy1",
+      "source": "kvActjpU4FUJdrmuFoFEe",
+      "target": "HfieG3v3wnmpZDfNwEJvZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-Lb5jLF91WO5V5CWpifciWy1",
+      "source": "kvActjpU4FUJdrmuFoFEe",
+      "target": "Lb5jLF91WO5V5CWpifciW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-BqbAWt--Guqex-rrb4ZUvy1",
+      "source": "kvActjpU4FUJdrmuFoFEe",
+      "target": "BqbAWt--Guqex-rrb4ZUv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kvActjpU4FUJdrmuFoFEex2-ADarwihuI2nBq1C3U7-Zrw2",
+      "source": "kvActjpU4FUJdrmuFoFEe",
+      "target": "-jbPPuEXacBR0d0CWPHgd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-SSqBPOJROQpX5poMFSJtJz1",
+      "source": "-jbPPuEXacBR0d0CWPHgd",
+      "target": "SSqBPOJROQpX5poMFSJtJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-RRACLQ6-aopkxImIp3Tocy1",
+      "source": "-jbPPuEXacBR0d0CWPHgd",
+      "target": "xe8HZ8Mt1fK8yJMcDPYHJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrz2-RRACLQ6-aopkxImIp3Tocy1",
+      "source": "-jbPPuEXacBR0d0CWPHgd",
+      "target": "RRACLQ6-aopkxImIp3Toc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-xe8HZ8Mt1fK8yJMcDPYHJz2-D95ndkkwmT5X_HqboEn6Ey2",
+      "source": "xe8HZ8Mt1fK8yJMcDPYHJ",
+      "target": "D95ndkkwmT5X_HqboEn6E",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge--jbPPuEXacBR0d0CWPHgdx2-ADarwihuI2nBq1C3U7-Zrw1",
+      "source": "-jbPPuEXacBR0d0CWPHgd",
+      "target": "XPmBieVCXvL3WbWkYRoKr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-_Bo2YZqZ_gY35SLPML4T6z2",
+      "source": "XPmBieVCXvL3WbWkYRoKr",
+      "target": "_Bo2YZqZ_gY35SLPML4T6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XPmBieVCXvL3WbWkYRoKry2-pP42K_eH4RCdUdUS8BJlPz1",
+      "source": "XPmBieVCXvL3WbWkYRoKr",
+      "target": "pP42K_eH4RCdUdUS8BJlP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XPmBieVCXvL3WbWkYRoKry2-1xhjrRN-Rfekei2JwwU7Yz1",
+      "source": "XPmBieVCXvL3WbWkYRoKr",
+      "target": "1xhjrRN-Rfekei2JwwU7Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrw2-rhJrrqkRqy2Qw_he4SPGzx1",
+      "source": "ADarwihuI2nBq1C3U7-Zr",
+      "target": "rhJrrqkRqy2Qw_he4SPGz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rhJrrqkRqy2Qw_he4SPGzz2-Xc0jL4rafpI-ixIaAxo9Oy1",
+      "source": "rhJrrqkRqy2Qw_he4SPGz",
+      "target": "Xc0jL4rafpI-ixIaAxo9O",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rhJrrqkRqy2Qw_he4SPGzz2-6icsjC4aisDgPWasVuCOty2",
+      "source": "rhJrrqkRqy2Qw_he4SPGz",
+      "target": "6icsjC4aisDgPWasVuCOt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rhJrrqkRqy2Qw_he4SPGzz2-sciU68E13mcfL577y6Vimy2",
+      "source": "rhJrrqkRqy2Qw_he4SPGz",
+      "target": "sciU68E13mcfL577y6Vim",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rhJrrqkRqy2Qw_he4SPGzz2-DSFzj61N9ojz29mjExhVay1",
+      "source": "rhJrrqkRqy2Qw_he4SPGz",
+      "target": "DSFzj61N9ojz29mjExhVa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-XPmBieVCXvL3WbWkYRoKrz2-ADarwihuI2nBq1C3U7-Zry1",
+      "source": "XPmBieVCXvL3WbWkYRoKr",
+      "target": "ADarwihuI2nBq1C3U7-Zr",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zrx2-lBOGoHZrmnIRatvryDwTmw1",
+      "source": "ADarwihuI2nBq1C3U7-Zr",
+      "target": "lBOGoHZrmnIRatvryDwTm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lBOGoHZrmnIRatvryDwTmz2-8X1mdQ3NDBVOZZWBbAFREy1",
+      "source": "lBOGoHZrmnIRatvryDwTm",
+      "target": "8X1mdQ3NDBVOZZWBbAFRE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lBOGoHZrmnIRatvryDwTmz2-NZedBxG9B9TRVOf2QE2yLy2",
+      "source": "lBOGoHZrmnIRatvryDwTm",
+      "target": "NZedBxG9B9TRVOf2QE2yL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ADarwihuI2nBq1C3U7-Zry2-YD-2l_amfqqqCdtc_Zdzoz1",
+      "source": "ADarwihuI2nBq1C3U7-Zr",
+      "target": "23Xa6q5VvRVlzc6Dx8vST",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-YD-2l_amfqqqCdtc_Zdzoy2-iZjl6qe9LGLFqXyopMUFXz1",
+      "source": "23Xa6q5VvRVlzc6Dx8vST",
+      "target": "iZjl6qe9LGLFqXyopMUFX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YD-2l_amfqqqCdtc_Zdzox2-JM16NHhFVOwwbwqCubmYww1",
+      "source": "23Xa6q5VvRVlzc6Dx8vST",
+      "target": "JM16NHhFVOwwbwqCubmYw",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-23Xa6q5VvRVlzc6Dx8vSTz2-YD-2l_amfqqqCdtc_Zdzoy1",
+      "source": "23Xa6q5VvRVlzc6Dx8vST",
+      "target": "YD-2l_amfqqqCdtc_Zdzo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQz2-ttCsd2_H2SuRivCjGv1OXy2",
+      "source": "3tckJ2Sci7z-sNx9jx9eF",
+      "target": "ttCsd2_H2SuRivCjGv1OX",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQz2-34TKGxV9YziOWMh9rT_KEy1",
+      "source": "3tckJ2Sci7z-sNx9jx9eF",
+      "target": "34TKGxV9YziOWMh9rT_KE",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-34TKGxV9YziOWMh9rT_KEx2-ReGIniyLYl5hGExchrJd2w1",
+      "source": "34TKGxV9YziOWMh9rT_KE",
+      "target": "ReGIniyLYl5hGExchrJd2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-3tckJ2Sci7z-sNx9jx9eFy2-_6vZa43gWjxO2OcD1iCCQz1",
+      "source": "3tckJ2Sci7z-sNx9jx9eF",
+      "target": "_6vZa43gWjxO2OcD1iCCQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-640mk-m5mB90Mme-7jcXVz1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "640mk-m5mB90Mme-7jcXV",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-6_8EwyZY2jBkZr7xnfRY3z1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "6_8EwyZY2jBkZr7xnfRY3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-k9rSR-YQ8B_iRcXNm2btPz2",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "k9rSR-YQ8B_iRcXNm2btP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-IvBtUzIGnkgGXrJjqmjf4z1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "IvBtUzIGnkgGXrJjqmjf4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2--v4_V4UuoZSgUk2sqOCimz1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "-v4_V4UuoZSgUk2sqOCim",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-0PK1NwlgkNe2Vf-We4uLHz2",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "0PK1NwlgkNe2Vf-We4uLH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-ghjNJW67Wj5L5QK46xwL-z1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "ghjNJW67Wj5L5QK46xwL-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-bo4SvzU4BrPl3c99zW7Y5z1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "bo4SvzU4BrPl3c99zW7Y5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-udoz0DZi7f-vm30dSnYKuz1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "udoz0DZi7f-vm30dSnYKu",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_6vZa43gWjxO2OcD1iCCQy2-c38b6t5f17Zg2O2yg3eFPz1",
+      "source": "_6vZa43gWjxO2OcD1iCCQ",
+      "target": "c38b6t5f17Zg2O2yg3eFP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-R1D4fsZliHv7wIo8Tj-kpy1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "R1D4fsZliHv7wIo8Tj-kp",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-fr0NChxMXLpJizyMhXcXSy1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "fr0NChxMXLpJizyMhXcXS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-YZlCoPvZuX5MmpLOTj5d4y1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "YZlCoPvZuX5MmpLOTj5d4",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-QLC7bW-qHskLH2HOA-Skoy1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "QLC7bW-qHskLH2HOA-Sko",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-ISNzEYtrWe2v0R7Xfl5k-y1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "ISNzEYtrWe2v0R7Xfl5k-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-k8bJH9qydZm8I9rhH7rXwz2-s8wUJivWmetysJ8bt9FBCy1",
+      "source": "k8bJH9qydZm8I9rhH7rXw",
+      "target": "s8wUJivWmetysJ8bt9FBC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ISNzEYtrWe2v0R7Xfl5k-z2-YJGhhFuWmFvhRKOg6nwONy1",
+      "source": "ISNzEYtrWe2v0R7Xfl5k-",
+      "target": "YJGhhFuWmFvhRKOg6nwON",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ISNzEYtrWe2v0R7Xfl5k-z2-q7b5iMJ1Lfka5A-K-YcaNy2",
+      "source": "ISNzEYtrWe2v0R7Xfl5k-",
+      "target": "q7b5iMJ1Lfka5A-K-YcaN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-ISNzEYtrWe2v0R7Xfl5k-z2-itS6B12I8I1KNCPvc0KCQy1",
+      "source": "ISNzEYtrWe2v0R7Xfl5k-",
+      "target": "itS6B12I8I1KNCPvc0KCQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uy2-3E5MuxPvEJU-dwgTrbQARz2",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "3E5MuxPvEJU-dwgTrbQAR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uy2-azsXq6Y5iCvQDgTWZpWQ3z2",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "azsXq6Y5iCvQDgTWZpWQ3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uy2-qps2Mdm-lwa4Wr0IxKm0Cz1",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "qps2Mdm-lwa4Wr0IxKm0C",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uy2-JVbEBtVrTTFnTF3_yUIACz2",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "JVbEBtVrTTFnTF3_yUIAC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uy2-P0190rTm2wLQmCzWOKourz1",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "P0190rTm2wLQmCzWOKour",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-fm2CuL1IZp3hnrLrPUX7Uz2-sFOqx6_7poVIVuXhJVY0Ey1",
+      "source": "fm2CuL1IZp3hnrLrPUX7U",
+      "target": "sFOqx6_7poVIVuXhJVY0E",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-PJSdqvh5OBwPCNpn3q_S5x2-D8oGY7pdviRByaz6c9sU6w1",
+      "source": "PJSdqvh5OBwPCNpn3q_S5",
+      "target": "D8oGY7pdviRByaz6c9sU6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-yXSF5gGST7l2X-4z1g0d_x2-Dn872mgexmxoLtbkIgIgzw2",
+      "source": "yXSF5gGST7l2X-4z1g0d_",
+      "target": "Dn872mgexmxoLtbkIgIgz",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-sFOqx6_7poVIVuXhJVY0Ez2-D8oGY7pdviRByaz6c9sU6y1",
+      "source": "sFOqx6_7poVIVuXhJVY0E",
+      "target": "D8oGY7pdviRByaz6c9sU6",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-sFOqx6_7poVIVuXhJVY0Ez2-yXSF5gGST7l2X-4z1g0d_y1",
+      "source": "sFOqx6_7poVIVuXhJVY0E",
+      "target": "yXSF5gGST7l2X-4z1g0d_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-q6vciQb_Jk-Up16Pk5NeEy2-F_Lrj0F7UXriqJ0mhwxCyz1",
+      "source": "q6vciQb_Jk-Up16Pk5NeE",
+      "target": "F_Lrj0F7UXriqJ0mhwxCy",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-F_Lrj0F7UXriqJ0mhwxCyy2-TZ8XGdykSJjKBjX6Nivwoz1",
+      "source": "F_Lrj0F7UXriqJ0mhwxCy",
+      "target": "TZ8XGdykSJjKBjX6Nivwo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-TZ8XGdykSJjKBjX6Nivwoy2-hLnJlwnECFbVMeFpH0M5Qz1",
+      "source": "TZ8XGdykSJjKBjX6Nivwo",
+      "target": "hLnJlwnECFbVMeFpH0M5Q",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hLnJlwnECFbVMeFpH0M5Qw2-jLNmYeo20Mbu4WRvVgvwUx1",
+      "source": "hLnJlwnECFbVMeFpH0M5Q",
+      "target": "jLNmYeo20Mbu4WRvVgvwU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hLnJlwnECFbVMeFpH0M5Qx2-MatU4SthAAhByJ40XdZQnw1",
+      "source": "hLnJlwnECFbVMeFpH0M5Q",
+      "target": "MatU4SthAAhByJ40XdZQn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-q6vciQb_Jk-Up16Pk5NeEz2-kL5rfWxXe4J44ENru1uJSx1",
+      "source": "q6vciQb_Jk-Up16Pk5NeE",
+      "target": "kL5rfWxXe4J44ENru1uJS",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MatU4SthAAhByJ40XdZQnx2-KKyX8N4lTgN0w-Khm6Ztqw1",
+      "source": "MatU4SthAAhByJ40XdZQn",
+      "target": "ZR2WfH1cerA-V_kaPwRvm",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-MatU4SthAAhByJ40XdZQnz2-rc5WzBBOm2cus-rQl8EOEy1",
+      "source": "MatU4SthAAhByJ40XdZQn",
+      "target": "rc5WzBBOm2cus-rQl8EOE",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-rc5WzBBOm2cus-rQl8EOEz2-dhEtcgv7G9fNV-AUNJdWky1",
+      "source": "rc5WzBBOm2cus-rQl8EOE",
+      "target": "dhEtcgv7G9fNV-AUNJdWk",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rc5WzBBOm2cus-rQl8EOEz2-BA_ArmZMnVMaL_zl3W3Pty1",
+      "source": "rc5WzBBOm2cus-rQl8EOE",
+      "target": "BA_ArmZMnVMaL_zl3W3Pt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rc5WzBBOm2cus-rQl8EOEz2-ECxISKUAU7js_JsfSHzudy1",
+      "source": "rc5WzBBOm2cus-rQl8EOE",
+      "target": "ECxISKUAU7js_JsfSHzud",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rc5WzBBOm2cus-rQl8EOEx2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "rc5WzBBOm2cus-rQl8EOE",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

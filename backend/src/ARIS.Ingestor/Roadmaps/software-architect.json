@@ -1,0 +1,1497 @@
+{
+  "title": {
+    "card": "Software Architect",
+    "page": "Software Architect"
+  },
+  "description": "Step by step guide to becoming a Software Architect in @currentYear@",
+  "nodes": [
+    {
+      "id": "HaPjaHngq_QXfsGqfVnj-",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3wUggQOHRXp1cG9e0RrRL",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "KLmz1sHYqS_SE65Jd22qe",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "BZl8WjxR6OBpYI7btJ7Z4",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "4dmGhZzyRHLp5kW_QLhFG",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "-B9_tpFcjP76sRfklGI91",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "niKLPwmuH0-UH6WY9Lhk-",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tbmunGk2lG74hVWv_W8lN",
+      "type": "title",
+      "data": {
+        "label": "Software Architect"
+      }
+    },
+    {
+      "id": "Bkiz775Up6nX6I4ZjNeq5",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "4zicbh7Wg2lmKSRhb6E-L",
+      "type": "topic",
+      "data": {
+        "label": "Understand the Basics"
+      }
+    },
+    {
+      "id": "EGG99VA-PEdWdVxNDLtG_",
+      "type": "subtopic",
+      "data": {
+        "label": "What is Software Architecture"
+      }
+    },
+    {
+      "id": "eG38hT0rotYJ3G-t9df9R",
+      "type": "subtopic",
+      "data": {
+        "label": "What is a Software Architect"
+      }
+    },
+    {
+      "id": "2sR4KULvAUUoOtopvsEBs",
+      "type": "subtopic",
+      "data": {
+        "label": "Levels of Architecture"
+      }
+    },
+    {
+      "id": "Lqe47l4j-C4OwkbkwPYry",
+      "type": "subtopic",
+      "data": {
+        "label": "Application Architecture"
+      }
+    },
+    {
+      "id": "uGs-9xE3DMJxKhenltbFK",
+      "type": "subtopic",
+      "data": {
+        "label": "Solution Architecture"
+      }
+    },
+    {
+      "id": "vlW07sc-FQnxPMjDMn8_F",
+      "type": "subtopic",
+      "data": {
+        "label": "Enterprise Architecture"
+      }
+    },
+    {
+      "id": "-1CN6Aid4t6LizfUPHZl0",
+      "type": "paragraph",
+      "data": {
+        "label": "Describes how an application is built including its components, how they interact with each other, environment in which they operate and so on."
+      }
+    },
+    {
+      "id": "EdKaiAzDHy0l2GdboCABn",
+      "type": "paragraph",
+      "data": {
+        "label": "Software Architecture"
+      }
+    },
+    {
+      "id": "7AbVOnkYRf5nCmlGgsqaa",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "x5V5daeZ5VDcgKqGXvjA7",
+      "type": "paragraph",
+      "data": {
+        "label": "A software expert who makes high level software design choices, including technical standards, tools, design principles, platforms to be used, etc."
+      }
+    },
+    {
+      "id": "T44pv88xPxh_JipwWpRLi",
+      "type": "paragraph",
+      "data": {
+        "label": "Software Architect"
+      }
+    },
+    {
+      "id": "rUxbG2S2nJuA1YVY6sjiX",
+      "type": "topic",
+      "data": {
+        "label": "Responsibilities"
+      }
+    },
+    {
+      "id": "3rzjC7Y05bOvY4B3y69hn",
+      "type": "paragraph",
+      "data": {
+        "label": "Tech Decisions"
+      }
+    },
+    {
+      "id": "K-doenNgxcrnoGTeX18RI",
+      "type": "paragraph",
+      "data": {
+        "label": "Design \u0026 Architecture Decisions"
+      }
+    },
+    {
+      "id": "RD-XVnyRBnLnNnYJwsJe7",
+      "type": "paragraph",
+      "data": {
+        "label": "Requirements Elicitation"
+      }
+    },
+    {
+      "id": "2ij7YJCqkRQwMCrM3isjN",
+      "type": "paragraph",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "35YVxotPwXi4Zpjauc8-P",
+      "type": "paragraph",
+      "data": {
+        "label": "Enforcing Standards"
+      }
+    },
+    {
+      "id": "BxWxDufL8BviuG9qp6fg9",
+      "type": "paragraph",
+      "data": {
+        "label": "Collaborate with Others"
+      }
+    },
+    {
+      "id": "dwpl-QlN9EzpSsLKfDZiU",
+      "type": "paragraph",
+      "data": {
+        "label": "Consult \u0026 Coach Developers"
+      }
+    },
+    {
+      "id": "lBtlDFPEQvQ_xtLtehU0S",
+      "type": "topic",
+      "data": {
+        "label": "Important Skills to Learn"
+      }
+    },
+    {
+      "id": "fBd2m8tMJmhuNSaakrpg4",
+      "type": "subtopic",
+      "data": {
+        "label": "Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "MSDo0nPk_ghRYkZS4MAQ_",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision Making"
+      }
+    },
+    {
+      "id": "lrtgF1RTaS4TCKww0aY6C",
+      "type": "subtopic",
+      "data": {
+        "label": "Simplifying Things"
+      }
+    },
+    {
+      "id": "77KvWCA1oHSGgDKBTwjv7",
+      "type": "subtopic",
+      "data": {
+        "label": "How to Code"
+      }
+    },
+    {
+      "id": "5D-kbQ520k1D3fCtD01T7",
+      "type": "subtopic",
+      "data": {
+        "label": "Documentation"
+      }
+    },
+    {
+      "id": "Ac49sOlQKblYK4FZuFHDR",
+      "type": "subtopic",
+      "data": {
+        "label": "Communication"
+      }
+    },
+    {
+      "id": "m0ZYdqPFDoHOPo18wKyvV",
+      "type": "subtopic",
+      "data": {
+        "label": "Estimate and Evaluate"
+      }
+    },
+    {
+      "id": "otHQ6ye1xgkI1qb4tEHVF",
+      "type": "subtopic",
+      "data": {
+        "label": "Balance"
+      }
+    },
+    {
+      "id": "LSWlk9A3b6hco9Il_elao",
+      "type": "subtopic",
+      "data": {
+        "label": "Consult \u0026 Coach"
+      }
+    },
+    {
+      "id": "YW6j3Sg511dXToTcwSnOS",
+      "type": "subtopic",
+      "data": {
+        "label": "Marketing Skills"
+      }
+    },
+    {
+      "id": "hFx3mLqh5omNxqI9lfaAQ",
+      "type": "topic",
+      "data": {
+        "label": "Technical Skills"
+      }
+    },
+    {
+      "id": "uoDtVFThaV6OMK2wXGfP5",
+      "type": "topic",
+      "data": {
+        "label": "Programming Languages"
+      }
+    },
+    {
+      "id": "a5DB_hsD4bAf8BtHNFNPo",
+      "type": "subtopic",
+      "data": {
+        "label": "Java / Kotlin / Scala / Swift"
+      }
+    },
+    {
+      "id": "j2Ph2QcKwmKlbaMHz1l_i",
+      "type": "subtopic",
+      "data": {
+        "label": "Python"
+      }
+    },
+    {
+      "id": "U_Hmzfjjs1jVtu2CZ0TlG",
+      "type": "subtopic",
+      "data": {
+        "label": "Ruby"
+      }
+    },
+    {
+      "id": "nKlM9k4qAh4wBFXqM-2kC",
+      "type": "subtopic",
+      "data": {
+        "label": "Go"
+      }
+    },
+    {
+      "id": "bhP5gMpRVebSFpCeHVXBj",
+      "type": "subtopic",
+      "data": {
+        "label": "JavaScript / TypeScript"
+      }
+    },
+    {
+      "id": "D1IXOBUrrXf5bXhVu9cmI",
+      "type": "subtopic",
+      "data": {
+        "label": ".NET Framework Based"
+      }
+    },
+    {
+      "id": "_U0VoTkqM1d6NR13p5azS",
+      "type": "topic",
+      "data": {
+        "label": "Patterns \u0026 Design Principles"
+      }
+    },
+    {
+      "id": "AMDLJ_Bup-AY1chl_taV3",
+      "type": "subtopic",
+      "data": {
+        "label": "OOP"
+      }
+    },
+    {
+      "id": "jj5otph6mEYiR-oU5WVtT",
+      "type": "subtopic",
+      "data": {
+        "label": "MVC, MVP, MVVM"
+      }
+    },
+    {
+      "id": "RsnN5bt8OhSMjSFmVgw-X",
+      "type": "subtopic",
+      "data": {
+        "label": "CQRS, Eventual Consistency"
+      }
+    },
+    {
+      "id": "AoWO2BIKG5X4JWir6kh5r",
+      "type": "subtopic",
+      "data": {
+        "label": "Actors"
+      }
+    },
+    {
+      "id": "bbKEEk7dvfFZBBJaIjm0j",
+      "type": "subtopic",
+      "data": {
+        "label": "ACID, CAP Theorem"
+      }
+    },
+    {
+      "id": "QNG-KP01WQnq8o1-In1-n",
+      "type": "subtopic",
+      "data": {
+        "label": "SOLID"
+      }
+    },
+    {
+      "id": "DnP66pjK3b8tCtYr05n2G",
+      "type": "subtopic",
+      "data": {
+        "label": "TDD"
+      }
+    },
+    {
+      "id": "IIelzs8XYMPnXabFKRI51",
+      "type": "subtopic",
+      "data": {
+        "label": "DDD"
+      }
+    },
+    {
+      "id": "diu8MyHxZuZSdhavYVj1T",
+      "type": "topic",
+      "data": {
+        "label": "Tools"
+      }
+    },
+    {
+      "id": "ZEzYb-i55hBe9kK3bla94",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "CYnUg_okOcRrD7fSllxLW",
+      "type": "subtopic",
+      "data": {
+        "label": "Slack"
+      }
+    },
+    {
+      "id": "a6joS9WXg-rbw29_KfBd9",
+      "type": "subtopic",
+      "data": {
+        "label": "Trello"
+      }
+    },
+    {
+      "id": "3bpd0iZTd3G-H8A7yrExY",
+      "type": "subtopic",
+      "data": {
+        "label": "Atlassian Tools"
+      }
+    },
+    {
+      "id": "PyTuVs08_z4EhLwhTYzFu",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "SuMhTyaBS9vwASxAt39DH",
+      "type": "topic",
+      "data": {
+        "label": "Tools"
+      }
+    },
+    {
+      "id": "OaLmlfkZid7hKqJ9G8oNV",
+      "type": "topic",
+      "data": {
+        "label": "Architecture"
+      }
+    },
+    {
+      "id": "FAXKxl3fWUFShYmoCsInZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Serverless"
+      }
+    },
+    {
+      "id": "mka_DwiboH5sGFhXhk6ez",
+      "type": "subtopic",
+      "data": {
+        "label": "Client / Server"
+      }
+    },
+    {
+      "id": "05hLO2_A8Tr6cLJGFRhOh",
+      "type": "subtopic",
+      "data": {
+        "label": "Layered"
+      }
+    },
+    {
+      "id": "j7OP6RD_IAU6HsyiGaynx",
+      "type": "subtopic",
+      "data": {
+        "label": "Distributed Systems"
+      }
+    },
+    {
+      "id": "6uvmMgvOwGyuLC5TOhjFu",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Oriented"
+      }
+    },
+    {
+      "id": "IzFTn5-tQuF_Z0cG_w6CW",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "7tBAD0ox9hTK4D483GTRo",
+      "type": "subtopic",
+      "data": {
+        "label": "Hashing Algorithms"
+      }
+    },
+    {
+      "id": "OpL2EqvHbUmFgnpuhtZPr",
+      "type": "subtopic",
+      "data": {
+        "label": "PKI"
+      }
+    },
+    {
+      "id": "KhqUK-7jdClu9M2Pq7x--",
+      "type": "subtopic",
+      "data": {
+        "label": "OWASP"
+      }
+    },
+    {
+      "id": "KiwFXB6yd0go30zAFMTJt",
+      "type": "subtopic",
+      "data": {
+        "label": "Auth Strategies"
+      }
+    },
+    {
+      "id": "YCJYRA3b-YSm8vKmGUFk5",
+      "type": "topic",
+      "data": {
+        "label": "Working with Data"
+      }
+    },
+    {
+      "id": "92GG4IRZ3FijumC94aL-T",
+      "type": "subtopic",
+      "data": {
+        "label": "Hadoop, Spark, MapReduce"
+      }
+    },
+    {
+      "id": "JUFE4OQhnXOt1J_MG-Sjf",
+      "type": "subtopic",
+      "data": {
+        "label": "ETL, Datawarehouses"
+      }
+    },
+    {
+      "id": "n5AcBt_u8qtTe3PP9svPZ",
+      "type": "subtopic",
+      "data": {
+        "label": "SQL Databases"
+      }
+    },
+    {
+      "id": "57liQPaPyVpE-mdLnsbi0",
+      "type": "subtopic",
+      "data": {
+        "label": "NoSQL Databases"
+      }
+    },
+    {
+      "id": "a0baFv7hVWZGvS5VLh5ig",
+      "type": "subtopic",
+      "data": {
+        "label": "Apache Spark"
+      }
+    },
+    {
+      "id": "I_VjjmMK52_tS8qjQUspN",
+      "type": "subtopic",
+      "data": {
+        "label": "Hadoop"
+      }
+    },
+    {
+      "id": "B5YtP8C1A0jB3MOdg0c_q",
+      "type": "subtopic",
+      "data": {
+        "label": "Datawarehouse Principles"
+      }
+    },
+    {
+      "id": "7uGRbqYB-FpHb7H0Cgkmu",
+      "type": "label",
+      "data": {
+        "label": "Analytics"
+      }
+    },
+    {
+      "id": "Ocn7-ctpnl71ZCZ_uV-uD",
+      "type": "topic",
+      "data": {
+        "label": "APIs \u0026 Integrations"
+      }
+    },
+    {
+      "id": "priDGksAvJ05YzakkTFtM",
+      "type": "subtopic",
+      "data": {
+        "label": "gRPC"
+      }
+    },
+    {
+      "id": "fELnBA0eOoE-d9rSmDJ8l",
+      "type": "subtopic",
+      "data": {
+        "label": "ESB, SOAP"
+      }
+    },
+    {
+      "id": "Sp3FdPT4F9YnTGvlE_vyq",
+      "type": "subtopic",
+      "data": {
+        "label": "GraphQL"
+      }
+    },
+    {
+      "id": "Ss43xwK1ydEToj6XmmCt7",
+      "type": "subtopic",
+      "data": {
+        "label": "REST"
+      }
+    },
+    {
+      "id": "DwNda95-fE7LWnDA6u1LU",
+      "type": "subtopic",
+      "data": {
+        "label": "BPM, BPEL"
+      }
+    },
+    {
+      "id": "4NVdEbmpQVHpBc7582S6E",
+      "type": "subtopic",
+      "data": {
+        "label": "Messaging Queues"
+      }
+    },
+    {
+      "id": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "type": "topic",
+      "data": {
+        "label": "Web, Mobile"
+      }
+    },
+    {
+      "id": "6FDGecsHbqY-cm32yTZJa",
+      "type": "subtopic",
+      "data": {
+        "label": "Functional Programming"
+      }
+    },
+    {
+      "id": "mCiYCbKIOVU34qil_q7Hg",
+      "type": "subtopic",
+      "data": {
+        "label": "React, Vue, Angular"
+      }
+    },
+    {
+      "id": "ulwgDCQi_BYx5lmll7pzU",
+      "type": "subtopic",
+      "data": {
+        "label": "SPA, SSR, SSG"
+      }
+    },
+    {
+      "id": "vpko5Kyf6BZ5MHpxXOKaf",
+      "type": "subtopic",
+      "data": {
+        "label": "Microfrontends"
+      }
+    },
+    {
+      "id": "s0RvufK2PLMXtlsn2KAUN",
+      "type": "subtopic",
+      "data": {
+        "label": "W3C and WHATWG"
+      }
+    },
+    {
+      "id": "C0g_kQFlte5siHMHwlHQb",
+      "type": "subtopic",
+      "data": {
+        "label": "Reactive Programming"
+      }
+    },
+    {
+      "id": "hjlkxYZS7Zf9En3IUS-Wm",
+      "type": "topic",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "LQlzVxUxM3haWRwbhYHKY",
+      "type": "subtopic",
+      "data": {
+        "label": "BABOK"
+      }
+    },
+    {
+      "id": "wFu9VO48EYbIQrsM8YUCj",
+      "type": "subtopic",
+      "data": {
+        "label": "IAF"
+      }
+    },
+    {
+      "id": "8FTKnAKNL9LnZBrw9YXqK",
+      "type": "subtopic",
+      "data": {
+        "label": "UML"
+      }
+    },
+    {
+      "id": "5TDTU22Fla2mRr6JeOcaY",
+      "type": "subtopic",
+      "data": {
+        "label": "TOGAF"
+      }
+    },
+    {
+      "id": "UyIwiIiKaa6LTQaqzbCam",
+      "type": "topic",
+      "data": {
+        "label": "Management"
+      }
+    },
+    {
+      "id": "hRug9yJKYacB9X_2cUalR",
+      "type": "subtopic",
+      "data": {
+        "label": "PMI"
+      }
+    },
+    {
+      "id": "Rq1Wi-cHjS54SYo-Btp-e",
+      "type": "subtopic",
+      "data": {
+        "label": "ITIL"
+      }
+    },
+    {
+      "id": "SJ5lrlvyXgtAwOx4wvT2W",
+      "type": "subtopic",
+      "data": {
+        "label": "Prince2"
+      }
+    },
+    {
+      "id": "7rudOREGG-TTkCosU0hNw",
+      "type": "subtopic",
+      "data": {
+        "label": "RUP"
+      }
+    },
+    {
+      "id": "VW5wxTaGFAgplYadcSKP7",
+      "type": "label",
+      "data": {
+        "label": "Certifications"
+      }
+    },
+    {
+      "id": "4kW6EUtdDfIN80z4nOMFS",
+      "type": "label",
+      "data": {
+        "label": "Agile Model"
+      }
+    },
+    {
+      "id": "qwpsGRFgzAYstM7bJA2ZJ",
+      "type": "subtopic",
+      "data": {
+        "label": "LeSS"
+      }
+    },
+    {
+      "id": "Bg7ru1q1j6pNB43HGxnHT",
+      "type": "subtopic",
+      "data": {
+        "label": "SaFE"
+      }
+    },
+    {
+      "id": "O7H6dt3Z7EKohxfJzwbPM",
+      "type": "subtopic",
+      "data": {
+        "label": "Kanban"
+      }
+    },
+    {
+      "id": "PKqwKvoffm0unwcFwpojk",
+      "type": "subtopic",
+      "data": {
+        "label": "Scrum"
+      }
+    },
+    {
+      "id": "7fL9lSu4BD1wRjnZy9tM9",
+      "type": "subtopic",
+      "data": {
+        "label": "XP"
+      }
+    },
+    {
+      "id": "cBWJ6Duw99tSKr7U6OW3A",
+      "type": "topic",
+      "data": {
+        "label": "Networks"
+      }
+    },
+    {
+      "id": "Mt5W1IvuHevNXVRlh7z26",
+      "type": "subtopic",
+      "data": {
+        "label": "OSI"
+      }
+    },
+    {
+      "id": "UCCT7-E_QUKPg3jAsjobx",
+      "type": "subtopic",
+      "data": {
+        "label": "TCP/IP Model"
+      }
+    },
+    {
+      "id": "Nq6o6Ty8VyNRsvg-UWp7D",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP, HTTPS"
+      }
+    },
+    {
+      "id": "6_EOmU5GYGDGzmNoLY8cB",
+      "type": "subtopic",
+      "data": {
+        "label": "Proxies"
+      }
+    },
+    {
+      "id": "Hqk_GGsFi14SI5fgPSoGV",
+      "type": "subtopic",
+      "data": {
+        "label": "Firewalls"
+      }
+    },
+    {
+      "id": "EdJhuNhMSWjeVxGW-RZtL",
+      "type": "topic",
+      "data": {
+        "label": "Operations Knowledge"
+      }
+    },
+    {
+      "id": "igf9yp1lRdAlN5gyQ8HHC",
+      "type": "subtopic",
+      "data": {
+        "label": "Infrastructure as Code"
+      }
+    },
+    {
+      "id": "C0rKd5Rr27Z1_GleoEZxF",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Providers"
+      }
+    },
+    {
+      "id": "WoXoVwkSqXTP5U8HtyJOL",
+      "type": "subtopic",
+      "data": {
+        "label": "Serverless Concepts"
+      }
+    },
+    {
+      "id": "XnvlRrOhdoMsiGwGEhBro",
+      "type": "subtopic",
+      "data": {
+        "label": "Linux / Unix"
+      }
+    },
+    {
+      "id": "OErbfM-H3laFm47GCHNPI",
+      "type": "subtopic",
+      "data": {
+        "label": "Service Mesh"
+      }
+    },
+    {
+      "id": "isavRe4ANVn77ZX6gNSLH",
+      "type": "subtopic",
+      "data": {
+        "label": "CI / CD"
+      }
+    },
+    {
+      "id": "l3oeo65FyV5HHvw5n_1wa",
+      "type": "subtopic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "CxceVdaNCyKDhs0huDtcL",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Design Patterns"
+      }
+    },
+    {
+      "id": "glz8FmnkNhdmgBUj3EeL2",
+      "type": "button",
+      "data": {
+        "label": "Visit DevOps Roadmap"
+      }
+    },
+    {
+      "id": "8yALyPVUZPtd7LX3GrO1e",
+      "type": "topic",
+      "data": {
+        "label": "Enterprise Software"
+      }
+    },
+    {
+      "id": "gdtI0H_PzzTj_aFQn_NeA",
+      "type": "subtopic",
+      "data": {
+        "label": "MS Dynamics"
+      }
+    },
+    {
+      "id": "TxWAznp1tUtZ1MvThf9M1",
+      "type": "subtopic",
+      "data": {
+        "label": "SAP ERP, HANA, Business Objects"
+      }
+    },
+    {
+      "id": "YfYviOXqGVp9C6DuhqBrn",
+      "type": "subtopic",
+      "data": {
+        "label": "EMC DMS"
+      }
+    },
+    {
+      "id": "5EVecZmvor09LjD7WR_Y9",
+      "type": "subtopic",
+      "data": {
+        "label": "IBM BPM"
+      }
+    },
+    {
+      "id": "mOXyzdNn8W-9R99ffcnor",
+      "type": "subtopic",
+      "data": {
+        "label": "Salesforce"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant roadmaps and keep learning"
+      }
+    },
+    {
+      "id": "gC8lsIdYLRzo3HzwVqtm1",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "U4YFpc82iJ60qD3aYnJkt",
+      "type": "button",
+      "data": {
+        "label": "System Design"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "Software Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "X3IC3D4MqkxpS6s99vdj-",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "b6lCGw82qKpUmsxe1r1f5",
+      "type": "subtopic",
+      "data": {
+        "label": "Microservices"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-tbmunGk2lG74hVWv_W8lNx2-4zicbh7Wg2lmKSRhb6E-Lw2",
+      "source": "tbmunGk2lG74hVWv_W8lN",
+      "target": "4zicbh7Wg2lmKSRhb6E-L",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-4zicbh7Wg2lmKSRhb6E-Ly2-EGG99VA-PEdWdVxNDLtG_z1",
+      "source": "4zicbh7Wg2lmKSRhb6E-L",
+      "target": "EGG99VA-PEdWdVxNDLtG_",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4zicbh7Wg2lmKSRhb6E-Ly2-eG38hT0rotYJ3G-t9df9Rz1",
+      "source": "4zicbh7Wg2lmKSRhb6E-L",
+      "target": "eG38hT0rotYJ3G-t9df9R",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4zicbh7Wg2lmKSRhb6E-Ly2-2sR4KULvAUUoOtopvsEBsz1",
+      "source": "4zicbh7Wg2lmKSRhb6E-L",
+      "target": "2sR4KULvAUUoOtopvsEBs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-2sR4KULvAUUoOtopvsEBsx2-Lqe47l4j-C4OwkbkwPYryw1",
+      "source": "2sR4KULvAUUoOtopvsEBs",
+      "target": "Lqe47l4j-C4OwkbkwPYry",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4zicbh7Wg2lmKSRhb6E-Lx2-hjlkxYZS7Zf9En3IUS-Wmw1",
+      "source": "4zicbh7Wg2lmKSRhb6E-L",
+      "target": "rUxbG2S2nJuA1YVY6sjiX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmw2-77KvWCA1oHSGgDKBTwjv7x1",
+      "source": "lBtlDFPEQvQ_xtLtehU0S",
+      "target": "77KvWCA1oHSGgDKBTwjv7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmx2-5D-kbQ520k1D3fCtD01T7w1",
+      "source": "lBtlDFPEQvQ_xtLtehU0S",
+      "target": "5D-kbQ520k1D3fCtD01T7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lBtlDFPEQvQ_xtLtehU0Sy2-hjlkxYZS7Zf9En3IUS-Wmz1",
+      "source": "lBtlDFPEQvQ_xtLtehU0S",
+      "target": "hFx3mLqh5omNxqI9lfaAQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmw2-D1IXOBUrrXf5bXhVu9cmIx1",
+      "source": "uoDtVFThaV6OMK2wXGfP5",
+      "target": "D1IXOBUrrXf5bXhVu9cmI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hFx3mLqh5omNxqI9lfaAQy2-hjlkxYZS7Zf9En3IUS-Wmz1",
+      "source": "hFx3mLqh5omNxqI9lfaAQ",
+      "target": "uoDtVFThaV6OMK2wXGfP5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-uoDtVFThaV6OMK2wXGfP5x2-hjlkxYZS7Zf9En3IUS-Wmw1",
+      "source": "uoDtVFThaV6OMK2wXGfP5",
+      "target": "_U0VoTkqM1d6NR13p5azS",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmx2-jj5otph6mEYiR-oU5WVtTw2",
+      "source": "_U0VoTkqM1d6NR13p5azS",
+      "target": "jj5otph6mEYiR-oU5WVtT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_U0VoTkqM1d6NR13p5azSz2-hjlkxYZS7Zf9En3IUS-Wmy1",
+      "source": "_U0VoTkqM1d6NR13p5azS",
+      "target": "diu8MyHxZuZSdhavYVj1T",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-PyTuVs08_z4EhLwhTYzFuy1",
+      "source": "diu8MyHxZuZSdhavYVj1T",
+      "target": "ZEzYb-i55hBe9kK3bla94",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-CYnUg_okOcRrD7fSllxLWy2",
+      "source": "diu8MyHxZuZSdhavYVj1T",
+      "target": "CYnUg_okOcRrD7fSllxLW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-a6joS9WXg-rbw29_KfBd9y1",
+      "source": "diu8MyHxZuZSdhavYVj1T",
+      "target": "a6joS9WXg-rbw29_KfBd9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-3bpd0iZTd3G-H8A7yrExYy1",
+      "source": "diu8MyHxZuZSdhavYVj1T",
+      "target": "3bpd0iZTd3G-H8A7yrExY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-SuMhTyaBS9vwASxAt39DHx2-hjlkxYZS7Zf9En3IUS-Wmw1",
+      "source": "SuMhTyaBS9vwASxAt39DH",
+      "target": "OaLmlfkZid7hKqJ9G8oNV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-7tBAD0ox9hTK4D483GTRoy1",
+      "source": "IzFTn5-tQuF_Z0cG_w6CW",
+      "target": "7tBAD0ox9hTK4D483GTRo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-OpL2EqvHbUmFgnpuhtZPry1",
+      "source": "IzFTn5-tQuF_Z0cG_w6CW",
+      "target": "OpL2EqvHbUmFgnpuhtZPr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-KiwFXB6yd0go30zAFMTJty1",
+      "source": "IzFTn5-tQuF_Z0cG_w6CW",
+      "target": "KiwFXB6yd0go30zAFMTJt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-OaLmlfkZid7hKqJ9G8oNVz2-hjlkxYZS7Zf9En3IUS-Wmw1",
+      "source": "OaLmlfkZid7hKqJ9G8oNV",
+      "target": "IzFTn5-tQuF_Z0cG_w6CW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-IzFTn5-tQuF_Z0cG_w6CWx2-hjlkxYZS7Zf9En3IUS-Wmw1",
+      "source": "IzFTn5-tQuF_Z0cG_w6CW",
+      "target": "YCJYRA3b-YSm8vKmGUFk5",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-57liQPaPyVpE-mdLnsbi0y2",
+      "source": "YCJYRA3b-YSm8vKmGUFk5",
+      "target": "57liQPaPyVpE-mdLnsbi0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-n5AcBt_u8qtTe3PP9svPZy1",
+      "source": "YCJYRA3b-YSm8vKmGUFk5",
+      "target": "n5AcBt_u8qtTe3PP9svPZ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-JUFE4OQhnXOt1J_MG-Sjfy1",
+      "source": "YCJYRA3b-YSm8vKmGUFk5",
+      "target": "JUFE4OQhnXOt1J_MG-Sjf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmz2-92GG4IRZ3FijumC94aL-Ty1",
+      "source": "YCJYRA3b-YSm8vKmGUFk5",
+      "target": "92GG4IRZ3FijumC94aL-T",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-YCJYRA3b-YSm8vKmGUFk5x2-Ocn7-ctpnl71ZCZ_uV-uDw2",
+      "source": "YCJYRA3b-YSm8vKmGUFk5",
+      "target": "Ocn7-ctpnl71ZCZ_uV-uD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Ocn7-ctpnl71ZCZ_uV-uDx2-priDGksAvJ05YzakkTFtMw2",
+      "source": "Ocn7-ctpnl71ZCZ_uV-uD",
+      "target": "priDGksAvJ05YzakkTFtM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Ocn7-ctpnl71ZCZ_uV-uDy2-hjlkxYZS7Zf9En3IUS-Wmz1",
+      "source": "Ocn7-ctpnl71ZCZ_uV-uD",
+      "target": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-C0g_kQFlte5siHMHwlHQbz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "C0g_kQFlte5siHMHwlHQb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-6FDGecsHbqY-cm32yTZJaz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "6FDGecsHbqY-cm32yTZJa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-mCiYCbKIOVU34qil_q7Hgz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "mCiYCbKIOVU34qil_q7Hg",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-ulwgDCQi_BYx5lmll7pzUz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "ulwgDCQi_BYx5lmll7pzU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-vpko5Kyf6BZ5MHpxXOKafz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "vpko5Kyf6BZ5MHpxXOKaf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-s0RvufK2PLMXtlsn2KAUNz1",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "s0RvufK2PLMXtlsn2KAUN",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-j9Y2YbBKi3clO_sZ2L_hQx2-hjlkxYZS7Zf9En3IUS-Wmw2",
+      "source": "j9Y2YbBKi3clO_sZ2L_hQ",
+      "target": "hjlkxYZS7Zf9En3IUS-Wm",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmx2-LQlzVxUxM3haWRwbhYHKYw2",
+      "source": "hjlkxYZS7Zf9En3IUS-Wm",
+      "target": "LQlzVxUxM3haWRwbhYHKY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-hjlkxYZS7Zf9En3IUS-Wmy2-UyIwiIiKaa6LTQaqzbCamz1",
+      "source": "hjlkxYZS7Zf9En3IUS-Wm",
+      "target": "UyIwiIiKaa6LTQaqzbCam",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-UyIwiIiKaa6LTQaqzbCamz2-cBWJ6Duw99tSKr7U6OW3Ay1",
+      "source": "UyIwiIiKaa6LTQaqzbCam",
+      "target": "cBWJ6Duw99tSKr7U6OW3A",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-cBWJ6Duw99tSKr7U6OW3Ax2-Mt5W1IvuHevNXVRlh7z26w1",
+      "source": "cBWJ6Duw99tSKr7U6OW3A",
+      "target": "Mt5W1IvuHevNXVRlh7z26",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-cBWJ6Duw99tSKr7U6OW3Az2-EdJhuNhMSWjeVxGW-RZtLy1",
+      "source": "cBWJ6Duw99tSKr7U6OW3A",
+      "target": "EdJhuNhMSWjeVxGW-RZtL",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-igf9yp1lRdAlN5gyQ8HHCy1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "igf9yp1lRdAlN5gyQ8HHC",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-C0rKd5Rr27Z1_GleoEZxFy1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "C0rKd5Rr27Z1_GleoEZxF",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-WoXoVwkSqXTP5U8HtyJOLy2",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "WoXoVwkSqXTP5U8HtyJOL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-XnvlRrOhdoMsiGwGEhBroy1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "XnvlRrOhdoMsiGwGEhBro",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-OErbfM-H3laFm47GCHNPIy1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "OErbfM-H3laFm47GCHNPI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-isavRe4ANVn77ZX6gNSLHy1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "isavRe4ANVn77ZX6gNSLH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-l3oeo65FyV5HHvw5n_1way1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "l3oeo65FyV5HHvw5n_1wa",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLz2-CxceVdaNCyKDhs0huDtcLy2",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "CxceVdaNCyKDhs0huDtcL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EdJhuNhMSWjeVxGW-RZtLx2-8yALyPVUZPtd7LX3GrO1ew1",
+      "source": "EdJhuNhMSWjeVxGW-RZtL",
+      "target": "8yALyPVUZPtd7LX3GrO1e",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8yALyPVUZPtd7LX3GrO1ey2-gdtI0H_PzzTj_aFQn_NeAz1",
+      "source": "8yALyPVUZPtd7LX3GrO1e",
+      "target": "gdtI0H_PzzTj_aFQn_NeA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8yALyPVUZPtd7LX3GrO1ey2-TxWAznp1tUtZ1MvThf9M1z1",
+      "source": "8yALyPVUZPtd7LX3GrO1e",
+      "target": "TxWAznp1tUtZ1MvThf9M1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8yALyPVUZPtd7LX3GrO1ey2-5EVecZmvor09LjD7WR_Y9z1",
+      "source": "8yALyPVUZPtd7LX3GrO1e",
+      "target": "5EVecZmvor09LjD7WR_Y9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8yALyPVUZPtd7LX3GrO1ey2-mOXyzdNn8W-9R99ffcnorz1",
+      "source": "8yALyPVUZPtd7LX3GrO1e",
+      "target": "mOXyzdNn8W-9R99ffcnor",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8yALyPVUZPtd7LX3GrO1ex2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "8yALyPVUZPtd7LX3GrO1e",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-OaLmlfkZid7hKqJ9G8oNVx2-b6lCGw82qKpUmsxe1r1f5w1",
+      "source": "OaLmlfkZid7hKqJ9G8oNV",
+      "target": "b6lCGw82qKpUmsxe1r1f5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+{
+  "type": "resume",
+  "runs": 3,
+  "results": {
+    "mistral": {
+      "latencyMs": [
+        29752,
+        26698,
+        27066
+      ],
+      "avgLatencyMs": 27838.666666666668,
+      "output": {
+        "roles": [
+          {
+            "title": "Senior Data Analyst",
+            "duration": "March 2023 - Present",
+            "is_current": true
+          },
+          {
+            "title": "Data Analyst",
+            "duration": "July 2021 - March 2023",
+            "is_current": false
+          },
+          {
+            "title": "Junior Data Analyst",
+            "duration": "June 2020 - July 2021",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "SQL",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "R",
+            "category": "Technical",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Tableau",
+            "category": "Tools & Platforms",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Power BI",
+            "category": "Tools & Platforms",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          },
+          {
+            "name": "Excel",
+            "category": "Tools & Platforms",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Jupyter Notebook",
+            "category": "Tools & Platforms",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Google Analytics",
+            "category": "Tools & Platforms",
+            "proficiency": "Advanced",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Looker",
+            "category": "Tools & Platforms",
+            "proficiency": "Expert",
+            "years_of_experience": 2
+          },
+          {
+            "name": "dbt",
+            "category": "Tools & Platforms",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Databases",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "MySQL",
+            "category": "Databases",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "BigQuery",
+            "category": "Databases",
+            "proficiency": "Advanced",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Snowflake",
+            "category": "Databases",
+            "proficiency": "Expert",
+            "years_of_experience": 1.5
+          },
+          {
+            "name": "Microsoft SQL Server",
+            "category": "Databases",
+            "proficiency": "Intermediate",
+            "years_of_experience": 1
+          },
+          {
+            "name": "Pandas",
+            "category": "Libraries",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "NumPy",
+            "category": "Libraries",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Matplotlib",
+            "category": "Libraries",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Seaborn",
+            "category": "Libraries",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Scikit-learn",
+            "category": "Libraries",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Statsmodels",
+            "category": "Libraries",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Git",
+            "category": "Other",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "JIRA",
+            "category": "Other",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Confluence",
+            "category": "Other",
+            "proficiency": "Beginner",
+            "years_of_experience": 1
+          },
+          {
+            "name": "A/B Testing",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "ETL Pipelines",
+            "category": "Soft Skills",
+            "proficiency": "Expert",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Agile/Scrum",
+            "category": "Soft Skills",
+            "proficiency": "Advanced",
+            "years_of_experience": 2.5
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Senior Data Analyst",
+            "company": "Dimensional Fund Advisors",
+            "bullets": [
+              "Design and maintain 15+ Tableau dashboards used by portfolio managers and C-suite executives to monitor $600B+ in assets under management",
+              "Build automated ETL pipelines in Python and dbt, reducing manual data preparation time by 65% and eliminating recurring data quality issues",
+              "Conduct A/B testing and regression analysis to evaluate the impact of client communication strategies, resulting in a 12% improvement in engagement metrics",
+              "Partner with engineering to migrate legacy reporting infrastructure from Excel to a Snowflake-based analytics platform, serving 200+ internal stakeholders",
+              "Mentor two junior analysts on SQL optimization, dashboard design best practices, and statistical methodology"
+            ]
+          },
+          {
+            "role": "Data Analyst",
+            "company": "RetailMeNot (Ziff Davis)",
+            "bullets": [
+              "Analyzed user behavior data across 25M+ monthly visitors to identify conversion optimization opportunities, contributing to a 9% increase in click-through rates",
+              "Developed weekly and monthly KPI reports in Looker for marketing, product, and executive teams, reducing ad-hoc reporting requests by 40%",
+              "Created a customer segmentation model using K-means clustering in Python, enabling the marketing team to launch targeted campaigns that improved ROI by 18%",
+              "Wrote complex SQL queries against a 500GB+ PostgreSQL data warehouse to support ad-hoc analysis and executive decision-making",
+              "Collaborated with product managers to define tracking requirements and validate data integrity for new feature launches"
+            ]
+          },
+          {
+            "role": "Junior Data Analyst",
+            "company": "Texas Health Resources",
+            "bullets": [
+              "Supported hospital operations team by analyzing patient flow data, identifying bottlenecks that led to a 15% reduction in average ER wait times",
+              "Built automated Excel and Power BI reports tracking 30+ operational KPIs across 29 hospital locations",
+              "Cleaned and standardized data from multiple EMR systems using Python (Pandas), ensuring consistency for downstream analytics",
+              "Presented monthly data insights to department heads, translating technical findings into plain-language recommendations"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.S. in Statistics",
+            "institution": "University of Texas at Austin",
+            "year": "2020"
+          }
+        ]
+      },
+      "skillCount": 27,
+      "roleCount": 3,
+      "success": true,
+      "error": null
+    },
+    "llama3.2:3b": {
+      "latencyMs": [
+        28211,
+        23060,
+        23254
+      ],
+      "avgLatencyMs": 24841.666666666668,
+      "output": {
+        "roles": [
+          {
+            "title": "Senior Data Analyst",
+            "duration": "March 2023 - Present",
+            "is_current": true
+          },
+          {
+            "title": "Data Analyst",
+            "duration": "July 2021 - March 2023",
+            "is_current": false
+          },
+          {
+            "title": "Junior Data Analyst",
+            "duration": "June 2020 - July 2021",
+            "is_current": false
+          }
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "SQL",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "R",
+            "category": "Technical",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Tableau",
+            "category": "Tools & Platforms",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Power BI",
+            "category": "Tools & Platforms",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Excel",
+            "category": "Tools & Platforms",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Jupyter Notebook",
+            "category": "Tools & Platforms",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Google Analytics",
+            "category": "Analytics Tools",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Looker",
+            "category": "Analytics Tools",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "dbt",
+            "category": "Tools & Platforms",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "PostgreSQL",
+            "category": "Databases",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "MySQL",
+            "category": "Databases",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "BigQuery",
+            "category": "Databases",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Microsoft SQL Server",
+            "category": "Databases",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Pandas",
+            "category": "Libraries",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "NumPy",
+            "category": "Libraries",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Matplotlib",
+            "category": "Libraries",
+            "proficiency": "Intermediate",
+            "years_of_experience": 2
+          },
+          {
+            "name": "Seaborn",
+            "category": "Libraries",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          },
+          {
+            "name": "Scikit-learn",
+            "category": "Libraries",
+            "proficiency": "Expert",
+            "years_of_experience": 5
+          },
+          {
+            "name": "Statsmodels",
+            "category": "Libraries",
+            "proficiency": "Advanced",
+            "years_of_experience": 3
+          }
+        ],
+        "experience_summary": [
+          {
+            "role": "Senior Data Analyst",
+            "company": "Dimensional Fund Advisors",
+            "bullets": [
+              "Design and maintain 15+ Tableau dashboards",
+              "Build automated ETL pipelines in Python and dbt"
+            ]
+          },
+          {
+            "role": "Data Analyst",
+            "company": "RetailMeNot (Ziff Davis)",
+            "bullets": [
+              "Analyze user behavior data to identify conversion optimization opportunities",
+              "Develop weekly and monthly KPI reports in Looker"
+            ]
+          },
+          {
+            "role": "Junior Data Analyst",
+            "company": "Texas Health Resources",
+            "bullets": [
+              "Support hospital operations team by analyzing patient flow data",
+              "Build automated Excel and Power BI reports tracking operational KPIs"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.S. in Statistics",
+            "institution": "University of Texas at Austin",
+            "year": "2020"
+          }
+        ]
+      },
+      "skillCount": 20,
+      "roleCount": 3,
+      "success": true,
+      "error": null
+    }
+  },
+  "comparison": {
+    "fasterModel": "llama3.2:3b",
+    "speedupFactor": 1.12,
+    "skillCounts": {
+      "mistral": 27,
+      "llama3.2:3b": 20
+    },
+    "sharedSkills": [
+      "Python",
+      "SQL",
+      "R",
+      "Tableau",
+      "Power BI",
+      "Excel",
+      "Jupyter Notebook",
+      "Google Analytics",
+      "Looker",
+      "dbt",
+      "PostgreSQL",
+      "MySQL",
+      "BigQuery",
+      "Microsoft SQL Server",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Scikit-learn",
+      "Statsmodels"
+    ],
+    "uniqueToLargerModel": [
+      "Snowflake",
+      "Git",
+      "JIRA",
+      "Confluence",
+      "A/B Testing",
+      "ETL Pipelines",
+      "Agile/Scrum"
+    ]
+  }
+}

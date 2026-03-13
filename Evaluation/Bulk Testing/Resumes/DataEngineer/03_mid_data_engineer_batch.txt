@@ -1,0 +1,27 @@
+Marcus Chen
+marcus.chen.de@email.com | (206) 334-7712 | Seattle, WA | github.com/marcuschende
+
+SUMMARY
+Data engineer with 3 years of experience building batch data pipelines, dbt transformation layers, and Airflow-orchestrated workflows. Proficient in Python, SQL, and Spark for large-scale data processing. Comfortable working with AWS data services and Snowflake warehousing.
+
+SKILLS
+Languages: Python, SQL, Bash, Scala (basic)
+Frameworks: Apache Spark, dbt, pandas, SQLAlchemy
+Databases: Snowflake, PostgreSQL, MySQL, S3
+Tools: Git, Apache Airflow, Docker, AWS Glue, GitHub Actions, Great Expectations
+
+EXPERIENCE
+
+Data Engineer | Crestline Retail | Seattle, WA | August 2022 - Present
+- Built Spark jobs on AWS Glue processing 500 GB of daily transaction data, replacing a slow pandas pipeline that timed out on weekly loads
+- Designed 40+ dbt models in Snowflake covering sales, inventory, and customer domain marts used by 12 BI analysts
+- Implemented Great Expectations data quality suite with 80 expectations across 15 pipeline stages, catching 3 upstream data issues per week
+- Orchestrated all pipelines with Airflow on MWAA; set up Slack alerting for failed DAGs
+
+Junior Data Engineer | Axiom Analytics | Bellevue, WA | May 2021 - July 2022
+- Built Python ETL scripts loading data from 6 SaaS APIs into PostgreSQL staging tables
+- Wrote dbt staging models and documentation for 10 new data sources onboarded in first 6 months
+- Contributed to Airflow DAG code reviews and on-call incident response rotation
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Washington | 2021

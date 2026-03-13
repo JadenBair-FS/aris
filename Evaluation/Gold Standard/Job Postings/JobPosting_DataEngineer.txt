@@ -1,0 +1,28 @@
+Data Engineer
+Company: DataBridge Systems
+
+DataBridge Systems provides real-time data infrastructure for financial services clients.
+We are hiring a Data Engineer to expand our pipeline platform and help migrate legacy
+batch workloads to a modern streaming architecture.
+
+Requirements:
+- MongoDB (2+ years)
+- PostgreSQL (2+ years)
+- Elasticsearch (1+ years)
+- Redis (1+ years)
+- Apache Hadoop (1+ years)
+- MySQL (3+ years)
+- SQL (3+ years)
+- Python (3+ years)
+- Git (2+ years)
+
+Responsibilities:
+- Design and maintain data pipelines ingesting from MySQL, MongoDB, and REST sources
+- Manage PostgreSQL schemas and query performance for the analytics layer
+- Integrate Elasticsearch for full-text search across customer transaction records
+- Use Redis for caching and session management in high-throughput pipelines
+- Process large datasets with Hadoop MapReduce and HDFS
+- Write Python ETL scripts and maintain all pipeline code in Git
+
+Compensation: $125,000 - $150,000 + equity + benefits
+Location: Denver, CO (Hybrid)

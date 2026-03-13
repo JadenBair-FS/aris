@@ -1,0 +1,29 @@
+Backend Python Developer
+Company: TechFlow Solutions
+
+We are hiring a Backend Python Developer to build and scale our core API infrastructure.
+The ideal candidate brings deep Python expertise and proven experience with modern web
+frameworks, testing practices, and containerized deployments.
+
+Requirements:
+- Django (3+ years)
+- FastAPI (2+ years)
+- pytest (1+ years)
+- Docker (2+ years)
+- Flask (1+ years)
+- Python (5+ years)
+- SQL (3+ years)
+- Git (3+ years)
+- REST APIs (3+ years)
+- Linux (2+ years)
+
+Responsibilities:
+- Design and implement scalable REST APIs using Django or FastAPI
+- Write comprehensive unit and integration tests with pytest
+- Containerize services with Docker and manage deployments
+- Optimize SQL queries and database schemas for production workloads
+- Collaborate with frontend and DevOps teams via Git-based workflows
+- Maintain Linux server environments and CI pipelines
+
+Compensation: $120,000 - $145,000 + equity + benefits
+Location: Remote (US)

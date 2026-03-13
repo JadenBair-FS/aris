@@ -1,0 +1,1193 @@
+{
+  "title": {
+    "card": "UX Design",
+    "page": "UX Design"
+  },
+  "description": "Step by step guide to becoming a UX Designer in @currentYear@",
+  "nodes": [
+    {
+      "id": "h7JsYb4AUn59MUfSHkXPH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "ni18gXdtdggAI4P8HG0h5",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "UVjYjf0frEacBLo-gegK-",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "kPYDO-8dOqviVg33HgkaY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "tcn_QdJHQlpG1t6udFNXq",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "fzq6qo5CG6CkIgI7Y7bMn",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "3oo6PeHghXixNr2a4FWvt",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "WQntKm1lyBLwvDdYXG5AJ",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "YvybHSbUUnnhcpSvBWkZh",
+      "type": "title",
+      "data": {
+        "label": "UX Design"
+      }
+    },
+    {
+      "id": "Zh6GbYp2r7nctlaO_gnGk",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "liUKYf7UghuPk25xMPPYj",
+      "type": "topic",
+      "data": {
+        "label": "Human Decision Making"
+      }
+    },
+    {
+      "id": "DsvCptlLWLq7-VvVhRXsy",
+      "type": "label",
+      "data": {
+        "label": "Buzzwords to lookout for"
+      }
+    },
+    {
+      "id": "6ffY5wO-XhkiDJJ5YcI0x",
+      "type": "subtopic",
+      "data": {
+        "label": "Nudge Theory"
+      }
+    },
+    {
+      "id": "K22gvF9DLt0Ikc80yZLCb",
+      "type": "subtopic",
+      "data": {
+        "label": "Persuasive Technology"
+      }
+    },
+    {
+      "id": "zYCBEUqZVlvjlAKnh5cPQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Behavior Design"
+      }
+    },
+    {
+      "id": "D553-nVELaB5gdxtoKSVc",
+      "type": "subtopic",
+      "data": {
+        "label": "Behavioral Science"
+      }
+    },
+    {
+      "id": "_lv6GJ0wlMfhJ7PHRGQ_V",
+      "type": "subtopic",
+      "data": {
+        "label": "Behavioral Economics"
+      }
+    },
+    {
+      "id": "V5u2kv7Io7825rn1_zKJD",
+      "type": "label",
+      "data": {
+        "label": "Frameworks"
+      }
+    },
+    {
+      "id": "2NlgbLeLBYwZX2u2rKkIO",
+      "type": "subtopic",
+      "data": {
+        "label": "BJ Fogg\u0027s Behavior Model"
+      }
+    },
+    {
+      "id": "kcG4IpneJzA6di0uqTiwb",
+      "type": "subtopic",
+      "data": {
+        "label": "CREATE Action Funnel"
+      }
+    },
+    {
+      "id": "0Df110GZcDw5wbAe1eKoA",
+      "type": "subtopic",
+      "data": {
+        "label": "Spectrum of Thinking Interventions"
+      }
+    },
+    {
+      "id": "kWA8CvocP1pkom2N7O4gb",
+      "type": "subtopic",
+      "data": {
+        "label": "Dual Process Theory"
+      }
+    },
+    {
+      "id": "lRBC8VYJPsR65LHDuuIsL",
+      "type": "subtopic",
+      "data": {
+        "label": "BJ Fogg\u0027s Behavior Grid"
+      }
+    },
+    {
+      "id": "PLLTcrHkhd1KYaMSRKALp",
+      "type": "subtopic",
+      "data": {
+        "label": "Nir Eyal\u0027s Hook Model"
+      }
+    },
+    {
+      "id": "X1AroUI8Fge_lRpKab4A9",
+      "type": "subtopic",
+      "data": {
+        "label": "Cue Routine Reward Model"
+      }
+    },
+    {
+      "id": "PTZROvpPtEvu06szwmt4K",
+      "type": "topic",
+      "data": {
+        "label": "Support Conscious Action"
+      }
+    },
+    {
+      "id": "SLXjoYL-lhPef8s9V3jpf",
+      "type": "subtopic",
+      "data": {
+        "label": "Educate \u0026 Encourage User"
+      }
+    },
+    {
+      "id": "e9n9an1PGxDPGkLCOHIwz",
+      "type": "subtopic",
+      "data": {
+        "label": "Help User think about their Action"
+      }
+    },
+    {
+      "id": "zVXJPpqZvUFIxTGVrr0rN",
+      "type": "topic",
+      "data": {
+        "label": "Cheating"
+      }
+    },
+    {
+      "id": "IpKCXqf_PkxIllwmiIZsq",
+      "type": "subtopic",
+      "data": {
+        "label": "Defaulting"
+      }
+    },
+    {
+      "id": "Ix5Fll_dAINWLxVF2DXFI",
+      "type": "subtopic",
+      "data": {
+        "label": "Making it Incidental"
+      }
+    },
+    {
+      "id": "ZufrLRNkMoJ4e2T-vWxCR",
+      "type": "subtopic",
+      "data": {
+        "label": "Automate the Act of Repetition"
+      }
+    },
+    {
+      "id": "y6CqgqTvOt-LrvTnPJkQQ",
+      "type": "topic",
+      "data": {
+        "label": "Make or Change Habits"
+      }
+    },
+    {
+      "id": "TG0y546UrqLyWXGTjDYBb",
+      "type": "label",
+      "data": {
+        "label": "New Behavior"
+      }
+    },
+    {
+      "id": "-61prALJPwj43JtUcO5le",
+      "type": "label",
+      "data": {
+        "label": "Existing Behavior"
+      }
+    },
+    {
+      "id": "S2TgqNDjvmcJTaXncM09u",
+      "type": "subtopic",
+      "data": {
+        "label": "Help user Avoiding the Cue"
+      }
+    },
+    {
+      "id": "_C-55tciBzc6_Kyk6272k",
+      "type": "subtopic",
+      "data": {
+        "label": "Replace the Routine"
+      }
+    },
+    {
+      "id": "0MbrHG-VDrdZqQ0jWtiDo",
+      "type": "subtopic",
+      "data": {
+        "label": "Use Consciousness to Interfere"
+      }
+    },
+    {
+      "id": "d1dXGCHmMF2EFpL5yKVJA",
+      "type": "subtopic",
+      "data": {
+        "label": "Mindfulness to Avoid Acting on the Cue"
+      }
+    },
+    {
+      "id": "B0gg7Z5JL9m9Srb89KcN5",
+      "type": "subtopic",
+      "data": {
+        "label": "Crowd Out Old Habit with New Behavior"
+      }
+    },
+    {
+      "id": "w_QWN80zCf1tsVROeyuvo",
+      "type": "topic",
+      "data": {
+        "label": "Behavior Change Strategies"
+      }
+    },
+    {
+      "id": "ifG_Cp4d_9v4FdUkRkN2A",
+      "type": "label",
+      "data": {
+        "label": "Classifying Behavior"
+      }
+    },
+    {
+      "id": "0abyvwi8Rf8nNjUbY0qq1",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "q1WX2Cp4k4-o1T1vgL8FH",
+      "type": "topic",
+      "data": {
+        "label": "Understanding the Product"
+      }
+    },
+    {
+      "id": "sQeGE1Q_7y15-n4LXS8s2",
+      "type": "label",
+      "data": {
+        "label": "Clarify Product"
+      }
+    },
+    {
+      "id": "7J8F9dn1jGaVlhLVVRPrG",
+      "type": "subtopic",
+      "data": {
+        "label": "Target Outcome"
+      }
+    },
+    {
+      "id": "FRn2MaR0-ehSD3zmwXcCI",
+      "type": "subtopic",
+      "data": {
+        "label": "Target Actor"
+      }
+    },
+    {
+      "id": "AXn-N15U_z4OagClNoXrW",
+      "type": "subtopic",
+      "data": {
+        "label": "Target Action"
+      }
+    },
+    {
+      "id": "4nmx07v1O-rHYl84dutEU",
+      "type": "label",
+      "data": {
+        "label": "Define Target Users  "
+      }
+    },
+    {
+      "id": "s2KJ5kNv9UcnsP0QKIKQ7",
+      "type": "subtopic",
+      "data": {
+        "label": "Create User Personas"
+      }
+    },
+    {
+      "id": "803UQ48IOF6XplL6s2R16",
+      "type": "label",
+      "data": {
+        "label": "Existing Business Model"
+      }
+    },
+    {
+      "id": "SGO9hHju49_py0n0ASGBe",
+      "type": "subtopic",
+      "data": {
+        "label": "Business Model Canvas"
+      }
+    },
+    {
+      "id": "sc8jJ_77CrkQuxIJYk28Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Lean Canvas"
+      }
+    },
+    {
+      "id": "mFXXwHxZ0ZHjw31iAQaH-",
+      "type": "label",
+      "data": {
+        "label": "New Business Model"
+      }
+    },
+    {
+      "id": "GI06-DbGyJlQXq5Tyi-aH",
+      "type": "subtopic",
+      "data": {
+        "label": "Business Model Inspirator"
+      }
+    },
+    {
+      "id": "HUZ5n2MRHzQPyjwX2h6Q4",
+      "type": "subtopic",
+      "data": {
+        "label": "Competitor Analysis"
+      }
+    },
+    {
+      "id": "F9gpGTRwXq08jNo5pPKm6",
+      "type": "subtopic",
+      "data": {
+        "label": "Five Forces Model"
+      }
+    },
+    {
+      "id": "XiEn1OGFY1bMCoB0Pk8N_",
+      "type": "subtopic",
+      "data": {
+        "label": "SWOT Analysis"
+      }
+    },
+    {
+      "id": "D1JzUxHFpT9-xjoLsvsCY",
+      "type": "label",
+      "data": {
+        "label": "Business Model"
+      }
+    },
+    {
+      "id": "r6D07cN0Mg4YXsiRSrl1_",
+      "type": "topic",
+      "data": {
+        "label": "Conceptual Design"
+      }
+    },
+    {
+      "id": "N6tD-O5IFvSr0-UTlBAAp",
+      "type": "label",
+      "data": {
+        "label": "Create Product Backlog"
+      }
+    },
+    {
+      "id": "tkbkpvHlWQeOnReanR8J7",
+      "type": "subtopic",
+      "data": {
+        "label": "User Stories"
+      }
+    },
+    {
+      "id": "NQg3zCnDg7qdtH7bL2XLl",
+      "type": "label",
+      "data": {
+        "label": "Things to lookout for"
+      }
+    },
+    {
+      "id": "QNJ-LxfYtR8lbnmuy2Qm9",
+      "type": "subtopic",
+      "data": {
+        "label": "In general, keep it short and simple"
+      }
+    },
+    {
+      "id": "vAu2c45c7DgoRydHR2tvD",
+      "type": "subtopic",
+      "data": {
+        "label": "Make it easy to understand and complete"
+      }
+    },
+    {
+      "id": "8YePym3cQtoVY0DJQLllK",
+      "type": "subtopic",
+      "data": {
+        "label": "Make progress visible to user"
+      }
+    },
+    {
+      "id": "D3LVYuCDHD6-kU8GhXokf",
+      "type": "subtopic",
+      "data": {
+        "label": "Make progress meaningful to reward user"
+      }
+    },
+    {
+      "id": "94V3wUtZ0NMm_0Vb1pBju",
+      "type": "subtopic",
+      "data": {
+        "label": "Make successful completion clearly visible"
+      }
+    },
+    {
+      "id": "sKGv31mHcykV4mYugn9SH",
+      "type": "label",
+      "data": {
+        "label": "Deliverables"
+      }
+    },
+    {
+      "id": "0KEqAjHFBjfmGA1bKzXuD",
+      "type": "subtopic",
+      "data": {
+        "label": "Customer Experience Map by Mel Edwards"
+      }
+    },
+    {
+      "id": "JCP5_jyvh9u7hxp379iW2",
+      "type": "subtopic",
+      "data": {
+        "label": "Simple Flowchart"
+      }
+    },
+    {
+      "id": "nccToz_0FUvHMJytpDpM0",
+      "type": "subtopic",
+      "data": {
+        "label": "Event-driven Process Chain Model (EPC)"
+      }
+    },
+    {
+      "id": "jy5jtSEyNE8iJpad27rPX",
+      "type": "subtopic",
+      "data": {
+        "label": "Business Process Model \u0026 Notation (BPMN)"
+      }
+    },
+    {
+      "id": "sG9Vwdypz0t17SwlHV-xw",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6yCBFwntQ_KxFmmGTJ8iR",
+      "type": "topic",
+      "data": {
+        "label": "Prototyping"
+      }
+    },
+    {
+      "id": "90_M5qABC1vZ1nsXVyqFJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Good Layout Rules"
+      }
+    },
+    {
+      "id": "ekTWlRH0AJFQW22L0D4qQ",
+      "type": "label",
+      "data": {
+        "label": "Wireframing"
+      }
+    },
+    {
+      "id": "t46s6Piyd8MoJYzdDTsjr",
+      "type": "subtopic",
+      "data": {
+        "label": "Figma"
+      }
+    },
+    {
+      "id": "HI_urBhPqT0m3AeBQJIej",
+      "type": "subtopic",
+      "data": {
+        "label": "Adobe XD"
+      }
+    },
+    {
+      "id": "nb7Ql1gvxqEucsGnIWTyY",
+      "type": "subtopic",
+      "data": {
+        "label": "Sketch"
+      }
+    },
+    {
+      "id": "fZkARg6kPXPemYW1vDMTe",
+      "type": "subtopic",
+      "data": {
+        "label": "Balsamiq"
+      }
+    },
+    {
+      "id": "u-5aejF7WUpuvk2QKGbeO",
+      "type": "label",
+      "data": {
+        "label": "When attention is fleeting and scarce"
+      }
+    },
+    {
+      "id": "U4ZEFUcghr9XjSyf-0Np7",
+      "type": "subtopic",
+      "data": {
+        "label": "Call to Action"
+      }
+    },
+    {
+      "id": "G4Ap91NgZfkV-54EuWe-Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Status Reports"
+      }
+    },
+    {
+      "id": "mzWd-xSr7sO2RgfPbKy4T",
+      "type": "subtopic",
+      "data": {
+        "label": "How-to-Tips"
+      }
+    },
+    {
+      "id": "wFWidrOZ5EHPgo9uuUclK",
+      "type": "subtopic",
+      "data": {
+        "label": "Reminders \u0026 Planning Prompts"
+      }
+    },
+    {
+      "id": "jsCKUH1HKQi_5kGvYbVtI",
+      "type": "label",
+      "data": {
+        "label": "with many chances to influence user"
+      }
+    },
+    {
+      "id": "9vA3ZWMiKG6NiEqGDvcFR",
+      "type": "subtopic",
+      "data": {
+        "label": "Decision-Making Support"
+      }
+    },
+    {
+      "id": "JSBiw0C6aq1LhA33y79PM",
+      "type": "subtopic",
+      "data": {
+        "label": "Behavior Change Games"
+      }
+    },
+    {
+      "id": "fbIur1tEIdNDE6gls4Bru",
+      "type": "subtopic",
+      "data": {
+        "label": "Gamification"
+      }
+    },
+    {
+      "id": "eYZf67rnhOksfh44hnzHg",
+      "type": "subtopic",
+      "data": {
+        "label": "Planners"
+      }
+    },
+    {
+      "id": "esWGzYUJwv7_xGjq6kpVE",
+      "type": "subtopic",
+      "data": {
+        "label": "Reminders"
+      }
+    },
+    {
+      "id": "FoKtBRuTuMD2SZDHLWS-5",
+      "type": "subtopic",
+      "data": {
+        "label": "Social Sharing"
+      }
+    },
+    {
+      "id": "g-bcan_JnjJfg0_fMOb64",
+      "type": "subtopic",
+      "data": {
+        "label": "Goal Trackers"
+      }
+    },
+    {
+      "id": "f0n2JKxpcuP0JW-h4CvwN",
+      "type": "subtopic",
+      "data": {
+        "label": "Tutorials"
+      }
+    },
+    {
+      "id": "NPUtT6QqPa5YdybFHdAQE",
+      "type": "label",
+      "data": {
+        "label": "UX Patterns"
+      }
+    },
+    {
+      "id": "VUf72i5hYaLR_8ul9EzmM",
+      "type": "topic",
+      "data": {
+        "label": "UX Best Practices"
+      }
+    },
+    {
+      "id": "IjqH_Ev2fDWG0QDQ9c9eN",
+      "type": "subtopic",
+      "data": {
+        "label": "Clear the Page of Distractions"
+      }
+    },
+    {
+      "id": "hDj3HaYAM7K1UJmP_T52n",
+      "type": "subtopic",
+      "data": {
+        "label": "Make it Clear, Where to Act"
+      }
+    },
+    {
+      "id": "FXJpJDIp-JBc0-0z4PIRo",
+      "type": "subtopic",
+      "data": {
+        "label": "Tell User what the Action is and ask for it"
+      }
+    },
+    {
+      "id": "T3JsbjelcUdDkvjQ8PU2f",
+      "type": "label",
+      "data": {
+        "label": "Getting Users Attention"
+      }
+    },
+    {
+      "id": "p-Umr7oMAafTRjVawBQfX",
+      "type": "label",
+      "data": {
+        "label": "Getting Positive Intuitive Reaction"
+      }
+    },
+    {
+      "id": "ahhffBkmd-feroleBrhJm",
+      "type": "subtopic",
+      "data": {
+        "label": "Make UI Professional and Beautiful"
+      }
+    },
+    {
+      "id": "C1NwA0Pivoo73GANoOaPi",
+      "type": "subtopic",
+      "data": {
+        "label": "Deploy Social Proof"
+      }
+    },
+    {
+      "id": "C5dKHIIgBzxtBpFgDs-hB",
+      "type": "subtopic",
+      "data": {
+        "label": "Deploy Strong Authority on Subject"
+      }
+    },
+    {
+      "id": "m30ePaw_qa36m9Rv9NSFf",
+      "type": "subtopic",
+      "data": {
+        "label": "Be Authentic and Personal"
+      }
+    },
+    {
+      "id": "nD4XaBOKa74aLlPkT0Q3w",
+      "type": "label",
+      "data": {
+        "label": "Get a favorable Conscious Evaluation"
+      }
+    },
+    {
+      "id": "jBQtuiHGl3eyCTZG85Vz5",
+      "type": "subtopic",
+      "data": {
+        "label": "Prime User-Relevant Associations"
+      }
+    },
+    {
+      "id": "zXinWCEH4LlYvXekLK0Ju",
+      "type": "subtopic",
+      "data": {
+        "label": "Leverage Loss-Aversion"
+      }
+    },
+    {
+      "id": "iKHU0O0z6gCunCgv_aZye",
+      "type": "subtopic",
+      "data": {
+        "label": "Use Peer Comparisons"
+      }
+    },
+    {
+      "id": "6Mvm8SrISyTT99AJ-VFaW",
+      "type": "subtopic",
+      "data": {
+        "label": "Use Competition"
+      }
+    },
+    {
+      "id": "4AzPOKXUN32CkgchRMrRY",
+      "type": "subtopic",
+      "data": {
+        "label": "Avoid Cognitive Overhead"
+      }
+    },
+    {
+      "id": "8wxlu4KA2iu9CJa1UAUll",
+      "type": "subtopic",
+      "data": {
+        "label": "Avoid Choice Overload"
+      }
+    },
+    {
+      "id": "iQNvKhwhvbis4Yn1ZxQua",
+      "type": "subtopic",
+      "data": {
+        "label": "Avoid Direct Payments"
+      }
+    },
+    {
+      "id": "mTpG4uiYuBQIZA5eWVIpP",
+      "type": "label",
+      "data": {
+        "label": "Creating Urgency to Act Now"
+      }
+    },
+    {
+      "id": "S9rJr8pc-Ln8BxG0suBWa",
+      "type": "subtopic",
+      "data": {
+        "label": "Frame Text to Avoid Temporal Myopia"
+      }
+    },
+    {
+      "id": "kR-UbUFdELVeiPJqT0GlZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Remind of Prior Commitment to Act"
+      }
+    },
+    {
+      "id": "dOL2z6ULpmzRD5N3MrYCy",
+      "type": "subtopic",
+      "data": {
+        "label": "Make Commitment to Friends"
+      }
+    },
+    {
+      "id": "1pzONoWafLAeX8eWbH-Dz",
+      "type": "subtopic",
+      "data": {
+        "label": "Make Reward Scarce"
+      }
+    },
+    {
+      "id": "nlu4DdEQG072Oy2BbCBKi",
+      "type": "label",
+      "data": {
+        "label": "Make sure Users can do it Easily"
+      }
+    },
+    {
+      "id": "EmDgiwaknBz5lXr1rwalE",
+      "type": "subtopic",
+      "data": {
+        "label": "Elicit Implementation Intentions"
+      }
+    },
+    {
+      "id": "wE5gt1vMgbF3csA61VO2-",
+      "type": "subtopic",
+      "data": {
+        "label": "Default Everything"
+      }
+    },
+    {
+      "id": "gf7et64xCqkYBrP9HwWs_",
+      "type": "subtopic",
+      "data": {
+        "label": "Lessen the Burden of Action / Info"
+      }
+    },
+    {
+      "id": "gqOnzmiLQHmIXuEe4jG2e",
+      "type": "subtopic",
+      "data": {
+        "label": "Deploy Peer Comparisons"
+      }
+    },
+    {
+      "id": "3inGDmHdZzATjIwTcHInX",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Xm5ZZDvriOWFWXBtd2TeM",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "GgBazWfF2OvOqkuo3DO2L",
+      "type": "topic",
+      "data": {
+        "label": "Measuring the Impact"
+      }
+    },
+    {
+      "id": "Q4xBz9f3yyZi2F_aZ5ixL",
+      "type": "subtopic",
+      "data": {
+        "label": "Incremental A/B Testing"
+      }
+    },
+    {
+      "id": "-_T2nzp1vV1jUcpsC5DI3",
+      "type": "subtopic",
+      "data": {
+        "label": "Multivariate Testing"
+      }
+    },
+    {
+      "id": "M-ghIECr0h_9RUgtpkjX8",
+      "type": "label",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "Emby09Nsm_j6uNreT58r6",
+      "type": "subtopic",
+      "data": {
+        "label": "Gather Lessons, Prioritize \u0026 Integrate"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "You might be interested in following roadmaps as well"
+      }
+    },
+    {
+      "id": "dlGf3ZdFXYx0Z6Viu2x-l",
+      "type": "button",
+      "data": {
+        "label": "Design System"
+      }
+    },
+    {
+      "id": "9LKa-YjOMtO1j62Ukt0q0",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "fMfC7VJEq94e19h9i1vAG",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-YvybHSbUUnnhcpSvBWkZhx2-GgBazWfF2OvOqkuo3DO2Lw1",
+      "source": "YvybHSbUUnnhcpSvBWkZh",
+      "target": "liUKYf7UghuPk25xMPPYj",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-D553-nVELaB5gdxtoKSVcy1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "D553-nVELaB5gdxtoKSVc",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-K22gvF9DLt0Ikc80yZLCby1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "K22gvF9DLt0Ikc80yZLCb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-6ffY5wO-XhkiDJJ5YcI0xy1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "6ffY5wO-XhkiDJJ5YcI0x",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-_lv6GJ0wlMfhJ7PHRGQ_Vy1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "_lv6GJ0wlMfhJ7PHRGQ_V",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-zYCBEUqZVlvjlAKnh5cPQy2",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "zYCBEUqZVlvjlAKnh5cPQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-liUKYf7UghuPk25xMPPYjx2-GgBazWfF2OvOqkuo3DO2Lw1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "w_QWN80zCf1tsVROeyuvo",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Ly2-lRBC8VYJPsR65LHDuuIsLz1",
+      "source": "w_QWN80zCf1tsVROeyuvo",
+      "target": "lRBC8VYJPsR65LHDuuIsL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-liUKYf7UghuPk25xMPPYjy2-2NlgbLeLBYwZX2u2rKkIOz1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "2NlgbLeLBYwZX2u2rKkIO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-liUKYf7UghuPk25xMPPYjy2-kcG4IpneJzA6di0uqTiwbz1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "kcG4IpneJzA6di0uqTiwb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-liUKYf7UghuPk25xMPPYjy2-0Df110GZcDw5wbAe1eKoAz1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "0Df110GZcDw5wbAe1eKoA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-liUKYf7UghuPk25xMPPYjy2-kWA8CvocP1pkom2N7O4gbz1",
+      "source": "liUKYf7UghuPk25xMPPYj",
+      "target": "kWA8CvocP1pkom2N7O4gb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lx2-zVXJPpqZvUFIxTGVrr0rNw2",
+      "source": "w_QWN80zCf1tsVROeyuvo",
+      "target": "zVXJPpqZvUFIxTGVrr0rN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-PTZROvpPtEvu06szwmt4Kx2-SLXjoYL-lhPef8s9V3jpfw1",
+      "source": "PTZROvpPtEvu06szwmt4K",
+      "target": "SLXjoYL-lhPef8s9V3jpf",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zVXJPpqZvUFIxTGVrr0rNz2-IpKCXqf_PkxIllwmiIZsqy1",
+      "source": "zVXJPpqZvUFIxTGVrr0rN",
+      "target": "IpKCXqf_PkxIllwmiIZsq",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zVXJPpqZvUFIxTGVrr0rNz2-Ix5Fll_dAINWLxVF2DXFIy2",
+      "source": "zVXJPpqZvUFIxTGVrr0rN",
+      "target": "Ix5Fll_dAINWLxVF2DXFI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-zVXJPpqZvUFIxTGVrr0rNz2-ZufrLRNkMoJ4e2T-vWxCRy1",
+      "source": "zVXJPpqZvUFIxTGVrr0rN",
+      "target": "ZufrLRNkMoJ4e2T-vWxCR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-w_QWN80zCf1tsVROeyuvoz2-GgBazWfF2OvOqkuo3DO2Lz1",
+      "source": "w_QWN80zCf1tsVROeyuvo",
+      "target": "q1WX2Cp4k4-o1T1vgL8FH",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lw2-4nmx07v1O-rHYl84dutEUx1",
+      "source": "q1WX2Cp4k4-o1T1vgL8FH",
+      "target": "sQeGE1Q_7y15-n4LXS8s2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Ly2-4nmx07v1O-rHYl84dutEUz1",
+      "source": "q1WX2Cp4k4-o1T1vgL8FH",
+      "target": "4nmx07v1O-rHYl84dutEU",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lx2-D1JzUxHFpT9-xjoLsvsCYw1",
+      "source": "q1WX2Cp4k4-o1T1vgL8FH",
+      "target": "D1JzUxHFpT9-xjoLsvsCY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-q1WX2Cp4k4-o1T1vgL8FHy2-GgBazWfF2OvOqkuo3DO2Lz1",
+      "source": "q1WX2Cp4k4-o1T1vgL8FH",
+      "target": "r6D07cN0Mg4YXsiRSrl1_",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lw2-90_M5qABC1vZ1nsXVyqFJx1",
+      "source": "6yCBFwntQ_KxFmmGTJ8iR",
+      "target": "90_M5qABC1vZ1nsXVyqFJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-6yCBFwntQ_KxFmmGTJ8iRx2-GgBazWfF2OvOqkuo3DO2Lw1",
+      "source": "6yCBFwntQ_KxFmmGTJ8iR",
+      "target": "VUf72i5hYaLR_8ul9EzmM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-VUf72i5hYaLR_8ul9EzmMx2-GgBazWfF2OvOqkuo3DO2Lw1",
+      "source": "VUf72i5hYaLR_8ul9EzmM",
+      "target": "GgBazWfF2OvOqkuo3DO2L",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lx2-M-ghIECr0h_9RUgtpkjX8w1",
+      "source": "GgBazWfF2OvOqkuo3DO2L",
+      "target": "M-ghIECr0h_9RUgtpkjX8",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-GgBazWfF2OvOqkuo3DO2Lz2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "GgBazWfF2OvOqkuo3DO2L",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

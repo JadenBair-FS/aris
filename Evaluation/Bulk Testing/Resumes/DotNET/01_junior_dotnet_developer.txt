@@ -1,0 +1,31 @@
+Tyler Barnes
+tyler.barnes@email.com | (214) 430-8821 | Dallas, TX | github.com/tylerbarnes-dotnet
+
+SUMMARY
+Junior .NET developer with 1 year of experience building ASP.NET Core Web APIs and working with SQL Server. Comfortable with C#, Entity Framework Core, and basic Azure deployments. Eager to grow in a collaborative engineering team building enterprise backend services.
+
+SKILLS
+Languages: C#, SQL, HTML/CSS (basic)
+Frameworks: ASP.NET Core, Entity Framework Core
+Databases: SQL Server, SQLite
+Tools: Git, Visual Studio, xUnit, Postman, Docker (basic)
+Cloud/Infra: Azure App Service (basic), GitHub Actions
+
+EXPERIENCE
+
+Junior .NET Developer | Northgate Solutions | Dallas, TX | July 2024 - Present
+- Built 10 new RESTful API endpoints in ASP.NET Core 8 for an inventory management application serving 300 warehouse users
+- Designed Entity Framework Core migration scripts for 3 new database tables with proper foreign key constraints
+- Wrote xUnit unit tests for service layer methods, achieving 70% coverage on all new code
+- Fixed 8 production bugs involving EF Core lazy loading and N+1 query patterns
+
+PROJECTS
+
+TaskTrackerAPI
+- ASP.NET Core 8 REST API for personal task management with Entity Framework Core, SQL Server, JWT authentication, and xUnit tests; deployed to Azure App Service
+
+LibrarySystem
+- C# console application and SQL Server database for a library book tracking system; uses ADO.NET for direct SQL queries and a simple CLI interface for book and member management
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Texas at Arlington | 2024

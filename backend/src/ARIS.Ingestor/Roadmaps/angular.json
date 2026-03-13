@@ -1,0 +1,1706 @@
+{
+  "title": {
+    "card": "Angular",
+    "page": "Angular Developer"
+  },
+  "description": "Everything that is there to learn about Angular and the ecosystem in @currentYear@.",
+  "nodes": [
+    {
+      "id": "VBjI-LQstODfimbRlHUFi",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "wKEXcCpW_ydTDPzv_rS_w",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "FxFHWAkagS47Uce6_6T7d",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "nSq41MgDYtxGQXsWloS9I",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "a4cd_ND3vOLdmLuguKtBt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GYH0wo-CeNtqVSGM7i3oS",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rikJUpXHGXAEC74Szwj7s",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "ol_HobKV3LkBYvgVYWoGB",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "nyJvnCmX-pC35SbkRPXko",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "dnM44vvHZW3dSpsVi546w",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "1OFkZp8kqo_f_pTrDqNoe",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "wPj4IMCob1P-xw4HiARuO",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "762b06M2GaxTGG_SXG-6g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FG7ABEX-nhrwCDpoKwdcm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "3JUwGWiqWXqAZj8Lw8Gbm",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rBi1Oj1pqcnIy5yMMxLyw",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "rWLm26RwXHFpQhglgrfuV",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "vcAUSj5KcbBngENQMoClO",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Ew6DgOvx6gtifE9v4YPkP",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "mXjsmjZhHgpTL8oeDQext",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "kW2pkUmw72aKIjGbizdmG",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "DNz-gFjc4Ow3TL_EY_NAH",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "gbSGghXE--4z479PIE57p",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xVapQFT9sTIPdeCXYD_lw",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "YlxsmpEKCKm2_jXHT5fux",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "CshWtCCFHbYXtztr-2iU1",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "FTLS0mwJhuqsEHen7mqbk",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "t6zZwKzPHXT57Uqj4R2aI",
+      "type": "section",
+      "data": null
+    },
+    {
+      "id": "N3xAkfwQ-q0f_JEjKDQcO",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "HLnq8xMeb0NwnkVUtcFMj",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "Angular"
+      }
+    },
+    {
+      "id": "LEijbLyxg4RyutKEM2Y5g",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "xwpc_KxehAruFM0pCQnie",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "GV_zWF6rSWg5bqgiXhOEf",
+      "type": "paragraph",
+      "data": {
+        "label": "Have a look at the following related roadmaps"
+      }
+    },
+    {
+      "id": "ZSrQoNGKiR484uALMWO9F",
+      "type": "button",
+      "data": {
+        "label": "TypeScript"
+      }
+    },
+    {
+      "id": "P5IZjP0g1_fnvHy3YTR4q",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "U0fJo2a3vnaodNJhfZ78I",
+      "type": "button",
+      "data": {
+        "label": "React"
+      }
+    },
+    {
+      "id": "iuSv7V59YxUZawN38Qlli",
+      "type": "button",
+      "data": {
+        "label": "Node.js"
+      }
+    },
+    {
+      "id": "DAwKHBng7Tytlcd2_8GOR",
+      "type": "button",
+      "data": {
+        "label": "JavaScript Roadmap"
+      }
+    },
+    {
+      "id": "KDd40JOAvZ8O1mfhTYB3K",
+      "type": "topic",
+      "data": {
+        "label": "Introduction to Angular"
+      }
+    },
+    {
+      "id": "DE3cMpeRYuUPw2ADtfS-3",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular Architecture"
+      }
+    },
+    {
+      "id": "EbFRcy4s6yzzIApBqU77Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting up a New Project"
+      }
+    },
+    {
+      "id": "hpShWwL0M57ZAzqkB4I8t",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular and History"
+      }
+    },
+    {
+      "id": "zv1y-I1fIEXtTkb8tOQU0",
+      "type": "button",
+      "data": {
+        "label": "Learn TypeScript Basics"
+      }
+    },
+    {
+      "id": "kGnKzCkQCNFEdgCBRtNuW",
+      "type": "topic",
+      "data": {
+        "label": "Components"
+      }
+    },
+    {
+      "id": "Mp056kNnwsRWeEXuhGPy-",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Anatomy"
+      }
+    },
+    {
+      "id": "dOMvz__EQjO-3p-Nzm-7P",
+      "type": "subtopic",
+      "data": {
+        "label": "Provider"
+      }
+    },
+    {
+      "id": "uYHy2yhtTm6fQkKpYx3lU",
+      "type": "subtopic",
+      "data": {
+        "label": "changeDetection"
+      }
+    },
+    {
+      "id": "-gUpm3OLUJl9iAyx6fmHN",
+      "type": "subtopic",
+      "data": {
+        "label": "Template"
+      }
+    },
+    {
+      "id": "RcNHEh6kmbBK1PICbhAwr",
+      "type": "subtopic",
+      "data": {
+        "label": "Standalone"
+      }
+    },
+    {
+      "id": "doHDoAgp7T59KGSXPpQzZ",
+      "type": "subtopic",
+      "data": {
+        "label": "viewProvider"
+      }
+    },
+    {
+      "id": "ctigvSYeFa77y3v7m11gk",
+      "type": "subtopic",
+      "data": {
+        "label": "Encapsulation"
+      }
+    },
+    {
+      "id": "cDN0PGo-zkcLmttxCiAI-",
+      "type": "subtopic",
+      "data": {
+        "label": "Selector"
+      }
+    },
+    {
+      "id": "4XJKEmSrQfPxggHlAP30w",
+      "type": "subtopic",
+      "data": {
+        "label": "Styles"
+      }
+    },
+    {
+      "id": "ghbrJhuGvscnNGCtVLh5_",
+      "type": "subtopic",
+      "data": {
+        "label": "Imports"
+      }
+    },
+    {
+      "id": "Szgr8dnZNi-z5i6raIJzW",
+      "type": "subtopic",
+      "data": {
+        "label": "Metadata"
+      }
+    },
+    {
+      "id": "19c7D-fWIJ3vYFT6h8ZfN",
+      "type": "topic",
+      "data": {
+        "label": "Communication"
+      }
+    },
+    {
+      "id": "TDyFjKrIZJnCjEZsojPNQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Parent-Child Interaction"
+      }
+    },
+    {
+      "id": "v0XaLNZ-YrRqP-xv8wS43",
+      "type": "subtopic",
+      "data": {
+        "label": "ViewChild"
+      }
+    },
+    {
+      "id": "oQl9etjoHiU2JgxieUOEH",
+      "type": "subtopic",
+      "data": {
+        "label": "ContentChild"
+      }
+    },
+    {
+      "id": "nCpfj_35ZvW-NTygg06XZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Lifecycle"
+      }
+    },
+    {
+      "id": "tC5ETtOuuUcybj1jI4CuG",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic Components"
+      }
+    },
+    {
+      "id": "b_kdNS9PDupcUftslkf9i",
+      "type": "topic",
+      "data": {
+        "label": "Modules"
+      }
+    },
+    {
+      "id": "BCq5sgWQLiw0f7u7ZSAd2",
+      "type": "subtopic",
+      "data": {
+        "label": "Module Architecture"
+      }
+    },
+    {
+      "id": "ex8FOKrUlbu4MuEq2czyW",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Components"
+      }
+    },
+    {
+      "id": "9YhTXybJw2gszlqFeBtW3",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Modules"
+      }
+    },
+    {
+      "id": "w_BazXvINFyxDCHmlznfy",
+      "type": "subtopic",
+      "data": {
+        "label": "Feature Modules"
+      }
+    },
+    {
+      "id": "bLERvEERmNI5AgxtEYokZ",
+      "type": "subtopic",
+      "data": {
+        "label": "Lazy Loading Modules"
+      }
+    },
+    {
+      "id": "5b590c7s-2XJ0rgdCYxLa",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependencies"
+      }
+    },
+    {
+      "id": "6fhe9xAi_RSVfa-KKbcbV",
+      "type": "topic",
+      "data": {
+        "label": "Templates"
+      }
+    },
+    {
+      "id": "XHpfHRIlFh19FJIE07u7i",
+      "type": "subtopic",
+      "data": {
+        "label": "Interpolation"
+      }
+    },
+    {
+      "id": "t2YOeMONlcnKBrVAo0JDc",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Statements"
+      }
+    },
+    {
+      "id": "WH5wlyOtrqFHBJx7RFJwS",
+      "type": "topic",
+      "data": {
+        "label": "Understand Binding"
+      }
+    },
+    {
+      "id": "5vZkiH7HDwONIABLfNJ06",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Binding"
+      }
+    },
+    {
+      "id": "TJOZfHtsLfwA0CZ2bd1b2",
+      "type": "subtopic",
+      "data": {
+        "label": "Property Binding"
+      }
+    },
+    {
+      "id": "FgsSyM6To7irpbivtOLEE",
+      "type": "subtopic",
+      "data": {
+        "label": "Attribute Binding"
+      }
+    },
+    {
+      "id": "bKnpirSvex4oE4lAjiSSV",
+      "type": "subtopic",
+      "data": {
+        "label": "Event Binding"
+      }
+    },
+    {
+      "id": "2UH79nCjgtY1Qz1YjUJYL",
+      "type": "subtopic",
+      "data": {
+        "label": "Two-way Binding"
+      }
+    },
+    {
+      "id": "VzvB_bads057YtG4ST4a2",
+      "type": "subtopic",
+      "data": {
+        "label": "Control Flow"
+      }
+    },
+    {
+      "id": "VsU6713jeIjAOEZnF6gWx",
+      "type": "subtopic",
+      "data": {
+        "label": "@Input \u0026 @Output"
+      }
+    },
+    {
+      "id": "nyDry6ZWyEUuTq4pw-lU3",
+      "type": "subtopic",
+      "data": {
+        "label": "Template Ref Vars"
+      }
+    },
+    {
+      "id": "VsC7UmE_AumsBP8fC6to1",
+      "type": "topic",
+      "data": {
+        "label": "Template Syntax"
+      }
+    },
+    {
+      "id": "U1Zy2T-2ki9pDkXn9hn-I",
+      "type": "subtopic",
+      "data": {
+        "label": "@if"
+      }
+    },
+    {
+      "id": "ORdPDad4HWJAfcZuS-7yM",
+      "type": "subtopic",
+      "data": {
+        "label": "@else"
+      }
+    },
+    {
+      "id": "ys5untkSppGMFK-VsfuRt",
+      "type": "subtopic",
+      "data": {
+        "label": "@else if"
+      }
+    },
+    {
+      "id": "2kYS9w1UzQFZ1zhf01m9L",
+      "type": "subtopic",
+      "data": {
+        "label": "@for"
+      }
+    },
+    {
+      "id": "nZuim4Fjq6jYOXcRTAEay",
+      "type": "subtopic",
+      "data": {
+        "label": "@switch"
+      }
+    },
+    {
+      "id": "cHC2MH50CbUSMRZV4QGJI",
+      "type": "subtopic",
+      "data": {
+        "label": "@case"
+      }
+    },
+    {
+      "id": "h4MMn0_qUN3YXEdMUJOyd",
+      "type": "subtopic",
+      "data": {
+        "label": "@default"
+      }
+    },
+    {
+      "id": "AwOM0ucg6W7TohdUd7KWT",
+      "type": "subtopic",
+      "data": {
+        "label": "@let"
+      }
+    },
+    {
+      "id": "ONy-0olujU_FGZM7Wvfr2",
+      "type": "subtopic",
+      "data": {
+        "label": "@defer"
+      }
+    },
+    {
+      "id": "j99WQxuTzGeBBVoReDp_y",
+      "type": "topic",
+      "data": {
+        "label": "Pipes"
+      }
+    },
+    {
+      "id": "_-mTs_FMeob-ZGK-bb3j-",
+      "type": "subtopic",
+      "data": {
+        "label": "Change Detection"
+      }
+    },
+    {
+      "id": "i2taHzQ5KLHjkkpbH4Ytd",
+      "type": "subtopic",
+      "data": {
+        "label": "Common Pipes"
+      }
+    },
+    {
+      "id": "nZxZnzbQg9dz-SI65UHq9",
+      "type": "subtopic",
+      "data": {
+        "label": "Pipes Precedence"
+      }
+    },
+    {
+      "id": "BOYXGfULJRiP-XOo_lNX3",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Pipes"
+      }
+    },
+    {
+      "id": "kGzlumFdZFxTRZ3HnCGFO",
+      "type": "topic",
+      "data": {
+        "label": "Directives"
+      }
+    },
+    {
+      "id": "xk3v8p6vf8ntGj5c-IU4U",
+      "type": "subtopic",
+      "data": {
+        "label": "Structural Directives"
+      }
+    },
+    {
+      "id": "xvwby0FTdIolRrV2j88fY",
+      "type": "subtopic",
+      "data": {
+        "label": "Attribute Directives"
+      }
+    },
+    {
+      "id": "7GUvTMVzfdVEDBOz-tHUT",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Directives"
+      }
+    },
+    {
+      "id": "a74v78SvGtWduZpXs7wSq",
+      "type": "topic",
+      "data": {
+        "label": "Routing"
+      }
+    },
+    {
+      "id": "dbAS-hN1hoCsNJhkxXcGq",
+      "type": "subtopic",
+      "data": {
+        "label": "Configuration"
+      }
+    },
+    {
+      "id": "ewbDdPYv2SJl_jW3RVHQs",
+      "type": "subtopic",
+      "data": {
+        "label": "Lazy Loading"
+      }
+    },
+    {
+      "id": "1ZwdEL0Gx30Vv_Av3ZTGG",
+      "type": "subtopic",
+      "data": {
+        "label": "Router Outlets"
+      }
+    },
+    {
+      "id": "8lFyuSx4MUcYRY2L8bZrq",
+      "type": "subtopic",
+      "data": {
+        "label": "Router Links"
+      }
+    },
+    {
+      "id": "YF_sG292HqawIX0siWhrv",
+      "type": "subtopic",
+      "data": {
+        "label": "Router Events"
+      }
+    },
+    {
+      "id": "PmC4zeaLpa5LoL4FhYXcG",
+      "type": "subtopic",
+      "data": {
+        "label": "Guards"
+      }
+    },
+    {
+      "id": "CpsoIVoCKaZnM_-BbXbCh",
+      "type": "topic",
+      "data": {
+        "label": "Services  \u0026 Remote Data"
+      }
+    },
+    {
+      "id": "8u9uHCRt9RU57erBy79PP",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "Q36LQds8k_cSjijvXyWOM",
+      "type": "topic",
+      "data": {
+        "label": "Forms"
+      }
+    },
+    {
+      "id": "1d3Y4HVnqom8UOok-7EEf",
+      "type": "subtopic",
+      "data": {
+        "label": "Reactive Forms"
+      }
+    },
+    {
+      "id": "XC_K1Wahl2ySqOXoym4YU",
+      "type": "subtopic",
+      "data": {
+        "label": "Typed Forms"
+      }
+    },
+    {
+      "id": "uDx4lPavwsJFBMzdQ70CS",
+      "type": "subtopic",
+      "data": {
+        "label": "Template-driven Forms"
+      }
+    },
+    {
+      "id": "CpufN6DAOj5UNab9vnH0k",
+      "type": "subtopic",
+      "data": {
+        "label": "Dynamic Forms"
+      }
+    },
+    {
+      "id": "kxRtLsB3y_th8j-HjmJgK",
+      "type": "subtopic",
+      "data": {
+        "label": "Custom Validators"
+      }
+    },
+    {
+      "id": "m5dgKgUR3ZqI9sBAzToev",
+      "type": "subtopic",
+      "data": {
+        "label": "Control Value Accessor"
+      }
+    },
+    {
+      "id": "8UY0HAvjY7bdbFpt-MM1u",
+      "type": "topic",
+      "data": {
+        "label": "HTTP Client"
+      }
+    },
+    {
+      "id": "AKPhbg10xXjccO7UBh5eJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Setting Up the Client"
+      }
+    },
+    {
+      "id": "HjGAv3aV-p4ijYJ8XYIw3",
+      "type": "subtopic",
+      "data": {
+        "label": "Making Requests"
+      }
+    },
+    {
+      "id": "xG7iSVOGcbxJbNv3xbNfc",
+      "type": "subtopic",
+      "data": {
+        "label": "Writing Interceptors"
+      }
+    },
+    {
+      "id": "lfp7PIjwITU5gBITQdirD",
+      "type": "topic",
+      "data": {
+        "label": "RxJS Basics"
+      }
+    },
+    {
+      "id": "krXA6ua7E3m4IIpFkgQZe",
+      "type": "subtopic",
+      "data": {
+        "label": "Observable Pattern"
+      }
+    },
+    {
+      "id": "b06Y5YrqBbHhWkK6Ws_1c",
+      "type": "subtopic",
+      "data": {
+        "label": "Observable Lifecycle"
+      }
+    },
+    {
+      "id": "e1ZmmxPZuogCNgtbPPWmd",
+      "type": "subtopic",
+      "data": {
+        "label": "RxJS vs Promises"
+      }
+    },
+    {
+      "id": "ihsjIcF0tkhjs56458teE",
+      "type": "subtopic",
+      "data": {
+        "label": "Operators"
+      }
+    },
+    {
+      "id": "nxUbl0eu3LsSL-Z8X6nP5",
+      "type": "subtopic",
+      "data": {
+        "label": "Filtering"
+      }
+    },
+    {
+      "id": "bJbbayFQ9WSJT9-qy0H5l",
+      "type": "subtopic",
+      "data": {
+        "label": "Rate Limiting"
+      }
+    },
+    {
+      "id": "kdMJHljMzGA3oRlh8Zvos",
+      "type": "subtopic",
+      "data": {
+        "label": "Transformation"
+      }
+    },
+    {
+      "id": "IgUHqfVhiGpwxT9tY8O88",
+      "type": "subtopic",
+      "data": {
+        "label": "Combination"
+      }
+    },
+    {
+      "id": "u1TG8i145o0RKhOR_5epf",
+      "type": "topic",
+      "data": {
+        "label": "Signals"
+      }
+    },
+    {
+      "id": "KAdtebWvgvMifIwd52yc4",
+      "type": "subtopic",
+      "data": {
+        "label": "RxJS Interop"
+      }
+    },
+    {
+      "id": "LcJyAfv9hjyUNXUVyPRP4",
+      "type": "subtopic",
+      "data": {
+        "label": "Inputs as Signals"
+      }
+    },
+    {
+      "id": "9HS9C3yq9EUcUy0ZUZk_H",
+      "type": "subtopic",
+      "data": {
+        "label": "Queries as Signals"
+      }
+    },
+    {
+      "id": "IeU6ClS_yp6BYKdkQOJVf",
+      "type": "subtopic",
+      "data": {
+        "label": "Model Inputs"
+      }
+    },
+    {
+      "id": "Mqe_s-nwBqAL6X7OGRHEN",
+      "type": "topic",
+      "data": {
+        "label": "State Management"
+      }
+    },
+    {
+      "id": "N9ZCPgFnFIUv4jMv1w5qK",
+      "type": "subtopic",
+      "data": {
+        "label": "NGXS"
+      }
+    },
+    {
+      "id": "ir94IdkF1tVAA8ZTD9r0N",
+      "type": "subtopic",
+      "data": {
+        "label": "NgRx"
+      }
+    },
+    {
+      "id": "rgPUcSKxG9DvXicLfC2Ay",
+      "type": "subtopic",
+      "data": {
+        "label": "Elf"
+      }
+    },
+    {
+      "id": "m4WBnx_9h01Jl6Q1sxi4Y",
+      "type": "topic",
+      "data": {
+        "label": "Zones"
+      }
+    },
+    {
+      "id": "1x5pT607aKE-S-NCWB810",
+      "type": "subtopic",
+      "data": {
+        "label": "Zoneless Applications"
+      }
+    },
+    {
+      "id": "EbJib-XfZFF9bpCtL3aBs",
+      "type": "topic",
+      "data": {
+        "label": "Developer Tools"
+      }
+    },
+    {
+      "id": "4YSk6I63Ew--zoXC3xmrC",
+      "type": "subtopic",
+      "data": {
+        "label": "Angular CLI"
+      }
+    },
+    {
+      "id": "FVH0lnbIZ2m5EfF2EJ2DW",
+      "type": "subtopic",
+      "data": {
+        "label": "Local Setup"
+      }
+    },
+    {
+      "id": "1fVi9AK6aLjt5QgAFbnGX",
+      "type": "subtopic",
+      "data": {
+        "label": "Deployment"
+      }
+    },
+    {
+      "id": "yhNGhduk__ow8VTLc6inZ",
+      "type": "subtopic",
+      "data": {
+        "label": "End-to-End Testing"
+      }
+    },
+    {
+      "id": "Uvr0pRk_fOzwRwqn0dQ6N",
+      "type": "subtopic",
+      "data": {
+        "label": "Schematics"
+      }
+    },
+    {
+      "id": "Ax-s_xw3FO3Ocv-AnLbQD",
+      "type": "subtopic",
+      "data": {
+        "label": "Build Environments"
+      }
+    },
+    {
+      "id": "TeWEy9I-hU6SH02Sy2S2S",
+      "type": "subtopic",
+      "data": {
+        "label": "CLI Builders"
+      }
+    },
+    {
+      "id": "MwtM1UAIfj4FJ-Y4CKDsP",
+      "type": "subtopic",
+      "data": {
+        "label": "AoT Compilation"
+      }
+    },
+    {
+      "id": "T3MmS3bvMMgCUbOk3ktU7",
+      "type": "subtopic",
+      "data": {
+        "label": "DevTools"
+      }
+    },
+    {
+      "id": "ql7SyxrRmjpiXJ9hQeWPq",
+      "type": "subtopic",
+      "data": {
+        "label": "Language Service"
+      }
+    },
+    {
+      "id": "cl89U8atD6gw5rMGUm4Ix",
+      "type": "subtopic",
+      "data": {
+        "label": "Libraries"
+      }
+    },
+    {
+      "id": "YHV5oFwLwphXf1wJTDZuG",
+      "type": "subtopic",
+      "data": {
+        "label": "Using Libraries"
+      }
+    },
+    {
+      "id": "A1mYMg7cbcj6p_VkDf-Tz",
+      "type": "subtopic",
+      "data": {
+        "label": "Creating Libraries"
+      }
+    },
+    {
+      "id": "jfHaS8TqE4tcAo59K8Nkn",
+      "type": "topic",
+      "data": {
+        "label": "SSR"
+      }
+    },
+    {
+      "id": "b-0yQ74zHtAxI9aRLBohc",
+      "type": "topic",
+      "data": {
+        "label": "SSG"
+      }
+    },
+    {
+      "id": "kauQofxCmpktXPcnzid17",
+      "type": "subtopic",
+      "data": {
+        "label": "AnalogJS"
+      }
+    },
+    {
+      "id": "mm6c7GLQEwoQdAHdAYzGh",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    },
+    {
+      "id": "umUX4Hxk7srHlFR_Un-u7",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-site Scripting"
+      }
+    },
+    {
+      "id": "cgI9oeUHufA-ky_W1zENe",
+      "type": "subtopic",
+      "data": {
+        "label": "Sanitization"
+      }
+    },
+    {
+      "id": "XoYSuv1salCCHoI1cJkxv",
+      "type": "subtopic",
+      "data": {
+        "label": "Trusting Safe Values"
+      }
+    },
+    {
+      "id": "5h7U0spwEUhB-hbjSlaeB",
+      "type": "subtopic",
+      "data": {
+        "label": "Enforce Trusted Types"
+      }
+    },
+    {
+      "id": "xH3RHPhsaqD9zIMms5OmX",
+      "type": "subtopic",
+      "data": {
+        "label": "HTTP Vulnerabilities"
+      }
+    },
+    {
+      "id": "Z1DZBbFI4oU6-KQg3wqMm",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-site Request Forgery"
+      }
+    },
+    {
+      "id": "m2aw8vb4rz4IjshpoMyNx",
+      "type": "subtopic",
+      "data": {
+        "label": "HttpClient CSRF"
+      }
+    },
+    {
+      "id": "ni00edsphJd7uBLCn7-Vw",
+      "type": "subtopic",
+      "data": {
+        "label": "XSRF protection"
+      }
+    },
+    {
+      "id": "zd7YJGlcMFNFbsKUiW_XC",
+      "type": "subtopic",
+      "data": {
+        "label": "Cross-site Script Inclusion"
+      }
+    },
+    {
+      "id": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "type": "topic",
+      "data": {
+        "label": "Accessibility"
+      }
+    },
+    {
+      "id": "0FvH7KPs9ag02QkD1HEJ-",
+      "type": "subtopic",
+      "data": {
+        "label": "Attributes"
+      }
+    },
+    {
+      "id": "CZ1YRyai8Ds-ry4A8jVbr",
+      "type": "subtopic",
+      "data": {
+        "label": "UI Components"
+      }
+    },
+    {
+      "id": "0s-QhN5aZh2F3tLJFKEyR",
+      "type": "subtopic",
+      "data": {
+        "label": "Containers"
+      }
+    },
+    {
+      "id": "8i_JD1P4gIhY1rdldwLC2",
+      "type": "subtopic",
+      "data": {
+        "label": "Routing"
+      }
+    },
+    {
+      "id": "5-RCB8AiDbkdIFYNXKWge",
+      "type": "subtopic",
+      "data": {
+        "label": "Link Identification"
+      }
+    },
+    {
+      "id": "STEHxJpwBZxFdQl0zUKxo",
+      "type": "topic",
+      "data": {
+        "label": "Performance"
+      }
+    },
+    {
+      "id": "CYjsXIOWtP5DJmYS-qR-s",
+      "type": "subtopic",
+      "data": {
+        "label": "Deferrable Views"
+      }
+    },
+    {
+      "id": "1WIKjn3nxYDMIhBL17aYQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Optimization"
+      }
+    },
+    {
+      "id": "pRSR5PEbkJXAJ1LPyK-EE",
+      "type": "subtopic",
+      "data": {
+        "label": "Zone Pollution"
+      }
+    },
+    {
+      "id": "yxUtSBzJPRcS-IuPsyp-W",
+      "type": "subtopic",
+      "data": {
+        "label": "Slow Computations"
+      }
+    },
+    {
+      "id": "NY_MfBNgNmloiRGcIvfJ1",
+      "type": "subtopic",
+      "data": {
+        "label": "Hydration"
+      }
+    },
+    {
+      "id": "lLa-OnHV6GzkNFZu29BIT",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "HU1eTYB321C93qh_U7ioF",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Services"
+      }
+    },
+    {
+      "id": "rH13NBFG02hnn5eABSNCY",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Pipes"
+      }
+    },
+    {
+      "id": "4xt0m5jkUqB4Z-krcFBuL",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Requests"
+      }
+    },
+    {
+      "id": "TGRZBizDy83JKg_MhnRdX",
+      "type": "subtopic",
+      "data": {
+        "label": "Services with Dependencies"
+      }
+    },
+    {
+      "id": "cXVy1lx2XqY_j8gxz-y60",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Bindings"
+      }
+    },
+    {
+      "id": "SGqb5k6OmWit8PA6ZT3js",
+      "type": "subtopic",
+      "data": {
+        "label": "Testing Directives"
+      }
+    },
+    {
+      "id": "f5v74Uw54LsB4FgdN6eCd",
+      "type": "subtopic",
+      "data": {
+        "label": "Debugging Tests"
+      }
+    },
+    {
+      "id": "0dYWO_Zvh9J5_6cRjRjvI",
+      "type": "subtopic",
+      "data": {
+        "label": "Component Templates"
+      }
+    },
+    {
+      "id": "bqA2bxPcZrqQ-6QE-YDK1",
+      "type": "subtopic",
+      "data": {
+        "label": "Code Coverage"
+      }
+    },
+    {
+      "id": "Xxyx3uzy5TpNhgR1IysMN",
+      "type": "topic",
+      "data": {
+        "label": "Internationalization"
+      }
+    },
+    {
+      "id": "W8OwpEw00xn0GxidlJjdc",
+      "type": "subtopic",
+      "data": {
+        "label": "Localize Package"
+      }
+    },
+    {
+      "id": "dVKl3Z2Rnf6IB064v19Mi",
+      "type": "subtopic",
+      "data": {
+        "label": "Locales by ID"
+      }
+    },
+    {
+      "id": "jL5amGV1BAX_V5cyTIH7d",
+      "type": "subtopic",
+      "data": {
+        "label": "Translation Files"
+      }
+    },
+    {
+      "id": "9ISvaaJ815_cr_KW9vQhT",
+      "type": "subtopic",
+      "data": {
+        "label": "Multiple Locales"
+      }
+    },
+    {
+      "id": "rYJq59Q0YdfK6n3x740Em",
+      "type": "topic",
+      "data": {
+        "label": "Animation"
+      }
+    },
+    {
+      "id": "Iv2d4sgODqMPzA9gH6RAw",
+      "type": "subtopic",
+      "data": {
+        "label": "Transitions \u0026 Triggers"
+      }
+    },
+    {
+      "id": "Unjknmb4b2LY-nUVvvF7_",
+      "type": "subtopic",
+      "data": {
+        "label": "Complex Sequences"
+      }
+    },
+    {
+      "id": "M1CU2Yq6dLp4yOuGV0fhF",
+      "type": "subtopic",
+      "data": {
+        "label": "Reusable Animations"
+      }
+    },
+    {
+      "id": "x91jWP81oCTeVEwzX8FbK",
+      "type": "subtopic",
+      "data": {
+        "label": "Route Transitions"
+      }
+    },
+    {
+      "id": "eRIUCGaDMDAz6kQYSN-AS",
+      "type": "button",
+      "data": {
+        "label": "Vue.js"
+      }
+    },
+    {
+      "id": "4IpVbs5l5Qz-pw_WAFaPH",
+      "type": "linksgroup",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "ktU7bNX3hu-_hTFE1CjrM",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-iogwMmOvub2ZF4zgg6WyFx2-DAwKHBng7Tytlcd2_8GORw1",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "DAwKHBng7Tytlcd2_8GOR",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-DAwKHBng7Tytlcd2_8GORx2-KDd40JOAvZ8O1mfhTYB3Kw2",
+      "source": "DAwKHBng7Tytlcd2_8GOR",
+      "target": "KDd40JOAvZ8O1mfhTYB3K",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kz2-EbFRcy4s6yzzIApBqU77Yy1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "EbFRcy4s6yzzIApBqU77Y",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kz2-hpShWwL0M57ZAzqkB4I8ty1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "hpShWwL0M57ZAzqkB4I8t",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kz2-DE3cMpeRYuUPw2ADtfS-3y1",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "DE3cMpeRYuUPw2ADtfS-3",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-KDd40JOAvZ8O1mfhTYB3Kx2-zv1y-I1fIEXtTkb8tOQU0w2",
+      "source": "KDd40JOAvZ8O1mfhTYB3K",
+      "target": "zv1y-I1fIEXtTkb8tOQU0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-zv1y-I1fIEXtTkb8tOQU0x2-kGnKzCkQCNFEdgCBRtNuWw1",
+      "source": "zv1y-I1fIEXtTkb8tOQU0",
+      "target": "kGnKzCkQCNFEdgCBRtNuW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kGnKzCkQCNFEdgCBRtNuWz2-b_kdNS9PDupcUftslkf9iy1",
+      "source": "kGnKzCkQCNFEdgCBRtNuW",
+      "target": "b_kdNS9PDupcUftslkf9i",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-b_kdNS9PDupcUftslkf9ix2-6fhe9xAi_RSVfa-KKbcbVw1",
+      "source": "b_kdNS9PDupcUftslkf9i",
+      "target": "6fhe9xAi_RSVfa-KKbcbV",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-6fhe9xAi_RSVfa-KKbcbVx2-kGzlumFdZFxTRZ3HnCGFOw2",
+      "source": "6fhe9xAi_RSVfa-KKbcbV",
+      "target": "kGzlumFdZFxTRZ3HnCGFO",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kGzlumFdZFxTRZ3HnCGFOx2-a74v78SvGtWduZpXs7wSqw1",
+      "source": "kGzlumFdZFxTRZ3HnCGFO",
+      "target": "a74v78SvGtWduZpXs7wSq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-a74v78SvGtWduZpXs7wSqy2-CpsoIVoCKaZnM_-BbXbChz2",
+      "source": "a74v78SvGtWduZpXs7wSq",
+      "target": "CpsoIVoCKaZnM_-BbXbCh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-CpsoIVoCKaZnM_-BbXbChx2-8u9uHCRt9RU57erBy79PPw1",
+      "source": "CpsoIVoCKaZnM_-BbXbCh",
+      "target": "8u9uHCRt9RU57erBy79PP",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-CpsoIVoCKaZnM_-BbXbChy2-Q36LQds8k_cSjijvXyWOMz1",
+      "source": "CpsoIVoCKaZnM_-BbXbCh",
+      "target": "Q36LQds8k_cSjijvXyWOM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Q36LQds8k_cSjijvXyWOMz2-8UY0HAvjY7bdbFpt-MM1uy1",
+      "source": "Q36LQds8k_cSjijvXyWOM",
+      "target": "8UY0HAvjY7bdbFpt-MM1u",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-8UY0HAvjY7bdbFpt-MM1ux2-AKPhbg10xXjccO7UBh5eJw2",
+      "source": "8UY0HAvjY7bdbFpt-MM1u",
+      "target": "AKPhbg10xXjccO7UBh5eJ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-8UY0HAvjY7bdbFpt-MM1uz2-lfp7PIjwITU5gBITQdirDy1",
+      "source": "8UY0HAvjY7bdbFpt-MM1u",
+      "target": "lfp7PIjwITU5gBITQdirD",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-lfp7PIjwITU5gBITQdirDz2-krXA6ua7E3m4IIpFkgQZew1",
+      "source": "lfp7PIjwITU5gBITQdirD",
+      "target": "krXA6ua7E3m4IIpFkgQZe",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-u1TG8i145o0RKhOR_5epfy2-Mqe_s-nwBqAL6X7OGRHENz1",
+      "source": "u1TG8i145o0RKhOR_5epf",
+      "target": "Mqe_s-nwBqAL6X7OGRHEN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Mqe_s-nwBqAL6X7OGRHENy2-m4WBnx_9h01Jl6Q1sxi4Yz2",
+      "source": "Mqe_s-nwBqAL6X7OGRHEN",
+      "target": "m4WBnx_9h01Jl6Q1sxi4Y",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-EbJib-XfZFF9bpCtL3aBsz2-jfHaS8TqE4tcAo59K8Nkny1",
+      "source": "EbJib-XfZFF9bpCtL3aBs",
+      "target": "jfHaS8TqE4tcAo59K8Nkn",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jfHaS8TqE4tcAo59K8Nknx2-b-0yQ74zHtAxI9aRLBohcw1",
+      "source": "jfHaS8TqE4tcAo59K8Nkn",
+      "target": "b-0yQ74zHtAxI9aRLBohc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-b-0yQ74zHtAxI9aRLBohcz2-kauQofxCmpktXPcnzid17y2",
+      "source": "b-0yQ74zHtAxI9aRLBohc",
+      "target": "kauQofxCmpktXPcnzid17",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-EbJib-XfZFF9bpCtL3aBsz2-T3MmS3bvMMgCUbOk3ktU7w1",
+      "source": "EbJib-XfZFF9bpCtL3aBs",
+      "target": "T3MmS3bvMMgCUbOk3ktU7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-b-0yQ74zHtAxI9aRLBohcx2-mm6c7GLQEwoQdAHdAYzGhw1",
+      "source": "b-0yQ74zHtAxI9aRLBohc",
+      "target": "mm6c7GLQEwoQdAHdAYzGh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-mm6c7GLQEwoQdAHdAYzGhz2-VNG9DdXlS6R1OJ6Lrn4Lty2",
+      "source": "mm6c7GLQEwoQdAHdAYzGh",
+      "target": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-VNG9DdXlS6R1OJ6Lrn4Ltz2-0FvH7KPs9ag02QkD1HEJ-y2",
+      "source": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "target": "0FvH7KPs9ag02QkD1HEJ-",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-VNG9DdXlS6R1OJ6Lrn4Ltz2-CZ1YRyai8Ds-ry4A8jVbry1",
+      "source": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "target": "CZ1YRyai8Ds-ry4A8jVbr",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-VNG9DdXlS6R1OJ6Lrn4Ltz2-0s-QhN5aZh2F3tLJFKEyRy1",
+      "source": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "target": "0s-QhN5aZh2F3tLJFKEyR",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-VNG9DdXlS6R1OJ6Lrn4Ltz2-8i_JD1P4gIhY1rdldwLC2y2",
+      "source": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "target": "8i_JD1P4gIhY1rdldwLC2",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-VNG9DdXlS6R1OJ6Lrn4Ltz2-5-RCB8AiDbkdIFYNXKWgey1",
+      "source": "VNG9DdXlS6R1OJ6Lrn4Lt",
+      "target": "5-RCB8AiDbkdIFYNXKWge",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-lLa-OnHV6GzkNFZu29BITy2-Xxyx3uzy5TpNhgR1IysMNz1",
+      "source": "lLa-OnHV6GzkNFZu29BIT",
+      "target": "Xxyx3uzy5TpNhgR1IysMN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Xxyx3uzy5TpNhgR1IysMNw2-9ISvaaJ815_cr_KW9vQhTx2",
+      "source": "Xxyx3uzy5TpNhgR1IysMN",
+      "target": "9ISvaaJ815_cr_KW9vQhT",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rYJq59Q0YdfK6n3x740Emw2-x91jWP81oCTeVEwzX8FbKx1",
+      "source": "rYJq59Q0YdfK6n3x740Em",
+      "target": "x91jWP81oCTeVEwzX8FbK",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-rYJq59Q0YdfK6n3x740Emx2-GV_zWF6rSWg5bqgiXhOEfw1",
+      "source": "rYJq59Q0YdfK6n3x740Em",
+      "target": "GV_zWF6rSWg5bqgiXhOEf",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    }
+  ]
+}

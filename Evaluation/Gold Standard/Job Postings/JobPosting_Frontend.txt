@@ -1,0 +1,28 @@
+Frontend Developer
+Company: PixelCraft Studios
+
+PixelCraft Studios is a product design and engineering firm building consumer-facing
+web applications for Series A-C startups. We are hiring a Frontend Developer to own
+the UI layer of three active products.
+
+Requirements:
+- React (3+ years)
+- TypeScript (2+ years)
+- Sass (1+ years)
+- Next.js (2+ years)
+- Vite (1+ years)
+- JavaScript (4+ years)
+- CSS (3+ years)
+- HTML (3+ years)
+- Git (2+ years)
+
+Responsibilities:
+- Build and maintain React component libraries using TypeScript
+- Implement responsive layouts with Sass and CSS
+- Develop performant server-rendered pages with Next.js
+- Configure and optimize Vite build pipelines
+- Collaborate with designers and backend engineers via Git workflows
+- Write accessible HTML following WCAG 2.1 standards
+
+Compensation: $105,000 - $125,000 + benefits
+Location: Portland, OR (Hybrid)

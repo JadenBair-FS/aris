@@ -1,0 +1,1931 @@
+{
+  "title": {
+    "card": "AI Engineer",
+    "page": "AI Engineer"
+  },
+  "description": "Step by step guide to becoming an AI Engineer in @currentYear@",
+  "nodes": [
+    {
+      "id": "UCy0Lnq8z4G5MrxQ5GfqY",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "meI-mTsrVsxW0Q0QOjvc0",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "glVX9kSrKu21vtfAoIXhj",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "k8QYMT_d6EQWDqDgnPYsT",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "zK_H4vmJXmyLYu1gVfhYK",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "xV_EVr3EGa8Nk-wz8a8tt",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "UtzHMjmoyxrD9wHWWyfKI",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "Q6H2hXYMzvq-bFeC1lPZO",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "RXi1fV2oTfMyl7NDrEnoA",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "oySx4TDcp4AxtIA3F7pX_",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "v99C5Bml2a6148LCJ9gy9",
+      "type": "topic",
+      "data": {
+        "label": "Hugging Face"
+      }
+    },
+    {
+      "id": "orN3FVbL7KZh7YPgw5us0",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "6QMakFkLJ88E7skJa21iF",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "yxKybRrzkFYLPj8FDVALH",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "NbIf0gxOaBShqiG4d7HXC",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "s3-VTeuwOY6R6eoNEtevh",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "0etHax9dg3AUJjJJKtwcc",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BDf4jLWOrnKRZJLbkFSyx",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "xgDW3VKPFxsHzV37ZEBtt",
+      "type": "paragraph",
+      "data": {
+        "label": "Pre-requisites (One of these)"
+      }
+    },
+    {
+      "id": "2d12fAvrDGrpBHvIbT2c0",
+      "type": "paragraph",
+      "data": {
+        "label": "Scrimba is offering 20% off on their AI Engineer course. Check them out!"
+      }
+    },
+    {
+      "id": "P2fcMXV6vhm6MMMiBmy3r",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "4P2Sbyy2cVjOrXH75Hc2b",
+      "type": "section",
+      "data": {
+        "label": null
+      }
+    },
+    {
+      "id": "s9fTyULS5azkrxwnXF3ZM",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "BO_Wx-cxY7Cr4U-9x-fpD",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "iogwMmOvub2ZF4zgg6WyF",
+      "type": "title",
+      "data": {
+        "label": "AI Engineer"
+      }
+    },
+    {
+      "id": "_hYN0gEi9BL24nptEtXWU",
+      "type": "topic",
+      "data": {
+        "label": "Introduction"
+      }
+    },
+    {
+      "id": "GN6SnI7RXIeW8JeD-qORW",
+      "type": "subtopic",
+      "data": {
+        "label": "What is an AI Engineer?"
+      }
+    },
+    {
+      "id": "jSZ1LhPdhlkW-9QJhIvFs",
+      "type": "subtopic",
+      "data": {
+        "label": "AI Engineer vs ML Engineer"
+      }
+    },
+    {
+      "id": "wf2BSyUekr1S1q6l8kyq6",
+      "type": "subtopic",
+      "data": {
+        "label": "Large Language Model (LLM)"
+      }
+    },
+    {
+      "id": "4NtUD9V64gkp8SFudj_ai",
+      "type": "subtopic",
+      "data": {
+        "label": "Inference"
+      }
+    },
+    {
+      "id": "xostGgoaYkqMO28iN2gx8",
+      "type": "subtopic",
+      "data": {
+        "label": "Training"
+      }
+    },
+    {
+      "id": "dzPKW_fn82lY1OOVrggk3",
+      "type": "subtopic",
+      "data": {
+        "label": "Vector DBs"
+      }
+    },
+    {
+      "id": "IX1BJWGwGmB4L063g0Frf",
+      "type": "subtopic",
+      "data": {
+        "label": "RAG"
+      }
+    },
+    {
+      "id": "VjXmSCdzi2ACv-W85Sy9D",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "Uffu609uQbIzDl88Ddccv",
+      "type": "subtopic",
+      "data": {
+        "label": "AI Agents"
+      }
+    },
+    {
+      "id": "5QdihE1lLpMc3DFrGy46M",
+      "type": "subtopic",
+      "data": {
+        "label": "AI vs AGI"
+      }
+    },
+    {
+      "id": "yd1VRnSOeOzXF8fgl7CW4",
+      "type": "label",
+      "data": {
+        "label": "Common Terminology"
+      }
+    },
+    {
+      "id": "5Irad96FtU3TkNZRK7x_8",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "MJvTQei3yqAMdLf5dACls",
+      "type": "button",
+      "data": {
+        "label": "Frontend"
+      }
+    },
+    {
+      "id": "9Vh9mUCXrYpTqEZexLW1L",
+      "type": "button",
+      "data": {
+        "label": "Backend"
+      }
+    },
+    {
+      "id": "259d3vMaiFwnLF6ZecFyP",
+      "type": "button",
+      "data": {
+        "label": "Full-Stack"
+      }
+    },
+    {
+      "id": "qJVgKe9uBvXc-YPfvX_Y7",
+      "type": "subtopic",
+      "data": {
+        "label": "Impact on Product Development"
+      }
+    },
+    {
+      "id": "K9EiuFgPBFgeRxY4wxAmb",
+      "type": "subtopic",
+      "data": {
+        "label": "Roles and Responsiblities"
+      }
+    },
+    {
+      "id": "d7fzv_ft12EopsQdmEsel",
+      "type": "subtopic",
+      "data": {
+        "label": "Pre-trained Models"
+      }
+    },
+    {
+      "id": "dhYcN_VsTj9T_meiUW73K",
+      "type": "label",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "2WbVpRLqwi3Oeqk1JPui4",
+      "type": "subtopic",
+      "data": {
+        "label": "Tokens"
+      }
+    },
+    {
+      "id": "vvpYkmycH0_W030E-L12f",
+      "type": "subtopic",
+      "data": {
+        "label": "Context"
+      }
+    },
+    {
+      "id": "hy6EyKiNxk1x84J63dhez",
+      "type": "subtopic",
+      "data": {
+        "label": "Anthropic Claude"
+      }
+    },
+    {
+      "id": "oe8E6ZIQWuYvHVbYJHUc1",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Gemini"
+      }
+    },
+    {
+      "id": "3PQVZbcr4neNMRr6CuNzS",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI (GPT, o-series)"
+      }
+    },
+    {
+      "id": "OkYO-aSPiuVYuLXHswBCn",
+      "type": "subtopic",
+      "data": {
+        "label": "Meta Llama"
+      }
+    },
+    {
+      "id": "n-Ud2dXkqIzK37jlKItN4",
+      "type": "subtopic",
+      "data": {
+        "label": "Mistral"
+      }
+    },
+    {
+      "id": "a7qsvoauFe5u953I699ps",
+      "type": "subtopic",
+      "data": {
+        "label": "Cohere"
+      }
+    },
+    {
+      "id": "zdeuA4GbdBl2DwKgiOA4G",
+      "type": "topic",
+      "data": {
+        "label": "How LLMs Work"
+      }
+    },
+    {
+      "id": "Waox7xR_yUeSnOtQFzU4c",
+      "type": "subtopic",
+      "data": {
+        "label": "ReAct"
+      }
+    },
+    {
+      "id": "nyBgEHvUhwF-NANMwkRJW",
+      "type": "subtopic",
+      "data": {
+        "label": "CoT"
+      }
+    },
+    {
+      "id": "15XOFdVp0IC-kLYPXUJWh",
+      "type": "subtopic",
+      "data": {
+        "label": "Zero-Shot"
+      }
+    },
+    {
+      "id": "qzvp6YxWDiGakA2mtspfh",
+      "type": "subtopic",
+      "data": {
+        "label": "Top-K"
+      }
+    },
+    {
+      "id": "FjV3oD7G2Ocq5HhUC17iH",
+      "type": "subtopic",
+      "data": {
+        "label": "Top-P"
+      }
+    },
+    {
+      "id": "DZPM9zjCbYYWBPLmQImxQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Few-Shot"
+      }
+    },
+    {
+      "id": "nXsjZiJGgFyOO8b0J-E2V",
+      "type": "button",
+      "data": {
+        "label": "Prompt Engineering Roadmap"
+      }
+    },
+    {
+      "id": "8ndKHDJgL_gYwaXC7XMer",
+      "type": "topic",
+      "data": {
+        "label": "AI Safety and Ethics"
+      }
+    },
+    {
+      "id": "r3lmdGQuphdbxA3Zd3e8x",
+      "type": "label",
+      "data": {
+        "label": "Understanding AI Safety Issues"
+      }
+    },
+    {
+      "id": "cUyLT6ctYQ1pgmodCKREq",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Injection Attacks"
+      }
+    },
+    {
+      "id": "lhIU0ulpvDAn1Xc3ooYz_",
+      "type": "subtopic",
+      "data": {
+        "label": "Bias and Fairness"
+      }
+    },
+    {
+      "id": "sWBT-j2cRuFqRFYtV_5TK",
+      "type": "subtopic",
+      "data": {
+        "label": "Security and Privacy Concerns"
+      }
+    },
+    {
+      "id": "Pt-AJmSJrOxKvolb5_HEv",
+      "type": "subtopic",
+      "data": {
+        "label": "Conducting adversarial testing"
+      }
+    },
+    {
+      "id": "ljZLa3yjQpegiZWwtnn_q",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Moderation APIs"
+      }
+    },
+    {
+      "id": "4Q5x2VCXedAWISBXUIyin",
+      "type": "subtopic",
+      "data": {
+        "label": "Adding end-user IDs in prompts"
+      }
+    },
+    {
+      "id": "qmx6OHqx4_0JXVIv8dASp",
+      "type": "subtopic",
+      "data": {
+        "label": "Robust prompt engineering"
+      }
+    },
+    {
+      "id": "t1SObMWkDZ1cKqNNlcd9L",
+      "type": "subtopic",
+      "data": {
+        "label": "Know your Customers / Usecases"
+      }
+    },
+    {
+      "id": "ONLDyczNacGVZGojYyJrU",
+      "type": "subtopic",
+      "data": {
+        "label": "Constraining outputs and inputs"
+      }
+    },
+    {
+      "id": "_G2yiGWt55mSuqhfEL_vt",
+      "type": "label",
+      "data": {
+        "label": "Safety Best Practices"
+      }
+    },
+    {
+      "id": "a_3SabylVqzzOyw3tZN5f",
+      "type": "topic",
+      "data": {
+        "label": "LM Studio"
+      }
+    },
+    {
+      "id": "RBwGsq9DngUsl8PrrCbqx",
+      "type": "subtopic",
+      "data": {
+        "label": "Closed vs Open Source Models"
+      }
+    },
+    {
+      "id": "YLOdOvLXa5Fa7_mmuvKEi",
+      "type": "subtopic",
+      "data": {
+        "label": "Hugging Face Hub"
+      }
+    },
+    {
+      "id": "3kRTzlLNBnXdTsAEXVu_M",
+      "type": "subtopic",
+      "data": {
+        "label": "Hugging Face Inference SDK"
+      }
+    },
+    {
+      "id": "bGLrbpxKgENe2xS1eQtdh",
+      "type": "subtopic",
+      "data": {
+        "label": "Transformers.js"
+      }
+    },
+    {
+      "id": "rTT2UnvqFO3GH6ThPLEjO",
+      "type": "topic",
+      "data": {
+        "label": "Ollama"
+      }
+    },
+    {
+      "id": "ro3vY_sp6xMQ-hfzO-rc1",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI Response API"
+      }
+    },
+    {
+      "id": "TsG_I7FL-cOCSw8gvZH3r",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Gemini APi"
+      }
+    },
+    {
+      "id": "--ig0Ume_BnXb9K2U7HJN",
+      "type": "topic",
+      "data": {
+        "label": "What are Embeddings"
+      }
+    },
+    {
+      "id": "eMfcyBxnMY_l_5-8eg6sD",
+      "type": "subtopic",
+      "data": {
+        "label": "Semantic Search"
+      }
+    },
+    {
+      "id": "HQe9GKy3p0kTUPxojIfSF",
+      "type": "subtopic",
+      "data": {
+        "label": "Recommendation Systems"
+      }
+    },
+    {
+      "id": "AglWJ7gb9rTT2rMkstxtk",
+      "type": "subtopic",
+      "data": {
+        "label": "Anomaly Detection"
+      }
+    },
+    {
+      "id": "06Xta-OqSci05nV2QMFdF",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Classification"
+      }
+    },
+    {
+      "id": "S4LeKcmhmhOxGmDXWrYSW",
+      "type": "label",
+      "data": {
+        "label": "Use Cases for Embeddings"
+      }
+    },
+    {
+      "id": "l6priWeJhbdUD5tJ7uHyG",
+      "type": "subtopic",
+      "data": {
+        "label": "Open AI Embeddings API"
+      }
+    },
+    {
+      "id": "y0qD5Kb4Pf-ymIwW-tvhX",
+      "type": "subtopic",
+      "data": {
+        "label": "Cohere"
+      }
+    },
+    {
+      "id": "4GArjDYipit4SLqKZAWDf",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemini Embedding"
+      }
+    },
+    {
+      "id": "apVYIV4EyejPft25oAvdI",
+      "type": "subtopic",
+      "data": {
+        "label": "Jina"
+      }
+    },
+    {
+      "id": "ZV_V6sqOnRodgaw4mzokC",
+      "type": "subtopic",
+      "data": {
+        "label": "Sentence Transformers"
+      }
+    },
+    {
+      "id": "dLEg4IA3F5jgc44Bst9if",
+      "type": "subtopic",
+      "data": {
+        "label": "Models on Hugging Face"
+      }
+    },
+    {
+      "id": "tt9u3oFlsjEMfPyojuqpc",
+      "type": "topic",
+      "data": {
+        "label": "Vector Databases"
+      }
+    },
+    {
+      "id": "WcjX6p-V-Rdd77EL8Ega9",
+      "type": "subtopic",
+      "data": {
+        "label": "Purpose and Functionality"
+      }
+    },
+    {
+      "id": "dSd2C9lNl-ymmCRT9_ZC3",
+      "type": "subtopic",
+      "data": {
+        "label": "Chroma"
+      }
+    },
+    {
+      "id": "_Cf7S1DCvX7p1_3-tP3C3",
+      "type": "subtopic",
+      "data": {
+        "label": "Pinecone"
+      }
+    },
+    {
+      "id": "VgUnrZGKVjAAO4n_llq5-",
+      "type": "subtopic",
+      "data": {
+        "label": "Weaviate"
+      }
+    },
+    {
+      "id": "JurLbOO1Z8r6C3yUqRNwf",
+      "type": "subtopic",
+      "data": {
+        "label": "FAISS"
+      }
+    },
+    {
+      "id": "rjaCNT3Li45kwu2gXckke",
+      "type": "subtopic",
+      "data": {
+        "label": "LanceDB"
+      }
+    },
+    {
+      "id": "DwOAL5mOBgBiw-EQpAzQl",
+      "type": "subtopic",
+      "data": {
+        "label": "Qdrant"
+      }
+    },
+    {
+      "id": "9kT7EEQsbeD2WDdN9ADx7",
+      "type": "subtopic",
+      "data": {
+        "label": "Supabase"
+      }
+    },
+    {
+      "id": "j6bkm0VUgLkHdMDDJFiMC",
+      "type": "subtopic",
+      "data": {
+        "label": "MongoDB Atlas"
+      }
+    },
+    {
+      "id": "HCuwQPBl48sRzdbxdf_E5",
+      "type": "label",
+      "data": {
+        "label": "Popular Vector DBs (pick one)"
+      }
+    },
+    {
+      "id": "5TQnO9B4_LTHwqjI7iHB1",
+      "type": "subtopic",
+      "data": {
+        "label": "Indexing Embeddings"
+      }
+    },
+    {
+      "id": "ZcbRPtgaptqKqWBgRrEBU",
+      "type": "subtopic",
+      "data": {
+        "label": "Performing Similarity Search"
+      }
+    },
+    {
+      "id": "xsvdnT7BIbR_jAajTYDWw",
+      "type": "label",
+      "data": {
+        "label": "Implementing Vector Search"
+      }
+    },
+    {
+      "id": "lVhWhZGR558O-ljHobxIi",
+      "type": "topic",
+      "data": {
+        "label": "What are RAGs?"
+      }
+    },
+    {
+      "id": "GCn4LGNEtPI0NWYAZCRE-",
+      "type": "subtopic",
+      "data": {
+        "label": "RAG Usecases"
+      }
+    },
+    {
+      "id": "qlBEXrbV88e_wAGRwO9hW",
+      "type": "subtopic",
+      "data": {
+        "label": "RAG vs Fine-tuning"
+      }
+    },
+    {
+      "id": "mX987wiZF7p3V_gExrPeX",
+      "type": "subtopic",
+      "data": {
+        "label": "Chunking"
+      }
+    },
+    {
+      "id": "grTcbzT7jKk_sIUwOTZTD",
+      "type": "subtopic",
+      "data": {
+        "label": "Embedding"
+      }
+    },
+    {
+      "id": "zZA1FBhf1y4kCoUZ-hM4H",
+      "type": "subtopic",
+      "data": {
+        "label": "Vector Database"
+      }
+    },
+    {
+      "id": "OCGCzHQM2LQyUWmiqe6E0",
+      "type": "subtopic",
+      "data": {
+        "label": "Retrieval Process"
+      }
+    },
+    {
+      "id": "2jJnS9vRYhaS69d6OxrMh",
+      "type": "subtopic",
+      "data": {
+        "label": "Generation"
+      }
+    },
+    {
+      "id": "Bt536neIoWehPSHUB6l_n",
+      "type": "label",
+      "data": {
+        "label": "Implementing RAG"
+      }
+    },
+    {
+      "id": "v9whDFmN8Wf3oKlaOtHMD",
+      "type": "label",
+      "data": {
+        "label": "Ways of Implementing RAG"
+      }
+    },
+    {
+      "id": "WZVW8FQu6LyspSKm1C_sl",
+      "type": "subtopic",
+      "data": {
+        "label": "Using SDKs Directly"
+      }
+    },
+    {
+      "id": "jM-Jbo0wUilhVY830hetJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Langchain"
+      }
+    },
+    {
+      "id": "JT4mBXOjvvrUnynA7yrqt",
+      "type": "subtopic",
+      "data": {
+        "label": "Llama Index"
+      }
+    },
+    {
+      "id": "eOqCBgBTKM8CmY3nsWjre",
+      "type": "subtopic",
+      "data": {
+        "label": "Tools \u0026 Function Calling"
+      }
+    },
+    {
+      "id": "UGYYh2W1XnnbgYNY8L8Hb",
+      "type": "subtopic",
+      "data": {
+        "label": "DeepSeek"
+      }
+    },
+    {
+      "id": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "type": "topic",
+      "data": {
+        "label": "AI Agents"
+      }
+    },
+    {
+      "id": "778HsQzTuJ_3c9OSn5DmH",
+      "type": "subtopic",
+      "data": {
+        "label": "Agents Usecases"
+      }
+    },
+    {
+      "id": "BRdKYsyWaHg6kJA62mLNO",
+      "type": "button",
+      "data": {
+        "label": "AI Agents Roadmap"
+      }
+    },
+    {
+      "id": "voDKcKvXtyLzeZdx2g3Qn",
+      "type": "subtopic",
+      "data": {
+        "label": "ReAct Prompting"
+      }
+    },
+    {
+      "id": "6xaRB34_g0HGt-y1dGYXR",
+      "type": "subtopic",
+      "data": {
+        "label": "Manual Implementation"
+      }
+    },
+    {
+      "id": "Sm0Ne5Nx72hcZCdAcC0C2",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI AgentKit \u0026 Agent SDK"
+      }
+    },
+    {
+      "id": "xXLyuUNrKEc32XLQxMjgT",
+      "type": "subtopic",
+      "data": {
+        "label": "Claude Agent SDK"
+      }
+    },
+    {
+      "id": "8DMSxbdBT5el9ECZE2EGx",
+      "type": "label",
+      "data": {
+        "label": "Building AI Agents"
+      }
+    },
+    {
+      "id": "W7cKPt_UxcUgwp8J6hS4p",
+      "type": "topic",
+      "data": {
+        "label": "Multimodal AI"
+      }
+    },
+    {
+      "id": "sGR9qcro68KrzM8qWxcH8",
+      "type": "subtopic",
+      "data": {
+        "label": "Multimodal AI Usecases"
+      }
+    },
+    {
+      "id": "fzVq4hGoa2gdbIzoyY1Zp",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Understanding"
+      }
+    },
+    {
+      "id": "49BWxYVFpIgZCCqsikH7l",
+      "type": "subtopic",
+      "data": {
+        "label": "Image Generation"
+      }
+    },
+    {
+      "id": "TxaZCtTCTUfwCxAJ2pmND",
+      "type": "subtopic",
+      "data": {
+        "label": "Video Understanding"
+      }
+    },
+    {
+      "id": "mxQYB820447DC6kogyZIL",
+      "type": "subtopic",
+      "data": {
+        "label": "Audio Processing"
+      }
+    },
+    {
+      "id": "GCERpLz5BcRtWPpv-asUz",
+      "type": "subtopic",
+      "data": {
+        "label": "Text-to-Speech"
+      }
+    },
+    {
+      "id": "jQX10XKd_QM5wdQweEkVJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Speech-to-Text"
+      }
+    },
+    {
+      "id": "chm2xTFPJKW0dubKGjq-2",
+      "type": "label",
+      "data": {
+        "label": "Multimodal AI Tasks"
+      }
+    },
+    {
+      "id": "CRrqa-dBw1LlOwVbrZhjK",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI Vision API"
+      }
+    },
+    {
+      "id": "LKFwwjtcawJ4Z12X102Cb",
+      "type": "subtopic",
+      "data": {
+        "label": "DALL-E API"
+      }
+    },
+    {
+      "id": "OTBd6cPUayKaAM-fLWdSt",
+      "type": "subtopic",
+      "data": {
+        "label": "Whisper API"
+      }
+    },
+    {
+      "id": "EIDbwbdolR_qsNKVDla6V",
+      "type": "subtopic",
+      "data": {
+        "label": "Hugging Face Models"
+      }
+    },
+    {
+      "id": "j9zD3pHysB1CBhLfLjhpD",
+      "type": "subtopic",
+      "data": {
+        "label": "LangChain for Multimodal Apps"
+      }
+    },
+    {
+      "id": "akQTCKuPRRelj2GORqvsh",
+      "type": "subtopic",
+      "data": {
+        "label": "LlamaIndex for Multimodal Apps"
+      }
+    },
+    {
+      "id": "5hCv_2FQNIgQC4XLW4AYs",
+      "type": "label",
+      "data": {
+        "label": "Implementing Multimodal AI"
+      }
+    },
+    {
+      "id": "0vLaVNJaJSHZ_bHli6Qzs",
+      "type": "paragraph",
+      "data": {
+        "label": "Continue learning with following relevant tracks"
+      }
+    },
+    {
+      "id": "TlwwCiIB4eIAa93S49jwk",
+      "type": "button",
+      "data": {
+        "label": "AI Agents"
+      }
+    },
+    {
+      "id": "-sFboM4eFUMVq1tlPl-fV",
+      "type": "button",
+      "data": {
+        "label": "Prompt Engineering"
+      }
+    },
+    {
+      "id": "NYge7PNtfI-y6QWefXJ4d",
+      "type": "topic",
+      "data": {
+        "label": "Development Tools"
+      }
+    },
+    {
+      "id": "8tcMfca2q2_6M-KmzmaT1",
+      "type": "button",
+      "data": {
+        "label": "Scrimba - AI Engineer Path"
+      }
+    },
+    {
+      "id": "NxOYVBCLCLZ1wtGAGEn5W",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "ytU145_ip3ePMRKaroV-Z",
+      "type": "label",
+      "data": {
+        "label": "Core LLM Elements"
+      }
+    },
+    {
+      "id": "ebXXEhNRROjbbof-Gym4p",
+      "type": "subtopic",
+      "data": {
+        "label": "Haystack"
+      }
+    },
+    {
+      "id": "d0ontCII8KI8wfP-8Y45R",
+      "type": "subtopic",
+      "data": {
+        "label": "RAGFlow"
+      }
+    },
+    {
+      "id": "OIcmPSbdsuWapb6HZ4BEi",
+      "type": "button",
+      "data": {
+        "label": "AI \u0026 Data Scientist"
+      }
+    },
+    {
+      "id": "AeHkNU-uJ_gBdo5-xdpEu",
+      "type": "topic",
+      "data": {
+        "label": "Model Context Protocol (MCP)"
+      }
+    },
+    {
+      "id": "MabZ9jOrSj539C5qZrVBd",
+      "type": "subtopic",
+      "data": {
+        "label": "MCP Host"
+      }
+    },
+    {
+      "id": "8Xkd88EjX3GE_9DWQhr7G",
+      "type": "subtopic",
+      "data": {
+        "label": "MCP Server"
+      }
+    },
+    {
+      "id": "QJ50-vaDLE3vdlaqQVjiZ",
+      "type": "label",
+      "data": {
+        "label": "Core Components"
+      }
+    },
+    {
+      "id": "po0fIZYaFhRbNlza7sB37",
+      "type": "subtopic",
+      "data": {
+        "label": "MCP Client"
+      }
+    },
+    {
+      "id": "Z0920V57_ziDhXbQJMN9O",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Layer"
+      }
+    },
+    {
+      "id": "o4gHDZ5p9lyeHuCAPvAKz",
+      "type": "subtopic",
+      "data": {
+        "label": "Transport Layer"
+      }
+    },
+    {
+      "id": "oLGfKjcqBzJ3vd6Cg-T1B",
+      "type": "subtopic",
+      "data": {
+        "label": "Building an MCP Server"
+      }
+    },
+    {
+      "id": "b3XLWBNQErppYX03B87EE",
+      "type": "paragraph",
+      "data": {
+        "label": "Developing wiht MCP"
+      }
+    },
+    {
+      "id": "0Rk0rCbmRFJT2GKwUibQS",
+      "type": "subtopic",
+      "data": {
+        "label": "Building an MCP Client"
+      }
+    },
+    {
+      "id": "H-G93SsEgsA_NGL_v4hPv",
+      "type": "subtopic",
+      "data": {
+        "label": "Connect to Local Server"
+      }
+    },
+    {
+      "id": "2t4uINxmzfx8FUF-_i_2B",
+      "type": "subtopic",
+      "data": {
+        "label": "Connect to Remote Server"
+      }
+    },
+    {
+      "id": "mjQO9CNr4wJd9MUQN1G25",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "PzCq2mBPWwgTDSh6Kn-Xz",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "AxzTGDCC2Ftp4G66U4Uqr",
+      "type": "subtopic",
+      "data": {
+        "label": "Vertex AI Agent Builder"
+      }
+    },
+    {
+      "id": "mbp2NoL-VZ5hZIIblNBXt",
+      "type": "subtopic",
+      "data": {
+        "label": "Google ADK"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "zTvsCNS3ucsZmvy1tHyeI",
+      "type": "subtopic",
+      "data": {
+        "label": "Fine-tuning"
+      }
+    },
+    {
+      "id": "00PvP0lZW7iMPF4ytoOn8",
+      "type": "label",
+      "data": {
+        "label": "Working With LLMs"
+      }
+    },
+    {
+      "id": "kCiHNaZ9CgnS9uksIQ_SY",
+      "type": "subtopic",
+      "data": {
+        "label": "Context Engineering"
+      }
+    },
+    {
+      "id": "ozrR8IvjNFbHd44kZrExX",
+      "type": "topic",
+      "data": {
+        "label": "Prompt vs Context Engineering"
+      }
+    },
+    {
+      "id": "LCHse57rXf3sl8ml1ow0T",
+      "type": "subtopic",
+      "data": {
+        "label": "Input Format"
+      }
+    },
+    {
+      "id": "S46Vaq8hYq6Ee1Id_-fSQ",
+      "type": "subtopic",
+      "data": {
+        "label": "System Prompting"
+      }
+    },
+    {
+      "id": "9oUpeEnaMWctQLTobbmY7",
+      "type": "subtopic",
+      "data": {
+        "label": "Context"
+      }
+    },
+    {
+      "id": "N3TzWYxU0jgv1l99Ts58n",
+      "type": "subtopic",
+      "data": {
+        "label": "Role \u0026 Behavior"
+      }
+    },
+    {
+      "id": "PT3uDiUjiKhO8laOkCmgP",
+      "type": "subtopic",
+      "data": {
+        "label": "Constrains"
+      }
+    },
+    {
+      "id": "zqhmLzHsmDlrTFVHzhq6-",
+      "type": "subtopic",
+      "data": {
+        "label": "Structured Output"
+      }
+    },
+    {
+      "id": "wFfjHkGLrcCyLyXV4BiFM",
+      "type": "subtopic",
+      "data": {
+        "label": "Function Calling"
+      }
+    },
+    {
+      "id": "bqqY0gsZkBpcHMZw1hcZ5",
+      "type": "subtopic",
+      "data": {
+        "label": "Prompt Caching"
+      }
+    },
+    {
+      "id": "MUDBYjR7uCUZQ-kQxi2K_",
+      "type": "subtopic",
+      "data": {
+        "label": "Streaming Responses"
+      }
+    },
+    {
+      "id": "2X0NDcq2ojBJ0RxY_U6bl",
+      "type": "topic",
+      "data": {
+        "label": "Type of Models"
+      }
+    },
+    {
+      "id": "boYQlOBpJoKdNaBoXHjvw",
+      "type": "label",
+      "data": {
+        "label": "Closed Models "
+      }
+    },
+    {
+      "id": "MKczdFDhE2Au7cy30shFq",
+      "type": "label",
+      "data": {
+        "label": "AI Models"
+      }
+    },
+    {
+      "id": "_qqITQ8O0Q0RWUeZsUXnY",
+      "type": "subtopic",
+      "data": {
+        "label": "Self-Hosted Models"
+      }
+    },
+    {
+      "id": "0_pa739kMPWHfuSQV-VO7",
+      "type": "subtopic",
+      "data": {
+        "label": "Repetition Penalties"
+      }
+    },
+    {
+      "id": "L8X_vmSKLl2ViGCr_-Tq0",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "zeWoTtAFEpVXDQzWNsha4",
+      "type": "topic",
+      "data": {
+        "label": "Choosing the Right Model "
+      }
+    },
+    {
+      "id": "unaT9C2P-tcX6hq23pp2n",
+      "type": "label",
+      "data": {
+        "label": "Open Source Models "
+      }
+    },
+    {
+      "id": "MNtaY1_kOJHeoWuM-abb4",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemma2"
+      }
+    },
+    {
+      "id": "c0RPhpD00VIUgF4HJgN2T",
+      "type": "subtopic",
+      "data": {
+        "label": "Qwen"
+      }
+    },
+    {
+      "id": "NrVZTycqEI0ZQfQm90mh-",
+      "type": "label",
+      "data": {
+        "label": "Platforms \u0026 Ecosystem"
+      }
+    },
+    {
+      "id": "1GlpMjmdAWor0X_BnISGg",
+      "type": "topic",
+      "data": {
+        "label": "OpenRouter"
+      }
+    },
+    {
+      "id": "n2077gGZYnQ-yAAIoZ8Ud",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "fr0UOXlVVctkk1K84Z8Of",
+      "type": "topic",
+      "data": {
+        "label": "Embedding Models"
+      }
+    },
+    {
+      "id": "F8tBJCwKy5rdsyo0QZgJK",
+      "type": "label",
+      "data": {
+        "label": "Proprietary Models"
+      }
+    },
+    {
+      "id": "H7lBex0Z2-Bewf6pNtMcW",
+      "type": "label",
+      "data": {
+        "label": "Open Source Models"
+      }
+    },
+    {
+      "id": "yhNheCWm21rmoG1Y892GV",
+      "type": "label",
+      "data": {
+        "label": "APIs \u0026 SDKs"
+      }
+    },
+    {
+      "id": "nxwMVla0-PNG8nlocKK5v",
+      "type": "subtopic",
+      "data": {
+        "label": "Claude Messages API"
+      }
+    },
+    {
+      "id": "vnXtUupJUlyU_uCbZBbnk",
+      "type": "subtopic",
+      "data": {
+        "label": "OpenAI-compatible APIs"
+      }
+    },
+    {
+      "id": "CGCO-1X13GXoM3bfsfZLm",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "I333UTZsbxunz5ReCiMR0",
+      "type": "label",
+      "data": {
+        "label": "Embeddings \u0026 Vector Databases"
+      }
+    },
+    {
+      "id": "25MVP2NHBAv5ZmpOCC8dN",
+      "type": "label",
+      "data": {
+        "label": "RAGs"
+      }
+    },
+    {
+      "id": "weLdncJgo0ILW4XJtIsUw",
+      "type": "label",
+      "data": {
+        "label": "AI Agents"
+      }
+    },
+    {
+      "id": "kG1bkF2oY21CJOm9zhdpn",
+      "type": "subtopic",
+      "data": {
+        "label": "Multi-agents"
+      }
+    },
+    {
+      "id": "YKIPOiSj_FNtg0h8uaSMq",
+      "type": "subtopic",
+      "data": {
+        "label": "Hugging Face Tasks"
+      }
+    },
+    {
+      "id": "XyEp6jnBSpCxMGwALnYfT",
+      "type": "subtopic",
+      "data": {
+        "label": "Embeddings"
+      }
+    },
+    {
+      "id": "zk92h9nWXZ-qHBZOq2Aam",
+      "type": "label",
+      "data": {
+        "label": "AI Safety and Ethics"
+      }
+    },
+    {
+      "id": "b8tS_b-gM1NkfQNHXfUW8",
+      "type": "label",
+      "data": {
+        "label": "Other AI Applications"
+      }
+    },
+    {
+      "id": "-hMe4rZFP2tNx2EspNISu",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "wr5ddjutC-fX_ixysTHaT",
+      "type": "subtopic",
+      "data": {
+        "label": "Claude Code"
+      }
+    },
+    {
+      "id": "hzeEo8COf2l07iu5EdlFo",
+      "type": "subtopic",
+      "data": {
+        "label": "Gemini"
+      }
+    },
+    {
+      "id": "XY2l96sry3WyLzzo3KUeU",
+      "type": "subtopic",
+      "data": {
+        "label": "Codex"
+      }
+    },
+    {
+      "id": "Xsl8mx6J182TxPPtNP471",
+      "type": "subtopic",
+      "data": {
+        "label": "Windsurf"
+      }
+    },
+    {
+      "id": "MWhoqhNnBaoeCdN_8i15k",
+      "type": "subtopic",
+      "data": {
+        "label": "Cursor"
+      }
+    },
+    {
+      "id": "Ubk4GN0Z4XlDJ3EbRXdxg",
+      "type": "subtopic",
+      "data": {
+        "label": "Replit"
+      }
+    },
+    {
+      "id": "D_UfkD8c3zjmOzl2FWqg2",
+      "type": "label",
+      "data": {
+        "label": "AI Assisted Coding Tools"
+      }
+    },
+    {
+      "id": "6y73FLjshnqxV8BTGUeiu",
+      "type": "subtopic",
+      "data": {
+        "label": "NanoBanana API"
+      }
+    },
+    {
+      "id": "LbB2PeytxRSuU07Bk0KlJ",
+      "type": "subtopic",
+      "data": {
+        "label": "Sampling Parameters"
+      }
+    },
+    {
+      "id": "_bPTciEA1GT1JwfXim19z",
+      "type": "subtopic",
+      "data": {
+        "label": "Temperature"
+      }
+    },
+    {
+      "id": "cxaE6C3DTD1eyQGElzGwT",
+      "type": "label",
+      "data": {
+        "label": "Context Engineering"
+      }
+    },
+    {
+      "id": "KWjD4xEPhOOYS51dvRLd2",
+      "type": "subtopic",
+      "data": {
+        "label": "External Memory"
+      }
+    },
+    {
+      "id": "LnQ2AatMWpExUHcZhDIPd",
+      "type": "subtopic",
+      "data": {
+        "label": " RAG and Dynamic Filters"
+      }
+    },
+    {
+      "id": "9XCxilAQ7FRet7lHQr1gE",
+      "type": "subtopic",
+      "data": {
+        "label": "Context compaction"
+      }
+    },
+    {
+      "id": "9JwWIK0Z2MK8-6EQQJsCO",
+      "type": "subtopic",
+      "data": {
+        "label": "Context Isolation"
+      }
+    },
+    {
+      "id": "BOXa0k40etMWpjQ6MjtDH",
+      "type": "button",
+      "data": {
+        "label": "Vibe Coding Roadmap"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "XX0I26JoVMVXIe_7bVMix",
+      "source": "iogwMmOvub2ZF4zgg6WyF",
+      "target": "_hYN0gEi9BL24nptEtXWU",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUz2-GN6SnI7RXIeW8JeD-qORWy1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "GN6SnI7RXIeW8JeD-qORW",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-_hYN0gEi9BL24nptEtXWUz2-jSZ1LhPdhlkW-9QJhIvFsy1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "jSZ1LhPdhlkW-9QJhIvFs",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge___hYN0gEi9BL24nptEtXWUz2-K9EiuFgPBFgeRxY4wxAmby1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "K9EiuFgPBFgeRxY4wxAmb",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge___hYN0gEi9BL24nptEtXWUz2-qJVgKe9uBvXc-YPfvX_Y7y1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "qJVgKe9uBvXc-YPfvX_Y7",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AeHkNU-uJ_gBdo5-xdpEuy2-778HsQzTuJ_3c9OSn5DmHz1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "778HsQzTuJ_3c9OSn5DmH",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AeHkNU-uJ_gBdo5-xdpEuy2-voDKcKvXtyLzeZdx2g3Qnz1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "voDKcKvXtyLzeZdx2g3Qn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__NYge7PNtfI-y6QWefXJ4dw2-W7cKPt_UxcUgwp8J6hS4px2",
+      "source": "NYge7PNtfI-y6QWefXJ4d",
+      "target": "W7cKPt_UxcUgwp8J6hS4p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__AeHkNU-uJ_gBdo5-xdpEuy2-BRdKYsyWaHg6kJA62mLNOz1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "BRdKYsyWaHg6kJA62mLNO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AeHkNU-uJ_gBdo5-xdpEuw2-4_ap0rD9Gl6Ep_4jMfPpGx1",
+      "source": "AeHkNU-uJ_gBdo5-xdpEu",
+      "target": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge___hYN0gEi9BL24nptEtXWUx2-MKczdFDhE2Au7cy30shFqw1",
+      "source": "_hYN0gEi9BL24nptEtXWU",
+      "target": "00PvP0lZW7iMPF4ytoOn8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MKczdFDhE2Au7cy30shFqx2-zdeuA4GbdBl2DwKgiOA4Gw1",
+      "source": "00PvP0lZW7iMPF4ytoOn8",
+      "target": "zdeuA4GbdBl2DwKgiOA4G",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zdeuA4GbdBl2DwKgiOA4Gx2-2X0NDcq2ojBJ0RxY_U6blw2",
+      "source": "zdeuA4GbdBl2DwKgiOA4G",
+      "target": "ozrR8IvjNFbHd44kZrExX",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__nXsjZiJGgFyOO8b0J-E2Vx2-MKczdFDhE2Au7cy30shFqw1",
+      "source": "nXsjZiJGgFyOO8b0J-E2V",
+      "target": "MKczdFDhE2Au7cy30shFq",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__MKczdFDhE2Au7cy30shFqx2-2X0NDcq2ojBJ0RxY_U6blw2",
+      "source": "MKczdFDhE2Au7cy30shFq",
+      "target": "2X0NDcq2ojBJ0RxY_U6bl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__d7fzv_ft12EopsQdmEsely2-2X0NDcq2ojBJ0RxY_U6blz2",
+      "source": "d7fzv_ft12EopsQdmEsel",
+      "target": "2X0NDcq2ojBJ0RxY_U6bl",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__2X0NDcq2ojBJ0RxY_U6blz2-RBwGsq9DngUsl8PrrCbqxy1",
+      "source": "2X0NDcq2ojBJ0RxY_U6bl",
+      "target": "RBwGsq9DngUsl8PrrCbqx",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__2X0NDcq2ojBJ0RxY_U6blz2-_qqITQ8O0Q0RWUeZsUXnYy1",
+      "source": "2X0NDcq2ojBJ0RxY_U6bl",
+      "target": "_qqITQ8O0Q0RWUeZsUXnY",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__2X0NDcq2ojBJ0RxY_U6blx2-zeWoTtAFEpVXDQzWNsha4w1",
+      "source": "2X0NDcq2ojBJ0RxY_U6bl",
+      "target": "zeWoTtAFEpVXDQzWNsha4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__--ig0Ume_BnXb9K2U7HJNx2-fr0UOXlVVctkk1K84Z8Ofw1",
+      "source": "--ig0Ume_BnXb9K2U7HJN",
+      "target": "fr0UOXlVVctkk1K84Z8Of",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__fr0UOXlVVctkk1K84Z8Ofx2-tt9u3oFlsjEMfPyojuqpcw1",
+      "source": "fr0UOXlVVctkk1K84Z8Of",
+      "target": "tt9u3oFlsjEMfPyojuqpc",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__zeWoTtAFEpVXDQzWNsha4x2-I333UTZsbxunz5ReCiMR0w1",
+      "source": "zeWoTtAFEpVXDQzWNsha4",
+      "target": "I333UTZsbxunz5ReCiMR0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__--ig0Ume_BnXb9K2U7HJNw2-I333UTZsbxunz5ReCiMR0x1",
+      "source": "--ig0Ume_BnXb9K2U7HJN",
+      "target": "I333UTZsbxunz5ReCiMR0",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__tt9u3oFlsjEMfPyojuqpcx2-b8tS_b-gM1NkfQNHXfUW8w1",
+      "source": "tt9u3oFlsjEMfPyojuqpc",
+      "target": "25MVP2NHBAv5ZmpOCC8dN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lVhWhZGR558O-ljHobxIiw2-b8tS_b-gM1NkfQNHXfUW8x1",
+      "source": "lVhWhZGR558O-ljHobxIi",
+      "target": "25MVP2NHBAv5ZmpOCC8dN",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__lVhWhZGR558O-ljHobxIix2-b8tS_b-gM1NkfQNHXfUW8w2",
+      "source": "lVhWhZGR558O-ljHobxIi",
+      "target": "weLdncJgo0ILW4XJtIsUw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4_ap0rD9Gl6Ep_4jMfPpGw2-b8tS_b-gM1NkfQNHXfUW8x1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "weLdncJgo0ILW4XJtIsUw",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__4_ap0rD9Gl6Ep_4jMfPpGy2-eOqCBgBTKM8CmY3nsWjrez1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "eOqCBgBTKM8CmY3nsWjre",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__4_ap0rD9Gl6Ep_4jMfPpGy2-kG1bkF2oY21CJOm9zhdpnz1",
+      "source": "4_ap0rD9Gl6Ep_4jMfPpG",
+      "target": "kG1bkF2oY21CJOm9zhdpn",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__S46Vaq8hYq6Ee1Id_-fSQx2-N3TzWYxU0jgv1l99Ts58nw1",
+      "source": "S46Vaq8hYq6Ee1Id_-fSQ",
+      "target": "N3TzWYxU0jgv1l99Ts58n",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__YKIPOiSj_FNtg0h8uaSMqw2-v99C5Bml2a6148LCJ9gy9x2",
+      "source": "YKIPOiSj_FNtg0h8uaSMq",
+      "target": "v99C5Bml2a6148LCJ9gy9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__AeHkNU-uJ_gBdo5-xdpEux2-b8tS_b-gM1NkfQNHXfUW8w1",
+      "source": "AeHkNU-uJ_gBdo5-xdpEu",
+      "target": "zk92h9nWXZ-qHBZOq2Aam",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__b8tS_b-gM1NkfQNHXfUW8x2-8ndKHDJgL_gYwaXC7XMerw1",
+      "source": "zk92h9nWXZ-qHBZOq2Aam",
+      "target": "8ndKHDJgL_gYwaXC7XMer",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__8ndKHDJgL_gYwaXC7XMery2-s9fTyULS5azkrxwnXF3ZMz1",
+      "source": "8ndKHDJgL_gYwaXC7XMer",
+      "target": "s9fTyULS5azkrxwnXF3ZM",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "xy-edge__8ndKHDJgL_gYwaXC7XMerx2-b8tS_b-gM1NkfQNHXfUW8w1",
+      "source": "8ndKHDJgL_gYwaXC7XMer",
+      "target": "b8tS_b-gM1NkfQNHXfUW8",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__b8tS_b-gM1NkfQNHXfUW8x2-W7cKPt_UxcUgwp8J6hS4pw1",
+      "source": "b8tS_b-gM1NkfQNHXfUW8",
+      "target": "W7cKPt_UxcUgwp8J6hS4p",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "xy-edge__LbB2PeytxRSuU07Bk0KlJx2-_bPTciEA1GT1JwfXim19zw2",
+      "source": "LbB2PeytxRSuU07Bk0KlJ",
+      "target": "_bPTciEA1GT1JwfXim19z",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

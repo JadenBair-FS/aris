@@ -9,16 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ElBruno.OllamaSharp.Extensions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.2" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.2" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="1.69.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.69.0-alpha" />
+    <PackageReference Include="Neo4j.Driver" Version="6.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+    <PackageReference Include="OllamaSharp" Version="5.4.12" />
+    <PackageReference Include="Pgvector" Version="0.3.2" />
     <PackageReference Include="Pgvector.EntityFrameworkCore" Version="0.3.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ARIS.Shared\ARIS.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

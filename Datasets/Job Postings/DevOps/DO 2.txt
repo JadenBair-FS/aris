@@ -1,0 +1,31 @@
+Full job description
+About IHI
+
+At Innovative Hematology (IHI), we offer a future where people with rare blood disorders flourish. Our experts provide the highest quality comprehensive services and holistic care to patients with bleeding, clotting and other hematologic disorders, and to their families.
+
+What You Will Do
+
+The DevOps Engineer will help build, maintain, and optimize the AWS cloud infrastructure, automate workflows, and support data pipelines across a multi-account environment. This is a hands-on role ideal that deepens skills in cloud automation, Infrastructure as Code (IaC), serverless architectures, and modern data engineering tools.
+
+Design, deploy, and maintain AWS infrastructure using CloudFormation and other IaC tools.
+Architect and manage secure, highly available VPCs, including Transit Gateways, route tables, security groups, and network connectivity.
+Develop and maintain serverless solutions using AWS Lambda (Python preferred).
+Build and maintain ETL pipelines using AWS Glue (PySpark).
+Design and implement innovative AI solutions leveraging AWS services (such as Bedrock, SageMaker, Lambda, etc.), integrating machine learning models and automation to address business challenges and enhance operational efficiency.
+Automate infrastructure provisioning, deployment, and configuration using CI/CD pipelines (GitHub Actions or similar).
+Drive a serverless-first approach wherever possible to improve scalability and reduce operational overhead.
+Monitor and troubleshoot infrastructure and data pipeline issues to ensure reliability and performance.
+Collaborate with other engineers to implement best practices for security, cost optimization, and high availability.
+Contribute to documentation and knowledge sharing within the team.
+Requirements
+
+Associates/Bachelors (or other degree), or a combination of related education and experience may be considered
+3+ years of professional experience working with AWS cloud services in a DevOps or Cloud Engineer role.
+Practical experience developing and deploying AWS Lambda functions, preferably using Python.
+Hands-on experience building and managing ETL pipelines with AWS Glue (PySpark).
+Working knowledge of RDS, including PostgreSQL and MySQL database management and optimization.
+Experience with Infrastructure as Code, ideally using CloudFormation (Terraform or CDK a plus).
+Experience working with Bedrock or SageMaker for AI/ML workloads
+Experience with container services (ECS, EKS, Docker).
+This position may require occasional travel to outreach clinics throughout the state of Indiana, as well as some travel to training or conference events
+This position is local to Indianapolis, IN and must be able to come onsite

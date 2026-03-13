@@ -1,0 +1,34 @@
+Owen Blackwell
+owen.blackwell@email.com | (323) 654-9012 | Los Angeles, CA | github.com/owenblackwell-ui
+
+SUMMARY
+Frontend developer with 1.5 years of experience building React and TypeScript applications. Focused on component-based development, responsive design, and writing maintainable code. Familiar with Next.js for server-side rendering and comfortable working with REST APIs.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass
+Frameworks: React, Next.js, Vite
+Databases: (none professional)
+Tools: Git, npm/yarn, Jest, Figma, ESLint, Prettier
+Cloud/Infra: Vercel, Netlify, GitHub Actions
+
+EXPERIENCE
+
+Frontend Developer | Brightwell Media | Los Angeles, CA | February 2024 - Present
+- Migrated a legacy jQuery-based content management UI to a modern React 18 and TypeScript codebase, reducing load time by 45%
+- Built a Next.js marketing site with static site generation achieving a Lighthouse performance score of 97
+- Implemented Sass component stylesheets with BEM naming convention, improving CSS maintainability across 30+ components
+
+Frontend Intern | Greystone Digital | Los Angeles, CA | August 2023 - January 2024
+- Delivered 5 responsive page templates in React and CSS for a real estate listing platform
+- Wrote Jest snapshot tests for 20 UI components and integrated tests into the GitHub Actions CI pipeline
+
+PROJECTS
+
+BlogStudio
+- Headless CMS blog platform built with Next.js, TypeScript, and Contentful API; includes MDX rendering, tag filtering, and responsive Sass layouts; deployed on Vercel
+
+CoachPortal
+- React and TypeScript coaching session booking UI integrated with a REST API; uses React Query for server state and Zustand for local scheduling state
+
+EDUCATION
+Bachelor of Arts, Interactive Media | UCLA | 2023

@@ -1,0 +1,41 @@
+--- POSTING 3 ---
+Job Title: Senior React Developer
+Company: ShopStream
+Location: New York, NY (Hybrid)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT SHOPSTREAM
+ShopStream powers live-commerce experiences for DTC brands, enabling product launches, flash sales, and interactive shopping streams directly embedded in brand websites. We work with 400+ consumer brands and are growing 3x year-over-year.
+
+ABOUT THE ROLE
+As a Senior React Developer, you will build and own the shopper-facing embed SDK and the merchant dashboard. Both products require exceptional attention to performance, browser compatibility, and cross-domain security constraints.
+
+KEY RESPONSIBILITIES
+- Build the ShopStream JavaScript/React embed SDK that loads in third-party storefronts
+- Develop the merchant configuration dashboard using Next.js and TypeScript
+- Implement low-latency video player integration with HLS.js and custom React hooks
+- Design and maintain a shared UI component library with Sass and CSS Modules
+- Write E2E tests using Playwright to validate cross-browser embed behavior
+- Work with the backend team to design RESTful and WebSocket API contracts
+- Drive performance optimization: lazy loading, code splitting, CDN cache strategies
+
+REQUIRED QUALIFICATIONS
+- 5+ years of frontend development
+- 4+ years of React development with deep knowledge of hooks and rendering behavior
+- 3+ years using TypeScript
+- 2+ years with Next.js (App Router or Pages Router)
+- 2+ years working with CSS Modules, Sass, or styled-components
+- 1+ years writing E2E tests (Playwright, Cypress, or Selenium)
+- Strong understanding of browser security (CORS, CSP, iframe sandboxing)
+- Experience with CDN strategies and frontend performance optimization
+
+PREFERRED QUALIFICATIONS
+- Prior experience building embeddable widgets or micro-frontends
+- Familiarity with video streaming technologies (HLS, DASH, WebRTC)
+- Knowledge of Webpack Module Federation
+- Experience with Vercel or Netlify deployment pipelines
+- Understanding of Core Web Vitals and Lighthouse scoring
+
+COMPENSATION
+$155,000 - $180,000 + equity + benefits (flexible PTO, remote-friendly)
+--- END POSTING 3 ---

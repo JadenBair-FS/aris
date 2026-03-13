@@ -1,0 +1,1262 @@
+{
+  "title": {
+    "card": "Android",
+    "page": "Android Developer"
+  },
+  "description": "Step by step guide to becoming an Android developer in @currentYear@",
+  "nodes": [
+    {
+      "id": "nNEnhtuqRQCkOtbeJh3ac",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "jgadqKYuchjukSsYXvwf7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "lpSzZRiNu_vB4yNiNK9Yy",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "TiI5E5awSHaz5ZhptOdZn",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "aDekGDutpYnpNPNS8f4pF",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "f-ZMlUJj5USPMHipd9kAM",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "6R1rlADdXShSYwOvN11VK",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "Yo7mJM0rAN8Rmz_FocBgi",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "XmdyFfnM9BlqrEssRjczP",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "cjH8XWlBk0ZBpvxGJ1gsn",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "PF0TVwzQAg76Z1MdLNQk8",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "bt3bz2BrOfKDwgYGu6_6S",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "0EZuNys_klW8idbCPmAmP",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "5Z9o-b3vBA-ITFg86zzYM",
+      "type": "title",
+      "data": {
+        "label": "Android"
+      }
+    },
+    {
+      "id": "XgM_I974PlXAu4AbeqHX1",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "DyPV3nTZO12NvkYUEiJWc",
+      "type": "linksgroup",
+      "data": {
+        "label": "Related Roadmaps"
+      }
+    },
+    {
+      "id": "Suws-7f_6Z1ChpfcnxX2M",
+      "type": "topic",
+      "data": {
+        "label": "Pick a Language"
+      }
+    },
+    {
+      "id": "qIzUv8-GgQnkqChEdgD50",
+      "type": "subtopic",
+      "data": {
+        "label": "Kotlin"
+      }
+    },
+    {
+      "id": "RBABbkzD_uNFwEO-hssZO",
+      "type": "subtopic",
+      "data": {
+        "label": "Java"
+      }
+    },
+    {
+      "id": "HlUUGj3dOZ68t4gIjerXh",
+      "type": "topic",
+      "data": {
+        "label": "The Fundamentals"
+      }
+    },
+    {
+      "id": "ZRGsokU313Ky-anWbWK6q",
+      "type": "subtopic",
+      "data": {
+        "label": "Development IDE"
+      }
+    },
+    {
+      "id": "jl1FsQ5-WGKeFyaILNt_p",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of Kotlin"
+      }
+    },
+    {
+      "id": "j69erqfosSZMDlmKcnnn0",
+      "type": "subtopic",
+      "data": {
+        "label": "Basics of OOP"
+      }
+    },
+    {
+      "id": "cNeT1dJDfgn0ndPzSxhSL",
+      "type": "subtopic",
+      "data": {
+        "label": "Data Structures and Algorithms"
+      }
+    },
+    {
+      "id": "FVxNjbDBxgf6vkZWw1Awt",
+      "type": "subtopic",
+      "data": {
+        "label": "What is and how to use Gradle?"
+      }
+    },
+    {
+      "id": "5m_7DvInF8C_4Ml1xVI6L",
+      "type": "subtopic",
+      "data": {
+        "label": "Create a Basic Hello World App"
+      }
+    },
+    {
+      "id": "5s1CqsYCOXjNroDHaGKGa",
+      "type": "topic",
+      "data": {
+        "label": "Version Control"
+      }
+    },
+    {
+      "id": "rqSZ2ATeHbOdIQE9Jlb0B",
+      "type": "subtopic",
+      "data": {
+        "label": "Git"
+      }
+    },
+    {
+      "id": "H-2eb8fLwz8IKYXbeSVKK",
+      "type": "subtopic",
+      "data": {
+        "label": "GitHub"
+      }
+    },
+    {
+      "id": "5LFZdUiFYYU_1sYsouyan",
+      "type": "subtopic",
+      "data": {
+        "label": "Bitbucket"
+      }
+    },
+    {
+      "id": "Q47BtQphp59NkkZoeNXmP",
+      "type": "subtopic",
+      "data": {
+        "label": "GitLab"
+      }
+    },
+    {
+      "id": "-IvRbNv2swO63Xb9UqoHf",
+      "type": "label",
+      "data": {
+        "label": "VCS Hosting"
+      }
+    },
+    {
+      "id": "5Li8J5iR_ZuyIlxX0LYei",
+      "type": "topic",
+      "data": {
+        "label": "App Components"
+      }
+    },
+    {
+      "id": "nwuVlPmzwJ17mtVQ8Hi9w",
+      "type": "subtopic",
+      "data": {
+        "label": "Activity"
+      }
+    },
+    {
+      "id": "PcHmU1c9hqKyzSjwlRPHk",
+      "type": "subtopic",
+      "data": {
+        "label": "Services"
+      }
+    },
+    {
+      "id": "nkcdjrswv0WCzUs48BAt9",
+      "type": "subtopic",
+      "data": {
+        "label": "Content Provider"
+      }
+    },
+    {
+      "id": "tFuAToid1Fkmu96BDtW7K",
+      "type": "subtopic",
+      "data": {
+        "label": "Broadcast Receiver"
+      }
+    },
+    {
+      "id": "hv_9imIQpthxEaMLXEUHI",
+      "type": "subtopic",
+      "data": {
+        "label": "Intent"
+      }
+    },
+    {
+      "id": "FVg438cVBBzqJFkGWVbQM",
+      "type": "subtopic",
+      "data": {
+        "label": "Activity LifeCycle"
+      }
+    },
+    {
+      "id": "oUjetA2eduvQIeLcQlLcu",
+      "type": "subtopic",
+      "data": {
+        "label": "State Changes"
+      }
+    },
+    {
+      "id": "-O-G9bg36ut8NnZcdOaop",
+      "type": "subtopic",
+      "data": {
+        "label": "Tasks \u0026 Backstack"
+      }
+    },
+    {
+      "id": "gGdz3j33x0gfrFDp_rw8Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Implicit Intents"
+      }
+    },
+    {
+      "id": "TmIeCF3xVCe5Sy3ITmM31",
+      "type": "subtopic",
+      "data": {
+        "label": "Explicit Intents"
+      }
+    },
+    {
+      "id": "b-sfh6NoS-APqaNKm5L5S",
+      "type": "subtopic",
+      "data": {
+        "label": "Intent Filters"
+      }
+    },
+    {
+      "id": "jePGzTejFe4ryA5qFFmjl",
+      "type": "topic",
+      "data": {
+        "label": "Design \u0026 Architecture"
+      }
+    },
+    {
+      "id": "Dp2DOX10u2xJUjB8Okhzh",
+      "type": "subtopic",
+      "data": {
+        "label": "Frame"
+      }
+    },
+    {
+      "id": "U8iMGGOd2EgPxSuwSG39Z",
+      "type": "subtopic",
+      "data": {
+        "label": "Linear"
+      }
+    },
+    {
+      "id": "yE0qAQZiEC9R8WvCdskpr",
+      "type": "subtopic",
+      "data": {
+        "label": "Relative"
+      }
+    },
+    {
+      "id": "3fFNMhQIuuh-NRzSXYpXO",
+      "type": "subtopic",
+      "data": {
+        "label": "Constraint"
+      }
+    },
+    {
+      "id": "xIvplWfe-uDr9iHjPT1Mx",
+      "type": "subtopic",
+      "data": {
+        "label": "RecycleView"
+      }
+    },
+    {
+      "id": "ZuT4JTri-tZYmZkAthnH8",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "08Fx-PJiotcpN6ylmgI5d",
+      "type": "label",
+      "data": {
+        "label": "Elements"
+      }
+    },
+    {
+      "id": "EfxxpCCgOleZwBW5z4UA8",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "znvZp24L-PcQwkSObtixs",
+      "type": "subtopic",
+      "data": {
+        "label": "TextView"
+      }
+    },
+    {
+      "id": "2iDJrxjXOt7o2fPp2HfRl",
+      "type": "subtopic",
+      "data": {
+        "label": "Fragments"
+      }
+    },
+    {
+      "id": "boMz0HZlMAsLdCZlpUo-H",
+      "type": "subtopic",
+      "data": {
+        "label": "EditText"
+      }
+    },
+    {
+      "id": "Mtx0bY0drmaTw8sCM5YTl",
+      "type": "subtopic",
+      "data": {
+        "label": "Dialogs"
+      }
+    },
+    {
+      "id": "WhfzFOUpm0DFEj7Oeq21R",
+      "type": "subtopic",
+      "data": {
+        "label": "Buttons"
+      }
+    },
+    {
+      "id": "BVgO9n7tGlVdiS72-hFSd",
+      "type": "subtopic",
+      "data": {
+        "label": "Toast"
+      }
+    },
+    {
+      "id": "A4rtNULX_MoV93IH1Lgqw",
+      "type": "subtopic",
+      "data": {
+        "label": "ImageView"
+      }
+    },
+    {
+      "id": "Z4Tbd5ClnqCXGPGG09F-G",
+      "type": "subtopic",
+      "data": {
+        "label": "Bottom Sheet"
+      }
+    },
+    {
+      "id": "EzLjX4iRT7AxkAOsJYnSU",
+      "type": "subtopic",
+      "data": {
+        "label": "ListView"
+      }
+    },
+    {
+      "id": "amTxz7mS98lkhOrNMJXG_",
+      "type": "subtopic",
+      "data": {
+        "label": "Drawer"
+      }
+    },
+    {
+      "id": "pEBpXv3Jf1AzBNHlvVrG8",
+      "type": "subtopic",
+      "data": {
+        "label": "Tabs"
+      }
+    },
+    {
+      "id": "Xn1VQ-xOT67ZfJJTM4r1p",
+      "type": "subtopic",
+      "data": {
+        "label": "Animations"
+      }
+    },
+    {
+      "id": "pntwSBbuIfYb8b7WBVfvI",
+      "type": "label",
+      "data": {
+        "label": "Layouts"
+      }
+    },
+    {
+      "id": "qVXAZzZSD9BJBw0ZJsuEm",
+      "type": "horizontal",
+      "data": {
+        "label": "horizontal node"
+      }
+    },
+    {
+      "id": "60Vm-77rseUqpMiFvp-dA",
+      "type": "subtopic",
+      "data": {
+        "label": "Jetpack Compose"
+      }
+    },
+    {
+      "id": "xV475jHTlLuHtpHZeXb7P",
+      "type": "subtopic",
+      "data": {
+        "label": "App Shortcuts"
+      }
+    },
+    {
+      "id": "o5rzmnaQeiSh9ocvfJPpK",
+      "type": "subtopic",
+      "data": {
+        "label": "Navigation Components"
+      }
+    },
+    {
+      "id": "Bz-BkfzsDHAbAw3HD7WCd",
+      "type": "subtopic",
+      "data": {
+        "label": "MVI"
+      }
+    },
+    {
+      "id": "pSU-NZtjBh-u0WKTYfjk_",
+      "type": "subtopic",
+      "data": {
+        "label": "MVVM"
+      }
+    },
+    {
+      "id": "aF_xFIqTjQbENtC7pkXvJ",
+      "type": "subtopic",
+      "data": {
+        "label": "MVP"
+      }
+    },
+    {
+      "id": "w1A6wPKSd3Yh2luuHV-aE",
+      "type": "subtopic",
+      "data": {
+        "label": "MVC"
+      }
+    },
+    {
+      "id": "ZF5XgO7I_J9928bD3CVXo",
+      "type": "subtopic",
+      "data": {
+        "label": "Repository Pattern"
+      }
+    },
+    {
+      "id": "784fiIdKrQDlIm3VIiJQN",
+      "type": "subtopic",
+      "data": {
+        "label": "Builder Pattern"
+      }
+    },
+    {
+      "id": "DeOxj6RzQBYfEWV-M1Ybm",
+      "type": "subtopic",
+      "data": {
+        "label": "Factory Pattern"
+      }
+    },
+    {
+      "id": "N_auRfGKkeIIc-qiHLkR_",
+      "type": "subtopic",
+      "data": {
+        "label": "Observer Pattern"
+      }
+    },
+    {
+      "id": "W-WTIiQml8dLK6i_V69JK",
+      "type": "subtopic",
+      "data": {
+        "label": "Flow"
+      }
+    },
+    {
+      "id": "xk0vnWr7uESdzYRxwFjoK",
+      "type": "subtopic",
+      "data": {
+        "label": "RxJava"
+      }
+    },
+    {
+      "id": "7rbsp1o5bzIJP11BRIoeG",
+      "type": "subtopic",
+      "data": {
+        "label": "RxKotlin"
+      }
+    },
+    {
+      "id": "TiokceMGU9caqiR0lbFYL",
+      "type": "subtopic",
+      "data": {
+        "label": "LiveData"
+      }
+    },
+    {
+      "id": "ZbuCx3ygIZPRS_9fp0AJg",
+      "type": "section",
+      "data": {
+        "label": ""
+      }
+    },
+    {
+      "id": "qtXM9K7wyjOFuEMlZrB3C",
+      "type": "subtopic",
+      "data": {
+        "label": "Dependency Injection"
+      }
+    },
+    {
+      "id": "CK7Ce632fdTgxeFsRUVvd",
+      "type": "subtopic",
+      "data": {
+        "label": "Dagger"
+      }
+    },
+    {
+      "id": "UMqZ-jmXKDXKuu8bzqDH_",
+      "type": "subtopic",
+      "data": {
+        "label": "Koin"
+      }
+    },
+    {
+      "id": "ooo_k2k_vUBR_jQ7Ke6Et",
+      "type": "subtopic",
+      "data": {
+        "label": "Hilt"
+      }
+    },
+    {
+      "id": "dc7k50PjCYZcElHhCk66p",
+      "type": "subtopic",
+      "data": {
+        "label": "Kodein"
+      }
+    },
+    {
+      "id": "0fNQWRxst8xRstIfPaPO6",
+      "type": "topic",
+      "data": {
+        "label": "Storage"
+      }
+    },
+    {
+      "id": "PKql1HY0PLMfp50FRELXL",
+      "type": "subtopic",
+      "data": {
+        "label": "Shared Preferences"
+      }
+    },
+    {
+      "id": "GWq3s1iTxQOp1BstHscJ9",
+      "type": "subtopic",
+      "data": {
+        "label": "DataStore"
+      }
+    },
+    {
+      "id": "Bfg4So5RlI09zFNcburJd",
+      "type": "subtopic",
+      "data": {
+        "label": "Room Database"
+      }
+    },
+    {
+      "id": "A4kdaj6AFueUgPI7hwKi5",
+      "type": "subtopic",
+      "data": {
+        "label": "File System"
+      }
+    },
+    {
+      "id": "Yb6aKJMMCxU1QVltWg3Dr",
+      "type": "topic",
+      "data": {
+        "label": "Network"
+      }
+    },
+    {
+      "id": "dDMRYiqrKyOBnRRQc8zsp",
+      "type": "subtopic",
+      "data": {
+        "label": "Retro"
+      }
+    },
+    {
+      "id": "5pVuwOItAhUxxJX8ysAsn",
+      "type": "subtopic",
+      "data": {
+        "label": "OkHttp"
+      }
+    },
+    {
+      "id": "ww0fTbdXwVr-QIOClU7ng",
+      "type": "subtopic",
+      "data": {
+        "label": "Apollo-Android"
+      }
+    },
+    {
+      "id": "cFYZ2C7yNnY6NHKUNP2Z4",
+      "type": "topic",
+      "data": {
+        "label": "Asynchronism"
+      }
+    },
+    {
+      "id": "i_cKmTnGAYw8xpHwZHjAd",
+      "type": "subtopic",
+      "data": {
+        "label": "Coroutines"
+      }
+    },
+    {
+      "id": "BeGrA5BDBMZP1Jy7n-wl-",
+      "type": "subtopic",
+      "data": {
+        "label": "Threads"
+      }
+    },
+    {
+      "id": "zXsNEyRbb8UpEOAUv6FpY",
+      "type": "subtopic",
+      "data": {
+        "label": "RxJava"
+      }
+    },
+    {
+      "id": "4h37WBpYxRRyw9oH8ge7o",
+      "type": "subtopic",
+      "data": {
+        "label": "RxKotlin"
+      }
+    },
+    {
+      "id": "OAb_JD64uGm2tPoue7w6t",
+      "type": "subtopic",
+      "data": {
+        "label": "WorkManager"
+      }
+    },
+    {
+      "id": "ZEdn2yy-IwHN3kOYr2ZbC",
+      "type": "topic",
+      "data": {
+        "label": "Common Services"
+      }
+    },
+    {
+      "id": "Xv0es_z64vh-QzivMeAT3",
+      "type": "subtopic",
+      "data": {
+        "label": "Authentication"
+      }
+    },
+    {
+      "id": "xB4evbD07n1VrHOIpowV4",
+      "type": "subtopic",
+      "data": {
+        "label": "Crashlytics"
+      }
+    },
+    {
+      "id": "1Tz-Shj_Tuz2U8llEAcLr",
+      "type": "subtopic",
+      "data": {
+        "label": "Remote Config"
+      }
+    },
+    {
+      "id": "e3vHFaFFMV7kI9q6yf5e9",
+      "type": "subtopic",
+      "data": {
+        "label": "Cloud Messaging"
+      }
+    },
+    {
+      "id": "3EEfKAd-ppIQpdQSEhbA1",
+      "type": "subtopic",
+      "data": {
+        "label": "FireStore"
+      }
+    },
+    {
+      "id": "2baqKY9TdQnPS8ydPlXEu",
+      "type": "label",
+      "data": {
+        "label": "Firebase"
+      }
+    },
+    {
+      "id": "D4ZXQOKJkyFYNZIy-MJ9Y",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Admob"
+      }
+    },
+    {
+      "id": "m5rumeynEbS8T27pelr0-",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Play Services"
+      }
+    },
+    {
+      "id": "S5FVF9rMgVSSDKXJW2GYb",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Maps"
+      }
+    },
+    {
+      "id": "77F9F3oI5CPgwgM_hxWfa",
+      "type": "topic",
+      "data": {
+        "label": "Linting"
+      }
+    },
+    {
+      "id": "zMbXQH17Q52opdbitPzj7",
+      "type": "subtopic",
+      "data": {
+        "label": "Ktlint"
+      }
+    },
+    {
+      "id": "RUvuCp_JK5MQQT13SSHUV",
+      "type": "subtopic",
+      "data": {
+        "label": "Detekt"
+      }
+    },
+    {
+      "id": "6KbSUAoT_jTudFoIbwMpA",
+      "type": "topic",
+      "data": {
+        "label": "Debugging"
+      }
+    },
+    {
+      "id": "VFOD4JrV8kZ2583G3oT95",
+      "type": "subtopic",
+      "data": {
+        "label": "Timber"
+      }
+    },
+    {
+      "id": "3i4g9ZWgLxKb2UMgRJi4Q",
+      "type": "subtopic",
+      "data": {
+        "label": "Leak Canary"
+      }
+    },
+    {
+      "id": "7RKN1FNtRE_BE6QeAQrKb",
+      "type": "subtopic",
+      "data": {
+        "label": "Chucker"
+      }
+    },
+    {
+      "id": "ACUJlDDR0jqEohsFzWEoQ",
+      "type": "subtopic",
+      "data": {
+        "label": "Jetpack Benchmark"
+      }
+    },
+    {
+      "id": "ZOQm5OlzCA-h_yxywwDrW",
+      "type": "topic",
+      "data": {
+        "label": "Testing"
+      }
+    },
+    {
+      "id": "-ONSC-ImGSELbamKmjIlH",
+      "type": "subtopic",
+      "data": {
+        "label": "Espresso"
+      }
+    },
+    {
+      "id": "gvGAwjk_nhEgxzZ_c3f6b",
+      "type": "subtopic",
+      "data": {
+        "label": "JUnit"
+      }
+    },
+    {
+      "id": "kc6buUsLAeZeUb4Tk0apM",
+      "type": "topic",
+      "data": {
+        "label": "Distribution"
+      }
+    },
+    {
+      "id": "T7q_quNaIAuGi96OdnDT1",
+      "type": "subtopic",
+      "data": {
+        "label": "Firebase Distribution"
+      }
+    },
+    {
+      "id": "HgRdgi2Hu4C8YLG5PXfoo",
+      "type": "subtopic",
+      "data": {
+        "label": "Google Playstore"
+      }
+    },
+    {
+      "id": "_FSlD_qTz5Xo0x3pB6sZI",
+      "type": "subtopic",
+      "data": {
+        "label": "Signed APK"
+      }
+    },
+    {
+      "id": "Wf9BM0COudf-Wz_ieKqr7",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "FS7mpWrs6zdFRAAsegcyA",
+      "type": "label",
+      "data": {
+        "label": "Ways to distribute"
+      }
+    },
+    {
+      "id": "Ju00mr0KLGN2BV6yEQGPt",
+      "type": "vertical",
+      "data": {
+        "label": "vertical node"
+      }
+    },
+    {
+      "id": "sVXZrBCsiSzWBBYWTm-nQ",
+      "type": "paragraph",
+      "data": {
+        "label": "Visit the following relevant roadmaps"
+      }
+    },
+    {
+      "id": "gC8lsIdYLRzo3HzwVqtm1",
+      "type": "button",
+      "data": {
+        "label": "iOS"
+      }
+    },
+    {
+      "id": "9LKa-YjOMtO1j62Ukt0q0",
+      "type": "button",
+      "data": {
+        "label": "React Native"
+      }
+    },
+    {
+      "id": "uSLzfLPXxS5-P7ozscvjZ",
+      "type": "button",
+      "data": {
+        "label": "Flutter"
+      }
+    },
+    {
+      "id": "4_e76QafrB419S2INOeKd",
+      "type": "topic",
+      "data": {
+        "label": "Interface \u0026 Navigation"
+      }
+    },
+    {
+      "id": "RKIW9hDrCd03Bf3djoJvp",
+      "type": "paragraph",
+      "data": {
+        "label": "Design Patterns"
+      }
+    },
+    {
+      "id": "d1G8QZ82y7ez7rLskMZiv",
+      "type": "paragraph",
+      "data": {
+        "label": "Architectural Patterns"
+      }
+    },
+    {
+      "id": "yHmHXymPNWwu8p1vvqD3o",
+      "type": "paragraph",
+      "data": {
+        "label": "Find the detailed version of this roadmap along with other similar roadmaps"
+      }
+    },
+    {
+      "id": "2zqZkyVgigifcRS1H7F_b",
+      "type": "button",
+      "data": {
+        "label": "roadmap.sh"
+      }
+    },
+    {
+      "id": "j5qmSMOdhpGZo1XOUVx1k",
+      "type": "topic",
+      "data": {
+        "label": "Security"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-5Z9o-b3vBA-ITFg86zzYMx2-Suws-7f_6Z1ChpfcnxX2Mw1",
+      "source": "5Z9o-b3vBA-ITFg86zzYM",
+      "target": "Suws-7f_6Z1ChpfcnxX2M",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-Suws-7f_6Z1ChpfcnxX2Mz2-qIzUv8-GgQnkqChEdgD50y1",
+      "source": "Suws-7f_6Z1ChpfcnxX2M",
+      "target": "qIzUv8-GgQnkqChEdgD50",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Suws-7f_6Z1ChpfcnxX2Mz2-RBABbkzD_uNFwEO-hssZOy2",
+      "source": "Suws-7f_6Z1ChpfcnxX2M",
+      "target": "RBABbkzD_uNFwEO-hssZO",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Suws-7f_6Z1ChpfcnxX2Mx2-HlUUGj3dOZ68t4gIjerXhw1",
+      "source": "Suws-7f_6Z1ChpfcnxX2M",
+      "target": "HlUUGj3dOZ68t4gIjerXh",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-ZRGsokU313Ky-anWbWK6qz1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "ZRGsokU313Ky-anWbWK6q",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-jl1FsQ5-WGKeFyaILNt_pz1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "jl1FsQ5-WGKeFyaILNt_p",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-j69erqfosSZMDlmKcnnn0z1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "j69erqfosSZMDlmKcnnn0",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-cNeT1dJDfgn0ndPzSxhSLz1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "cNeT1dJDfgn0ndPzSxhSL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-FVxNjbDBxgf6vkZWw1Awtz1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "FVxNjbDBxgf6vkZWw1Awt",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhy2-5m_7DvInF8C_4Ml1xVI6Lz1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "5m_7DvInF8C_4Ml1xVI6L",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-HlUUGj3dOZ68t4gIjerXhz2-5s1CqsYCOXjNroDHaGKGay1",
+      "source": "HlUUGj3dOZ68t4gIjerXh",
+      "target": "5s1CqsYCOXjNroDHaGKGa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5s1CqsYCOXjNroDHaGKGay2-4_e76QafrB419S2INOeKdw2",
+      "source": "5s1CqsYCOXjNroDHaGKGa",
+      "target": "5Li8J5iR_ZuyIlxX0LYei",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-kc6buUsLAeZeUb4Tk0apMz2-HgRdgi2Hu4C8YLG5PXfooy1",
+      "source": "kc6buUsLAeZeUb4Tk0apM",
+      "target": "HgRdgi2Hu4C8YLG5PXfoo",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kc6buUsLAeZeUb4Tk0apMz2-T7q_quNaIAuGi96OdnDT1y2",
+      "source": "kc6buUsLAeZeUb4Tk0apM",
+      "target": "T7q_quNaIAuGi96OdnDT1",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kc6buUsLAeZeUb4Tk0apMx2-sVXZrBCsiSzWBBYWTm-nQw1",
+      "source": "kc6buUsLAeZeUb4Tk0apM",
+      "target": "sVXZrBCsiSzWBBYWTm-nQ",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5Li8J5iR_ZuyIlxX0LYeix2-4_e76QafrB419S2INOeKdw1",
+      "source": "5Li8J5iR_ZuyIlxX0LYei",
+      "target": "4_e76QafrB419S2INOeKd",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-5Li8J5iR_ZuyIlxX0LYeiy2-nwuVlPmzwJ17mtVQ8Hi9wz1",
+      "source": "5Li8J5iR_ZuyIlxX0LYei",
+      "target": "nwuVlPmzwJ17mtVQ8Hi9w",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4_e76QafrB419S2INOeKdz2-60Vm-77rseUqpMiFvp-dAx1",
+      "source": "4_e76QafrB419S2INOeKd",
+      "target": "60Vm-77rseUqpMiFvp-dA",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4_e76QafrB419S2INOeKdz2-xV475jHTlLuHtpHZeXb7Pw1",
+      "source": "4_e76QafrB419S2INOeKd",
+      "target": "xV475jHTlLuHtpHZeXb7P",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-4_e76QafrB419S2INOeKdx2-jePGzTejFe4ryA5qFFmjlw2",
+      "source": "4_e76QafrB419S2INOeKd",
+      "target": "jePGzTejFe4ryA5qFFmjl",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-jePGzTejFe4ryA5qFFmjlz2-d1G8QZ82y7ez7rLskMZivw2",
+      "source": "jePGzTejFe4ryA5qFFmjl",
+      "target": "d1G8QZ82y7ez7rLskMZiv",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0fNQWRxst8xRstIfPaPO6y2-PKql1HY0PLMfp50FRELXLz1",
+      "source": "0fNQWRxst8xRstIfPaPO6",
+      "target": "PKql1HY0PLMfp50FRELXL",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0fNQWRxst8xRstIfPaPO6y2-GWq3s1iTxQOp1BstHscJ9z1",
+      "source": "0fNQWRxst8xRstIfPaPO6",
+      "target": "GWq3s1iTxQOp1BstHscJ9",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0fNQWRxst8xRstIfPaPO6y2-Bfg4So5RlI09zFNcburJdz1",
+      "source": "0fNQWRxst8xRstIfPaPO6",
+      "target": "Bfg4So5RlI09zFNcburJd",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-0fNQWRxst8xRstIfPaPO6y2-A4kdaj6AFueUgPI7hwKi5z1",
+      "source": "0fNQWRxst8xRstIfPaPO6",
+      "target": "A4kdaj6AFueUgPI7hwKi5",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-Yb6aKJMMCxU1QVltWg3Dry2-cFYZ2C7yNnY6NHKUNP2Z4z2",
+      "source": "Yb6aKJMMCxU1QVltWg3Dr",
+      "target": "cFYZ2C7yNnY6NHKUNP2Z4",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-cFYZ2C7yNnY6NHKUNP2Z4y2-ZEdn2yy-IwHN3kOYr2ZbCz1",
+      "source": "cFYZ2C7yNnY6NHKUNP2Z4",
+      "target": "ZEdn2yy-IwHN3kOYr2ZbC",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ZEdn2yy-IwHN3kOYr2ZbCz2-77F9F3oI5CPgwgM_hxWfay1",
+      "source": "ZEdn2yy-IwHN3kOYr2ZbC",
+      "target": "77F9F3oI5CPgwgM_hxWfa",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-77F9F3oI5CPgwgM_hxWfay2-ZOQm5OlzCA-h_yxywwDrWz1",
+      "source": "77F9F3oI5CPgwgM_hxWfa",
+      "target": "ZOQm5OlzCA-h_yxywwDrW",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-ZOQm5OlzCA-h_yxywwDrWx2-6KbSUAoT_jTudFoIbwMpAy1",
+      "source": "ZOQm5OlzCA-h_yxywwDrW",
+      "target": "6KbSUAoT_jTudFoIbwMpA",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-6KbSUAoT_jTudFoIbwMpAy2-kc6buUsLAeZeUb4Tk0apMw2",
+      "source": "6KbSUAoT_jTudFoIbwMpA",
+      "target": "kc6buUsLAeZeUb4Tk0apM",
+      "data": {
+        "edgeStyle": "solid"
+      }
+    },
+    {
+      "id": "reactflow__edge-6KbSUAoT_jTudFoIbwMpAw2-ACUJlDDR0jqEohsFzWEoQx1",
+      "source": "6KbSUAoT_jTudFoIbwMpA",
+      "target": "ACUJlDDR0jqEohsFzWEoQ",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    },
+    {
+      "id": "reactflow__edge-kc6buUsLAeZeUb4Tk0apMy2-_FSlD_qTz5Xo0x3pB6sZIz2",
+      "source": "kc6buUsLAeZeUb4Tk0apM",
+      "target": "_FSlD_qTz5Xo0x3pB6sZI",
+      "data": {
+        "edgeStyle": "dashed"
+      }
+    }
+  ]
+}

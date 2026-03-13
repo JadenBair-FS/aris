@@ -1,0 +1,41 @@
+--- POSTING 4 ---
+Job Title: Analytics Engineer
+Company: Orbital Health
+Location: Boston, MA (Hybrid)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT ORBITAL HEALTH
+Orbital Health is a healthcare analytics company that helps hospital systems reduce readmissions, optimize staffing, and benchmark clinical outcomes. We partner with 85 health systems and process 40 million patient records annually through our HIPAA-compliant data platform.
+
+ABOUT THE ROLE
+We are hiring an Analytics Engineer to sit at the intersection of data engineering and business intelligence. You will own our dbt project, build clean data models in Snowflake, and work closely with clinical analysts to ensure data is accurate, well-documented, and actionable.
+
+KEY RESPONSIBILITIES
+- Design and maintain a layered dbt project (staging, intermediate, marts) in Snowflake
+- Build complex SQL transformations for clinical quality metrics, staffing models, and financial KPIs
+- Write dbt tests, documentation, and data contracts to ensure model reliability
+- Build Airflow DAGs to orchestrate dbt runs and upstream data ingestion jobs
+- Collaborate with data analysts to understand reporting requirements and translate them into models
+- Implement row-level security and PHI masking in Snowflake for HIPAA compliance
+- Maintain Python-based ingestion scripts for EHR and claims data sources
+
+REQUIRED QUALIFICATIONS
+- 3+ years of data engineering or analytics engineering experience
+- 3+ years of advanced SQL (window functions, CTEs, recursive queries)
+- 2+ years using dbt for data transformation (Core or Cloud)
+- 2+ years with Snowflake, BigQuery, or Redshift
+- 1+ years using Apache Airflow for orchestration
+- 1+ years of Python for data pipeline scripts
+- Experience with data quality frameworks (dbt tests, Great Expectations)
+- Solid Git skills and experience with CI/CD for dbt projects
+
+PREFERRED QUALIFICATIONS
+- Background in healthcare analytics or clinical data (HL7, FHIR, ICD codes)
+- Experience with Tableau, Looker, or Power BI for downstream BI tooling
+- Knowledge of Snowflake advanced features (Dynamic Tables, Iceberg)
+- Familiarity with data catalog tools (Alation, Atlan)
+- Experience in a HIPAA-regulated data environment
+
+COMPENSATION
+$125,000 - $150,000 + bonus + benefits
+--- END POSTING 4 ---

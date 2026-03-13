@@ -1,0 +1,19 @@
+Full job description
+Hansen Talent Group is seeking a DevOps/Platform Engineer to support a VMWare re-platforming project, focusing on container management. The ideal candidate will have in-depth experience supporting Kubernetes and CI/CD pipelines for cloud platforms and programming work with Python and Go Lang.
+
+The DevOps/Platform engineer will be responsible for building, maintaining, and optimizing the infrastructure, migrating workloads to OLVM, and enhancing container management capabilities. The team will be focused on ensuring robust and scalable infrastructure by leveraging Kubernetes, Jenkins, and other automation tools for CI/CD pipeline development and maintenance. Additionally, the initiative aims to empower a collaborative and innovative engineering team to drive adoption of best practices and architectural excellence while contributing to open-source technologies.
+
+Duties:
+
+Configuring and maintaining the infrastructure, support with any tasks related to OLVM migration, ensuring compatibility and integration with the VMWare re-platforming process.
+Leveraging Kubernetes for container management, automating CI/CD pipelines using Jenkins and Groovy, and performing Unix/Linux system administration to ensure stability and scalability. Their work will support the seamless transition and integration of OLVM within the broader VMWare re-platforming initiative.
+Support cloud engineering and CI/CD pipeline automation including modify existing pipelines to align with the VMWare re-platforming and OLVM migration requirements, as well as developing new pipelines to address specific needs of the project.
+Use Jenkins, Python, Groovy, and shell scripting to support automation tasks, including building, deploying, and maintaining pipelines
+Monitor system health, troubleshooting issues, applying patches, and ensuring the scalability of the infrastructure. Utilize system availability (uptime percentage), CI/CD pipeline efficiency (deployment speed and success rate), and incident resolution times (mean time to recovery) for success metrics.
+Ensure adherence to standard security practices, including secure coding, access control, and data protection measures, while working on the migration and maintenance phases.
+Collaboration with other engineers and project managers.
+
+Qualifications:
+In-depth experience working with Kubernetes and Rancher to manage containers and orchestrate deployments in cloud and virtualized environments
+Programming experience with Jenkins, Python, Go Lang
+Scripting experience with BASH to support UNIX/LINUX server operations

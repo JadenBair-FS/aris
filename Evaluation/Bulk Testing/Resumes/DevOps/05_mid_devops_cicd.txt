@@ -1,0 +1,45 @@
+Derek Volkov
+derek.volkov@email.com | (206) 348-7754 | Seattle, WA | linkedin.com/in/derekvolkov
+
+SUMMARY
+DevOps engineer with 4 years of specialization in CI/CD pipeline design and release automation. Experience spanning on-premise Jenkins infrastructure and modern cloud-native pipelines. Focused on reducing time-to-production and enforcing quality gates at every stage of the software delivery lifecycle.
+
+SKILLS
+Languages: Bash, Python
+Containers: Docker
+CI/CD: Jenkins, GitLab CI/CD, GitHub Actions
+Cloud: AWS, Azure
+Operating Systems: Linux
+Infrastructure as Code: Ansible
+Monitoring: Grafana, Prometheus
+Version Control: Git
+Databases: Redis
+
+EXPERIENCE
+
+DevOps Engineer | Meridian Cloud Services | Seattle, WA | May 2022 - Present
+- Designed and owned Jenkins-based CI/CD pipelines for 14 microservices, standardizing stages: lint, unit test, integration test, Docker build, ECR push, and deployment
+- Reduced average deployment cycle time from 40 minutes to 14 minutes through parallel stage execution and Docker layer caching
+- Migrated 3 teams from Jenkins to GitHub Actions for greenfield services, producing reusable composite actions that cut per-repo setup from 1 day to 2 hours
+- Maintained Linux build agents (Ubuntu, RHEL) on AWS EC2, including AMI patching and autoscaling group configuration
+- Wrote Ansible playbooks for configuration management of 30+ servers, ensuring consistent package versions and security settings
+- Implemented Redis-based artifact caching in the test pipeline, reducing integration test suite duration by 28%
+
+Release Engineer | Pacifica Retail Solutions | Bellevue, WA | July 2020 - May 2022
+- Owned GitLab CI/CD pipelines for a monorepo serving 4 product applications
+- Built release branching automation in Python that created release branches, bumped version files, and opened merge requests automatically
+- Configured GitLab environments and deployment tracking for dev, staging, and production, giving product managers real-time visibility into release status
+- Maintained Prometheus metrics for pipeline health (queue depth, build failure rate, agent utilization) and built Grafana dashboards for the engineering management team
+- Managed Azure DevOps artifact feeds and enforced dependency pinning policies across 6 engineering teams
+
+PROJECTS
+Pipeline-as-Code Template Library
+- Built a shared Jenkins library with 9 reusable pipeline templates covering Python, Node.js, Java, and Docker workloads
+- Adopted by all 14 service teams at Meridian, eliminating duplicated Jenkinsfile logic across repositories
+
+Deployment Frequency Tracker
+- Wrote a Python script that queries GitLab CI API and Jenkins API to compute DORA deployment frequency and lead time metrics daily
+- Data fed into a Grafana dashboard used in weekly engineering retrospectives
+
+EDUCATION
+Bachelor of Science, Software Engineering | University of Washington | 2020

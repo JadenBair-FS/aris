@@ -1,0 +1,41 @@
+--- POSTING 1 ---
+Job Title: Senior Frontend Engineer - React
+Company: Lumenary
+Location: San Francisco, CA
+Source: Synthetic based on greenhouse.io research
+
+ABOUT LUMENARY
+Lumenary is a Series A analytics SaaS company that helps marketing teams measure campaign performance across every channel. Our web application is used by 3,000+ marketing analysts daily and is known for its intuitive dashboards and interactive data visualizations.
+
+ABOUT THE ROLE
+We are looking for a Senior Frontend Engineer to lead the development of our core analytics UI. You will architect new dashboard features, own our component library, and mentor two mid-level engineers on the frontend team.
+
+KEY RESPONSIBILITIES
+- Architect and build complex, data-rich React application features using TypeScript
+- Own and evolve an internal component library built on top of Radix UI and Tailwind CSS
+- Implement data visualization features using D3.js and Recharts
+- Collaborate with UX designers to translate Figma designs into pixel-perfect, accessible components
+- Optimize application performance (bundle size, render performance, Core Web Vitals)
+- Establish and enforce frontend testing practices with Jest and Cypress
+- Conduct code reviews and technical mentorship for junior and mid-level engineers
+
+REQUIRED QUALIFICATIONS
+- 5+ years of frontend development experience
+- 4+ years building production applications with React
+- 3+ years using TypeScript in a React codebase
+- 2+ years building reusable component libraries
+- Strong proficiency with CSS and at least one utility/component framework (Tailwind, Sass)
+- Experience with state management (Redux, Zustand, or React Query)
+- Solid understanding of web performance optimization
+- Proficiency with Jest for unit testing
+
+PREFERRED QUALIFICATIONS
+- Experience with Next.js or other React meta-frameworks
+- Familiarity with data visualization libraries (D3.js, Recharts, Victory)
+- Background in analytics, BI, or data-heavy applications
+- Experience with Storybook for component documentation
+- Knowledge of accessibility standards (WCAG 2.1 AA)
+
+COMPENSATION
+$160,000 - $190,000 + equity + benefits
+--- END POSTING 1 ---
