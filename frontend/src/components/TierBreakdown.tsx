@@ -96,14 +96,12 @@ export function TierBreakdown({
                 borderColor="border-emerald-400"
                 emptyLabel="No foundation coverage found"
             >
-                <div className="flex flex-wrap gap-2 py-1">
-                    {implicitlyDiscoveredSkills.map((s, i) => (
-                        <div key={i} className="flex items-center gap-1">
-                            <Badge variant="outline">{s}</Badge>
-                            <span className="text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono">SUBSET_OF</span>
-                        </div>
-                    ))}
-                </div>
+                {implicitlyDiscoveredSkills.map((s, i) => (
+                    <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
+                        <span className="text-sm font-medium text-slate-800">{s}</span>
+                        <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">SUBSET_OF</span>
+                    </div>
+                ))}
             </TierSection>
 
             <TierSection

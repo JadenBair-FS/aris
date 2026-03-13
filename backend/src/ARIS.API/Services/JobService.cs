@@ -375,6 +375,28 @@ namespace ARIS.API.Services
                         continue;
                     }
 
+                    // Exact name match — handles acronyms (SQL, CSS, AWS, etc.) that may be
+                    // filtered out of the Roadmap.sh-restricted general query for non-tech domains.
+                    var skillNameLower = originalSkill.Name.ToLowerInvariant();
+                    var exactMatch = await _context.Skills
+                        .Where(s => s.Name.ToLower() == skillNameLower)
+                        .FirstOrDefaultAsync();
+
+                    if (exactMatch != null)
+                    {
+                        _logger.LogInformation("Skill '{Skill}' grounded via exact name match: '{Canonical}'.",
+                            originalSkill.Name, exactMatch.Name);
+                        groundedSkills.Add(new JobSkill
+                        {
+                            Name = exactMatch.Name,
+                            OriginalName = string.Equals(originalSkill.Name, exactMatch.Name, StringComparison.OrdinalIgnoreCase) ? null : originalSkill.Name,
+                            Category = originalSkill.Category,
+                            Importance = originalSkill.Importance,
+                            YearsOfExperience = originalSkill.YearsOfExperience
+                        });
+                        continue;
+                    }
+
                     bool isAcronym = originalSkill.Name.Length <= 6
                         && !originalSkill.Name.Contains(' ')
                         && originalSkill.Name == originalSkill.Name.ToUpperInvariant();
