@@ -7,12 +7,22 @@ import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
 import { authApi } from '../api/auth';
+import { useQuery } from '@tanstack/react-query';
+import { resumeApi } from '../api/resume';
 
 export function DashboardLayout() {
     const { user, logout } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+    const { data: profileData } = useQuery({
+        queryKey: ['profileByUser', user?.id],
+        queryFn: () => resumeApi.getProfileByUserId(user!.id),
+        enabled: !!user && user.role !== 'recruiter',
+        retry: false,
+    });
+    const arisProfileId = profileData?.id;
 
     const handleDeleteAccount = async () => {
         if (!window.confirm('Permanently delete your account and all data? This cannot be undone.')) return;
@@ -33,7 +43,7 @@ export function DashboardLayout() {
         { href: '/home', label: 'Home', icon: House },
         { href: '/profile', label: 'My Profile', icon: User },
         { href: '/profile/upload', label: 'Upload Resume', icon: Upload },
-        { href: '/study', label: 'Resume Study', icon: FlaskConical },
+        { href: arisProfileId ? `/study?userId=${arisProfileId}` : '/study', label: 'Resume Study', icon: FlaskConical },
     ];
 
     const recruiterLinks = [

@@ -27,6 +27,7 @@ public class StudyController : ControllerBase
     private readonly IChatClient _chatClient;
     private readonly IChatClient? _openAiClient;
     private readonly IMemoryCache _cache;
+    private readonly ResumePdfService _pdfService;
     private readonly ILogger<StudyController> _logger;
 
     private static readonly TimeSpan SessionTtl = TimeSpan.FromMinutes(15);
@@ -40,6 +41,7 @@ public class StudyController : ControllerBase
         IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator,
         IChatClient chatClient,
         IMemoryCache cache,
+        ResumePdfService pdfService,
         ILogger<StudyController> logger,
         IServiceProvider serviceProvider)
     {
@@ -51,6 +53,7 @@ public class StudyController : ControllerBase
         _embeddingGenerator = embeddingGenerator;
         _chatClient = chatClient;
         _cache = cache;
+        _pdfService = pdfService;
         _logger = logger;
         _openAiClient = serviceProvider.GetKeyedService<IChatClient>("openai");
     }
@@ -537,18 +540,28 @@ public class StudyController : ControllerBase
 
         await Task.WhenAll(chatGptTask, arisTask);
         var (arisResume, _) = arisTask.Result;
+        var chatGptResume = chatGptTask.Result;
+
+        var arisPdfTask    = Task.Run(() => _pdfService.GeneratePlainTextPdf(arisResume));
+        var chatGptPdfTask = Task.Run(() => _pdfService.GeneratePlainTextPdf(chatGptResume));
+        await Task.WhenAll(arisPdfTask, chatGptPdfTask);
 
         return Ok(new StudyTailorResumesResponse
         {
-            ArisResume    = arisResume,
-            ChatGptResume = chatGptTask.Result,
+            ArisResume             = arisResume,
+            ChatGptResume          = chatGptResume,
+            ArisResumePdfBase64    = Convert.ToBase64String(arisPdfTask.Result),
+            ChatGptResumePdfBase64 = Convert.ToBase64String(chatGptPdfTask.Result),
         });
     }
 
     [HttpPost("explain")]
     public async Task<IActionResult> Explain([FromBody] StudyExplainRequest request)
     {
-        if (string.IsNullOrWhiteSpace(request.ResumeText))
+        // ResumeText is only required when no session key is available (fallback path).
+        // In profile mode the resume signal comes from cache; raw text is not needed.
+        bool hasResumeKey = !string.IsNullOrWhiteSpace(request.ResumeKey);
+        if (!hasResumeKey && string.IsNullOrWhiteSpace(request.ResumeText))
             return BadRequest("ResumeText is required.");
         if (string.IsNullOrWhiteSpace(request.JobDescriptionText))
             return BadRequest("JobDescriptionText is required.");

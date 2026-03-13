@@ -169,6 +169,65 @@ public class ResumePdfService
         return document.GeneratePdf();
     }
 
+    /// <summary>
+    /// Generates a simple plain-text PDF (for study/comparison use). Detects section headers
+    /// (short all-caps lines) and bullet points for basic formatting.
+    /// </summary>
+    public byte[] GeneratePlainTextPdf(string text)
+    {
+        var lines = text.Split('\n');
+        var document = Document.Create(container =>
+        {
+            container.Page(page =>
+            {
+                page.Size(PageSizes.Letter);
+                page.Margin(0.75f, Unit.Inch);
+                page.DefaultTextStyle(x => x.FontFamily("Arial").FontSize(10).FontColor(Colors.Black));
+
+                page.Content().Column(col =>
+                {
+                    foreach (var raw in lines)
+                    {
+                        var line = raw.TrimEnd();
+                        if (string.IsNullOrWhiteSpace(line))
+                        {
+                            col.Item().Height(5);
+                            continue;
+                        }
+
+                        var trimmed = line.Trim();
+                        var upper = trimmed.ToUpperInvariant();
+                        var isHeader = trimmed.Length > 1
+                            && trimmed.Length <= 60
+                            && trimmed == upper
+                            && !trimmed.StartsWith('-')
+                            && !trimmed.StartsWith('•');
+
+                        if (isHeader)
+                        {
+                            col.Item().PaddingTop(10).Text(trimmed).FontSize(11).Bold();
+                            col.Item().Height(1).Background(GrayRule);
+                            col.Item().Height(3);
+                        }
+                        else if (trimmed.StartsWith('-') || trimmed.StartsWith('•'))
+                        {
+                            col.Item().PaddingLeft(14).PaddingTop(2)
+                                .Text(trimmed).FontSize(10).LineHeight(1.3f);
+                        }
+                        else
+                        {
+                            var indent = line.Length - line.TrimStart().Length;
+                            col.Item().PaddingLeft(indent > 0 ? 14 : 0).PaddingTop(2)
+                                .Text(trimmed).FontSize(10).LineHeight(1.35f);
+                        }
+                    }
+                });
+            });
+        });
+
+        return document.GeneratePdf();
+    }
+
     private static void RenderSectionHeader(ColumnDescriptor col, string title)
     {
         col.Item().Text(title).FontSize(11).Bold();

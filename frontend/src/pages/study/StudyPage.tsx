@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { analyzeStudy, analyzeWithProfile, explainStudy, tailorResumes } from '@/api/study';
 import type { StudyAnalyzeResponse, StudyTailorResumesResponse } from '@/api/study';
 import { Button } from '@/components/ui/button';
@@ -37,6 +37,27 @@ function StepIndicator({ current, profileMode }: { current: Step; profileMode: b
                 );
             })}
         </div>
+    );
+}
+
+function PdfViewer({ base64 }: { base64: string }) {
+    const url = useMemo(() => {
+        const binary = atob(base64);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        const blob = new Blob([bytes], { type: 'application/pdf' });
+        return URL.createObjectURL(blob);
+    }, [base64]);
+
+    useEffect(() => () => URL.revokeObjectURL(url), [url]);
+
+    return (
+        <iframe
+            src={url}
+            className="w-full border-0 rounded"
+            style={{ height: '700px' }}
+            title="Resume PDF"
+        />
     );
 }
 
@@ -295,27 +316,14 @@ export default function StudyPage() {
 
                         {tailorResult && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-                            <Card className="flex flex-col border-slate-200">
-                                <CardHeader className="pb-2">
-                                    <CardTitle className="text-sm font-semibold text-slate-800">Resume A</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-1">
-                                    <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {tailorResult.arisResume}
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="flex flex-col border-slate-200">
-                                <CardHeader className="pb-2">
-                                    <CardTitle className="text-sm font-semibold text-slate-800">Resume B</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-1">
-                                    <div className="max-h-[600px] overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                        {tailorResult.chatGptResume}
-                                    </div>
-                                </CardContent>
-                            </Card>
+                            <div className="space-y-2">
+                                <p className="text-sm font-semibold text-slate-800 text-center">Resume A</p>
+                                <PdfViewer base64={tailorResult.arisResumePdfBase64} />
+                            </div>
+                            <div className="space-y-2">
+                                <p className="text-sm font-semibold text-slate-800 text-center">Resume B</p>
+                                <PdfViewer base64={tailorResult.chatGptResumePdfBase64} />
+                            </div>
                         </div>
                         )}
 
