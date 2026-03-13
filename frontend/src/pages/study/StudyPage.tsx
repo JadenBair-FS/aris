@@ -325,7 +325,7 @@ export default function StudyPage() {
                                 Note which resume you prefer (A or B), then open the survey below.
                             </p>
                             <a
-                                href="https://form.jotform.com/PLACEHOLDER"
+                                href="https://form.jotform.com/260708469745065"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block mt-1 px-6 py-2 bg-slate-900 text-white text-sm font-medium rounded-md hover:bg-slate-800"
