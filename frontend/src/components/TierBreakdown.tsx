@@ -59,7 +59,7 @@ export function TierBreakdown({
     ungroundedComparison,
 }: {
     matchingSkills: SkillGapItem[];
-    implicitlyDiscoveredSkills: string[];
+    implicitlyDiscoveredSkills: SkillGapItem[];
     prerequisiteMetSkills: SkillGapItem[];
     bridgeableSkills: SkillGapItem[];
     hardGaps: SkillGapItem[];
@@ -98,8 +98,12 @@ export function TierBreakdown({
             >
                 {implicitlyDiscoveredSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
-                        <span className="text-sm font-medium text-slate-800">{s}</span>
-                        <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">SUBSET_OF</span>
+                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        {s.bridgePath && (
+                            <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">
+                                {s.bridgePath}
+                            </span>
+                        )}
                     </div>
                 ))}
             </TierSection>

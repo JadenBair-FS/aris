@@ -18,7 +18,7 @@ export interface MatchAnalysisResult {
     vectorSimilarity: number;
     arisScore: number;
     matchingSkills: SkillGapItem[];
-    implicitlyDiscoveredSkills: string[];
+    implicitlyDiscoveredSkills: SkillGapItem[];
     prerequisiteMetSkills: SkillGapItem[];
     bridgeableSkills: SkillGapItem[];
     hardGaps: SkillGapItem[];

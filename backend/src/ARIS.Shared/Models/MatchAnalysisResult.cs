@@ -15,7 +15,7 @@ public class MatchAnalysisResult
     /// </summary>
     public double ArisScore { get; set; }
     public List<SkillGapItem> MatchingSkills { get; set; } = new();        // Tier 1: direct matches (carries CandidateYears)
-    public List<string> ImplicitlyDiscoveredSkills { get; set; } = new(); // Tier 2: auto-granted via UP traversal
+    public List<SkillGapItem> ImplicitlyDiscoveredSkills { get; set; } = new(); // Tier 2: auto-granted via UP traversal (carries BridgePath = "via {child} (SUBSET_OF)")
     public List<SkillGapItem> PrerequisiteMetSkills { get; set; } = new(); // Tier 3: user has foundation/parent
     public List<SkillGapItem> BridgeableSkills { get; set; } = new();      // Tier 4: reachable via graph bridge
     public List<SkillGapItem> HardGaps { get; set; } = new();              // Tier 5: true gaps (certs, no path)
