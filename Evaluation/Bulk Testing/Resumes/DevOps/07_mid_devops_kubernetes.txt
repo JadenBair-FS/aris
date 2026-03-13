@@ -1,0 +1,44 @@
+Tommy Okafor
+tommy.okafor@email.com | (415) 772-9035 | San Francisco, CA | linkedin.com/in/tommyokafor
+
+SUMMARY
+DevOps engineer with 3 years of deep focus on Kubernetes platform engineering and GitOps delivery. Experienced in Helm chart authoring, ArgoCD continuous delivery, and cluster lifecycle management. Comfortable working closely with product engineers to improve deployment reliability and developer productivity.
+
+SKILLS
+Languages: Bash, Python
+Containers: Docker, Kubernetes
+CI/CD: ArgoCD, GitHub Actions
+Infrastructure as Code: Helm, Terraform
+Cloud: Google Cloud Platform
+Monitoring: Prometheus, Grafana
+Version Control: Git
+Databases: PostgreSQL
+
+EXPERIENCE
+
+DevOps Engineer | Wavefront Payments | San Francisco, CA | June 2022 - Present
+- Managed 3 Google Kubernetes Engine (GKE) clusters (dev, staging, prod) totaling 18 nodes and 95 running pods
+- Authored and maintained Helm charts for 12 microservices, standardizing values files across environments and reducing configuration drift
+- Deployed and operated ArgoCD as the GitOps controller for all production deployments; all changes to production now flow exclusively through pull requests, providing a full audit trail
+- Implemented ArgoCD ApplicationSets to template multi-environment deployments, reducing per-environment boilerplate by 80%
+- Wrote Terraform to provision GKE clusters, VPCs, Cloud SQL (PostgreSQL), and Cloud Storage buckets
+- Built Prometheus recording rules and Grafana alerting dashboards for 8 payment-critical services, achieving mean time to detect (MTTD) under 3 minutes for the most common failure modes
+- Conducted weekly knowledge-sharing sessions on Kubernetes internals for a 10-person engineering team
+
+DevOps Engineer | Inkline Creative Agency | Oakland, CA | March 2021 - June 2022
+- Containerized 5 client-facing web applications with Docker, enabling consistent deployments across staging and production
+- Built GitHub Actions pipelines for automated Docker image builds and pushes to Google Container Registry
+- Introduced Kubernetes for 2 high-traffic applications, reducing deployment downtime from ~20 minutes to zero
+- Maintained Grafana dashboards for infrastructure metrics and application response times
+
+PROJECTS
+ArgoCD Rollouts Canary Deployment
+- Configured Argo Rollouts for the Wavefront transaction service, enabling canary releases with automatic promotion/rollback based on Prometheus error-rate thresholds
+- Reduced risky big-bang releases to a controlled 5%/25%/50%/100% traffic split over 30 minutes
+
+Helm Lint and Schema Enforcement
+- Added Helm chart JSON schema validation and GitHub Actions lint checks to all 12 chart repositories
+- Caught 23 configuration errors in pull requests before they reached staging
+
+EDUCATION
+Bachelor of Science, Computer Science | University of California, Berkeley | 2021

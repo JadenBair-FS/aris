@@ -1,0 +1,41 @@
+--- POSTING 4 ---
+Job Title: Senior Python Engineer - Platform
+Company: DevLoop
+Location: New York, NY (Remote-friendly)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT DEVLOOP
+DevLoop builds developer productivity tools used by over 40,000 engineering teams worldwide. Our platform provides CI/CD orchestration, code quality analytics, and team velocity dashboards. We are a 60-person company backed by top-tier infrastructure-focused VCs and growing fast.
+
+ABOUT THE ROLE
+The Platform team owns the APIs, ingestion pipelines, and data services that power every DevLoop product. As a Senior Python Engineer on Platform, you will design systems for scale, mentor teammates, and have direct influence over the technical roadmap.
+
+KEY RESPONSIBILITIES
+- Architect and implement scalable platform services in Python using FastAPI and async patterns
+- Build high-performance data ingestion pipelines that process millions of webhook events per day
+- Design PostgreSQL schemas optimized for time-series and analytical query patterns
+- Own Redis infrastructure for rate limiting, caching, and pub/sub across services
+- Develop internal Python SDKs and libraries used by product engineering teams
+- Drive adoption of best practices: type annotations, automated testing, API versioning
+- Partner with infrastructure engineers on Kubernetes deployment configurations and SLOs
+
+REQUIRED QUALIFICATIONS
+- 6+ years of professional Python development
+- 4+ years designing and operating production microservices
+- 3+ years with PostgreSQL including advanced features (partitioning, JSONB, CTEs)
+- 2+ years working with Redis at scale (Pub/Sub, Lua scripting, Redis Streams)
+- 2+ years deploying applications with Docker and Kubernetes
+- Strong grasp of async Python (asyncio, aiohttp, httpx)
+- Experience with CI/CD systems (GitHub Actions, CircleCI, or similar)
+- Demonstrated ability to mentor engineers and lead technical design discussions
+
+PREFERRED QUALIFICATIONS
+- Experience building developer-facing APIs and SDKs
+- Familiarity with GCP (Cloud Run, Pub/Sub, BigQuery)
+- Background in observability tooling (OpenTelemetry, Datadog, Grafana)
+- Knowledge of gRPC and Protobuf
+- Open source contributions in the Python ecosystem
+
+COMPENSATION
+$175,000 - $210,000 + equity + benefits (unlimited PTO, remote stipend, top-tier health coverage)
+--- END POSTING 4 ---

@@ -1,0 +1,44 @@
+Simone Adeyemi
+simone.adeyemi@email.com | (404) 927-6610 | Atlanta, GA | linkedin.com/in/simoneadeyemi
+
+SUMMARY
+Platform engineer with 3.5 years of experience building internal developer platforms and self-service infrastructure tooling. Specializes in Kubernetes-based platforms, GitOps workflows, and making deployment pipelines faster and more reliable for product engineering teams.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker, Kubernetes
+CI/CD: GitHub Actions, ArgoCD
+Infrastructure as Code: Terraform, Helm
+Cloud: Google Cloud Platform, AWS
+Monitoring: Prometheus, Datadog
+Version Control: Git
+Databases: PostgreSQL
+
+EXPERIENCE
+
+Platform Engineer | Luminary Health Tech | Atlanta, GA | September 2022 - Present
+- Built and maintained an internal developer platform on Google Kubernetes Engine (GKE) used by 35 engineers across 6 product teams
+- Standardized Kubernetes application deployment using Helm charts, reducing per-service onboarding from 2 days to 3 hours
+- Implemented ArgoCD for GitOps-based continuous delivery; all production deployments are now fully declarative and auditable
+- Wrote GitHub Actions reusable workflows for build, test, and deploy, reducing per-repository pipeline maintenance by approximately 70%
+- Provisioned GCP infrastructure (GKE, Cloud SQL, Cloud Storage, VPC) with Terraform, maintaining full state in a remote backend with team locking
+- Integrated Datadog for cross-cluster observability, configuring synthetic monitors for 12 critical user-facing flows
+
+Platform Engineer | Stackflow Analytics | Atlanta, GA | April 2021 - September 2022
+- Managed AWS EKS clusters and worked with product teams to migrate 5 workloads from EC2-based deployments to Kubernetes
+- Created Helm charts for 8 internal services, parameterizing environment-specific configuration
+- Wrote Python tooling to audit resource requests/limits across all namespaces and flag over-provisioned workloads, resulting in a 22% cluster cost reduction
+- Maintained PostgreSQL databases on Amazon RDS, including read-replica configuration and automated snapshot policies
+- Supported on-call rotation, responding to and resolving 3-5 platform incidents per month
+
+PROJECTS
+ArgoCD Multi-Cluster Setup
+- Extended Luminary's ArgoCD deployment to manage 3 clusters (dev, staging, prod) from a single control plane
+- Enabled teams to promote releases across environments by merging a pull request rather than running manual kubectl commands
+
+Platform Cost Dashboard
+- Built a Prometheus + Grafana dashboard correlating Kubernetes node costs with per-team resource consumption
+- Identified 4 services running at 5x their actual resource needs; rightsizing saved approximately $1,800/month in cloud spend
+
+EDUCATION
+Bachelor of Science, Information Systems | Georgia Institute of Technology | 2021

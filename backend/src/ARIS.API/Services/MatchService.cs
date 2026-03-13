@@ -4,7 +4,6 @@ using ARIS.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.AI;
 using Pgvector.EntityFrameworkCore;
-using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
 

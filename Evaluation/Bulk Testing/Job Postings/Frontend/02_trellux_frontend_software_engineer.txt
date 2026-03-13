@@ -1,0 +1,41 @@
+--- POSTING 2 ---
+Job Title: Frontend Software Engineer
+Company: Trellux
+Location: Austin, TX
+Source: Synthetic based on greenhouse.io research
+
+ABOUT TRELLUX
+Trellux is a project management and team collaboration platform built for distributed software teams. We compete with Jira and Linear, with a focus on speed, minimal UI, and deep GitHub/GitLab integration. We have 200 employees and 15,000 paying teams.
+
+ABOUT THE ROLE
+We need a Frontend Software Engineer to build and maintain the core product interface. You will own features end-to-end, from the React component layer through the API integration, with a strong emphasis on performance and keyboard-driven UX.
+
+KEY RESPONSIBILITIES
+- Build new product features in React 18 with TypeScript and a Vite build pipeline
+- Implement real-time collaboration features using WebSockets and optimistic updates
+- Write comprehensive unit and integration tests with Jest and React Testing Library
+- Work closely with designers in Figma to implement consistent, accessible interfaces
+- Optimize bundle size and runtime performance to maintain sub-100ms interaction latency
+- Integrate with GitHub, GitLab, and Slack APIs via our BFF (backend-for-frontend) layer
+- Contribute to our design system documentation in Storybook
+
+REQUIRED QUALIFICATIONS
+- 3+ years of frontend development experience
+- 2+ years building production React applications
+- 2+ years using TypeScript with React
+- Solid understanding of JavaScript fundamentals (closures, event loop, prototype chain)
+- Experience with a modern build tool (Vite, Webpack, or esbuild)
+- Familiarity with state management patterns (Context, Redux, or Zustand)
+- Experience writing unit tests with Jest
+- Proficiency with Git and pull request workflows
+
+PREFERRED QUALIFICATIONS
+- Experience implementing real-time features (WebSockets, SSE)
+- Knowledge of web accessibility (ARIA, keyboard navigation)
+- Familiarity with Cypress or Playwright for E2E testing
+- Experience with React Query or SWR for server state management
+- Background in developer tooling or project management products
+
+COMPENSATION
+$120,000 - $145,000 + equity + benefits
+--- END POSTING 2 ---

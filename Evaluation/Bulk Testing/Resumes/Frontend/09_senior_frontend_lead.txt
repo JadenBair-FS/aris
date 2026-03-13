@@ -1,0 +1,32 @@
+Kofi Mensah
+kofi.mensah@email.com | (512) 304-7203 | Austin, TX | github.com/kofimensah-web
+
+SUMMARY
+Senior frontend engineer and team lead with 9 years of experience building React applications and leading frontend teams at high-growth SaaS companies. Specializes in scalable frontend architecture, monorepo tooling, and cross-team design system governance. Strong background in developer experience and CI/CD optimization.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass/SCSS
+Frameworks: React, Next.js, Vite, Remix
+Databases: (none professional)
+Tools: Git, Turborepo, pnpm, Jest, Playwright, Cypress, React Query, Zustand, Storybook, Figma, Nx
+Cloud/Infra: AWS (S3, CloudFront), Vercel, Netlify, GitHub Actions, Chromatic
+
+EXPERIENCE
+
+Lead Frontend Engineer | GridCore | Austin, TX | February 2020 - Present
+- Led a team of 6 frontend engineers building a complex energy management SaaS platform in Next.js 14 with TypeScript
+- Designed and implemented a Turborepo monorepo structure with 4 applications and 8 shared packages, reducing duplicate code by 40% across teams
+- Built a company-wide design system package with 70 components, Storybook, Chromatic visual regression, and automated npm publishing via GitHub Actions
+- Implemented Playwright E2E suite across 90 test scenarios integrated into pre-merge CI gates, reducing production regressions by 75%
+
+Senior Frontend Engineer | Altitude CMS | Austin, TX | May 2017 - January 2020
+- Architected React SPA for a headless CMS product with complex drag-and-drop page builder functionality using dnd-kit
+- Introduced TypeScript to a 60,000-line JavaScript codebase; completed migration in 6 months with no production incidents
+- Built Jest unit test infrastructure from zero to 82% coverage across core business logic components
+
+Frontend Engineer | Switchboard Labs | Austin, TX | August 2015 - April 2017
+- Built React 15 customer dashboard for a telecommunications SaaS product
+- Developed Sass component stylesheets and established CSS naming convention adopted by 8-person team
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Texas at Austin | 2015

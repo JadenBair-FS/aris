@@ -1,0 +1,33 @@
+Finn O'Brien
+finn.obrien@email.com | (617) 883-4421 | Boston, MA | github.com/finnobrien-web
+
+SUMMARY
+Frontend engineer with 4 years of experience building performant Next.js web applications. Focused on Core Web Vitals, bundle optimization, and scalable React architecture. Experienced with TypeScript, React Query, and modern build tooling including Vite and Webpack.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass
+Frameworks: React, Next.js, Vite
+Databases: (none professional)
+Tools: Git, npm/yarn, Jest, Cypress, React Query, Zustand, Webpack, Figma, Lighthouse CI
+Cloud/Infra: Vercel, AWS (S3, CloudFront), GitHub Actions, Netlify
+
+EXPERIENCE
+
+Frontend Engineer II | Canopy Digital | Boston, MA | May 2022 - Present
+- Led performance optimization initiative that improved LCP from 4.2s to 1.4s and INP from 320ms to 65ms across the marketing and application sites
+- Migrated build system from Webpack 4 to Vite, reducing cold start development build time from 28 seconds to 4 seconds
+- Implemented React Query for server state management, eliminating 2,200 lines of manual fetching and caching code across 15 feature modules
+- Built Cypress E2E test suite covering 40 critical user journeys and integrated into CI with parallel test execution
+
+Frontend Developer | Halo Commerce | Boston, MA | March 2020 - April 2022
+- Built product listing, cart, and checkout flows in Next.js (Pages Router) for a DTC e-commerce storefront
+- Implemented image optimization, lazy loading, and Next.js ISR (Incremental Static Regeneration), reducing homepage load time by 52%
+- Wrote Jest unit tests and React Testing Library integration tests achieving 80% component coverage
+
+PROJECTS
+
+PerfMetrics Dashboard
+- Next.js application that aggregates Lighthouse CI results over time and displays trends in Core Web Vitals; built with React Query, Recharts, and Tailwind CSS
+
+EDUCATION
+Bachelor of Science, Computer Science | Boston University | 2020

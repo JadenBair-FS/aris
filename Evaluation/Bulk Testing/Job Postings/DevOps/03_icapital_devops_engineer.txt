@@ -1,0 +1,49 @@
+--- POSTING 3 ---
+Job Title: DevOps Engineer - Senior Vice President
+Company: iCapital
+Location: New York, New York (Hybrid — Monday through Thursday in office, Friday remote)
+Source: https://job-boards.greenhouse.io/icapitalnetwork/jobs/8390699002
+
+ABOUT ICAPITAL
+iCapital is a leading financial technology platform that powers the alternative investment ecosystem for the wealth management industry. The firm's technology enables wealth managers, asset managers, and their clients to access and manage alternative investments at scale. iCapital has processed hundreds of billions of dollars in alternative investment transactions and serves thousands of registered investment advisors across the globe through its data-driven, compliance-ready infrastructure.
+
+ABOUT THE ROLE
+The Platform Infrastructure team at iCapital ensures that production and development environments operate smoothly, securely, and reliably. This Senior Vice President role demands deep MLOps and DevOps expertise spanning cloud infrastructure, CI/CD automation, Kubernetes, and security. The engineer will own hands-on design and operation of scalable DevOps and enterprise-grade MLOps platforms, including model lifecycle automation, observability pipelines, and governance frameworks, enabling iCapital's expanding AI and Generative AI product portfolio.
+
+KEY RESPONSIBILITIES
+- Design, build, and operate MLOps pipelines supporting the full ML lifecycle including training, validation, deployment, and production monitoring
+- Enable production workloads for AI/ML and Generative AI systems including LLM-based services
+- Develop and maintain CI/CD pipelines for AI/ML services and supporting cloud infrastructure using GitLab CI and ArgoCD
+- Build and manage cloud-native infrastructure on AWS using Kubernetes and containerized workloads
+- Automate infrastructure provisioning using Infrastructure as Code tooling (Terraform)
+- Implement model versioning, experiment tracking, and artifact management for the ML platform
+- Ensure reliability, scalability, observability, and cost efficiency across AI platforms
+- Partner with AI/ML engineers to operationalize models and standardize deployment patterns
+- Implement comprehensive monitoring and alerting for system health, model performance, and data drift
+- Enforce security, compliance, and governance requirements for AI workloads in a regulated fintech environment
+- Lead incident response, root cause analysis, and continuous improvement efforts
+- Document standards, best practices, and reference architectures for MLOps and AI infrastructure
+
+REQUIRED QUALIFICATIONS
+- 15+ years of experience in DevOps, SRE, or Platform Engineering with AWS as the primary cloud platform
+- Hands-on experience supporting machine learning systems in production
+- Direct experience with AWS SageMaker (required)
+- Strong experience with Kubernetes, containerized workloads, and cloud networking on AWS
+- Proven CI/CD pipeline experience using GitLab CI and ArgoCD for GitOps workflows
+- Strong Terraform proficiency and scripting in Python or similar languages
+- Solid Linux, systems administration, and troubleshooting fundamentals
+- Direct MLOps platform and tooling experience including model registries, experiment tracking, and feature stores
+- Exposure to Generative AI and LLM production workloads
+- Familiarity with ML data stores (PostgreSQL, DynamoDB, object storage)
+- Experience in regulated or fintech environments with compliance requirements
+- Background in cost optimization for compute-intensive and GPU workloads
+- Strong written and verbal communication skills for cross-team collaboration
+
+PREFERRED QUALIFICATIONS
+- AWS certifications (Solutions Architect, DevOps Engineer Professional, or equivalent)
+- Experience with multi-account AWS Organizations and landing zone architectures
+- Familiarity with observability tools such as Datadog, Prometheus, or Grafana at enterprise scale
+
+COMPENSATION
+Base salary range: $180,000 - $230,000 based on experience. Package includes equity for full-time employees, annual performance bonus, employer-matched retirement plan, 100% employer-paid dental and vision coverage, telemedicine, mental health counseling, parental leave, and unlimited PTO.
+--- END POSTING 3 ---

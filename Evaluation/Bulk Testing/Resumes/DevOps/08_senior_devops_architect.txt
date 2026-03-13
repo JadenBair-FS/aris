@@ -1,0 +1,51 @@
+Renata Kozlowski
+renata.kozlowski@email.com | (617) 883-5561 | Boston, MA | linkedin.com/in/renatakozlowski
+
+SUMMARY
+Senior DevOps architect with 9 years of experience designing cloud infrastructure, CI/CD platforms, and developer tooling for companies ranging from 50-person startups to 2,000-person enterprises. Deep expertise in AWS, Kubernetes, and Terraform. Recognized for building internal platforms that measurably improve engineering velocity while reducing operational overhead.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker, Kubernetes
+CI/CD: Jenkins, GitHub Actions, GitLab CI/CD, ArgoCD
+Infrastructure as Code: Terraform, Ansible, Helm
+Cloud: AWS, Azure, Google Cloud Platform
+Monitoring: Prometheus, Grafana, Datadog
+Operating Systems: Linux
+Version Control: Git
+Databases: PostgreSQL, Redis
+Web Servers: Nginx
+
+EXPERIENCE
+
+Principal DevOps Engineer | Axiom Health Systems | Boston, MA | April 2020 - Present
+- Architected and led the migration of 45 services from a legacy VM-based deployment model to Kubernetes on AWS EKS, reducing infrastructure cost by 38% and deployment time from 2 hours to under 8 minutes
+- Designed a multi-account AWS organization structure with centralized logging, security guardrails, and cost allocation tags across 6 product teams
+- Built a self-service infrastructure platform using Terraform modules and GitHub Actions, enabling engineers to provision compliant AWS environments without DevOps involvement; reduced provisioning requests to the platform team by 70%
+- Introduced ArgoCD and Helm as the standard delivery stack, bringing 100% of production deployments under GitOps control
+- Managed a team of 4 DevOps engineers, conducting weekly 1:1s, setting quarterly OKRs, and owning team hiring for 2 open roles
+- Implemented Datadog full-stack observability (metrics, traces, logs, synthetics) for 45 services, reducing MTTR from 48 minutes to 11 minutes
+
+Senior DevOps Engineer | Greenleaf Financial | Boston, MA | February 2017 - April 2020
+- Designed and operated a Jenkins-based CI/CD platform serving 80 engineers across 5 product teams; maintained 99.8% pipeline availability
+- Built Ansible configuration management for 120+ Linux servers, enforcing CIS security benchmarks and OS hardening across all environments
+- Migrated primary OLTP database (PostgreSQL, 1.2TB) from on-premise to Amazon RDS with zero downtime using logical replication
+- Implemented Redis caching layer for the customer portal, reducing API response times from 900ms to 85ms (p95)
+- Configured Nginx load balancers with TLS termination and rate limiting, handling 25,000 concurrent connections during peak trading hours
+- Mentored 3 junior engineers who were promoted to mid-level roles during tenure
+
+DevOps Engineer | Sprocket Labs | Cambridge, MA | August 2015 - February 2017
+- Built Docker-based CI pipelines for 6 microservices, replacing a manual deployment process
+- Managed AWS infrastructure including EC2, VPC, RDS, and CloudFront for a B2B SaaS product
+- Wrote Python automation scripts for instance right-sizing, snapshot cleanup, and cost reporting
+
+PROJECTS
+Golden AMI Pipeline
+- Built a Jenkins pipeline that bakes hardened AMIs monthly using Ansible, runs CIS benchmark scans, and distributes approved images to all AWS accounts
+- Adopted as the standard base image across all EC2 workloads at Axiom, ensuring consistent security posture
+
+Kubernetes Cost Optimization Framework
+- Developed Prometheus-based resource utilization tracking and a Grafana cost-per-team report, identifying $14,000/month in unused resources within 30 days of rollout
+
+EDUCATION
+Bachelor of Science, Computer Science | Northeastern University | 2015

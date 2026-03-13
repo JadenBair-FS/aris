@@ -1,0 +1,27 @@
+Isabelle Laurent
+isabelle.laurent@email.com | (415) 887-3301 | San Francisco, CA | linkedin.com/in/isabellelaurent-data
+
+SUMMARY
+Data engineer with 4 years of experience building streaming and near-real-time data pipelines. Expert in Apache Kafka for event ingestion and Spark Structured Streaming for stream processing. Experienced with AWS data services and proficient in Python and SQL for data modeling.
+
+SKILLS
+Languages: Python, SQL, Bash, Java (basic)
+Frameworks: Apache Kafka, Apache Spark, dbt, pandas
+Databases: Redshift, PostgreSQL, MongoDB, S3
+Tools: Git, Apache Airflow, Docker, AWS Kinesis, Confluent Schema Registry, GitHub Actions
+
+EXPERIENCE
+
+Data Engineer II | Trident Payments | San Francisco, CA | March 2022 - Present
+- Designed Kafka topic architecture for real-time payment event streaming handling 800,000 events per day with Avro schema registry for schema evolution
+- Built Spark Structured Streaming jobs that compute rolling fraud risk features with sub-5-second latency for the ML model serving layer
+- Developed Airflow-orchestrated dbt pipelines in Redshift for daily financial reconciliation reports consumed by finance and compliance teams
+- Implemented Kafka consumer dead-letter queue pattern with automatic replay for downstream failures
+
+Data Engineer | Wavelength Media | San Francisco, CA | January 2020 - February 2022
+- Built Python Kafka producers and consumers for a real-time content recommendation event pipeline
+- Designed Redshift schemas and dbt staging models for 8 ad tech data sources
+- Wrote pytest unit tests for all Python pipeline components and integrated into GitHub Actions CI
+
+EDUCATION
+Bachelor of Science, Computer Engineering | UC Davis | 2020

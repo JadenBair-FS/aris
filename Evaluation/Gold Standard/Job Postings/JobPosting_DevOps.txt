@@ -1,0 +1,33 @@
+DevOps Engineer
+Company: CloudNative Systems
+
+We are hiring a DevOps Engineer to own our CI/CD infrastructure, cloud platform reliability,
+and observability stack. The ideal candidate has deep hands-on experience with container
+orchestration, infrastructure-as-code, and production monitoring at scale.
+
+Requirements:
+- Docker (3+ years)
+- Kubernetes (3+ years)
+- Terraform (2+ years)
+- Jenkins (2+ years)
+- GitHub Actions (2+ years)
+- AWS (3+ years)
+- Linux (4+ years)
+- Bash (3+ years)
+- Prometheus (2+ years)
+- Grafana (2+ years)
+- Python (2+ years)
+- Helm (1+ years)
+
+Responsibilities:
+- Design, build, and maintain CI/CD pipelines using Jenkins and GitHub Actions
+- Manage Kubernetes clusters and Helm chart deployments across staging and production
+- Author and maintain Terraform modules for AWS infrastructure provisioning
+- Build and operate the Prometheus and Grafana observability stack including alerting rules
+- Containerize applications with Docker and define resource policies for Kubernetes workloads
+- Automate operational tasks with Bash and Python scripts
+- Enforce Linux system hardening and patching policies across the fleet
+- Partner with engineering teams to define deployment standards and on-call runbooks
+
+Compensation: $130,000 - $160,000 + equity + benefits
+Location: Remote (US)

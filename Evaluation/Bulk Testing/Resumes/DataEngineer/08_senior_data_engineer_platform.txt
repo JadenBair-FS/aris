@@ -1,0 +1,31 @@
+Samuel Okafor
+samuel.okafor@email.com | (312) 449-7730 | Chicago, IL | linkedin.com/in/samuelokafor-data
+
+SUMMARY
+Senior data engineer with 8 years of experience designing and operating large-scale data platforms. Expert in Apache Spark, Kafka, dbt, and cloud-native data infrastructure on AWS. Track record of building platforms that enable self-service analytics for hundreds of internal users and reducing data latency for ML model feature pipelines.
+
+SKILLS
+Languages: Python, SQL, Bash, Scala
+Frameworks: Apache Spark, Apache Kafka, dbt, Apache Airflow, pandas
+Databases: Snowflake, Redshift, PostgreSQL, S3
+Tools: Git, Docker, Kubernetes, Terraform, GitHub Actions, Databricks, AWS Glue, DataHub
+
+EXPERIENCE
+
+Senior Data Engineer | Transcend Commerce | Chicago, IL | March 2020 - Present
+- Architected the Transcend data platform on AWS processing 5 TB of daily data through Spark/EMR batch jobs and Kafka streaming pipelines feeding Snowflake and a feature store
+- Led migration from on-premises Hadoop cluster to AWS EMR + Glue, reducing infrastructure costs by $350,000 per year
+- Built self-service dbt project structure with 150+ models enabling analytics team to own their domain models without platform team involvement
+- Implemented DataHub data catalog with automated lineage, enabling compliance team to answer GDPR data lineage queries in minutes instead of days
+- Mentored 3 mid-level data engineers
+
+Data Engineer | Highmark Analytics | Chicago, IL | February 2017 - February 2020
+- Built Kafka streaming pipeline ingesting 1 billion events per day from IoT sensors into Redshift via Spark Structured Streaming
+- Designed dbt transformation layer with 60 models for operational and customer-facing analytics
+- Implemented Airflow pipeline orchestration replacing 40 cron jobs
+
+Data Engineer | Lumina Data | Chicago, IL | June 2015 - January 2017
+- Built Python ETL pipelines and PostgreSQL data models for a healthcare analytics startup
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Illinois at Chicago | 2015

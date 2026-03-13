@@ -1,0 +1,28 @@
+Sophie Linden
+sophie.linden@email.com | (503) 448-7723 | Portland, OR | linkedin.com/in/sophielinden-dotnet
+
+SUMMARY
+Full-stack .NET developer with 5 years of experience building ASP.NET Core APIs and Blazor applications. Specializes in Blazor Server for enterprise internal tools and admin dashboards. Experienced with Azure deployments, SignalR for real-time features, and Entity Framework Core data modeling.
+
+SKILLS
+Languages: C#, SQL, HTML/CSS
+Frameworks: ASP.NET Core, Blazor Server, Entity Framework Core, SignalR
+Databases: SQL Server, PostgreSQL, Redis
+Tools: Git, Visual Studio, xUnit, Moq, MudBlazor, Docker, Azure DevOps
+Cloud/Infra: Azure (App Service, SQL Database, SignalR Service, Blob Storage, Application Insights)
+
+EXPERIENCE
+
+.NET Developer | Pinnacle Operations | Portland, OR | March 2022 - Present
+- Built an internal operations dashboard in Blazor Server used by 200 operations staff for real-time shipment tracking and exception management
+- Implemented SignalR hubs for live shipment status updates pushed to Blazor components, replacing 30-second polling with sub-1-second event delivery
+- Developed ASP.NET Core REST API layer consumed by both the Blazor Server application and a mobile app
+- Designed Entity Framework Core models for a 20-entity operations database with optimistic concurrency for concurrent updates
+
+Software Developer | Meridian Web | Portland, OR | January 2019 - February 2022
+- Built ASP.NET Core Web API and Blazor WebAssembly frontend for a customer self-service portal
+- Wrote xUnit and Moq tests for all business logic with 80% coverage
+- Configured Azure DevOps build pipeline with automated test and deployment stages
+
+EDUCATION
+Bachelor of Science, Information Systems | Portland State University | 2019

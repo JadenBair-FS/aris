@@ -1,0 +1,31 @@
+Priya Mehta
+priya.mehta@email.com | (512) 304-7821 | Austin, TX | github.com/priyamehta-dev
+
+SUMMARY
+Recent computer science graduate with 1 year of experience building REST APIs in Python. Comfortable with Flask and FastAPI for backend development and familiar with PostgreSQL and basic Docker usage. Eager to grow into a full-stack backend role focused on API design and data modeling.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: FastAPI, Flask
+Databases: PostgreSQL, SQLite
+Tools: Git, Docker, pytest, Postman
+Cloud/Infra: AWS EC2 (basic), Heroku
+
+EXPERIENCE
+
+Junior Backend Developer | BrightNest Technologies | Austin, TX | June 2024 - Present
+- Built 12 REST API endpoints in FastAPI for a property management SaaS product used by 400 landlords
+- Designed PostgreSQL schemas for tenant and lease entities, reducing query time by 30% through proper indexing
+- Wrote unit tests with pytest achieving 78% coverage on new endpoints
+- Containerized local development environment with Docker Compose
+
+PROJECTS
+
+RentTracker API
+- Built a personal finance REST API with FastAPI and PostgreSQL to track rental income and expenses across multiple properties; deployed on Heroku with automated pytest CI via GitHub Actions
+
+LeaseBot
+- Developed a Flask webhook handler that receives DocuSign events and updates lease status in a PostgreSQL database; used by a local real estate agent for automated notifications
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Texas at Austin | 2024

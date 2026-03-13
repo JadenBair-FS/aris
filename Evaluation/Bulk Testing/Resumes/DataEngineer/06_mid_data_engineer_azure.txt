@@ -1,0 +1,27 @@
+Tyler Worthington
+tyler.worthington@email.com | (214) 556-7892 | Dallas, TX | linkedin.com/in/tylerworthington-de
+
+SUMMARY
+Data engineer with 5 years of experience building Azure-native data pipelines using Azure Data Factory, Databricks, and Synapse Analytics. Proficient in Python, SQL, dbt, and Kafka. Experienced in financial services data engineering with strong knowledge of data governance and lineage.
+
+SKILLS
+Languages: Python, SQL, Bash, Scala (basic)
+Frameworks: Apache Spark (Databricks), dbt, pandas, Apache Kafka
+Databases: Azure Synapse Analytics, Snowflake, SQL Server, Azure Blob Storage
+Tools: Git, Apache Airflow, Azure Data Factory, Azure DevOps, Docker, Terraform
+
+EXPERIENCE
+
+Data Engineer II | Centurion Capital | Dallas, TX | February 2022 - Present
+- Built Azure Data Factory pipelines ingesting trade, position, and market data from 10 source systems into Azure Synapse Analytics at 99.9% SLA
+- Developed Databricks Spark jobs processing 2 TB of daily trade data for risk aggregation and regulatory reporting
+- Designed 60+ dbt models in Synapse covering trade, counterparty, and risk exposure domains with full data lineage documentation
+- Implemented Kafka consumers for real-time trade event streaming with exactly-once delivery semantics
+
+Data Engineer | Redrock Analytics | Fort Worth, TX | January 2019 - January 2022
+- Built Python ADF pipelines and Synapse SQL pools for financial data warehouse migration from on-premises Oracle
+- Wrote dbt staging and mart models for 15 data sources in the company's first dbt project
+- Configured Azure DevOps CI/CD pipelines for automated dbt testing and deployment
+
+EDUCATION
+Bachelor of Science, Management Information Systems | University of Texas at Dallas | 2019

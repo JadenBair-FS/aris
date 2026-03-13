@@ -1,0 +1,33 @@
+Rafael Torres
+rafael.torres@email.com | (212) 568-9034 | New York, NY | linkedin.com/in/rafaeltorres-python
+
+SUMMARY
+Senior Python backend engineer with 8 years of experience designing and operating distributed systems at scale. Expert in FastAPI and Django microservices, PostgreSQL performance tuning, and Kafka-based event streaming. Track record of leading platform migrations, reducing infrastructure costs, and mentoring engineering teams.
+
+SKILLS
+Languages: Python, SQL, Bash, Go (proficient)
+Frameworks: FastAPI, Django, Flask, SQLAlchemy, Celery, gRPC
+Databases: PostgreSQL, MongoDB, Redis, Cassandra
+Tools: Git, Docker, pytest, Kafka, Terraform, GitHub Actions, Datadog, OpenTelemetry
+Cloud/Infra: AWS (EKS, RDS, ElastiCache, SQS/SNS, Lambda, S3), Kubernetes
+
+EXPERIENCE
+
+Staff Backend Engineer | Vantage Financial | New York, NY | January 2022 - Present
+- Led architecture and delivery of a real-time payment processing platform handling $500 million in daily transaction volume, built on 12 Python FastAPI microservices on AWS EKS
+- Designed PostgreSQL sharding strategy that scaled write throughput from 5,000 to 80,000 TPS without application downtime
+- Built Kafka-based event sourcing system for payment state transitions, enabling full audit trail and replay capability
+- Reduced AWS infrastructure costs by $280,000 per year by right-sizing EKS node groups and implementing Spot instance strategies
+
+Senior Backend Engineer | Canopy Data | New York, NY | March 2019 - December 2021
+- Built core data ingestion and transformation APIs in Python FastAPI processing 20 billion events per month
+- Designed Redis Cluster configuration supporting 2 million operations per second for session and rate-limit data
+- Mentored team of 4 engineers, conducting weekly 1:1s and architecture reviews
+
+Backend Engineer | Ironclad Systems | New York, NY | August 2016 - February 2019
+- Built Django REST Framework APIs for a contract management SaaS platform
+- Designed and owned Celery/Redis pipeline for asynchronous document processing and OCR integration
+- Introduced pytest-based testing culture; drove coverage from 8% to 74%
+
+EDUCATION
+Bachelor of Science, Computer Science | Columbia University | 2016

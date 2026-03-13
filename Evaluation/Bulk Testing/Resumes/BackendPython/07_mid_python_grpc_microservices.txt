@@ -1,0 +1,28 @@
+Natalie Cheung
+natalie.cheung@email.com | (415) 830-7246 | San Francisco, CA | linkedin.com/in/nataliecheung-backend
+
+SUMMARY
+Backend engineer with 5 years of experience building Python microservices and internal platform infrastructure. Experienced with both synchronous gRPC and async REST communication patterns, Kafka event streaming, and deploying on GCP. Comfortable in fast-paced startup environments.
+
+SKILLS
+Languages: Python, SQL, Bash, Protobuf
+Frameworks: FastAPI, gRPC (grpcio), SQLAlchemy, Pydantic
+Databases: PostgreSQL, MongoDB, Redis
+Tools: Git, Docker, pytest, Kafka, GitHub Actions, Grafana, Prometheus
+Cloud/Infra: GCP (Cloud Run, Pub/Sub, Cloud SQL, GKE), Docker, Kubernetes
+
+EXPERIENCE
+
+Platform Engineer | Driftline | San Francisco, CA | July 2021 - Present
+- Built internal Python gRPC services for user identity, feature flags, and rate limiting used by 15 product services
+- Designed Kafka topic architecture handling 2 million messages per day across 8 event types with Avro schema registry
+- Implemented Redis Streams-based audit log pipeline providing real-time visibility into all user actions
+- Built a FastAPI gateway service that translates REST requests to gRPC calls for mobile client compatibility
+
+Backend Engineer | Clearwater Labs | San Francisco, CA | June 2019 - June 2021
+- Built Python microservices using FastAPI and SQLAlchemy for a developer analytics SaaS platform
+- Designed PostgreSQL schemas supporting multi-tenant data isolation with row-level security policies
+- Wrote pytest unit and contract tests with 82% coverage and configured GitHub Actions CI/CD pipeline
+
+EDUCATION
+Bachelor of Science, Computer Science | UC Berkeley | 2019

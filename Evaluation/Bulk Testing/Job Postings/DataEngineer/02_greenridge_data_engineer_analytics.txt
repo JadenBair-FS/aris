@@ -1,0 +1,41 @@
+--- POSTING 2 ---
+Job Title: Data Engineer - Analytics Infrastructure
+Company: Greenridge Energy
+Location: Houston, TX
+Source: Synthetic based on greenhouse.io research
+
+ABOUT GREENRIDGE ENERGY
+Greenridge Energy is a renewable energy developer and grid services company managing 4 GW of solar, wind, and storage assets. Our data platform team ingests telemetry from 200,000 sensors and powers the analytics that optimize energy dispatch and maintenance scheduling.
+
+ABOUT THE ROLE
+We are hiring a Data Engineer to build and maintain the data infrastructure that powers operational analytics. You will work on the pipelines that move sensor data from IoT ingest through transformation into our analytics warehouse.
+
+KEY RESPONSIBILITIES
+- Build batch and micro-batch ingestion pipelines in Python using Apache Airflow on GCP
+- Develop dbt transformation models in BigQuery for operational and financial reporting
+- Process time-series sensor data at scale using Spark on GCP Dataproc
+- Implement Kafka consumers for real-time telemetry ingestion and anomaly alerting
+- Design partitioned BigQuery schemas optimized for time-series analytical queries
+- Write data quality tests with Great Expectations integrated into Airflow DAGs
+- Collaborate with data analysts to understand reporting requirements and optimize models
+
+REQUIRED QUALIFICATIONS
+- 3+ years of data engineering experience
+- 3+ years of Python for pipeline development
+- 2+ years of SQL with BigQuery, Snowflake, or Redshift
+- 2+ years building pipelines with Apache Airflow
+- 1+ years using dbt for data modeling
+- 1+ years working with Apache Spark or Dataflow
+- Experience with GCP or AWS data services
+- Solid Git skills and experience with CI/CD for data pipelines
+
+PREFERRED QUALIFICATIONS
+- Experience with Apache Kafka or GCP Pub/Sub for streaming data
+- Familiarity with Terraform for infrastructure-as-code
+- Background in energy, utilities, or IoT sensor data
+- Knowledge of time-series databases (InfluxDB, TimescaleDB)
+- Experience with Docker for pipeline containerization
+
+COMPENSATION
+$130,000 - $155,000 + bonus + benefits
+--- END POSTING 2 ---

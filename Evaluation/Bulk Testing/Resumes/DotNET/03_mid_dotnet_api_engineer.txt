@@ -1,0 +1,28 @@
+Kevin Marsh
+kevin.marsh@email.com | (206) 337-5541 | Seattle, WA | github.com/kevinmarsh-csharp
+
+SUMMARY
+.NET backend engineer with 3 years of experience building ASP.NET Core APIs and Azure-hosted services. Experienced with Entity Framework Core, SQL Server, xUnit testing, and Azure Functions for event-driven workflows. Comfortable taking ownership of features end-to-end from API design to deployment.
+
+SKILLS
+Languages: C#, SQL, Bash
+Frameworks: ASP.NET Core, Entity Framework Core, Azure Functions
+Databases: SQL Server, PostgreSQL
+Tools: Git, Visual Studio, xUnit, NUnit, Moq, Docker, Azure DevOps, Swagger/OpenAPI
+Cloud/Infra: Azure (App Service, Functions, SQL Database, Service Bus, Blob Storage)
+
+EXPERIENCE
+
+.NET Engineer | Clearview Software | Seattle, WA | September 2022 - Present
+- Built a document processing REST API in ASP.NET Core handling 10,000 document uploads per day, backed by Azure Blob Storage and SQL Server
+- Implemented Azure Functions event processor that triggers on Service Bus messages to run async OCR workflows, replacing manual batch processes saving 4 hours per day
+- Designed Entity Framework Core data model with 15 entities and Fluent API configurations for a complex document permission hierarchy
+- Wrote xUnit and Moq unit tests for all service classes, achieving 82% coverage
+
+Junior .NET Developer | Apex Solutions | Redmond, WA | June 2021 - August 2022
+- Built REST API endpoints in ASP.NET Core for a B2B inventory platform serving 200 clients
+- Wrote NUnit tests for repository pattern classes and fixed SQL Server EF Core N+1 query issues
+- Set up Docker Compose for local development environment adopted by 5-person team
+
+EDUCATION
+Bachelor of Science, Computer Engineering | University of Washington | 2021

@@ -1,0 +1,49 @@
+--- POSTING 5 ---
+Job Title: Senior DevOps Engineer
+Company: Patriot Software
+Location: Remote (United States — excludes Alaska, California, Hawaii, and Washington D.C.)
+Source: https://job-boards.greenhouse.io/55564patriot334567software868575745/jobs/4091852009
+
+ABOUT PATRIOT SOFTWARE
+Patriot Software is a remote-first, product-led technology company with 175+ employees dedicated to making accounting and payroll fast, simple, and affordable for millions of American small businesses. The company operates from distributed locations with a collaborative hub in Canton, Ohio. Patriot's engineering culture emphasizes platform reliability, blameless incident reviews, and empowering engineers to own critical systems end to end.
+
+ABOUT THE ROLE
+This is a hands-on Senior DevOps Engineer role where the engineer will design, build, and run reliable, scalable infrastructure while owning critical platform components and mentoring team members. The role applies platform engineering and SRE principles, with direct accountability for cloud networking, operational efficiency, and technical direction-setting. The engineer will set SLOs, define error budgets, and lead the reliability culture across the engineering organization.
+
+KEY RESPONSIBILITIES
+- Lead platform engineering using Kubernetes (EKS), Helm, and Infrastructure as Code tooling
+- Design and operate CI/CD platforms that enable safe, low-risk releases with fast rollback capabilities
+- Build observability foundations including metrics, logging, alerting, and dashboards using Prometheus, Grafana, and OpenTelemetry
+- Design and operate AWS infrastructure including VPCs, subnets, routing, NAT gateways, VPNs, and Transit Gateway
+- Own cloud networking and connectivity architecture across multi-account AWS environments
+- Configure and manage Cloudflare for WAF, DDoS protection, CDN, DNS management, and traffic routing
+- Participate in incident response with blameless post-mortems to drive systemic reliability improvements
+- Strengthen security and compliance posture through IAM hardening, network security policies, container security, and SOC2 controls
+- Define service reliability through SLIs, SLOs, and error budgets aligned to customer commitments
+- Reduce operational toil through automation of repetitive infrastructure tasks
+- Drive cloud cost optimization through rightsizing and resource governance
+- Mentor engineers across the organization and foster a collaborative, reliability-first culture
+
+REQUIRED QUALIFICATIONS
+- 6+ years of experience in DevOps, Platform Engineering, or Site Reliability Engineering roles
+- Strong hands-on AWS experience including networking and multi-account connectivity
+- Kubernetes (EKS) expertise including cluster operations, workload management, and security
+- Infrastructure as Code experience with AWS CDK, Terraform, or similar tooling
+- CI/CD pipeline design and operation, with GitHub Actions preferred
+- Cloudflare configuration and operation across WAF, DDoS, CDN, and DNS
+- Proficiency in Python and Bash scripting for automation
+- Production systems ownership experience with on-call responsibilities
+- Cloud networking fundamentals including VPC design, routing, and security groups
+- Deep understanding of SRE principles including error budgets and service level objectives
+- Observability platform experience with Prometheus, Grafana, and OpenTelemetry
+- Strong communication skills for cross-team collaboration and incident coordination
+
+PREFERRED QUALIFICATIONS
+- Advanced AWS networking experience including Transit Gateway and multi-account architectures
+- Experience building or operating internal developer platforms (IDPs)
+- SOC2 compliance experience or familiarity with regulated SaaS environments
+
+COMPENSATION
+$155,000 - $170,000 per year (based on experience)
+Full-time, salaried (exempt), direct hire. Core hours: 8 AM - 5 PM ET, Monday through Friday.
+--- END POSTING 5 ---

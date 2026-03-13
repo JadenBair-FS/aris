@@ -1,0 +1,40 @@
+--- POSTING 1 ---
+Job Title: Senior Python Backend Engineer
+Company: Meridian Financial Technologies
+Location: San Francisco, CA
+Source: Synthetic based on greenhouse.io research
+
+ABOUT MERIDIAN FINANCIAL TECHNOLOGIES
+Meridian Financial Technologies is a Series B fintech startup building next-generation payment infrastructure for small and mid-sized businesses. We process over $2 billion in transactions annually and are expanding our engineering team to support rapid growth.
+
+ABOUT THE ROLE
+We are looking for a Senior Python Backend Engineer to join our core payments team. You will design and own critical payment processing services, build APIs consumed by thousands of merchants, and help set the technical direction for our backend architecture.
+
+KEY RESPONSIBILITIES
+- Design, build, and maintain high-throughput payment processing microservices in Python using FastAPI
+- Own the full lifecycle of backend services from architecture through deployment and monitoring
+- Collaborate with frontend and mobile teams to design clean REST and gRPC APIs
+- Optimize PostgreSQL queries and data models to handle millions of transactions per day
+- Lead code reviews and mentor junior engineers on best practices
+- Drive reliability improvements including on-call rotations, incident response, and postmortems
+
+REQUIRED QUALIFICATIONS
+- 5+ years of professional Python development
+- 3+ years building production REST APIs with FastAPI or Django REST Framework
+- 3+ years with PostgreSQL including query optimization, indexing, and schema design
+- 2+ years experience with Redis for caching and task queuing
+- 2+ years working with Docker and container orchestration (Kubernetes preferred)
+- 1+ years experience with AWS (EC2, RDS, SQS, or equivalent)
+- Strong understanding of async Python (asyncio, httpx)
+- Experience with pytest and test-driven development
+
+PREFERRED QUALIFICATIONS
+- Experience in payments, fintech, or highly regulated industries
+- Familiarity with Celery for distributed task processing
+- Knowledge of gRPC and Protocol Buffers
+- Experience with Terraform or other infrastructure-as-code tools
+- Contributions to open source Python projects
+
+COMPENSATION
+$155,000 - $185,000 + equity + benefits (medical, dental, vision, 401k)
+--- END POSTING 1 ---

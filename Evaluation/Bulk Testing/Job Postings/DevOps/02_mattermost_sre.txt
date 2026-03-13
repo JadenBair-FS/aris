@@ -1,0 +1,48 @@
+--- POSTING 2 ---
+Job Title: Lead Site Reliability Engineer
+Company: Mattermost
+Location: Remote (United States)
+Source: https://job-boards.greenhouse.io/mattermost/jobs/5123836008
+
+ABOUT MATTERMOST
+Mattermost is the leading collaborative workflow platform for defense, intelligence, security, and critical infrastructure. The platform serves government agencies and Fortune 500 clients, offering secure messaging, file sharing, workflow automation, audio/screenshare, and project management capabilities. Mattermost operates on-premises and in private clouds with full data and operational control, making it the trusted communication backbone for organizations with the highest security requirements.
+
+ABOUT THE ROLE
+Mattermost seeks an experienced and visionary Lead Site Reliability Engineer to guide the architecture, reliability, and operational excellence of its infrastructure. The role provides technical leadership across the SRE function, driving strategic initiatives for scalability, observability, performance, and automation across cloud and hybrid environments. The Lead SRE will mentor team members, own incident management processes, and ensure the platform meets the stringent uptime and compliance requirements of government and enterprise customers.
+
+KEY RESPONSIBILITIES
+- Define strategy, architecture, and roadmap for the SRE function, aligning with business goals and customer SLA commitments
+- Lead design, deployment, and optimization of containerized workloads and infrastructure-as-code across cloud and hybrid environments
+- Establish observability, monitoring, and alerting frameworks at scale using tools such as Prometheus, Grafana, and distributed tracing
+- Drive incident management processes, root cause analysis, and reliability improvements through blameless post-mortems
+- Partner with security and compliance teams on regulatory requirements including FedRAMP, DoD ATO, and NIST 800-53
+- Champion automation and operational excellence initiatives to reduce toil and improve deployment velocity
+- Oversee cloud cost management and capacity planning across AWS, GCP, and Azure environments
+- Build and maintain internal developer platforms for secure, auditable software delivery
+- Mentor SRE team members, fostering a culture of learning and technical excellence
+
+REQUIRED QUALIFICATIONS
+- Bachelor's degree in Computer Science, Cybersecurity, or related field plus 5+ years of experience in SRE, DevOps, or cloud infrastructure roles
+- Container orchestration expertise, ideally with Kubernetes (EKS, GKE, or self-managed clusters)
+- Infrastructure-as-code experience with Terraform for multi-cloud or hybrid environments
+- Strong cloud platform background, preferably AWS, with hands-on experience across networking, compute, and storage services
+- Demonstrated monitoring, alerting, and performance optimization experience in production environments
+- Exceptional troubleshooting and incident management skills with proven on-call leadership
+- Proficiency in at least one scripting or programming language (Python, Go, or Bash)
+- Excellent cross-functional communication abilities and experience working with distributed remote teams
+- U.S. citizenship and eligibility for security clearance (for U.S.-based applicants)
+- Eligibility for export-controlled information access under EAR and ITAR regulations
+
+PREFERRED QUALIFICATIONS
+- Grafana and Prometheus observability stack experience at enterprise scale
+- High-availability, disaster recovery, and horizontal scaling architecture design experience
+- GCP and Azure cloud exposure in addition to AWS
+- Regulated industry leadership experience (government, defense, or financial services)
+- U.S. federal compliance expertise (FedRAMP, DoD ATO, NIST 800-53)
+- Experience with cloud marketplace listings on AWS, Azure, or Google Cloud Marketplace
+- Open-source infrastructure contributions
+- Relevant certifications: Certified Kubernetes Administrator (CKA), CKAD, or AWS Solutions Architect
+
+COMPENSATION
+$170,000 - $200,000 USD
+--- END POSTING 2 ---

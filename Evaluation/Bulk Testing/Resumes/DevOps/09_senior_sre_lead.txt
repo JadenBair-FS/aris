@@ -1,0 +1,53 @@
+Jerome Whitfield
+jerome.whitfield@email.com | (469) 224-8830 | Dallas, TX | linkedin.com/in/jeromewhitfield
+
+SUMMARY
+Senior site reliability engineer and team lead with 8 years of experience sustaining large-scale distributed systems in financial services and consumer tech. Expertise in observability engineering, incident management process design, and production readiness reviews. Passionate about building SRE culture and reducing toil through systematic automation.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker, Kubernetes
+CI/CD: GitHub Actions, Jenkins
+Infrastructure as Code: Terraform, Ansible
+Cloud: AWS, Azure
+Monitoring: Prometheus, Grafana, Datadog
+Operating Systems: Linux
+Version Control: Git
+Databases: PostgreSQL, Redis
+Web Servers: Nginx
+
+EXPERIENCE
+
+Lead Site Reliability Engineer | Pinnacle Trading Platform | Dallas, TX | January 2021 - Present
+- Led a team of 5 SREs responsible for reliability of a trading platform processing 3.5 million transactions per day
+- Defined SLOs and error budgets for 18 services; error-budget policy reduced the number of reckless deployments by 60% in the first year
+- Reduced organization-wide MTTR from 54 minutes to 17 minutes by implementing structured incident command, blameless post-mortems, and an automated incident timeline tool
+- Built an observability platform using Prometheus (federation across 3 clusters) and Grafana (40+ dashboards), supplemented by Datadog for distributed tracing and log analytics
+- Managed Kubernetes clusters on AWS EKS (30 nodes, 150 pods) and Azure AKS (20 nodes, 90 pods) supporting the trading engine and analytics workloads
+- Provisioned multi-region AWS and Azure infrastructure via Terraform, including Transit Gateway networking, RDS PostgreSQL with read replicas, and Redis ElastiCache clusters
+- Designed and enforced production readiness review (PRR) process; 100% of new services complete PRR before launch
+
+Senior Site Reliability Engineer | Holloway Bank | Dallas, TX | March 2017 - January 2021
+- Owned availability for core banking APIs serving 600,000 retail customers; maintained 99.97% uptime over 3 years
+- Migrated on-premise monitoring from Nagios to Prometheus + Grafana, reducing alert fatigue by 45% and improving coverage from 30 to 120 monitored metrics
+- Built Ansible automation for Linux server fleet (200+ hosts), cutting patching cycle time from 2 weeks to 3 days
+- Configured Nginx reverse proxies and SSL offloading for the customer-facing web tier, supporting 8,000 concurrent sessions
+- Implemented PostgreSQL connection pooling and query optimization, reducing database load by 35% during peak hours
+- Automated Redis session store failover testing via scheduled chaos scripts, validating failover completes in under 10 seconds
+
+Site Reliability Engineer | Stonewall Digital | Austin, TX | June 2015 - March 2017
+- Managed AWS EC2 and RDS infrastructure for a SaaS HR platform serving 200+ enterprise clients
+- Built Jenkins-based deployment pipelines for 4 application teams
+- Wrote Python scripts to automate EBS snapshot lifecycle management, saving $600/month in storage costs
+
+PROJECTS
+Incident Timeline Automation
+- Built a Python service that aggregates Datadog events, Prometheus alerts, and GitHub deployment markers into a chronological incident timeline
+- Adopted as standard tooling for all P1/P2 post-mortems at Pinnacle, reducing timeline reconstruction time from 45 minutes to under 5 minutes
+
+Error Budget Dashboard
+- Designed a Grafana dashboard that visualizes rolling 30-day error budgets per service and highlights teams approaching policy thresholds
+- Used weekly by engineering leadership to prioritize reliability work vs feature development
+
+EDUCATION
+Bachelor of Science, Computer Engineering | Texas A&M University | 2015

@@ -1,0 +1,42 @@
+Priya Nambiar
+priya.nambiar@email.com | (512) 660-3918 | Austin, TX | linkedin.com/in/priyanambiar
+
+SUMMARY
+Site Reliability Engineer with 2 years of experience supporting high-availability services at a fintech startup. Background in Python development with a shift into reliability engineering. Focused on improving observability, automating toil, and maintaining SLO compliance.
+
+SKILLS
+Languages: Python, Bash
+Containers: Docker
+CI/CD: GitLab CI/CD
+Cloud: Google Cloud Platform
+Operating Systems: Linux
+Monitoring: Prometheus, Grafana, Datadog
+Version Control: Git
+Databases: PostgreSQL
+
+EXPERIENCE
+
+Site Reliability Engineer I | ClearPath Financial | Austin, TX | January 2024 - Present
+- Maintained Prometheus alerting rules for 9 microservices, reducing false-positive alert volume by 34%
+- Built Grafana dashboards tracking p50/p95/p99 latency and error rate for the payments API, enabling faster triage during incidents
+- Configured Datadog APM for 3 critical services, giving the team end-to-end distributed tracing within 6 weeks
+- Automated routine certificate renewal using a Python script and GitLab CI/CD scheduled pipeline, eliminating 2 manual tasks per month
+- Participated in on-call rotation (1 week per month) and authored post-mortems for 4 severity-1 incidents
+- Containerized a legacy internal reporting tool using Docker, reducing setup time for new team members from 4 hours to 20 minutes
+
+Software Engineer (SRE Rotation) | ClearPath Financial | Austin, TX | July 2023 - January 2024
+- Wrote Python-based health-check scripts that polled 12 service endpoints and pushed results to a PostgreSQL metrics table
+- Maintained GitLab CI/CD pipelines for 5 repositories, enforcing lint and unit-test gates before merge
+- Assisted senior SREs in Linux server patching and capacity planning for Google Cloud Platform VM instances
+
+PROJECTS
+SLO Dashboard Toolkit
+- Built a reusable Grafana dashboard template for SLO burn-rate visualization, adopted by two other teams
+- Parameterized by service name and error budget window (7-day, 30-day)
+
+Log Anomaly Detector
+- Developed a Python script that parses structured JSON logs, computes rolling error rates, and sends Slack alerts when thresholds are breached
+- Reduced mean time to detect (MTTD) for a class of database connection errors by approximately 40%
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Texas at Austin | 2023

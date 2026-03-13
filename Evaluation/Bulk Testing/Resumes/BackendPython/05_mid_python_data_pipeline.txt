@@ -1,0 +1,33 @@
+Camille Okonkwo
+camille.okonkwo@email.com | (617) 443-8812 | Boston, MA | linkedin.com/in/camilleokonkwo
+
+SUMMARY
+Python backend engineer with 4 years of experience building data-intensive APIs and pipeline services. Specializes in SQLAlchemy-backed PostgreSQL applications, Celery task queues, and integration with third-party data providers. Experienced in AWS deployments and HIPAA-compliant development.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: FastAPI, Flask, SQLAlchemy, Pydantic
+Databases: PostgreSQL, MySQL, Redis
+Tools: Git, Docker, pytest, Celery, alembic, Postman, CircleCI
+Cloud/Infra: AWS (Lambda, RDS, S3, SES, CloudWatch), Docker
+
+EXPERIENCE
+
+Backend Engineer | ClearChart Medical | Boston, MA | February 2022 - Present
+- Built a HIPAA-compliant clinical data ingestion API in FastAPI processing 50,000 patient records daily from 12 EHR connectors
+- Designed SQLAlchemy ORM models and Alembic migrations for a 30-table PostgreSQL schema with full audit logging
+- Built Celery workers for asynchronous processing of HL7 FHIR message queues using Redis as broker
+- Reduced AWS Lambda cold start latency by 60% by optimizing Python dependency packaging and using provisioned concurrency
+
+Backend Developer | Kenna Software | Boston, MA | September 2020 - January 2022
+- Built REST APIs with Flask and SQLAlchemy for a B2B SaaS compliance platform
+- Implemented scheduled Celery tasks for automated report generation, saving clients 6 hours per week on average
+- Designed MySQL to PostgreSQL migration strategy for 3 TB production database
+
+PROJECTS
+
+PipelineForge
+- Python library for building reusable ETL pipelines backed by FastAPI, Celery, and PostgreSQL; includes retry logic, dead-letter queues, and pipeline observability dashboards
+
+EDUCATION
+Bachelor of Science, Information Systems | Northeastern University | 2020

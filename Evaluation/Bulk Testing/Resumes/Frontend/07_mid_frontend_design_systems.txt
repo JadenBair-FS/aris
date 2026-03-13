@@ -1,0 +1,28 @@
+Isla Drummond
+isla.drummond@email.com | (206) 847-2293 | Seattle, WA | linkedin.com/in/iladrummond-frontend
+
+SUMMARY
+Frontend engineer with 5 years of experience focused on design systems and product development for enterprise SaaS applications. Experienced building token-based design systems, maintaining Storybook documentation, and enabling design-to-code collaboration at scale.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS, Sass/SCSS
+Frameworks: React, Vite, Next.js
+Databases: (none professional)
+Tools: Git, npm, Jest, React Testing Library, Storybook, Chromatic, Figma, ESLint, Tailwind CSS
+Cloud/Infra: AWS (S3, CloudFront), Vercel, GitHub Actions
+
+EXPERIENCE
+
+Frontend Engineer - Design Systems | Ironworks Cloud | Seattle, WA | August 2021 - Present
+- Built and maintained a 60-component design system in React 18 with TypeScript, design tokens synced from Figma variables, and Storybook documentation hosted on Chromatic
+- Established and enforced a visual regression testing workflow with Chromatic that reduced unintended visual breakage in production by 90%
+- Collaborated directly with UX design leads to create a token taxonomy covering spacing, color, typography, and elevation, adopted by 9 product squads
+- Published the design system as an internal npm package with automated semantic versioning via GitHub Actions
+
+Frontend Developer | Beacon Software | Seattle, WA | April 2019 - July 2021
+- Built React 16/17 product UI for a B2B SaaS inventory management application with TypeScript and Sass
+- Implemented Jest and React Testing Library test suite from scratch, reaching 80% coverage on interactive components
+- Created reusable form and data table components used across 8 application modules
+
+EDUCATION
+Bachelor of Arts, Visual Communication Design | University of Washington | 2019

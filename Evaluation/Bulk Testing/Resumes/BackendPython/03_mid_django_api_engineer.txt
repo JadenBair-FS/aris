@@ -1,0 +1,33 @@
+Anika Rosenberg
+anika.rosenberg@email.com | (312) 774-9021 | Chicago, IL | linkedin.com/in/anikarosenberg
+
+SUMMARY
+Backend software engineer with 3 years of experience building Django-based APIs for SaaS products. Strong background in PostgreSQL data modeling, REST API design, and Celery-based task processing. Experienced working in agile teams and deploying to AWS.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: Django, Django REST Framework, FastAPI
+Databases: PostgreSQL, Redis
+Tools: Git, Docker, pytest, Celery, SQLAlchemy, Postman, GitHub Actions
+Cloud/Infra: AWS (EC2, RDS, SQS, S3), Heroku
+
+EXPERIENCE
+
+Backend Engineer | Loopline Software | Chicago, IL | August 2022 - Present
+- Designed and built a multi-tenant REST API with Django REST Framework serving 180 business clients across 3 pricing tiers
+- Reduced average API response time from 420ms to 95ms by adding Redis caching for frequently queried report endpoints
+- Implemented background PDF and CSV export jobs with Celery and SQS, eliminating timeout errors for large dataset exports
+- Led migration of 4 million records from Heroku Postgres to AWS RDS with zero downtime using pg_dump and Blue/Green cutover
+
+Software Developer | Trellis Health | Chicago, IL | June 2021 - July 2022
+- Built HIPAA-compliant patient intake REST API endpoints in Django for a telehealth company
+- Wrote pytest integration tests covering all critical endpoints, raising test coverage from 42% to 81%
+- Implemented OAuth2 token exchange for integration with a third-party EHR provider
+
+PROJECTS
+
+BudgetSync API
+- Multi-currency personal finance aggregation API built with FastAPI, PostgreSQL, and Redis; supports webhook ingestion from 3 banking APIs and background categorization via Celery workers
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Illinois at Chicago | 2021

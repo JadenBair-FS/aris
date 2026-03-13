@@ -1,0 +1,30 @@
+Nia Foster
+nia.foster@email.com | (404) 321-6644 | Atlanta, GA | github.com/niafoster-data
+
+SUMMARY
+Entry-level data engineer with 1 year of experience building Python-based ETL scripts and SQL data pipelines. Familiar with Apache Airflow for workflow orchestration and Snowflake for data warehousing. Eager to grow into a full pipeline engineering role with streaming and cloud technologies.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: pandas, SQLAlchemy
+Databases: Snowflake, PostgreSQL, MySQL
+Tools: Git, Apache Airflow, dbt (learning), Jupyter Notebook, Docker (basic)
+
+EXPERIENCE
+
+Junior Data Engineer | Vertex Analytics | Atlanta, GA | July 2024 - Present
+- Built 5 Airflow DAGs to automate daily ETL pipelines ingesting data from Salesforce, Shopify, and Zendesk APIs into Snowflake
+- Wrote SQL transformations in Snowflake to clean and standardize customer data across 4 source systems with inconsistent formats
+- Created Python helper scripts using pandas to validate data quality after each pipeline run, logging anomalies to a Slack channel
+- Assisted senior engineer in migrating 3 legacy cron-based scripts to Airflow with proper retry and alerting configuration
+
+PROJECTS
+
+OpenPipeline
+- Personal Airflow DAG project that downloads daily stock prices from Alpha Vantage API, transforms them in pandas, and loads into PostgreSQL; includes dbt models for weekly aggregations
+
+WeatherWarehouse
+- Python ETL that ingests NOAA weather API data into Snowflake daily; includes pytest tests for transformation functions and Airflow scheduling
+
+EDUCATION
+Bachelor of Science, Information Technology | Georgia Tech | 2024

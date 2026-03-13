@@ -1,0 +1,27 @@
+Amara Diallo
+amara.diallo@email.com | (347) 887-4421 | New York, NY | github.com/amaradiallo-de
+
+SUMMARY
+Data engineer with 4 years of experience building data pipelines on GCP using BigQuery, Dataflow, and Pub/Sub. Proficient in Python, dbt, and Apache Airflow. Strong background in analytics engineering and SQL data modeling for retail and media clients.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: Apache Beam/Dataflow, dbt, pandas, SQLAlchemy
+Databases: BigQuery, PostgreSQL, Firestore
+Tools: Git, Apache Airflow, Docker, GCP Pub/Sub, GCP Cloud Run, Terraform (basic), GitHub Actions
+
+EXPERIENCE
+
+Data Engineer | Zenith Media Group | New York, NY | October 2021 - Present
+- Built GCP Dataflow streaming pipeline ingesting Pub/Sub events from 5 content platforms into BigQuery at 2 million events per hour
+- Designed and maintained 50+ dbt models in BigQuery for audience, content, and advertising performance marts
+- Orchestrated all pipeline runs with Cloud Composer (Airflow), managing 18 production DAGs with SLA monitoring
+- Implemented Terraform modules for BigQuery dataset, Pub/Sub topic, and Cloud Run job provisioning
+
+Data Engineer | Prism Analytics | New York, NY | August 2019 - September 2021
+- Built Python ETL pipelines loading data from Google Analytics, Ads APIs, and DV360 into BigQuery staging tables
+- Developed dbt staging and mart models for campaign reporting used by 15 media analysts
+- Wrote pytest tests for all Python transformation utilities and maintained CI pipeline in GitHub Actions
+
+EDUCATION
+Bachelor of Science, Information Science | Cornell University | 2019

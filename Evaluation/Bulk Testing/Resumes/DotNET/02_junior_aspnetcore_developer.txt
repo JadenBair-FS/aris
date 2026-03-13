@@ -1,0 +1,33 @@
+Hannah Reyes
+hannah.reyes@email.com | (312) 554-9204 | Chicago, IL | linkedin.com/in/hannahreyes-dotnet
+
+SUMMARY
+ASP.NET Core developer with 1.5 years of experience building Web APIs and working with SQL Server and Azure. Proficient in C# and Entity Framework Core. Comfortable with xUnit testing and Docker for local development environments.
+
+SKILLS
+Languages: C#, SQL, JavaScript (basic)
+Frameworks: ASP.NET Core, Entity Framework Core, Blazor (basic)
+Databases: SQL Server, PostgreSQL
+Tools: Git, Visual Studio, xUnit, Moq, Postman, Docker, Azure DevOps
+Cloud/Infra: Azure (App Service, SQL Database, Blob Storage)
+
+EXPERIENCE
+
+.NET Developer | Brightfield Technologies | Chicago, IL | February 2024 - Present
+- Built user profile and preferences API in ASP.NET Core 8 with Entity Framework Core and SQL Server for a learning management platform
+- Implemented JWT authentication and role-based authorization middleware for all API endpoints
+- Wrote xUnit unit tests with Moq for service layer and repository pattern classes, reaching 75% coverage
+- Deployed API to Azure App Service with GitHub Actions CI/CD pipeline including automated test gating
+
+Software Developer Intern | Inland Systems | Chicago, IL | August 2023 - January 2024
+- Added 6 new API endpoints to an existing ASP.NET Core application for a manufacturing scheduling tool
+- Fixed 5 production bugs involving EF Core migration conflicts and SQL Server connection pool exhaustion
+- Wrote ADO.NET queries for performance-sensitive report generation endpoints
+
+PROJECTS
+
+RecipeVault API
+- ASP.NET Core REST API for recipe management with Entity Framework Core, SQL Server, JWT auth, and xUnit tests; uses Azure Blob Storage for recipe image uploads
+
+EDUCATION
+Bachelor of Science, Software Engineering | DePaul University | 2023

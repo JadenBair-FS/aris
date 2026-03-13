@@ -1,0 +1,41 @@
+--- POSTING 4 ---
+Job Title: DevOps Engineer
+Company: 21Shares
+Location: Zurich, Switzerland
+Source: https://job-boards.greenhouse.io/21shares/jobs/5780067004
+
+ABOUT 21SHARES
+21Shares is a pioneering crypto exchange-traded product (ETP) issuer, founded in 2018 and headquartered in Zurich. The company enables institutional and retail investors to access cryptocurrency investments through regulated exchange-traded products listed across major European exchanges. 21Shares' engineering team combines seasoned professionals from asset management and banking with entrepreneurial technologists, operating production-grade financial infrastructure with stringent uptime and security requirements.
+
+ABOUT THE ROLE
+The DevOps Engineer will maintain and optimize AWS and Kubernetes infrastructure with a focus on high reliability, security, and scalability. The role emphasizes cost efficiency, accelerating developer deployment cycles, and evaluating emerging tooling. The engineer will own CI/CD pipelines built on ArgoCD and GitHub Actions, support production data platforms, and maintain streaming data systems critical to 21Shares' ETP operations.
+
+KEY RESPONSIBILITIES
+- Provision, maintain, and upgrade AWS and EKS infrastructure using kubectl, Kustomize, and Helm
+- Develop and document reusable Terraform and Terragrunt modules for automating deployments, backups, and routine maintenance
+- Build and maintain CI/CD pipelines using GitHub Actions and ArgoCD GitOps workflows
+- Monitor system health via DataDog and AWS CloudWatch; troubleshoot incidents and own long-term reliability improvements
+- Support data engineers operating production data platforms including Apache Airflow/MWAA and SQLMesh
+- Maintain streaming and real-time data systems ensuring consistent, low-latency data flow for financial products
+- Analyze cloud spending using AWS Cost Explorer and Infracost tooling to optimize infrastructure costs
+- Assist developers with operational needs, Kubernetes security configuration, and RBAC management
+
+REQUIRED QUALIFICATIONS
+- Production-level EKS experience with Helm and Kustomize for workload management
+- Proficiency in Terraform and Terragrunt for Infrastructure as Code across multiple environments
+- Hands-on AWS experience covering EC2, ECR, RDS, MSK, and related managed services
+- Proven ArgoCD and GitHub Actions expertise for GitOps-driven continuous delivery
+- Experience operating production data platforms (Apache Airflow or similar)
+- Familiarity with DataDog for metrics, APM, and log aggregation
+- Experience with MongoDB or similar NoSQL data stores
+- Comfort using AI-assisted development tools such as Claude CLI or GitHub Copilot
+
+PREFERRED QUALIFICATIONS
+- Terragrunt experience for managing large-scale multi-environment Terraform configurations
+- Experience with financial or trading data systems requiring low-latency guarantees
+- Knowledge of Kubernetes security hardening and RBAC policies
+- Familiarity with streaming platforms such as Apache Kafka (AWS MSK)
+
+COMPENSATION
+Not disclosed
+--- END POSTING 4 ---

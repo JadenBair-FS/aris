@@ -1,0 +1,28 @@
+Adrian Kowalski
+adrian.kowalski@email.com | (312) 667-4490 | Chicago, IL | github.com/adriankowalski-net
+
+SUMMARY
+.NET software engineer with 5 years of experience building microservices and event-driven systems using ASP.NET Core and Azure Service Bus. Proficient in DDD, CQRS, and the Outbox pattern. Experienced mentoring junior engineers and contributing to platform architecture decisions.
+
+SKILLS
+Languages: C#, SQL, Bash
+Frameworks: ASP.NET Core, Entity Framework Core, MediatR, MassTransit, gRPC
+Databases: SQL Server, PostgreSQL, Redis
+Tools: Git, Visual Studio, xUnit, NUnit, Moq, Docker, Kubernetes (AKS), Azure DevOps
+Cloud/Infra: Azure (AKS, Service Bus, Functions, SQL Database, Application Insights, Key Vault)
+
+EXPERIENCE
+
+Software Engineer II | Horizon Enterprise Software | Chicago, IL | June 2022 - Present
+- Designed and built 4 domain microservices (order, fulfillment, billing, notification) using ASP.NET Core 8, MediatR CQRS, and MassTransit for Azure Service Bus messaging
+- Implemented the Outbox pattern with Entity Framework Core to guarantee exactly-once message delivery for order state transitions, eliminating duplicate processing events
+- Built gRPC service for synchronous inventory availability checks, reducing inter-service latency from 120ms to 18ms compared to REST polling
+- Set up Kubernetes deployments on AKS with Helm charts, configuring rolling updates and pod disruption budgets
+
+.NET Developer | Crossroads Technology | Milwaukee, WI | April 2019 - May 2022
+- Built ASP.NET Core REST API for a multi-tenant SaaS HR platform serving 500 companies
+- Wrote xUnit tests with Moq for 90% coverage on service layer
+- Participated in migration from WebAPI 2 (.NET Framework) to ASP.NET Core 6
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Illinois Urbana-Champaign | 2019

@@ -1,0 +1,33 @@
+Rebecca Thornton
+rebecca.thornton@email.com | (212) 448-9033 | New York, NY | linkedin.com/in/rebeccathornton-dotnet
+
+SUMMARY
+Senior .NET software architect with 8 years of experience designing and delivering enterprise ASP.NET Core microservices platforms. Expert in DDD, CQRS, event sourcing, and Azure cloud-native patterns. Led engineering teams of 5-8 across fintech and insurance companies, delivering high-availability systems processing millions of transactions daily.
+
+SKILLS
+Languages: C#, SQL, Bash, TypeScript (basic)
+Frameworks: ASP.NET Core, Entity Framework Core, MediatR, MassTransit, NServiceBus, gRPC, Blazor
+Databases: SQL Server, PostgreSQL, Redis, Cosmos DB
+Tools: Git, Visual Studio, xUnit, Moq, Docker, Kubernetes (AKS), Terraform, Azure DevOps, Datadog
+Cloud/Infra: Azure (AKS, Service Bus, Event Hubs, SQL Database, Cosmos DB, Functions, Key Vault, Application Insights)
+
+EXPERIENCE
+
+Lead .NET Architect | Fortis Financial | New York, NY | January 2020 - Present
+- Architected and led delivery of a 14-service ASP.NET Core microservices platform for real-time trade processing handling $800M in daily volume on Azure AKS
+- Implemented event sourcing with event store pattern using Cosmos DB, enabling complete audit trail and temporal querying for regulatory compliance
+- Designed CQRS read model projection system using NServiceBus and Azure Service Bus, separating write and read workloads and reducing query latency by 70%
+- Led architecture review board for 8 engineering squads; established API design standards, testing mandates, and security patterns
+- Mentored 4 senior engineers toward architecture roles
+
+Senior .NET Engineer | Vanguard Insurance Tech | New York, NY | March 2017 - December 2019
+- Built claims processing microservices in ASP.NET Core with MediatR CQRS and xUnit/Moq test coverage of 88%
+- Designed Entity Framework Core data model for a 40-entity claims domain database on SQL Server
+- Implemented gRPC inter-service calls for synchronous operations, reducing internal API latency from 200ms to 22ms
+
+.NET Developer | SilverPath Systems | New York, NY | July 2015 - February 2017
+- Built ASP.NET MVC and Web API applications for enterprise document management clients
+
+EDUCATION
+Master of Science, Computer Science | Columbia University | 2015
+Bachelor of Science, Computer Science | Fordham University | 2013

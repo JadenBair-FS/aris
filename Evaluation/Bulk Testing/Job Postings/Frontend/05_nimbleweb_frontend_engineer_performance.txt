@@ -1,0 +1,41 @@
+--- POSTING 5 ---
+Job Title: Frontend Engineer - Performance & Architecture
+Company: NimbleWeb
+Location: Chicago, IL (Hybrid)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT NIMBLEWEB
+NimbleWeb provides a no-code website builder for professional services firms (law, accounting, consulting). Our editor is a complex React single-page application with drag-and-drop, real-time preview, and multi-tenant publishing. We have 120 employees and 22,000 active customers.
+
+ABOUT THE ROLE
+We are looking for a Frontend Engineer with a strong focus on performance and frontend architecture. You will help us migrate our aging Webpack 4 setup to Vite, improve our Core Web Vitals scores, and establish patterns that scale as we grow the team.
+
+KEY RESPONSIBILITIES
+- Lead the migration from Webpack 4 to Vite and modernize the build pipeline
+- Audit and improve Core Web Vitals (LCP, CLS, INP) across the editor and published sites
+- Implement code splitting, lazy loading, and prefetching strategies
+- Build new editor features in React 18 with TypeScript using concurrent rendering patterns
+- Manage frontend state using Zustand with clear domain boundaries
+- Write performance benchmarks and integrate Lighthouse CI into the deployment pipeline
+- Document architectural decisions and mentor junior engineers on performance best practices
+
+REQUIRED QUALIFICATIONS
+- 4+ years of frontend development
+- 3+ years building React applications at scale
+- 3+ years using TypeScript
+- 2+ years deep experience with Vite or Webpack configuration and optimization
+- Strong understanding of browser rendering pipeline and JavaScript engine optimization
+- Experience with npm/yarn workspaces and monorepo tooling
+- Proficiency with React DevTools and browser performance profiling tools
+- Experience with state management (Redux, Zustand, MobX, or similar)
+
+PREFERRED QUALIFICATIONS
+- Experience with React 18 concurrent features (Suspense, transitions)
+- Familiarity with Module Federation for micro-frontend architectures
+- Knowledge of server-side rendering or static site generation patterns
+- Experience with Jest and Cypress for automated testing
+- Background in SaaS editor or content management products
+
+COMPENSATION
+$135,000 - $160,000 + equity + benefits
+--- END POSTING 5 ---

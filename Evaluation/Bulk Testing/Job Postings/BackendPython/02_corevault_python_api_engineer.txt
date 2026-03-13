@@ -1,0 +1,40 @@
+--- POSTING 2 ---
+Job Title: Python API Engineer
+Company: CoreVault
+Location: Austin, TX
+Source: Synthetic based on greenhouse.io research
+
+ABOUT COREVAULT
+CoreVault is a B2B SaaS company providing document management and workflow automation to enterprise legal and compliance teams. With 800+ enterprise clients and a team of 140, we are scaling our platform to support richer integrations and a new real-time collaboration layer.
+
+ABOUT THE ROLE
+As a Python API Engineer at CoreVault, you will be responsible for building and evolving the REST API layer that powers our web application and third-party integrations. You will work closely with product managers and frontend engineers to ship features that delight enterprise clients.
+
+KEY RESPONSIBILITIES
+- Build and maintain RESTful API endpoints using Django and Django REST Framework
+- Design database schemas and ORM models using SQLAlchemy and PostgreSQL
+- Write comprehensive unit and integration tests using pytest with >90% coverage targets
+- Integrate with third-party services including Salesforce, DocuSign, and Microsoft 365
+- Implement background job processing with Celery and Redis
+- Participate in architecture discussions and help establish coding standards
+- Triage and resolve production incidents with a root-cause-fix approach
+
+REQUIRED QUALIFICATIONS
+- 3+ years of Python development in a production environment
+- 2+ years building APIs with Django or Django REST Framework
+- 2+ years of SQL experience with PostgreSQL or MySQL
+- 1+ years using Redis for session management or task queuing
+- Experience with Celery for asynchronous task processing
+- Solid understanding of REST API design principles and HTTP semantics
+- Proficiency with Git and collaborative development workflows
+
+PREFERRED QUALIFICATIONS
+- Experience with Docker and Docker Compose for local development
+- Familiarity with AWS services (Lambda, S3, SES)
+- Knowledge of OAuth2 and JWT authentication patterns
+- Experience integrating with enterprise identity providers (SAML, LDAP)
+- Background in legal-tech or compliance software
+
+COMPENSATION
+$120,000 - $145,000 + equity + full benefits package
+--- END POSTING 2 ---

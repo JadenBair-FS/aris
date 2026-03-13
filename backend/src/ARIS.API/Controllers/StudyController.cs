@@ -684,10 +684,21 @@ public class StudyController : ControllerBase
             rewrittenEntries.Add((exp.Role, exp.Company ?? "", rewritten));
         }
 
+        var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
+            resumeText,
+            @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
+            System.Text.RegularExpressions.RegexOptions.Singleline);
+        var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
+
         var sb = new System.Text.StringBuilder();
         if (!string.IsNullOrWhiteSpace(summary))
         {
             sb.AppendLine(summary);
+            sb.AppendLine();
+        }
+        if (!string.IsNullOrWhiteSpace(skillsBlock))
+        {
+            sb.AppendLine(skillsBlock);
             sb.AppendLine();
         }
         foreach (var (role, company, bullets) in rewrittenEntries)

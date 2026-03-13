@@ -1,0 +1,27 @@
+Rosa Alvarado
+rosa.alvarado@email.com | (415) 773-8840 | San Francisco, CA | github.com/rosaalvarado-dbt
+
+SUMMARY
+Analytics engineer with 5 years of experience building best-practice dbt projects and analytics infrastructure. Deep expertise in SQL data modeling, dbt Core and Cloud, and Snowflake optimization. Experienced collaborating with data analysts and data scientists to translate business questions into reliable, well-documented data models.
+
+SKILLS
+Languages: Python, SQL, Bash
+Frameworks: dbt (Core and Cloud), pandas
+Databases: Snowflake, BigQuery, PostgreSQL
+Tools: Git, Apache Airflow, GitHub Actions, Looker, Tableau, Monte Carlo, Great Expectations
+
+EXPERIENCE
+
+Analytics Engineer | Quantum Commerce | San Francisco, CA | November 2021 - Present
+- Designed and maintained a 100+ model dbt project in Snowflake with staging, intermediate, mart, and metrics layers serving 25 BI analysts and 4 data science teams
+- Implemented dbt contracts and model versioning to enable breaking-change-free model evolution across 8 consuming applications
+- Built dbt CI/CD pipeline with GitHub Actions running slim CI on PR and full build on merge to main, reducing deployment time from 3 hours to 20 minutes
+- Onboarded Monte Carlo data observability to monitor 40 critical mart tables, resolving data incidents 60% faster
+
+Analytics Engineer | Atlas Logistics | Oakland, CA | June 2019 - October 2021
+- Built 40 dbt models in BigQuery for shipment, carrier, and cost domain marts replacing 80 ad-hoc SQL scripts
+- Wrote dbt generic and singular tests covering all fact tables and documented all models in schema.yml
+- Built Airflow DAGs to orchestrate dbt runs and notify analytics stakeholders of pipeline completion
+
+EDUCATION
+Bachelor of Science, Applied Mathematics | UC Berkeley | 2019

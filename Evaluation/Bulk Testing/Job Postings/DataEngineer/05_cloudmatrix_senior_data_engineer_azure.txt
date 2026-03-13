@@ -1,0 +1,42 @@
+--- POSTING 5 ---
+Job Title: Senior Data Engineer - Azure Platform
+Company: CloudMatrix
+Location: Seattle, WA (Remote)
+Source: Synthetic based on greenhouse.io research
+
+ABOUT CLOUDMATRIX
+CloudMatrix is a managed services and SaaS company helping mid-enterprise companies migrate legacy data warehouses to the cloud. We have 250 employees across North America and Europe and run data platforms on Azure for 130+ clients in manufacturing, retail, and professional services.
+
+ABOUT THE ROLE
+We are hiring a Senior Data Engineer to lead the design and delivery of Azure-native data platforms for our enterprise clients. You will be a technical lead on project teams, responsible for architecture, hands-on delivery, and mentoring junior engineers.
+
+KEY RESPONSIBILITIES
+- Design and implement end-to-end data pipelines using Azure Data Factory and Azure Databricks (Spark)
+- Build dbt models in Azure Synapse Analytics or Snowflake for client reporting needs
+- Orchestrate complex workflows with Apache Airflow deployed on AKS
+- Implement Kafka-based streaming ingestion for near-real-time client data feeds
+- Provision and manage Azure infrastructure using Terraform and Azure DevOps pipelines
+- Lead technical discovery sessions with clients and translate requirements into architecture designs
+- Mentor junior engineers and review pull requests for pipeline quality and reliability
+
+REQUIRED QUALIFICATIONS
+- 6+ years of data engineering experience
+- 5+ years of Python for pipeline and ETL development
+- 4+ years of SQL with Synapse Analytics, Snowflake, or SQL Server
+- 3+ years with Apache Spark (Databricks preferred)
+- 2+ years using Azure Data Factory, Azure Databricks, or Azure Synapse
+- 2+ years using dbt for data transformation
+- 1+ years using Apache Airflow for orchestration
+- Experience with Terraform for infrastructure-as-code
+- Experience with Docker and Kubernetes for pipeline deployment
+
+PREFERRED QUALIFICATIONS
+- Azure Solutions Architect or Azure Data Engineer certification
+- Experience with Kafka on Azure (Event Hubs with Kafka protocol)
+- Background in professional services or client-facing data engineering
+- Familiarity with Hadoop or on-premises data warehouse migration
+- Experience with Snowflake on Azure
+
+COMPENSATION
+$170,000 - $200,000 + bonus + benefits (full remote, training budget)
+--- END POSTING 5 ---

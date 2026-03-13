@@ -1,0 +1,45 @@
+Carlos Reyes
+carlos.reyes@email.com | (720) 541-8832 | Denver, CO | linkedin.com/in/carlosreyesdevops
+
+SUMMARY
+DevOps engineer with 4 years of experience designing and maintaining CI/CD pipelines, container orchestration platforms, and cloud infrastructure for e-commerce and logistics companies. Strong background in Kubernetes and Terraform. Committed to infrastructure-as-code practices and developer experience improvement.
+
+SKILLS
+Languages: Bash, Python
+Containers: Docker, Kubernetes
+CI/CD: Jenkins, GitHub Actions
+Infrastructure as Code: Terraform, Ansible
+Cloud: AWS
+Monitoring: Prometheus, Grafana
+Version Control: Git
+Web Servers: Nginx
+Databases: PostgreSQL, Redis
+
+EXPERIENCE
+
+DevOps Engineer | Freightward Logistics | Denver, CO | March 2023 - Present
+- Managed a Kubernetes cluster (24 nodes, 60+ pods) running the company's order-management and tracking microservices on AWS EKS
+- Wrote Terraform modules to provision VPCs, EKS clusters, RDS instances, and S3 buckets; reduced environment provisioning time from 3 days to 45 minutes
+- Built Jenkins pipelines with parallel test stages for 8 services, cutting average CI duration from 22 minutes to 9 minutes
+- Automated blue/green deployments via Ansible playbooks, enabling zero-downtime releases for 3 critical services
+- Configured Nginx as a reverse proxy and load balancer for internal tooling, supporting ~1,200 internal users
+- Mentored 2 junior engineers on Kubernetes concepts and Terraform best practices
+
+DevOps Engineer | CartBridge Commerce | Boulder, CO | January 2021 - March 2023
+- Migrated 6 on-premise services to AWS (EC2, RDS, ElastiCache with Redis), achieving 99.95% uptime in the first year post-migration
+- Introduced Docker-based development environments, eliminating "works on my machine" issues for a 12-person engineering team
+- Created GitHub Actions workflows for automated container builds and pushes to Amazon ECR
+- Implemented Prometheus + Grafana monitoring stack, creating 15 dashboards covering service health, database performance, and infrastructure costs
+- Maintained PostgreSQL databases (backups, vacuuming, index tuning) for two high-traffic applications
+
+PROJECTS
+Multi-Region DR Runbook
+- Designed and tested a disaster recovery runbook for failing over the Freightward order service to a secondary AWS region in under 15 minutes
+- Validated with two planned DR drills involving the full on-call engineering team
+
+Terraform Module Registry
+- Created an internal Terraform module registry with reusable modules for 7 common AWS patterns (VPC, EKS, RDS, ALB, IAM roles, S3, CloudWatch alarms)
+- Reduced onboarding time for new infrastructure projects by an estimated 60%
+
+EDUCATION
+Bachelor of Science, Computer Engineering | Colorado State University | 2021

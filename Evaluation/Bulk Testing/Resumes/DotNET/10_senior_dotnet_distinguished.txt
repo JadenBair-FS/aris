@@ -1,0 +1,30 @@
+Carolyn Steele
+carolyn.steele@email.com | (425) 778-2290 | Bellevue, WA | linkedin.com/in/carolynsteele-dotnet
+
+SUMMARY
+Distinguished .NET engineer with 12 years of experience leading large-scale ASP.NET Core microservices platforms at enterprise companies. Deep expertise in C#, DDD, event-driven architecture, Azure cloud services, and Kubernetes. Known for simplifying complex distributed systems, driving engineering culture, and delivering platforms that scale to hundreds of millions of requests per day.
+
+SKILLS
+Languages: C#, SQL, Bash, TypeScript (basic), F# (proficient)
+Frameworks: ASP.NET Core, gRPC, Entity Framework Core, MediatR, NServiceBus, MassTransit, Blazor
+Databases: SQL Server, PostgreSQL, Redis, Cosmos DB, Event Store DB
+Tools: Git, Visual Studio, xUnit, Moq, Docker, Kubernetes, Helm, Terraform, Azure DevOps, Datadog, OpenTelemetry
+Cloud/Infra: Azure (AKS, Service Bus, Event Hubs, SQL Database, Cosmos DB, Functions, CDN, Front Door, Application Gateway)
+
+EXPERIENCE
+
+Fellow Engineer | Cascade Commerce | Bellevue, WA | March 2017 - Present
+- Designed the Cascade event-driven microservices architecture serving 400 million daily API requests across 30 ASP.NET Core services on AKS; single-pane observability via OpenTelemetry + Datadog
+- Led adoption of event sourcing and CQRS with Event Store DB for the order domain, enabling complete audit history, temporal queries, and replay capability for regulatory compliance
+- Designed and evangelized C# coding standards, architectural patterns (Outbox, Saga, CQRS), and testing mandates adopted by 80+ engineers across 6 engineering groups
+- Defined and led a 2-year Azure migration from on-premises data centers, reducing infrastructure costs by $4M per year and improving deploy frequency from monthly to daily
+
+Senior .NET Architect | DataPath Enterprise | Redmond, WA | January 2014 - February 2017
+- Built ASP.NET Core API platform serving 50 million daily requests for an enterprise SaaS company
+- Designed Redis distributed caching layer handling 10 million operations per second across 3 services
+
+.NET Software Engineer | Northridge Technology | Seattle, WA | June 2012 - December 2013
+- Built ASP.NET MVC and Web API services for enterprise clients in healthcare and manufacturing
+
+EDUCATION
+Bachelor of Science, Computer Science | University of Washington | 2012

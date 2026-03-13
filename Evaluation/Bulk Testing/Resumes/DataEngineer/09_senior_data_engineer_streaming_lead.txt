@@ -1,0 +1,31 @@
+Priya Raghavan
+priya.raghavan@email.com | (212) 558-3340 | New York, NY | github.com/priyaraghavan-de
+
+SUMMARY
+Senior data engineer with 9 years of experience specializing in real-time data platforms and streaming architectures. Expert in Apache Kafka, Flink, and Spark Structured Streaming for sub-second data delivery. Led data engineering teams at fintech and ad tech companies, building systems processing trillions of events annually.
+
+SKILLS
+Languages: Python, SQL, Bash, Java, Scala
+Frameworks: Apache Kafka, Apache Flink, Apache Spark, dbt, pandas
+Databases: BigQuery, Snowflake, Cassandra, Redshift, S3
+Tools: Git, Docker, Kubernetes, Terraform, Confluent Platform, Airflow, GitHub Actions
+
+EXPERIENCE
+
+Lead Data Engineer | Vertex Financial | New York, NY | January 2019 - Present
+- Designed and operated a Kafka + Flink streaming platform processing 10 billion financial events per day with sub-200ms end-to-end latency for fraud detection
+- Built Apache Flink streaming jobs for real-time position and P&L computation replacing T+1 batch processes with T+0 near-real-time reporting
+- Architected multi-cloud data lakehouse (GCP BigQuery + AWS S3/Glue) with 200+ dbt models for regulatory and management reporting
+- Led team of 5 data engineers; drove architectural decisions, quarterly roadmap, and hiring
+
+Senior Data Engineer | Cascade Advertising | New York, NY | April 2016 - December 2018
+- Built Kafka streaming pipeline and Spark Structured Streaming jobs processing 500 billion ad auction events per month
+- Designed Cassandra data model for low-latency real-time ad serving decisions with sub-10ms reads
+- Developed Airflow-orchestrated dbt project with 80 models for campaign performance analytics
+
+Data Engineer | Bridgepoint Analytics | New York, NY | July 2014 - March 2016
+- Built Python ETL pipelines and Redshift data warehouse for a Series A analytics startup
+
+EDUCATION
+Master of Engineering, Computer Science | Cornell University | 2014
+Bachelor of Science, Electrical and Computer Engineering | Cornell University | 2013

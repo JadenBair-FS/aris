@@ -1,0 +1,41 @@
+--- POSTING 1 ---
+Job Title: Senior Data Engineer
+Company: Faktory
+Location: New York, NY
+Source: Synthetic based on greenhouse.io research
+
+ABOUT FAKTORY
+Faktory is a consumer data platform that helps brands unify first-party data from web, mobile, CRM, and point-of-sale sources. We ingest over 5 billion events per month and serve a real-time audience segmentation API to 600 advertising and media clients.
+
+ABOUT THE ROLE
+We are hiring a Senior Data Engineer to build and own streaming and batch data pipelines at the heart of our platform. You will work closely with data scientists and backend engineers to ensure high-quality, low-latency data flows across our infrastructure.
+
+KEY RESPONSIBILITIES
+- Design and build real-time streaming pipelines using Apache Kafka and Apache Flink
+- Develop batch ETL workflows with Apache Airflow orchestrating Spark jobs on AWS EMR
+- Build and maintain dbt models in our Snowflake data warehouse
+- Design and optimize SQL data models for analytical query patterns
+- Implement data quality checks and lineage tracking across all pipelines
+- Work with data scientists to productionize feature engineering pipelines
+- Collaborate with infrastructure engineers on Terraform-managed AWS resources
+
+REQUIRED QUALIFICATIONS
+- 5+ years of data engineering experience
+- 4+ years of Python for data pipeline development
+- 3+ years with Apache Spark for large-scale batch processing
+- 3+ years of SQL with experience in Snowflake, BigQuery, or Redshift
+- 2+ years building streaming pipelines with Kafka or Kinesis
+- 2+ years orchestrating workflows with Apache Airflow
+- 1+ years using dbt for data transformation
+- Solid experience with Docker and Git
+
+PREFERRED QUALIFICATIONS
+- Experience with AWS (EMR, Glue, S3, Redshift)
+- Familiarity with Apache Flink or Spark Structured Streaming
+- Knowledge of data catalog or lineage tools (Apache Atlas, OpenMetadata)
+- Experience with Terraform for infrastructure management
+- Background in advertising technology or consumer data platforms
+
+COMPENSATION
+$170,000 - $200,000 + equity + benefits
+--- END POSTING 1 ---

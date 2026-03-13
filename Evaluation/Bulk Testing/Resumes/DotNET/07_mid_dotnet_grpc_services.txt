@@ -1,0 +1,28 @@
+Nathan Voss
+nathan.voss@email.com | (415) 667-3340 | San Francisco, CA | github.com/nathanvoss-csharp
+
+SUMMARY
+Backend .NET engineer with 6 years of experience building high-performance ASP.NET Core APIs and gRPC services. Expert in C#, DDD, and microservices on Azure. Experienced with Kubernetes deployments, distributed caching with Redis, and designing event-driven systems using Azure Service Bus and MassTransit.
+
+SKILLS
+Languages: C#, SQL, Bash, Protobuf
+Frameworks: ASP.NET Core, gRPC, Entity Framework Core, MediatR, MassTransit
+Databases: SQL Server, PostgreSQL, Redis
+Tools: Git, Visual Studio, xUnit, Moq, Docker, Kubernetes (AKS), Azure DevOps, Prometheus, Grafana
+Cloud/Infra: Azure (AKS, Service Bus, SQL Database, Cache for Redis, Key Vault, Application Insights)
+
+EXPERIENCE
+
+Senior .NET Engineer | Stratum Cloud | San Francisco, CA | April 2021 - Present
+- Designed and built a high-throughput gRPC billing calculation service processing 2 million requests per day with p99 latency of 8ms
+- Implemented distributed Redis cache layer for computed billing rates, reducing SQL Server load by 80% at peak traffic
+- Built MassTransit-based event bus abstraction over Azure Service Bus enabling 6 downstream services to consume billing events with automatic retry and dead-letter handling
+- Deployed all services to AKS with Kubernetes HPA, achieving zero-downtime scaling from 2 to 40 replicas during billing periods
+
+.NET Developer | Corebridge Software | San Jose, CA | February 2017 - March 2021
+- Built ASP.NET Core REST APIs for a multi-tenant legal contract management platform
+- Migrated legacy .NET Framework 4.7 application to ASP.NET Core 3.1, enabling Docker containerization
+- Wrote xUnit tests with Moq for 85% coverage on service and domain layers
+
+EDUCATION
+Bachelor of Science, Computer Science | San Jose State University | 2017

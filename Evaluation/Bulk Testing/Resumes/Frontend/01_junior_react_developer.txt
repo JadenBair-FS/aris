@@ -1,0 +1,31 @@
+Brianna Castillo
+brianna.castillo@email.com | (469) 321-7840 | Dallas, TX | github.com/briannacastillo-dev
+
+SUMMARY
+Frontend developer with 1 year of experience building React applications. Comfortable with JavaScript, TypeScript, and CSS, and familiar with building component-driven UIs from Figma designs. Passionate about clean code and improving web accessibility.
+
+SKILLS
+Languages: JavaScript, TypeScript, HTML, CSS
+Frameworks: React, Vite
+Databases: (none professional)
+Tools: Git, npm, Jest, React Testing Library, Figma, Postman
+Cloud/Infra: Vercel, GitHub Actions
+
+EXPERIENCE
+
+Junior Frontend Developer | Ember Solutions | Dallas, TX | July 2024 - Present
+- Built 8 new UI screens in React 18 with TypeScript for a B2B appointment scheduling application
+- Translated Figma wireframes into responsive React components using CSS Modules and Flexbox
+- Wrote unit tests with Jest and React Testing Library, achieving 72% coverage on new components
+- Fixed 11 accessibility issues (missing aria-labels, keyboard navigation gaps) identified in a Lighthouse audit
+
+PROJECTS
+
+TaskBoard UI
+- React and TypeScript single-page application for managing personal to-do lists with drag-and-drop reordering built using dnd-kit; deployed to Vercel with automated Jest tests in GitHub Actions
+
+WeatherDash
+- Weather dashboard built with React, TypeScript, and the OpenWeatherMap API; features location-based forecasts, animated weather icons, and a responsive CSS Grid layout
+
+EDUCATION
+Bachelor of Science, Web Development | Southern Methodist University | 2024

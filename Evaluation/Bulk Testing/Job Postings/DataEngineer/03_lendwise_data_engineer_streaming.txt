@@ -1,0 +1,41 @@
+--- POSTING 3 ---
+Job Title: Data Engineer - Streaming Platforms
+Company: LendWise Financial
+Location: San Francisco, CA
+Source: Synthetic based on greenhouse.io research
+
+ABOUT LENDWISE FINANCIAL
+LendWise Financial is a digital lending platform originating $1.5 billion in consumer and small business loans annually. Our data platform processes every loan application, payment event, and risk signal in real time to drive underwriting models and fraud detection.
+
+ABOUT THE ROLE
+As a Data Engineer on the Streaming Platforms team, you will build the real-time data infrastructure that underpins our risk and fraud systems. You will work on Kafka-based pipelines and ensure sub-second data delivery to downstream ML models and dashboards.
+
+KEY RESPONSIBILITIES
+- Design and operate Apache Kafka topics, partitions, and consumer groups at scale
+- Build stream processing applications using Kafka Streams and Python consumers
+- Develop Spark Structured Streaming jobs for real-time feature computation
+- Maintain Airflow-orchestrated batch pipelines feeding our Redshift data warehouse
+- Write dbt models for financial reporting and regulatory data marts
+- Implement exactly-once semantics and dead-letter queues for critical payment events
+- Collaborate with ML engineers to build low-latency feature pipelines for fraud models
+
+REQUIRED QUALIFICATIONS
+- 4+ years of data engineering experience
+- 4+ years of Python for pipeline and application development
+- 3+ years with Apache Kafka (topic design, consumer groups, schema registry)
+- 2+ years with Apache Spark for batch and streaming processing
+- 2+ years of SQL with Redshift, Snowflake, or BigQuery
+- 1+ years using Apache Airflow for pipeline orchestration
+- 1+ years using dbt for data modeling
+- Experience with AWS data services (S3, Kinesis, Glue, or EMR)
+
+PREFERRED QUALIFICATIONS
+- Experience building feature stores or ML pipelines
+- Knowledge of Apache Avro or Protobuf for schema management
+- Familiarity with Terraform or AWS CDK
+- Background in fintech, payments, or fraud detection
+- Experience with Docker and Kubernetes for pipeline deployment
+
+COMPENSATION
+$155,000 - $185,000 + equity + benefits
+--- END POSTING 3 ---
