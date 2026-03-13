@@ -15,6 +15,8 @@ export interface StudyAnalyzeResponse {
 export interface StudyTailorResumesResponse {
   arisResume: string;
   chatGptResume: string;
+  arisResumePdfBase64: string;
+  chatGptResumePdfBase64: string;
 }
 
 export async function analyzeStudy(

@@ -130,4 +130,6 @@ public class StudyTailorResumesResponse
 {
     public string ArisResume { get; set; } = string.Empty;
     public string ChatGptResume { get; set; } = string.Empty;
+    public string ArisResumePdfBase64 { get; set; } = string.Empty;
+    public string ChatGptResumePdfBase64 { get; set; } = string.Empty;
 }
