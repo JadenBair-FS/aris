@@ -119,12 +119,16 @@ public class MatchService
             .Select(s =>
             {
                 var (importance, _, originalName) = GetJobSkillData(job.CleanSignal!, s);
+                var viaSkill = implicitSkills[s];
+                var badge = string.IsNullOrWhiteSpace(viaSkill)
+                    ? "SUBSET_OF"
+                    : $"via {viaSkill} (SUBSET_OF)";
                 return new SkillGapItem
                 {
                     SkillName = s,
                     OriginalName = originalName,
                     Importance = importance,
-                    BridgePath = $"via {implicitSkills[s]} (SUBSET_OF)"
+                    BridgePath = badge
                 };
             })
             .ToList();
@@ -163,17 +167,22 @@ public class MatchService
                     .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
                 prerequisiteMetSet = prerequisiteMetSet
-                    .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
-                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                    .Where(kvp => !roadmapTechSkillNames.Contains(kvp.Key))
+                    .ToDictionary(kvp => kvp.Key, kvp => kvp.Value, StringComparer.OrdinalIgnoreCase);
             }
 
             _logger.LogInformation("Graph Neighborhood for User: {Neighborhood}", string.Join(", ", neighborhood));
-            _logger.LogInformation("Prerequisite-Met Skills: {PrereqMet}", string.Join(", ", prerequisiteMetSet));
+            _logger.LogInformation("Prerequisite-Met Skills: {PrereqMet}", string.Join(", ", prerequisiteMetSet.Keys));
 
             var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
             var bridgePathBySkill = bridgePaths.ToDictionary(
                 p => p.SkillName,
                 p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
+                StringComparer.OrdinalIgnoreCase);
+
+            var prereqPathBySkill = prerequisiteMetSet.ToDictionary(
+                kvp => kvp.Key,
+                kvp => (kvp.Value, "SUBSET_OF", (string?)null),
                 StringComparer.OrdinalIgnoreCase);
 
             foreach (var skill in missingSkills)
@@ -203,11 +212,11 @@ public class MatchService
                 {
                     hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
                 }
-                else if (prerequisiteMetSet.Contains(skill))
+                else if (prerequisiteMetSet.ContainsKey(skill))
                 {
-                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, prereqPathBySkill, origName));
                 }
-                else if (neighborhood.Contains(skill))
+                else if (bridgePathBySkill.ContainsKey(skill))
                 {
                     bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
                 }
@@ -357,12 +366,16 @@ public class MatchService
             .Select(s =>
             {
                 var (importance, _, originalName) = GetJobSkillData(jobSignal, s);
+                var viaSkill = implicitSkills[s];
+                var badge = string.IsNullOrWhiteSpace(viaSkill)
+                    ? "SUBSET_OF"
+                    : $"via {viaSkill} (SUBSET_OF)";
                 return new SkillGapItem
                 {
                     SkillName    = s,
                     OriginalName = originalName,
                     Importance   = importance,
-                    BridgePath   = $"via {implicitSkills[s]} (SUBSET_OF)"
+                    BridgePath   = badge
                 };
             })
             .ToList();
@@ -396,14 +409,19 @@ public class MatchService
                     .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
                 prerequisiteMetSet = prerequisiteMetSet
-                    .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
-                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                    .Where(kvp => !roadmapTechSkillNames.Contains(kvp.Key))
+                    .ToDictionary(kvp => kvp.Key, kvp => kvp.Value, StringComparer.OrdinalIgnoreCase);
             }
 
             var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
             var bridgePathBySkill = bridgePaths.ToDictionary(
                 p => p.SkillName,
                 p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
+                StringComparer.OrdinalIgnoreCase);
+
+            var prereqPathBySkill = prerequisiteMetSet.ToDictionary(
+                kvp => kvp.Key,
+                kvp => (kvp.Value, "SUBSET_OF", (string?)null),
                 StringComparer.OrdinalIgnoreCase);
 
             foreach (var skill in missingSkills)
@@ -427,11 +445,11 @@ public class MatchService
                 {
                     hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
                 }
-                else if (prerequisiteMetSet.Contains(skill))
+                else if (prerequisiteMetSet.ContainsKey(skill))
                 {
-                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                    prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, prereqPathBySkill, origName));
                 }
-                else if (neighborhood.Contains(skill))
+                else if (bridgePathBySkill.ContainsKey(skill))
                 {
                     bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
                 }
@@ -560,12 +578,16 @@ public class MatchService
                 .Select(s =>
                 {
                     var (importance, _, originalName) = GetJobSkillData(jobSignal, s);
+                    var viaSkill = implicitSkills[s];
+                    var badge = string.IsNullOrWhiteSpace(viaSkill)
+                        ? "SUBSET_OF"
+                        : $"via {viaSkill} (SUBSET_OF)";
                     return new SkillGapItem
                     {
                         SkillName    = s,
                         OriginalName = originalName,
                         Importance   = importance,
-                        BridgePath   = $"via {implicitSkills[s]} (SUBSET_OF)"
+                        BridgePath   = badge
                     };
                 })
                 .ToList();
@@ -599,14 +621,19 @@ public class MatchService
                         .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
                     prerequisiteMetSet = prerequisiteMetSet
-                        .Except(roadmapTechSkillNames, StringComparer.OrdinalIgnoreCase)
-                        .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                        .Where(kvp => !roadmapTechSkillNames.Contains(kvp.Key))
+                        .ToDictionary(kvp => kvp.Key, kvp => kvp.Value, StringComparer.OrdinalIgnoreCase);
                 }
 
                 var bridgePaths = await _graphService.GetBridgeablePathsAsync(totalUserSkills, missingSkills);
                 var bridgePathBySkill = bridgePaths.ToDictionary(
                     p => p.SkillName,
                     p => (p.ViaSkill, p.BridgeType, p.BridgeSource),
+                    StringComparer.OrdinalIgnoreCase);
+
+                var prereqPathBySkill = prerequisiteMetSet.ToDictionary(
+                    kvp => kvp.Key,
+                    kvp => (kvp.Value, "SUBSET_OF", (string?)null),
                     StringComparer.OrdinalIgnoreCase);
 
                 foreach (var skill in missingSkills)
@@ -630,11 +657,11 @@ public class MatchService
                     {
                         hardGaps.Add(new SkillGapItem { SkillName = skill, OriginalName = origName, Importance = importance, YearsRequired = years });
                     }
-                    else if (prerequisiteMetSet.Contains(skill))
+                    else if (prerequisiteMetSet.ContainsKey(skill))
                     {
-                        prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
+                        prerequisiteMet.Add(BuildSkillGapItem(skill, importance, years, prereqPathBySkill, origName));
                     }
-                    else if (neighborhood.Contains(skill))
+                    else if (bridgePathBySkill.ContainsKey(skill))
                     {
                         bridgeable.Add(BuildSkillGapItem(skill, importance, years, bridgePathBySkill, origName));
                     }
@@ -720,7 +747,9 @@ public class MatchService
 
         if (bridgePathBySkill.TryGetValue(skillName, out var pathInfo))
         {
-            bridgePath = $"via {pathInfo.ViaSkill} ({pathInfo.BridgeType})";
+            bridgePath = string.IsNullOrWhiteSpace(pathInfo.ViaSkill)
+                ? pathInfo.BridgeType
+                : $"via {pathInfo.ViaSkill} ({pathInfo.BridgeType})";
             bridgeSource = pathInfo.BridgeSource;
         }
 
