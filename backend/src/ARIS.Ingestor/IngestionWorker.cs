@@ -672,8 +672,13 @@ public class IngestionWorker : BackgroundService
     {
         if (string.IsNullOrWhiteSpace(name)) return string.Empty;
 
+        // Exact match first (fast, index-backed).
+        // Fall back to case-insensitive to prevent duplicate nodes for skills
+        // that differ only in casing across roadmaps (e.g. "Bash" vs "bash").
         var exactMatch = await dbContext.Skills
-            .FirstOrDefaultAsync(s => s.Name == name, ct);
+            .FirstOrDefaultAsync(s => s.Name == name, ct)
+            ?? await dbContext.Skills
+            .FirstOrDefaultAsync(s => s.Name.ToLower() == name.ToLower(), ct);
 
         string canonicalName;
 
