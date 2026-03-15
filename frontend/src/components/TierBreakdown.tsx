@@ -79,8 +79,11 @@ export function TierBreakdown({
             >
                 {matchingSkills.map((s, i) => (
                     <div key={i} className="flex justify-between items-center py-1.5 border-b border-slate-50 last:border-0">
-                        <div className="flex items-center">
-                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-sm font-medium text-slate-800">{s.originalName ?? s.skillName}</span>
+                            {s.originalName && s.originalName !== s.skillName && (
+                                <span className="text-xs text-slate-400 bg-slate-100 rounded px-1 py-0.5">{s.skillName}</span>
+                            )}
                             <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.yearsRequired > 0 && (
@@ -98,7 +101,12 @@ export function TierBreakdown({
             >
                 {implicitlyDiscoveredSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
-                        <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-sm font-medium text-slate-800">{s.originalName ?? s.skillName}</span>
+                            {s.originalName && s.originalName !== s.skillName && (
+                                <span className="text-xs text-slate-400 bg-slate-100 rounded px-1 py-0.5">{s.skillName}</span>
+                            )}
+                        </div>
                         {s.bridgePath && (
                             <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 font-mono shrink-0 ml-2">
                                 {s.bridgePath}
@@ -116,8 +124,11 @@ export function TierBreakdown({
             >
                 {prerequisiteMetSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-sm font-medium text-slate-800">{s.originalName ?? s.skillName}</span>
+                            {s.originalName && s.originalName !== s.skillName && (
+                                <span className="text-xs text-slate-400 bg-slate-100 rounded px-1 py-0.5">{s.skillName}</span>
+                            )}
                             <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.bridgePath && (
@@ -137,8 +148,11 @@ export function TierBreakdown({
             >
                 {bridgeableSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-slate-800">{s.skillName}</span>
+                        <div className="flex items-center gap-1.5">
+                            <span className="text-sm font-medium text-slate-800">{s.originalName ?? s.skillName}</span>
+                            {s.originalName && s.originalName !== s.skillName && (
+                                <span className="text-xs text-slate-400 bg-slate-100 rounded px-1 py-0.5">{s.skillName}</span>
+                            )}
                             <ImportanceBadge importance={s.importance} />
                         </div>
                         {s.bridgePath && (
@@ -157,8 +171,11 @@ export function TierBreakdown({
                 emptyLabel="No skill gaps — great fit!"
             >
                 {hardGaps.map((s, i) => (
-                    <div key={i} className="flex items-center py-2 border-b border-slate-50 last:border-0">
-                        <span className="font-medium text-red-700">{s.skillName}</span>
+                    <div key={i} className="flex items-center gap-1.5 py-2 border-b border-slate-50 last:border-0">
+                        <span className="font-medium text-red-700">{s.originalName ?? s.skillName}</span>
+                        {s.originalName && s.originalName !== s.skillName && (
+                            <span className="text-xs text-slate-400 bg-slate-100 rounded px-1 py-0.5">{s.skillName}</span>
+                        )}
                         <ImportanceBadge importance={s.importance} />
                     </div>
                 ))}

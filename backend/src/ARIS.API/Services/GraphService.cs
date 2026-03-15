@@ -82,7 +82,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         const string query = @"
             MATCH (parent:Skill)
             WHERE toLower(parent.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (child:Skill)-[:SUBSET_OF*1..2]->(parent)
+            MATCH (child:Skill)-[:SUBSET_OF]->(parent)
             WHERE toLower(child.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
               AND child.source <> 'ONET_Taxonomy'
@@ -116,7 +116,8 @@ public class GraphService : IDisposable, IAsyncDisposable
 
     /// <summary>
     /// Returns skills implicitly granted because the user knows a child specialization
-    /// (UP traversal only: child → parent via SUBSET_OF, max 2 hops).
+    /// (UP traversal only: child → parent via SUBSET_OF, exactly 1 hop).
+    /// Restricted to 1 hop to prevent transitive cross-domain contamination (e.g. Vite → React → Python).
     /// Thesis Tier 2: "the candidate knows a specialization, so the foundation is implicitly known."
     /// IS_SIMILAR_TO neighbors belong to Tier 4 (Bridgeable) and are excluded here.
     /// DOWN traversal (parent → children) belongs in GetPrerequisiteMetSkillsAsync.
@@ -129,7 +130,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         const string query = @"
             MATCH (child:Skill)
             WHERE toLower(child.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (child)-[:SUBSET_OF*1..2]->(parent:Skill)
+            MATCH (child)-[:SUBSET_OF]->(parent:Skill)
             WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
               AND parent.source <> 'ONET_Taxonomy'
             RETURN parent.name AS Name, min(child.name) AS ViaSkill
