@@ -1,5 +1,6 @@
 export interface SkillGapItem {
-    skillName: string;
+    skillName: string;        // canonical/grounded name
+    originalName?: string;    // job posting's original wording (if different from canonical)
     importance: 'Essential' | 'Preferred' | string;
     yearsRequired: number;
     candidateYears: number;

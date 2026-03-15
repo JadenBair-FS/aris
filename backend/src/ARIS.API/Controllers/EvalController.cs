@@ -197,10 +197,10 @@ public class EvalController : ControllerBase
         if (baselineMatch == null)
             return NotFound("Match analysis failed. Ensure both IDs are valid and fully processed.");
 
-        // Hard-gap skill names used by BOTH ARIS and ChatGPT hallucination checks.
-        // Definition: a T5 (HardGap) skill name appears verbatim (case-insensitive) in the tailored text.
-        var hardGapNames = new HashSet<string>(
-            baselineMatch.HardGaps.Select(s => s.SkillName), StringComparer.OrdinalIgnoreCase);
+        // Hard-gap terms used by BOTH ARIS and ChatGPT hallucination checks.
+        // Includes both canonical name AND the job's original wording so paraphrased
+        // forms (e.g. "Async Python" → canonical "Asynchronous Django") are also caught.
+        var hardGapNames = BuildHardGapNameSet(baselineMatch.HardGaps);
 
         var swA = Stopwatch.StartNew();
         var origKeywords = ComputeKeywordMatch(rawResumeText, jobSkills);
@@ -1022,6 +1022,24 @@ public class EvalController : ControllerBase
             normJ += jobEmb[i]  * jobEmb[i];
         }
         return (normT > 0 && normJ > 0) ? Math.Round(dot / (Math.Sqrt(normT) * Math.Sqrt(normJ)), 4) : 0.0;
+    }
+
+    /// <summary>
+    /// Builds the set of forbidden terms for hallucination detection from hard gap skills.
+    /// Includes both the canonical name AND the job's original wording so that paraphrased
+    /// forms (e.g. "Async Python" → canonical "Asynchronous Django") are also caught.
+    /// </summary>
+    private static HashSet<string> BuildHardGapNameSet(IEnumerable<ARIS.Shared.Models.SkillGapItem> hardGaps)
+    {
+        var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var gap in hardGaps)
+        {
+            if (!string.IsNullOrWhiteSpace(gap.SkillName))
+                set.Add(gap.SkillName);
+            if (!string.IsNullOrWhiteSpace(gap.OriginalName))
+                set.Add(gap.OriginalName);
+        }
+        return set;
     }
 
     private static bool ContainsWholeWord(string text, string word)
