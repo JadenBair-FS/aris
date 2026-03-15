@@ -41,16 +41,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             WHERE toLower(s.name) IN [term IN $expansionSeed | toLower(term)]
             CALL {
                 WITH s
-                MATCH (s)-[:SUBSET_OF*1..2]->(parent:Skill)
-                WHERE ($includeTech OR NOT (coalesce(parent.is_tech, false) AND parent.source = 'Roadmap.sh'))
-                  AND parent.source <> 'ONET_Taxonomy'
-                RETURN parent.name as Name
-                UNION
-                MATCH (child:Skill)-[:SUBSET_OF*1..2]->(s)
-                WHERE ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
-                  AND child.source <> 'ONET_Taxonomy'
-                RETURN child.name as Name
-                UNION
                 MATCH (s)-[:IS_SIMILAR_TO]-(neighbor:Skill)
                 WHERE ($includeTech OR NOT (coalesce(neighbor.is_tech, false) AND neighbor.source = 'Roadmap.sh'))
                   AND neighbor.source <> 'ONET_Taxonomy'
@@ -97,16 +87,6 @@ public class GraphService : IDisposable, IAsyncDisposable
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
               AND child.source <> 'ONET_Taxonomy'
             RETURN DISTINCT child.name AS Name
-
-            UNION
-
-            MATCH (foundation:Skill)
-            WHERE toLower(foundation.name) IN [s IN $expansionSeed | toLower(s)]
-            MATCH (foundation)-[:SUBSET_OF*1..2]->(target:Skill)
-            WHERE toLower(target.name) IN [s IN $missingSkills | toLower(s)]
-              AND ($includeTech OR NOT (coalesce(target.is_tech, false) AND target.source = 'Roadmap.sh'))
-              AND target.source <> 'ONET_Taxonomy'
-            RETURN DISTINCT target.name AS Name
         ";
 
         try
@@ -202,14 +182,6 @@ public class GraphService : IDisposable, IAsyncDisposable
             RETURN missing.name AS SkillName, u.name AS ViaSkill, 'IS_SIMILAR_TO' AS BridgeType, r.source AS BridgeSource
         ";
 
-        const string subsetQuery = @"
-            MATCH (u:Skill)-[:SUBSET_OF*1..2]-(missing:Skill)
-            WHERE toLower(u.name) IN [s IN $userSkills | toLower(s)]
-              AND toLower(missing.name) IN [s IN $missingSkills | toLower(s)]
-              AND NOT (u.source = 'ONET_Taxonomy' AND missing.source = 'ONET_Taxonomy')
-            RETURN missing.name AS SkillName, u.name AS ViaSkill, 'SUBSET_OF' AS BridgeType, null AS BridgeSource
-        ";
-
         try
         {
             await using var session = _driver.AsyncSession();
@@ -230,22 +202,6 @@ public class GraphService : IDisposable, IAsyncDisposable
 
                 if (!string.IsNullOrWhiteSpace(skillName) && seen.Add(skillName))
                     result.Add((skillName, viaSkill, bridgeType, bridgeSource));
-            }
-
-            var subsetRecords = await session.ExecuteReadAsync(async tx =>
-            {
-                var cursor = await tx.RunAsync(subsetQuery, new { userSkills = userList, missingSkills = missingList });
-                return await cursor.ToListAsync();
-            });
-
-            foreach (var record in subsetRecords)
-            {
-                var skillName = record["SkillName"].As<string>();
-                var viaSkill = record["ViaSkill"].As<string>();
-                var bridgeType = record["BridgeType"].As<string>();
-
-                if (!string.IsNullOrWhiteSpace(skillName) && seen.Add(skillName))
-                    result.Add((skillName, viaSkill, bridgeType, null));
             }
         }
         catch (Exception ex)
