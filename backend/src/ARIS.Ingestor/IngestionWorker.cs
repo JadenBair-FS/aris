@@ -31,6 +31,23 @@ public class IngestionWorker : BackgroundService
     private static readonly HashSet<string> SkillNodeTypes =
         new(StringComparer.OrdinalIgnoreCase) { "subtopic" };
 
+    // For role roadmaps whose skills belong to a specific language ecosystem,
+    // create SUBSET_OF edges to the language root in addition to REQUIRES edges.
+    // Example: pandas/NumPy from machine-learning → SUBSET_OF Python.
+    // Only add an entry here when the roadmap is demonstrably Python-centric (or
+    // another language). Mixed-stack roadmaps (frontend, backend) are omitted.
+    private static readonly Dictionary<string, string> RoleRoadmapLanguageParent =
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            ["machine-learning"]    = "Python",
+            ["mlops"]               = "Python",
+            ["data-analyst"]        = "Python",
+            ["data-engineer"]       = "Python",
+            ["bi-analyst"]          = "Python",
+            ["ai-data-scientist"]   = "Python",
+            ["ai-engineer"]         = "Python",
+        };
+
     private static readonly string[] RoleRoadmapSlugs =
     [
         "frontend", "backend", "full-stack", "devops", "devsecops",
@@ -525,6 +542,12 @@ public class IngestionWorker : BackgroundService
                 .Where(r => r.OnetCode != null && matchedRoleCodes.Contains(r.OnetCode))
                 .ToListAsync(ct);
 
+            // If this role roadmap belongs to a language ecosystem, all its skills
+            // are also SUBSET_OF that language root (e.g. pandas SUBSET_OF Python).
+            RoleRoadmapLanguageParent.TryGetValue(slug, out var languageParent);
+            if (languageParent != null)
+                await DeduplicateOrCreateSkillAsync(dbContext, neo4j, languageParent, "Roadmap.sh", isTech: true, ct);
+
             foreach (var (nodeId, canonName) in nodeIdToCanonical)
             {
                 if (!skillNodeIds.Contains(nodeId)) continue; // skip topic anchors
@@ -539,6 +562,14 @@ public class IngestionWorker : BackgroundService
                 {
                     await LinkSkillToRoleInPostgresAsync(dbContext, pgRole.Id, canonName, ct);
                     csvRows.Add([slug, "Occupation", pgRole.Title, canonName, "REQUIRES"]);
+                }
+
+                // Language affinity: create SUBSET_OF edge to the language root
+                if (languageParent != null &&
+                    !string.Equals(canonName, languageParent, StringComparison.OrdinalIgnoreCase))
+                {
+                    await neo4j.MergeSubsetRelationshipAsync(canonName, languageParent, "Roadmap.sh");
+                    csvRows.Add([slug, "Skill", languageParent, canonName, "SUBSET_OF"]);
                 }
             }
 
