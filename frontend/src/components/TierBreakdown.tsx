@@ -72,7 +72,7 @@ export function TierBreakdown({
     return (
         <div className="w-full space-y-2">
             <TierSection
-                title="Tier 1: Direct Match"
+                title="Direct Match"
                 count={matchingSkills.length}
                 borderColor="border-green-500"
                 emptyLabel="No direct skill matches"
@@ -91,10 +91,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 2: Foundation Coverage"
+                title="Implicitly Covered"
                 count={implicitlyDiscoveredSkills.length}
                 borderColor="border-emerald-400"
-                emptyLabel="No foundation coverage found"
+                emptyLabel="No implicit coverage found"
             >
                 {implicitlyDiscoveredSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
@@ -109,10 +109,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 3: Transferable Skills"
+                title="Prerequisite Met"
                 count={prerequisiteMetSkills.length}
                 borderColor="border-yellow-400"
-                emptyLabel="No transferable skills found"
+                emptyLabel="No prerequisite matches found"
             >
                 {prerequisiteMetSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
@@ -130,10 +130,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 4: Adjacent Skills"
+                title="Similar Skills"
                 count={bridgeableSkills.length}
                 borderColor="border-orange-400"
-                emptyLabel="No adjacent skills found"
+                emptyLabel="No similar skills found"
             >
                 {bridgeableSkills.map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
@@ -151,10 +151,10 @@ export function TierBreakdown({
             </TierSection>
 
             <TierSection
-                title="Tier 5: Missing Skills"
+                title="Skill Gaps"
                 count={hardGaps.length}
                 borderColor="border-red-500"
-                emptyLabel="No missing skills — great fit!"
+                emptyLabel="No skill gaps — great fit!"
             >
                 {hardGaps.map((s, i) => (
                     <div key={i} className="flex items-center py-2 border-b border-slate-50 last:border-0">

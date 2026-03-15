@@ -74,9 +74,9 @@ public class GraphService : IDisposable, IAsyncDisposable
         return validSkills;
     }
 
-    public async Task<HashSet<string>> GetPrerequisiteMetSkillsAsync(IEnumerable<string> userSkills, IEnumerable<string> missingSkills, bool includeTechSkills = true)
+    public async Task<Dictionary<string, string>> GetPrerequisiteMetSkillsAsync(IEnumerable<string> userSkills, IEnumerable<string> missingSkills, bool includeTechSkills = true)
     {
-        var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         var expansionSeed = userSkills.ToList();
 
         const string query = @"
@@ -86,7 +86,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             WHERE toLower(child.name) IN [s IN $missingSkills | toLower(s)]
               AND ($includeTech OR NOT (coalesce(child.is_tech, false) AND child.source = 'Roadmap.sh'))
               AND child.source <> 'ONET_Taxonomy'
-            RETURN DISTINCT child.name AS Name
+            RETURN child.name AS Name, min(parent.name) AS ViaSkill
         ";
 
         try
@@ -101,10 +101,9 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var record in records)
             {
                 var name = record["Name"].As<string>();
-                if (!string.IsNullOrWhiteSpace(name))
-                {
-                    result.Add(name);
-                }
+                var viaSkill = record["ViaSkill"].As<string>();
+                if (!string.IsNullOrWhiteSpace(name) && !result.ContainsKey(name))
+                    result[name] = viaSkill ?? "";
             }
         }
         catch (Exception ex)
