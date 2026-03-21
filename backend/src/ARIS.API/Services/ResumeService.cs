@@ -864,28 +864,60 @@ namespace ARIS.API.Services
 
             var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText, llmClient);
 
-            var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
-            var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);
+            var summaryPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
+            var bulletsPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
+            var summaryTemplate = await File.ReadAllTextAsync(summaryPromptPath);
+            var bulletsTemplate = await File.ReadAllTextAsync(bulletsPromptPath);
 
-            var prompt = tailoringTemplate
+            var summaryPrompt = summaryTemplate
                 .Replace("{rawResumeText}", rawResumeText)
                 .Replace("{rawJobText}", rawJobText)
                 .Replace("{graphContext}", graphContextBlock);
 
-            string fullText;
-            try
-            {
-                var options = new ChatOptions { Temperature = 0.2f };
-                var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt, options);
-                fullText = response?.Text?.Trim() ?? "";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Tailoring LLM call failed; falling back to original bullets.");
-                fullText = "";
-            }
+            var bulletsPrompt = bulletsTemplate
+                .Replace("{rawResumeText}", rawResumeText)
+                .Replace("{rawJobText}", rawJobText)
+                .Replace("{graphContext}", graphContextBlock);
 
-            var (summary, bulletResults) = ParseTailoredOutput(fullText, experienceEntries);
+            var client = llmClient ?? _chatClient;
+            var options = new ChatOptions { Temperature = 0.2f };
+
+            string summary = "";
+            string bulletsText = "";
+
+            var summaryTask = Task.Run(async () =>
+            {
+                try
+                {
+                    var response = await client.GetResponseAsync(summaryPrompt, options);
+                    return response?.Text?.Trim() ?? "";
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Summary LLM call failed.");
+                    return "";
+                }
+            });
+
+            var bulletsTask = Task.Run(async () =>
+            {
+                try
+                {
+                    var response = await client.GetResponseAsync(bulletsPrompt, options);
+                    return response?.Text?.Trim() ?? "";
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Bullets LLM call failed; falling back to original bullets.");
+                    return "";
+                }
+            });
+
+            await Task.WhenAll(summaryTask, bulletsTask);
+            summary = summaryTask.Result;
+            bulletsText = bulletsTask.Result;
+
+            var bulletResults = ParseBulletsOutput(bulletsText, experienceEntries);
 
             await personalInfoTask;
             return new TailoredResumeData(user.CleanSignal, personalInfoTask.Result, summary, bulletResults);
@@ -1040,6 +1072,129 @@ namespace ARIS.API.Services
             }
 
             return (summary, bulletResults);
+        }
+
+        private List<TailoredBullet> ParseBulletsOutput(
+            string fullText,
+            List<ExperienceSummary> experienceEntries)
+        {
+            var bulletResults = new List<TailoredBullet>();
+
+            if (string.IsNullOrWhiteSpace(fullText))
+            {
+                foreach (var exp in experienceEntries)
+                    foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                        bulletResults.Add(new TailoredBullet
+                        {
+                            OriginalBullet = bullet,
+                            RewrittenBullet = bullet,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+                return bulletResults;
+            }
+
+            var lines = fullText.Split('\n');
+
+            string? currentRole = null;
+            string? currentCompany = null;
+            var currentBullets = new List<string>();
+
+            void FlushEntry()
+            {
+                if (currentRole == null) return;
+                var matchedExp = experienceEntries.FirstOrDefault(e =>
+                    currentRole.Contains(e.Role, StringComparison.OrdinalIgnoreCase) ||
+                    e.Role.Contains(currentRole, StringComparison.OrdinalIgnoreCase));
+                var role = matchedExp?.Role ?? currentRole;
+                var company = matchedExp?.Company ?? currentCompany ?? "";
+                var originalBullets = matchedExp?.Bullets ?? [];
+
+                for (int b = 0; b < currentBullets.Count; b++)
+                {
+                    var origBullet = b < originalBullets.Count ? originalBullets[b] : "";
+                    bulletResults.Add(new TailoredBullet
+                    {
+                        OriginalBullet = origBullet,
+                        RewrittenBullet = currentBullets[b],
+                        TargetSkill = role,
+                        Role = role,
+                        Company = company,
+                    });
+                }
+                currentRole = null;
+                currentCompany = null;
+                currentBullets.Clear();
+            }
+
+            foreach (var rawLine in lines)
+            {
+                var line = rawLine.Trim();
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                if (line.StartsWith("SUMMARY", StringComparison.OrdinalIgnoreCase) ||
+                    line.StartsWith("SKILLS", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                if (line.Contains('|'))
+                {
+                    FlushEntry();
+                    var parts = line.Split('|');
+                    currentRole = parts[0].Trim();
+                    currentCompany = parts.Length > 1 ? parts[1].Trim() : "";
+                    continue;
+                }
+
+                var isHeader = !line.StartsWith('-')
+                    && line.Contains(" at ", StringComparison.OrdinalIgnoreCase)
+                    && line.Length < 120;
+                if (isHeader)
+                {
+                    FlushEntry();
+                    var atIdx = line.IndexOf(" at ", StringComparison.OrdinalIgnoreCase);
+                    currentRole = line[..atIdx].Trim();
+                    currentCompany = line[(atIdx + 4)..].Trim();
+                    continue;
+                }
+
+                if (currentRole != null)
+                {
+                    var bulletText = line.TrimStart('-', ' ');
+                    if (bulletText.Length > 200 && bulletText.Contains(". "))
+                    {
+                        var sentences = System.Text.RegularExpressions.Regex.Split(bulletText, @"(?<=\.)\s+");
+                        foreach (var s in sentences)
+                        {
+                            var trimmed = s.Trim();
+                            if (!string.IsNullOrWhiteSpace(trimmed))
+                                currentBullets.Add(trimmed);
+                        }
+                    }
+                    else
+                    {
+                        currentBullets.Add(bulletText);
+                    }
+                }
+            }
+
+            FlushEntry();
+
+            if (bulletResults.Count == 0)
+            {
+                foreach (var exp in experienceEntries)
+                    foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                        bulletResults.Add(new TailoredBullet
+                        {
+                            OriginalBullet = bullet,
+                            RewrittenBullet = bullet,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+            }
+
+            return bulletResults;
         }
 
     }
