@@ -1004,7 +1004,23 @@ namespace ARIS.API.Services
                 }
 
                 if (currentRole != null)
-                    currentBullets.Add(line.TrimStart('-', ' '));
+                {
+                    var bulletText = line.TrimStart('-', ' ');
+                    if (bulletText.Length > 200 && bulletText.Contains(". "))
+                    {
+                        var sentences = System.Text.RegularExpressions.Regex.Split(bulletText, @"(?<=\.)\s+");
+                        foreach (var s in sentences)
+                        {
+                            var trimmed = s.Trim();
+                            if (!string.IsNullOrWhiteSpace(trimmed))
+                                currentBullets.Add(trimmed);
+                        }
+                    }
+                    else
+                    {
+                        currentBullets.Add(bulletText);
+                    }
+                }
             }
 
             FlushEntry();
