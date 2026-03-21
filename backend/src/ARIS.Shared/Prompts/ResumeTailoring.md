@@ -8,8 +8,6 @@ RESUME:
 JOB DESCRIPTION:
 {rawJobText}
 
-{graphContext}
-
 ════════════════════════════════════════
 TASK:
 Rewrite this resume to better align with the job description.
@@ -36,3 +34,5 @@ SUMMARY
 {rewritten bullet}
 
 Continue for every work experience entry in the original resume. Do not skip any entry.
+
+{graphContext}

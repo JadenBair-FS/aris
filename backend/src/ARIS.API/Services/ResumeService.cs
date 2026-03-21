@@ -875,7 +875,7 @@ namespace ARIS.API.Services
             string fullText;
             try
             {
-                var options = new ChatOptions { Temperature = 0.15f };
+                var options = new ChatOptions { Temperature = 0.2f };
                 var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt, options);
                 fullText = response?.Text?.Trim() ?? "";
             }
