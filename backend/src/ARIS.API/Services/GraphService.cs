@@ -296,14 +296,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         string SourceLabel(string canonicalSource)
         {
             var display = canonicalToDisplay.TryGetValue(canonicalSource, out var d) ? d : canonicalSource;
-            if (documentedSkills.Contains(canonicalSource))
-            {
-                var yr = canonicalToYears.TryGetValue(canonicalSource, out var y) && y > 0
-                    ? $"{y:0.#} yr"
-                    : "documented";
-                return $"{display} ({yr})";
-            }
-            return $"{display} (inferred)";
+            return display;
         }
 
         var t1Skills = match.MatchingSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
@@ -319,22 +312,22 @@ public class GraphService : IDisposable, IAsyncDisposable
         sb.AppendLine();
         sb.AppendLine("HOW TO INCORPORATE SKILLS:");
         sb.AppendLine("  - Weave skills naturally into EXISTING bullet points. Do not create new standalone bullets about skill relationships.");
-        sb.AppendLine("  - For Section A skills: use the skill name confidently in relevant bullets where the candidate already demonstrates it.");
-        sb.AppendLine("  - For Section B and C skills: add the required skill in parentheses next to the candidate's related skill.");
-        sb.AppendLine("    Example: \"Configured build pipelines with Skill A (applicable to Skill B optimization)\"");
-        sb.AppendLine("    Example: \"Built reusable Skill A component libraries (transferable to Skill B development)\"");
-        sb.AppendLine("    Example: \"Designed responsive layouts using Skill A (directly applicable to Skill B workflows)\"");
+        sb.AppendLine("  - For Section A skills: use the skill name directly in relevant bullets. Do NOT add parentheses or years of experience.");
+        sb.AppendLine("  - For Section B and C skills ONLY: add a parenthetical noting the related skill.");
+        sb.AppendLine("    Example: \"Configured build pipelines with Skill A (applicable to Skill B)\"");
+        sb.AppendLine("    Example: \"Built reusable Skill A component libraries (transferable to Skill B)\"");
+        sb.AppendLine("    Example: \"Designed responsive layouts using Skill A (directly applicable to Skill B)\"");
         sb.AppendLine("  - The professional summary is also a good place to mention Section B and C skills naturally.");
+        sb.AppendLine("  - NEVER put years of experience in parentheses. Parentheses are ONLY for skill bridges.");
 
         if (t1Skills.Any())
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION A — DIRECT MATCHES (candidate has this skill, use the name confidently):");
+            sb.AppendLine("SECTION A — DIRECT MATCHES (candidate has this skill, use the name directly):");
             foreach (var skill in t1Skills)
             {
                 var display = skill.OriginalName ?? skill.SkillName;
-                var yr = skill.CandidateYears > 0 ? $"{skill.CandidateYears:0.#} yr" : "documented";
-                sb.AppendLine($"  • {display} ({yr})");
+                sb.AppendLine($"  • {display}");
             }
         }
 
@@ -345,10 +338,7 @@ public class GraphService : IDisposable, IAsyncDisposable
             foreach (var skill in t2Skills)
             {
                 var display = canonicalToDisplay.TryGetValue(skill, out var d) ? d : skill;
-                var note = documentedSkills.Contains(skill)
-                    ? (canonicalToYears.TryGetValue(skill, out var y) && y > 0 ? $"{y:0.#} yr" : "documented")
-                    : "inferred";
-                sb.AppendLine($"  • {display} ({note})");
+                sb.AppendLine($"  • {display}");
             }
         }
 
