@@ -354,6 +354,8 @@ namespace ARIS.API.Services
             {
                 exp.Role = (exp.Role ?? "").Trim();
                 exp.Company = (exp.Company ?? "").Trim();
+                exp.StartDate = (exp.StartDate ?? "").Trim();
+                exp.EndDate = (exp.EndDate ?? "").Trim();
                 exp.Bullets.RemoveAll(string.IsNullOrWhiteSpace);
             }
 
@@ -445,7 +447,9 @@ namespace ARIS.API.Services
                     ["description"] = "bullets",
                     ["summary"] = "bullets",
                     ["details"] = "bullets",
-                    ["dates"] = "company",
+                    ["from"] = "start_date",
+                    ["begin_date"] = "start_date",
+                    ["to"] = "end_date",
                 },
                 "education" => new Dictionary<string, string>
                 {
@@ -834,34 +838,6 @@ namespace ARIS.API.Services
             return rawResumeJson;
         }
 
-        private async Task<string> GenerateSummaryAsync(
-            string rawText,
-            string rawJobDescription,
-            string graphContext,
-            IChatClient? llmClient = null)
-        {
-            var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
-            var template = await File.ReadAllTextAsync(promptPath);
-            var snippet = rawText.Length > 3000 ? rawText[..3000] : rawText;
-            var jobSnippet = rawJobDescription.Length > 1500 ? rawJobDescription[..1500] : rawJobDescription;
-
-            var prompt = template
-                .Replace("{rawResumeSnippet}", snippet)
-                .Replace("{rawJobSnippet}", jobSnippet)
-                .Replace("{graphContext}", graphContext);
-
-            try
-            {
-                var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt);
-                return response?.Text?.Trim() ?? "";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to generate professional summary.");
-                return "";
-            }
-        }
-
         public async Task<TailoredResumeData?> BuildTailoredResumeDataAsync(
             Guid userProfileId,
             Guid jobId,
@@ -887,60 +863,45 @@ namespace ARIS.API.Services
             var rawJobText = job.RawDescription ?? "";
 
             var personalInfoTask = _personalInfoExtractor.ExtractAsync(rawResumeText, llmClient);
-            var summaryTask = GenerateSummaryAsync(rawResumeText, rawJobText, graphContextBlock, llmClient);
 
             var tailoringPromptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var tailoringTemplate = await File.ReadAllTextAsync(tailoringPromptPath);
 
-            var bulletResults = new List<TailoredBullet>();
-            foreach (var exp in experienceEntries)
+            var prompt = tailoringTemplate
+                .Replace("{rawResumeText}", rawResumeText)
+                .Replace("{rawJobText}", rawJobText)
+                .Replace("{graphContext}", graphContextBlock);
+
+            string fullText;
+            try
             {
-                var bulletsText = string.Join("\n", exp.Bullets.Select((b, i) => $"{i + 1}. {b}"));
+                var options = new ChatOptions { Temperature = 0.15f };
+                var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt, options);
+                fullText = response?.Text?.Trim() ?? "";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Tailoring LLM call failed; falling back to original bullets.");
+                fullText = "";
+            }
 
-                var prompt = tailoringTemplate
-                    .Replace("{rawResumeText}", rawResumeText)
-                    .Replace("{rawJobText}", rawJobText)
-                    .Replace("{graphContext}", graphContextBlock)
-                    .Replace("{role}", exp.Role)
-                    .Replace("{company}", exp.Company ?? "")
-                    .Replace("{bullets}", bulletsText);
+            var (summary, bulletResults) = ParseTailoredOutput(fullText, experienceEntries);
 
-                try
-                {
-                    var bulletOptions = new ChatOptions { Temperature = 0.15f };
-                    var response = await (llmClient ?? _chatClient).GetResponseAsync(prompt, bulletOptions);
-                    var text = response?.Text?.Trim() ?? "";
-                    var json = System.Text.RegularExpressions.Regex.Replace(text, @"```(?:json)?", "").Trim();
-                    var startIdx = json.IndexOf('[');
-                    var endIdx = json.LastIndexOf(']');
-                    if (startIdx >= 0 && endIdx > startIdx)
-                        json = json[startIdx..(endIdx + 1)];
+            await personalInfoTask;
+            return new TailoredResumeData(user.CleanSignal, personalInfoTask.Result, summary, bulletResults);
+        }
 
-                    var parsed = JsonSerializer.Deserialize<List<BulletRewriteItem>>(json, _jsonOptions);
+        private (string Summary, List<TailoredBullet> Bullets) ParseTailoredOutput(
+            string fullText,
+            List<ExperienceSummary> experienceEntries)
+        {
+            var bulletResults = new List<TailoredBullet>();
+            var summary = "";
 
-                    if (parsed != null)
-                    {
-                        foreach (var item in parsed)
-                        {
-                            if (!string.IsNullOrWhiteSpace(item.Original) && !string.IsNullOrWhiteSpace(item.Rewritten))
-                            {
-                                bulletResults.Add(new TailoredBullet
-                                {
-                                    OriginalBullet = item.Original,
-                                    RewrittenBullet = item.Rewritten,
-                                    TargetSkill = exp.Role,
-                                    Role = exp.Role,
-                                    Company = exp.Company,
-                                });
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogWarning(ex, "Failed to tailor bullets for role {Role}", exp.Role);
+            if (string.IsNullOrWhiteSpace(fullText))
+            {
+                foreach (var exp in experienceEntries)
                     foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
-                    {
                         bulletResults.Add(new TailoredBullet
                         {
                             OriginalBullet = bullet,
@@ -949,12 +910,108 @@ namespace ARIS.API.Services
                             Role = exp.Role,
                             Company = exp.Company,
                         });
-                    }
+                return (summary, bulletResults);
+            }
+
+            var lines = fullText.Split('\n');
+            int idx = 0;
+
+            for (; idx < lines.Length; idx++)
+            {
+                if (lines[idx].Trim().Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
+                {
+                    idx++;
+                    break;
                 }
             }
 
-            await Task.WhenAll(personalInfoTask, summaryTask);
-            return new TailoredResumeData(user.CleanSignal, personalInfoTask.Result, summaryTask.Result, bulletResults);
+            var summaryLines = new List<string>();
+            for (; idx < lines.Length; idx++)
+            {
+                if (string.IsNullOrWhiteSpace(lines[idx])) break;
+                summaryLines.Add(lines[idx].Trim());
+            }
+            summary = string.Join(" ", summaryLines).Trim();
+
+            string? currentRole = null;
+            string? currentCompany = null;
+            var currentBullets = new List<string>();
+
+            void FlushEntry()
+            {
+                if (currentRole == null) return;
+                var matchedExp = experienceEntries.FirstOrDefault(e =>
+                    currentRole.Contains(e.Role, StringComparison.OrdinalIgnoreCase) ||
+                    e.Role.Contains(currentRole, StringComparison.OrdinalIgnoreCase));
+                var role = matchedExp?.Role ?? currentRole;
+                var company = matchedExp?.Company ?? currentCompany ?? "";
+                var originalBullets = matchedExp?.Bullets ?? [];
+
+                for (int b = 0; b < currentBullets.Count; b++)
+                {
+                    var origBullet = b < originalBullets.Count ? originalBullets[b] : "";
+                    bulletResults.Add(new TailoredBullet
+                    {
+                        OriginalBullet = origBullet,
+                        RewrittenBullet = currentBullets[b],
+                        TargetSkill = role,
+                        Role = role,
+                        Company = company,
+                    });
+                }
+                currentRole = null;
+                currentCompany = null;
+                currentBullets.Clear();
+            }
+
+            for (; idx < lines.Length; idx++)
+            {
+                var line = lines[idx].Trim();
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                if (line.Contains('|'))
+                {
+                    FlushEntry();
+                    var parts = line.Split('|');
+                    currentRole = parts[0].Trim();
+                    currentCompany = parts.Length > 1 ? parts[1].Trim() : "";
+                    continue;
+                }
+
+                var isHeader = !string.IsNullOrWhiteSpace(line)
+                    && !line.StartsWith('-')
+                    && line.Contains(" at ", StringComparison.OrdinalIgnoreCase)
+                    && line.Length < 120;
+                if (isHeader)
+                {
+                    FlushEntry();
+                    var atIdx = line.IndexOf(" at ", StringComparison.OrdinalIgnoreCase);
+                    currentRole = line[..atIdx].Trim();
+                    currentCompany = line[(atIdx + 4)..].Trim();
+                    continue;
+                }
+
+                if (currentRole != null)
+                    currentBullets.Add(line.TrimStart('-', ' '));
+            }
+
+            FlushEntry();
+
+            if (bulletResults.Count == 0)
+            {
+                foreach (var exp in experienceEntries)
+                    foreach (var bullet in exp.Bullets.Where(b => !string.IsNullOrWhiteSpace(b)))
+                        bulletResults.Add(new TailoredBullet
+                        {
+                            OriginalBullet = bullet,
+                            RewrittenBullet = bullet,
+                            TargetSkill = exp.Role,
+                            Role = exp.Role,
+                            Company = exp.Company,
+                        });
+            }
+
+            return (summary, bulletResults);
         }
 
     }

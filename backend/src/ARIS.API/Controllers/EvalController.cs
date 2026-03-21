@@ -244,7 +244,7 @@ public class EvalController : ControllerBase
                 tailoredData.ProfessionalSummary, tailoredData.TailoredBullets);
 
             // Group bullets by experience entry (Role + Company) to produce structured full text.
-            // Format mirrors what ChatGptTailoring.md asks GPT to return:
+            // Format mirrors what ResumeTailoring.md asks the LLM to return:
             //   {summary}
             //   {Role} at {Company}
             //   {bullet}
@@ -387,14 +387,15 @@ public class EvalController : ControllerBase
         if (_openAiClient == null)
             return ("ChatGPT baseline unavailable: OPENAI_API_KEY is not configured.", "");
 
-        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
         string promptTemplate;
         try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
         catch { promptTemplate = "Rewrite the following resume to better match the job description. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}"; }
 
         var prompt = promptTemplate
             .Replace("{rawResumeText}", rawResume)
-            .Replace("{rawJobText}", rawJob);
+            .Replace("{rawJobText}", rawJob)
+            .Replace("{graphContext}", "");
 
         try
         {
@@ -864,14 +865,15 @@ public class EvalController : ControllerBase
     private async Task<(string TailoredFullText, string SummaryText)> RunMistralBaselinePipelineAsync(
         string rawResume, string rawJob)
     {
-        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");
+        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
         string promptTemplate;
         try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
         catch { promptTemplate = "Rewrite the following resume to better match the job description. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}"; }
 
         var prompt = promptTemplate
             .Replace("{rawResumeText}", rawResume)
-            .Replace("{rawJobText}", rawJob);
+            .Replace("{rawJobText}", rawJob)
+            .Replace("{graphContext}", "");
 
         try
         {

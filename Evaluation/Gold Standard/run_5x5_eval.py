@@ -208,8 +208,8 @@ def fig_graph_sdr_diagonal(metrics: dict, out_dir: str):
 
     ax.set_ylim(0, max(max(sdrs) + 0.12, HYPOTHESIS_THRESHOLD + 0.12))
     ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=1, decimals=0))
-    ax.set_ylabel("Graph-Only Structural Discovery Rate\n(Tiers 2–4 / Total Required Skills)", fontsize=9.5)
-    ax.set_title("Graph Traversal Discovery — Domain-Correct Pairs\n"
+    ax.set_ylabel("Graph-Only Skill Discovery Rate\n(Tiers 2–4 / Total Required Skills)", fontsize=9.5)
+    ax.set_title("Graph Skill Discovery — Domain-Correct Pairs\n"
                  "(Skills identified via graph that vector similarity alone would miss)", fontsize=10, pad=10)
     ax.legend(fontsize=9)
     ax.spines[["top", "right"]].set_visible(False)
@@ -312,7 +312,7 @@ def fig_diagonal_vs_offdiagonal(metrics: dict, out_dir: str):
         "ArisScore")
 
     box(axes[1], diag_sdr, off_sdr,
-        "Graph Structural Discovery Rate\nCorrect vs Cross-Domain",
+        "Graph Skill Discovery Rate\nCorrect vs Cross-Domain",
         "Graph SDR (Tiers 2–4 / Total)",
         threshold=HYPOTHESIS_THRESHOLD)
 
@@ -399,7 +399,7 @@ def fig_sdr_heatmap(metrics: dict, out_dir: str):
     ax.set_yticklabels([DOMAIN_LABELS[d] for d in DOMAINS], fontsize=9)
     ax.set_xlabel("Job Posting Domain", fontsize=10, labelpad=8)
     ax.set_ylabel("Resume Domain", fontsize=10, labelpad=8)
-    ax.set_title("Graph-Only Structural Discovery Rate — Full 5×5 Matrix\n"
+    ax.set_title("Graph-Only Skill Discovery Rate — Full 5×5 Matrix\n"
                  "(Tiers 2+3+4 / Total Required Skills)", fontsize=10, pad=12)
 
     for i in range(5):

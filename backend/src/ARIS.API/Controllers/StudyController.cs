@@ -639,12 +639,13 @@ public class StudyController : ControllerBase
 
         try
         {
-            var templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ChatGptTailoring.md");
+            var templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
             var template = await System.IO.File.ReadAllTextAsync(templatePath);
 
             var prompt = template
                 .Replace("{rawResumeText}", resumeText)
-                .Replace("{rawJobText}", jobText);
+                .Replace("{rawJobText}", jobText)
+                .Replace("{graphContext}", "");
 
             var response = await _openAiClient.GetResponseAsync(prompt);
             var text = response.Text?.Trim() ?? "";
@@ -843,7 +844,7 @@ public class StudyController : ControllerBase
     }
 
     /// <summary>
-    /// Parses the plain-text output from ChatGptTailoring.md into a structured summary and
+    /// Parses the plain-text output from ResumeTailoring.md into a structured summary and
     /// list of TailoredBullets. Expected format:
     ///   SUMMARY
     ///   {summary text}
