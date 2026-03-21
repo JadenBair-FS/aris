@@ -306,27 +306,42 @@ public class GraphService : IDisposable, IAsyncDisposable
             return $"{display} (inferred)";
         }
 
+        var t1Skills = match.MatchingSkills.Where(s => !IsUsed(s.OriginalName ?? s.SkillName)).ToList();
+
         var sb = new System.Text.StringBuilder();
         sb.AppendLine("════════════════════════════════════════");
         sb.AppendLine("KNOWLEDGE GRAPH CONTEXT");
         sb.AppendLine("════════════════════════════════════════");
         sb.AppendLine();
-        sb.AppendLine("The following skills have been verified against a domain knowledge graph.");
-        sb.AppendLine("Use these tier rules when writing the tailored resume:");
+        sb.AppendLine("The skills below have been verified against a domain knowledge graph.");
+        sb.AppendLine("You MUST include every skill from sections A, B, and C in the tailored resume.");
+        sb.AppendLine("Each skill name must appear at least once in the output.");
         sb.AppendLine();
-        sb.AppendLine("TIER RULES:");
-        sb.AppendLine("  T1 (Direct Match): Mention the skill explicitly and confidently by name. Do not soften or hedge.");
-        sb.AppendLine("  T2 (Foundation): State BOTH the child skill the candidate has AND the parent skill required. E.g. \"leveraged Skill A experience to deliver Skill B outcomes.\"");
-        sb.AppendLine("  T3 (Prerequisite Met): Explicitly state the candidate's existing skill and years of experience as a foundation for the required specialization. Always name both skills in the same bullet. E.g. \"Built services with Skill A, providing direct grounding for Skill B adoption.\"");
-        sb.AppendLine("  T4 (Bridgeable): Explicitly state how the candidate's adjacent skill transfers to the required skill. Name both skills and reference documented experience. E.g. \"Applied Skill A expertise, directly transferable to Skill B development.\"");
-        sb.AppendLine("  T5 (Hard Gap): DO NOT write, name, paraphrase, imply, or hint at any T5 skill. These skills are OFF LIMITS in every form.");
-        sb.AppendLine();
-        sb.AppendLine("Preserve every T1 skill name exactly as listed below.");
+        sb.AppendLine("HOW TO INCORPORATE SKILLS:");
+        sb.AppendLine("  - Weave skills naturally into EXISTING bullet points. Do not create new standalone bullets about skill relationships.");
+        sb.AppendLine("  - For Section A skills: use the skill name confidently in relevant bullets where the candidate already demonstrates it.");
+        sb.AppendLine("  - For Section B and C skills: add the required skill in parentheses next to the candidate's related skill.");
+        sb.AppendLine("    Example: \"Configured build pipelines with Skill A (applicable to Skill B optimization)\"");
+        sb.AppendLine("    Example: \"Built reusable Skill A component libraries (transferable to Skill B development)\"");
+        sb.AppendLine("    Example: \"Designed responsive layouts using Skill A (directly applicable to Skill B workflows)\"");
+        sb.AppendLine("  - The professional summary is also a good place to mention Section B and C skills naturally.");
+
+        if (t1Skills.Any())
+        {
+            sb.AppendLine();
+            sb.AppendLine("SECTION A — DIRECT MATCHES (candidate has this skill, use the name confidently):");
+            foreach (var skill in t1Skills)
+            {
+                var display = skill.OriginalName ?? skill.SkillName;
+                var yr = skill.CandidateYears > 0 ? $"{skill.CandidateYears:0.#} yr" : "documented";
+                sb.AppendLine($"  • {display} ({yr})");
+            }
+        }
 
         if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION A — CLAIM DIRECTLY (T1/T2):");
+            sb.AppendLine("SECTION A continued — FOUNDATION SKILLS (candidate's skill covers the required parent, mention BOTH):");
             foreach (var skill in t2Skills)
             {
                 var display = canonicalToDisplay.TryGetValue(skill, out var d) ? d : skill;
@@ -340,31 +355,31 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION B — PREREQUISITE → SPECIALIZATION (T3):");
+            sb.AppendLine("SECTION B — PREREQUISITE SKILLS (candidate has the left skill, add the right skill in parentheses in a relevant bullet):");
             foreach (var skill in t3Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
                 var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your foundation";
-                sb.AppendLine($"  • {target}  ←  {SourceLabel(fromCanonical)}");
+                sb.AppendLine($"  • {SourceLabel(fromCanonical)}  →  {target}");
             }
         }
 
         if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION C — ADJACENT → BRIDGE (T4):");
+            sb.AppendLine("SECTION C — BRIDGEABLE SKILLS (candidate has the left skill, add the right skill in parentheses in a relevant bullet):");
             foreach (var skill in t4Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
                 var fromCanonical = ParseViaSkill(skill.BridgePath) ?? "your domain experience";
-                sb.AppendLine($"  • {target}  ←  {SourceLabel(fromCanonical)}");
+                sb.AppendLine($"  • {SourceLabel(fromCanonical)}  →  {target}");
             }
         }
 
         if (hasT5)
         {
             sb.AppendLine();
-            sb.AppendLine("OFF LIMITS — T5 HARD GAPS (never mention these):");
+            sb.AppendLine("OFF LIMITS — HARD GAPS (DO NOT mention any of these skills in any form):");
             var hardGapNames = match.HardGaps
                 .Select(s => s.OriginalName ?? s.SkillName)
                 .ToList();
@@ -372,6 +387,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         }
 
         sb.AppendLine();
+        sb.AppendLine("REMINDER: Every skill in sections A, B, and C MUST appear by name in the output.");
         sb.AppendLine("════════════════════════════════════════");
 
         return sb.ToString();
