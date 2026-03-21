@@ -386,8 +386,20 @@ public class GraphService : IDisposable, IAsyncDisposable
             sb.AppendLine("  " + string.Join(", ", hardGapNames));
         }
 
+        var allRequiredNames = new List<string>();
+        foreach (var skill in t1Skills)
+            allRequiredNames.Add(skill.OriginalName ?? skill.SkillName);
+        foreach (var skill in t2Skills)
+            allRequiredNames.Add(canonicalToDisplay.TryGetValue(skill, out var d2) ? d2 : skill);
+        foreach (var skill in t3Skills)
+            allRequiredNames.Add(skill.OriginalName ?? skill.SkillName);
+        foreach (var skill in t4Skills)
+            allRequiredNames.Add(skill.OriginalName ?? skill.SkillName);
+
         sb.AppendLine();
-        sb.AppendLine("REMINDER: Every skill in sections A, B, and C MUST appear by name in the output.");
+        sb.AppendLine("FINAL CHECKLIST — your output MUST contain each of these skill names at least once:");
+        sb.AppendLine("  " + string.Join(", ", allRequiredNames));
+        sb.AppendLine("If any skill from this list is missing from your output, add it in parentheses to a relevant bullet.");
         sb.AppendLine("════════════════════════════════════════");
 
         return sb.ToString();
