@@ -306,17 +306,27 @@ public class GraphService : IDisposable, IAsyncDisposable
             return $"{display} (inferred)";
         }
 
-        // Graph context is pure data — no embedded rules.
-        // All instructions are in ResumeTailoring.md, which the LLM reads before this block.
         var sb = new System.Text.StringBuilder();
         sb.AppendLine("════════════════════════════════════════");
-        sb.AppendLine("KNOWLEDGE GRAPH");
+        sb.AppendLine("KNOWLEDGE GRAPH CONTEXT");
         sb.AppendLine("════════════════════════════════════════");
+        sb.AppendLine();
+        sb.AppendLine("The following skills have been verified against a domain knowledge graph.");
+        sb.AppendLine("Use these tier rules when writing the tailored resume:");
+        sb.AppendLine();
+        sb.AppendLine("TIER RULES:");
+        sb.AppendLine("  T1 (Direct Match): Mention the skill explicitly and confidently by name. Do not soften or hedge.");
+        sb.AppendLine("  T2 (Foundation): State BOTH the child skill the candidate has AND the parent skill required. E.g. \"leveraged Skill A experience to deliver Skill B outcomes.\"");
+        sb.AppendLine("  T3 (Prerequisite Met): Explicitly state the candidate's existing skill and years of experience as a foundation for the required specialization. Always name both skills in the same bullet. E.g. \"Built services with Skill A, providing direct grounding for Skill B adoption.\"");
+        sb.AppendLine("  T4 (Bridgeable): Explicitly state how the candidate's adjacent skill transfers to the required skill. Name both skills and reference documented experience. E.g. \"Applied Skill A expertise, directly transferable to Skill B development.\"");
+        sb.AppendLine("  T5 (Hard Gap): DO NOT write, name, paraphrase, imply, or hint at any T5 skill. These skills are OFF LIMITS in every form.");
+        sb.AppendLine();
+        sb.AppendLine("Preserve every T1 skill name exactly as listed below.");
 
         if (hasT2)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION A — CLAIM DIRECTLY:");
+            sb.AppendLine("SECTION A — CLAIM DIRECTLY (T1/T2):");
             foreach (var skill in t2Skills)
             {
                 var display = canonicalToDisplay.TryGetValue(skill, out var d) ? d : skill;
@@ -330,7 +340,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (hasT3)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION B — PREREQUISITE → SPECIALIZATION:");
+            sb.AppendLine("SECTION B — PREREQUISITE → SPECIALIZATION (T3):");
             foreach (var skill in t3Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
@@ -342,7 +352,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (hasT4)
         {
             sb.AppendLine();
-            sb.AppendLine("SECTION C — ADJACENT → BRIDGE:");
+            sb.AppendLine("SECTION C — ADJACENT → BRIDGE (T4):");
             foreach (var skill in t4Skills)
             {
                 var target = skill.OriginalName ?? skill.SkillName;
@@ -354,7 +364,7 @@ public class GraphService : IDisposable, IAsyncDisposable
         if (hasT5)
         {
             sb.AppendLine();
-            sb.AppendLine("OFF LIMITS — never mention:");
+            sb.AppendLine("OFF LIMITS — T5 HARD GAPS (never mention these):");
             var hardGapNames = match.HardGaps
                 .Select(s => s.OriginalName ?? s.SkillName)
                 .ToList();

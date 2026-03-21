@@ -123,12 +123,24 @@ public class ResumePdfService
                                     t.Span($"  –  {exp.Company}").FontColor(Gray555);
                             });
 
-                            var matchingRole = cleanSignal.Roles.FirstOrDefault(r =>
-                                r.Title.Contains(exp.Role, StringComparison.OrdinalIgnoreCase) ||
-                                exp.Role.Contains(r.Title, StringComparison.OrdinalIgnoreCase));
+                            var dateRange = "";
+                            if (!string.IsNullOrEmpty(exp.StartDate) || !string.IsNullOrEmpty(exp.EndDate))
+                            {
+                                dateRange = !string.IsNullOrEmpty(exp.StartDate) && !string.IsNullOrEmpty(exp.EndDate)
+                                    ? $"{exp.StartDate} - {exp.EndDate}"
+                                    : !string.IsNullOrEmpty(exp.StartDate) ? exp.StartDate : exp.EndDate;
+                            }
+                            else
+                            {
+                                var matchingRole = cleanSignal.Roles.FirstOrDefault(r =>
+                                    r.Title.Contains(exp.Role, StringComparison.OrdinalIgnoreCase) ||
+                                    exp.Role.Contains(r.Title, StringComparison.OrdinalIgnoreCase));
+                                if (matchingRole != null && !string.IsNullOrEmpty(matchingRole.Duration))
+                                    dateRange = matchingRole.Duration;
+                            }
 
-                            if (matchingRole != null && !string.IsNullOrEmpty(matchingRole.Duration))
-                                col.Item().Text(matchingRole.Duration).FontSize(9).FontColor(Gray777);
+                            if (!string.IsNullOrEmpty(dateRange))
+                                col.Item().Text(dateRange).FontSize(9).FontColor(Gray777);
 
                             if (tailoredByRole.TryGetValue(exp.Role, out var rewrittenBullets) && rewrittenBullets.Count > 0)
                             {

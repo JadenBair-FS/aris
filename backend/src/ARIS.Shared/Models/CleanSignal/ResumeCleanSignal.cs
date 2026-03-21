@@ -69,6 +69,12 @@ namespace ARIS.Shared.Models.CleanSignal
         [JsonPropertyName("company")]
         public string Company { get; set; } = string.Empty;
 
+        [JsonPropertyName("start_date")]
+        public string StartDate { get; set; } = string.Empty;
+
+        [JsonPropertyName("end_date")]
+        public string EndDate { get; set; } = string.Empty;
+
         [JsonPropertyName("bullets")]
         public List<string> Bullets { get; set; } = [];
 

@@ -231,8 +231,8 @@ def fig_graph_sdr_scatter_diagonal(metrics: dict, out_dir: str):
     ax.set_xticks(range(len(DOMAINS)))
     ax.set_xticklabels(labels)
     ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=1, decimals=0))
-    ax.set_ylabel("Graph-Only Structural Discovery Rate")
-    ax.set_title("Graph Traversal Discovery — All Diagonal Pairs (n=250 matches)\n"
+    ax.set_ylabel("Graph-Only Skill Discovery Rate")
+    ax.set_title("Graph Skill Discovery — All Diagonal Pairs (n=250 matches)\n"
                  "(Points show individual Resume-Job matches within same domain)", fontsize=10, pad=10)
     ax.legend(loc="upper right", fontsize=9)
     ax.spines[["top", "right"]].set_visible(False)

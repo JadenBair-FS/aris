@@ -9,12 +9,13 @@ Rules:
 - Set "proficiency" to one of: Expert, Advanced, Intermediate, Beginner — infer from context clues. Use "Intermediate" if unclear.
 - All "year" values in education must be strings (e.g. "2019", not 2019).
 - years_of_experience must always be a number — NEVER null, use 0.0 if unknown.
+- Preserve exact employment dates from the resume. Copy "start_date" and "end_date" verbatim from the resume text for each experience entry (e.g. "Jan 2020", "March 2022", "2019", "Present"). Do not reformat, reorder, or fabricate dates. If a date is not stated, use an empty string.
 
 ### SCHEMA:
 {
   "roles": [ { "title": "string", "duration": "string", "is_current": boolean } ],
   "skills": [ { "name": "string", "category": "Technical/Soft", "proficiency": "Expert/Advanced/Intermediate/Beginner", "years_of_experience": number } ],
-  "experience_summary": [ { "role": "string", "company": "string", "bullets": ["string"] } ],
+  "experience_summary": [ { "role": "string", "company": "string", "start_date": "string", "end_date": "string", "bullets": ["string"] } ],
   "education": [ { "degree": "string", "institution": "string", "year": "string" } ]
 }
 
