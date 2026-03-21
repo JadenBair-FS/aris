@@ -925,11 +925,23 @@ namespace ARIS.API.Services
                 }
             }
 
+            if (idx >= lines.Length)
+                idx = 0;
+
             var summaryLines = new List<string>();
             for (; idx < lines.Length; idx++)
             {
-                if (string.IsNullOrWhiteSpace(lines[idx])) break;
-                summaryLines.Add(lines[idx].Trim());
+                var trimmed = lines[idx].Trim();
+                if (string.IsNullOrWhiteSpace(trimmed))
+                {
+                    if (summaryLines.Count > 0) break;
+                    continue;
+                }
+                if (trimmed.StartsWith("SKILLS", StringComparison.OrdinalIgnoreCase))
+                    break;
+                if (trimmed.Contains('|') || trimmed.Contains(" at ", StringComparison.OrdinalIgnoreCase))
+                    break;
+                summaryLines.Add(trimmed);
             }
             summary = string.Join(" ", summaryLines).Trim();
 
