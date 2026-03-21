@@ -200,6 +200,8 @@ public class EvalController : ControllerBase
         // Hard-gap terms used by BOTH ARIS and ChatGPT hallucination checks.
         // Includes both canonical name AND the job's original wording so paraphrased
         // forms (e.g. "Async Python" → canonical "Asynchronous Django") are also caught.
+        // Exclude terms that already appear in the original resume — those are not
+        // hallucinations, just natural language reuse.
         var hardGapNames = BuildHardGapNameSet(baselineMatch.HardGaps);
 
         var swA = Stopwatch.StartNew();
@@ -387,61 +389,43 @@ public class EvalController : ControllerBase
         if (_openAiClient == null)
             return ("ChatGPT baseline unavailable: OPENAI_API_KEY is not configured.", "");
 
-        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
-        string promptTemplate;
-        try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
-        catch { promptTemplate = "Rewrite the following resume to better match the job description. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}"; }
+        var summaryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
+        var bulletsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
 
-        var prompt = promptTemplate
+        string summaryTemplate, bulletsTemplate;
+        try
+        {
+            summaryTemplate = await System.IO.File.ReadAllTextAsync(summaryPath);
+            bulletsTemplate = await System.IO.File.ReadAllTextAsync(bulletsPath);
+        }
+        catch
+        {
+            return ("ChatGPT baseline unavailable: prompt templates not found.", "");
+        }
+
+        var summaryPrompt = summaryTemplate
+            .Replace("{rawResumeText}", rawResume)
+            .Replace("{rawJobText}", rawJob)
+            .Replace("{graphContext}", "");
+
+        var bulletsPrompt = bulletsTemplate
             .Replace("{rawResumeText}", rawResume)
             .Replace("{rawJobText}", rawJob)
             .Replace("{graphContext}", "");
 
         try
         {
-            var response = await _openAiClient.GetResponseAsync(prompt);
-            var fullText = response?.Text?.Trim() ?? "";
+            var summaryTask = _openAiClient.GetResponseAsync(summaryPrompt);
+            var bulletsTask = _openAiClient.GetResponseAsync(bulletsPrompt);
 
-            if (string.IsNullOrWhiteSpace(fullText))
-                return ("", "");
+            await Task.WhenAll(summaryTask, bulletsTask);
 
-            // Extract summary: find the paragraph that follows the "SUMMARY" header.
-            // The prompt asks for: "SUMMARY\n{summary text}\n\n{Role} at {Company}\n..."
-            var summaryText = "";
-            var lines = fullText.Split('\n');
-            var summaryStart = -1;
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i].Trim().Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
-                {
-                    summaryStart = i + 1;
-                    break;
-                }
-            }
-            if (summaryStart >= 0)
-            {
-                var summaryLines = new List<string>();
-                for (int i = summaryStart; i < lines.Length; i++)
-                {
-                    if (string.IsNullOrWhiteSpace(lines[i])) break;
-                    summaryLines.Add(lines[i].Trim());
-                }
-                summaryText = string.Join(" ", summaryLines).Trim();
-            }
-            else
-            {
-                // Fallback: if no SUMMARY header, treat first non-empty paragraph as summary.
-                var paraLines = new List<string>();
-                bool started = false;
-                foreach (var line in lines)
-                {
-                    if (!started && string.IsNullOrWhiteSpace(line)) continue;
-                    started = true;
-                    if (string.IsNullOrWhiteSpace(line)) break;
-                    paraLines.Add(line.Trim());
-                }
-                summaryText = string.Join(" ", paraLines).Trim();
-            }
+            var summaryText = summaryTask.Result?.Text?.Trim() ?? "";
+            var bulletsText = bulletsTask.Result?.Text?.Trim() ?? "";
+
+            var fullText = string.IsNullOrWhiteSpace(summaryText)
+                ? bulletsText
+                : $"SUMMARY\n{summaryText}\n\n{bulletsText}";
 
             return (fullText, summaryText);
         }
@@ -865,58 +849,43 @@ public class EvalController : ControllerBase
     private async Task<(string TailoredFullText, string SummaryText)> RunMistralBaselinePipelineAsync(
         string rawResume, string rawJob)
     {
-        var promptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
-        string promptTemplate;
-        try { promptTemplate = await System.IO.File.ReadAllTextAsync(promptPath); }
-        catch { promptTemplate = "Rewrite the following resume to better match the job description. Return plain text only.\n\nResume:\n{rawResumeText}\n\nJob Description:\n{rawJobText}"; }
+        var summaryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeSummary.md");
+        var bulletsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Prompts", "ResumeTailoring.md");
 
-        var prompt = promptTemplate
+        string summaryTemplate, bulletsTemplate;
+        try
+        {
+            summaryTemplate = await System.IO.File.ReadAllTextAsync(summaryPath);
+            bulletsTemplate = await System.IO.File.ReadAllTextAsync(bulletsPath);
+        }
+        catch
+        {
+            return ("Mistral baseline unavailable: prompt templates not found.", "");
+        }
+
+        var summaryPrompt = summaryTemplate
+            .Replace("{rawResumeText}", rawResume)
+            .Replace("{rawJobText}", rawJob)
+            .Replace("{graphContext}", "");
+
+        var bulletsPrompt = bulletsTemplate
             .Replace("{rawResumeText}", rawResume)
             .Replace("{rawJobText}", rawJob)
             .Replace("{graphContext}", "");
 
         try
         {
-            var response = await _chatClient.GetResponseAsync(prompt);
-            var fullText = response?.Text?.Trim() ?? "";
+            var summaryTask = _chatClient.GetResponseAsync(summaryPrompt);
+            var bulletsTask = _chatClient.GetResponseAsync(bulletsPrompt);
 
-            if (string.IsNullOrWhiteSpace(fullText))
-                return ("", "");
+            await Task.WhenAll(summaryTask, bulletsTask);
 
-            var summaryText = "";
-            var lines = fullText.Split('\n');
-            var summaryStart = -1;
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i].Trim().Equals("SUMMARY", StringComparison.OrdinalIgnoreCase))
-                {
-                    summaryStart = i + 1;
-                    break;
-                }
-            }
-            if (summaryStart >= 0)
-            {
-                var summaryLines = new List<string>();
-                for (int i = summaryStart; i < lines.Length; i++)
-                {
-                    if (string.IsNullOrWhiteSpace(lines[i])) break;
-                    summaryLines.Add(lines[i].Trim());
-                }
-                summaryText = string.Join(" ", summaryLines).Trim();
-            }
-            else
-            {
-                var paraLines = new List<string>();
-                bool started = false;
-                foreach (var line in lines)
-                {
-                    if (!started && string.IsNullOrWhiteSpace(line)) continue;
-                    started = true;
-                    if (string.IsNullOrWhiteSpace(line)) break;
-                    paraLines.Add(line.Trim());
-                }
-                summaryText = string.Join(" ", paraLines).Trim();
-            }
+            var summaryText = summaryTask.Result?.Text?.Trim() ?? "";
+            var bulletsText = bulletsTask.Result?.Text?.Trim() ?? "";
+
+            var fullText = string.IsNullOrWhiteSpace(summaryText)
+                ? bulletsText
+                : $"SUMMARY\n{summaryText}\n\n{bulletsText}";
 
             return (fullText, summaryText);
         }
@@ -1050,4 +1019,5 @@ public class EvalController : ControllerBase
         return System.Text.RegularExpressions.Regex.IsMatch(text, pattern,
             System.Text.RegularExpressions.RegexOptions.IgnoreCase);
     }
+
 }

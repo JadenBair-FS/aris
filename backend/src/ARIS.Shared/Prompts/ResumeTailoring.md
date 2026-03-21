@@ -10,9 +10,7 @@ JOB DESCRIPTION:
 
 ════════════════════════════════════════
 TASK:
-Rewrite this resume to better align with the job description.
-1. Write a 2-3 sentence professional summary.
-2. For each work experience entry, rewrite the bullet points to emphasize relevant skills and achievements.
+For each work experience entry in the resume, rewrite the bullet points to emphasize relevant skills and achievements for the job description.
 
 ════════════════════════════════════════
 RULES:
@@ -20,10 +18,8 @@ RULES:
 2. Write in third person. Do not use first-person pronouns (I, my, me, we, our). Use direct statements: "Developed...", "Led...", "Delivered...".
 3. Plain text only. No markdown, no asterisks, no bold, no bullet symbols, no headers, no special characters used for formatting.
 4. Preserve the exact employment dates from the original resume. Do not change, reorder, or fabricate any dates.
-5. Output the full tailored resume in exactly this plain text format — no JSON, no code fences, no extra commentary:
-
-SUMMARY
-{2-3 sentence professional summary here}
+5. Each bullet point must be on its own line. Do not combine multiple bullets into a paragraph.
+6. Output in exactly this plain text format — no JSON, no code fences, no extra commentary:
 
 {Job Title} | {Company Name} | {Start Date} - {End Date}
 {rewritten bullet}

@@ -738,11 +738,9 @@ public class StudyController : ControllerBase
         var tailoringTemplate = await System.IO.File.ReadAllTextAsync(tailoringTemplatePath);
         var summaryTemplate   = await System.IO.File.ReadAllTextAsync(summaryTemplatePath);
 
-        var resumeSnippet = resumeText.Length > 3000 ? resumeText[..3000] : resumeText;
-        var jobSnippet    = jobDescriptionText.Length > 2000 ? jobDescriptionText[..2000] : jobDescriptionText;
         var summaryPrompt = summaryTemplate
-            .Replace("{rawResumeSnippet}", resumeSnippet)
-            .Replace("{rawJobSnippet}", jobSnippet)
+            .Replace("{rawResumeText}", resumeText)
+            .Replace("{rawJobText}", jobDescriptionText)
             .Replace("{graphContext}", graphContextBlock);
 
         string summary;
