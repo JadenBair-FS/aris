@@ -266,19 +266,9 @@ public class EvalController : ControllerBase
                 });
             var bulletsText = string.Join("\n\n", entrySections);
 
-            // Extract the Skills section from the original resume so keyword matching
-            // covers explicit skill names that ARIS does not rewrite.
-            var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
-                rawResumeText,
-                @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
-                System.Text.RegularExpressions.RegexOptions.Singleline);
-            var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
-
             var arisFullText = string.IsNullOrWhiteSpace(tailoredData.ProfessionalSummary)
-                ? (skillsBlock.Length > 0 ? $"{skillsBlock}\n\n{bulletsText}" : bulletsText)
-                : (skillsBlock.Length > 0
-                    ? $"{tailoredData.ProfessionalSummary}\n\n{skillsBlock}\n\n{bulletsText}"
-                    : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}");
+                ? bulletsText
+                : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
             var arisHallucinationCount = hardGapNames.Count(name =>
                 ContainsWholeWord(arisFullText, name));
@@ -525,17 +515,9 @@ public class EvalController : ControllerBase
                 });
             var bulletsText = string.Join("\n\n", entrySections);
 
-            var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
-                rawResumeText,
-                @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
-                System.Text.RegularExpressions.RegexOptions.Singleline);
-            var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
-
             var arisFullText = string.IsNullOrWhiteSpace(tailoredData.ProfessionalSummary)
-                ? (skillsBlock.Length > 0 ? $"{skillsBlock}\n\n{bulletsText}" : bulletsText)
-                : (skillsBlock.Length > 0
-                    ? $"{tailoredData.ProfessionalSummary}\n\n{skillsBlock}\n\n{bulletsText}"
-                    : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}");
+                ? bulletsText
+                : $"{tailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
             var arisHallucinationCount = hardGapNames.Count(name =>
                 ContainsWholeWord(arisFullText, name));
@@ -731,17 +713,9 @@ public class EvalController : ControllerBase
                 });
             var bulletsText = string.Join("\n\n", entrySections);
 
-            var skillsSectionMatch = System.Text.RegularExpressions.Regex.Match(
-                rawResumeText,
-                @"(?im)^(SKILLS?[^\n]*)\n(.*?)(?=\n[A-Z][A-Z\s]{2,}:?\s*$|\z)",
-                System.Text.RegularExpressions.RegexOptions.Singleline);
-            var skillsBlock = skillsSectionMatch.Success ? skillsSectionMatch.Value.Trim() : "";
-
             var gptGraphFullText = string.IsNullOrWhiteSpace(gptTailoredData.ProfessionalSummary)
-                ? (skillsBlock.Length > 0 ? $"{skillsBlock}\n\n{bulletsText}" : bulletsText)
-                : (skillsBlock.Length > 0
-                    ? $"{gptTailoredData.ProfessionalSummary}\n\n{skillsBlock}\n\n{bulletsText}"
-                    : $"{gptTailoredData.ProfessionalSummary}\n\n{bulletsText}");
+                ? bulletsText
+                : $"{gptTailoredData.ProfessionalSummary}\n\n{bulletsText}";
 
             var gptGraphHallucinationCount = hardGapNames.Count(name =>
                 ContainsWholeWord(gptGraphFullText, name));
