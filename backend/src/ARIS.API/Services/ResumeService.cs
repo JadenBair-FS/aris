@@ -880,7 +880,7 @@ namespace ARIS.API.Services
                 .Replace("{graphContext}", graphContextBlock);
 
             var client = llmClient ?? _chatClient;
-            var options = new ChatOptions { Temperature = 0.2f };
+            var options = new ChatOptions { Temperature = 0.15f };
 
             string summary = "";
             string bulletsText = "";
